@@ -12,4 +12,14 @@ namespace CazamioProgect.Helpers
         public const string urlHomePageTenantWebSiteAbodeo = "https://abodebyreside.cazamiodemo.com/";
         public const string urlLogInPageLandlordBrokerWebSite = "https://landlord.cazamiodemo.com/";
     }
+
+    public class GeneralTestDataForAllUsers
+    {
+        public const string passwordGeneral = "Qwerty123!";
+    }
+
+    public class TestDataForWebSiteCazamio
+    {
+        public const string emailTenantWife = "tenantswife@gmail.com";
+    }
 }

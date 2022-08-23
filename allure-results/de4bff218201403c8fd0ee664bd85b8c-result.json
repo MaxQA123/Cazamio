@@ -1,0 +1,124 @@
+{
+  "uuid": "53e812d9-85d5-4019-86fc-93a6c8d2e397-tr-0-1001",
+  "historyId": "TenantCazamioTests.TestsBaseWeb.LogInAsTenant",
+  "fullName": "TenantCazamioTests.TestsBaseWeb.LogInAsTenant",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "TenantCazamioTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "LogInAsTenant"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "WebSiteCazamioTenant"
+    },
+    {
+      "name": "subSuite",
+      "value": "LogInAsTenant"
+    }
+  ],
+  "links": [],
+  "name": "LogInAsTenant",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@id = 'email']\"}\n  (Session info: chrome=104.0.5112.102)",
+    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.get_FieldInputEmailAddressLgInCazmTnnt() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\GeneralPages\\LogInPageCazamioTenant\\LogInCazamioTenantElements.cs:line 13\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInCzmTnnt_100663315_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\GeneralPages\\LogInPageCazamioTenant\\LogInCazamioTenantActions.cs:line 16\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInCzmTnnt_100663315_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInCzmTnnt_100663315_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.EnterEmailPasswordOnLgInCzmTnnt() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\GeneralPages\\LogInPageCazamioTenant\\LogInCazamioTenantElements.cs:line 14\r\n   at TenantCazamioTests.TestsBaseWeb.LogInAsTenant() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 35"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "LogInAsTenant",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@id = 'email']\"}\n  (Session info: chrome=104.0.5112.102)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.get_FieldInputEmailAddressLgInCazmTnnt() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\GeneralPages\\LogInPageCazamioTenant\\LogInCazamioTenantElements.cs:line 13\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInCzmTnnt_100663315_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\GeneralPages\\LogInPageCazamioTenant\\LogInCazamioTenantActions.cs:line 16\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInCzmTnnt_100663315_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInCzmTnnt_100663315_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.EnterEmailPasswordOnLgInCzmTnnt() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\GeneralPages\\LogInPageCazamioTenant\\LogInCazamioTenantElements.cs:line 14\r\n   at TenantCazamioTests.TestsBaseWeb.LogInAsTenant() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 35"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "ClickButtonLogInHdrCzmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1661263216712,
+          "stop": 1661263217507
+        },
+        {
+          "name": "EnterEmailPasswordOnLgInCzmTnnt",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@id = 'email']\"}\n  (Session info: chrome=104.0.5112.102)",
+            "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.get_FieldInputEmailAddressLgInCazmTnnt() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\GeneralPages\\LogInPageCazamioTenant\\LogInCazamioTenantElements.cs:line 13\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInCzmTnnt_100663315_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\GeneralPages\\LogInPageCazamioTenant\\LogInCazamioTenantActions.cs:line 16\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInCzmTnnt_100663315_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1661263217508,
+          "stop": 1661263218189
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "ec07539568824faeb45ff09d994b7033-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1661263211427,
+      "stop": 1661263218772
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1661263211426,
+  "stop": 1661263218778
+}
