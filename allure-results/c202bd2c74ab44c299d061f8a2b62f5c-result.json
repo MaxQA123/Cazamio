@@ -1,0 +1,233 @@
+{
+  "uuid": "2df3aac7-ee76-4492-a668-86c7ae70c6f8-tr-0-1001",
+  "historyId": "TenantAbodeTests.TestsBaseWeb.LogInAsTenant",
+  "fullName": "TenantAbodeTests.TestsBaseWeb.LogInAsTenant",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "TenantAbodeTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "LogInAsTenant"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "WebSiteAbodeTenant"
+    },
+    {
+      "name": "subSuite",
+      "value": "LogInAsTenant"
+    }
+  ],
+  "links": [],
+  "name": "LogInAsTenant",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "System.NullReferenceException : Object reference not set to an instance of an object.",
+    "trace": "   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonMyApplicationsHdrCzmTnnt_100663323_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantActions.cs:line 35\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonMyApplicationsHdrCzmTnnt_100663323_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonMyApplicationsHdrCzmTnnt_100663323_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.ClickButtonMyApplicationsHdrCzmTnnt()\r\n   at TenantAbodeTests.TestsBaseWeb.LogInAsTenant() in C:\\Automation\\Cazamio\\TenantWebSiteAbode\\TenantWebSiteAbodeTests\\TenantAbodeTests.cs:line 39"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "LogInAsTenant",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "System.NullReferenceException : Object reference not set to an instance of an object.",
+        "trace": "   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonMyApplicationsHdrCzmTnnt_100663323_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantActions.cs:line 35\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonMyApplicationsHdrCzmTnnt_100663323_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonMyApplicationsHdrCzmTnnt_100663323_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.ClickButtonMyApplicationsHdrCzmTnnt()\r\n   at TenantAbodeTests.TestsBaseWeb.LogInAsTenant() in C:\\Automation\\Cazamio\\TenantWebSiteAbode\\TenantWebSiteAbodeTests\\TenantAbodeTests.cs:line 39"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "ClickButtonLogInHdrCzmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1661353730101,
+          "stop": 1661353731577
+        },
+        {
+          "name": "EnterEmailPasswordOnLgInCzmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElement",
+                  "value": "Element (id = 846ad7dc-c496-4048-a26e-d99cc93e34d5)"
+                },
+                {
+                  "name": "String",
+                  "value": "tenantswife@gmail.com"
+                }
+              ],
+              "start": 1661353732793,
+              "stop": 1661353733601
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElement",
+                  "value": "Element (id = dd1536e0-631f-4fc9-8722-18d224521332)"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1661353734141,
+              "stop": 1661353734343
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1661353731578,
+          "stop": 1661353734343
+        },
+        {
+          "name": "ClickIconShowLgInCazmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1661353734343,
+          "stop": 1661353734951
+        },
+        {
+          "name": "SetCheckBoxRememberMeLgInCazmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1661353734951,
+          "stop": 1661353735635
+        },
+        {
+          "name": "ClickButtonLogInLgInCazmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1661353735636,
+          "stop": 1661353736521
+        },
+        {
+          "name": "ClickButtonMyApplicationsHdrCzmTnnt",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "Object reference not set to an instance of an object.",
+            "trace": "   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonMyApplicationsHdrCzmTnnt_100663323_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantActions.cs:line 35\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonMyApplicationsHdrCzmTnnt_100663323_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1661353736522,
+          "stop": 1661353739266
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "d36278bbf7174e7993aa452914da464c-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1661353725821,
+      "stop": 1661353739620
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1661353725817,
+  "stop": 1661353739626
+}

@@ -1,5 +1,6 @@
 ﻿using CazamioProgect.Helpers;
 using OpenQA.Selenium;
+using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,18 +11,27 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
 {
     public partial class MyAccountCazamioTenant
     {
-        public static IList<IWebElement> SelectorTabsOnMyAccountPage(string locationPlace)
-        {
-            WaitUntil.WaitSomeInterval(500);
-            return Browser._Driver.FindElements(By.XPath($".//div[@class= 'info-tabs']/ul"));
-        }
+        [FindsBy(How = How.XPath, Using = "//div[@class= 'info-tabs']/ul/li[@routerlink = '/my-info/profile']")]
+        public IWebElement TabAccount;
 
+        [FindsBy(How = How.XPath, Using = "//div[@class= 'info-tabs']/ul/li[@routerlink = '/my-info/applications']")]
+        public IWebElement TabApplications;
 
-        //public static readonly By _TabMyAccountMyAccntCzmTnnt = By.XPath("")
+        [FindsBy(How = How.XPath, Using = "//div[@class= 'info-tabs']/ul/li[@routerlink = '/my-info/favorites']")]
+        public IWebElement TabFavorites;
 
-        #region TabMyAccount
+        [FindsBy(How = How.XPath, Using = "//div[@class= 'info-tabs']/ul/li[@routerlink = '/my-info/history']")]
+        public IWebElement TabHistory;
+
+        #region TabAccount
 
         //public static readonly By _Tab
+
+        #endregion
+
+        #region SectionAccount
+
+
 
         #endregion
     }

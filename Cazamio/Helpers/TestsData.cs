@@ -21,5 +21,11 @@ namespace CazamioProgect.Helpers
     public class TestDataForWebSiteCazamio
     {
         public const string emailTenantWife = "tenantswife@gmail.com";
+        public const string firstNameTenantWife = "Tenant";
+    }
+
+    public class TestDataForWebSiteLandlord
+    {
+        public const string emailLandlordTest = "testlivelandlord@gmail.com";
     }
 }

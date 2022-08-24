@@ -1,0 +1,253 @@
+{
+  "uuid": "c169a119-dab4-4891-b79b-58dbed560ec9-tr-0-1001",
+  "historyId": "TenantCazamioTests.TestsBaseWeb.LogInAsTenant",
+  "fullName": "TenantCazamioTests.TestsBaseWeb.LogInAsTenant",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "TenantCazamioTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "LogInAsTenant"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "WebSiteCazamioTenant"
+    },
+    {
+      "name": "subSuite",
+      "value": "LogInAsTenant"
+    }
+  ],
+  "links": [],
+  "name": "LogInAsTenant",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "System.ArgumentOutOfRangeException : Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')",
+    "trace": "   at System.Collections.Generic.List`1.get_Item(Int32 index)\r\n   at System.Collections.ObjectModel.ReadOnlyCollection`1.System.Collections.Generic.IList<T>.get_Item(Int32 index)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCazamioTenant.MyAccountCazamioTenant.__a$_around_SelectTabsOnMyAccountPage_100663308_o(Int32 numberItem) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\MyAccountPageCazamioTenant\\MyAccountCazamioTenantActions.cs:line 20\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCazamioTenant.MyAccountCazamioTenant.__a$_around_SelectTabsOnMyAccountPage_100663308_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCazamioTenant.MyAccountCazamioTenant.__a$_around_SelectTabsOnMyAccountPage_100663308_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCazamioTenant.MyAccountCazamioTenant.SelectTabsOnMyAccountPage(Int32 numberItem)\r\n   at TenantCazamioTests.TestsBaseWeb.LogInAsTenant() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 43"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "LogInAsTenant",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "System.ArgumentOutOfRangeException : Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')",
+        "trace": "   at System.Collections.Generic.List`1.get_Item(Int32 index)\r\n   at System.Collections.ObjectModel.ReadOnlyCollection`1.System.Collections.Generic.IList<T>.get_Item(Int32 index)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCazamioTenant.MyAccountCazamioTenant.__a$_around_SelectTabsOnMyAccountPage_100663308_o(Int32 numberItem) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\MyAccountPageCazamioTenant\\MyAccountCazamioTenantActions.cs:line 20\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCazamioTenant.MyAccountCazamioTenant.__a$_around_SelectTabsOnMyAccountPage_100663308_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCazamioTenant.MyAccountCazamioTenant.__a$_around_SelectTabsOnMyAccountPage_100663308_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCazamioTenant.MyAccountCazamioTenant.SelectTabsOnMyAccountPage(Int32 numberItem)\r\n   at TenantCazamioTests.TestsBaseWeb.LogInAsTenant() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 43"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "ClickButtonLogInHdrCzmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1661342225573,
+          "stop": 1661342227027
+        },
+        {
+          "name": "EnterEmailPasswordOnLgInCzmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElement",
+                  "value": "Element (id = 42d19cb9-60a2-41c2-b224-1483db172056)"
+                },
+                {
+                  "name": "String",
+                  "value": "tenantswife@gmail.com"
+                }
+              ],
+              "start": 1661342228132,
+              "stop": 1661342228702
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElement",
+                  "value": "Element (id = 93e838b9-d4ed-46ce-85f4-54b0748ab223)"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1661342229250,
+              "stop": 1661342229480
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1661342227031,
+          "stop": 1661342229480
+        },
+        {
+          "name": "ClickIconShowLgInCazmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1661342229481,
+          "stop": 1661342230077
+        },
+        {
+          "name": "SetCheckBoxRememberMeLgInCazmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1661342230078,
+          "stop": 1661342230701
+        },
+        {
+          "name": "ClickButtonLogInLgInCazmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1661342230701,
+          "stop": 1661342231577
+        },
+        {
+          "name": "ClickButtonMyApplicationsHdrCzmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1661342231578,
+          "stop": 1661342234851
+        },
+        {
+          "name": "SelectTabsOnMyAccountPageg",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')",
+            "trace": "   at System.Collections.Generic.List`1.get_Item(Int32 index)\r\n   at System.Collections.ObjectModel.ReadOnlyCollection`1.System.Collections.Generic.IList<T>.get_Item(Int32 index)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCazamioTenant.MyAccountCazamioTenant.__a$_around_SelectTabsOnMyAccountPage_100663308_o(Int32 numberItem) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\MyAccountPageCazamioTenant\\MyAccountCazamioTenantActions.cs:line 20\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCazamioTenant.MyAccountCazamioTenant.__a$_around_SelectTabsOnMyAccountPage_100663308_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1661342234852,
+          "stop": 1661342235733
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "2295f5acdbbc4b1886704451d65716ba-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1661342221336,
+      "stop": 1661342236384
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1661342221331,
+  "stop": 1661342236391
+}

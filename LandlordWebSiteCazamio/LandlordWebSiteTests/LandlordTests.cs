@@ -1,8 +1,10 @@
 using Allure.Commons;
+using CazamioProgect.PageObjects;
 using LandlordTests;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
+using System.Threading;
 
 namespace LandlordTests
 {
@@ -21,12 +23,18 @@ namespace LandlordTests
 
         //Date of publication:
         //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully LogIn as admin.
+        //Willingness for testing: in progress.
+        //This test case is doing checking: The successfully LogIn as lanlord.
         //Comment: 
 
         public void LogInAsLandlord()
         {
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPg()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            Thread.Sleep(5000);
 
         }
     }

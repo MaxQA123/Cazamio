@@ -1,4 +1,5 @@
 using Allure.Commons;
+using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
@@ -21,10 +22,10 @@ namespace TenantCazamioTests
         [AllureSuite("WebSiteCazamioTenant")]
         [AllureSubSuite("LogInAsTenant")]
 
-        //Date of publication:
+        //Date of publication: 24.08.2022.
         //Version\Build:
         //The date last publication on which been testing:
-        //Willingness for testing: in progress.
+        //Willingness for testing: Done.
         //This test case is doing checking: The successfully LogIn as tenant.
         //Comment: 
 
@@ -39,6 +40,13 @@ namespace TenantCazamioTests
                 .ClickButtonLogInLgInCazmTnnt();
             Pages.HeaderCazamioTenant
                 .ClickButtonMyApplicationsHdrCzmTnnt();
+            Pages.MyAccountCazamioTenant
+                .ClickTabAccountOnMyAccntPg();
+
+            string getFirstNameForCompare = Pages.MyAccountCazamioTenant.GetFirstNameFromMyAccount();
+
+            Pages.MyAccountCazamioTenant
+                .VerifyTenatFirstName(getFirstNameForCompare);
 
             Thread.Sleep(5000);
         }
