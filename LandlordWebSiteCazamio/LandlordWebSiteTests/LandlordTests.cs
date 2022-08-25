@@ -21,9 +21,9 @@ namespace LandlordTests
         [AllureSuite("Landlord")]
         [AllureSubSuite("LogInAsLandlord")]
 
-        //Date of publication:
+        //Date of publication: 25.08.2022.
         //Version\Build:
-        //Willingness for testing: in progress.
+        //Willingness for testing: Done.
         //This test case is doing checking: The successfully LogIn as lanlord.
         //Comment: 
 
@@ -33,6 +33,11 @@ namespace LandlordTests
                 .EnterEmailPasswordLogInPg()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyUserName(getUserNameCompare);
 
             Thread.Sleep(5000);
 

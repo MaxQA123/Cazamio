@@ -10,6 +10,15 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTena
 {
     public partial class HeaderCazamioTenant
     {
+        [AllureStep("ClickButtonSignUpHdrCzmTnnt")]
+        public HeaderCazamioTenant ClickButtonSignUpHdrCzmTnnt()
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            Button.Click(ButtonSignUpHdrCzmTnnt);
+
+            return this;
+        }
+
         [AllureStep("ClickButtonLogInHdrCzmTnnt")]
         public HeaderCazamioTenant ClickButtonLogInHdrCzmTnnt()
         {

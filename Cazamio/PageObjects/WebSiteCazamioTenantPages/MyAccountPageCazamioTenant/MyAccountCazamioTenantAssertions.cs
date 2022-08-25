@@ -27,7 +27,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         [AllureStep("VerifyTenatFirstName")]
         public MyAccountCazamioTenant VerifyTenatFirstName(string getFirstNameActual)
         {
-            WaitUntil.WaitSomeInterval(1);
+            WaitUntil.WaitSomeInterval(500);
             string getFirstNameExpected = TestDataForWebSiteCazamio.firstNameTenantWife;
 
             Assert.AreEqual(getFirstNameActual, getFirstNameExpected);

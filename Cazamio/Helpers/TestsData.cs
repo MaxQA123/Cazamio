@@ -27,5 +27,19 @@ namespace CazamioProgect.Helpers
     public class TestDataForWebSiteLandlord
     {
         public const string emailLandlordTest = "testlivelandlord@gmail.com";
+        public const string userNameLandlord = "Landlord Test";
+
+        public const string emailBroker = "cazamioportal@gmail.com";
+        public const string userNameBroker = "Broker Tests";
+    }
+
+    public class NameDomen
+    {
+        public static string Xitroo = "@xitroo.com";
+    }
+
+    public class UploadImages
+    {
+        public const string avatarImgTenant = $"\\UploadImages\\ImagePandaStudent.jpg";
     }
 }

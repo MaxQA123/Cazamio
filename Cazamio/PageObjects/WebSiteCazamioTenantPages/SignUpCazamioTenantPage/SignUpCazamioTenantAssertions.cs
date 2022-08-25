@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProgect.PageObjects.GeneralPages.SignUpPage
+namespace CazamioProgect.PageObjects.GeneralPages.SignUpCazamioTenantPage
 {
-    internal class SignUpElements
+    public partial class SignUpCazamioTenant
     {
     }
 }

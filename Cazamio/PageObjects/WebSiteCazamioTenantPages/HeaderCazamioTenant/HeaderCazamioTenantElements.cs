@@ -1,5 +1,6 @@
 ﻿using CazamioProgect.Helpers;
 using OpenQA.Selenium;
+using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,8 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTena
 {
     public partial class HeaderCazamioTenant
     {
-        public IWebElement ButtonSignUpHdrCzmTnnt => Browser._Driver.FindElement(_ButtonSignUpHdrCzmTnnt);
-        public static readonly By _ButtonSignUpHdrCzmTnnt = By.XPath("");
+        [FindsBy(How = How.XPath, Using = "//a[@href = '/account/signup']")]
+        public IWebElement ButtonSignUpHdrCzmTnnt;
 
         public IWebElement ButtonLogInHdrCzmTnnt => Browser._Driver.FindElement(_ButtonLogInHdrCzmTnnt);
         public static readonly By _ButtonLogInHdrCzmTnnt = By.XPath("//a[@href = '/account/signin']");

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProgect.PageObjects.GeneralPages.SignUpPage
+namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
 {
-    internal class SignUpAssertions
+    public partial class SideBarLandlord
     {
     }
 }

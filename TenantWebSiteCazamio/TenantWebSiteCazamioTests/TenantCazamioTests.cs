@@ -20,6 +20,33 @@ namespace TenantCazamioTests
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("WebSiteCazamioTenant")]
+        [AllureSubSuite("SignUpAsTenant")]
+
+        //Date of publication:
+        //Version\Build:
+        //The date last publication on which been testing:
+        //Willingness for testing: in progress.
+        //This test case is doing checking: The successfully SignUp as tenant.
+        //Comment: 
+
+        public void SignUpAsTenant()
+        {
+            Pages.HeaderCazamioTenant
+                .ClickButtonSignUpHdrCzmTnnt();
+            Pages.SignUpCazamioTenant
+                .EnterFirstLastNameEmailPasswordSignUpPg()
+                .ClickIconShowSignUpPg()
+                .ClickButtonGetStartedSignUpPg();
+
+            Thread.Sleep(5000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("WebSiteCazamioTenant")]
         [AllureSubSuite("LogInAsTenant")]
 
         //Date of publication: 24.08.2022.

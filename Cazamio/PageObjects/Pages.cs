@@ -1,8 +1,10 @@
 ﻿using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant;
+using CazamioProgect.PageObjects.GeneralPages.SignUpCazamioTenantPage;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCazamioTenant;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage;
+using CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
@@ -27,6 +29,7 @@ namespace CazamioProgect.PageObjects
         #region TenantWebSiteCazamio
 
         public static HeaderCazamioTenant HeaderCazamioTenant => GetPage<HeaderCazamioTenant>();
+        public static SignUpCazamioTenant SignUpCazamioTenant => GetPage<SignUpCazamioTenant>();
         public static LogInCazamioTenant LogInCazamioTenant => GetPage<LogInCazamioTenant>();
         public static MyAccountCazamioTenant MyAccountCazamioTenant => GetPage<MyAccountCazamioTenant>();
 
@@ -35,6 +38,7 @@ namespace CazamioProgect.PageObjects
         #region LandlordWebSite
 
         public static LogInLandlord LogInLandlord => GetPage<LogInLandlord>();
+        public static SideBarLandlord SideBarLandlord => GetPage<SideBarLandlord>();
 
         #endregion
 

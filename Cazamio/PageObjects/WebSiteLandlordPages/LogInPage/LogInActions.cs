@@ -13,7 +13,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         [AllureStep("EnterEmailPasswordLogInPg")]
         public LogInLandlord EnterEmailPasswordLogInPg()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteLandlord.emailLandlordTest);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteLandlord.emailBroker);
             WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, GeneralTestDataForAllUsers.passwordGeneral);
 
@@ -32,6 +32,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         public LogInLandlord ClickButtonLetsGoLogInPg()
         {
             Button.Click(ButtonLetsGoLogInPg);
+            WaitUntil.WaitSomeInterval(1000);
 
             return this;
         }
