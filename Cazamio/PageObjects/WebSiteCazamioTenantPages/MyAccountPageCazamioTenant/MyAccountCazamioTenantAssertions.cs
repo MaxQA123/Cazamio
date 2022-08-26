@@ -12,7 +12,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
 {
     public partial class MyAccountCazamioTenant
     {
-        #region SectionAccount
+        #region SectionAccountVirifyFirstName
 
         [AllureStep("GetFirstNameFromMyAccount")]
         public string GetFirstNameFromMyAccount()
@@ -25,7 +25,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         }
 
         [AllureStep("VerifyTenatFirstName")]
-        public MyAccountCazamioTenant VerifyTenatFirstName(string getFirstNameActual)
+        public MyAccountCazamioTenant VerifyTenatFirstNameTW(string getFirstNameActual)
         {
             WaitUntil.WaitSomeInterval(500);
             string getFirstNameExpected = TestDataForWebSiteCazamio.firstNameTenantWife;
@@ -35,6 +35,16 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
             return this;
         }
 
+        [AllureStep("VerifyOccupantFirstNameTL")]
+        public MyAccountCazamioTenant VerifyOccupantFirstNameTL(string getFirstNameActual)
+        {
+            WaitUntil.WaitSomeInterval(500);
+            string getFirstNameExpected = TestDataForWebSiteCazamio.firstNameCurrentOccupantTerryLee;
+
+            Assert.AreEqual(getFirstNameActual, getFirstNameExpected);
+
+            return this;
+        }
 
         #endregion
     }

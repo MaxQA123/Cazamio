@@ -27,7 +27,7 @@ namespace TenantCazamioTests
         //The date last publication on which been testing:
         //Willingness for testing: in progress.
         //This test case is doing checking: The successfully SignUp as tenant.
-        //Comment: 
+        //Comment: Bug: on email hasn't came a letter for confirming.
 
         public void SignUpAsTenant()
         {
@@ -61,7 +61,7 @@ namespace TenantCazamioTests
             Pages.HeaderCazamioTenant
                 .ClickButtonLogInHdrCzmTnnt();
             Pages.LogInCazamioTenant
-                .EnterEmailPasswordOnLgInCzmTnnt()
+                .EnterEmailPasswordOnLgInAsTenantCzmTnntTW()
                 .ClickIconShowLgInCazmTnnt()
                 .SetCheckBoxRememberMeLgInCazmTnnt()
                 .ClickButtonLogInLgInCazmTnnt();
@@ -73,7 +73,50 @@ namespace TenantCazamioTests
             string getFirstNameForCompare = Pages.MyAccountCazamioTenant.GetFirstNameFromMyAccount();
 
             Pages.MyAccountCazamioTenant
-                .VerifyTenatFirstName(getFirstNameForCompare);
+                .VerifyTenatFirstNameTW(getFirstNameForCompare);
+
+            Thread.Sleep(5000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("WebSiteCazamioTenant")]
+        [AllureSubSuite("EditPageMyAccountTabSectionAccount")]
+
+        //Date of publication:
+        //Version\Build:
+        //The date last publication on which been testing:
+        //Willingness for testing: in progress.
+        //This test case is doing checking: The successfully had edited page "My Account" in the tad\section "Account".
+        //Comment: 
+
+        public void EditPageMyAccountTabSectionAccount()
+        {
+            Pages.HeaderCazamioTenant
+                .ClickButtonLogInHdrCzmTnnt();
+            Pages.LogInCazamioTenant
+                .EnterEmailPasswordOnLgInAsOccupantCzmTnntTL()
+                .ClickIconShowLgInCazmTnnt()
+                .SetCheckBoxRememberMeLgInCazmTnnt()
+                .ClickButtonLogInLgInCazmTnnt();
+            Pages.HeaderCazamioTenant
+                .ClickButtonMyApplicationsHdrCzmTnnt();
+            Pages.MyAccountCazamioTenant
+                .ClickTabAccountOnMyAccntPg();
+
+            string getFirstNameForCompare = Pages.MyAccountCazamioTenant.GetFirstNameFromMyAccount();
+
+            Pages.MyAccountCazamioTenant
+                .VerifyOccupantFirstNameTL(getFirstNameForCompare);
+
+            Pages.MyAccountCazamioTenant
+                .ClickButtonEditMyAccntPgTabAccnt()
+                .EnterFirstLastNameEmailPhoneNumberMyAccntPgTabAccnt()
+                .SctollToDateOfBirth()
+                .ClickFieldInputDateOfBirthMyAccntPgTabAccnt();
 
             Thread.Sleep(5000);
         }

@@ -10,11 +10,55 @@ namespace CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant
 {
     public partial class LogInCazamioTenant
     {
-        [AllureStep("EnterEmailPasswordOnLgInCzmTnnt")]
-        public LogInCazamioTenant EnterEmailPasswordOnLgInCzmTnnt()
+        [AllureStep("EnterEmailPasswordOnLgInAsTenantCzmTnntTW")]
+        public LogInCazamioTenant EnterEmailPasswordOnLgInAsTenantCzmTnntTW()
         {
             WaitUntil.WaitSomeInterval(1000);
             InputGeneral.InputFunctionWithClear(FieldInputEmailAddressLgInCazmTnnt, TestDataForWebSiteCazamio.emailTenantWife);
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputPasswordLgInCazmTnnt, GeneralTestDataForAllUsers.passwordGeneral);
+
+            return this;
+        }
+
+        [AllureStep("EnterEmailPasswordOnLgInAsOccupantCzmTnntTL")]
+        public LogInCazamioTenant EnterEmailPasswordOnLgInAsOccupantCzmTnntTL()
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailAddressLgInCazmTnnt, TestDataForWebSiteCazamio.emailCurrentOccupantTerryLee);
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputPasswordLgInCazmTnnt, GeneralTestDataForAllUsers.passwordGeneral);
+
+            return this;
+        }
+
+        [AllureStep("EnterEmailPasswordOnLgInAsOccupantCzmTnntLK")]
+        public LogInCazamioTenant EnterEmailPasswordOnLgInAsOccupantCzmTnntLK()
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailAddressLgInCazmTnnt, TestDataForWebSiteCazamio.emailCurrentOccupantTerryLee);
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputPasswordLgInCazmTnnt, GeneralTestDataForAllUsers.passwordGeneral);
+
+            return this;
+        }
+
+        [AllureStep("EnterEmailPasswordOnLgInAsOccupantCzmTnntMA")]
+        public LogInCazamioTenant EnterEmailPasswordOnLgInAsOccupantCzmTnntMA()
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailAddressLgInCazmTnnt, TestDataForWebSiteCazamio.emailCurrentOccupantTerryLee);
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputPasswordLgInCazmTnnt, GeneralTestDataForAllUsers.passwordGeneral);
+
+            return this;
+        }
+
+        [AllureStep("EnterEmailPasswordOnLgInAsGuarantorCzmTnntML")]
+        public LogInCazamioTenant EnterEmailPasswordOnLgInAsGuarantorCzmTnntML()
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailAddressLgInCazmTnnt, TestDataForWebSiteCazamio.emailCurrentOccupantTerryLee);
             WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputPasswordLgInCazmTnnt, GeneralTestDataForAllUsers.passwordGeneral);
 

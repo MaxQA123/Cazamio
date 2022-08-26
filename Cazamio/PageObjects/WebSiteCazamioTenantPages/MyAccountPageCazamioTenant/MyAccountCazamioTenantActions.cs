@@ -48,5 +48,49 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
 
         #endregion
 
+        #region TabSectionAccount
+
+        [AllureStep("ClickButtonEditMyAccntPgTabAccnt")]
+        public MyAccountCazamioTenant ClickButtonEditMyAccntPgTabAccnt()
+        {
+            Button.Click(ButtonEditMyAccntPgTabAccnt);
+
+            return this;
+        }
+
+        [AllureStep("EnterFirstLastNameEmailPhoneNumberMyAccntPgTabAccnt")]
+        public MyAccountCazamioTenant EnterFirstLastNameEmailPhoneNumberMyAccntPgTabAccnt()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputFirsNameMyAccntPgTabAccnt, TestDataForWebSiteCazamio.firstNameNewOccupantTerryLee);
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputLastNameMyAccntPgTabAccnt, TestDataForWebSiteCazamio.lastNameNewOccupantTerryLee);
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailMyAccntPgTabAccnt, TestDataForWebSiteCazamio.emailNewOccupantTerryLee);
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputPhoneNumberMyAccntPgTabAccnt, TestDataForWebSiteCazamio.phoneNumberNewOccupantTerryLee);
+
+            return this;
+        }
+
+        [AllureStep("SctollToDateOfBirth")]
+        public MyAccountCazamioTenant SctollToDateOfBirth()
+        {
+            WaitUntil.WaitSomeInterval(250);
+            ScrollingJScriptExecutorHelper.ScrollToElement(FieldInputFirsNameMyAccntPgTabAccnt);
+
+            return this;
+        }
+
+        [AllureStep("ClickFieldInputDateOfBirthMyAccntPgTabAccnt")]
+        public MyAccountCazamioTenant ClickFieldInputDateOfBirthMyAccntPgTabAccnt()
+        {
+            Button.Click(FieldInputDateOfBirthMyAccntPgTabAccnt);
+
+            return this;
+        }
+
+        #endregion
+
     }
 }

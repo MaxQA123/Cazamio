@@ -27,7 +27,10 @@ namespace CazamioProgect.Helpers
 
             return this;
         }
+    }
 
+    public class ScrollingJScriptExecutorHelper
+    {
         [AllureStep("ScrollToElement")]
         public static IWebElement ScrollToElement(IWebElement element)
         {

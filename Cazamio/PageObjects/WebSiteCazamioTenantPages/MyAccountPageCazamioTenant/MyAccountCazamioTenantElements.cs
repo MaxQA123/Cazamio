@@ -25,7 +25,23 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
 
         #region TabAccount
 
-        //public static readonly By _Tab
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'profile-loadable-wrapper']//div[@class = 'cazamio-button-content']")]
+        public IWebElement ButtonEditMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'first-name']")]
+        public IWebElement FieldInputFirsNameMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'last-name']")]
+        public IWebElement FieldInputLastNameMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'account-email']")]
+        public IWebElement FieldInputEmailMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'phone-number']")]
+        public IWebElement FieldInputPhoneNumberMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'birtday']")]
+        public IWebElement FieldInputDateOfBirthMyAccntPgTabAccnt;
 
         #endregion
 
