@@ -23,7 +23,23 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         [FindsBy(How = How.XPath, Using = "//div[@class= 'info-tabs']/ul/li[@routerlink = '/my-info/history']")]
         public IWebElement TabHistory;
 
-        #region TabAccount
+        #region SidebarOnTabAccount
+
+        [FindsBy(How = How.XPath, Using = "//ul[@class = 'tab-container ng-star-inserted']//span[text() = 'Account']")]
+        public IWebElement ButtonAccountMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//ul[@class = 'tab-container ng-star-inserted']//span[text() = 'Password']")]
+        public IWebElement ButtonPasswordMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//ul[@class = 'tab-container ng-star-inserted']//span[text() = 'Billing details']")]
+        public IWebElement ButtonBillingDetailsMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//ul[@class = 'tab-container ng-star-inserted']//span[text() = 'Log Out']")]
+        public IWebElement ButtonLogOutMyAccntPgTabAccnt;
+
+        #endregion
+
+        #region TabAccountSectionAccount
 
         [FindsBy(How = How.XPath, Using = "//div[@class = 'profile-loadable-wrapper']//div[@class = 'cazamio-button-content']")]
         public IWebElement ButtonEditMyAccntPgTabAccnt;
@@ -43,11 +59,32 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         [FindsBy(How = How.XPath, Using = "//input[@id = 'birtday']")]
         public IWebElement FieldInputDateOfBirthMyAccntPgTabAccnt;
 
-        #endregion
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'address-acc']")]
+        public IWebElement FieldInputStreetMyAccntPgTabAccnt;
 
-        #region SectionAccount
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'city-acc']")]
+        public IWebElement FieldInputCityMyAccntPgTabAccnt;
 
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'state-acc']")]
+        public IWebElement FieldInputStateMyAccntPgTabAccnt;
 
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'zipcode-acc']")]
+        public IWebElement FieldInputZipCodeSectionYourCrrntAdrsMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//button[@id = 'action']")]
+        public IWebElement ButtonDropDownDoYouRentOrOwnThisPropertMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//div[text() = 'I rent this property']")]
+        public IWebElement ItemFromDrpDwnIRentThisPropertyDoYouRntMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//div[text() = 'I own this property']")]
+        public IWebElement ItemFromDrpDwnIOwnThisPropertyDoYouRntMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'accoumt-paid']")]
+        public IWebElement FieldInputPriceRentmortgageCostMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'add-address-account ng-star-inserted']//input[@id = 'zipcode-acc']")]
+        public IWebElement FieldInputZipCodeSectionDoYouRentOrOwnThisPropertMyAccntPgTabAccnt;
 
         #endregion
     }

@@ -1,4 +1,6 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProgect.PageObjects.DatePickerModalWindow;
+using CazamioProgect.PageObjects.EmailXitrooPage;
 using CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant;
 using CazamioProgect.PageObjects.GeneralPages.SignUpCazamioTenantPage;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant;
@@ -25,6 +27,9 @@ namespace CazamioProgect.PageObjects
 
             return page;
         }
+
+        public static DatePicker DatePicker => GetPage<DatePicker>();
+        public static EmailXitroo EmailXitroo => GetPage<EmailXitroo>();
 
         #region TenantWebSiteCazamio
 

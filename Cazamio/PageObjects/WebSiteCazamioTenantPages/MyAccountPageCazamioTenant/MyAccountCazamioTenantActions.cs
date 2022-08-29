@@ -48,7 +48,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
 
         #endregion
 
-        #region TabSectionAccount
+        #region TabAccountSectionAccount
 
         [AllureStep("ClickButtonEditMyAccntPgTabAccnt")]
         public MyAccountCazamioTenant ClickButtonEditMyAccntPgTabAccnt()
@@ -86,6 +86,32 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         public MyAccountCazamioTenant ClickFieldInputDateOfBirthMyAccntPgTabAccnt()
         {
             Button.Click(FieldInputDateOfBirthMyAccntPgTabAccnt);
+
+            return this;
+        }
+
+        [AllureStep("EnterStreetCityStateZipMyAccntPgTabAccnt")]
+        public MyAccountCazamioTenant EnterStreetCityStateZipCodeMyAccntPgTabAccnt()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputStreetMyAccntPgTabAccnt, TestDataForWebSiteCazamio.yourNewCurrentAddressStreetTerryLee);
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputCityMyAccntPgTabAccnt, TestDataForWebSiteCazamio.yourNewCurrentAddressCityTerryLee);
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputStateMyAccntPgTabAccnt, TestDataForWebSiteCazamio.yourNewCurrentAddressStateTerryLee);
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputZipCodeSectionYourCrrntAdrsMyAccntPgTabAccnt, TestDataForWebSiteCazamio.yourNewCurrentAddressZipTerryLee);
+
+            return this;
+        }
+
+        [AllureStep("SelectItemFromDropDownDoYouRentOrOwnThisProperty")]
+        public MyAccountCazamioTenant SelectItemFromDrpDwnIRentThisPropertyDoYouRntMyAccntPgTabAccnt()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            Button.Click(ButtonDropDownDoYouRentOrOwnThisPropertMyAccntPgTabAccnt);
+            WaitUntil.WaitSomeInterval(500);
+            Button.Click(ItemFromDrpDwnIOwnThisPropertyDoYouRntMyAccntPgTabAccnt);
 
             return this;
         }

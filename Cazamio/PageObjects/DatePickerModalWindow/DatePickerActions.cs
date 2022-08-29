@@ -26,7 +26,7 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
         public static IList<IWebElement> SelectorDaysPickerDaysSecondWeek(string _locationDay)
         {
             WaitUntil.WaitSomeInterval(1000);
-            var str = "//div[@id = 'cdk-overlay-3']//tbody[@class = 'mat-calendar-body']//tr[3]";
+            var str = "//div[@class = 'cdk-overlay-container']//tbody[@class = 'mat-calendar-body']//tr[3]";
             _element = Browser._Driver.FindElement(By.XPath(str));
             return _element.FindElements(By.XPath($".//td[contains(@class, '{_locationDay}')]"));
         }

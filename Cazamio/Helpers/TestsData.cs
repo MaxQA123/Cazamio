@@ -34,6 +34,16 @@ namespace CazamioProgect.Helpers
         public const string lastNameNewOccupantTerryLee = "Taylor";
         public const string phoneNumberNewOccupantTerryLee = "5151234321";
 
+        public const string yourCurrentCurrentAddressStreetTerryLee = "Frank";
+        public const string yourCurrentCurrentAddressCityTerryLee = "Saint-Germain-du-Corbéis";
+        public const string yourCurrentCurrentAddressStateTerryLee = "Normandy";
+        public const string yourCurrentCurrentAddressZipTerryLee = "61000";
+
+        public const string yourNewCurrentAddressStreetTerryLee = "Beaubien Street";
+        public const string yourNewCurrentAddressCityTerryLee = "Detroit Lakes";
+        public const string yourNewCurrentAddressStateTerryLee = "MN";
+        public const string yourNewCurrentAddressZipTerryLee = "56501";
+
         public const string emailOccupantLingredEndKetrin = "pakawes584@slvlog.com";
         public const string firstNameOccupantLingredEndKetrin = "Lingred-End";
 
@@ -62,4 +72,64 @@ namespace CazamioProgect.Helpers
     {
         public const string avatarImgTenant = $"\\UploadImages\\ImagePandaStudent.jpg";
     }
+
+    #region TestsDataForDatePickerTenant
+
+    public class DaysFirstWeekForDatePiker
+    {
+        public const int firstWeekfirstNumber = 0;
+        public const int firstWeeksecondNumber = 1;
+        public const int firstWeekthirdNumber = 2;
+        public const int firstWeekfourthNumber = 3;
+        public const int firstWeekfivethNumber = 4;
+        public const int firstWeekksixthNumber = 5;
+        public const int firstWeekseventhNumber = 6;
+
+    }
+
+    public class DaysSecondWeekForDatePiker
+    {
+        public const int secondWeekeighthNumber = 0;
+        public const int secondWeekninethNumber = 1;
+        public const int secondWeektenthNumber = 2;
+        public const int secondWeekeleventhNumber = 3;
+        public const int secondWeektwelvethNumber = 4;
+        public const int secondWeekthirteenthNumber = 5;
+        public const int secondWeekfourteenthNumber = 6;
+    }
+
+    public class DaysThirdWeekForDatePiker
+    {
+        public const int thirdWeekfiveteenthNumber = 0;
+        public const int thirdWeeksixteenthNumber = 1;
+        public const int thirdWeekseventeenthNumber = 2;
+        public const int thirdWeekeighteenthNumber = 3;
+        public const int thirdWeeknineteenthNumber = 4;
+        public const int thirdWeektwentythNumber = 5;
+        public const int thirdWeektwentyFirstNumber = 6;
+    }
+
+    public class DaysFourthWeekForDatePiker
+    {
+        public const int fourthWeektwentySecondNumber = 0;
+        public const int fourthWeektwentyThirdNumber = 1;
+        public const int fourthWeektwentyFourthNumber = 2;
+        public const int fourthWeektwentyFivethNumber = 3;
+        public const int fourthWeektwentySixthNumber = 4;
+        public const int fourthWeektwentySeventhNumber = 5;
+        public const int fourthWeektwentyEightthNumber = 6;
+    }
+
+    public class DaysFivethWeekForDatePiker
+    {
+        public const int fivethWeektwentyNinethNumber = 0;
+        public const int fivethWeekthirtyNumber = 1;
+        public const int fivethWeekthirtyFirstNumber = 2;
+        public const int fivethWeekthirtySecondNumber = 3;
+        public const int fivethWeekthirtyThirdNumber = 4;
+        public const int fivethWeekthirtyFourthNumber = 5;
+        public const int fivethWeekthirtyFivethNumber = 6;
+    }
+
+    #endregion
 }
