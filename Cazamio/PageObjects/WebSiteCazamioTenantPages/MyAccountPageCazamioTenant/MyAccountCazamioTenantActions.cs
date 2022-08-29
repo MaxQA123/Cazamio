@@ -116,6 +116,15 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
             return this;
         }
 
+        [AllureStep("EnterRentMortgageCostMyAccntPgTabAccnt")]
+        public MyAccountCazamioTenant EnterRentMortgageCostMyAccntPgTabAccnt()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputPriceRentMortgageCostMyAccntPgTabAccnt, GenerateRandomDataHelper.RandomCostRentMortgageCost(2));
+
+            return this;
+        }
+
         #endregion
 
     }

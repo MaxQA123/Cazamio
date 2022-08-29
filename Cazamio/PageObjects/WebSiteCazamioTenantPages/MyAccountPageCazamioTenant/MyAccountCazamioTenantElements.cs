@@ -81,7 +81,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         public IWebElement ItemFromDrpDwnIOwnThisPropertyDoYouRntMyAccntPgTabAccnt;
 
         [FindsBy(How = How.XPath, Using = "//input[@id = 'accoumt-paid']")]
-        public IWebElement FieldInputPriceRentmortgageCostMyAccntPgTabAccnt;
+        public IWebElement FieldInputPriceRentMortgageCostMyAccntPgTabAccnt;
 
         [FindsBy(How = How.XPath, Using = "//div[@class = 'add-address-account ng-star-inserted']//input[@id = 'zipcode-acc']")]
         public IWebElement FieldInputZipCodeSectionDoYouRentOrOwnThisPropertMyAccntPgTabAccnt;

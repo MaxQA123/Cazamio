@@ -117,10 +117,12 @@ namespace TenantCazamioTests
                 .EnterFirstLastNameEmailPhoneNumberMyAccntPgTabAccnt()
                 .SctollToDateOfBirth()
                 .ClickFieldInputDateOfBirthMyAccntPgTabAccnt();
-            Pages.DatePicker
+            Pages.DatePicker //Date of birth
                 .SelectDayOnDatePickerSecondWeek(DaysSecondWeekForDatePiker.secondWeekfourteenthNumber, "");
             Pages.MyAccountCazamioTenant
-                .EnterStreetCityStateZipCodeMyAccntPgTabAccnt();
+                .EnterStreetCityStateZipCodeMyAccntPgTabAccnt()
+                .SelectItemFromDrpDwnIRentThisPropertyDoYouRntMyAccntPgTabAccnt()
+                .EnterRentMortgageCostMyAccntPgTabAccnt();
 
             Thread.Sleep(5000);
         }

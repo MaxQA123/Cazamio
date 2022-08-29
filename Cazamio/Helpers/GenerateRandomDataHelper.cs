@@ -27,8 +27,8 @@ namespace CazamioProgect.Helpers
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        [AllureStep("RandomPriceInteger")]
-        public static string RandomPriceInteger(int size)
+        [AllureStep("RandomCostRentMortgageCost")]
+        public static string RandomCostRentMortgageCost(int size)
         {
             Random random = new Random();
             const string chars = "123456789";

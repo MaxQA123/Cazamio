@@ -13,11 +13,13 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
     {
         private static IWebElement _element;
 
+        #region SelectDay
+
         [AllureStep("SelectorDaysPickerDaysFirstWeek")]
         public static IList<IWebElement> SelectorDaysPickerDaysFirstWeek(string _locationDay)
         {
             WaitUntil.WaitSomeInterval(1000);
-            var str = "//div[@id = 'cdk-overlay-3']//tbody[@class = 'mat-calendar-body']//tr[2]";
+            var str = "//div[@id = 'cdk-overlay-container']//tbody[@class = 'mat-calendar-body']//tr[2]";
             _element = Browser._Driver.FindElement(By.XPath(str));
             return _element.FindElements(By.XPath($".//td[contains(@class, '{_locationDay}')]"));
         }
@@ -35,7 +37,7 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
         public static IList<IWebElement> SelectorDaysPickerDaysThirdWeek(string _locationDay)
         {
             WaitUntil.WaitSomeInterval(1000);
-            var str = "//div[@id = 'cdk-overlay-3']//tbody[@class = 'mat-calendar-body']//tr[4]";
+            var str = "//div[@id = 'cdk-overlay-container']//tbody[@class = 'mat-calendar-body']//tr[4]";
             _element = Browser._Driver.FindElement(By.XPath(str));
             return _element.FindElements(By.XPath($".//td[contains(@class, '{_locationDay}')]"));
         }
@@ -44,7 +46,7 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
         public static IList<IWebElement> SelectorDaysPickerDaysFourthWeek(string _locationDay)
         {
             WaitUntil.WaitSomeInterval(1000);
-            var str = "//div[@id = 'cdk-overlay-3']//tbody[@class = 'mat-calendar-body']//tr[5]";
+            var str = "//div[@id = 'cdk-overlay-container']//tbody[@class = 'mat-calendar-body']//tr[5]";
             _element = Browser._Driver.FindElement(By.XPath(str));
             return _element.FindElements(By.XPath($".//td[contains(@class, '{_locationDay}')]"));
         }
@@ -53,7 +55,7 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
         public static IList<IWebElement> SelectorDaysPickerDaysFivethWeek(string _locationDay)
         {
             WaitUntil.WaitSomeInterval(1000);
-            var str = "//div[@id = 'cdk-overlay-3']//tbody[@class = 'mat-calendar-body']//tr[6]";
+            var str = "//div[@id = 'cdk-overlay-container']//tbody[@class = 'mat-calendar-body']//tr[6]";
             _element = Browser._Driver.FindElement(By.XPath(str));
             return _element.FindElements(By.XPath($".//td[contains(@class, '{_locationDay}')]"));
         }
@@ -112,5 +114,65 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
 
             return this;
         }
+
+        #endregion
+
+        #region SelectYear
+
+        [AllureStep("SelectorYearsPickerYearsFirstLine")]
+        public static IList<IWebElement> SelectorYearsPickerYearsFirstLine(string _locationYear)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            var str = "//mat-multi-year-view[@class = 'ng-star-inserted']//tbody[@class = 'mat-calendar-body']//tr";
+            _element = Browser._Driver.FindElement(By.XPath(str));
+            return _element.FindElements(By.XPath($".//div[contains(@class, '{_locationYear}')]"));
+        }
+
+        [AllureStep("SelectorYearsPickerYearsSecondLine")]
+        public static IList<IWebElement> SelectorYearsPickerYearsSecondLine(string _locationYear)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            var str = "//mat-multi-year-view[@class = 'ng-star-inserted']//tbody[@class = 'mat-calendar-body']//tr[2]";
+            _element = Browser._Driver.FindElement(By.XPath(str));
+            return _element.FindElements(By.XPath($".//div[contains(@class, '{_locationYear}')]"));
+        }
+
+        [AllureStep("SelectorYearsPickerYearsThirdLine")]
+        public static IList<IWebElement> SelectorYearsPickerYearsThirdLine(string _locationYear)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            var str = "//mat-multi-year-view[@class = 'ng-star-inserted']//tbody[@class = 'mat-calendar-body']//tr[3]";
+            _element = Browser._Driver.FindElement(By.XPath(str));
+            return _element.FindElements(By.XPath($".//div[contains(@class, '{_locationYear}')]"));
+        }
+
+        [AllureStep("SelectorYearsPickerYearsFourthLine")]
+        public static IList<IWebElement> SelectorYearsPickerYearsFourthLine(string _locationYear)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            var str = "//mat-multi-year-view[@class = 'ng-star-inserted']//tbody[@class = 'mat-calendar-body']//tr[4]";
+            _element = Browser._Driver.FindElement(By.XPath(str));
+            return _element.FindElements(By.XPath($".//div[contains(@class, '{_locationYear}')]"));
+        }
+
+        [AllureStep("SelectorYearsPickerYersFivethLine")]
+        public static IList<IWebElement> SelectorYearsPickerYersFivethLine(string _locationYear)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            var str = "//mat-multi-year-view[@class = 'ng-star-inserted']//tbody[@class = 'mat-calendar-body']//tr[5]";
+            _element = Browser._Driver.FindElement(By.XPath(str));
+            return _element.FindElements(By.XPath($".//div[contains(@class, '{_locationYear}')]"));
+        }
+
+        [AllureStep("SelectorYearsPickerYearsFivethLine")]
+        public static IList<IWebElement> SelectorYearsPickerYearsFivethLine(string _locationYear)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            var str = "//mat-multi-year-view[@class = 'ng-star-inserted']//tbody[@class = 'mat-calendar-body']//tr[6]";
+            _element = Browser._Driver.FindElement(By.XPath(str));
+            return _element.FindElements(By.XPath($".//div[contains(@class, '{_locationYear}')]"));
+        }
+
+        #endregion
     }
 }

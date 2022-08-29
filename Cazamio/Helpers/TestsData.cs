@@ -52,6 +52,7 @@ namespace CazamioProgect.Helpers
 
         public const string emailGuarantorMarkLoyd = "senanam843@terasd.com";
         public const string firstNameGuarantorMarkLoyd = "Mark";
+
     }
 
     public class TestDataForWebSiteLandlord
