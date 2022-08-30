@@ -122,7 +122,14 @@ namespace TenantCazamioTests
             Pages.MyAccountCazamioTenant
                 .EnterStreetCityStateZipCodeMyAccntPgTabAccnt()
                 .SelectItemFromDrpDwnIRentThisPropertyDoYouRntMyAccntPgTabAccnt()
-                .EnterRentMortgageCostMyAccntPgTabAccnt();
+                .EnterRentMortgageCostMyAccntPgTabAccnt()
+                .ClickFieldInputLivingThereSinceMyAccntPgTabAccnt();
+            Pages.DatePicker //Living there since
+                .ClickButtonDropDownYearMonth()
+                .SelectYearsPickerYearsFirstLine(YearsFirstLineForDatePiker.firstLineFirstYear, "")
+                .SelectMonthPickerMonthFirstLine(MonthsFirstLineForDatePiker.firstLineFebruary, "");
+            Pages.MyAccountCazamioTenant
+                .EnterSectionReferenceNamePhnNmbrExtensionNmbrMyAccntPgTabAccnt();
 
             Thread.Sleep(5000);
         }

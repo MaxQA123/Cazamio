@@ -10,7 +10,13 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
 {
     public partial class DatePicker
     {
-        [FindsBy(How = How.XPath, Using = "")]
+        [FindsBy(How = How.XPath, Using = "//mat-datepicker-content//span[@class = 'mat-button-wrapper']")]
         public IWebElement ButtonDropDownYearMonth;
+
+        [FindsBy(How = How.XPath, Using = "//button[@aria-label = 'Previous year']")]
+        public IWebElement ButtonArrowPreviousYear;
+
+        [FindsBy(How = How.XPath, Using = "//button[@aria-label = 'Next year']")]
+        public IWebElement ButtonArrowNextYear;
     }
 }

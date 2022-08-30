@@ -11,9 +11,36 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
 {
     public partial class DatePicker
     {
-        private static IWebElement _element;
+        [AllureStep("ClickButtonDropDownYearMonth")]
+        public DatePicker ClickButtonDropDownYearMonth()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            Button.Click(ButtonDropDownYearMonth);
+
+            return this;
+        }
+
+        [AllureStep("ClickButtonArrowPreviousYear")]
+        public DatePicker ClickButtonArrowPreviousYear()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            Button.Click(ButtonArrowPreviousYear);
+
+            return this;
+        }
+
+        [AllureStep("ClickButtonArrowNextYear")]
+        public DatePicker ClickButtonArrowNextYear()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            Button.Click(ButtonArrowNextYear);
+
+            return this;
+        }
 
         #region SelectDay
+
+        private static IWebElement _element;
 
         [AllureStep("SelectorDaysPickerDaysFirstWeek")]
         public static IList<IWebElement> SelectorDaysPickerDaysFirstWeek(string _locationDay)
@@ -165,12 +192,142 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
         }
 
         [AllureStep("SelectorYearsPickerYearsFivethLine")]
-        public static IList<IWebElement> SelectorYearsPickerYearsFivethLine(string _locationYear)
+        public static IList<IWebElement> SelectorYearsPickerYearsSixthLine(string _locationYear)
         {
             WaitUntil.WaitSomeInterval(1000);
             var str = "//mat-multi-year-view[@class = 'ng-star-inserted']//tbody[@class = 'mat-calendar-body']//tr[6]";
             _element = Browser._Driver.FindElement(By.XPath(str));
             return _element.FindElements(By.XPath($".//div[contains(@class, '{_locationYear}')]"));
+        }
+
+        [AllureStep("SelectYearsPickerYearsFirstLine")]
+        public DatePicker SelectYearsPickerYearsFirstLine(int year, string locationYear)
+        {
+            WaitUntil.WaitSomeInterval(500);
+            IList<IWebElement> _year = SelectorYearsPickerYearsFirstLine(locationYear);
+
+            _year[year].Click();
+
+            return this;
+        }
+
+        [AllureStep("SelectYearsPickerYearsSecondLine")]
+        public DatePicker SelectYearsPickerYearsSecondLine(int year, string locationYear)
+        {
+            WaitUntil.WaitSomeInterval(500);
+            IList<IWebElement> _year = SelectorYearsPickerYearsSecondLine(locationYear);
+
+            _year[year].Click();
+
+            return this;
+        }
+
+        [AllureStep("SelectYearsPickerYearsThirdLine")]
+        public DatePicker SelectYearsPickerYearsThirdLine(int year, string locationYear)
+        {
+            WaitUntil.WaitSomeInterval(500);
+            IList<IWebElement> _year = SelectorYearsPickerYearsThirdLine(locationYear);
+
+            _year[year].Click();
+
+            return this;
+        }
+
+        [AllureStep("SelectYearsPickerYearsFourthLine")]
+        public DatePicker SelectYearsPickerYearsFourthLine(int year, string locationYear)
+        {
+            WaitUntil.WaitSomeInterval(500);
+            IList<IWebElement> _year = SelectorYearsPickerYearsFourthLine(locationYear);
+
+            _year[year].Click();
+
+            return this;
+        }
+
+        [AllureStep("SelectYearsPickerYersFivethLine")]
+        public DatePicker SelectYearsPickerYersFivethLine(int year, string locationYear)
+        {
+            WaitUntil.WaitSomeInterval(500);
+            IList<IWebElement> _year = SelectorYearsPickerYersFivethLine(locationYear);
+
+            _year[year].Click();
+
+            return this;
+        }
+
+        [AllureStep("SelectYearsPickerYearsSixthLine")]
+        public DatePicker SelectYearsPickerYearsSixthLine(int year, string locationYear)
+        {
+            WaitUntil.WaitSomeInterval(500);
+            IList<IWebElement> _year = SelectorYearsPickerYearsSixthLine(locationYear);
+
+            _year[year].Click();
+
+            return this;
+        }
+
+        #endregion
+
+        #region SelectMonth
+
+        [AllureStep("SelectorMonthPickerMonthFirstLine")]
+        public static IList<IWebElement> SelectorMonthPickerMonthFirstLine(string _locationYear)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            var str = "//mat-year-view//tbody//tr[2]";
+            _element = Browser._Driver.FindElement(By.XPath(str));
+            return _element.FindElements(By.XPath($".//div[contains(@class, '{_locationYear}')]"));
+        }
+
+        [AllureStep("SelectorMonthPickerMonthSecondLine")]
+        public static IList<IWebElement> SelectorMonthPickerMonthSecondLine(string _locationYear)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            var str = "//mat-year-view//tbody//tr[3]";
+            _element = Browser._Driver.FindElement(By.XPath(str));
+            return _element.FindElements(By.XPath($".//div[contains(@class, '{_locationYear}')]"));
+        }
+
+        [AllureStep("SelectorMonthPickerMonthThirdLine")]
+        public static IList<IWebElement> SelectorMonthPickerMonthThirdLine(string _locationYear)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            var str = "//mat-year-view//tbody//tr[4]";
+            _element = Browser._Driver.FindElement(By.XPath(str));
+            return _element.FindElements(By.XPath($".//div[contains(@class, '{_locationYear}')]"));
+        }
+
+        [AllureStep("SelectMonthPickerMonthFirstLine")]
+        public DatePicker SelectMonthPickerMonthFirstLine(int month, string locationMonth)
+        {
+            WaitUntil.WaitSomeInterval(500);
+            IList<IWebElement> _month = SelectorMonthPickerMonthFirstLine(locationMonth);
+
+            _month[month].Click();
+
+            return this;
+        }
+
+        [AllureStep("SelectMonthPickerMonthSecondtLine")]
+        public DatePicker SelectMonthPickerMonthSecondtLine(int month, string locationMonth)
+        {
+            WaitUntil.WaitSomeInterval(500);
+            IList<IWebElement> _month = SelectorMonthPickerMonthSecondLine(locationMonth);
+
+            _month[month].Click();
+
+            return this;
+        }
+
+        [AllureStep("SelectMonthPickerMonthThirdLine")]
+        public DatePicker SelectMonthPickerMonthThirdLine(int month, string locationMonth)
+        {
+            WaitUntil.WaitSomeInterval(500);
+            IList<IWebElement> _month = SelectorMonthPickerMonthThirdLine(locationMonth);
+
+            _month[month].Click();
+
+            return this;
         }
 
         #endregion

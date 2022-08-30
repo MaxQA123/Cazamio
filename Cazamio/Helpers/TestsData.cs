@@ -43,6 +43,9 @@ namespace CazamioProgect.Helpers
         public const string yourNewCurrentAddressCityTerryLee = "Detroit Lakes";
         public const string yourNewCurrentAddressStateTerryLee = "MN";
         public const string yourNewCurrentAddressZipTerryLee = "56501";
+        public const string sectionReferenceNameTerryLee = "Duglas";
+        public const string sectionReferencePhoneNumberTerryLee = "5857771234";
+        public const string sectionReferenceExtensionNumberTerryLee = "212";
 
         public const string emailOccupantLingredEndKetrin = "pakawes584@slvlog.com";
         public const string firstNameOccupantLingredEndKetrin = "Lingred-End";
@@ -74,7 +77,7 @@ namespace CazamioProgect.Helpers
         public const string avatarImgTenant = $"\\UploadImages\\ImagePandaStudent.jpg";
     }
 
-    #region TestsDataForDatePickerTenant
+    #region TestsDataDaysForDatePickerTenant
 
     public class DaysFirstWeekForDatePiker
     {
@@ -130,6 +133,88 @@ namespace CazamioProgect.Helpers
         public const int fivethWeekthirtyThirdNumber = 4;
         public const int fivethWeekthirtyFourthNumber = 5;
         public const int fivethWeekthirtyFivethNumber = 6;
+    }
+
+    #endregion
+
+    #region TestsDataYearsForDatePickerTenant
+
+    public class YearsFirstLineForDatePiker
+    {
+        public const int firstLineFirstYear = 0;
+        public const int firstLineSecondYear = 1;
+        public const int firstLineThirdYear = 2;
+        public const int firstLineFourthYear = 3;
+
+    }
+
+    public class YearsSecondLineForDatePiker
+    {
+        public const int secondLineFirstYear = 0;
+        public const int secondLineSecondYear = 1;
+        public const int secondLineThirdYear = 2;
+        public const int secondLineFourthYear = 3;
+    }
+
+    public class YearsThirdLineForDatePiker
+    {
+        public const int thirdLineFirstYear = 0;
+        public const int thirdLineSecondYear = 1;
+        public const int thirdLineThirdYear = 2;
+        public const int thirdLineFourthYear = 3;
+    }
+
+    public class YearsFourthLineForDatePiker
+    {
+        public const int fourthLineFirstYear = 0;
+        public const int fourthLineSecondYear = 1;
+        public const int fourthLineThirdYear = 2;
+        public const int fourthLineFourthYear = 3;
+    }
+
+    public class YearsFivethLineForDatePiker
+    {
+        public const int fivethLineFirstYear = 0;
+        public const int fivethLineSecondYear = 1;
+        public const int fivethLineThirdYear = 2;
+        public const int fivethLineFourthYear = 3;
+    }
+
+    public class YearsSixthLineForDatePiker
+    {
+        public const int sixthLineFirstYear = 0;
+        public const int sixthLineSecondYear = 1;
+        public const int sixthLineThirdYear = 2;
+        public const int sixthLineFourthYear = 3;
+    }
+
+    #endregion
+
+    #region TestsDataMonthsForDatePickerTenant
+
+    public class MonthsFirstLineForDatePiker
+    {
+        public const int firstLineJanuary = 0;
+        public const int firstLineFebruary = 1;
+        public const int firstLineMarch = 2;
+        public const int firstLineApril = 3;
+
+    }
+
+    public class MonthsSecondLineForDatePiker
+    {
+        public const int secondLineMay = 0;
+        public const int secondLineJune = 1;
+        public const int secondLineJuly = 2;
+        public const int secondLineAugust = 3;
+    }
+
+    public class MonthsThirdLineForDatePiker
+    {
+        public const int thirdLineSeptember = 0;
+        public const int thirdLineOctober = 1;
+        public const int thirdLineNovember = 2;
+        public const int thirdLineDecember = 3;
     }
 
     #endregion

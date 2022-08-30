@@ -59,6 +59,9 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         [FindsBy(How = How.XPath, Using = "//input[@id = 'birtday']")]
         public IWebElement FieldInputDateOfBirthMyAccntPgTabAccnt;
 
+        [FindsBy(How = How.XPath, Using = "//input[@id= 'date-address']")]
+        public IWebElement FieldInputLivingThereSinceMyAccntPgTabAccnt;
+
         [FindsBy(How = How.XPath, Using = "//input[@id = 'address-acc']")]
         public IWebElement FieldInputStreetMyAccntPgTabAccnt;
 
@@ -85,6 +88,15 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
 
         [FindsBy(How = How.XPath, Using = "//div[@class = 'add-address-account ng-star-inserted']//input[@id = 'zipcode-acc']")]
         public IWebElement FieldInputZipCodeSectionDoYouRentOrOwnThisPropertMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'name-address']")]
+        public IWebElement FieldInputNameSectionReferenceMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'basic-info-phone-address']")]
+        public IWebElement FieldInputPhnNmbrSectionReferenceMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'landLordExtensionNumber']")]
+        public IWebElement FieldInputExtensionNmbrSectionReferenceMyAccntPgTabAccnt;
 
         #endregion
     }

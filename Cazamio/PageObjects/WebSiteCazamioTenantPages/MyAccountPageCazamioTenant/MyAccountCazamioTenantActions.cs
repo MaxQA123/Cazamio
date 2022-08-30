@@ -90,6 +90,15 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
             return this;
         }
 
+        [AllureStep("ClickFieldInputLivingThereSinceMyAccntPgTabAccnt")]
+        public MyAccountCazamioTenant ClickFieldInputLivingThereSinceMyAccntPgTabAccnt()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            Button.Click(FieldInputLivingThereSinceMyAccntPgTabAccnt);
+
+            return this;
+        }
+
         [AllureStep("EnterStreetCityStateZipMyAccntPgTabAccnt")]
         public MyAccountCazamioTenant EnterStreetCityStateZipCodeMyAccntPgTabAccnt()
         {
@@ -101,6 +110,19 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
             InputGeneral.InputFunctionWithClear(FieldInputStateMyAccntPgTabAccnt, TestDataForWebSiteCazamio.yourNewCurrentAddressStateTerryLee);
             WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputZipCodeSectionYourCrrntAdrsMyAccntPgTabAccnt, TestDataForWebSiteCazamio.yourNewCurrentAddressZipTerryLee);
+
+            return this;
+        }
+
+        [AllureStep("EnterSectionReferenceNamePhnNmbrExtensionNmbrMyAccntPgTabAccnt")]
+        public MyAccountCazamioTenant EnterSectionReferenceNamePhnNmbrExtensionNmbrMyAccntPgTabAccnt()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputNameSectionReferenceMyAccntPgTabAccnt, TestDataForWebSiteCazamio.sectionReferenceNameTerryLee);
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputPhnNmbrSectionReferenceMyAccntPgTabAccnt, TestDataForWebSiteCazamio.sectionReferencePhoneNumberTerryLee);
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputExtensionNmbrSectionReferenceMyAccntPgTabAccnt, TestDataForWebSiteCazamio.sectionReferenceExtensionNumberTerryLee);
 
             return this;
         }
@@ -121,6 +143,8 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         {
             WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputPriceRentMortgageCostMyAccntPgTabAccnt, GenerateRandomDataHelper.RandomCostRentMortgageCost(2));
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputZipCodeSectionDoYouRentOrOwnThisPropertMyAccntPgTabAccnt, TestDataForWebSiteCazamio.yourCurrentCurrentAddressZipTerryLee);
 
             return this;
         }
