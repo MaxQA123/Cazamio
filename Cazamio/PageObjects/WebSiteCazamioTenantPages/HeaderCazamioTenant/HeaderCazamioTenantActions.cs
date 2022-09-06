@@ -45,5 +45,14 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTena
 
             return this;
         }
+
+        [AllureStep("SctollToButtonMyApplicationsHdrCzmTnntn")]
+        public HeaderCazamioTenant SctollToButtonMyApplicationsHdrCzmTnntn()
+        {
+            WaitUntil.WaitSomeInterval(250);
+            ScrollingJScriptExecutorHelper.ScrollToElement(ButtonMyApplicationsHdrCzmTnnt);
+
+            return this;
+        }
     }
 }

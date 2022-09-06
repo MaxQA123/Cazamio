@@ -69,5 +69,37 @@ namespace CazamioProgect.Helpers
 
         }
 
+        public static void CustomElementIsInVisible(IWebElement element, int seconds = 10)
+        {
+            WebDriverWait wait = new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds));
+            wait.PollingInterval = TimeSpan.FromMilliseconds(100);
+            try
+            {
+                wait.Until(e =>
+                {
+                    try
+                    {
+                        if (element.Enabled == false)
+                        {
+                            return false;
+                        }
+                        return true;
+                    }
+                    catch (NoSuchElementException)
+                    {
+                        return true;
+                    }
+                    catch (StaleElementReferenceException)
+                    {
+                        return true;
+                    }
+
+                });
+            }
+            catch (NoSuchElementException) { }
+            catch (StaleElementReferenceException) { }
+
+        }
+
     }
 }

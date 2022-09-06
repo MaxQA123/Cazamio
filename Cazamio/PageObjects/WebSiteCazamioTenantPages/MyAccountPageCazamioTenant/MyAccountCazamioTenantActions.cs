@@ -1,8 +1,10 @@
 ﻿using CazamioProgect.Helpers;
 using NUnit.Allure.Attributes;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,6 +52,15 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
 
         #region TabAccountSectionAccount
 
+        [AllureStep("UploadImageForTenant")]
+        public MyAccountCazamioTenant UploadImageForTenant()
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            IconForUploadingImage.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.avatarImgTenant));
+
+            return this;
+        }
+
         [AllureStep("ClickButtonEditMyAccntPgTabAccnt")]
         public MyAccountCazamioTenant ClickButtonEditMyAccntPgTabAccnt()
         {
@@ -66,7 +77,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
             WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputLastNameMyAccntPgTabAccnt, TestDataForWebSiteCazamio.lastNameNewOccupantTerryLee);
             WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputEmailMyAccntPgTabAccnt, TestDataForWebSiteCazamio.emailNewOccupantTerryLee);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailMyAccntPgTabAccnt, TestDataForWebSiteCazamio.emailCurrentOccupantTerryLee);
             WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputPhoneNumberMyAccntPgTabAccnt, TestDataForWebSiteCazamio.phoneNumberNewOccupantTerryLee);
 
@@ -78,6 +89,15 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         {
             WaitUntil.WaitSomeInterval(250);
             ScrollingJScriptExecutorHelper.ScrollToElement(FieldInputFirsNameMyAccntPgTabAccnt);
+
+            return this;
+        }
+
+        [AllureStep("SctollToButtonSaveCancel")]
+        public MyAccountCazamioTenant SctollToButtonSaveCancel()
+        {
+            WaitUntil.WaitSomeInterval(250);
+            ScrollingJScriptExecutorHelper.ScrollToElement(ButtonSaveMyAccntPgTabAccnt);
 
             return this;
         }
@@ -102,13 +122,9 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         [AllureStep("EnterStreetCityStateZipMyAccntPgTabAccnt")]
         public MyAccountCazamioTenant EnterStreetCityStateZipCodeMyAccntPgTabAccnt()
         {
-            WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputStreetMyAccntPgTabAccnt, TestDataForWebSiteCazamio.yourNewCurrentAddressStreetTerryLee);
-            WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputCityMyAccntPgTabAccnt, TestDataForWebSiteCazamio.yourNewCurrentAddressCityTerryLee);
-            WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputStateMyAccntPgTabAccnt, TestDataForWebSiteCazamio.yourNewCurrentAddressStateTerryLee);
-            WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputZipCodeSectionYourCrrntAdrsMyAccntPgTabAccnt, TestDataForWebSiteCazamio.yourNewCurrentAddressZipTerryLee);
 
             return this;
@@ -145,6 +161,18 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
             InputGeneral.InputFunctionWithClear(FieldInputPriceRentMortgageCostMyAccntPgTabAccnt, GenerateRandomDataHelper.RandomCostRentMortgageCost(2));
             WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputZipCodeSectionDoYouRentOrOwnThisPropertMyAccntPgTabAccnt, TestDataForWebSiteCazamio.yourCurrentCurrentAddressZipTerryLee);
+
+            return this;
+        }
+
+        [AllureStep("ClickButtonSaveMyAccntPgTabAccnt")]
+        public MyAccountCazamioTenant ClickButtonSaveMyAccntPgTabAccnt()
+        {
+            WaitUntil.CustomElementIsInVisible(ErrorStreetIsRequiredMyAccntPgTabAccnt);
+            ButtonSaveMyAccntPgTabAccnt.SendKeys("");
+            Button.Click(ButtonSaveMyAccntPgTabAccnt);
+
+            Assert.IsTrue(!ErrorStreetIsRequiredMyAccntPgTabAccnt.Enabled, ErrorStreetIsRequiredMyAccntPgTabAccnt.Text);
 
             return this;
         }

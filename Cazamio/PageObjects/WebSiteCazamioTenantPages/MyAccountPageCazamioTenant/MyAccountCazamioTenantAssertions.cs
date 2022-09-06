@@ -46,6 +46,16 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
             return this;
         }
 
+        [AllureStep("VerifyEnterData")]
+        public MyAccountCazamioTenant VerifyEnterData()
+        {
+            WaitUntil.WaitSomeInterval(250);
+            Assert.IsTrue(!ErrorStreetIsRequiredMyAccntPgTabAccnt.Enabled, ErrorStreetIsRequiredMyAccntPgTabAccnt.Text);
+            
+            WaitUntil.WaitSomeInterval(250);
+            Assert.IsTrue(!ErrorStreetIsRequiredMyAccntPgTabAccnt.Enabled, ErrorStreetIsRequiredMyAccntPgTabAccnt.Text);
+        }
+
         #endregion
     }
 }

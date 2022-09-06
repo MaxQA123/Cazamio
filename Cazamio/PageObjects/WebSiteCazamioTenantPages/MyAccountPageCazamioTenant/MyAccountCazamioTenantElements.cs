@@ -25,6 +25,9 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
 
         #region SidebarOnTabAccount
 
+        [FindsBy(How = How.XPath, Using = "//input[@id= 'upload-account-photo']")]
+        public IWebElement IconForUploadingImage;
+
         [FindsBy(How = How.XPath, Using = "//ul[@class = 'tab-container ng-star-inserted']//span[text() = 'Account']")]
         public IWebElement ButtonAccountMyAccntPgTabAccnt;
 
@@ -98,6 +101,40 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         [FindsBy(How = How.XPath, Using = "//input[@id = 'landLordExtensionNumber']")]
         public IWebElement FieldInputExtensionNmbrSectionReferenceMyAccntPgTabAccnt;
 
+        [FindsBy(How = How.XPath, Using = "//cazamio-button[@class = 'default middle primary-action relative-loader ng-star-inserted']//button")]
+        public IWebElement ButtonSaveMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//span[text() = 'Cancel']")]
+        public IWebElement ButtonCancelMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'input-msg-error ng-star-inserted')]/span[text() = 'First Name is required']")]
+        public IWebElement ErrorFirstNameIsRequiredMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'input-msg-error ng-star-inserted')]/span[text() = 'First Name is required']")]
+        public IWebElement ErrorLastNameIsRequiredMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'input-msg-error ng-star-inserted')]/span[text() = 'Email address is required']")]
+        public IWebElement ErrorEmailAddressIsRequiredMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//div[text() = 'Phone field is invalid']")]
+        public IWebElement ErrorPhoneАieldШsШnvalidBaseMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'input-msg-error ng-star-inserted')]/span[text() = 'Street is required']")]
+        public IWebElement ErrorStreetIsRequiredMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'input-msg-error ng-star-inserted')]/span[text() = 'City is required']")]
+        public IWebElement ErrorCityIsRequiredMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'input-msg-error ng-star-inserted')]/span[text() = 'State is required']")]
+        public IWebElement ErrorStateIsRequiredMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'input-msg-error ng-star-inserted')]/span[text() = 'Zip Code is required']")]
+        public IWebElement ErrorZipCodeIsRequiredMyAccntPgTabAccnt;
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'input-msg-error ng-star-inserted')]/span[text() = 'Phone field is invalid']")]
+        public IWebElement ErrorPhoneFieldIsInvalidReferenceMyAccntPgTabAccnt;
+
+        
         #endregion
     }
 }

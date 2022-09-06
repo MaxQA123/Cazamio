@@ -1,5 +1,6 @@
 ﻿using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace CazamioProgect.Helpers
         [AllureStep("InputFunctionWithClear")]
         public static void InputFunctionWithClear(IWebElement element, string text)
         {
+            WaitUntil.WaitSomeInterval(250);
             WaitUntil.ElementIsClickable(element);
             element.Clear();
             element.SendKeys(text);
@@ -34,6 +36,34 @@ namespace CazamioProgect.Helpers
             WaitUntil.CustomElementIsVisible(element);
             WaitUntil.WaitSomeInterval(250);
             element.Click();
+        }
+    }
+
+    public class KeyBoardActions
+    {
+        //[AllureStep("InputFunctionWithoutClearSec")]
+        //public static void InputFunctionWithoutClearSec(IWebElement element)
+        //{
+        //    WaitUntil.ElementIsClickable(element);
+        //    element.SendKeys(Keys.Enter);
+        //}
+
+        [AllureStep("ClickArrowRight")]
+        public static void ClickArrowRight()
+        {
+            new Actions(Browser._Driver)
+                .SendKeys(Keys.ArrowRight)
+                .Build()
+                .Perform();
+        }
+
+        [AllureStep("ClickEnterButton")]
+        public static void ClickEnterButton()
+        {
+            new Actions(Browser._Driver)
+                .SendKeys(Keys.Enter)
+                .Build()
+                .Perform();
         }
     }
 

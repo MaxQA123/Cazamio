@@ -1,0 +1,1045 @@
+{
+  "uuid": "f3fc430d-5f60-4eca-951d-95bfb0472fb5-tr-0-1003",
+  "historyId": "TenantCazamioTests.TestsBaseWeb.EditPageMyAccountTabSectionAccount",
+  "fullName": "TenantCazamioTests.TestsBaseWeb.EditPageMyAccountTabSectionAccount",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "TenantCazamioTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "EditPageMyAccountTabSectionAccount"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "WebSiteCazamioTenant"
+    },
+    {
+      "name": "subSuite",
+      "value": "EditPageMyAccountTabSectionAccount"
+    }
+  ],
+  "links": [],
+  "name": "EditPageMyAccountTabSectionAccount",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//div[@id = 'cdk-overlay-container']//tbody[@class = 'mat-calendar-body']//tr[2]\"}\n  (Session info: chrome=105.0.5195.102)",
+    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstWeek_100663377_o(String _locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 50\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstWeek_100663377_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstWeek_100663377_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.SelectorDaysPickerDaysFirstWeek(String _locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 16\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstWeek_100663382_o(Int32 day, String locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 94\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstWeek_100663382_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstWeek_100663382_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.SelectDayOnDatePickerFirstWeek(Int32 day, String locationDay)\r\n   at TenantCazamioTests.TestsBaseWeb.EditPageMyAccountTabSectionAccount() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 128"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "EditPageMyAccountTabSectionAccount",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//div[@id = 'cdk-overlay-container']//tbody[@class = 'mat-calendar-body']//tr[2]\"}\n  (Session info: chrome=105.0.5195.102)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstWeek_100663377_o(String _locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 50\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstWeek_100663377_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstWeek_100663377_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.SelectorDaysPickerDaysFirstWeek(String _locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 16\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstWeek_100663382_o(Int32 day, String locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 94\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstWeek_100663382_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstWeek_100663382_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.SelectDayOnDatePickerFirstWeek(Int32 day, String locationDay)\r\n   at TenantCazamioTests.TestsBaseWeb.EditPageMyAccountTabSectionAccount() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 128"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "ClickButtonLogInHdrCzmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456054853,
+          "stop": 1662456056384
+        },
+        {
+          "name": "EnterEmailPasswordOnLgInAsOccupantCzmTnntTL",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElement",
+                  "value": "Element (id = f5cb9298-044c-4a12-93b2-bcd4bd9f1801)"
+                },
+                {
+                  "name": "String",
+                  "value": "jikoga5194@tinydef.com"
+                }
+              ],
+              "start": 1662456057536,
+              "stop": 1662456057986
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElement",
+                  "value": "Element (id = f235e56f-26c3-403d-a31a-2a28db3bf35b)"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1662456058531,
+              "stop": 1662456058739
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456056386,
+          "stop": 1662456058739
+        },
+        {
+          "name": "ClickIconShowLgInCazmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456058740,
+          "stop": 1662456059360
+        },
+        {
+          "name": "SetCheckBoxRememberMeLgInCazmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456059361,
+          "stop": 1662456060023
+        },
+        {
+          "name": "ClickButtonLogInLgInCazmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456060024,
+          "stop": 1662456060974
+        },
+        {
+          "name": "ClickButtonMyApplicationsHdrCzmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456060975,
+          "stop": 1662456063960
+        },
+        {
+          "name": "ClickTabAccountOnMyAccntPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1662456063963,
+              "stop": 1662456065817
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456063962,
+          "stop": 1662456065817
+        },
+        {
+          "name": "GetFirstNameFromMyAccount",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456065819,
+          "stop": 1662456066446
+        },
+        {
+          "name": "VerifyOccupantFirstNameTL",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Terry"
+            }
+          ],
+          "start": 1662456066448,
+          "stop": 1662456066981
+        },
+        {
+          "name": "ClickButtonEditMyAccntPgTabAccnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1662456066982,
+              "stop": 1662456067747
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456066982,
+          "stop": 1662456067747
+        },
+        {
+          "name": "UploadImageForTenant",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456067747,
+          "stop": 1662456069076
+        },
+        {
+          "name": "EnterFirstLastNameEmailPhoneNumberMyAccntPgTabAccnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Elizabeth"
+                }
+              ],
+              "start": 1662456069598,
+              "stop": 1662456070005
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Taylor"
+                }
+              ],
+              "start": 1662456070518,
+              "stop": 1662456070830
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "jikoga5194@tinydef.com"
+                }
+              ],
+              "start": 1662456071333,
+              "stop": 1662456072132
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "5151234321"
+                }
+              ],
+              "start": 1662456072663,
+              "stop": 1662456073190
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456069077,
+          "stop": 1662456073190
+        },
+        {
+          "name": "SctollToDateOfBirth",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "ScrollToElement",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1662456073461,
+              "stop": 1662456073492
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456073190,
+          "stop": 1662456073493
+        },
+        {
+          "name": "ClickFieldInputDateOfBirthMyAccntPgTabAccnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1662456073494,
+              "stop": 1662456074075
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456073493,
+          "stop": 1662456074075
+        },
+        {
+          "name": "SelectDayOnDatePickerSecondWeek",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "SelectorDaysPickerDaysSecondWeek",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "String",
+                  "value": ""
+                }
+              ],
+              "start": 1662456074593,
+              "stop": 1662456075665
+            }
+          ],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "6"
+            },
+            {
+              "name": "String",
+              "value": ""
+            }
+          ],
+          "start": 1662456074077,
+          "stop": 1662456075874
+        },
+        {
+          "name": "EnterStreetCityStateZipMyAccntPgTabAccnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Beaubien Street"
+                }
+              ],
+              "start": 1662456076378,
+              "stop": 1662456076879
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Detroit Lakes"
+                }
+              ],
+              "start": 1662456077390,
+              "stop": 1662456077697
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "MN"
+                }
+              ],
+              "start": 1662456078203,
+              "stop": 1662456078438
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "56501"
+                }
+              ],
+              "start": 1662456078939,
+              "stop": 1662456079227
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456075875,
+          "stop": 1662456079227
+        },
+        {
+          "name": "SelectItemFromDropDownDoYouRentOrOwnThisProperty",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1662456079743,
+              "stop": 1662456080161
+            },
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1662456080677,
+              "stop": 1662456081089
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456079227,
+          "stop": 1662456081089
+        },
+        {
+          "name": "EnterRentMortgageCostMyAccntPgTabAccnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "RandomCostRentMortgageCost",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "2"
+                }
+              ],
+              "start": 1662456081613,
+              "stop": 1662456081624
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "98"
+                }
+              ],
+              "start": 1662456081624,
+              "stop": 1662456081847
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "61000"
+                }
+              ],
+              "start": 1662456082350,
+              "stop": 1662456082641
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456081090,
+          "stop": 1662456082641
+        },
+        {
+          "name": "ClickFieldInputLivingThereSinceMyAccntPgTabAccnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1662456083158,
+              "stop": 1662456083667
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456082642,
+          "stop": 1662456083667
+        },
+        {
+          "name": "ClickButtonDropDownYearMonth",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1662456084174,
+              "stop": 1662456084657
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1662456083668,
+          "stop": 1662456084657
+        },
+        {
+          "name": "SelectYearsPickerYearsFirstLine",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "SelectorYearsPickerYearsFirstLine",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "String",
+                  "value": ""
+                }
+              ],
+              "start": 1662456085166,
+              "stop": 1662456086235
+            }
+          ],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "0"
+            },
+            {
+              "name": "String",
+              "value": ""
+            }
+          ],
+          "start": 1662456084658,
+          "stop": 1662456086360
+        },
+        {
+          "name": "SelectMonthPickerMonthFirstLine",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "SelectorMonthPickerMonthFirstLine",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "String",
+                  "value": ""
+                }
+              ],
+              "start": 1662456086874,
+              "stop": 1662456087924
+            }
+          ],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            },
+            {
+              "name": "String",
+              "value": ""
+            }
+          ],
+          "start": 1662456086360,
+          "stop": 1662456088051
+        },
+        {
+          "name": "SelectDayOnDatePickerFirstWeek",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//div[@id = 'cdk-overlay-container']//tbody[@class = 'mat-calendar-body']//tr[2]\"}\n  (Session info: chrome=105.0.5195.102)",
+            "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstWeek_100663377_o(String _locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 50\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstWeek_100663377_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstWeek_100663377_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.SelectorDaysPickerDaysFirstWeek(String _locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 16\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstWeek_100663382_o(Int32 day, String locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 94\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstWeek_100663382_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "SelectorDaysPickerDaysFirstWeek",
+              "status": "failed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false,
+                "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//div[@id = 'cdk-overlay-container']//tbody[@class = 'mat-calendar-body']//tr[2]\"}\n  (Session info: chrome=105.0.5195.102)",
+                "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstWeek_100663377_o(String _locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 50\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstWeek_100663377_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "String",
+                  "value": ""
+                }
+              ],
+              "start": 1662456088559,
+              "stop": 1662456089646
+            }
+          ],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            },
+            {
+              "name": "String",
+              "value": ""
+            }
+          ],
+          "start": 1662456088052,
+          "stop": 1662456089649
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "12fad03cff2042d988ca8f5bbb14d2d5-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1662456049934,
+      "stop": 1662456090239
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1662456049933,
+  "stop": 1662456090246
+}

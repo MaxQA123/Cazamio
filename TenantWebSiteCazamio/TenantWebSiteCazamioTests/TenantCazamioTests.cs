@@ -114,6 +114,7 @@ namespace TenantCazamioTests
 
             Pages.MyAccountCazamioTenant
                 .ClickButtonEditMyAccntPgTabAccnt()
+                .UploadImageForTenant()
                 .EnterFirstLastNameEmailPhoneNumberMyAccntPgTabAccnt()
                 .SctollToDateOfBirth()
                 .ClickFieldInputDateOfBirthMyAccntPgTabAccnt();
@@ -128,10 +129,16 @@ namespace TenantCazamioTests
                 .ClickButtonDropDownYearMonth()
                 .SelectYearsPickerYearsFirstLine(YearsFirstLineForDatePiker.firstLineFirstYear, "")
                 .SelectMonthPickerMonthFirstLine(MonthsFirstLineForDatePiker.firstLineFebruary, "");
+            KeyBoardActions
+                .ClickArrowRight();
+            KeyBoardActions
+                .ClickEnterButton();
             Pages.MyAccountCazamioTenant
                 .EnterSectionReferenceNamePhnNmbrExtensionNmbrMyAccntPgTabAccnt();
+            Pages.MyAccountCazamioTenant
+                .ClickButtonSaveMyAccntPgTabAccnt();
 
-            Thread.Sleep(5000);
+            Thread.Sleep(10000);
         }
     }
 }

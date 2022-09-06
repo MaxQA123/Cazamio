@@ -46,5 +46,12 @@ namespace CazamioProgect.Helpers
             IJavaScriptExecutor js = (IJavaScriptExecutor)Browser._Driver;
             js.ExecuteScript("window.scrollBy(0, 1000)");
         }
+
+        [AllureStep("ScrollToUpWebPage")]
+        public static void ScrollToUpWebPage()
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Browser._Driver;
+            js.ExecuteScript("window.scrollBy(0, -1500)");
+        }
     }
 }

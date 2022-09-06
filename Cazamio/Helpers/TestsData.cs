@@ -74,7 +74,7 @@ namespace CazamioProgect.Helpers
 
     public class UploadImages
     {
-        public const string avatarImgTenant = $"\\UploadImages\\ImagePandaStudent.jpg";
+        public const string avatarImgTenant = $"\\UploadImages\\TenantImgEnot.jpg";
     }
 
     #region TestsDataDaysForDatePickerTenant
