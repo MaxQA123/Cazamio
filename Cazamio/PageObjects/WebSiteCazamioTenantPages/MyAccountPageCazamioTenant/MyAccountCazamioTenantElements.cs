@@ -107,6 +107,9 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         [FindsBy(How = How.XPath, Using = "//span[text() = 'Cancel']")]
         public IWebElement ButtonCancelMyAccntPgTabAccnt;
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'input-msg-error ng-star-inserted')]")]
+        public IWebElement ErrorMyAccntPgTabAccnt;
+
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'input-msg-error ng-star-inserted')]/span[text() = 'First Name is required']")]
         public IWebElement ErrorFirstNameIsRequiredMyAccntPgTabAccnt;
 
@@ -117,9 +120,9 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         public IWebElement ErrorEmailAddressIsRequiredMyAccntPgTabAccnt;
 
         [FindsBy(How = How.XPath, Using = "//div[text() = 'Phone field is invalid']")]
-        public IWebElement ErrorPhoneАieldШsШnvalidBaseMyAccntPgTabAccnt;
+        public IWebElement ErrorPhoneFieldIsInvalidBaseMyAccntPgTabAccnt;
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'input-msg-error ng-star-inserted')]/span[text() = 'Street is required']")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'input-msg-error ng-star-inserted')]")]
         public IWebElement ErrorStreetIsRequiredMyAccntPgTabAccnt;
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'input-msg-error ng-star-inserted')]/span[text() = 'City is required']")]

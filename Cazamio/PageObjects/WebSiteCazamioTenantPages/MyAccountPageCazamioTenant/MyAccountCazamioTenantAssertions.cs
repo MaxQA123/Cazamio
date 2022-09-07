@@ -49,11 +49,9 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         [AllureStep("VerifyEnterData")]
         public MyAccountCazamioTenant VerifyEnterData()
         {
-            WaitUntil.WaitSomeInterval(250);
-            Assert.IsTrue(!ErrorStreetIsRequiredMyAccntPgTabAccnt.Enabled, ErrorStreetIsRequiredMyAccntPgTabAccnt.Text);
-            
-            WaitUntil.WaitSomeInterval(250);
-            Assert.IsTrue(!ErrorStreetIsRequiredMyAccntPgTabAccnt.Enabled, ErrorStreetIsRequiredMyAccntPgTabAccnt.Text);
+            Assert.IsTrue(Errors.IsInvisible(ErrorMyAccntPgTabAccnt));
+
+            return this;
         }
 
         #endregion

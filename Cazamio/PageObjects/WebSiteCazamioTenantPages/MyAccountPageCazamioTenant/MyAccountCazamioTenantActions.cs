@@ -172,8 +172,6 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
             ButtonSaveMyAccntPgTabAccnt.SendKeys("");
             Button.Click(ButtonSaveMyAccntPgTabAccnt);
 
-            Assert.IsTrue(!ErrorStreetIsRequiredMyAccntPgTabAccnt.Enabled, ErrorStreetIsRequiredMyAccntPgTabAccnt.Text);
-
             return this;
         }
 

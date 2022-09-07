@@ -136,7 +136,8 @@ namespace TenantCazamioTests
             Pages.MyAccountCazamioTenant
                 .EnterSectionReferenceNamePhnNmbrExtensionNmbrMyAccntPgTabAccnt();
             Pages.MyAccountCazamioTenant
-                .ClickButtonSaveMyAccntPgTabAccnt();
+                .ClickButtonSaveMyAccntPgTabAccnt()
+                .VerifyEnterData();
 
             Thread.Sleep(10000);
         }

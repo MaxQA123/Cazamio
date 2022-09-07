@@ -67,4 +67,27 @@ namespace CazamioProgect.Helpers
         }
     }
 
+    public class Errors
+    {
+        public static Boolean IsInvisible(IWebElement element)
+        {
+            WaitUntil.WaitSomeInterval(250);
+            try
+            {
+                if (element.Enabled == true)
+                {
+                    Console.WriteLine(element.Text);
+
+                    return false;
+                }
+
+                return true;
+                
+                
+            }
+            catch (NoSuchElementException) { return true; }
+            
+            catch (StaleElementReferenceException) { return true; }
+        }
+    }
 }
