@@ -16,6 +16,7 @@ namespace CazamioProgect.Helpers
     public class GeneralTestDataForAllUsers
     {
         public const string passwordGeneral = "Qwerty123!";
+        public const string passwordNew = "!321Qwerty";
     }
 
     public class TestDataForWebSiteCazamio
