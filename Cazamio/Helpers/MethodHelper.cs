@@ -90,4 +90,28 @@ namespace CazamioProgect.Helpers
             catch (StaleElementReferenceException) { return true; }
         }
     }
+
+    public class Successfully
+    {
+        public static Boolean IsVisible(IWebElement element)
+        {
+            WaitUntil.WaitSomeInterval(250);
+            try
+            {
+                if (element.Enabled == true)
+                {
+                    Console.WriteLine(element.Text);
+
+                    return true;
+                }
+
+                return false;
+
+
+            }
+            catch (NoSuchElementException) { return false; }
+
+            catch (StaleElementReferenceException) { return false; }
+        }
+    }
 }

@@ -76,6 +76,10 @@ namespace CazamioProgect.Helpers
     public class UploadImages
     {
         public const string avatarImgTenant = $"\\UploadImages\\TenantImgEnot.jpg";
+        public const string logoImgLandlordFirst = $"\\UploadImages\\LogoLandLord1.jpg";
+        public const string logoImgLandlordSecond = $"\\UploadImages\\LogoLandlord2.jpg";
+        public const string avatarImgLandlordFirst = $"\\UploadImages\\2AvatarLandLord.jpg";
+        public const string avatarImgLandlordSecond = $"\\UploadImages\\3AvatarKoalaLandlord.jpg";
     }
 
     #region TestsDataDaysForDatePickerTenant

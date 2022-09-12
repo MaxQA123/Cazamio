@@ -81,9 +81,9 @@ namespace CazamioProgect.Helpers
                     {
                         if (element.Enabled == false)
                         {
-                            return false;
+                            return true;
                         }
-                        return true;
+                        return false;
                     }
                     catch (NoSuchElementException)
                     {

@@ -37,10 +37,46 @@ namespace LandlordTests
             string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyUserName(getUserNameCompare);
+                .VerifyLandlordUserName(getUserNameCompare);
 
             Thread.Sleep(5000);
 
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("Landlord")]
+        [AllureSubSuite("VerifySidebar")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: in progress.
+        //This test case is doing checking: That the images uploaded and switching between the pages successfully via the sidebar.
+        //Comment: 
+
+        public void VerifySidebar()
+        {
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPg()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyLandlordUserName(getUserNameCompare);
+
+            Pages.SideBarLandlord
+                .UploadImageLogoLandlordFirst()
+                .VerifyChangingLogoImageLandlord();
+                //.UploadImageLogoLandlordSecond()
+                //.UploadImageAvatarUserLandlordFirst()
+                //.UploadImageAvatarUserLandlordSecond();
+
+            Thread.Sleep(5000);
         }
     }
 }

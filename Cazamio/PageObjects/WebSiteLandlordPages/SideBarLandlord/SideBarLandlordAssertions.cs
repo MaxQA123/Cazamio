@@ -23,12 +23,31 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         }
 
         [AllureStep("VerifyLandlordUserName")]
-        public SideBarLandlord VerifyUserName(string getUserNameActual)
+        public SideBarLandlord VerifyLandlordUserName(string getUserNameActual)
+        {
+            WaitUntil.WaitSomeInterval(500);
+            string getUserNameExpected = TestDataForWebSiteLandlord.userNameLandlord;
+
+            Assert.AreEqual(getUserNameActual, getUserNameExpected);
+
+            return this;
+        }
+
+        [AllureStep("VerifyBrokerUserName")]
+        public SideBarLandlord VerifyBrokerUserName(string getUserNameActual)
         {
             WaitUntil.WaitSomeInterval(500);
             string getUserNameExpected = TestDataForWebSiteLandlord.userNameBroker;
 
             Assert.AreEqual(getUserNameActual, getUserNameExpected);
+
+            return this;
+        }
+
+        [AllureStep("VerifyChangingLogoImageLandlord")]
+        public SideBarLandlord VerifyChangingLogoImageLandlord()
+        {
+            Assert.IsTrue(Successfully.IsVisible(MessageChangeImageLogoLandlordSuccess));
 
             return this;
         }

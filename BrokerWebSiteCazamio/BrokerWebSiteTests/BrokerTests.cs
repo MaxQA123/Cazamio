@@ -37,7 +37,7 @@ namespace BrokerTests
             string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyUserName(getUserNameCompare);
+                .VerifyBrokerUserName(getUserNameCompare);
 
             Thread.Sleep(5000);
 
