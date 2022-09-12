@@ -17,7 +17,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public IWebElement ButtonUploadPhotoOfAvatarLandlord;
 
         [FindsBy(How = How.XPath, Using = "//div[@class= 'remove-account-photo']")]
-        public IWebElement linkRemovePhoto;
+        public IWebElement linkRemovePhotoOfLandlord;
 
         #region MessageSuccessfully
 
@@ -26,7 +26,10 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
 
         [FindsBy(How = How.XPath, Using = "//span[text()= 'Profile image was changed']")]
         public IWebElement MessageChangeImageAvatarUserSuccess;
-        
+
+        [FindsBy(How = How.XPath, Using = "//span[text()= 'Profile image was removed']")]
+        public IWebElement MessageRemoveImageAvatarUserSuccess;
+
         #endregion
     }
 }

@@ -51,5 +51,21 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
 
             return this;
         }
+
+        [AllureStep("VerifyChangingAvatarImageLandlord")]
+        public SideBarLandlord VerifyChangingAvatarImageLandlord()
+        {
+            Assert.IsTrue(Successfully.IsVisible(MessageChangeImageAvatarUserSuccess));
+
+            return this;
+        }
+
+        [AllureStep("VerifyRewmoveAvatarImageLandlord")]
+        public SideBarLandlord VerifyRewmoveAvatarImageLandlord()
+        {
+            Assert.IsTrue(Successfully.IsVisible(MessageRemoveImageAvatarUserSuccess));
+
+            return this;
+        }
     }
 }

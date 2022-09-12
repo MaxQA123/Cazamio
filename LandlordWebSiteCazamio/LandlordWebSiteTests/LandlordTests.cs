@@ -71,10 +71,15 @@ namespace LandlordTests
 
             Pages.SideBarLandlord
                 .UploadImageLogoLandlordFirst()
-                .VerifyChangingLogoImageLandlord();
-                //.UploadImageLogoLandlordSecond()
-                //.UploadImageAvatarUserLandlordFirst()
-                //.UploadImageAvatarUserLandlordSecond();
+                .VerifyChangingLogoImageLandlord()
+                .UploadImageLogoLandlordSecond()
+                .VerifyChangingLogoImageLandlord()
+                .UploadImageAvatarUserLandlordFirst()
+                .VerifyChangingAvatarImageLandlord()
+                .UploadImageAvatarUserLandlordSecond()
+                .VerifyChangingAvatarImageLandlord()
+                .ClicklinkRemovePhotoOfLandlord()
+                .VerifyRewmoveAvatarImageLandlord();
 
             Thread.Sleep(5000);
         }
