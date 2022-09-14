@@ -81,7 +81,9 @@ namespace LandlordTests
                 .VerifyChangingAvatarImageLandlord()
                 .ClicklinkRemovePhotoOfLandlord()
                 .VerifyRewmoveAvatarImageLandlord()
-                .SelectItemsOnSidebar(SidebarLandlordTestData.dashboard, "");
+                .SelectItemsOnSidebar(SidebarListOfItemLandlordTestData.dashboard, "");
+            Pages.Dashboard
+                .VerifyTitleOfDashboardPg();
 
             Thread.Sleep(5000);
         }

@@ -5,6 +5,7 @@ using CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant;
 using CazamioProgect.PageObjects.GeneralPages.SignUpCazamioTenantPage;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCazamioTenant;
+using CazamioProgect.PageObjects.WebSiteLandlordPages.DashboardPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord;
 using OpenQA.Selenium;
@@ -44,6 +45,7 @@ namespace CazamioProgect.PageObjects
 
         public static LogInLandlord LogInLandlord => GetPage<LogInLandlord>();
         public static SideBarLandlord SideBarLandlord => GetPage<SideBarLandlord>();
+        public static Dashboard Dashboard => GetPage<Dashboard>();
 
         #endregion
 

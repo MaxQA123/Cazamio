@@ -61,12 +61,15 @@ namespace CazamioProgect.Helpers
 
     public class TestDataForWebSiteLandlord
     {
-        public const string emailLandlordMartin = "martin@abodebyreside.com";
-        public const string passwordLandlordMartin = "218Skillman!";
-        public const string userNameLandlord = "Martin Weiss";
+        public const string emailLandlordMartin = "testlivelandlord@gmail.com";
+        public const string passwordLandlordMartin = "Qwerty123!";
+        public const string userNameLandlord = "Landlord Test";
+        //public const string emailLandlordMartin = "martin@abodebyreside.com";
+        //public const string passwordLandlordMartin = "218Skillman!";
+        //public const string userNameLandlord = "Martin Weiss";
 
-        public const string emailBrokerTesterBroker = "romanticmestorf@xitroo.com";
-        public const string userNameBroker = "Tester Broker";
+        public const string emailBrokerTesterBroker = "mikebrokeruring@xitroo.com";
+        public const string userNameBroker = "Mike Flower";
     }
 
     public class NameDomen
@@ -83,7 +86,7 @@ namespace CazamioProgect.Helpers
         public const string avatarImgLandlordSecond = $"\\UploadImages\\3AvatarKoalaLandlord.jpg";
     }
 
-    public class SidebarLandlordTestData
+    public class SidebarListOfItemLandlordTestData
     {
         public const int dashboard = 0;
         public const int buildings = 1;

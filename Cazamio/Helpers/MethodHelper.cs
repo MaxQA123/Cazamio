@@ -41,12 +41,6 @@ namespace CazamioProgect.Helpers
 
     public class KeyBoardActions
     {
-        //[AllureStep("InputFunctionWithoutClearSec")]
-        //public static void InputFunctionWithoutClearSec(IWebElement element)
-        //{
-        //    WaitUntil.ElementIsClickable(element);
-        //    element.SendKeys(Keys.Enter);
-        //}
 
         [AllureStep("ClickArrowRight")]
         public static void ClickArrowRight()

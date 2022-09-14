@@ -12,23 +12,10 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.DashboardPage
 {
     public partial class Dashboard
     {
-        [AllureStep("GetUserNameFromSideBar")]
-        public string GetTitler()
+        [AllureStep("VerifyTitleOfDashboardPg")]
+        public Dashboard VerifyTitleOfDashboardPg()
         {
-            WaitUntil.WaitSomeInterval(1000);
-            string getUserName = Browser._Driver.FindElement(By.XPath("//div[@class = 'user-name']")).Text;
-            string getUserNameActual = getUserName.ToString();
-
-            return getUserNameActual;
-        }
-
-        [AllureStep("VerifyLandlordUserName")]
-        public Dashboard VerifyLandlordUserName(string getUserNameActual)
-        {
-            WaitUntil.WaitSomeInterval(500);
-            string getUserNameExpected = TestDataForWebSiteLandlord.userNameLandlord;
-
-            Assert.AreEqual(getUserNameActual, getUserNameExpected);
+            Assert.IsTrue(Successfully.IsVisible(TitleDashboardPage));
 
             return this;
         }
