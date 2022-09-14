@@ -1,4 +1,5 @@
 using Allure.Commons;
+using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
 using LandlordTests;
 using NUnit.Allure.Attributes;
@@ -30,7 +31,7 @@ namespace LandlordTests
         public void LogInAsLandlord()
         {
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPg()
+                .EnterEmailPasswordLogInPgAsLandlord()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
@@ -60,7 +61,7 @@ namespace LandlordTests
         public void VerifySidebar()
         {
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPg()
+                .EnterEmailPasswordLogInPgAsLandlord()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
@@ -79,7 +80,8 @@ namespace LandlordTests
                 .UploadImageAvatarUserLandlordSecond()
                 .VerifyChangingAvatarImageLandlord()
                 .ClicklinkRemovePhotoOfLandlord()
-                .VerifyRewmoveAvatarImageLandlord();
+                .VerifyRewmoveAvatarImageLandlord()
+                .SelectItemsOnSidebar(SidebarLandlordTestData.dashboard, "");
 
             Thread.Sleep(5000);
         }

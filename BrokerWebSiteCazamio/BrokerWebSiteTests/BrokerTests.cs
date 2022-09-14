@@ -30,7 +30,7 @@ namespace BrokerTests
         public void LogInAsBroker()
         {
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPg()
+                .EnterEmailPasswordLogInPgAsBroker()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 

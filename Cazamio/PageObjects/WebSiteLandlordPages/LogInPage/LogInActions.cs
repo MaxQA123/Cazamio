@@ -10,10 +10,20 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
 {
     public partial class LogInLandlord
     {
-        [AllureStep("EnterEmailPasswordLogInPg")]
-        public LogInLandlord EnterEmailPasswordLogInPg()
+        [AllureStep("EnterEmailPasswordLogInPgAsLandlord")]
+        public LogInLandlord EnterEmailPasswordLogInPgAsLandlord()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteLandlord.emailLandlordTest);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteLandlord.emailLandlordMartin);
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, TestDataForWebSiteLandlord.passwordLandlordMartin);
+
+            return this;
+        }
+
+        [AllureStep("EnterEmailPasswordLogInPgAsBroker")]
+        public LogInLandlord EnterEmailPasswordLogInPgAsBroker()
+        {
+            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteLandlord.emailBrokerTesterBroker);
             WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, GeneralTestDataForAllUsers.passwordGeneral);
 
