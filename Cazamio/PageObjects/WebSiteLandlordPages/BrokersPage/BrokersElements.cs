@@ -10,7 +10,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.BrokersPage
 {
     public partial class Brokers
     {
-        [FindsBy(How = How.XPath, Using = ("//div[@class = 'navigation-title']"))]
+        [FindsBy(How = How.XPath, Using = ("//div[text()= 'Brokers']"))]
         public IWebElement TitleBrokersPage;
     }
 }

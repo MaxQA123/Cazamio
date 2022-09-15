@@ -15,7 +15,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         [AllureStep("GetUserNameFromSideBar")]
         public string GetUserNameFromSideBar()
         {
-            WaitUntil.WaitSomeInterval(1000);
+            WaitUntil.WaitSomeInterval(2000);
             string getUserName = Browser._Driver.FindElement(By.XPath("//div[@class = 'user-name']")).Text;
             string getUserNameActual = getUserName.ToString();
 

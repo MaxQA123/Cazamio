@@ -10,7 +10,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage
 {
     public partial class ListOfOwners
     {
-        [FindsBy(How = How.XPath, Using = ("//div[@class = 'navigation-title']"))]
+        [FindsBy(How = How.XPath, Using = ("//div[text()= 'List of owners']"))]
         public IWebElement TitleListOfOwnersPage;
     }
 }

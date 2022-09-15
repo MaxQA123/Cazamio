@@ -86,21 +86,6 @@ namespace CazamioProgect.Helpers
         public const string avatarImgLandlordSecond = $"\\UploadImages\\3AvatarKoalaLandlord.jpg";
     }
 
-    public class SidebarListOfItemLandlordTestData
-    {
-        public const int dashboard = 0;
-        public const int buildings = 1;
-        public const int apartments = 2;
-        public const int applications = 3;
-        public const int preApprovals = 4;
-        public const int leaseSignInDocuments = 5;
-        public const int paymentSettings = 6;
-        public const int transactions = 7;
-        public const int brokers = 8;
-        public const int owners = 9;
-        public const int marketplace = 10;
-    }
-
     #region TestsDataDaysForDatePickerTenant
 
     public class DaysFirstWeekForDatePiker

@@ -10,7 +10,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.PaymentSettingsPage
 {
     public partial class PaymentSettings
     {
-        [FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]
+        [FindsBy(How = How.XPath, Using = "//div[text()= 'Payment settings']")]
         public IWebElement TitlePaymentSettingsPage;
     }
 }

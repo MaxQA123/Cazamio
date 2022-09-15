@@ -11,8 +11,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.BrokersPage
 {
     public partial class Brokers
     {
-        [AllureStep("VerifyTitleBrokersdPg")]
-        public Brokers VerifyTitleBrokersdPg()
+        [AllureStep("VerifyTitleBrokersPg")]
+        public Brokers VerifyTitleBrokersPg()
         {
             Assert.IsTrue(Successfully.IsVisible(TitleBrokersPage));
 

@@ -11,8 +11,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage
 {
     public partial class ListOfOwners
     {
-        [AllureStep("VerifyTitleBrokersdPg")]
-        public ListOfOwners VerifyTitleBrokersdPg()
+        [AllureStep("VerifyTitleListOfOwnersPg")]
+        public ListOfOwners VerifyTitleListOfOwnersPg()
         {
             Assert.IsTrue(Successfully.IsVisible(TitleListOfOwnersPage));
 

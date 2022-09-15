@@ -10,7 +10,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.DashboardPage
 {
     public partial class Dashboard
     {
-        [FindsBy(How = How.XPath, Using = ("//div[@class = 'navigation-title']"))]
+        [FindsBy(How = How.XPath, Using = ("//div[text()= 'Dashboard']"))]
         public IWebElement TitleDashboardPage;
     }
 }

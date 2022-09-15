@@ -31,5 +31,41 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public IWebElement MessageRemoveImageAvatarUserSuccess;
 
         #endregion
+
+        [FindsBy(How = How.XPath, Using = "//a[@href= '/dashboard']")]
+        public IWebElement ButtonDashboardSidebar;
+
+        [FindsBy(How = How.XPath, Using = "//a[@href= '/buildings']")]
+        public IWebElement ButtonBuildingsSidebar;
+
+        [FindsBy(How = How.XPath, Using = "//a[@href= '/apartments']")]
+        public IWebElement ButtonApartmentsSidebar;
+
+        [FindsBy(How = How.XPath, Using = "//a[@href= '/applications']")]
+        public IWebElement ButtonApplicationsSidebar;
+
+        [FindsBy(How = How.XPath, Using = "//a[@href= '/pre-approvals']")]
+        public IWebElement ButtonPreApprovalsSidebar;
+
+        [FindsBy(How = How.XPath, Using = "//a[@href= '/lease-sign-documents']")]
+        public IWebElement ButtonLeaseSignDocumentsSidebar;
+
+        [FindsBy(How = How.XPath, Using = "//a[@href= '/payment-settings/payment-view']")]
+        public IWebElement ButtonPaymentSettingsSidebar;
+
+        [FindsBy(How = How.XPath, Using = "//a[@href= '/transactions']")]
+        public IWebElement ButtonTransactionsSidebar;
+
+        [FindsBy(How = How.XPath, Using = "//a[@href= '/brokers']")]
+        public IWebElement ButtonBrokersSidebar;
+
+        [FindsBy(How = How.XPath, Using = "//a[@href= '/owners']")]
+        public IWebElement ButtonOwnersSidebar;
+
+        [FindsBy(How = How.XPath, Using = "//a[@href= '/marketplace']")]
+        public IWebElement ButtonMarketplaceSidebar;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class= 'sidebar-layout']")]
+        public IWebElement ButtonLogOutSidebar;
     }
 }

@@ -1,0 +1,541 @@
+{
+  "uuid": "4d1bf391-334b-4307-9bc2-6939de995372-tr-0-1002",
+  "historyId": "LandlordTests.TestsBaseWeb.VerifySidebar",
+  "fullName": "LandlordTests.TestsBaseWeb.VerifySidebar",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "LandlordTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "VerifySidebar"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "Landlord"
+    },
+    {
+      "name": "subSuite",
+      "value": "VerifySidebar"
+    }
+  ],
+  "links": [],
+  "name": "VerifySidebar",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "System.ArgumentOutOfRangeException : Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')",
+    "trace": "   at System.Collections.Generic.List`1.get_Item(Int32 index)\r\n   at System.Collections.ObjectModel.ReadOnlyCollection`1.System.Collections.Generic.IList<T>.get_Item(Int32 index)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.__a$_around_SelectItemsOnSidebar_100663323_o(Int32 item, String locationItemSidebar) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\SideBarLandlord\\SideBarLandlordActions.cs:line 77\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.__a$_around_SelectItemsOnSidebar_100663323_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.__a$_around_SelectItemsOnSidebar_100663323_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.SelectItemsOnSidebar(Int32 item, String locationItemSidebar)\r\n   at LandlordTests.TestsBaseWeb.VerifySidebar() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\LandlordWebSiteTests\\LandlordTests.cs:line 87"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "VerifySidebar",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "System.ArgumentOutOfRangeException : Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')",
+        "trace": "   at System.Collections.Generic.List`1.get_Item(Int32 index)\r\n   at System.Collections.ObjectModel.ReadOnlyCollection`1.System.Collections.Generic.IList<T>.get_Item(Int32 index)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.__a$_around_SelectItemsOnSidebar_100663323_o(Int32 item, String locationItemSidebar) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\SideBarLandlord\\SideBarLandlordActions.cs:line 77\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.__a$_around_SelectItemsOnSidebar_100663323_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.__a$_around_SelectItemsOnSidebar_100663323_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.SelectItemsOnSidebar(Int32 item, String locationItemSidebar)\r\n   at LandlordTests.TestsBaseWeb.VerifySidebar() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\LandlordWebSiteTests\\LandlordTests.cs:line 87"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "EnterEmailPasswordLogInPgAsLandlord",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "testlivelandlord@gmail.com"
+                }
+              ],
+              "start": 1663219348512,
+              "stop": 1663219349186
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1663219349701,
+              "stop": 1663219350265
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663219348511,
+          "stop": 1663219350265
+        },
+        {
+          "name": "ClickIconShowLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663219350266,
+              "stop": 1663219350684
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663219350265,
+          "stop": 1663219350684
+        },
+        {
+          "name": "ClickButtonLetsGoLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663219350685,
+              "stop": 1663219351332
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663219350685,
+          "stop": 1663219352361
+        },
+        {
+          "name": "GetUserNameFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663219352362,
+          "stop": 1663219353459
+        },
+        {
+          "name": "VerifyLandlordUserName",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Landlord Test"
+            }
+          ],
+          "start": 1663219353460,
+          "stop": 1663219353992
+        },
+        {
+          "name": "UploadImageLogoLandlordFirst",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663219353993,
+          "stop": 1663219359949
+        },
+        {
+          "name": "VerifyChangingLogoImageLandlord",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663219359950,
+          "stop": 1663219360251
+        },
+        {
+          "name": "UploadImageLogoLandlordSecond",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663219360252,
+          "stop": 1663219361346
+        },
+        {
+          "name": "VerifyChangingLogoImageLandlord",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663219361346,
+          "stop": 1663219361640
+        },
+        {
+          "name": "UploadImageAvatarUserLandlordFirst",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663219361640,
+          "stop": 1663219365471
+        },
+        {
+          "name": "VerifyChangingAvatarImageLandlord",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663219365472,
+          "stop": 1663219365778
+        },
+        {
+          "name": "UploadImageAvatarUserLandlordSecond",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663219365778,
+          "stop": 1663219366871
+        },
+        {
+          "name": "VerifyChangingAvatarImageLandlord",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663219366871,
+          "stop": 1663219367172
+        },
+        {
+          "name": "ClicklinkRemovePhotoOfLandlord",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663219367172,
+              "stop": 1663219367572
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663219367172,
+          "stop": 1663219368072
+        },
+        {
+          "name": "VerifyRewmoveAvatarImageLandlord",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663219368072,
+          "stop": 1663219368378
+        },
+        {
+          "name": "SelectItemsOnSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "SelectorItemsOnSidebar",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "String",
+                  "value": ""
+                }
+              ],
+              "start": 1663219368892,
+              "stop": 1663219369977
+            }
+          ],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "0"
+            },
+            {
+              "name": "String",
+              "value": ""
+            }
+          ],
+          "start": 1663219368379,
+          "stop": 1663219370065
+        },
+        {
+          "name": "VerifyTitleOfDashboardPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663219370068,
+          "stop": 1663219370402
+        },
+        {
+          "name": "SelectItemsOnSidebar",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')",
+            "trace": "   at System.Collections.Generic.List`1.get_Item(Int32 index)\r\n   at System.Collections.ObjectModel.ReadOnlyCollection`1.System.Collections.Generic.IList<T>.get_Item(Int32 index)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.__a$_around_SelectItemsOnSidebar_100663323_o(Int32 item, String locationItemSidebar) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\SideBarLandlord\\SideBarLandlordActions.cs:line 77\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.__a$_around_SelectItemsOnSidebar_100663323_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "SelectorItemsOnSidebar",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "String",
+                  "value": ""
+                }
+              ],
+              "start": 1663219370914,
+              "stop": 1663219371941
+            }
+          ],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            },
+            {
+              "name": "String",
+              "value": ""
+            }
+          ],
+          "start": 1663219370402,
+          "stop": 1663219372283
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "4deaf3c178174e8e8ab8710df32f0b1d-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1663219343068,
+      "stop": 1663219372808
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1663219343066,
+  "stop": 1663219372814
+}

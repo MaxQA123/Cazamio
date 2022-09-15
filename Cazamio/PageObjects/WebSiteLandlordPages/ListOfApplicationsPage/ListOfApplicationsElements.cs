@@ -10,7 +10,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfApplicationsPage
 {
     public partial class ListOfApplications
     {
-        [FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]
+        [FindsBy(How = How.XPath, Using = "//div[text()= 'List of applications']")]
         public IWebElement TitleListOfApplicationsPage;
     }
 }

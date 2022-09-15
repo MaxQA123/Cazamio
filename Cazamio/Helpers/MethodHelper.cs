@@ -51,6 +51,15 @@ namespace CazamioProgect.Helpers
                 .Perform();
         }
 
+        [AllureStep("ClickArrowDown")]
+        public static void ClickArrowDown()
+        {
+            new Actions(Browser._Driver)
+                .SendKeys(Keys.ArrowDown)
+                .Build()
+                .Perform();
+        }
+
         [AllureStep("ClickEnterButton")]
         public static void ClickEnterButton()
         {
@@ -65,7 +74,7 @@ namespace CazamioProgect.Helpers
     {
         public static Boolean IsInvisible(IWebElement element)
         {
-            WaitUntil.WaitSomeInterval(250);
+            WaitUntil.WaitSomeInterval(1000);
             try
             {
                 if (element.Enabled == true)
@@ -89,7 +98,7 @@ namespace CazamioProgect.Helpers
     {
         public static Boolean IsVisible(IWebElement element)
         {
-            WaitUntil.WaitSomeInterval(250);
+            WaitUntil.WaitSomeInterval(1000);
             try
             {
                 if (element.Enabled == true)

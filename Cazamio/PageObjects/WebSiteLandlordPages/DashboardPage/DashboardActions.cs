@@ -8,5 +8,6 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.DashboardPage
 {
     public partial class Dashboard
     {
+        
     }
 }

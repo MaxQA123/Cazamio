@@ -14,6 +14,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfApplicationsPage
         [AllureStep("VerifyTitleListOfApplicationsPg")]
         public ListOfApplications VerifyTitleListOfApplicationsPg()
         {
+            WaitUntil.WaitSomeInterval(1000);
             Assert.IsTrue(Successfully.IsVisible(TitleListOfApplicationsPage));
 
             return this;
