@@ -11,6 +11,7 @@ namespace CazamioProgect.Helpers
         public const string urlHomePageTenantWebSiteCazamio = "https://cazamiodemo.com/";
         public const string urlHomePageTenantWebSiteAbodeo = "https://abodebyreside.cazamiodemo.com/";
         public const string urlLogInPageLandlordBrokerWebSite = "https://landlord.cazamiodemo.com/";
+        public const string urlXitrooRandom = "https://xitroo.com/";
     }
 
     public class GeneralTestDataForAllUsers

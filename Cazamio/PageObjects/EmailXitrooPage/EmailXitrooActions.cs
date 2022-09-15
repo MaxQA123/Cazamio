@@ -32,7 +32,7 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
         [AllureStep("OpenNewlyLetter")]
         public EmailXitroo OpenNewlyLetter()
         {
-            WaitUntil.WaitSomeInterval(10000);
+            WaitUntil.WaitSomeInterval(5000);
             Button.Click(SelectLetterNumberOneNew);
 
             return this;
@@ -45,6 +45,28 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
             Button.Click(ButtonBackEmail);
 
             return this;
+        }
+
+        [AllureStep("ClickLinkForConfirmAccount")]
+        public EmailXitroo ClickLinkForConfirmAccount()
+        {
+            WaitUntil.WaitSomeInterval(3000);
+            Browser._Driver.SwitchTo().Frame(IframeXitrooLetter);
+            WaitUntil.WaitSomeInterval(1000);
+            Button.Click(LinkForConfirmAccount);
+            Browser._Driver.SwitchTo().DefaultContent();
+
+            return this;
+        }
+
+        [AllureStep("CopyEmailFromXitrooPage")]
+        public string CopyEmailFromXitrooPage()
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            string copyEmail = Browser._Driver.FindElement(By.XPath("//input[@id = 'mailInput']")).GetAttribute("value");
+            string copyEmailActual = copyEmail.ToString();
+
+            return copyEmailActual;
         }
     }
 }

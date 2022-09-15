@@ -26,7 +26,7 @@ namespace TenantAbodeTests
         //The date last publication on which been testing:
         //Willingness for testing: in progress.
         //This test case is doing checking: The successfully SignUp as tenant.
-        //Comment: Bug: on email hasn't came a letter for confirming.
+        //Comment:
 
         public void SignUpAsTenant()
         {
@@ -34,8 +34,26 @@ namespace TenantAbodeTests
                 .ClickButtonSignUpHdrCzmTnnt();
             Pages.SignUpCazamioTenant
                 .EnterFirstLastNameEmailPasswordSignUpPg()
-                .ClickIconShowSignUpPg()
+                .ClickIconShowSignUpPg();
+
+            string email = Pages.SignUpCazamioTenant.CopyEmailfromSignUpPg();
+
+            Pages.SignUpCazamioTenant
                 .ClickButtonGetStartedSignUpPg();
+            Pages.JScriptExecutorHelper
+                .OpenNewTab();
+            Browser._Driver.Navigate().GoToUrl(EndPoints.urlXitrooRandom);
+            Pages.EmailXitroo
+                .CopiedForEnterEmail(email)
+                .ClickSearchButton();
+
+            string emailFromXitroo = Pages.EmailXitroo.CopyEmailFromXitrooPage();
+
+            Pages.EmailXitroo
+                .OpenNewlyLetter()
+                .ClickLinkForConfirmAccount();
+            Pages.LogInCazamioTenant
+                .CopiedForEnterEmailLogInPg(emailFromXitroo);
 
             Thread.Sleep(5000);
         }

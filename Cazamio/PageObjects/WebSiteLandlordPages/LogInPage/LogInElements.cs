@@ -21,5 +21,10 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
 
         [FindsBy(How = How.XPath, Using = "//button[@class = 'btn btn-warning btn-link btn-lg card-footer-btn']")]
         public IWebElement ButtonLetsGoLogInPg;
+
+        [FindsBy(How = How.XPath, Using = "//h4[text() = 'Login']")]
+        public IWebElement TitleLogInPg;
+
+        
     }
 }

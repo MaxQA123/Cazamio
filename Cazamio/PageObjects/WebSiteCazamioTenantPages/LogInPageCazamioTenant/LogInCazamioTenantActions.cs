@@ -91,5 +91,17 @@ namespace CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant
 
             return this;
         }
+
+        [AllureStep("CopiedForEnterEmailLogInPg")]
+        public LogInCazamioTenant CopiedForEnterEmailLogInPg(string _email)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
+            Browser._Driver.SwitchTo().Window(tabsList[2]);
+            WaitUntil.WaitSomeInterval(3000);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailAddressLgInCazmTnnt, _email);
+
+            return this;
+        }
     }
 }

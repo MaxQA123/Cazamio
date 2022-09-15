@@ -1,5 +1,6 @@
 ﻿using CazamioProgect.Helpers;
 using OpenQA.Selenium;
+using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,5 +25,8 @@ namespace CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant
 
         public IWebElement ButtonLogInLgInCazmTnnt => Browser._Driver.FindElement(_ButtonLogInLgInCazmTnnt);
         public static readonly By _ButtonLogInLgInCazmTnnt = By.XPath("//button[@aria-label= 'button']//span[text() = 'Login']");
+
+        [FindsBy(How = How.XPath, Using = "//span[text() = 'Account was successfully activated']")]
+        public IWebElement MessageAccountWasSuccessfullyActivated;
     }
 }

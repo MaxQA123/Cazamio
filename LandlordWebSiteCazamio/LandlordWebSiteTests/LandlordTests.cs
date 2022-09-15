@@ -54,7 +54,7 @@ namespace LandlordTests
 
         //Date of publication:
         //Version\Build:
-        //Willingness for testing: in progress.
+        //Willingness for testing: Done.
         //This test case is doing checking: That the images uploaded and switching between the pages successfully via the sidebar.
         //Comment: 
 
@@ -71,63 +71,65 @@ namespace LandlordTests
                 .VerifyLandlordUserName(getUserNameCompare);
 
             Pages.SideBarLandlord
-                //.UploadImageLogoLandlordFirst()
-                //.VerifyChangingLogoImageLandlord()
-                //.UploadImageLogoLandlordSecond()
-                //.VerifyChangingLogoImageLandlord()
-                //.UploadImageAvatarUserLandlordFirst()
-                //.VerifyChangingAvatarImageLandlord()
-                //.UploadImageAvatarUserLandlordSecond()
-                //.VerifyChangingAvatarImageLandlord()
-                //.ClicklinkRemovePhotoOfLandlord()
-                //.VerifyRewmoveAvatarImageLandlord()
+                .UploadImageLogoLandlordFirst()
+                .VerifyChangingLogoImageLandlord()
+                .UploadImageLogoLandlordSecond()
+                .VerifyChangingLogoImageLandlord()
+                .UploadImageAvatarUserLandlordFirst()
+                .VerifyChangingAvatarImageLandlord()
+                .UploadImageAvatarUserLandlordSecond()
+                .VerifyChangingAvatarImageLandlord()
+                .ClicklinkRemovePhotoOfLandlord()
+                .VerifyRewmoveAvatarImageLandlord()
                 .ClickButtonDashboardSidebar();
             Pages.Dashboard
                 .VerifyTitleOfDashboardPg();
-            //Pages.SideBarLandlord
-            //    .ClickButtonBuildingsSidebar();
-            //Pages.ListOfBuildings
-            //    .VerifyTitleListOfBuildingsPg();
-            //Pages.SideBarLandlord
-            //    .ClickButtonApartmentsSidebar();
-            //Pages.ListOfApartments
-            //    .VerifyTitleListOfApartmentsPg();
-            //Pages.SideBarLandlord
-            //    .ClickButtonApplicationsSidebar();
-            //Pages.ListOfApplications
-            //    .VerifyTitleListOfApplicationsPg();
-            //Pages.SideBarLandlord
-            //    .ClickButtonPreApprovalsSidebar();
-            //Pages.PreApprovals
-            //    .VerifyTitlePreApprovalsPagePg();
-            //Pages.SideBarLandlord
-            //    .ClickButtonLeaseSignDocumentsSidebar();
-            //Pages.Templates
-            //    .VerifyTitleTemplatesPagePg();
-            //Pages.SideBarLandlord
-            //    .ClickButtonPaymentSettingsSidebar();
-            //Pages.PaymentSettings
-            //    .VerifyTitlePaymentSettingsPagePg();
-            //Pages.SideBarLandlord
-            //    .ClickButtonTransactionsSidebar();
-            //Pages.ListOfTransactions
-            //    .VerifyTitleListOfTransactionsPg();
-            //Pages.SideBarLandlord
-            //    .ClickButtonBrokersSidebar();
-            //Pages.Brokers
-            //    .VerifyTitleBrokersPg();
-            //Pages.SideBarLandlord
-            //    .ClickButtonOwnersSidebar();
-            //Pages.ListOfOwners
-            //    .VerifyTitleListOfOwnersPg();
-            //Pages.SideBarLandlord
-            //   .ClickButtonMarketplaceSidebar();
-            //Pages.Marketplace
-            //    .VerifyTitleMarketplacePg();
+            Pages.SideBarLandlord
+                .ClickButtonBuildingsSidebar();
+            Pages.ListOfBuildings
+                .VerifyTitleListOfBuildingsPg();
+            Pages.SideBarLandlord
+                .ClickButtonApartmentsSidebar();
+            Pages.ListOfApartments
+                .VerifyTitleListOfApartmentsPg();
+            Pages.SideBarLandlord
+                .ClickButtonApplicationsSidebar();
+            Pages.ListOfApplications
+                .VerifyTitleListOfApplicationsPg();
+            Pages.SideBarLandlord
+                .ClickButtonPreApprovalsSidebar();
+            Pages.PreApprovals
+                .VerifyTitlePreApprovalsPagePg();
+            Pages.SideBarLandlord
+                .ClickButtonLeaseSignDocumentsSidebar();
+            Pages.Templates
+                .VerifyTitleTemplatesPagePg();
+            Pages.SideBarLandlord
+                .ClickButtonPaymentSettingsSidebar();
+            Pages.PaymentSettings
+                .VerifyTitlePaymentSettingsPagePg();
+            Pages.SideBarLandlord
+                .ClickButtonTransactionsSidebar();
+            Pages.ListOfTransactions
+                .VerifyTitleListOfTransactionsPg();
+            Pages.SideBarLandlord
+                .ClickButtonBrokersSidebar();
+            Pages.Brokers
+                .VerifyTitleBrokersPg();
+            Pages.SideBarLandlord
+                .ClickButtonOwnersSidebar();
+            Pages.ListOfOwners
+                .VerifyTitleListOfOwnersPg();
+            Pages.SideBarLandlord
+               .ClickButtonMarketplaceSidebar();
+            Pages.Marketplace
+                .VerifyTitleMarketplacePg();
             Pages.SideBarLandlord
                 .ClickButtonLogOutSidebar();
             Pages.ModalsWindowsLandlordBroker
                 .ClickButtonYesIAmSureOnMdlwndw();
+            Pages.LogInLandlord
+                .VerifyTitleLogInPg();
 
             Thread.Sleep(5000);
         }

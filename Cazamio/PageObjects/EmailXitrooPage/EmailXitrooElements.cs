@@ -24,5 +24,10 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
 
         [FindsBy(How = How.XPath, Using = "//input[@id = 'mailInput']")]
         public IWebElement FieldInputEmail;
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(@href, 'https://abodebyreside.cazamiodemo.com/account/email-confirm')]")]
+        public IWebElement LinkForConfirmAccount;
+
+        
     }
 }

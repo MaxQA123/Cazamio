@@ -1,5 +1,6 @@
 ﻿using CazamioProgect.Helpers;
 using NUnit.Allure.Attributes;
+using OpenQA.Selenium;
 using RimuTec.Faker;
 using System;
 using System.Collections.Generic;
@@ -41,5 +42,17 @@ namespace CazamioProgect.PageObjects.GeneralPages.SignUpCazamioTenantPage
 
             return this;
         }
+
+        [AllureStep("CopyEmailfromSignUpPg")]
+        public string CopyEmailfromSignUpPg()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            string copyEmail = Browser._Driver.FindElement(By.XPath("//input[@id = 'email']")).GetAttribute("value");
+            string copyEmailActual = copyEmail.ToString();
+
+            return copyEmailActual;
+        }
+
+        
     }
 }

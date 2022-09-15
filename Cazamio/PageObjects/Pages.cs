@@ -42,6 +42,7 @@ namespace CazamioProgect.PageObjects
 
         public static DatePicker DatePicker => GetPage<DatePicker>();
         public static EmailXitroo EmailXitroo => GetPage< EmailXitroo >();
+        public static JScriptExecutorHelper JScriptExecutorHelper => GetPage<JScriptExecutorHelper>();
 
         #region TenantWebSiteCazamio
 
