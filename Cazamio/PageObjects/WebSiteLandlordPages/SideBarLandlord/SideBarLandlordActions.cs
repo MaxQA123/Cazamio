@@ -179,6 +179,21 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
             return this;
         }
 
+        [AllureStep("SwitchTabClickButtonBrokersSidebar")]
+        public SideBarLandlord SwitchTabClickButtonBrokersSidebar()
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
+            Browser._Driver.SwitchTo().Window(tabsList[2]);
+            WaitUntil.WaitSomeInterval(1000);
+            ButtonBrokersSidebar.SendKeys("");
+            WaitUntil.WaitSomeInterval(500);
+            Button.Click(ButtonBrokersSidebar);
+            WaitUntil.WaitSomeInterval(1000);
+
+            return this;
+        }
+
         [AllureStep("ClickButtonOwnersSidebar")]
         public SideBarLandlord ClickButtonOwnersSidebar()
         {

@@ -22,10 +22,10 @@ namespace BrokerTests
         [AllureSuite("Broker")]
         [AllureSubSuite("SignUpAsBroker")]
 
-        //Date of publication: 25.08.2022.
+        //Date of publication:
         //Version\Build:
         //Willingness for testing: in progress.
-        //This test case is doing checking: The successfully LogIn as lanlord.
+        //This test case is doing checking: The successfully SignUp as Broker.
         //Comment: 
 
         public void SignUpAsBroker()
@@ -60,6 +60,10 @@ namespace BrokerTests
             Pages.EmailXitroo
                 .OpenNewlyLetter()
                 .ClickLinkForConfirmAccountBroker();
+            Pages.SideBarLandlord
+                .SwitchTabClickButtonBrokersSidebar();
+            Pages.EmailXitroo
+                .VerifyEmailForCretingBroker(email);
 
             Thread.Sleep(5000);
 
