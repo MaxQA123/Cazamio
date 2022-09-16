@@ -25,7 +25,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         [AllureStep("VerifyLandlordUserName")]
         public SideBarLandlord VerifyLandlordUserName(string getUserNameActual)
         {
-            WaitUntil.WaitSomeInterval(500);
+            WaitUntil.WaitSomeInterval(1500);
             string getUserNameExpected = TestDataForWebSiteLandlord.userNameLandlord;
 
             Assert.AreEqual(getUserNameActual, getUserNameExpected);

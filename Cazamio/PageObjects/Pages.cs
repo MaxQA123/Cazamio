@@ -15,6 +15,7 @@ using CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfTransactionsPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.MarketplacePage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.ModalsWindowsPages;
+using CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.PaymentSettingsPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.PreApprovalsPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord;
@@ -68,8 +69,8 @@ namespace CazamioProgect.PageObjects
         public static Brokers Brokers => GetPage<Brokers>();
         public static ListOfOwners ListOfOwners => GetPage<ListOfOwners>();
         public static Marketplace Marketplace => GetPage<Marketplace>();
-        public static ModalsWindowsLandlordBroker ModalsWindowsLandlordBroker => GetPage<ModalsWindowsLandlordBroker>();
-
+        public static ModalWindowAreYouSureLogOutLandlordBroker ModalWindowAreYouSureLogOutLandlordBroker => GetPage<ModalWindowAreYouSureLogOutLandlordBroker>();
+        public static ModalWindowCreateNewBroker ModalWindowCreateNewBroker => GetPage<ModalWindowCreateNewBroker>();
         #endregion
 
     }

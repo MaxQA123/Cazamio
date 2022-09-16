@@ -46,5 +46,25 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
 
             return this;
         }
+
+        [AllureStep("CopiedForEnterEmailLogInPg")]
+        public LogInLandlord CopiedForEnterEmailLogInPg(string _email)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
+            Browser._Driver.SwitchTo().Window(tabsList[2]);
+            WaitUntil.WaitSomeInterval(3000);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, _email);
+
+            return this;
+        }
+
+        [AllureStep("EnterPasswordLogInPgAsBroker")]
+        public LogInLandlord EnterPasswordLogInPgAsBroker()
+        {
+            InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, GeneralTestDataForAllUsers.passwordGeneral);
+
+            return this;
+        }
     }
 }

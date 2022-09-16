@@ -34,7 +34,7 @@ namespace CazamioProgect.Helpers
         public static void Click(IWebElement element)
         {
             WaitUntil.CustomElementIsVisible(element);
-            WaitUntil.WaitSomeInterval(250);
+            WaitUntil.WaitSomeInterval(500);
             element.Click();
         }
     }

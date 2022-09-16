@@ -51,9 +51,12 @@ namespace TenantAbodeTests
 
             Pages.EmailXitroo
                 .OpenNewlyLetter()
-                .ClickLinkForConfirmAccount();
+                .ClickLinkForConfirmAccountTenant();
             Pages.LogInCazamioTenant
-                .CopiedForEnterEmailLogInPg(emailFromXitroo);
+                .CopiedForEnterEmailLogInPg(emailFromXitroo)
+                .EnterPasswordOnLogInPg()
+                .ClickIconShowLgInCazmTnnt()
+                .ClickButtonLogInLgInCazmTnnt();
 
             Thread.Sleep(5000);
         }

@@ -103,5 +103,13 @@ namespace CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant
 
             return this;
         }
+
+        [AllureStep("CopiedForEnterEmailLogInPg")]
+        public LogInCazamioTenant EnterPasswordOnLogInPg()
+        {
+            InputGeneral.InputFunctionWithClear(FieldInputPasswordLgInCazmTnnt, GeneralTestDataForAllUsers.passwordGeneral);
+
+            return this;
+        }
     }
 }

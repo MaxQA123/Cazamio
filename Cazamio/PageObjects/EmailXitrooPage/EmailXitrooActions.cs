@@ -48,13 +48,26 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
         }
 
         [AllureStep("ClickLinkForConfirmAccount")]
-        public EmailXitroo ClickLinkForConfirmAccount()
+        public EmailXitroo ClickLinkForConfirmAccountTenant()
         {
             WaitUntil.WaitSomeInterval(3000);
             Browser._Driver.SwitchTo().Frame(IframeXitrooLetter);
             WaitUntil.WaitSomeInterval(1000);
-            Button.Click(LinkForConfirmAccount);
+            Button.Click(LinkForConfirmAccountTenant);
             Browser._Driver.SwitchTo().DefaultContent();
+
+            return this;
+        }
+
+        [AllureStep("ClickLinkForConfirmAccount")]
+        public EmailXitroo ClickLinkForConfirmAccountBroker()
+        {
+            WaitUntil.WaitSomeInterval(3000);
+            Browser._Driver.SwitchTo().Frame(IframeXitrooLetter);
+            WaitUntil.WaitSomeInterval(1000);
+            Button.Click(LinkForConfirmAccountLandlordbroker);
+            Browser._Driver.SwitchTo().DefaultContent();
+            WaitUntil.WaitSomeInterval(3000);
 
             return this;
         }

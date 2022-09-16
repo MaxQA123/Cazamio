@@ -1,5 +1,6 @@
 using Allure.Commons;
 using BrokerTests;
+using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
@@ -13,6 +14,57 @@ namespace BrokerTests
 
     public class TestsBaseWeb : BaseBroker
     {
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("Broker")]
+        [AllureSubSuite("SignUpAsBroker")]
+
+        //Date of publication: 25.08.2022.
+        //Version\Build:
+        //Willingness for testing: in progress.
+        //This test case is doing checking: The successfully LogIn as lanlord.
+        //Comment: 
+
+        public void SignUpAsBroker()
+        {
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsLandlord()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyLandlordUserName(getUserNameCompare)
+                .ClickButtonBrokersSidebar();
+            Pages.Brokers
+                .ClickButtonCreateBrokerBrokersPage();
+            Pages.ModalWindowCreateNewBroker
+                .EnterFirstLastNameEmailPhnNmbrCellMdlWndw();
+                //.VerifyFieldsOnMdlWndwCreateBroker()
+
+            string email = Pages.ModalWindowCreateNewBroker.CopyEmailFromMdlWndwCreateBroker();
+
+            Pages.ModalWindowCreateNewBroker
+                .ClickButtonSaveCrtNwBrkrOnMdlwndw()
+                .VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw();
+            Pages.JScriptExecutorHelper
+                .OpenNewTab();
+            Browser._Driver.Navigate().GoToUrl(EndPoints.urlXitrooRandom);
+            Pages.EmailXitroo
+                .CopiedForEnterEmail(email)
+                .ClickSearchButton();
+            Pages.EmailXitroo
+                .OpenNewlyLetter()
+                .ClickLinkForConfirmAccountBroker();
+
+            Thread.Sleep(5000);
+
+        }
+
         [Test]
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]

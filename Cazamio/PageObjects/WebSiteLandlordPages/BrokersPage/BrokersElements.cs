@@ -12,5 +12,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.BrokersPage
     {
         [FindsBy(How = How.XPath, Using = ("//div[text()= 'Brokers']"))]
         public IWebElement TitleBrokersPage;
+
+        [FindsBy(How = How.XPath, Using = ("//button[@class = 'middle primary-action absolute-loader']"))]
+        public IWebElement ButtonCreateBrokerBrkrsPage;
     }
 }
