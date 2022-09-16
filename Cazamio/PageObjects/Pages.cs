@@ -18,6 +18,7 @@ using CazamioProgect.PageObjects.WebSiteLandlordPages.ModalsWindowsPages;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.PaymentSettingsPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.PreApprovalsPage;
+using CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.TemplatesPage;
 using OpenQA.Selenium;
@@ -71,6 +72,8 @@ namespace CazamioProgect.PageObjects
         public static Marketplace Marketplace => GetPage<Marketplace>();
         public static ModalWindowAreYouSureLogOutLandlordBroker ModalWindowAreYouSureLogOutLandlordBroker => GetPage<ModalWindowAreYouSureLogOutLandlordBroker>();
         public static ModalWindowCreateNewBroker ModalWindowCreateNewBroker => GetPage<ModalWindowCreateNewBroker>();
+        public static ResetYourPassword ResetYourPassword => GetPage<ResetYourPassword>();
+
         #endregion
 
     }

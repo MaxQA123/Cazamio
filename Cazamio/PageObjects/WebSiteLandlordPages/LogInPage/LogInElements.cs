@@ -25,6 +25,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         [FindsBy(How = How.XPath, Using = "//h4[text() = 'Login']")]
         public IWebElement TitleLogInPg;
 
-        
+        [FindsBy(How = How.XPath, Using = "//a[@href = '/account/forgot-password']")]
+        public IWebElement LinkForgotPassword;
     }
 }

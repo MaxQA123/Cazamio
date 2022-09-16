@@ -12,6 +12,7 @@ namespace CazamioProgect.Helpers
         public const string urlHomePageTenantWebSiteAbodeo = "https://abodebyreside.cazamiodemo.com/";
         public const string urlLogInPageLandlordBrokerWebSite = "https://landlord.cazamiodemo.com/";
         public const string urlXitrooRandom = "https://xitroo.com/";
+        public const string urlXitrooStaticBroker = "https://xitroo.com/#martin@abodebyreside.com";
     }
 
     public class GeneralTestDataForAllUsers
@@ -69,7 +70,8 @@ namespace CazamioProgect.Helpers
         public const string passwordLandlordMartin = "218Skillman!";
         public const string userNameLandlord = "Martin Weiss";
 
-        public const string emailBrokerTesterBroker = "mikebrokeruring@xitroo.com";
+        public const string emailBrokerMikeFlower = "mikebrokeruring@xitroo.com";
+        public const string newPasswordBrokerMikeFlowerBroker = "!321Qwerty";
         public const string userNameBroker = "Mike Flower";
     }
 

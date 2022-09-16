@@ -24,7 +24,7 @@ namespace BrokerTests
 
         //Date of publication:
         //Version\Build:
-        //Willingness for testing: in progress.
+        //Willingness for testing: Done.
         //This test case is doing checking: The successfully SignUp as Broker.
         //Comment: 
 
@@ -66,7 +66,41 @@ namespace BrokerTests
                 .VerifyEmailForCretingBroker(email);
 
             Thread.Sleep(5000);
+        }
 
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("Broker")]
+        [AllureSubSuite("ChangePasswordAsBroker")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: in progress.
+        //This test case is doing checking: The broker successfully had been changed the password.
+        //Comment: 
+
+        public void ChangePasswordAsBroker()
+        {
+            Pages.LogInLandlord
+                .ClickLinkForgotPassword();
+            Pages.ResetYourPassword
+                .EnterEmailForRstPsswrdPg()
+                .ClickButtonSendInstructionsRstPsswrdPg()
+                .VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg();
+            Pages.JScriptExecutorHelper
+                .OpenNewTab();
+            Browser._Driver.Navigate().GoToUrl(EndPoints.urlXitrooStaticBroker);
+            Pages.EmailXitroo
+                .ClickSearchButton();
+            //    .ClickLinkForConfirmAccountBroker();
+            //Pages.ResetYourPassword
+            //    .EnterNewConfirmPassword()
+            //    .ClickButtonResetPasswordlRstPsswrdPg();
+            
+            Thread.Sleep(5000);
         }
 
         [Test]

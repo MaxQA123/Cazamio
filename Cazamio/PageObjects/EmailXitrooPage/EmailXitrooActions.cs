@@ -72,6 +72,19 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
             return this;
         }
 
+        [AllureStep("ClickLinkForResetPasswordBroker")]
+        public EmailXitroo ClickLinkForResetPasswordBroker()
+        {
+            WaitUntil.WaitSomeInterval(3000);
+            Browser._Driver.SwitchTo().Frame(IframeXitrooLetter);
+            WaitUntil.WaitSomeInterval(1000);
+            Button.Click(LinkForConfirmAccountLandlordbroker);
+            Browser._Driver.SwitchTo().DefaultContent();
+            WaitUntil.WaitSomeInterval(3000);
+
+            return this;
+        }
+
         [AllureStep("CopyEmailFromXitrooPage")]
         public string CopyEmailFromXitrooPage()
         {
