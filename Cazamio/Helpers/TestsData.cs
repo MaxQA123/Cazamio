@@ -13,6 +13,8 @@ namespace CazamioProgect.Helpers
         public const string urlLogInPageLandlordBrokerWebSite = "https://landlord.cazamiodemo.com/";
         public const string urlXitrooRandom = "https://xitroo.com/";
         public const string urlXitrooStaticBroker = "https://xitroo.com/#liludalastfg@xitroo.com";
+        public const string urlXitrooStaticLandlord = "https://xitroo.com/#testlivelandlord@gmail.com";
+        public const string urlXitrooStaticTenant = "https://xitroo.com/#kickasswiles@xitroo.com";
     }
 
     public class GeneralTestDataForAllUsers
@@ -27,15 +29,16 @@ namespace CazamioProgect.Helpers
         public const string emailTenantWife = "tenantswife@gmail.com";
         public const string firstNameTenantWife = "Tenant";
 
-        public const string emailCurrentOccupantTerryLee = "jikoga5194@tinydef.com";
-        public const string firstNameCurrentOccupantTerryLee = "Terry";
-        public const string lastNameCurrentOccupantTenantTerryLee = "Lee";
-        public const string phoneNumberCurrentOccupantTerryLee = "2128765556";
+        public const string emailCurrentOccupantTomCruz = "kickasswiles@xitroo.com";
+        public const string firstNameCurrentOccupantTomCruz = "Tom";
+        public const string lastNameCurrentOccupantTenantTomCruz = "Cruz";
+        public const string phoneNumberCurrentOccupantTomCruz = "2128765556";
 
-        public const string emailNewOccupantTerryLee = "peacefulhawking@xitroo.com";
-        public const string firstNameNewOccupantTerryLee = "Elizabeth";
-        public const string lastNameNewOccupantTerryLee = "Taylor";
-        public const string phoneNumberNewOccupantTerryLee = "5151234321";
+        public const string emailNewOccupantTomCruz = "peacefulhawking@xitroo.com";
+        public const string firstNameNewOccupantTomCruz = "Elizabeth";
+        public const string lastNameNewOccupantTomCruz = "Taylor";
+        public const string phoneNumberNewOccupantTomCruz = "5151234321";
+        public const string newPasswordOccupantTomCruz = "!321Qwerty";
 
         public const string yourCurrentCurrentAddressStreetTerryLee = "Frank";
         public const string yourCurrentCurrentAddressCityTerryLee = "Saint-Germain-du-Corbéis";
@@ -63,9 +66,10 @@ namespace CazamioProgect.Helpers
 
     public class TestDataForWebSiteLandlord
     {
-        //public const string emailLandlordMartin = "testlivelandlord@gmail.com";
-        //public const string passwordLandlordMartin = "Qwerty123!";
-        //public const string userNameLandlord = "Landlord Test";
+        public const string emailLandlordTest = "testlivelandlord@gmail.com";
+        public const string passwordLandlordTest = "Qwerty123!";
+        public const string userNameTest = "Landlord Test";
+
         public const string emailLandlordMartin = "martin@abodebyreside.com";
         public const string passwordLandlordMartin = "218Skillman!";
         public const string userNameLandlord = "Martin Weiss";

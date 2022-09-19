@@ -98,7 +98,7 @@ namespace TenantCazamioTests
             Pages.HeaderCazamioTenant
                 .ClickButtonLogInHdrCzmTnnt();
             Pages.LogInCazamioTenant
-                .EnterEmailPasswordOnLgInAsOccupantCzmTnntTL()
+                .EnterEmailPasswordOnLgInAsOccupantCzmTnntTC()
                 .ClickIconShowLgInCazmTnnt()
                 .SetCheckBoxRememberMeLgInCazmTnnt()
                 .ClickButtonLogInLgInCazmTnnt();

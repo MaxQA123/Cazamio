@@ -20,6 +20,53 @@ namespace LandlordTests
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Landlord")]
+        [AllureSubSuite("ChangePasswordAsLandlord")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: in progress.
+        //This test case is doing checking: The broker successfully had been changed the password.
+        //Comment: 
+
+        public void ChangePasswordAsLandlord()
+        {
+            Pages.LogInLandlord
+                .ClickLinkForgotPassword();
+            Pages.ResetYourPassword
+                .EnterEmailLandlordForRstPsswrdPg()
+                .ClickButtonSendInstructionsRstPsswrdPg()
+                .VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg();
+            Pages.JScriptExecutorHelper
+                .OpenNewTab();
+            Browser._Driver.Navigate().GoToUrl(EndPoints.urlXitrooStaticLandlord);
+            Pages.EmailXitroo
+                .ClickSearchButton()
+                .OpenNewlyLetter()
+                .ClickLinkForResetPasswordBroker();
+            Pages.ResetYourPassword
+                .EnterNewConfirmPassword()
+                .ClickIconsShowPasswordNewConfirm()
+                .ClickButtonResetPasswordlRstPsswrdPg()
+                .ClickButtonBackToLogInPageRstPsswrdPg();
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsBroker()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyBrokerUserName(getUserNameCompare);
+
+            Thread.Sleep(5000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("Landlord")]
         [AllureSubSuite("LogInAsLandlord")]
 
         //Date of publication: 25.08.2022.

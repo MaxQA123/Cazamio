@@ -73,13 +73,13 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         public MyAccountCazamioTenant EnterFirstLastNameEmailPhoneNumberMyAccntPgTabAccnt()
         {
             WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputFirsNameMyAccntPgTabAccnt, TestDataForWebSiteCazamio.firstNameNewOccupantTerryLee);
+            InputGeneral.InputFunctionWithClear(FieldInputFirsNameMyAccntPgTabAccnt, TestDataForWebSiteCazamio.firstNameCurrentOccupantTomCruz);
             WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputLastNameMyAccntPgTabAccnt, TestDataForWebSiteCazamio.lastNameNewOccupantTerryLee);
+            InputGeneral.InputFunctionWithClear(FieldInputLastNameMyAccntPgTabAccnt, TestDataForWebSiteCazamio.lastNameCurrentOccupantTenantTomCruz);
             WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputEmailMyAccntPgTabAccnt, TestDataForWebSiteCazamio.emailCurrentOccupantTerryLee);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailMyAccntPgTabAccnt, TestDataForWebSiteCazamio.emailCurrentOccupantTomCruz);
             WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputPhoneNumberMyAccntPgTabAccnt, TestDataForWebSiteCazamio.phoneNumberNewOccupantTerryLee);
+            InputGeneral.InputFunctionWithClear(FieldInputPhoneNumberMyAccntPgTabAccnt, TestDataForWebSiteCazamio.phoneNumberCurrentOccupantTomCruz);
 
             return this;
         }

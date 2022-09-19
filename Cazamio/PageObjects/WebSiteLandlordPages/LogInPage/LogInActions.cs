@@ -32,6 +32,18 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
             return this;
         }
 
+        [AllureStep("EnterChangingEmailPasswordLogInPgAsLandlord")]
+        public LogInLandlord EnterChangingEmailPasswordLogInPgAsLandlord()
+        {
+            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteLandlord.emailLandlordTest);
+            WaitUntil.WaitSomeInterval(500);
+            //InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, TestDataForWebSiteLandlord.newPasswordBrokerLiluDalasBroker);
+
+            InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, GeneralTestDataForAllUsers.passwordGeneral);
+
+            return this;
+        }
+
         [AllureStep("ClickIconShowLogInPg")]
         public LogInLandlord ClickIconShowLogInPg()
         {
@@ -73,6 +85,27 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         public LogInLandlord ClickLinkForgotPassword()
         {
             Button.Click(LinkForgotPassword);
+
+            return this;
+        }
+
+        [AllureStep("CopiedForEnterPsswrdFromEmailCreateBroker")]
+        public LogInLandlord CopiedForEnterPsswrdFromEmailCreateBroker(string code)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
+            Browser._Driver.SwitchTo().Window(tabsList[2]);
+            WaitUntil.WaitSomeInterval(1000);
+            FieldInputPasswordLogInPg.SendKeys(code);
+
+            return this;
+        }
+
+        [AllureStep("CopiedForEnterEmailFromEmailCreateBroker")]
+        public LogInLandlord CopiedForEnterEmailFromEmailCreateBroker(string _email)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            FieldInputEmailLogInPg.SendKeys(_email);
 
             return this;
         }

@@ -65,6 +65,19 @@ namespace BrokerTests
             Pages.EmailXitroo
                 .VerifyEmailForCretingBroker(email);
 
+            Pages.SideBarLandlord
+                .ClickButtonLogOutSidebar();
+
+            Pages.LogInLandlord
+                .CopiedForEnterEmailFromEmailCreateBroker(email);
+
+            string copyPasswordFromEmail = Pages.EmailXitroo.CopyPasswordFromEmailForCreateBroker();
+
+            Pages.LogInLandlord
+                .CopiedForEnterPsswrdFromEmailCreateBroker(copyPasswordFromEmail)
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
             Thread.Sleep(5000);
         }
 
@@ -87,7 +100,7 @@ namespace BrokerTests
             Pages.LogInLandlord
                 .ClickLinkForgotPassword();
             Pages.ResetYourPassword
-                .EnterEmailForRstPsswrdPg()
+                .EnterEmailBrokerForRstPsswrdPg()
                 .ClickButtonSendInstructionsRstPsswrdPg()
                 .VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg();
             Pages.JScriptExecutorHelper

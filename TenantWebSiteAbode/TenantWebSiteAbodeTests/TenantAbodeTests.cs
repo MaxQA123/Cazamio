@@ -24,7 +24,7 @@ namespace TenantAbodeTests
         //Date of publication:
         //Version\Build:
         //The date last publication on which been testing:
-        //Willingness for testing: in progress.
+        //Willingness for testing: Done.
         //This test case is doing checking: The successfully SignUp as tenant.
         //Comment:
 
@@ -118,7 +118,7 @@ namespace TenantAbodeTests
             Pages.HeaderCazamioTenant
                 .ClickButtonLogInHdrCzmTnnt();
             Pages.LogInCazamioTenant
-                .EnterEmailPasswordOnLgInAsOccupantCzmTnntTL()
+                .EnterEmailPasswordOnLgInAsOccupantCzmTnntTC()
                 .ClickIconShowLgInCazmTnnt()
                 .SetCheckBoxRememberMeLgInCazmTnnt()
                 .ClickButtonLogInLgInCazmTnnt();
@@ -162,5 +162,48 @@ namespace TenantAbodeTests
             Thread.Sleep(10000);
         }
 
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("WebSiteAbodeTenant")]
+        [AllureSubSuite("ForgotPasswordAsTenant")]
+
+        //Date of publication:
+        //Version\Build:
+        //The date last publication on which been testing:
+        //Willingness for testing: in progress.
+        //This test case is doing checking: The tenant had changed the password successfully.
+        //Comment:
+
+        public void ForgotPasswordAsTenant()
+        {
+            Pages.HeaderCazamioTenant
+                .ClickButtonLogInHdrCzmTnnt();
+            Pages.LogInCazamioTenant
+                .ClickButtonForgotPasswordLgInCazmTnnt();
+            Pages.ForgotPassword
+                .EnterEmailOnFrgtPsswrdPg();
+            Pages.JScriptExecutorHelper
+                .OpenNewTab();
+            Browser._Driver.Navigate().GoToUrl(EndPoints.urlXitrooStaticTenant);
+
+            //string email = Pages.EmailXitroo.CopyEmailFromXitrooPage();
+
+            Pages.EmailXitroo
+                .ClickSearchButton()
+                .OpenNewlyLetter()
+                .ClickLinkForResetPasswordTenant();
+            Pages.CreateNewPassword
+                .EnterInputFieldPassswordCreateNewPsswrdPg()
+                //.ClickIconShowCreateNewPsswrdPg()
+                .ClickButtonSaveMyPasswordCreateNewPsswrdPg();
+            Pages.LogInCazamioTenant
+                .VerifyMessageYouHaveSuccesfullyChangedYourPasswordLgInPg()
+                .EnterEmailNewPasswordOnLogInPg();
+
+            Thread.Sleep(5000);
+        }
     }
 }

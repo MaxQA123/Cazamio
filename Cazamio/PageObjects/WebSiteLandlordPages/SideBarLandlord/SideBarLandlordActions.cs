@@ -225,6 +225,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
             Button.Click(ButtonLogOutSidebar);
             WaitUntil.WaitSomeInterval(1000);
 
+            Pages.ModalWindowAreYouSureLogOutLandlordBroker
+                .ClickButtonYesIAmSureOnMdlwndw();
+
             return this;
         }
     }

@@ -1,0 +1,957 @@
+{
+  "uuid": "a69f6d36-5862-4bb5-a03c-5014056cdfe5-tr-0-1001",
+  "historyId": "BrokerTests.TestsBaseWeb.SignUpAsBroker",
+  "fullName": "BrokerTests.TestsBaseWeb.SignUpAsBroker",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "BrokerTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "SignUpAsBroker"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "Broker"
+    },
+    {
+      "name": "subSuite",
+      "value": "SignUpAsBroker"
+    }
+  ],
+  "links": [],
+  "name": "SignUpAsBroker",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.WebDriverTimeoutException : Timed out after 10 seconds\r\n  ----> OpenQA.Selenium.NoSuchElementException : Could not find element by: By.XPath: //input[@placeholder = 'Password']",
+    "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.ElementIsClickable(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 21\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663538_o(IWebElement element, String text) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 18\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663538_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663538_w_0(Object[] )\r\n   at CazamioProgect.Helpers.InputGeneral.InputFunctionWithClear(IWebElement element, String text)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_CopiedForEnterPsswrdFromEmailCreateBroker_100663387_o(String _password) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\LogInPage\\LogInActions.cs:line 87\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_CopiedForEnterPsswrdFromEmailCreateBroker_100663387_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_CopiedForEnterPsswrdFromEmailCreateBroker_100663387_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.CopiedForEnterPsswrdFromEmailCreateBroker(String _password) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\LogInPage\\LogInActions.cs:line 16\r\n   at BrokerTests.TestsBaseWeb.SignUpAsBroker() in C:\\Automation\\Cazamio\\BrokerWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 75\r\n--NoSuchElementException\r\n   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()\r\n   at SeleniumExtras.WaitHelpers.ExpectedConditions.<>c__DisplayClass7_0.<ElementToBeClickable>b__0(IWebDriver driver)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "SignUpAsBroker",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.WebDriverTimeoutException : Timed out after 10 seconds\r\n  ----> OpenQA.Selenium.NoSuchElementException : Could not find element by: By.XPath: //input[@placeholder = 'Password']",
+        "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.ElementIsClickable(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 21\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663538_o(IWebElement element, String text) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 18\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663538_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663538_w_0(Object[] )\r\n   at CazamioProgect.Helpers.InputGeneral.InputFunctionWithClear(IWebElement element, String text)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_CopiedForEnterPsswrdFromEmailCreateBroker_100663387_o(String _password) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\LogInPage\\LogInActions.cs:line 87\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_CopiedForEnterPsswrdFromEmailCreateBroker_100663387_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_CopiedForEnterPsswrdFromEmailCreateBroker_100663387_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.CopiedForEnterPsswrdFromEmailCreateBroker(String _password) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\LogInPage\\LogInActions.cs:line 16\r\n   at BrokerTests.TestsBaseWeb.SignUpAsBroker() in C:\\Automation\\Cazamio\\BrokerWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 75\r\n--NoSuchElementException\r\n   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()\r\n   at SeleniumExtras.WaitHelpers.ExpectedConditions.<>c__DisplayClass7_0.<ElementToBeClickable>b__0(IWebDriver driver)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "EnterEmailPasswordLogInPgAsLandlord",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "martin@abodebyreside.com"
+                }
+              ],
+              "start": 1663576931715,
+              "stop": 1663576932290
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "218Skillman!"
+                }
+              ],
+              "start": 1663576932793,
+              "stop": 1663576933359
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576931714,
+          "stop": 1663576933359
+        },
+        {
+          "name": "ClickIconShowLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663576933360,
+              "stop": 1663576934039
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576933360,
+          "stop": 1663576934039
+        },
+        {
+          "name": "ClickButtonLetsGoLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663576934040,
+              "stop": 1663576934881
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576934040,
+          "stop": 1663576935890
+        },
+        {
+          "name": "GetUserNameFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576935892,
+          "stop": 1663576936014
+        },
+        {
+          "name": "VerifyLandlordUserName",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Martin Weiss"
+            }
+          ],
+          "start": 1663576936015,
+          "stop": 1663576937534
+        },
+        {
+          "name": "ClickButtonBrokersSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663576939135,
+              "stop": 1663576939749
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576937535,
+          "stop": 1663576940760
+        },
+        {
+          "name": "ClickButtonCreateBrokerBrokersPage",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663576940762,
+              "stop": 1663576941421
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576940761,
+          "stop": 1663576941421
+        },
+        {
+          "name": "EnterFirstLastNameEmailPhnNmbrCellMdlWndw",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Garfield"
+                }
+              ],
+              "start": 1663576941789,
+              "stop": 1663576942307
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Waelchi"
+                }
+              ],
+              "start": 1663576942308,
+              "stop": 1663576942826
+            },
+            {
+              "name": "RandomEmail",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "5"
+                }
+              ],
+              "start": 1663576942826,
+              "stop": 1663576942831
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "nfput@xitroo.com"
+                }
+              ],
+              "start": 1663576942831,
+              "stop": 1663576943392
+            },
+            {
+              "name": "RandomPhoneNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "10"
+                }
+              ],
+              "start": 1663576943393,
+              "stop": 1663576943394
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "8378355395"
+                }
+              ],
+              "start": 1663576943394,
+              "stop": 1663576943894
+            },
+            {
+              "name": "RandomPhoneNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "10"
+                }
+              ],
+              "start": 1663576943894,
+              "stop": 1663576943894
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "4802650855"
+                }
+              ],
+              "start": 1663576943894,
+              "stop": 1663576944509
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576941422,
+          "stop": 1663576944509
+        },
+        {
+          "name": "CopyEmailFromMdlWndwCreateBroker",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576944510,
+          "stop": 1663576945078
+        },
+        {
+          "name": "ClickButtonSaveCrtNwBrkrOnMdlwndw",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663576945079,
+              "stop": 1663576945812
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576945079,
+          "stop": 1663576945812
+        },
+        {
+          "name": "VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576945813,
+          "stop": 1663576947910
+        },
+        {
+          "name": "OpenNewTab",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576947911,
+          "stop": 1663576948027
+        },
+        {
+          "name": "CopiedForEnterEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "nfput@xitroo.com"
+                }
+              ],
+              "start": 1663576952140,
+              "stop": 1663576952660
+            }
+          ],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "nfput@xitroo.com"
+            }
+          ],
+          "start": 1663576949133,
+          "stop": 1663576952660
+        },
+        {
+          "name": "ClickSearchButton",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663576953759,
+              "stop": 1663576954436
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576952661,
+          "stop": 1663576954436
+        },
+        {
+          "name": "OpenNewlyLetter",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663576959449,
+              "stop": 1663576960542
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576954437,
+          "stop": 1663576960542
+        },
+        {
+          "name": "ClickLinkForConfirmAccount",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663576964622,
+              "stop": 1663576965427
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576960542,
+          "stop": 1663576968451
+        },
+        {
+          "name": "SwitchTabClickButtonBrokersSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663576971109,
+              "stop": 1663576971832
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576968453,
+          "stop": 1663576972843
+        },
+        {
+          "name": "VerifyEmailForCretingBroker",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "nfput@xitroo.com"
+            }
+          ],
+          "start": 1663576972847,
+          "stop": 1663576973416
+        },
+        {
+          "name": "ClickButtonLogOutSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663576974432,
+              "stop": 1663576975132
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576973417,
+          "stop": 1663576976140
+        },
+        {
+          "name": "ClickButtonYesIAmSureOnMdlwndw",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663576977151,
+              "stop": 1663576978960
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576976142,
+          "stop": 1663576978960
+        },
+        {
+          "name": "ClickLinkForResetPasswordBroker",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663576978962,
+          "stop": 1663576981624
+        },
+        {
+          "name": "CopiedForEnterPsswrdFromEmailCreateBroker",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "Timed out after 10 seconds",
+            "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.ElementIsClickable(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 21\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663538_o(IWebElement element, String text) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 18\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663538_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663538_w_0(Object[] )\r\n   at CazamioProgect.Helpers.InputGeneral.InputFunctionWithClear(IWebElement element, String text)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_CopiedForEnterPsswrdFromEmailCreateBroker_100663387_o(String _password) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\LogInPage\\LogInActions.cs:line 87\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_CopiedForEnterPsswrdFromEmailCreateBroker_100663387_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "failed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false,
+                "message": "Timed out after 10 seconds",
+                "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.ElementIsClickable(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 21\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663538_o(IWebElement element, String text) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 18\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663538_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": ""
+                }
+              ],
+              "start": 1663576985652,
+              "stop": 1663576996135
+            }
+          ],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": ""
+            }
+          ],
+          "start": 1663576981624,
+          "stop": 1663576996136
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "ddb599448c5f4fce91f26c5cf43ea19f-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1663576926643,
+      "stop": 1663576996883
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1663576926641,
+  "stop": 1663576996889
+}

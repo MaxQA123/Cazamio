@@ -3,6 +3,8 @@ using CazamioProgect.PageObjects.DatePickerModalWindow;
 using CazamioProgect.PageObjects.EmailXitrooPage;
 using CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant;
 using CazamioProgect.PageObjects.GeneralPages.SignUpCazamioTenantPage;
+using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.CreateNewPasswordPage;
+using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.ForgotPasswordPage;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCazamioTenant;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.BrokersPage;
@@ -52,6 +54,8 @@ namespace CazamioProgect.PageObjects
         public static SignUpCazamioTenant SignUpCazamioTenant => GetPage<SignUpCazamioTenant>();
         public static LogInCazamioTenant LogInCazamioTenant => GetPage<LogInCazamioTenant>();
         public static MyAccountCazamioTenant MyAccountCazamioTenant => GetPage<MyAccountCazamioTenant>();
+        public static ForgotPassword ForgotPassword => GetPage<ForgotPassword>();
+        public static CreateNewPassword CreateNewPassword => GetPage<CreateNewPassword>();
 
         #endregion
 

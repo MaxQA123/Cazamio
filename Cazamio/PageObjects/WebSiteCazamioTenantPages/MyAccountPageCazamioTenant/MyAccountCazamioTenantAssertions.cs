@@ -39,7 +39,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         public MyAccountCazamioTenant VerifyOccupantFirstNameTL(string getFirstNameActual)
         {
             WaitUntil.WaitSomeInterval(500);
-            string getFirstNameExpected = TestDataForWebSiteCazamio.firstNameCurrentOccupantTerryLee;
+            string getFirstNameExpected = TestDataForWebSiteCazamio.firstNameCurrentOccupantTomCruz;
 
             Assert.AreEqual(getFirstNameActual, getFirstNameExpected);
 

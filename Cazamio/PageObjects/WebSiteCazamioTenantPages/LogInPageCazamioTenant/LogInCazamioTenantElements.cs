@@ -26,7 +26,13 @@ namespace CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant
         public IWebElement ButtonLogInLgInCazmTnnt => Browser._Driver.FindElement(_ButtonLogInLgInCazmTnnt);
         public static readonly By _ButtonLogInLgInCazmTnnt = By.XPath("//button[@aria-label= 'button']//span[text() = 'Login']");
 
+        [FindsBy(How = How.XPath, Using = "//a[text() = 'Forgot password?']")]
+        public IWebElement ButtonForgotPasswordLgInCazmTnnt;
+
         [FindsBy(How = How.XPath, Using = "//span[text() = 'Account was successfully activated']")]
         public IWebElement MessageAccountWasSuccessfullyActivated;
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(text(), 'You have succesfully changed your password and you can now login back to your account.')]")]
+        public IWebElement MessageYouHaveSuccesfullyChangedYourPasswordLgInPg;
     }
 }

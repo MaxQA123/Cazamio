@@ -19,5 +19,14 @@ namespace CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant
 
             return this;
         }
+
+        [AllureStep("VerifyMessageYouHaveSuccesfullyChangedYourPasswordLgInPg")]
+        public LogInCazamioTenant VerifyMessageYouHaveSuccesfullyChangedYourPasswordLgInPg()
+        {
+            WaitUntil.WaitSomeInterval(3000);
+            Assert.IsTrue(Successfully.IsVisible(MessageYouHaveSuccesfullyChangedYourPasswordLgInPg));
+
+            return this;
+        }
     }
 }

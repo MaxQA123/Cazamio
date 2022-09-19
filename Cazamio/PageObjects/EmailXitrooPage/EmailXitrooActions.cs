@@ -60,7 +60,7 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
             return this;
         }
 
-        [AllureStep("ClickLinkForConfirmAccount")]
+        [AllureStep("ClickLinkForConfirmAccountBroker")]
         public EmailXitroo ClickLinkForConfirmAccountBroker()
         {
             WaitUntil.WaitSomeInterval(3000);
@@ -86,6 +86,19 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
             return this;
         }
 
+        [AllureStep("ClickLinkForResetPasswordTenant")]
+        public EmailXitroo ClickLinkForResetPasswordTenant()
+        {
+            WaitUntil.WaitSomeInterval(3000);
+            Browser._Driver.SwitchTo().Frame(IframeXitrooLetter);
+            WaitUntil.WaitSomeInterval(1000);
+            Button.Click(LinkForResetPassworTenant);
+            Browser._Driver.SwitchTo().DefaultContent();
+            WaitUntil.WaitSomeInterval(3000);
+
+            return this;
+        }
+
         [AllureStep("CopyEmailFromXitrooPage")]
         public string CopyEmailFromXitrooPage()
         {
@@ -94,6 +107,22 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
             string copyEmailActual = copyEmail.ToString();
 
             return copyEmailActual;
+        }
+
+        [AllureStep("CopyPasswordFromEmailForCreateBroker")]
+        public string CopyPasswordFromEmailForCreateBroker()
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
+            Browser._Driver.SwitchTo().Window(tabsList[1]);
+
+            WaitUntil.WaitSomeInterval(1000);
+            Browser._Driver.SwitchTo().Frame(IframeXitrooLetter);
+            WaitUntil.WaitSomeInterval(500);
+            string code = PassworForBrokerFromEmail.Text.Trim(new char[] { ' ', 'P', 'a', 's', 's', 'w', 'o', 'r', 'd', ':', ' ' });
+            //string code = VerificationCodeXitroo.Text.Substring(20, 25);
+
+            return code;
         }
     }
 }
