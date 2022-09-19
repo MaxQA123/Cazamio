@@ -14,6 +14,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage
         [AllureStep("VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg")]
         public ResetYourPassword VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg()
         {
+            WaitUntil.WaitSomeInterval(1000);
             Assert.IsTrue(Successfully.IsVisible(MessageYourPasswordWasSuccessfullySentRstPsswrdPg));
 
             return this;

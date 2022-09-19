@@ -24,6 +24,7 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
         public EmailXitroo ClickSearchButton()
         {
             WaitUntil.WaitSomeInterval(1000);
+            WaitUntil.CustomElementIsVisible(ButtonSearchEmail);
             Button.Click(ButtonSearchEmail);
 
             return this;
@@ -78,7 +79,7 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
             WaitUntil.WaitSomeInterval(3000);
             Browser._Driver.SwitchTo().Frame(IframeXitrooLetter);
             WaitUntil.WaitSomeInterval(1000);
-            Button.Click(LinkForConfirmAccountLandlordbroker);
+            Button.Click(LinkForResetPassworBroker);
             Browser._Driver.SwitchTo().DefaultContent();
             WaitUntil.WaitSomeInterval(3000);
 

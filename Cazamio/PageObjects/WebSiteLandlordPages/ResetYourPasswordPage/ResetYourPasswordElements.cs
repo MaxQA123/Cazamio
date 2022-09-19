@@ -28,10 +28,13 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage
         [FindsBy(How = How.XPath, Using = "//img[@src = 'assets/img/account/eye.svg ']")]
         public IWebElement IconForFieldNewPsswrdRstPsswrdPg;
 
-        [FindsBy(How = How.XPath, Using = "//form[@class= 'ng-untouched ng-pristine ng-invalid']//div[2]//img[@src = 'assets/img/account/eye.svg ']")]
+        [FindsBy(How = How.XPath, Using = "//form[@class= 'ng-dirty ng-touched ng-valid']//div[2]//img[@src = 'assets/img/account/eye.svg ']")]
         public IWebElement IconForFieldConfirmPsswrdRstPsswrdPg;
 
         [FindsBy(How = How.XPath, Using = "//button[@class= 'btn btn-warning btn-link btn-lg card-footer-btn']")]
         public IWebElement ButtonResetPasswordlRstPsswrdPg;
+
+        [FindsBy(How = How.XPath, Using = "//button[@class= 'btn btn-warning btn-link btn-lg card-footer-btn']//a")]
+        public IWebElement ButtonBackToLogInPageRstPsswrdPg;
     }
 }

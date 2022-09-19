@@ -1,0 +1,466 @@
+{
+  "uuid": "e2397a1a-1a4f-471a-9e38-fe5c968aedbf-tr-0-1002",
+  "historyId": "BrokerTests.TestsBaseWeb.ChangePasswordAsBroker",
+  "fullName": "BrokerTests.TestsBaseWeb.ChangePasswordAsBroker",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "BrokerTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "ChangePasswordAsBroker"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "Broker"
+    },
+    {
+      "name": "subSuite",
+      "value": "ChangePasswordAsBroker"
+    }
+  ],
+  "links": [],
+  "name": "ChangePasswordAsBroker",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.NoSuchElementException : Could not find element by: By.XPath: //form[@class= 'ng-untouched ng-pristine ng-invalid']//div[2]//img[@src = 'assets/img/account/eye.svg ']",
+    "trace": "   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.Click()\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663539_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 38\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663539_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663539_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.__a$_around_ClickIconsShowPasswordNewConfirm_100663360_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ResetYourPasswordPage\\ResetYourPasswordActions.cs:line 50\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.__a$_around_ClickIconsShowPasswordNewConfirm_100663360_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.__a$_around_ClickIconsShowPasswordNewConfirm_100663360_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.ClickIconsShowPasswordNewConfirm() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ResetYourPasswordPage\\ResetYourPasswordActions.cs:line 15\r\n   at BrokerTests.TestsBaseWeb.ChangePasswordAsBroker() in C:\\Automation\\Cazamio\\BrokerWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 100"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "ChangePasswordAsBroker",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.NoSuchElementException : Could not find element by: By.XPath: //form[@class= 'ng-untouched ng-pristine ng-invalid']//div[2]//img[@src = 'assets/img/account/eye.svg ']",
+        "trace": "   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.Click()\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663539_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 38\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663539_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663539_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.__a$_around_ClickIconsShowPasswordNewConfirm_100663360_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ResetYourPasswordPage\\ResetYourPasswordActions.cs:line 50\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.__a$_around_ClickIconsShowPasswordNewConfirm_100663360_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.__a$_around_ClickIconsShowPasswordNewConfirm_100663360_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.ClickIconsShowPasswordNewConfirm() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ResetYourPasswordPage\\ResetYourPasswordActions.cs:line 15\r\n   at BrokerTests.TestsBaseWeb.ChangePasswordAsBroker() in C:\\Automation\\Cazamio\\BrokerWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 100"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "ClickLogInLandlord",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663571678106,
+              "stop": 1663571678821
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663571678105,
+          "stop": 1663571678821
+        },
+        {
+          "name": "EnterEmailForRstPsswrdPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "liludalastfg@xitroo.com"
+                }
+              ],
+              "start": 1663571678823,
+              "stop": 1663571679434
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663571678822,
+          "stop": 1663571679434
+        },
+        {
+          "name": "ClickButtonSendInstructionsRstPsswrdPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663571680467,
+              "stop": 1663571681064
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663571679435,
+          "stop": 1663571681064
+        },
+        {
+          "name": "VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663571681064,
+          "stop": 1663571683150
+        },
+        {
+          "name": "OpenNewTab",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663571683151,
+          "stop": 1663571683239
+        },
+        {
+          "name": "ClickSearchButton",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663571685414,
+              "stop": 1663571686006
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663571684372,
+          "stop": 1663571686006
+        },
+        {
+          "name": "OpenNewlyLetter",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663571691028,
+              "stop": 1663571692082
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663571686008,
+          "stop": 1663571692082
+        },
+        {
+          "name": "ClickLinkForResetPasswordBroker",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663571696153,
+              "stop": 1663571696836
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663571692083,
+          "stop": 1663571699861
+        },
+        {
+          "name": "EnterNewConfirmPassword",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1663571700882,
+              "stop": 1663571701398
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1663571701398,
+              "stop": 1663571701927
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663571699863,
+          "stop": 1663571701927
+        },
+        {
+          "name": "ClickButtonBackToLogInPageRstPsswrdPg",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "Could not find element by: By.XPath: //form[@class= 'ng-untouched ng-pristine ng-invalid']//div[2]//img[@src = 'assets/img/account/eye.svg ']",
+            "trace": "   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.Click()\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663539_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 38\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663539_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663539_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.__a$_around_ClickIconsShowPasswordNewConfirm_100663360_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ResetYourPasswordPage\\ResetYourPasswordActions.cs:line 50\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.__a$_around_ClickIconsShowPasswordNewConfirm_100663360_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663571701928,
+              "stop": 1663571702563
+            },
+            {
+              "name": "Click",
+              "status": "failed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false,
+                "message": "Could not find element by: By.XPath: //form[@class= 'ng-untouched ng-pristine ng-invalid']//div[2]//img[@src = 'assets/img/account/eye.svg ']",
+                "trace": "   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.Click()\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663539_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 38\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663539_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663571703576,
+              "stop": 1663571704173
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663571701928,
+          "stop": 1663571704174
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "bf504219514846e0932b4cc6b26927a9-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1663571672563,
+      "stop": 1663571704692
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1663571672559,
+  "stop": 1663571704698
+}

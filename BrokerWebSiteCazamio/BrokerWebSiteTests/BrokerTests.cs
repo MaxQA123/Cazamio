@@ -94,12 +94,24 @@ namespace BrokerTests
                 .OpenNewTab();
             Browser._Driver.Navigate().GoToUrl(EndPoints.urlXitrooStaticBroker);
             Pages.EmailXitroo
-                .ClickSearchButton();
-            //    .ClickLinkForConfirmAccountBroker();
-            //Pages.ResetYourPassword
-            //    .EnterNewConfirmPassword()
-            //    .ClickButtonResetPasswordlRstPsswrdPg();
-            
+                .ClickSearchButton()
+                .OpenNewlyLetter()
+                .ClickLinkForResetPasswordBroker();
+            Pages.ResetYourPassword
+                .EnterNewConfirmPassword()
+                .ClickIconsShowPasswordNewConfirm()
+                .ClickButtonResetPasswordlRstPsswrdPg()
+                .ClickButtonBackToLogInPageRstPsswrdPg();
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsBroker()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyBrokerUserName(getUserNameCompare);
+
             Thread.Sleep(5000);
         }
 

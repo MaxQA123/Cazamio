@@ -1,0 +1,287 @@
+{
+  "uuid": "548c7334-0f7c-40f0-b09c-12eeefbe20ed-tr-0-1002",
+  "historyId": "BrokerTests.TestsBaseWeb.ChangePasswordAsBroker",
+  "fullName": "BrokerTests.TestsBaseWeb.ChangePasswordAsBroker",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "BrokerTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "ChangePasswordAsBroker"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "Broker"
+    },
+    {
+      "name": "subSuite",
+      "value": "ChangePasswordAsBroker"
+    }
+  ],
+  "links": [],
+  "name": "ChangePasswordAsBroker",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.NoSuchElementException : Could not find element by: By.XPath: //iframe[@id = 'mailContentFrame']",
+    "trace": "   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at OpenQA.Selenium.TargetLocator.Frame(IWebElement frameElement)\r\n   at CazamioProgect.PageObjects.EmailXitrooPage.EmailXitroo.__a$_around_ClickLinkForResetPasswordBroker_100663463_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\EmailXitrooPage\\EmailXitrooActions.cs:line 80\r\n   at CazamioProgect.PageObjects.EmailXitrooPage.EmailXitroo.__a$_around_ClickLinkForResetPasswordBroker_100663463_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.EmailXitrooPage.EmailXitroo.__a$_around_ClickLinkForResetPasswordBroker_100663463_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.EmailXitrooPage.EmailXitroo.ClickLinkForResetPasswordBroker() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\EmailXitrooPage\\EmailXitrooActions.cs:line 16\r\n   at BrokerTests.TestsBaseWeb.ChangePasswordAsBroker() in C:\\Automation\\Cazamio\\BrokerWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 96"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "ChangePasswordAsBroker",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.NoSuchElementException : Could not find element by: By.XPath: //iframe[@id = 'mailContentFrame']",
+        "trace": "   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at OpenQA.Selenium.TargetLocator.Frame(IWebElement frameElement)\r\n   at CazamioProgect.PageObjects.EmailXitrooPage.EmailXitroo.__a$_around_ClickLinkForResetPasswordBroker_100663463_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\EmailXitrooPage\\EmailXitrooActions.cs:line 80\r\n   at CazamioProgect.PageObjects.EmailXitrooPage.EmailXitroo.__a$_around_ClickLinkForResetPasswordBroker_100663463_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.EmailXitrooPage.EmailXitroo.__a$_around_ClickLinkForResetPasswordBroker_100663463_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.EmailXitrooPage.EmailXitroo.ClickLinkForResetPasswordBroker() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\EmailXitrooPage\\EmailXitrooActions.cs:line 16\r\n   at BrokerTests.TestsBaseWeb.ChangePasswordAsBroker() in C:\\Automation\\Cazamio\\BrokerWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 96"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "ClickLogInLandlord",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663565423630,
+              "stop": 1663565424305
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663565423629,
+          "stop": 1663565424305
+        },
+        {
+          "name": "EnterEmailForRstPsswrdPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "mikebrokeruring@xitroo.com"
+                }
+              ],
+              "start": 1663565424308,
+              "stop": 1663565424862
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663565424307,
+          "stop": 1663565424862
+        },
+        {
+          "name": "ClickButtonSendInstructionsRstPsswrdPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663565425871,
+              "stop": 1663565426591
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663565424862,
+          "stop": 1663565426591
+        },
+        {
+          "name": "VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663565426592,
+          "stop": 1663565428688
+        },
+        {
+          "name": "OpenNewTab",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663565428689,
+          "stop": 1663565428769
+        },
+        {
+          "name": "ClickSearchButton",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1663565431793,
+              "stop": 1663565432411
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663565430748,
+          "stop": 1663565432411
+        },
+        {
+          "name": "ClickLinkForResetPasswordBroker",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "Could not find element by: By.XPath: //iframe[@id = 'mailContentFrame']",
+            "trace": "   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at OpenQA.Selenium.TargetLocator.Frame(IWebElement frameElement)\r\n   at CazamioProgect.PageObjects.EmailXitrooPage.EmailXitroo.__a$_around_ClickLinkForResetPasswordBroker_100663463_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\EmailXitrooPage\\EmailXitrooActions.cs:line 80\r\n   at CazamioProgect.PageObjects.EmailXitrooPage.EmailXitroo.__a$_around_ClickLinkForResetPasswordBroker_100663463_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1663565432412,
+          "stop": 1663565435539
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "3b11d8f2553445ddb8291cfa3138d2c5-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1663565417675,
+      "stop": 1663565436012
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1663565417674,
+  "stop": 1663565436018
+}
