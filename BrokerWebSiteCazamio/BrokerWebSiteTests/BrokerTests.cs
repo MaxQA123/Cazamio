@@ -47,6 +47,7 @@ namespace BrokerTests
                 //.VerifyFieldsOnMdlWndwCreateBroker()
 
             string email = Pages.ModalWindowCreateNewBroker.CopyEmailFromMdlWndwCreateBroker();
+            string firstName = Pages.ModalWindowCreateNewBroker.CopyFirstNameFromMdlWndwCreateBroker();
 
             Pages.ModalWindowCreateNewBroker
                 .ClickButtonSaveCrtNwBrkrOnMdlwndw()
@@ -58,7 +59,11 @@ namespace BrokerTests
                 .CopiedForEnterEmail(email)
                 .ClickSearchButton();
             Pages.EmailXitroo
-                .OpenNewlyLetter()
+                .OpenNewlyLetter();
+
+            string link = Pages.EmailXitroo.CopyLinkFromEmailXitroo();
+
+            Pages.EmailXitroo
                 .ClickLinkForConfirmAccountBroker();
             Pages.SideBarLandlord
                 .SwitchTabClickButtonBrokersSidebar();
@@ -71,7 +76,7 @@ namespace BrokerTests
             Pages.LogInLandlord
                 .CopiedForEnterEmailFromEmailCreateBroker(email);
 
-            string copyPasswordFromEmail = Pages.EmailXitroo.CopyPasswordFromEmailForCreateBroker();
+            string copyPasswordFromEmail = Pages.EmailXitroo.CopyPasswordFromEmailForCreateBroker(firstName, link);
 
             Pages.LogInLandlord
                 .CopiedForEnterPsswrdFromEmailCreateBroker(copyPasswordFromEmail)

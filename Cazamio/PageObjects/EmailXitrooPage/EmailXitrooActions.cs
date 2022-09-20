@@ -63,8 +63,8 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
         [AllureStep("ClickLinkForConfirmAccountBroker")]
         public EmailXitroo ClickLinkForConfirmAccountBroker()
         {
-            WaitUntil.WaitSomeInterval(3000);
-            Browser._Driver.SwitchTo().Frame(IframeXitrooLetter);
+            //WaitUntil.WaitSomeInterval(3000);
+            //Browser._Driver.SwitchTo().Frame(IframeXitrooLetter);
             WaitUntil.WaitSomeInterval(1000);
             Button.Click(LinkForConfirmAccountLandlordbroker);
             Browser._Driver.SwitchTo().DefaultContent();
@@ -109,8 +109,20 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
             return copyEmailActual;
         }
 
+        [AllureStep("CopyLinkFromEmailXitroo")]
+        public string CopyLinkFromEmailXitroo()
+        {
+            WaitUntil.WaitSomeInterval(3000);
+            Browser._Driver.SwitchTo().Frame(IframeXitrooLetter);
+            WaitUntil.WaitSomeInterval(500);
+            string copyLink = Browser._Driver.FindElement(By.XPath("//a[contains(@href, 'https://landlord.cazamiodemo.com/account/email-confirm')]")).Text;
+            string copyLinkActual = copyLink.ToString();
+
+            return copyLinkActual;
+        }
+
         [AllureStep("CopyPasswordFromEmailForCreateBroker")]
-        public string CopyPasswordFromEmailForCreateBroker()
+        public string CopyPasswordFromEmailForCreateBroker(string firstName, string link)
         {
             WaitUntil.WaitSomeInterval(1000);
             List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
@@ -119,8 +131,7 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
             WaitUntil.WaitSomeInterval(1000);
             Browser._Driver.SwitchTo().Frame(IframeXitrooLetter);
             WaitUntil.WaitSomeInterval(500);
-            string code = PassworForBrokerFromEmail.Text.Trim(new char[] { ' ', 'P', 'a', 's', 's', 'w', 'o', 'r', 'd', ':', ' ' });
-            //string code = VerificationCodeXitroo.Text.Substring(20, 25);
+            string code = PassworForBrokerFromEmail.Text.Replace($"Name: {firstName}", "").Replace("Password: ", "").Replace($"Email confirm link: {link}", "");
 
             return code;
         }
