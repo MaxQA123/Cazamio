@@ -160,7 +160,82 @@ namespace BrokerTests
                 .VerifyBrokerUserName(getUserNameCompare);
 
             Thread.Sleep(5000);
+        }
 
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("Broker")]
+        [AllureSubSuite("VerifySidebar")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: in progress.
+        //This test case is doing checking: That the images uploaded and switching between the pages successfully via the sidebar.
+        //Comment: 
+
+        public void VerifySidebar()
+        {
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsBroker()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyBrokerUserName(getUserNameCompare);
+
+            Pages.SideBarLandlord
+                .UploadImageAvatarUserLandlordFirst()
+                .VerifyChangingAvatarImageLandlord()
+                .UploadImageAvatarUserLandlordSecond()
+                .VerifyChangingAvatarImageLandlord()
+                .ClicklinkRemovePhotoOfLandlord()
+                .VerifyRewmoveAvatarImageLandlord()
+                .ClickButtonDashboardSidebar();
+            Pages.Dashboard
+                .VerifyTitleOfDashboardPg();
+            Pages.SideBarLandlord
+                .ClickButtonBuildingsSidebar();
+            Pages.ListOfBuildings
+                .VerifyTitleListOfBuildingsPg();
+            Pages.SideBarLandlord
+                .ClickButtonApartmentsSidebar();
+            Pages.ListOfApartments
+                .VerifyTitleListOfApartmentsPg();
+            Pages.SideBarLandlord
+                .ClickButtonApplicationsSidebar();
+            Pages.ListOfApplications
+                .VerifyTitleListOfApplicationsPg();
+            Pages.SideBarLandlord
+                .ClickButtonPreApprovalsSidebar();
+            Pages.PreApprovals
+                .VerifyTitlePreApprovalsPagePg();
+            Pages.SideBarLandlord
+                .ClickButtonLeaseSignDocumentsSidebar();
+            Pages.Templates
+                .VerifyTitleTemplatesPagePg();
+            Pages.SideBarLandlord
+                .ClickButtonPaymentSettingsSidebar();
+            Pages.PaymentSettings
+                .VerifyTitlePaymentSettingsPagePg();
+            Pages.SideBarLandlord
+                .ClickButtonTransactionsSidebar();
+            Pages.ListOfTransactions
+                .VerifyTitleListOfTransactionsPg();
+            Pages.SideBarLandlord
+                .ClickButtonOwnersSidebar();
+            Pages.ListOfOwners
+                .VerifyTitleListOfOwnersPg();
+            Pages.SideBarLandlord
+                .ClickButtonLogOutSidebar();
+            Pages.LogInLandlord
+                .VerifyTitleLogInPg();
+
+            Thread.Sleep(5000);
         }
     }
 }

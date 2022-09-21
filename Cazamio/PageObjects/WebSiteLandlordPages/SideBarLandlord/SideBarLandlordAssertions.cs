@@ -37,7 +37,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public SideBarLandlord VerifyBrokerUserName(string getUserNameActual)
         {
             WaitUntil.WaitSomeInterval(500);
-            string getUserNameExpected = TestDataForWebSiteLandlord.userNameBroker;
+            string getUserNameExpected = TestDataForWebSiteLandlord.userNameBrokerTests;
 
             Assert.AreEqual(getUserNameActual, getUserNameExpected);
 

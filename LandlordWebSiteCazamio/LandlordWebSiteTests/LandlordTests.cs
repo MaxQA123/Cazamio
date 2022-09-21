@@ -173,8 +173,6 @@ namespace LandlordTests
                 .VerifyTitleMarketplacePg();
             Pages.SideBarLandlord
                 .ClickButtonLogOutSidebar();
-            Pages.ModalWindowAreYouSureLogOutLandlordBroker
-                .ClickButtonYesIAmSureOnMdlwndw();
             Pages.LogInLandlord
                 .VerifyTitleLogInPg();
 

@@ -14,6 +14,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         [AllureStep("VerifyTitleLogInPg")]
         public LogInLandlord VerifyTitleLogInPg()
         {
+            WaitUntil.WaitSomeInterval(1000);
             Assert.IsTrue(Successfully.IsVisible(TitleLogInPg));
 
             return this;

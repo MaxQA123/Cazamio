@@ -77,6 +77,10 @@ namespace CazamioProgect.Helpers
         public const string emailBrokerLiluDalas = "liludalastfg@xitroo.com";
         public const string newPasswordBrokerLiluDalasBroker = "!321Qwerty";
         public const string userNameBroker = "Lilu Dalas";
+
+        public const string emailBrokerTests = "cazamioportal@gmail.com";
+        public const string newPasswordBrokerTests = "!321Qwerty";
+        public const string userNameBrokerTests = "Broker Tests";
     }
 
     public class NameDomen
