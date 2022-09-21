@@ -54,6 +54,17 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
             return this;
         }
 
+        [AllureStep("VerifyEmailNewTenant")]
+        public MyAccountCazamioTenant VerifyEmailNewTenant(string email)
+        {
+            WaitUntil.WaitSomeInterval(500);
+            string getEmailActual = Browser._Driver.FindElement(By.XPath("//input[@id = 'account-email']")).GetAttribute("value");
+
+            Assert.AreEqual(getEmailActual, email);
+
+            return this;
+        }
+
         #endregion
     }
 }

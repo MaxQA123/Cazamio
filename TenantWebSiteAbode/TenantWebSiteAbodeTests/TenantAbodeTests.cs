@@ -36,7 +36,7 @@ namespace TenantAbodeTests
                 .EnterFirstLastNameEmailPasswordSignUpPg()
                 .ClickIconShowSignUpPg();
 
-            string email = Pages.SignUpCazamioTenant.CopyEmailfromSignUpPg();
+            string email = Pages.SignUpCazamioTenant.CopyEmailFromSignUpPg();
 
             Pages.SignUpCazamioTenant
                 .ClickButtonGetStartedSignUpPg();
@@ -46,17 +46,20 @@ namespace TenantAbodeTests
             Pages.EmailXitroo
                 .CopiedForEnterEmail(email)
                 .ClickSearchButton();
-
-            string emailFromXitroo = Pages.EmailXitroo.CopyEmailFromXitrooPage();
-
             Pages.EmailXitroo
                 .OpenNewlyLetter()
                 .ClickLinkForConfirmAccountTenant();
             Pages.LogInCazamioTenant
-                .CopiedForEnterEmailLogInPg(emailFromXitroo)
+                .CopiedForEnterEmailLogInPg(email)
                 .EnterPasswordOnLogInPg()
                 .ClickIconShowLgInCazmTnnt()
                 .ClickButtonLogInLgInCazmTnnt();
+            Pages.HeaderCazamioTenant
+               .ClickButtonMyApplicationsHdrCzmTnnt();
+            Pages.MyAccountCazamioTenant
+                .ClickTabAccountOnMyAccntPg()
+                .ClickButtonEditMyAccntPgTabAccnt()
+                .VerifyEmailNewTenant(email);
 
             Thread.Sleep(5000);
         }

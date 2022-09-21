@@ -28,5 +28,8 @@ namespace CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant
 
             return this;
         }
+
+        
+
     }
 }

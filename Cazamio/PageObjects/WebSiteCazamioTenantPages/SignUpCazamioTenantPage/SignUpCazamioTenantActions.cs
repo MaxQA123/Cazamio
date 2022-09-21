@@ -43,8 +43,8 @@ namespace CazamioProgect.PageObjects.GeneralPages.SignUpCazamioTenantPage
             return this;
         }
 
-        [AllureStep("CopyEmailfromSignUpPg")]
-        public string CopyEmailfromSignUpPg()
+        [AllureStep("CopyEmailFromSignUpPg")]
+        public string CopyEmailFromSignUpPg()
         {
             WaitUntil.WaitSomeInterval(500);
             string copyEmail = Browser._Driver.FindElement(By.XPath("//input[@id = 'email']")).GetAttribute("value");
