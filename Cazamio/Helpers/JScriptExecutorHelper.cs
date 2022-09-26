@@ -54,4 +54,27 @@ namespace CazamioProgect.Helpers
             js.ExecuteScript("window.scrollBy(0, -1500)");
         }
     }
+
+    public class ButtonJScriptExecutorHelper
+    {
+        //public JScriptExecutorHelper ClickOnHiddenElement()
+        //{
+        //    IJavaScriptExecutor js = (IJavaScriptExecutor)Browser._Driver;
+        //    js.ExecuteScript("arguments[0].scrollIntoView();", element);
+
+        //    WebElement hiddenElement = Browser._Driver.FindElement(By.Id("ID_OF_ELEMENT")); 
+        //    jscriptExecutor.executeScript("аргументы[0].click();", hiddenElement);
+
+        //}
+
+        public static IWebElement ClickOnHiddenElement(IWebElement hiddenElement)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Browser._Driver.FindElement(By.Id("ID_OF_ELEMENT"));
+            js.ExecuteScript("аргументы[0].click();", hiddenElement);
+
+            return hiddenElement;
+        }
+
+    }
+    
 }
