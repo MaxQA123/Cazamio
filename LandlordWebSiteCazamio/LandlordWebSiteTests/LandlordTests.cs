@@ -192,6 +192,7 @@ namespace LandlordTests
         //Willingness for testing: in progress.
         //This test case is doing checking: That the images uploaded and switching between the pages successfully via the sidebar.
         //Comment: 
+
         public void AddBuilding()
         {
             Pages.LogInLandlord
@@ -210,7 +211,9 @@ namespace LandlordTests
                 .VerifyTitleNewBuildingPg()
                 .EnterMandatoryAddressNewBuilding()
                 .EnterBuildingLlcNamesDescription()
-                .SelectPaymentsMethodsNwBldngPage();
+                .SelectPaymentsMethodsNwBldngPage()
+                .ClickButtonGeneralNextNwBldngPg();
+                //.SelectTabOnNewBuildingsPg(TabsOnNewBuildingPage.tabAmenities, "");
 
             Thread.Sleep(5000);
         }

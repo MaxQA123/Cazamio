@@ -10,6 +10,25 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 {
     public partial class NewBuilding
     {
+        #region TabsNewBuilging
+
+        //[FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]
+        //public IWebElement TitleNewBuildingPage;
+
+        //[FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]
+        //public IWebElement TitleNewBuildingPage;
+
+        //[FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]
+        //public IWebElement TitleNewBuildingPage;
+
+        //[FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]
+        //public IWebElement TitleNewBuildingPage;
+
+        //[FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]
+        //public IWebElement TitleNewBuildingPage;
+
+        #endregion
+
         #region TabBasicDetails
 
         [FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]
@@ -44,6 +63,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         #endregion
 
-
+        [FindsBy(How = How.XPath, Using = "//cazamio-button[@text = 'Next']//button[@type = 'button']")]
+        public IWebElement ButtonGeneralNextNwBldngPg;
+        
     }
 }

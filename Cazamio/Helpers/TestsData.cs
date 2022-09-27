@@ -241,4 +241,13 @@ namespace CazamioProgect.Helpers
     }
 
     #endregion
+
+    public class TabsOnNewBuildingPage
+    {
+        public const int tabBasicDetails = 0;
+        public const int tabAmenities = 1;
+        public const int tabAccess = 2;
+        public const int tabSpecials = 3;
+        public const int tabImages = 4;
+    }
 }

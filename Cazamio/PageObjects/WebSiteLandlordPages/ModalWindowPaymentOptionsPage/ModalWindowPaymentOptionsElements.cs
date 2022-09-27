@@ -25,6 +25,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
         [FindsBy(How = How.XPath, Using = "//app-select-payment-method//span[@class = 'cazamio-button-txt']")]
         public IWebElement ButtonSaveMdlWndwOptns;
 
+        [FindsBy(How = How.XPath, Using = "//i[@class= 'material-icons']")]
+        public IWebElement ButtonInFormCrossMdlWndwOptns;
+
         #region Assertions
 
         [FindsBy(How = How.XPath, Using = "//span[text() = 'Success']")]

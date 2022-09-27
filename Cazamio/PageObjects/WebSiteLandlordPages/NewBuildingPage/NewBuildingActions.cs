@@ -1,5 +1,6 @@
 ﻿using CazamioProgect.Helpers;
 using NUnit.Allure.Attributes;
+using OpenQA.Selenium;
 using RimuTec.Faker;
 using System;
 using System.Collections.Generic;
@@ -42,5 +43,37 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
             return this;
         }
+
+        [AllureStep("ClickButtonGeneralNextNwBldngPg")]
+        public NewBuilding ClickButtonGeneralNextNwBldngPg()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            Button.Click(ButtonGeneralNextNwBldngPg);
+
+            return this;
+        }
+
+        private static IWebElement _element;
+
+        [AllureStep("SelectorTabsOnNewBuildingsPg")]
+        public static IList<IWebElement> SelectorTabsOnNewBuildingsPg(string _locationTab)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            var str = "//div[@class = 'wizard-navigation']//ul";
+            _element = Browser._Driver.FindElement(By.XPath(str));
+            return _element.FindElements(By.XPath($".//li//a[contains(@role, '{_locationTab}')]"));
+        }
+
+        [AllureStep("SelectTabOnNewBuildingsPg")]
+        public NewBuilding SelectTabOnNewBuildingsPg(int tab, string locationTab)
+        {
+            WaitUntil.WaitSomeInterval(500);
+            IList<IWebElement> _tab = SelectorTabsOnNewBuildingsPg(locationTab);
+
+            _tab[tab].Click();
+
+            return this;
+        }
+
     }
 }
