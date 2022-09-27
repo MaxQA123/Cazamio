@@ -178,5 +178,41 @@ namespace LandlordTests
 
             Thread.Sleep(5000);
         }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("Landlord")]
+        [AllureSubSuite("AddBuilding")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: in progress.
+        //This test case is doing checking: That the images uploaded and switching between the pages successfully via the sidebar.
+        //Comment: 
+        public void AddBuilding()
+        {
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsLandlord()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyLandlordUserName(getUserNameCompare);
+            Pages.ListOfBuildings
+                .VerifyTitleListOfBuildingsPg()
+                .ClickButtonAddBuildingOnLstBldng();
+            Pages.NewBuilding
+                .VerifyTitleNewBuildingPg()
+                .EnterMandatoryAddressNewBuilding()
+                .EnterBuildingLlcNamesDescription()
+                .SelectPaymentsMethodsNwBldngPage();
+
+            Thread.Sleep(5000);
+        }
     }
 }

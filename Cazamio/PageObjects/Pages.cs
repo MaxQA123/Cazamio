@@ -18,6 +18,8 @@ using CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.MarketplacePage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.ModalsWindowsPages;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage;
+using CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOptionsPage;
+using CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.PaymentSettingsPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.PreApprovalsPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage;
@@ -77,6 +79,8 @@ namespace CazamioProgect.PageObjects
         public static ModalWindowAreYouSureLogOutLandlordBroker ModalWindowAreYouSureLogOutLandlordBroker => GetPage<ModalWindowAreYouSureLogOutLandlordBroker>();
         public static ModalWindowCreateNewBroker ModalWindowCreateNewBroker => GetPage<ModalWindowCreateNewBroker>();
         public static ResetYourPassword ResetYourPassword => GetPage<ResetYourPassword>();
+        public static NewBuilding NewBuilding => GetPage<NewBuilding>();
+        public static ModalWindowPaymentOptions ModalWindowPaymentOptions => GetPage<ModalWindowPaymentOptions>();
 
         #endregion
 

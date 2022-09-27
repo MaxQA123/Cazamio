@@ -36,11 +36,11 @@ namespace CazamioProgect.Helpers
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        [AllureStep("RandomPriceKopeck")]
-        public static string RandomPriceKopeck(int size)
+        [AllureStep("RandomPriceCreditScreeningFee")]
+        public static string RandomPriceCreditScreeningFee(int size)
         {
             Random random = new Random();
-            const string chars = "1234567890";
+            const string chars = "123456789";
             return new string(Enumerable.Repeat(chars, size)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }

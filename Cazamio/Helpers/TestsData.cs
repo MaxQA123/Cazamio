@@ -81,6 +81,9 @@ namespace CazamioProgect.Helpers
         public const string emailBrokerTests = "cazamioportal@gmail.com";
         public const string newPasswordBrokerTests = "!321Qwerty";
         public const string userNameBrokerTests = "Broker Tests";
+
+        public const string buildingName = "Sky-Blue";
+        public const string buildingLLCName = "Sky-Group Rent House";
     }
 
     public class NameDomen
