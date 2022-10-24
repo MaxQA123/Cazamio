@@ -28,6 +28,7 @@ namespace CazamioProgect.Helpers
         //This tenant
         public const string emailTenantWife = "tenantswife@gmail.com";
         public const string firstNameTenantWife = "Tenant";
+        public const string lastNameTenantWife = "Wife";
 
         public const string emailCurrentOccupantTomCruz = "kickasswiles@xitroo.com";
         public const string firstNameCurrentOccupantTomCruz = "Tom";
@@ -38,7 +39,6 @@ namespace CazamioProgect.Helpers
         public const string firstNameNewOccupantTomCruz = "Elizabeth";
         public const string lastNameNewOccupantTomCruz = "Taylor";
         public const string phoneNumberNewOccupantTomCruz = "5151234321";
-        public const string newPasswordOccupantTomCruz = "!321Qwerty";
 
         public const string yourCurrentCurrentAddressStreetTerryLee = "Frank";
         public const string yourCurrentCurrentAddressCityTerryLee = "Saint-Germain-du-Corbéis";

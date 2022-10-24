@@ -21,7 +21,7 @@ namespace CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant
             return this;
         }
 
-        [AllureStep("EnterEmailPasswordOnLgInAsOccupantCzmTnntTL")]
+        [AllureStep("EnterEmailPasswordOnLgInAsOccupantCzmTnntTC")]
         public LogInCazamioTenant EnterEmailPasswordOnLgInAsOccupantCzmTnntTC()
         {
             WaitUntil.WaitSomeInterval(1000);
@@ -116,9 +116,9 @@ namespace CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant
         public LogInCazamioTenant EnterEmailNewPasswordOnLogInPg()
         {
             WaitUntil.WaitSomeInterval(1000);
-            InputGeneral.InputFunctionWithClear(FieldInputPasswordLgInCazmTnnt, TestDataForWebSiteCazamio.emailCurrentOccupantTomCruz);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailAddressLgInCazmTnnt, TestDataForWebSiteCazamio.emailCurrentOccupantTomCruz);
             WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputPasswordLgInCazmTnnt, TestDataForWebSiteCazamio.newPasswordOccupantTomCruz);
+            InputGeneral.InputFunctionWithClear(FieldInputPasswordLgInCazmTnnt, GeneralTestDataForAllUsers.passwordNew);
 
             return this;
         }

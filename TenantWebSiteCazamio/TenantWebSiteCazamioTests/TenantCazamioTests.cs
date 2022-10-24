@@ -38,7 +38,7 @@ namespace TenantCazamioTests
                 .ClickIconShowSignUpPg()
                 .ClickButtonGetStartedSignUpPg();
 
-            Thread.Sleep(5000);
+            WaitUntil.WaitSomeInterval(2000);
         }
 
         [Test]
@@ -71,11 +71,12 @@ namespace TenantCazamioTests
                 .ClickTabAccountOnMyAccntPg();
 
             string getFirstNameForCompare = Pages.MyAccountCazamioTenant.GetFirstNameFromMyAccount();
+            string getLastNameForCompare = Pages.MyAccountCazamioTenant.GetLastNameFromMyAccount();
 
             Pages.MyAccountCazamioTenant
-                .VerifyTenatFirstNameTW(getFirstNameForCompare);
+                .VerifyTenatFirstLastNameTW(getFirstNameForCompare, getLastNameForCompare);
 
-            Thread.Sleep(5000);
+            WaitUntil.WaitSomeInterval(2000);
         }
 
         [Test]
@@ -108,9 +109,10 @@ namespace TenantCazamioTests
                 .ClickTabAccountOnMyAccntPg();
 
             string getFirstNameForCompare = Pages.MyAccountCazamioTenant.GetFirstNameFromMyAccount();
+            string getLastNameForCompare = Pages.MyAccountCazamioTenant.GetLastNameFromMyAccount();
 
             Pages.MyAccountCazamioTenant
-                .VerifyOccupantFirstNameTL(getFirstNameForCompare);
+                .VerifyTenatFirstLastNameTW(getFirstNameForCompare, getLastNameForCompare);
 
             Pages.MyAccountCazamioTenant
                 .ClickButtonEditMyAccntPgTabAccnt()
@@ -139,7 +141,7 @@ namespace TenantCazamioTests
                 .ClickButtonSaveMyAccntPgTabAccnt()
                 .VerifyEnterData();
 
-            Thread.Sleep(10000);
+            WaitUntil.WaitSomeInterval(2000);
         }
     }
 }

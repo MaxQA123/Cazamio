@@ -36,7 +36,7 @@ namespace TenantAbodeTests
                 .EnterFirstLastNameEmailPasswordSignUpPg()
                 .ClickIconShowSignUpPg();
 
-            string email = Pages.SignUpCazamioTenant.CopyEmailFromSignUpPg();
+            string emailExpected = Pages.SignUpCazamioTenant.CopyEmailFromSignUpPg();
 
             Pages.SignUpCazamioTenant
                 .ClickButtonGetStartedSignUpPg();
@@ -44,13 +44,13 @@ namespace TenantAbodeTests
                 .OpenNewTab();
             Browser._Driver.Navigate().GoToUrl(EndPoints.urlXitrooRandom);
             Pages.EmailXitroo
-                .CopiedForEnterEmail(email)
+                .CopiedForEnterEmail(emailExpected)
                 .ClickSearchButton();
             Pages.EmailXitroo
                 .OpenNewlyLetter()
                 .ClickLinkForConfirmAccountTenant();
             Pages.LogInCazamioTenant
-                .CopiedForEnterEmailLogInPg(email)
+                .CopiedForEnterEmailLogInPg(emailExpected)
                 .EnterPasswordOnLogInPg()
                 .ClickIconShowLgInCazmTnnt()
                 .ClickButtonLogInLgInCazmTnnt();
@@ -59,7 +59,7 @@ namespace TenantAbodeTests
             Pages.MyAccountCazamioTenant
                 .ClickTabAccountOnMyAccntPg()
                 .ClickButtonEditMyAccntPgTabAccnt()
-                .VerifyEmailNewTenant(email);
+                .VerifyEmailNewTenant(emailExpected);
 
             Thread.Sleep(5000);
         }
@@ -75,7 +75,7 @@ namespace TenantAbodeTests
         //Date of publication:
         //Version\Build:
         //The date last publication on which been testing:
-        //Willingness for testing: in progress.
+        //Willingness for testing: Done.
         //This test case is doing checking: The successfully LogIn as tenant.
         //Comment: 
 
@@ -94,9 +94,10 @@ namespace TenantAbodeTests
                 .ClickTabAccountOnMyAccntPg();
 
             string getFirstNameForCompare = Pages.MyAccountCazamioTenant.GetFirstNameFromMyAccount();
+            string getLastNameForCompare = Pages.MyAccountCazamioTenant.GetLastNameFromMyAccount();
 
             Pages.MyAccountCazamioTenant
-                .VerifyTenatFirstNameTW(getFirstNameForCompare);
+                .VerifyTenatFirstLastNameTW(getFirstNameForCompare, getLastNameForCompare);
 
             Thread.Sleep(5000);
         }
@@ -131,9 +132,10 @@ namespace TenantAbodeTests
                 .ClickTabAccountOnMyAccntPg();
 
             string getFirstNameForCompare = Pages.MyAccountCazamioTenant.GetFirstNameFromMyAccount();
+            string getLastNameForCompare = Pages.MyAccountCazamioTenant.GetLastNameFromMyAccount();
 
             Pages.MyAccountCazamioTenant
-                .VerifyOccupantFirstNameTL(getFirstNameForCompare);
+                .VerifyTenatFirstLastNameTW(getFirstNameForCompare, getLastNameForCompare);
 
             Pages.MyAccountCazamioTenant
                 .ClickButtonEditMyAccntPgTabAccnt()
@@ -162,7 +164,7 @@ namespace TenantAbodeTests
                 .ClickButtonSaveMyAccntPgTabAccnt()
                 .VerifyEnterData();
 
-            Thread.Sleep(10000);
+            WaitUntil.WaitSomeInterval(2000);
         }
 
         [Test]
@@ -176,7 +178,7 @@ namespace TenantAbodeTests
         //Date of publication:
         //Version\Build:
         //The date last publication on which been testing:
-        //Willingness for testing: in progress.
+        //Willingness for testing: Done.
         //This test case is doing checking: The tenant had changed the password successfully.
         //Comment:
 
@@ -200,11 +202,23 @@ namespace TenantAbodeTests
                 .ClickLinkForResetPasswordTenant();
             Pages.CreateNewPassword
                 .EnterInputFieldPassswordCreateNewPsswrdPg()
-                //.ClickIconShowCreateNewPsswrdPg()
+                .ClickIconShowCreateNewPsswrdPg()
                 .ClickButtonSaveMyPasswordCreateNewPsswrdPg();
             Pages.LogInCazamioTenant
                 .VerifyMessageYouHaveSuccesfullyChangedYourPasswordLgInPg()
-                .EnterEmailNewPasswordOnLogInPg();
+                .EnterEmailNewPasswordOnLogInPg()
+                .ClickIconShowLgInCazmTnnt()
+                .ClickButtonLogInLgInCazmTnnt();
+            Pages.HeaderCazamioTenant
+                .ClickButtonMyApplicationsHdrCzmTnnt();
+            Pages.MyAccountCazamioTenant
+                .ClickTabAccountOnMyAccntPg();
+
+            string getFirstNameForCompare = Pages.MyAccountCazamioTenant.GetFirstNameFromMyAccount();
+            string getLastNameForCompare = Pages.MyAccountCazamioTenant.GetLastNameFromMyAccount();
+
+            Pages.MyAccountCazamioTenant
+                .VerifyTenatFirstLastNameTW(getFirstNameForCompare, getLastNameForCompare);
 
             Thread.Sleep(5000);
         }

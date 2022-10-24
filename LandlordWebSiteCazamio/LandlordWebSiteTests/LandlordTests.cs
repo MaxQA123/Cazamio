@@ -58,7 +58,7 @@ namespace LandlordTests
             Pages.SideBarLandlord
                 .VerifyBrokerUserName(getUserNameCompare);
 
-            Thread.Sleep(5000);
+            WaitUntil.WaitSomeInterval(2000);
         }
 
         [Test]
@@ -87,7 +87,7 @@ namespace LandlordTests
             Pages.SideBarLandlord
                 .VerifyLandlordUserName(getUserNameCompare);
 
-            Thread.Sleep(5000);
+            WaitUntil.WaitSomeInterval(2000);
 
         }
 
@@ -176,7 +176,7 @@ namespace LandlordTests
             Pages.LogInLandlord
                 .VerifyTitleLogInPg();
 
-            Thread.Sleep(5000);
+            WaitUntil.WaitSomeInterval(2000);
         }
 
         [Test]
@@ -213,9 +213,9 @@ namespace LandlordTests
                 .EnterBuildingLlcNamesDescription()
                 .SelectPaymentsMethodsNwBldngPage()
                 .ClickButtonGeneralNextNwBldngPg();
-                //.SelectTabOnNewBuildingsPg(TabsOnNewBuildingPage.tabAmenities, "");
+            //.SelectTabOnNewBuildingsPg(TabsOnNewBuildingPage.tabAmenities, "");
 
-            Thread.Sleep(5000);
+            WaitUntil.WaitSomeInterval(2000);
         }
     }
 }

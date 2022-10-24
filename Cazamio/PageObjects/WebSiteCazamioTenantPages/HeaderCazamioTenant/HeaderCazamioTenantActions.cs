@@ -13,7 +13,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTena
         [AllureStep("ClickButtonSignUpHdrCzmTnnt")]
         public HeaderCazamioTenant ClickButtonSignUpHdrCzmTnnt()
         {
-            WaitUntil.WaitSomeInterval(1000);
+            WaitUntil.WaitSomeInterval(500);
             Button.Click(ButtonSignUpHdrCzmTnnt);
 
             return this;
@@ -22,7 +22,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTena
         [AllureStep("ClickButtonLogInHdrCzmTnnt")]
         public HeaderCazamioTenant ClickButtonLogInHdrCzmTnnt()
         {
-            WaitUntil.WaitSomeInterval(1000);
+            WaitUntil.WaitSomeInterval(500);
             ButtonLogInHdrCzmTnnt.Click();
 
             return this;

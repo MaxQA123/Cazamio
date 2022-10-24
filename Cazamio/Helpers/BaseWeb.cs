@@ -1,4 +1,6 @@
 ﻿using NUnit.Framework;
+using NUnit.Framework.Interfaces;
+using PractisingPrivilegesProject.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,20 +14,29 @@ namespace CazamioProgect.Helpers
         [OneTimeSetUp]
         public void DobeforeAllTheTests()
         {
-            Browser.Initialize();
+            
         }
 
         [OneTimeTearDown]
         public void DoAfterAllTheTests()
         {
-
+            Browser.Quit();
         }
 
         [TearDown]
 
         public void DoAfterEach()
         {
-            Browser.Quit();
+            if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+            {
+                ScreenShotHelper.MakeScreenShot();
+                Browser.Close();
+            }
+            else if (Browser._Driver != null)
+            {
+                Browser.Close();
+            }
+
         }
 
     }

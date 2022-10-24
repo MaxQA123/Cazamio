@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using PractisingPrivileges.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,7 +30,7 @@ namespace CazamioProgect.Helpers
         }
         public static void Initialize()
         {
-            AllureConfigFilesHelper.CopyJsonConfigFile();
+            AllureConfigFilesHelper.CreateJsonConfigFile();
             new DriverManager().SetUpDriver(new ChromeConfig());
             _webDriver = new ChromeDriver();
             _Driver.Manage().Cookies.DeleteAllCookies();

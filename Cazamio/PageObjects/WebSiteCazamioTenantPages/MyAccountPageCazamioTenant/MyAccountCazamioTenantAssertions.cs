@@ -24,24 +24,49 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
             return getFirstNameActual;
         }
 
-        [AllureStep("VerifyTenatFirstName")]
-        public MyAccountCazamioTenant VerifyTenatFirstNameTW(string getFirstNameActual)
+        [AllureStep("GetLastNameFromMyAccount")]
+        public string GetLastNameFromMyAccount()
         {
             WaitUntil.WaitSomeInterval(500);
-            string getFirstNameExpected = TestDataForWebSiteCazamio.firstNameTenantWife;
+            string getLastName = Browser._Driver.FindElement(By.XPath("//div[@class = 'info-account ng-star-inserted']//div[2]//div[@class = 'info-title']")).Text;
+            string getLastNameActual = getLastName.ToString();
 
-            Assert.AreEqual(getFirstNameActual, getFirstNameExpected);
+            return getLastNameActual;
+        }
 
+        [AllureStep("VerifyTenatFirstLastName")]
+        public MyAccountCazamioTenant VerifyTenatFirstLastNameTW(string getFirstNameActual, string getLastNameActual)
+        {
+            Assert.Multiple (() =>
+            {
+                WaitUntil.WaitSomeInterval(500);
+                string getFirstNameExpected = TestDataForWebSiteCazamio.firstNameTenantWife;
+                string getLastNameExpected = TestDataForWebSiteCazamio.lastNameTenantWife;
+
+                Assert.AreEqual(getFirstNameExpected, getFirstNameActual);
+                Assert.AreEqual(getLastNameExpected, getLastNameActual);
+
+                Console.WriteLine($"First name EX and AC: {getFirstNameExpected} {getFirstNameActual}");
+                Console.WriteLine($"Last name EX and AC: {getLastNameExpected} {getLastNameActual}");
+            });
             return this;
         }
 
-        [AllureStep("VerifyOccupantFirstNameTL")]
-        public MyAccountCazamioTenant VerifyOccupantFirstNameTL(string getFirstNameActual)
+        [AllureStep("VerifyOccupantFirstNameTC")]
+        public MyAccountCazamioTenant VerifyOccupantFirstNameTC(string getFirstNameActual, string getLastNameActual)
         {
-            WaitUntil.WaitSomeInterval(500);
-            string getFirstNameExpected = TestDataForWebSiteCazamio.firstNameCurrentOccupantTomCruz;
+            Assert.Multiple(() =>
+            {
+                WaitUntil.WaitSomeInterval(500);
+                string getFirstNameExpected = TestDataForWebSiteCazamio.firstNameCurrentOccupantTomCruz;
+                string getLastNameExpected = TestDataForWebSiteCazamio.lastNameNewOccupantTomCruz;
 
-            Assert.AreEqual(getFirstNameActual, getFirstNameExpected);
+                Assert.AreEqual(getFirstNameActual, getFirstNameExpected);
+                Assert.AreEqual(getLastNameExpected, getLastNameActual);
+
+                Console.WriteLine($"First name EX and AC: {getFirstNameExpected} {getFirstNameActual}");
+                Console.WriteLine($"Last name EX and AC: {getLastNameExpected} {getLastNameActual}");
+            });
 
             return this;
         }
@@ -55,12 +80,14 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         }
 
         [AllureStep("VerifyEmailNewTenant")]
-        public MyAccountCazamioTenant VerifyEmailNewTenant(string email)
+        public MyAccountCazamioTenant VerifyEmailNewTenant(string emailExpected)
         {
             WaitUntil.WaitSomeInterval(500);
-            string getEmailActual = Browser._Driver.FindElement(By.XPath("//input[@id = 'account-email']")).GetAttribute("value");
+            string getEmailActual = FieldInputEmailMyAccntPgTabAccnt.GetAttribute("value");
 
-            Assert.AreEqual(getEmailActual, email);
+            Assert.AreEqual(emailExpected, getEmailActual);
+
+            Console.WriteLine($"Email EX and AC: {emailExpected} {getEmailActual}");
 
             return this;
         }
