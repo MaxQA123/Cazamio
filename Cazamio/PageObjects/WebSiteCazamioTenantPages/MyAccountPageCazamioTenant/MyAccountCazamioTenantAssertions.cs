@@ -74,8 +74,11 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         [AllureStep("VerifyEnterData")]
         public MyAccountCazamioTenant VerifyEnterData()
         {
-            Assert.IsTrue(Errors.IsInvisible(ErrorMyAccntPgTabAccnt));
-
+            Assert.Multiple(() =>
+           {
+               Assert.IsTrue(Errors.IsInvisible(ErrorMyAccntPgTabAccnt));
+           });
+            
             return this;
         }
 

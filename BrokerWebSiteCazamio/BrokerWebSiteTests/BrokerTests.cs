@@ -18,6 +18,7 @@ namespace BrokerTests
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Broker")]
         [AllureSubSuite("SignUpAsBroker")]
@@ -83,13 +84,14 @@ namespace BrokerTests
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
-            Thread.Sleep(5000);
+            WaitUntil.WaitSomeInterval(2000);
         }
 
         [Test]
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Broker")]
         [AllureSubSuite("ChangePasswordAsBroker")]
@@ -130,13 +132,14 @@ namespace BrokerTests
             Pages.SideBarLandlord
                 .VerifyBrokerUserName(getUserNameCompare);
 
-            Thread.Sleep(5000);
+            WaitUntil.WaitSomeInterval(2000);
         }
 
         [Test]
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Broker")]
         [AllureSubSuite("LogInAsBroker")]
@@ -159,13 +162,14 @@ namespace BrokerTests
             Pages.SideBarLandlord
                 .VerifyBrokerUserName(getUserNameCompare);
 
-            Thread.Sleep(5000);
+            WaitUntil.WaitSomeInterval(2000);
         }
 
         [Test]
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Broker")]
         [AllureSubSuite("VerifySidebar")]
@@ -235,7 +239,7 @@ namespace BrokerTests
             Pages.LogInLandlord
                 .VerifyTitleLogInPg();
 
-            Thread.Sleep(5000);
+            WaitUntil.WaitSomeInterval(2000);
         }
     }
 }

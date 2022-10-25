@@ -19,6 +19,7 @@ namespace ApiCazamioTests.BaseTestsApi
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("ApiTenant")]
         [AllureSubSuite("ApilLogInTenant")]

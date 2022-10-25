@@ -17,6 +17,7 @@ namespace TenantAbodeTests
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("WebSiteAbodeTenant")]
         [AllureSubSuite("SignUpAsTenant")]
@@ -68,6 +69,7 @@ namespace TenantAbodeTests
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("WebSiteAbodeTenant")]
         [AllureSubSuite("LogInAsTenant")]
@@ -106,6 +108,7 @@ namespace TenantAbodeTests
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("WebSiteCazamioTenant")]
         [AllureSubSuite("EditPageMyAccountTabSectionAccount")]
@@ -171,6 +174,7 @@ namespace TenantAbodeTests
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("WebSiteAbodeTenant")]
         [AllureSubSuite("ForgotPasswordAsTenant")]
@@ -220,7 +224,7 @@ namespace TenantAbodeTests
             Pages.MyAccountCazamioTenant
                 .VerifyTenatFirstLastNameTW(getFirstNameForCompare, getLastNameForCompare);
 
-            Thread.Sleep(5000);
+            WaitUntil.WaitSomeInterval(2000);
         }
     }
 }

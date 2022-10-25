@@ -27,9 +27,9 @@ namespace CazamioProgect.Helpers
             new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds)).Until(ExpectedConditions.ElementIsVisible(element));
         }
 
-        public static void WaitSomeInterval(int seconds)
+        public static void WaitSomeInterval(int milliSeconds)
         {
-            Task.Delay(TimeSpan.FromMilliseconds(seconds)).Wait();
+            Task.Delay(TimeSpan.FromMilliseconds(milliSeconds)).Wait();
         }
 
         public static void ElementIsVesible(By element, int seconds = 10)
@@ -66,7 +66,6 @@ namespace CazamioProgect.Helpers
             }
             catch (NoSuchElementException) { }
             catch (StaleElementReferenceException) { }
-
         }
 
         public static void CustomElementIsInVisible(IWebElement element, int seconds = 10)
@@ -98,7 +97,6 @@ namespace CazamioProgect.Helpers
             }
             catch (NoSuchElementException) { }
             catch (StaleElementReferenceException) { }
-
         }
 
     }
