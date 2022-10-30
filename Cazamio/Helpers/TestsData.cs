@@ -8,8 +8,8 @@ namespace CazamioProgect.Helpers
 {
     public class EndPoints
     {
-        public const string urlHomePageTenantWebSiteCazamio = "https://cazamiodemo.com/";
-        public const string urlHomePageTenantWebSiteAbodeo = "https://abodebyreside.cazamiodemo.com/";
+        public const string urlHomePageTenantWebSiteCazamio = "https://testlanlord.cazamiodemo.com/account/signin";
+        public const string URL_HOME_PAGETENANT_WEBSITE_ABIDEO = "https://abodebyreside.cazamiodemo.com/";
         public const string urlLogInPageLandlordBrokerWebSite = "https://landlord.cazamiodemo.com/";
         public const string urlXitrooRandom = "https://xitroo.com/";
         public const string urlXitrooStaticBroker = "https://xitroo.com/#liludalastfg@xitroo.com";
@@ -19,16 +19,16 @@ namespace CazamioProgect.Helpers
 
     public class GeneralTestDataForAllUsers
     {
-        public const string passwordGeneral = "Qwerty123!";
-        public const string passwordNew = "!321Qwerty";
+        public const string PASSWORD_GENERAL = "Qwerty123!";
+        public const string PASSWORD_NEW = "!321Qwerty";
     }
 
     public class TestDataForWebSiteCazamio
     {
         //This tenant
-        public const string emailTenantWife = "tenantswife@gmail.com";
-        public const string firstNameTenantWife = "Tenant";
-        public const string lastNameTenantWife = "Wife";
+        public const string EMAIL_TENANT_APPLICANT = "tenantaplicantray@xitroo.com";
+        public const string FIRST_NAME_TENANT_APPLICANT = "Ray";
+        public const string LAST_NAME_TENANT_APPLICANT = "Anderson";
 
         public const string emailCurrentOccupantTomCruz = "kickasswiles@xitroo.com";
         public const string firstNameCurrentOccupantTomCruz = "Tom";
@@ -66,13 +66,13 @@ namespace CazamioProgect.Helpers
 
     public class TestDataForWebSiteLandlord
     {
-        public const string emailLandlordTest = "testlivelandlord@gmail.com";
-        public const string passwordLandlordTest = "Qwerty123!";
-        public const string userNameTest = "Landlord Test";
+        public const string EMAIL_LANDLORD_TEST = "testlandlordcaz@xitroo.com";
+        public const string PASSWORD_LANDLORD_CURRENT = "Qwerty123!";
+        public const string USER_NAME_LANDLORD_TEST = "Gary Test";
 
-        public const string emailLandlordMartin = "martin@abodebyreside.com";
-        public const string passwordLandlordMartin = "218Skillman!";
-        public const string userNameLandlord = "Martin Weiss";
+        //public const string emailLandlordMartin = "martin@abodebyreside.com";
+        //public const string passwordLandlordMartin = "218Skillman!";
+        //public const string userNameLandlord = "Martin Weiss";
 
         public const string emailBrokerLiluDalas = "liludalastfg@xitroo.com";
         public const string newPasswordBrokerLiluDalasBroker = "!321Qwerty";

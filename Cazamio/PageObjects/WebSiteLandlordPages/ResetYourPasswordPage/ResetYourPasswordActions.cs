@@ -21,7 +21,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage
         [AllureStep("EnterEmailLandlordForRstPsswrdPg")]
         public ResetYourPassword EnterEmailLandlordForRstPsswrdPg()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, TestDataForWebSiteLandlord.emailLandlordMartin);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, TestDataForWebSiteLandlord.EMAIL_LANDLORD_TEST);
 
             return this;
         }
@@ -44,8 +44,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage
             //InputGeneral.InputFunctionWithClear(FieldInputNewPasswordRstPsswrdPg, TestDataForWebSiteLandlord.newPasswordBrokerLiluDalasBroker);
             //InputGeneral.InputFunctionWithClear(FieldInputConfirmPasswordRstPsswrdPg, TestDataForWebSiteLandlord.newPasswordBrokerLiluDalasBroker);
 
-            InputGeneral.InputFunctionWithClear(FieldInputNewPasswordRstPsswrdPg, GeneralTestDataForAllUsers.passwordGeneral);
-            InputGeneral.InputFunctionWithClear(FieldInputConfirmPasswordRstPsswrdPg, GeneralTestDataForAllUsers.passwordGeneral);
+            InputGeneral.InputFunctionWithClear(FieldInputNewPasswordRstPsswrdPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
+            InputGeneral.InputFunctionWithClear(FieldInputConfirmPasswordRstPsswrdPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
 
             return this;
         }
