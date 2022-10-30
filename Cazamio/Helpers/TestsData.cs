@@ -74,9 +74,9 @@ namespace CazamioProgect.Helpers
         //public const string passwordLandlordMartin = "218Skillman!";
         //public const string userNameLandlord = "Martin Weiss";
 
-        public const string emailBrokerLiluDalas = "liludalastfg@xitroo.com";
-        public const string newPasswordBrokerLiluDalasBroker = "!321Qwerty";
-        public const string userNameBroker = "Lilu Dalas";
+        public const string EMAIL_BROKER_TEST = "testbrokercaz@xitroo.com";
+        public const string NEW_PASSWORD_BROKER = "!321Qwerty";
+        public const string USER_NAME_BROKER = "Test Broker";
 
         public const string emailBrokerTests = "cazamioportal@gmail.com";
         public const string newPasswordBrokerTests = "!321Qwerty";

@@ -46,8 +46,8 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
                 Assert.AreEqual(getFirstNameExpected, getFirstNameActual);
                 Assert.AreEqual(getLastNameExpected, getLastNameActual);
 
-                Console.WriteLine($"First name EX and AC: {getFirstNameExpected} {getFirstNameActual}");
-                Console.WriteLine($"Last name EX and AC: {getLastNameExpected} {getLastNameActual}");
+                Console.WriteLine($"First name EX: {getFirstNameExpected} AC: {getFirstNameActual}");
+                Console.WriteLine($"Last name EX: {getLastNameExpected} AC: {getLastNameActual}");
             });
             return this;
         }
