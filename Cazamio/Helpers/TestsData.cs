@@ -88,7 +88,7 @@ namespace CazamioProgect.Helpers
 
     public class NameDomen
     {
-        public static string Xitroo = "@xitroo.com";
+        public static string XITROO = "@xitroo.com";
     }
 
     public class UploadImages
