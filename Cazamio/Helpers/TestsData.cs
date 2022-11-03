@@ -23,16 +23,16 @@ namespace CazamioProgect.Helpers
         public const string PASSWORD_NEW = "!321Qwerty";
     }
 
-    public class TestDataForWebSiteCazamio
+    public class TestDataForWebSiteTenant
     {
         //This tenant
         public const string EMAIL_TENANT_APPLICANT = "tenantaplicantray@xitroo.com";
         public const string FIRST_NAME_TENANT_APPLICANT = "Ray";
         public const string LAST_NAME_TENANT_APPLICANT = "Anderson";
 
-        public const string emailCurrentOccupantTomCruz = "kickasswiles@xitroo.com";
-        public const string firstNameCurrentOccupantTomCruz = "Tom";
-        public const string lastNameCurrentOccupantTenantTomCruz = "Cruz";
+        public const string EMAIL_CURRENT_OCCUPANT_LIZA_LIKE = "tenantoccupantliza@xitroo.com";
+        public const string firstNameCurrentOccupantTomCruz = "Liza-Like";
+        public const string lastNameCurrentOccupantTenantTomCruz = "Junior";
         public const string phoneNumberCurrentOccupantTomCruz = "2128765556";
 
         public const string emailNewOccupantTomCruz = "peacefulhawking@xitroo.com";
@@ -53,15 +53,14 @@ namespace CazamioProgect.Helpers
         public const string sectionReferencePhoneNumberTerryLee = "5857771234";
         public const string sectionReferenceExtensionNumberTerryLee = "212";
 
-        public const string emailOccupantLingredEndKetrin = "pakawes584@slvlog.com";
-        public const string firstNameOccupantLingredEndKetrin = "Lingred-End";
+        public const string emailOccupantLingredEndKetrin = "tenantoccupantalfred123@xitroo.com";
+        public const string firstNameOccupantLingredEndKetrin = "Alfred";
 
         public const string emailOccupantMistikAlone = "senanam843@terasd.com";
         public const string firstNameOccupantMistikAlone = "Mistik";
 
-        public const string emailGuarantorMarkLoyd = "senanam843@terasd.com";
-        public const string firstNameGuarantorMarkLoyd = "Mark";
-
+        public const string emailGuarantorMarkLoyd = "tenantguarantor333jimmy@xitroo.com";
+        public const string firstNameGuarantorMarkLoyd = "Jimmy";
     }
 
     public class TestDataForWebSiteLandlord
@@ -89,7 +88,6 @@ namespace CazamioProgect.Helpers
     public class NameDomen
     {
         public static string XITROO = "@xitroo.com";
-
     }
 
     public class UploadImages

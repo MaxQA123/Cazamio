@@ -13,7 +13,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.ForgotPasswordPag
         [AllureStep("EnterEmailOnFrgtPsswrdPg")]
         public ForgotPassword EnterEmailOnFrgtPsswrdPg()
         {
-            InputGeneral.InputFunctionWithClear(InputFieldEmailFrgtPsswrdPg, TestDataForWebSiteCazamio.emailCurrentOccupantTomCruz);
+            InputGeneral.InputFunctionWithClear(InputFieldEmailFrgtPsswrdPg, TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_LIZA_LIKE);
 
             return this;
         }

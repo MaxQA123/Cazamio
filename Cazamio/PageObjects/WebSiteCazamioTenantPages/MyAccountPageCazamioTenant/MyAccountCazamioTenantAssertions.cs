@@ -40,8 +40,8 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
             Assert.Multiple (() =>
             {
                 WaitUntil.WaitSomeInterval(500);
-                string getFirstNameExpected = TestDataForWebSiteCazamio.FIRST_NAME_TENANT_APPLICANT;
-                string getLastNameExpected = TestDataForWebSiteCazamio.LAST_NAME_TENANT_APPLICANT;
+                string getFirstNameExpected = TestDataForWebSiteTenant.FIRST_NAME_TENANT_APPLICANT;
+                string getLastNameExpected = TestDataForWebSiteTenant.LAST_NAME_TENANT_APPLICANT;
 
                 Assert.AreEqual(getFirstNameExpected, getFirstNameActual);
                 Assert.AreEqual(getLastNameExpected, getLastNameActual);
@@ -58,8 +58,8 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
             Assert.Multiple(() =>
             {
                 WaitUntil.WaitSomeInterval(500);
-                string getFirstNameExpected = TestDataForWebSiteCazamio.firstNameCurrentOccupantTomCruz;
-                string getLastNameExpected = TestDataForWebSiteCazamio.lastNameNewOccupantTomCruz;
+                string getFirstNameExpected = TestDataForWebSiteTenant.firstNameCurrentOccupantTomCruz;
+                string getLastNameExpected = TestDataForWebSiteTenant.lastNameNewOccupantTomCruz;
 
                 Assert.AreEqual(getFirstNameActual, getFirstNameExpected);
                 Assert.AreEqual(getLastNameExpected, getLastNameActual);
