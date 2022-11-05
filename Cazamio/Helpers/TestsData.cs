@@ -8,8 +8,7 @@ namespace CazamioProgect.Helpers
 {
     public class EndPoints
     {
-        public const string urlHomePageTenantWebSiteCazamio = "https://testlanlord.cazamiodemo.com/account/signin";
-        public const string URL_HOME_PAGETENANT_WEBSITE_ABIDEO = "https://abodebyreside.cazamiodemo.com/";
+        public const string URL_SIGNIN_PAGE_TENANT_WEBSITE_CAZAMIO = "https://testlanlord.cazamiodemo.com/";
         public const string urlLogInPageLandlordBrokerWebSite = "https://landlord.cazamiodemo.com/";
         public const string urlXitrooRandom = "https://xitroo.com/";
         public const string urlXitrooStaticBroker = "https://xitroo.com/#liludalastfg@xitroo.com";
@@ -20,69 +19,60 @@ namespace CazamioProgect.Helpers
     public class GeneralTestDataForAllUsers
     {
         public const string PASSWORD_GENERAL = "Qwerty123!";
-        public const string PASSWORD_NEW = "!321Qwerty";
+        public const string PASSWORD_NEW_GENEREAL = "!321Qwerty";
     }
 
     public class TestDataForWebSiteTenant
     {
-        //This tenant
         public const string EMAIL_TENANT_APPLICANT = "tenantaplicantray@xitroo.com";
         public const string FIRST_NAME_TENANT_APPLICANT = "Ray";
         public const string LAST_NAME_TENANT_APPLICANT = "Anderson";
 
         public const string EMAIL_CURRENT_OCCUPANT_LIZA_LIKE = "tenantoccupantliza@xitroo.com";
-        public const string firstNameCurrentOccupantTomCruz = "Liza-Like";
-        public const string lastNameCurrentOccupantTenantTomCruz = "Junior";
-        public const string phoneNumberCurrentOccupantTomCruz = "2128765556";
+        public const string FIRST_NAME_OCCUPANT_LIZA_LIKE = "Liza-Like";
+        public const string LAST_NAME_OCCUPANT_LIZA_LIKE = "Junior";
+        public const string PHONE_NUMBER_OCCUPANT_LIZA_LIKE = "2128765556";
+        public const string NEW_FIRST_NAME_OCCUPANT_LIZA_LIKE = "Elizabeth";
+        public const string NEW_LAST_NAME_OCCUPANT_LIZA_LIKE = "Taylor";
+        public const string NEW_PHONE_NUMBER_OCCUPANT_LIZA_LIKE = "5151234321";
 
-        public const string emailNewOccupantTomCruz = "peacefulhawking@xitroo.com";
-        public const string firstNameNewOccupantTomCruz = "Elizabeth";
-        public const string lastNameNewOccupantTomCruz = "Taylor";
-        public const string phoneNumberNewOccupantTomCruz = "5151234321";
+        public const string EMAIL_CURRENT_OCCUPANT_ALFRED = "tenantoccupantalfred123@xitroo.com";
+        public const string FIRST_NAME_OCCUPANT_ALFRED = "Alfred";
+        public const string LAST_NAME_OCCUPANT_ALFRED = "Dickins";
 
-        public const string yourCurrentCurrentAddressStreetTerryLee = "Frank";
-        public const string yourCurrentCurrentAddressCityTerryLee = "Saint-Germain-du-Corbéis";
-        public const string yourCurrentCurrentAddressStateTerryLee = "Normandy";
-        public const string yourCurrentCurrentAddressZipTerryLee = "61000";
+        public const string EMAIL_GUARANTOR_JIMMY = "tenantguarantor333jimmy@xitroo.com";
+        public const string FIRST_NAME_GUARANTOR_JIMMY = "Jimmy";
 
-        public const string yourNewCurrentAddressStreetTerryLee = "Beaubien Street";
-        public const string yourNewCurrentAddressCityTerryLee = "Detroit Lakes";
-        public const string yourNewCurrentAddressStateTerryLee = "MN";
-        public const string yourNewCurrentAddressZipTerryLee = "56501";
-        public const string sectionReferenceNameTerryLee = "Duglas";
-        public const string sectionReferencePhoneNumberTerryLee = "5857771234";
-        public const string sectionReferenceExtensionNumberTerryLee = "212";
+        public const string YOUR_CURRENT_ADDRESS_STREET_ALFRED = "Frank";
+        public const string YOUR_CURRENT_ADDRESS_CITY_ALFRED = "Saint-Germain-du-Corbéis";
+        public const string YOUR_CURRENT_ADDRESS_STATE_ALFRED = "Normandy";
+        public const string YOUR_CURRENT_ADDRESS_ZIP_ALFRED = "61000";
+        public const string SECTION_REFERENCE_NAME_ALFRED = "Bob";
+        public const string SECTION_REFERENCE_PHONE_NUMBER_ALFRED = "5857771234";
+        public const string SECTION_REFERENCE_EXTENSION_NUMBER_ALFRED = "212";
 
-        public const string emailOccupantLingredEndKetrin = "tenantoccupantalfred123@xitroo.com";
-        public const string firstNameOccupantLingredEndKetrin = "Alfred";
-
-        public const string emailOccupantMistikAlone = "senanam843@terasd.com";
-        public const string firstNameOccupantMistikAlone = "Mistik";
-
-        public const string emailGuarantorMarkLoyd = "tenantguarantor333jimmy@xitroo.com";
-        public const string firstNameGuarantorMarkLoyd = "Jimmy";
+        public const string YOUR_NEW__CURRENT_ADDRESS_STREET_ALFRED = "Beaubien Street";
+        public const string YOUR_NEW__CURRENT_ADDRESS_CITY_ALFRED = "Detroit Lakes";
+        public const string YOUR_NEW__CURRENT_ADDRESS_STATE_ALFRED = "MN";
+        public const string YOUR_NEW__CURRENT_ADDRESS_ZIP_ALFRED = "56501";
+        public const string SECTION_REFERENCE_NEW_NAME_ALFRED = "Duglas";
+        public const string SECTION_REFERENCE_NEW_PHONE_NUMBER_ALFRED = "5854321333";
+        public const string SECTION_REFERENCE_NEW_EXTENSION_NUMBER_ALFRED = "585";
     }
 
-    public class TestDataForWebSiteLandlord
+    public class TestDataForWebSiteAdmin
     {
-        public const string EMAIL_LANDLORD_TEST = "testlandlordcaz@xitroo.com";
-        public const string PASSWORD_LANDLORD_CURRENT = "Qwerty123!";
-        public const string USER_NAME_LANDLORD_TEST = "Gary Test";
+        public const string EMAIL_ADMIN_TEST_GARY = "testlandlordcaz@xitroo.com";
+        public const string USER_NAME_ADMIN_TEST_GARY = "Gary Test";
 
-        //public const string emailLandlordMartin = "martin@abodebyreside.com";
-        //public const string passwordLandlordMartin = "218Skillman!";
-        //public const string userNameLandlord = "Martin Weiss";
+        public const string EMAIL_SUPER_ADMIN_SUPER = "martin@abodebyreside.com";
+        public const string USER_NAME_SUPER_ADMIN = "Super User";
 
         public const string EMAIL_BROKER_TEST = "testbrokercaz@xitroo.com";
-        public const string NEW_PASSWORD_BROKER = "!321Qwerty";
         public const string USER_NAME_BROKER = "Test Broker";
 
-        public const string emailBrokerTests = "cazamioportal@gmail.com";
-        public const string newPasswordBrokerTests = "!321Qwerty";
-        public const string userNameBrokerTests = "Broker Tests";
-
-        public const string buildingName = "Sky-Blue";
-        public const string buildingLLCName = "Sky-Group Rent House";
+        public const string BUILDING_NAME = "Test building";
+        public const string BUILDING_LLC_NAME = "LLC Corporation rent";
     }
 
     public class NameDomen
@@ -92,11 +82,11 @@ namespace CazamioProgect.Helpers
 
     public class UploadImages
     {
-        public const string avatarImgTenant = $"\\UploadImages\\TenantImgEnot.jpg";
-        public const string logoImgLandlordFirst = $"\\UploadImages\\LogoLandLord1.jpg";
-        public const string logoImgLandlordSecond = $"\\UploadImages\\LogoLandlord2.jpg";
-        public const string avatarImgLandlordFirst = $"\\UploadImages\\2AvatarLandLord.jpg";
-        public const string avatarImgLandlordSecond = $"\\UploadImages\\3AvatarKoalaLandlord.jpg";
+        public const string AVATAR_IMG_TENANT = $"\\UploadImages\\TenantImgEnot.jpg";
+        public const string LOGO_IMG_ADMIN_FIRST = $"\\UploadImages\\LogoLandLord1.jpg";
+        public const string LOGO_IMG_ADMIN_SECOND = $"\\UploadImages\\LogoLandlord2.jpg";
+        public const string AVATAR_IMG_ADMIN_FIRST = $"\\UploadImages\\2AvatarLandLord.jpg";
+        public const string AVATAR_IMG_ADMIN_SECOND = $"\\UploadImages\\3AvatarKoalaLandlord.jpg";
     }
 
     #region TestsDataDaysForDatePickerTenant

@@ -13,9 +13,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         [AllureStep("EnterEmailPasswordLogInPgAsLandlord")]
         public LogInLandlord EnterEmailPasswordLogInPgAsLandlord()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteLandlord.EMAIL_LANDLORD_TEST);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_ADMIN_TEST_GARY);
             WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, TestDataForWebSiteLandlord.PASSWORD_LANDLORD_CURRENT);
+            InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
 
             return this;
         }
@@ -23,7 +23,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         [AllureStep("EnterEmailPasswordLogInPgAsBroker")]
         public LogInLandlord EnterEmailPasswordLogInPgAsBroker()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteLandlord.EMAIL_BROKER_TEST);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_BROKER_TEST);
             WaitUntil.WaitSomeInterval(500);
             //InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, TestDataForWebSiteLandlord.newPasswordBrokerLiluDalasBroker);
 
@@ -35,7 +35,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         [AllureStep("EnterChangingEmailPasswordLogInPgAsLandlord")]
         public LogInLandlord EnterChangingEmailPasswordLogInPgAsLandlord()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteLandlord.EMAIL_LANDLORD_TEST);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_ADMIN_TEST_GARY);
             WaitUntil.WaitSomeInterval(500);
             //InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, TestDataForWebSiteLandlord.newPasswordBrokerLiluDalasBroker);
 

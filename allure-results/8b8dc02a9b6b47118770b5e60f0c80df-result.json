@@ -1,0 +1,110 @@
+{
+  "uuid": "31a52b21-412c-408c-b424-408812c384f7-tr-0-1003",
+  "historyId": "TenantCazamioTests.TestsBaseWeb.EditPageMyAccountTabSectionAccount",
+  "fullName": "TenantCazamioTests.TestsBaseWeb.EditPageMyAccountTabSectionAccount",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "TenantCazamioTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "EditPageMyAccountTabSectionAccount"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "WebSiteCazamioTenant"
+    },
+    {
+      "name": "subSuite",
+      "value": "EditPageMyAccountTabSectionAccount"
+    }
+  ],
+  "links": [],
+  "name": "EditPageMyAccountTabSectionAccount",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=107.0.5304.88)\r\nTearDown : OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=107.0.5304.88)",
+    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.get_ButtonLogInHdrCzmTnnt() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantElements.cs:line 17\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonLogInHdrCzmTnnt_100663537_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantActions.cs:line 26\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonLogInHdrCzmTnnt_100663537_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonLogInHdrCzmTnnt_100663537_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.ClickButtonLogInHdrCzmTnnt()\r\n   at TenantCazamioTests.TestsBaseWeb.EditPageMyAccountTabSectionAccount() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 126\r\n--TearDown\r\n   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.GetScreenshot()\r\n   at PractisingPrivilegesProject.Helpers.ScreenShotHelper.MakeScreenShot() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\ScreenShotHelper.cs:line 16\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 32"
+  },
+  "stage": "finished",
+  "description": "\nDoAfterEach TearDown method failed\n",
+  "steps": [
+    {
+      "name": "EditPageMyAccountTabSectionAccount",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=107.0.5304.88)\r\nTearDown : OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=107.0.5304.88)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.get_ButtonLogInHdrCzmTnnt() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantElements.cs:line 17\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonLogInHdrCzmTnnt_100663537_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantActions.cs:line 26\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonLogInHdrCzmTnnt_100663537_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonLogInHdrCzmTnnt_100663537_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.ClickButtonLogInHdrCzmTnnt()\r\n   at TenantCazamioTests.TestsBaseWeb.EditPageMyAccountTabSectionAccount() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 126\r\n--TearDown\r\n   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.GetScreenshot()\r\n   at PractisingPrivilegesProject.Helpers.ScreenShotHelper.MakeScreenShot() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\ScreenShotHelper.cs:line 16\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 32"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "ClickButtonLogInHdrCzmTnnt",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=107.0.5304.88)",
+            "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.get_ButtonLogInHdrCzmTnnt() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantElements.cs:line 17\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonLogInHdrCzmTnnt_100663537_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantActions.cs:line 26\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonLogInHdrCzmTnnt_100663537_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1667655613089,
+          "stop": 1667655613724
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "194fe7bae5144218a9dbe1391c5d8bc2-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1667655608589,
+      "stop": 1667655613773
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1667655608588,
+  "stop": 1667655613783
+}

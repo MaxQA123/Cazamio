@@ -18,7 +18,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public SideBarLandlord UploadImageLogoLandlordFirst()
         {
             WaitUntil.WaitSomeInterval(3000);
-            ButtonUploadLogoOfLandlord.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.logoImgLandlordFirst));
+            ButtonUploadLogoOfLandlord.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.LOGO_IMG_ADMIN_FIRST));
             WaitUntil.CustomElementIsVisible(MessageChangeImageLogoLandlordSuccess);
             return this;
         }
@@ -27,7 +27,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public SideBarLandlord UploadImageLogoLandlordSecond()
         {
             WaitUntil.WaitSomeInterval(1000);
-            ButtonUploadLogoOfLandlord.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.logoImgLandlordSecond));
+            ButtonUploadLogoOfLandlord.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.LOGO_IMG_ADMIN_SECOND));
             WaitUntil.CustomElementIsVisible(MessageChangeImageLogoLandlordSuccess);
             return this;
         }
@@ -36,7 +36,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public SideBarLandlord UploadImageAvatarUserLandlordFirst()
         {
             WaitUntil.WaitSomeInterval(1000);
-            ButtonUploadPhotoOfAvatarLandlord.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.avatarImgLandlordFirst));
+            ButtonUploadPhotoOfAvatarLandlord.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.AVATAR_IMG_ADMIN_FIRST));
             WaitUntil.CustomElementIsVisible(MessageChangeImageAvatarUserSuccess);
             return this;
         }
@@ -45,7 +45,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public SideBarLandlord UploadImageAvatarUserLandlordSecond()
         {
             WaitUntil.WaitSomeInterval(1000);
-            ButtonUploadPhotoOfAvatarLandlord.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.avatarImgLandlordSecond));
+            ButtonUploadPhotoOfAvatarLandlord.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.AVATAR_IMG_ADMIN_SECOND));
             WaitUntil.CustomElementIsVisible(MessageChangeImageAvatarUserSuccess);
             return this;
         }

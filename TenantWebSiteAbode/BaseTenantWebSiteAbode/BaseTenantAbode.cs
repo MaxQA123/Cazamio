@@ -15,7 +15,7 @@ namespace TenantAbodeTests
         {
             Browser.Initialize();
 
-            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_HOME_PAGETENANT_WEBSITE_ABIDEO);
+            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_SIGNIN_PAGE_TENANT_WEBSITE_CAZAMIO);
         }
     }
 }

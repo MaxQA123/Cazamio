@@ -13,7 +13,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage
         [AllureStep("EnterEmailBrokerForRstPsswrdPg")]
         public ResetYourPassword EnterEmailBrokerForRstPsswrdPg()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, TestDataForWebSiteLandlord.EMAIL_BROKER_TEST);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, TestDataForWebSiteAdmin.EMAIL_BROKER_TEST);
 
             return this;
         }
@@ -21,7 +21,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage
         [AllureStep("EnterEmailLandlordForRstPsswrdPg")]
         public ResetYourPassword EnterEmailLandlordForRstPsswrdPg()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, TestDataForWebSiteLandlord.EMAIL_LANDLORD_TEST);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, TestDataForWebSiteAdmin.EMAIL_ADMIN_TEST_GARY);
 
             return this;
         }

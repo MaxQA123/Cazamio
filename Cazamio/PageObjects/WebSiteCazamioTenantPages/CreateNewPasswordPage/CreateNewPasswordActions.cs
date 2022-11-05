@@ -18,7 +18,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.CreateNewPassword
             Browser._Driver.SwitchTo().Window(tabsList[2]);
 
             WaitUntil.WaitSomeInterval(1000);
-            InputGeneral.InputFunctionWithClear(InputFieldPassswordCreateNewPsswrdPg, GeneralTestDataForAllUsers.PASSWORD_NEW);
+            InputGeneral.InputFunctionWithClear(InputFieldPassswordCreateNewPsswrdPg, GeneralTestDataForAllUsers.PASSWORD_NEW_GENEREAL);
 
             return this;
         }

@@ -13,7 +13,9 @@ namespace TenantCazamioTests
         [SetUp]
         public void SetUp()
         {
-            Browser._Driver.Navigate().GoToUrl(EndPoints.urlHomePageTenantWebSiteCazamio);
+            Browser.Initialize();
+
+            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_SIGNIN_PAGE_TENANT_WEBSITE_CAZAMIO);
         }
     }
 }

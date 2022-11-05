@@ -26,8 +26,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [AllureStep("EnterBuildingLlcNamesDescription")]
         public NewBuilding EnterBuildingLlcNamesDescription()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputBuildingNameNwBldngPg, TestDataForWebSiteLandlord.buildingName);
-            InputGeneral.InputFunctionWithClear(FieldInputLlcNameNwBldngPg, TestDataForWebSiteLandlord.buildingLLCName);
+            InputGeneral.InputFunctionWithClear(FieldInputBuildingNameNwBldngPg, TestDataForWebSiteAdmin.BUILDING_NAME);
+            InputGeneral.InputFunctionWithClear(FieldInputLlcNameNwBldngPg, TestDataForWebSiteAdmin.BUILDING_LLC_NAME);
             InputGeneral.InputFunctionWithClear(FieldInputDescroptionNwBldngPg, Lorem.Sentence());
             InputGeneral.InputFunctionWithClear(FieldInputCreditScreeningFeeNwBldngPg, GenerateRandomDataHelper.RandomPriceCreditScreeningFee(2));
 

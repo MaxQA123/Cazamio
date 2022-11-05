@@ -18,16 +18,17 @@ namespace TenantCazamioTests
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("WebSiteCazamioTenant")]
+        [AllureSuite("WebSiteAbodeTenant")]
         [AllureSubSuite("SignUpAsTenant")]
 
         //Date of publication:
         //Version\Build:
         //The date last publication on which been testing:
-        //Willingness for testing: in progress.
+        //Willingness for testing: Done.
         //This test case is doing checking: The successfully SignUp as tenant.
-        //Comment: Bug: on email hasn't came a letter for confirming.
+        //Comment:
 
         public void SignUpAsTenant()
         {
@@ -35,21 +36,46 @@ namespace TenantCazamioTests
                 .ClickButtonSignUpHdrCzmTnnt();
             Pages.SignUpCazamioTenant
                 .EnterFirstLastNameEmailPasswordSignUpPg()
-                .ClickIconShowSignUpPg()
-                .ClickButtonGetStartedSignUpPg();
+                .ClickIconShowSignUpPg();
 
-            WaitUntil.WaitSomeInterval(2000);
+            string emailExpected = Pages.SignUpCazamioTenant.CopyEmailFromSignUpPg();
+
+            Pages.SignUpCazamioTenant
+                .ClickButtonGetStartedSignUpPg();
+            Pages.JScriptExecutorHelper
+                .OpenNewTab();
+            Browser._Driver.Navigate().GoToUrl(EndPoints.urlXitrooRandom);
+            Pages.EmailXitroo
+                .CopiedForEnterEmail(emailExpected)
+                .ClickSearchButton();
+            Pages.EmailXitroo
+                .OpenNewlyLetter()
+                .ClickLinkForConfirmAccountTenant();
+            Pages.LogInCazamioTenant
+                .CopiedForEnterEmailLogInPg(emailExpected)
+                .EnterPasswordOnLogInPg()
+                .ClickIconShowLgInCazmTnnt()
+                .ClickButtonLogInLgInCazmTnnt();
+            Pages.HeaderCazamioTenant
+               .ClickButtonMyApplicationsHdrCzmTnnt();
+            Pages.MyAccountCazamioTenant
+                .ClickTabAccountOnMyAccntPg()
+                .ClickButtonEditMyAccntPgTabAccnt()
+                .VerifyEmailNewTenant(emailExpected);
+
+            Thread.Sleep(5000);
         }
 
         [Test]
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("WebSiteCazamioTenant")]
+        [AllureSuite("WebSiteAbodeTenant")]
         [AllureSubSuite("LogInAsTenant")]
 
-        //Date of publication: 24.08.2022.
+        //Date of publication:
         //Version\Build:
         //The date last publication on which been testing:
         //Willingness for testing: Done.
@@ -61,7 +87,7 @@ namespace TenantCazamioTests
             Pages.HeaderCazamioTenant
                 .ClickButtonLogInHdrCzmTnnt();
             Pages.LogInCazamioTenant
-                .EnterEmailPasswordOnLgInAsTenantCzmTnntTW()
+                .EnterEmailPasswordOnLgInAsTenantApplicant()
                 .ClickIconShowLgInCazmTnnt()
                 .SetCheckBoxRememberMeLgInCazmTnnt()
                 .ClickButtonLogInLgInCazmTnnt();
@@ -76,13 +102,14 @@ namespace TenantCazamioTests
             Pages.MyAccountCazamioTenant
                 .VerifyTenatFirstLastNameTW(getFirstNameForCompare, getLastNameForCompare);
 
-            WaitUntil.WaitSomeInterval(2000);
+            Thread.Sleep(5000);
         }
 
         [Test]
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("WebSiteCazamioTenant")]
         [AllureSubSuite("EditPageMyAccountTabSectionAccount")]
@@ -99,7 +126,7 @@ namespace TenantCazamioTests
             Pages.HeaderCazamioTenant
                 .ClickButtonLogInHdrCzmTnnt();
             Pages.LogInCazamioTenant
-                .EnterEmailPasswordOnLgInAsOccupantCzmTnntTC()
+                .EnterEmailPasswordOnLgInAsOccupantLiza()
                 .ClickIconShowLgInCazmTnnt()
                 .SetCheckBoxRememberMeLgInCazmTnnt()
                 .ClickButtonLogInLgInCazmTnnt();
@@ -140,6 +167,63 @@ namespace TenantCazamioTests
             Pages.MyAccountCazamioTenant
                 .ClickButtonSaveMyAccntPgTabAccnt()
                 .VerifyEnterData();
+
+            WaitUntil.WaitSomeInterval(2000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("WebSiteAbodeTenant")]
+        [AllureSubSuite("ForgotPasswordAsTenant")]
+
+        //Date of publication:
+        //Version\Build:
+        //The date last publication on which been testing:
+        //Willingness for testing: Done.
+        //This test case is doing checking: The tenant had changed the password successfully.
+        //Comment:
+
+        public void ForgotPasswordAsTenant()
+        {
+            Pages.HeaderCazamioTenant
+                .ClickButtonLogInHdrCzmTnnt();
+            Pages.LogInCazamioTenant
+                .ClickButtonForgotPasswordLgInCazmTnnt();
+            Pages.ForgotPassword
+                .EnterEmailOnFrgtPsswrdPg();
+            Pages.JScriptExecutorHelper
+                .OpenNewTab();
+            Browser._Driver.Navigate().GoToUrl(EndPoints.urlXitrooStaticTenant);
+
+            //string email = Pages.EmailXitroo.CopyEmailFromXitrooPage();
+
+            Pages.EmailXitroo
+                .ClickSearchButton()
+                .OpenNewlyLetter()
+                .ClickLinkForResetPasswordTenant();
+            Pages.CreateNewPassword
+                .EnterInputFieldPassswordCreateNewPsswrdPg()
+                .ClickIconShowCreateNewPsswrdPg()
+                .ClickButtonSaveMyPasswordCreateNewPsswrdPg();
+            Pages.LogInCazamioTenant
+                .VerifyMessageYouHaveSuccesfullyChangedYourPasswordLgInPg()
+                .EnterEmailNewPasswordOnLogInPg()
+                .ClickIconShowLgInCazmTnnt()
+                .ClickButtonLogInLgInCazmTnnt();
+            Pages.HeaderCazamioTenant
+                .ClickButtonMyApplicationsHdrCzmTnnt();
+            Pages.MyAccountCazamioTenant
+                .ClickTabAccountOnMyAccntPg();
+
+            string getFirstNameForCompare = Pages.MyAccountCazamioTenant.GetFirstNameFromMyAccount();
+            string getLastNameForCompare = Pages.MyAccountCazamioTenant.GetLastNameFromMyAccount();
+
+            Pages.MyAccountCazamioTenant
+                .VerifyTenatFirstLastNameTW(getFirstNameForCompare, getLastNameForCompare);
 
             WaitUntil.WaitSomeInterval(2000);
         }
