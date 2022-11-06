@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperAdminTests
+namespace AdminTests
 {
-    public class BaseSuperAdmin : BaseWeb
+    public class BaseAdmin : BaseWeb
     {
         [SetUp]
         public void SetUp()

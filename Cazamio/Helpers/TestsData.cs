@@ -9,11 +9,12 @@ namespace CazamioProgect.Helpers
     public class EndPoints
     {
         public const string URL_HOME_PAGE_TENANT_WEBSITE_CAZAMIO = "https://testlanlord.cazamiodemo.com/";
-        public const string urlLogInPageLandlordBrokerWebSite = "https://landlord.cazamiodemo.com/";
-        public const string urlXitrooRandom = "https://xitroo.com/";
-        public const string urlXitrooStaticBroker = "https://xitroo.com/#liludalastfg@xitroo.com";
-        public const string urlXitrooStaticLandlord = "https://xitroo.com/#testlivelandlord@gmail.com";
-        public const string urlXitrooStaticTenant = "https://xitroo.com/#kickasswiles@xitroo.com";
+        public const string URL_LOGIN_ADMIN_WEBSITE = "https://landlord.cazamiodemo.com/";
+        public const string URL_XITROO_EMAIL_RANDOM = "https://xitroo.com/";
+        public const string URL_XITROO_STATIC_SUPER_ADMIN = "https://xitroo.com/#testadmin@xitroo.com";
+        public const string URL_XITROO_STATIC_BROKER = "https://xitroo.com/#evilhtingale@xitroo.com";
+        public const string URL_XITROO_STATIC_ADMIN = "https://xitroo.com/#testlandlordcaz@xitroo.com";
+        public const string URL_XITROO_STATIC_TENANT = "https://xitroo.com/#tenantoccupantliza@xitroo.com";
     }
 
     public class GeneralTestDataForAllUsers

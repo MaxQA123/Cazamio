@@ -10,8 +10,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
 {
     public partial class LogInLandlord
     {
-        [AllureStep("EnterEmailPasswordLogInPgAsLandlord")]
-        public LogInLandlord EnterEmailPasswordLogInPgAsLandlord()
+        [AllureStep("EnterEmailPasswordLogInPgAsAdmin")]
+        public LogInLandlord EnterEmailPasswordLogInPgAsAdmin()
         {
             InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_ADMIN_TEST_GARY);
             WaitUntil.WaitSomeInterval(500);
@@ -32,14 +32,14 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
             return this;
         }
 
-        [AllureStep("EnterChangingEmailPasswordLogInPgAsLandlord")]
-        public LogInLandlord EnterChangingEmailPasswordLogInPgAsLandlord()
+        [AllureStep("EnterChangingEmailPasswordLogInPgAsAdmin")]
+        public LogInLandlord EnterChangingEmailPasswordLogInPgAsAdmin()
         {
             InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_ADMIN_TEST_GARY);
             WaitUntil.WaitSomeInterval(500);
             //InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, TestDataForWebSiteLandlord.newPasswordBrokerLiluDalasBroker);
 
-            InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
+            InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, GeneralTestDataForAllUsers.PASSWORD_NEW_GENEREAL);
 
             return this;
         }
@@ -81,7 +81,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
             return this;
         }
 
-        [AllureStep("ClickLogInLandlord")]
+        [AllureStep("ClickLinkForgotPassword")]
         public LogInLandlord ClickLinkForgotPassword()
         {
             Button.Click(LinkForgotPassword);

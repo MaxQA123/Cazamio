@@ -41,11 +41,11 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage
             WaitUntil.WaitSomeInterval(1000);
             List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
             Browser._Driver.SwitchTo().Window(tabsList[2]);
-            //InputGeneral.InputFunctionWithClear(FieldInputNewPasswordRstPsswrdPg, TestDataForWebSiteLandlord.newPasswordBrokerLiluDalasBroker);
-            //InputGeneral.InputFunctionWithClear(FieldInputConfirmPasswordRstPsswrdPg, TestDataForWebSiteLandlord.newPasswordBrokerLiluDalasBroker);
+            InputGeneral.InputFunctionWithClear(FieldInputNewPasswordRstPsswrdPg, GeneralTestDataForAllUsers.PASSWORD_NEW_GENEREAL);
+            InputGeneral.InputFunctionWithClear(FieldInputConfirmPasswordRstPsswrdPg, GeneralTestDataForAllUsers.PASSWORD_NEW_GENEREAL);
 
-            InputGeneral.InputFunctionWithClear(FieldInputNewPasswordRstPsswrdPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
-            InputGeneral.InputFunctionWithClear(FieldInputConfirmPasswordRstPsswrdPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
+            //InputGeneral.InputFunctionWithClear(FieldInputNewPasswordRstPsswrdPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
+            //InputGeneral.InputFunctionWithClear(FieldInputConfirmPasswordRstPsswrdPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
 
             return this;
         }

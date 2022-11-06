@@ -35,7 +35,7 @@ namespace SuperAdminTests
         public void LogInAsSuperAdmin()
         {
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPgAsLandlord()
+                .EnterEmailPasswordLogInPgAsAdmin()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 

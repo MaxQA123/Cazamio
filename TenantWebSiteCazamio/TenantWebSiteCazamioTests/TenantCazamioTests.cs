@@ -44,7 +44,7 @@ namespace TenantCazamioTests
                 .ClickButtonGetStartedSignUpPg();
             Pages.JScriptExecutorHelper
                 .OpenNewTab();
-            Browser._Driver.Navigate().GoToUrl(EndPoints.urlXitrooRandom);
+            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_XITROO_EMAIL_RANDOM);
             Pages.EmailXitroo
                 .CopiedForEnterEmail(emailExpected)
                 .ClickSearchButton();
@@ -197,7 +197,7 @@ namespace TenantCazamioTests
                 .EnterEmailOnFrgtPsswrdPg();
             Pages.JScriptExecutorHelper
                 .OpenNewTab();
-            Browser._Driver.Navigate().GoToUrl(EndPoints.urlXitrooStaticTenant);
+            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_XITROO_STATIC_TENANT);
 
             //string email = Pages.EmailXitroo.CopyEmailFromXitrooPage();
 

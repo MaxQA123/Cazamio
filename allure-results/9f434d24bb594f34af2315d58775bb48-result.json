@@ -1,0 +1,222 @@
+{
+  "uuid": "d3205f5d-f880-4e98-bcb1-9141c5422f01-tr-0-1002",
+  "historyId": "AdminTests.Tests.ChangePassword",
+  "fullName": "AdminTests.Tests.ChangePassword",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "AdminTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "ChangePassword"
+    },
+    {
+      "name": "testClass",
+      "value": "Tests"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "Admin"
+    },
+    {
+      "name": "subSuite",
+      "value": "ChangePassword"
+    }
+  ],
+  "links": [],
+  "name": "ChangePassword",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=107.0.5304.88)\r\nTearDown : OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=107.0.5304.88)",
+    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_Enabled()\r\n   at CazamioProgect.Helpers.Successfully.IsVisible(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 193\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.__a$_around_VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg_100663428_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ResetYourPasswordPage\\ResetYourPasswordAssertions.cs:line 18\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.__a$_around_VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg_100663428_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.__a$_around_VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg_100663428_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ResetYourPasswordPage\\ResetYourPasswordActions.cs:line 16\r\n   at AdminTests.Tests.ChangePassword() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\AdminWebSiteTests\\AdminTests.cs:line 66\r\n--TearDown\r\n   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.GetScreenshot()\r\n   at PractisingPrivilegesProject.Helpers.ScreenShotHelper.MakeScreenShot() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\ScreenShotHelper.cs:line 16\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 32"
+  },
+  "stage": "finished",
+  "description": "\nDoAfterEach TearDown method failed\n",
+  "steps": [
+    {
+      "name": "ChangePassword",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=107.0.5304.88)\r\nTearDown : OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=107.0.5304.88)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_Enabled()\r\n   at CazamioProgect.Helpers.Successfully.IsVisible(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 193\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.__a$_around_VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg_100663428_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ResetYourPasswordPage\\ResetYourPasswordAssertions.cs:line 18\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.__a$_around_VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg_100663428_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.__a$_around_VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg_100663428_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ResetYourPasswordPage\\ResetYourPasswordActions.cs:line 16\r\n   at AdminTests.Tests.ChangePassword() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\AdminWebSiteTests\\AdminTests.cs:line 66\r\n--TearDown\r\n   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.GetScreenshot()\r\n   at PractisingPrivilegesProject.Helpers.ScreenShotHelper.MakeScreenShot() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\ScreenShotHelper.cs:line 16\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 32"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "ClickLinkForgotPassword",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1667729797721,
+              "stop": 1667729798390
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1667729797720,
+          "stop": 1667729798390
+        },
+        {
+          "name": "EnterEmailLandlordForRstPsswrdPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "testlandlordcaz@xitroo.com"
+                }
+              ],
+              "start": 1667729798392,
+              "stop": 1667729799046
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1667729798392,
+          "stop": 1667729799046
+        },
+        {
+          "name": "ClickButtonSendInstructionsRstPsswrdPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1667729800062,
+              "stop": 1667729800690
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1667729799047,
+          "stop": 1667729800690
+        },
+        {
+          "name": "VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=107.0.5304.88)",
+            "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_Enabled()\r\n   at CazamioProgect.Helpers.Successfully.IsVisible(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 193\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.__a$_around_VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg_100663428_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ResetYourPasswordPage\\ResetYourPasswordAssertions.cs:line 18\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage.ResetYourPassword.__a$_around_VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg_100663428_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1667729800691,
+          "stop": 1667729802844
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "e3b46ef22459433eb849733a8d7f422a-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1667729789555,
+      "stop": 1667729802896
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1667729789553,
+  "stop": 1667729802909
+}

@@ -22,7 +22,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTena
         [AllureStep("ClickButtonLogInHdrCzmTnnt")]
         public HeaderCazamioTenant ClickButtonLogInHdrCzmTnnt()
         {
-            WaitUntil.WaitSomeInterval(500);
+            WaitUntil.WaitSomeInterval(1000);
             ButtonLogInHdrCzmTnnt.Click();
 
             return this;
