@@ -35,14 +35,15 @@ namespace SuperAdminTests
         public void LogInAsSuperAdmin()
         {
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPgAsAdmin()
+                .EnterEmailPasswordLogInPgAsSuperAdmin()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
             string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyLandlordUserName(getUserNameCompare);
+                .VerifySuperAdminUserName(getUserNameCompare, getUserNameRoleCompare);
 
             WaitUntil.WaitSomeInterval(2000);
         }

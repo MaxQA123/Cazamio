@@ -10,6 +10,16 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
 {
     public partial class LogInLandlord
     {
+        [AllureStep("EnterEmailPasswordLogInPgAsSuperAdmin")]
+        public LogInLandlord EnterEmailPasswordLogInPgAsSuperAdmin()
+        {
+            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_SUPER_ADMIN_SUPER);
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
+
+            return this;
+        }
+
         [AllureStep("EnterEmailPasswordLogInPgAsAdmin")]
         public LogInLandlord EnterEmailPasswordLogInPgAsAdmin()
         {

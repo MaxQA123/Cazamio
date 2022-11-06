@@ -22,6 +22,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         [FindsBy(How = How.XPath, Using = "//div[@class = 'user-name']")]
         public IWebElement UserNameOfSidebarLandlordWebSite;
 
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'user-role']")]
+        public IWebElement UserNameRoleOfSidebarLandlordWebSite;
+
         #region MessageSuccessfully
 
         [FindsBy(How = How.XPath, Using = "//span[text()= 'Logo image was changed']")]

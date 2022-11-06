@@ -36,9 +36,10 @@ namespace AdminTests
                 .ClickButtonLetsGoLogInPg();
 
             string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyLandlordUserName(getUserNameCompare);
+                .VerifyAdminUserName(getUserNameCompare, getUserNameRoleCompare);
 
             WaitUntil.WaitSomeInterval(2000);
 
@@ -85,9 +86,10 @@ namespace AdminTests
                 .ClickButtonLetsGoLogInPg();
 
             string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyBrokerUserName(getUserNameCompare);
+                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare);
 
             WaitUntil.WaitSomeInterval(2000);
         }
@@ -115,9 +117,10 @@ namespace AdminTests
                 .ClickButtonLetsGoLogInPg();
 
             string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyLandlordUserName(getUserNameCompare);
+                .VerifyAdminUserName(getUserNameCompare, getUserNameRoleCompare);
 
             Pages.SideBarLandlord
                 .UploadImageLogoLandlordFirst()
@@ -204,9 +207,10 @@ namespace AdminTests
                 .ClickButtonLetsGoLogInPg();
 
             string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyLandlordUserName(getUserNameCompare);
+                .VerifyAdminUserName(getUserNameCompare, getUserNameRoleCompare);
             Pages.ListOfBuildings
                 .VerifyTitleListOfBuildingsPg()
                 .ClickButtonAddBuildingOnLstBldng();

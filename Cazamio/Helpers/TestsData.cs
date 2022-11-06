@@ -65,12 +65,15 @@ namespace CazamioProgect.Helpers
     {
         public const string EMAIL_ADMIN_TEST_GARY = "testlandlordcaz@xitroo.com";
         public const string USER_NAME_ADMIN_TEST_GARY = "Gary Test";
+        public const string USER_NAME_ROLE_ADMIN_TEST_GARY = "Gary Test";
 
-        public const string EMAIL_SUPER_ADMIN_SUPER = "martin@abodebyreside.com";
+        public const string EMAIL_SUPER_ADMIN_SUPER = "testadmin@xitroo.com";
         public const string USER_NAME_SUPER_ADMIN = "Super User";
+        public const string USER_NAME_ROLE_SUPER_ADMIN = "Super Admin";
 
         public const string EMAIL_BROKER_TEST = "testbrokercaz@xitroo.com";
         public const string USER_NAME_BROKER = "Test Broker";
+        public const string USER_NAME_ROLE_BROKER = "Broker";
 
         public const string BUILDING_NAME = "Test building";
         public const string BUILDING_LLC_NAME = "LLC Corporation rent";

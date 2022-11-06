@@ -32,14 +32,15 @@ namespace BrokerTests
         public void SignUpAsBroker()
         {
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPgAsLandlord()
+                .EnterEmailPasswordLogInPgAsAdmin()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
             string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyLandlordUserName(getUserNameCompare)
+                .VerifyAdminUserName(getUserNameCompare, getUserNameRoleCompare)
                 .ClickButtonBrokersSidebar();
             Pages.Brokers
                 .ClickButtonCreateBrokerBrokersPage();
@@ -55,7 +56,7 @@ namespace BrokerTests
                 .VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw();
             Pages.JScriptExecutorHelper
                 .OpenNewTab();
-            Browser._Driver.Navigate().GoToUrl(EndPoints.urlXitrooRandom);
+            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_XITROO_EMAIL_RANDOM);
             Pages.EmailXitroo
                 .CopiedForEnterEmail(email)
                 .ClickSearchButton();
@@ -112,7 +113,7 @@ namespace BrokerTests
                 .VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg();
             Pages.JScriptExecutorHelper
                 .OpenNewTab();
-            Browser._Driver.Navigate().GoToUrl(EndPoints.urlXitrooStaticBroker);
+            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_XITROO_STATIC_BROKER);
             Pages.EmailXitroo
                 .ClickSearchButton()
                 .OpenNewlyLetter()
@@ -128,9 +129,10 @@ namespace BrokerTests
                 .ClickButtonLetsGoLogInPg();
 
             string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyBrokerUserName(getUserNameCompare);
+                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare);
 
             WaitUntil.WaitSomeInterval(2000);
         }
@@ -158,9 +160,10 @@ namespace BrokerTests
                 .ClickButtonLetsGoLogInPg();
 
             string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyBrokerUserName(getUserNameCompare);
+                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare);
 
             WaitUntil.WaitSomeInterval(2000);
         }
@@ -188,9 +191,10 @@ namespace BrokerTests
                 .ClickButtonLetsGoLogInPg();
 
             string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyBrokerUserName(getUserNameCompare);
+                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare);
 
             Pages.SideBarLandlord
                 .UploadImageAvatarUserLandlordFirst()

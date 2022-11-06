@@ -136,7 +136,6 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'input-msg-error ng-star-inserted')]/span[text() = 'Phone field is invalid']")]
         public IWebElement ErrorPhoneFieldIsInvalidReferenceMyAccntPgTabAccnt;
-
         
         #endregion
     }

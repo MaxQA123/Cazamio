@@ -16,34 +16,74 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public string GetUserNameFromSideBar()
         {
             WaitUntil.CustomElementIsVisible(UserNameOfSidebarLandlordWebSite);
-            string getUserName = Browser._Driver.FindElement(By.XPath("//div[@class = 'user-name']")).Text;
+            string getUserName = UserNameOfSidebarLandlordWebSite.Text;
             string getUserNameActual = getUserName.ToString();
 
             return getUserNameActual;
         }
 
-        [AllureStep("VerifyLandlordUserName")]
-        public SideBarLandlord VerifyLandlordUserName(string getUserNameActual)
+        [AllureStep("GetUserNameRoleFromSideBar")]
+        public string GetUserNameRoleFromSideBar()
+        {
+            WaitUntil.CustomElementIsVisible(UserNameRoleOfSidebarLandlordWebSite);
+            string getUserNameRole = UserNameRoleOfSidebarLandlordWebSite.Text;
+            string getUserNameRoleActual = getUserNameRole.ToString();
+
+            return getUserNameRoleActual;
+        }
+
+        [AllureStep("VerifyAdminUserName")]
+        public SideBarLandlord VerifyAdminUserName(string getUserNameActual, string getUserNameRoleActual)
         {
             WaitUntil.WaitSomeInterval(1500);
             string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_ADMIN_TEST_GARY;
+            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_ADMIN_TEST_GARY;
 
-            Assert.AreEqual(getUserNameExpected, getUserNameActual);
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(getUserNameExpected, getUserNameActual);
+                Assert.AreEqual(getUserNameRoleExpected, getUserNameRoleActual);
 
-            Console.WriteLine($"First Last name EX: {getUserNameExpected} AC: {getUserNameActual}");
+                Console.WriteLine($"First Last name EX: {getUserNameExpected} First Last name AC: {getUserNameActual}");
+                Console.WriteLine($"Name Role EX: {getUserNameRoleExpected} Name Role AC: {getUserNameRoleActual}");
+            });
+            return this;
+        }
+
+        [AllureStep("VerifySuperAdminUserName")]
+        public SideBarLandlord VerifySuperAdminUserName(string getUserNameActual, string getUserNameRoleActual)
+        {
+            WaitUntil.WaitSomeInterval(1500);
+            string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_SUPER_ADMIN;
+            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_SUPER_ADMIN;
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(getUserNameExpected, getUserNameActual);
+                Assert.AreEqual(getUserNameRoleExpected, getUserNameRoleActual);
+
+                Console.WriteLine($"First Last name EX: {getUserNameExpected} First Last name AC: {getUserNameActual}");
+                Console.WriteLine($"Name role EX: {getUserNameRoleExpected} Name role AC: {getUserNameRoleActual}");
+            });
 
             return this;
         }
 
         [AllureStep("VerifyBrokerUserName")]
-        public SideBarLandlord VerifyBrokerUserName(string getUserNameActual)
+        public SideBarLandlord VerifyBrokerUserName(string getUserNameActual, string getUserNameRoleActual)
         {
             WaitUntil.WaitSomeInterval(500);
             string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_BROKER;
+            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_BROKER;
 
-            Assert.AreEqual(getUserNameExpected, getUserNameActual);
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(getUserNameExpected, getUserNameActual);
+                Assert.AreEqual(getUserNameRoleExpected, getUserNameRoleActual);
 
-            Console.WriteLine($"First Last name EX: {getUserNameExpected} AC: {getUserNameActual}");
+                Console.WriteLine($"First Last name EX: {getUserNameExpected} First Last name AC: {getUserNameActual}");
+                Console.WriteLine($"Name role EX: {getUserNameRoleExpected} Name role AC: {getUserNameRoleActual}");
+            });
 
             return this;
         }

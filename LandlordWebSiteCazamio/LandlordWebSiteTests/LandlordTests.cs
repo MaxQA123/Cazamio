@@ -37,9 +37,10 @@ namespace LandlordTests
                 .ClickButtonLetsGoLogInPg();
 
             string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyLandlordUserName(getUserNameCompare);
+                .VerifyAdminUserName(getUserNameCompare, getUserNameRoleCompare);
 
             WaitUntil.WaitSomeInterval(2000);
 
