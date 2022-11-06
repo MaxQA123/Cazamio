@@ -8,7 +8,7 @@ namespace CazamioProgect.Helpers
 {
     public class EndPoints
     {
-        public const string URL_SIGNIN_PAGE_TENANT_WEBSITE_CAZAMIO = "https://testlanlord.cazamiodemo.com/";
+        public const string URL_HOME_PAGE_TENANT_WEBSITE_CAZAMIO = "https://testlanlord.cazamiodemo.com/";
         public const string urlLogInPageLandlordBrokerWebSite = "https://landlord.cazamiodemo.com/";
         public const string urlXitrooRandom = "https://xitroo.com/";
         public const string urlXitrooStaticBroker = "https://xitroo.com/#liludalastfg@xitroo.com";
