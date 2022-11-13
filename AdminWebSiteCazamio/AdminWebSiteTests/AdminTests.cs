@@ -191,6 +191,78 @@ namespace AdminTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Admin")]
+        [AllureSubSuite("CreateNewBroker")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: The successfully creaated a new broker.
+        //Comment: 
+
+        public void CreateNewBroker()
+        {
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyAdminUserName(getUserNameCompare, getUserNameRoleCompare)
+                .ClickButtonBrokersSidebar();
+            Pages.Brokers
+                .ClickButtonCreateBrokerBrokersPage();
+            Pages.ModalWindowCreateNewBroker
+                .EnterFirstLastNameEmailPhnNmbrCellMdlWndw();
+
+            string email = Pages.ModalWindowCreateNewBroker.CopyEmailFromMdlWndwCreateBroker();
+            //string firstName = Pages.ModalWindowCreateNewBroker.CopyFirstNameFromMdlWndwCreateBroker();
+
+            Pages.ModalWindowCreateNewBroker
+                .ClickButtonSaveCrtNwBrkrOnMdlwndw()
+                .VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw();
+            Pages.JScriptExecutorHelper
+                .OpenNewTab();
+            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_XITROO_EMAIL_RANDOM);
+            Pages.EmailXitroo
+                .CopiedForEnterEmail(email)
+                .ClickSearchButton();
+            Pages.EmailXitroo
+                .OpenNewlyLetter();
+
+            //string link = Pages.EmailXitroo.CopyLinkFromEmailXitroo();
+            string copyPasswordFromEmail = Pages.EmailXitroo.CopyPasswordFromEmailForCreateBroker();
+
+            Pages.EmailXitroo
+                .ClickLinkForConfirmAccountBroker();
+            Pages.SideBarLandlord
+                .SwitchTabClickButtonBrokersSidebar();
+            Pages.EmailXitroo
+                .VerifyEmailForCretingBroker(email);
+
+            Pages.SideBarLandlord
+                .ClickButtonLogOutSidebar();
+
+            Pages.LogInLandlord
+                .CopiedForEnterEmailFromEmailCreateBroker(email);
+
+            Pages.LogInLandlord
+                .CopiedForEnterPsswrdFromEmailCreateBroker(copyPasswordFromEmail)
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            WaitUntil.WaitSomeInterval(2000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("Admin")]
         [AllureSubSuite("AddBuilding")]
 
         //Date of publication:

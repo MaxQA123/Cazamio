@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CazamioProgect.PageObjects.EmailXitrooPage
@@ -121,19 +122,14 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
             return copyLinkActual;
         }
 
-        [AllureStep("CopyPasswordFromEmailForCreateBroker")]
-        public string CopyPasswordFromEmailForCreateBroker(string firstName, string link)
+        public string CopyPasswordFromEmailForCreateBroker()
         {
-            WaitUntil.WaitSomeInterval(1000);
-            List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
-            Browser._Driver.SwitchTo().Window(tabsList[1]);
+            WaitUntil.WaitSomeInterval(3000);
+            string getLastName = PassworForBrokerFromEmail.Text;
+            Regex regexGetLastName = new Regex(@"[^\s]+$");
+            string lastNameActual = regexGetLastName.Match(getLastName).ToString();
 
-            WaitUntil.WaitSomeInterval(1000);
-            Browser._Driver.SwitchTo().Frame(IframeXitrooLetter);
-            WaitUntil.WaitSomeInterval(500);
-            string code = PassworForBrokerFromEmail.Text.Replace($"Name: {firstName}", "").Replace("Password: ", "").Replace($"Email confirm link: {link}", "");
-
-            return code;
+            return lastNameActual;
         }
     }
 }

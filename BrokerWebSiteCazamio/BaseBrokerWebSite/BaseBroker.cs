@@ -15,7 +15,7 @@ namespace BrokerTests
         {
             Browser.Initialize();
 
-            Browser._Driver.Navigate().GoToUrl(EndPoints.urlLogInPageLandlordBrokerWebSite);
+            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_LOGIN_ADMIN_WEBSITE);
         }
     }
 }

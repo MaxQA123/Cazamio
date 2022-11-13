@@ -37,7 +37,7 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
         [FindsBy(How = How.XPath, Using = "//a[contains(@href, 'https://abodebyreside.cazamiodemo.com/account/reset-password')]")]
         public IWebElement LinkForResetPassworTenant;
 
-        [FindsBy(How = How.XPath, Using = "//table[@class = 'module']//td")]
+        [FindsBy(How = How.XPath, Using = "//p[contains(text(), 'Use this this password to access the site:')]")]
         public IWebElement PassworForBrokerFromEmail;
     }
 }

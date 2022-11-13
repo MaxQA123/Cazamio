@@ -19,6 +19,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBr
             InputGeneral.InputFunctionWithClear(FieldInputLastNameCrtNwBrkrOnMdlwndw, Name.LastName());
             //FieldInputEmailCrtNwBrkrOnMdlwndw.SendKeys("jhfhgfh");
             InputGeneral.InputFunctionWithClear(FieldInputEmailCrtNwBrkrOnMdlwndw, GenerateRandomDataHelper.RandomEmail(5) + NameDomen.XITROO);
+            //InputGeneral.InputFunctionWithClear(FieldInputEmailCrtNwBrkrOnMdlwndw, NameDomen.PUTS_BOX);
             InputGeneral.InputFunctionWithClear(FieldInputPhoneNumberCrtNwBrkrOnMdlwndw, GenerateRandomDataHelper.RandomPhoneNumber(10));
             InputGeneral.InputFunctionWithClear(FieldInputCellCrtNwBrkrOnMdlwndw, GenerateRandomDataHelper.RandomPhoneNumber(10));
 

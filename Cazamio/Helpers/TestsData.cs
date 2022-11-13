@@ -65,7 +65,7 @@ namespace CazamioProgect.Helpers
     {
         public const string EMAIL_ADMIN_TEST_GARY = "testlandlordcaz@xitroo.com";
         public const string USER_NAME_ADMIN_TEST_GARY = "Gary Test";
-        public const string USER_NAME_ROLE_ADMIN_TEST_GARY = "Gary Test";
+        public const string USER_NAME_ROLE_ADMIN_TEST_GARY = "Admin";
 
         public const string EMAIL_SUPER_ADMIN_SUPER = "testadmin@xitroo.com";
         public const string USER_NAME_SUPER_ADMIN = "Super User";
@@ -82,6 +82,7 @@ namespace CazamioProgect.Helpers
     public class NameDomen
     {
         public static string XITROO = "@xitroo.com";
+        public const string PUTS_BOX = "agustina_pouros@putsbox.com";
     }
 
     public class UploadImages
