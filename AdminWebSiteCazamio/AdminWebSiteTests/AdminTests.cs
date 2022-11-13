@@ -216,10 +216,8 @@ namespace AdminTests
                 .ClickButtonCreateBrokerBrokersPage();
             Pages.ModalWindowCreateNewBroker
                 .EnterFirstLastNameEmailPhnNmbrCellMdlWndw();
- 
 
             string email = Pages.ModalWindowCreateNewBroker.CopyEmailFromMdlWndwCreateBroker();
-            string firstName = Pages.ModalWindowCreateNewBroker.CopyFirstNameFromMdlWndwCreateBroker();
 
             Pages.ModalWindowCreateNewBroker
                 .ClickButtonSaveCrtNwBrkrOnMdlwndw()
@@ -233,7 +231,6 @@ namespace AdminTests
             Pages.EmailXitroo
                 .OpenNewlyLetter();
 
-            string link = Pages.EmailXitroo.CopyLinkFromEmailXitroo();
             string copyPasswordFromEmail = Pages.EmailXitroo.CopyPasswordFromEmailForCreateBroker();
 
             Pages.EmailXitroo
@@ -242,13 +239,12 @@ namespace AdminTests
                 .SwitchTabClickButtonBrokersSidebar();
             Pages.EmailXitroo
                 .VerifyEmailForCretingBroker(email);
-
             Pages.SideBarLandlord
                 .ClickButtonLogOutSidebar();
-
+            Pages.EmailXitroo
+                .ClickLinkForConfirmAccountBrokerTwice();
             Pages.LogInLandlord
                 .CopiedForEnterEmailFromEmailCreateBroker(email);
-
             Pages.LogInLandlord
                 .CopiedForEnterPsswrdFromEmailCreateBroker(copyPasswordFromEmail)
                 .ClickIconShowLogInPg()

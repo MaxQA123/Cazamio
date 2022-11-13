@@ -36,15 +36,15 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBr
             return copyEmailActual;
         }
 
-        [AllureStep("CopyFirstNameFromMdlWndwCreateBroker")]
-        public string CopyFirstNameFromMdlWndwCreateBroker()
-        {
-            WaitUntil.WaitSomeInterval(500);
-            string copyFirstName = Browser._Driver.FindElement(By.XPath("//input[@id = 'first-name']")).GetAttribute("value");
-            string copyFirstNameActual = copyFirstName.ToString();
+        //[AllureStep("CopyFirstNameFromMdlWndwCreateBroker")]
+        //public string CopyFirstNameFromMdlWndwCreateBroker()
+        //{
+        //    WaitUntil.WaitSomeInterval(500);
+        //    string copyFirstName = Browser._Driver.FindElement(By.XPath("//input[@id = 'first-name']")).GetAttribute("value");
+        //    string copyFirstNameActual = copyFirstName.ToString();
 
-            return copyFirstNameActual;
-        }
+        //    return copyFirstNameActual;
+        //}
 
         [AllureStep("ClickButtonSaveCrtNwBrkrOnMdlwndw")]
         public ModalWindowCreateNewBroker ClickButtonSaveCrtNwBrkrOnMdlwndw()

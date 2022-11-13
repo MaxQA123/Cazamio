@@ -74,6 +74,22 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
             return this;
         }
 
+        [AllureStep("ClickLinkForConfirmAccountBrokerTwice")]
+        public EmailXitroo ClickLinkForConfirmAccountBrokerTwice()
+        {
+            WaitUntil.WaitSomeInterval(3000);
+            List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
+            Browser._Driver.SwitchTo().Window(tabsList[1]);
+            WaitUntil.WaitSomeInterval(1000);
+            Browser._Driver.SwitchTo().Frame(IframeXitrooLetter);
+            WaitUntil.WaitSomeInterval(1000);
+            Button.Click(LinkForConfirmAccountLandlordbroker);
+            Browser._Driver.SwitchTo().DefaultContent();
+            WaitUntil.WaitSomeInterval(3000);
+
+            return this;
+        }
+
         [AllureStep("ClickLinkForResetPasswordBroker")]
         public EmailXitroo ClickLinkForResetPasswordBroker()
         {
@@ -108,18 +124,6 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
             string copyEmailActual = copyEmail.ToString();
 
             return copyEmailActual;
-        }
-
-        [AllureStep("CopyLinkFromEmailXitroo")]
-        public string CopyLinkFromEmailXitroo()
-        {
-            WaitUntil.WaitSomeInterval(3000);
-            Browser._Driver.SwitchTo().Frame(IframeXitrooLetter);
-            WaitUntil.WaitSomeInterval(500);
-            string copyLink = Browser._Driver.FindElement(By.XPath("//a[contains(@href, 'https://landlord.cazamiodemo.com/account/email-confirm')]")).Text;
-            string copyLinkActual = copyLink.ToString();
-
-            return copyLinkActual;
         }
 
         public string CopyPasswordFromEmailForCreateBroker()

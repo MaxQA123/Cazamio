@@ -90,7 +90,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
 
             Assert.AreEqual(emailExpected, getEmailActual);
 
-            Console.WriteLine($"Email EX and AC: {emailExpected} {getEmailActual}");
+            Console.WriteLine($"Email EX: {emailExpected} Email AC:{getEmailActual}");
 
             return this;
         }

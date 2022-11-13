@@ -25,7 +25,7 @@ namespace CazamioProgect.PageObjects.EmailXitrooPage
         [FindsBy(How = How.XPath, Using = "//input[@id = 'mailInput']")]
         public IWebElement FieldInputEmail;
 
-        [FindsBy(How = How.XPath, Using = "//a[contains(@href, 'https://abodebyreside.cazamiodemo.com/account/email-confirm')]")]
+        [FindsBy(How = How.XPath, Using = "//a[contains(@href, 'https://testlanlord.cazamiodemo.com/account/email-confirm')]")]
         public IWebElement LinkForConfirmAccountTenant;
 
         [FindsBy(How = How.XPath, Using = "//a[contains(@href, 'https://landlord.cazamiodemo.com/account/email-confirm')]")]

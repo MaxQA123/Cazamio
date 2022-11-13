@@ -115,6 +115,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         public LogInLandlord CopiedForEnterEmailFromEmailCreateBroker(string _email)
         {
             WaitUntil.WaitSomeInterval(1000);
+            List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
+            Browser._Driver.SwitchTo().Window(tabsList[2]);
+            WaitUntil.WaitSomeInterval(1000);
             FieldInputEmailLogInPg.SendKeys(_email);
 
             return this;
