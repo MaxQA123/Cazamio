@@ -21,6 +21,7 @@ using CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBroker
 using CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOptionsPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.PaymentSettingsPage;
+using CazamioProgect.PageObjects.WebSiteLandlordPages.PopUpWndowNewBrokerCreatedSuccessfully;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.PreApprovalsPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord;
@@ -81,6 +82,7 @@ namespace CazamioProgect.PageObjects
         public static ResetYourPassword ResetYourPassword => GetPage<ResetYourPassword>();
         public static NewBuilding NewBuilding => GetPage<NewBuilding>();
         public static ModalWindowPaymentOptions ModalWindowPaymentOptions => GetPage<ModalWindowPaymentOptions>();
+        public static PopUpWndowNewBrokerCreatedSuccessfully PopUpWndowNewBrokerCreatedSuccessfully => GetPage<PopUpWndowNewBrokerCreatedSuccessfully>();
 
         #endregion
 

@@ -216,9 +216,10 @@ namespace AdminTests
                 .ClickButtonCreateBrokerBrokersPage();
             Pages.ModalWindowCreateNewBroker
                 .EnterFirstLastNameEmailPhnNmbrCellMdlWndw();
+ 
 
             string email = Pages.ModalWindowCreateNewBroker.CopyEmailFromMdlWndwCreateBroker();
-            //string firstName = Pages.ModalWindowCreateNewBroker.CopyFirstNameFromMdlWndwCreateBroker();
+            string firstName = Pages.ModalWindowCreateNewBroker.CopyFirstNameFromMdlWndwCreateBroker();
 
             Pages.ModalWindowCreateNewBroker
                 .ClickButtonSaveCrtNwBrkrOnMdlwndw()
@@ -232,7 +233,7 @@ namespace AdminTests
             Pages.EmailXitroo
                 .OpenNewlyLetter();
 
-            //string link = Pages.EmailXitroo.CopyLinkFromEmailXitroo();
+            string link = Pages.EmailXitroo.CopyLinkFromEmailXitroo();
             string copyPasswordFromEmail = Pages.EmailXitroo.CopyPasswordFromEmailForCreateBroker();
 
             Pages.EmailXitroo

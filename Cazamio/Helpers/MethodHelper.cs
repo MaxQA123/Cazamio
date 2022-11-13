@@ -206,4 +206,14 @@ namespace CazamioProgect.Helpers
             catch (StaleElementReferenceException) { return false; }
         }
     }
+
+    public class SwitchingTabs
+    {
+        public static void SwitchTabOne()
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
+            Browser._Driver.SwitchTo().Window(tabsList[2]);
+        }
+    }
 }
