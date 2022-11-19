@@ -15,6 +15,13 @@ namespace CazamioProgect.Helpers
         public const string URL_XITROO_STATIC_BROKER = "https://xitroo.com/#evilhtingale@xitroo.com";
         public const string URL_XITROO_STATIC_ADMIN = "https://xitroo.com/#testlandlordcaz@xitroo.com";
         public const string URL_XITROO_STATIC_TENANT = "https://xitroo.com/#tenantoccupantliza@xitroo.com";
+
+        public const string URL_PUTSBOX_STATIC_SUPER_ADMIN = "https://putsbox.com/superadmin123/inspect";
+        public const string URL_PUTSBOX_STATIC_BROKER = "https://putsbox.com/broker123/inspect";
+        public const string URL_PUTSBOX_STATIC_ADMIN = "https://putsbox.com/admin123/inspect";
+        public const string URL_PUTSBOX_STATIC_TENANT_APPLICANT = "https://putsbox.com/tenantapp123/inspect";
+        public const string URL_PUTSBOX_STATIC_TENANT_OCCUPANT = "https://putsbox.com/tenantocc123/inspect";
+        public const string URL_PUTSBOX_STATIC_TENANT_GUARANTOR = "https://putsbox.com/tenantgua123/inspect";
     }
 
     public class GeneralTestDataForAllUsers

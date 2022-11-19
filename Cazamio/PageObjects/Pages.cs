@@ -26,6 +26,7 @@ using CazamioProgect.PageObjects.WebSiteLandlordPages.PreApprovalsPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.TemplatesPage;
+using CazamioProgect.PageObjects.EmailPutsBox;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
@@ -83,6 +84,7 @@ namespace CazamioProgect.PageObjects
         public static NewBuilding NewBuilding => GetPage<NewBuilding>();
         public static ModalWindowPaymentOptions ModalWindowPaymentOptions => GetPage<ModalWindowPaymentOptions>();
         public static PopUpWndowNewBrokerCreatedSuccessfully PopUpWndowNewBrokerCreatedSuccessfully => GetPage<PopUpWndowNewBrokerCreatedSuccessfully>();
+        public static PutsBox PutsBox => GetPage<PutsBox>();
 
         #endregion
 

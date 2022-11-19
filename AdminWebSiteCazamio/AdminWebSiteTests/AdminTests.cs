@@ -4,6 +4,7 @@ using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
+using PutsboxWrapper;
 using NUnit.Framework;
 
 namespace AdminTests
@@ -290,6 +291,34 @@ namespace AdminTests
                 .SelectPaymentsMethodsNwBldngPage()
                 .ClickButtonGeneralNextNwBldngPg();
             //.SelectTabOnNewBuildingsPg(TabsOnNewBuildingPage.tabAmenities, "");
+
+            WaitUntil.WaitSomeInterval(2000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("Demo")]
+        [AllureSubSuite("PutsBox")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing:
+        //This test case is doing checking:
+        //Comment: 
+
+        public void PutsBox()
+        {
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsAdmin();
+                //.ClickIconShowLogInPg()
+                //.ClickButtonLetsGoLogInPg();
+            Pages.JScriptExecutorHelper
+                .OpenNewTab();
+            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_PUTSBOX_STATIC_TENANT_APPLICANT);
 
             WaitUntil.WaitSomeInterval(2000);
         }
