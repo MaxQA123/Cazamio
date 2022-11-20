@@ -8,5 +8,11 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
 {
     public partial class PutsBox
     {
+        public PutsBox RandomEndPointPutsBoxEmail(string emailPutsBox)
+        {
+            var randomEmailPutsBox = ($"https://putsbox.com/{emailPutsBox}/inspect");
+
+            return this;
+        }
     }
 }

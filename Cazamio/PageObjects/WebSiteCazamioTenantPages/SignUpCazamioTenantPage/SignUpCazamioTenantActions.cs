@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CazamioProgect.PageObjects.GeneralPages.SignUpCazamioTenantPage
@@ -47,12 +48,34 @@ namespace CazamioProgect.PageObjects.GeneralPages.SignUpCazamioTenantPage
         public string CopyEmailFromSignUpPg()
         {
             WaitUntil.WaitSomeInterval(500);
-            string copyEmail = Browser._Driver.FindElement(By.XPath("//input[@id = 'email']")).GetAttribute("value");
+            string copyEmail = FieldInputEmailSignUpPg.GetAttribute("value");
             string copyEmailActual = copyEmail.ToString();
 
             return copyEmailActual;
         }
 
-        
+        public string CopyEmailBeforeDogFromSignUpPg()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            string copyPartEmail = FieldInputEmailSignUpPg.GetAttribute("value");
+            Regex regexPartEmail = new Regex(@"^.....");
+            string partEmail = regexPartEmail.Match(copyPartEmail).ToString();
+
+            return partEmail;
+        }
+
+        public SignUpCazamioTenant DemoEnterFirstLastNameEmailPasswordSignUpPg()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputFirstNameSignUpPg, Name.FirstName());
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputLastNameSignUpPg, Name.LastName());
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailSignUpPg, GenerateRandomDataHelper.RandomEmail(5) + NameDomen.PUTS_BOX);
+            WaitUntil.WaitSomeInterval(500);
+            InputGeneral.InputFunctionWithClear(FieldInputPasswordSignUpPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
+
+            return this;
+        }
     }
 }

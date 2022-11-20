@@ -63,7 +63,7 @@ namespace TenantCazamioTests
                 .ClickButtonEditMyAccntPgTabAccnt()
                 .VerifyEmailNewTenant(emailExpected);
 
-            Thread.Sleep(5000);
+            WaitUntil.WaitSomeInterval(2000);
         }
 
         [Test]
@@ -102,7 +102,7 @@ namespace TenantCazamioTests
             Pages.MyAccountCazamioTenant
                 .VerifyTenatFirstLastNameTW(getFirstNameForCompare, getLastNameForCompare);
 
-            Thread.Sleep(5000);
+            WaitUntil.WaitSomeInterval(2000);
         }
 
         [Test]
@@ -224,6 +224,59 @@ namespace TenantCazamioTests
 
             Pages.MyAccountCazamioTenant
                 .VerifyTenatFirstLastNameTW(getFirstNameForCompare, getLastNameForCompare);
+
+            WaitUntil.WaitSomeInterval(2000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("DemoTenant")]
+        [AllureSubSuite("DemoSignUp")]
+
+        //Date of publication:
+        //Version\Build:
+        //The date last publication on which been testing:
+        //Willingness for testing: Done.
+        //This test case is doing checking: The successfully SignUp as tenant.
+        //Comment:
+
+        public void DemoSignUp()
+        {
+            Pages.HeaderCazamioTenant
+                .ClickButtonSignUpHdrCzmTnnt();
+            Pages.SignUpCazamioTenant
+                .DemoEnterFirstLastNameEmailPasswordSignUpPg()
+                .ClickIconShowSignUpPg();
+
+            string emailPutsBox = Pages.SignUpCazamioTenant.CopyEmailFromSignUpPg();
+            string partEmailPutsBox = Pages.SignUpCazamioTenant.CopyEmailBeforeDogFromSignUpPg();
+
+            Pages.SignUpCazamioTenant
+                .ClickButtonGetStartedSignUpPg();
+            Pages.JScriptExecutorHelper
+                .OpenNewTab();
+            Browser._Driver.Navigate().GoToUrl(($"https://putsbox.com/{partEmailPutsBox}/inspect"));
+            Pages.EmailXitroo
+                .CopiedForEnterEmail(emailPutsBox)
+                .ClickSearchButton();
+            Pages.EmailXitroo
+                .OpenNewlyLetter()
+                .ClickLinkForConfirmAccountTenant();
+            Pages.LogInCazamioTenant
+                .CopiedForEnterEmailLogInPg(emailPutsBox)
+                .EnterPasswordOnLogInPg()
+                .ClickIconShowLgInCazmTnnt()
+                .ClickButtonLogInLgInCazmTnnt();
+            Pages.HeaderCazamioTenant
+               .ClickButtonMyApplicationsHdrCzmTnnt();
+            Pages.MyAccountCazamioTenant
+                .ClickTabAccountOnMyAccntPg()
+                .ClickButtonEditMyAccntPgTabAccnt()
+                .VerifyEmailNewTenant(emailPutsBox);
 
             WaitUntil.WaitSomeInterval(2000);
         }

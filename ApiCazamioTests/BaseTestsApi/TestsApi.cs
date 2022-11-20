@@ -22,7 +22,7 @@ namespace ApiCazamioTests.BaseTestsApi
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("ApiTenant")]
-        [AllureSubSuite("ApilLogInTenant")]
+        [AllureSubSuite("LogInTenant")]
 
         //Date of publication:
         //Version\Build:
@@ -31,7 +31,7 @@ namespace ApiCazamioTests.BaseTestsApi
         //Comment: 
         //Path to cheking's: 
 
-        public void ApilLogInTenant()
+        public void LogInTenant()
         {
 
         }

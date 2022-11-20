@@ -318,7 +318,7 @@ namespace AdminTests
                 //.ClickButtonLetsGoLogInPg();
             Pages.JScriptExecutorHelper
                 .OpenNewTab();
-            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_PUTSBOX_STATIC_TENANT_APPLICANT);
+            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_PUTSBOX_EMAIL_STATIC_TENANT_APPLICANT);
 
             WaitUntil.WaitSomeInterval(2000);
         }
