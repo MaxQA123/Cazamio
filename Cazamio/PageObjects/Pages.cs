@@ -50,6 +50,7 @@ namespace CazamioProgect.PageObjects
 
         public static DatePicker DatePicker => GetPage<DatePicker>();
         public static EmailXitroo EmailXitroo => GetPage< EmailXitroo >();
+        public static PutsBox PutsBox => GetPage<PutsBox>();
         public static JScriptExecutorHelper JScriptExecutorHelper => GetPage<JScriptExecutorHelper>();
 
         #region TenantWebSiteCazamio
@@ -84,8 +85,7 @@ namespace CazamioProgect.PageObjects
         public static NewBuilding NewBuilding => GetPage<NewBuilding>();
         public static ModalWindowPaymentOptions ModalWindowPaymentOptions => GetPage<ModalWindowPaymentOptions>();
         public static PopUpWndowNewBrokerCreatedSuccessfully PopUpWndowNewBrokerCreatedSuccessfully => GetPage<PopUpWndowNewBrokerCreatedSuccessfully>();
-        public static PutsBox PutsBox => GetPage<PutsBox>();
-
+        
         #endregion
 
     }

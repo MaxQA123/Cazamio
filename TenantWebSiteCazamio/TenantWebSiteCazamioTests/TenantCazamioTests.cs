@@ -35,33 +35,26 @@ namespace TenantCazamioTests
             Pages.HeaderCazamioTenant
                 .ClickButtonSignUpHdrCzmTnnt();
             Pages.SignUpCazamioTenant
-                .EnterFirstLastNameEmailPasswordSignUpPg()
+                .DemoEnterFirstLastNameEmailPasswordSignUpPg()
                 .ClickIconShowSignUpPg();
 
-            string emailExpected = Pages.SignUpCazamioTenant.CopyEmailFromSignUpPg();
+            string emailPutsBox = Pages.SignUpCazamioTenant.CopyEmailFromSignUpPg();
+            string partEmailPutsBox = Pages.SignUpCazamioTenant.CopyEmailBeforeDogFromSignUpPg();
 
             Pages.SignUpCazamioTenant
                 .ClickButtonGetStartedSignUpPg();
             Pages.JScriptExecutorHelper
                 .OpenNewTab();
-            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_XITROO_EMAIL_RANDOM);
-            Pages.EmailXitroo
-                .CopiedForEnterEmail(emailExpected)
-                .ClickSearchButton();
-            Pages.EmailXitroo
-                .OpenNewlyLetter()
-                .ClickLinkForConfirmAccountTenant();
-            Pages.LogInCazamioTenant
-                .CopiedForEnterEmailLogInPg(emailExpected)
-                .EnterPasswordOnLogInPg()
-                .ClickIconShowLgInCazmTnnt()
-                .ClickButtonLogInLgInCazmTnnt();
+            Browser._Driver.Navigate().GoToUrl(($"https://putsbox.com/{partEmailPutsBox}/inspect"));
+            Pages.PutsBox
+                .ClickButtonBodyHtml()
+                .ClickButtonConfirmEmailForTenant();
             Pages.HeaderCazamioTenant
                .ClickButtonMyApplicationsHdrCzmTnnt();
             Pages.MyAccountCazamioTenant
                 .ClickTabAccountOnMyAccntPg()
                 .ClickButtonEditMyAccntPgTabAccnt()
-                .VerifyEmailNewTenant(emailExpected);
+                .VerifyEmailNewTenant(emailPutsBox);
 
             WaitUntil.WaitSomeInterval(2000);
         }
@@ -260,17 +253,9 @@ namespace TenantCazamioTests
             Pages.JScriptExecutorHelper
                 .OpenNewTab();
             Browser._Driver.Navigate().GoToUrl(($"https://putsbox.com/{partEmailPutsBox}/inspect"));
-            Pages.EmailXitroo
-                .CopiedForEnterEmail(emailPutsBox)
-                .ClickSearchButton();
-            Pages.EmailXitroo
-                .OpenNewlyLetter()
-                .ClickLinkForConfirmAccountTenant();
-            Pages.LogInCazamioTenant
-                .CopiedForEnterEmailLogInPg(emailPutsBox)
-                .EnterPasswordOnLogInPg()
-                .ClickIconShowLgInCazmTnnt()
-                .ClickButtonLogInLgInCazmTnnt();
+            Pages.PutsBox
+                .ClickButtonBodyHtml()
+                .ClickButtonConfirmEmailForTenant();
             Pages.HeaderCazamioTenant
                .ClickButtonMyApplicationsHdrCzmTnnt();
             Pages.MyAccountCazamioTenant

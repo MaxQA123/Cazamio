@@ -54,6 +54,7 @@ namespace CazamioProgect.PageObjects.GeneralPages.SignUpCazamioTenantPage
             return copyEmailActual;
         }
 
+        [AllureStep("CopyEmailBeforeDogFromSignUpPg")]
         public string CopyEmailBeforeDogFromSignUpPg()
         {
             WaitUntil.WaitSomeInterval(500);

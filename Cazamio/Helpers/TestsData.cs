@@ -8,8 +8,9 @@ namespace CazamioProgect.Helpers
 {
     public class EndPoints
     {
-        public const string URL_HOME_PAGE_TENANT_WEBSITE_CAZAMIO = "https://testlanlord.cazamiodemo.com/";
-        public const string URL_LOGIN_ADMIN_WEBSITE = "https://landlord.cazamiodemo.com/";
+        public const string URL_HOME_PAGE_TENANT_WEBSITE_CAZAMIO = "https://testlandlord-demo.cazamiodemo.com/";
+        public const string URL_LOGIN_ADMIN_WEBSITE = "https://landlord-demo.cazamiodemo.com/account/signin";
+        
         public const string URL_XITROO_EMAIL_RANDOM = "https://xitroo.com/";
         public const string URL_XITROO_STATIC_SUPER_ADMIN = "https://xitroo.com/#testadmin@xitroo.com";
         public const string URL_XITROO_STATIC_BROKER = "https://xitroo.com/#evilhtingale@xitroo.com";
@@ -32,7 +33,7 @@ namespace CazamioProgect.Helpers
 
     public class TestDataForWebSiteTenant
     {
-        public const string EMAIL_TENANT_APPLICANT = "tenantaplicantray@xitroo.com";
+        public const string EMAIL_TENANT_APPLICANT = "tenantapp123ray@putsbox.com";
         public const string FIRST_NAME_TENANT_APPLICANT = "Ray";
         public const string LAST_NAME_TENANT_APPLICANT = "Anderson";
 
@@ -70,20 +71,20 @@ namespace CazamioProgect.Helpers
 
     public class TestDataForWebSiteAdmin
     {
-        public const string EMAIL_ADMIN_TEST_GARY = "testlandlordcaz@xitroo.com";
-        public const string USER_NAME_ADMIN_TEST_GARY = "Gary Test";
+        public const string EMAIL_ADMIN_TEST_GARY = "admin123@putsbox.com";
+        public const string USER_NAME_ADMIN_TEST_GARY = "Martin Macflay";
         public const string USER_NAME_ROLE_ADMIN_TEST_GARY = "Admin";
 
-        public const string EMAIL_SUPER_ADMIN_SUPER = "testadmin@xitroo.com";
+        public const string EMAIL_SUPER_ADMIN_SUPER = "superadmin123@putsbox.com";
         public const string USER_NAME_SUPER_ADMIN = "Super User";
         public const string USER_NAME_ROLE_SUPER_ADMIN = "Super Admin";
 
-        public const string EMAIL_BROKER_TEST = "testbrokercaz@xitroo.com";
+        public const string EMAIL_BROKER_TEST = "broker123test@putsbox.com";
         public const string USER_NAME_BROKER = "Test Broker";
         public const string USER_NAME_ROLE_BROKER = "Broker";
 
-        public const string BUILDING_NAME = "Test building";
-        public const string BUILDING_LLC_NAME = "LLC Corporation rent";
+        public const string BUILDING_NAME = "Diamond Hall";
+        public const string BUILDING_LLC_NAME = "LLC Rent Corporation";
     }
 
     public class NameDomen
