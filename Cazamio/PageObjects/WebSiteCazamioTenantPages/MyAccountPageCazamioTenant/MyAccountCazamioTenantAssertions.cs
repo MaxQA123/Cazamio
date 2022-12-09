@@ -52,8 +52,8 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
             return this;
         }
 
-        [AllureStep("VerifyOccupantFirstNameTC")]
-        public MyAccountCazamioTenant VerifyOccupantFirstNameTC(string getFirstNameActual, string getLastNameActual)
+        [AllureStep("VerifyOccupantFirstName")]
+        public MyAccountCazamioTenant VerifyOccupantFirstName(string getFirstNameActual, string getLastNameActual)
         {
             Assert.Multiple(() =>
             {
@@ -61,11 +61,11 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
                 string getFirstNameExpected = TestDataForWebSiteTenant.NEW_FIRST_NAME_OCCUPANT_LIZA_LIKE;
                 string getLastNameExpected = TestDataForWebSiteTenant.NEW_LAST_NAME_OCCUPANT_LIZA_LIKE;
 
-                Assert.AreEqual(getFirstNameActual, getFirstNameExpected);
+                Assert.AreEqual(getFirstNameExpected, getFirstNameActual);
                 Assert.AreEqual(getLastNameExpected, getLastNameActual);
 
-                Console.WriteLine($"First name EX and AC: {getFirstNameExpected} {getFirstNameActual}");
-                Console.WriteLine($"Last name EX and AC: {getLastNameExpected} {getLastNameActual}");
+                Console.WriteLine($"First name EX: {getFirstNameExpected} AC: {getFirstNameActual}");
+                Console.WriteLine($"Last name EX: {getLastNameExpected} AC: {getLastNameActual}");
             });
 
             return this;

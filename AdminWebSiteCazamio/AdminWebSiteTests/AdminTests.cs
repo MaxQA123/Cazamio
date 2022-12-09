@@ -310,7 +310,7 @@ namespace AdminTests
         //This test case is doing checking:
         //Comment: 
 
-        public void PutsBox()
+        public void DemoPutsBox()
         {
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsAdmin();

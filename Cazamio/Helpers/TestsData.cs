@@ -37,13 +37,13 @@ namespace CazamioProgect.Helpers
         public const string FIRST_NAME_TENANT_APPLICANT = "Ray";
         public const string LAST_NAME_TENANT_APPLICANT = "Anderson";
 
-        public const string EMAIL_CURRENT_OCCUPANT_LIZA_LIKE = "tenantoccupantliza@xitroo.com";
-        public const string FIRST_NAME_OCCUPANT_LIZA_LIKE = "Liza-Like";
-        public const string LAST_NAME_OCCUPANT_LIZA_LIKE = "Junior";
-        public const string PHONE_NUMBER_OCCUPANT_LIZA_LIKE = "2128765556";
-        public const string NEW_FIRST_NAME_OCCUPANT_LIZA_LIKE = "Elizabeth";
-        public const string NEW_LAST_NAME_OCCUPANT_LIZA_LIKE = "Taylor";
-        public const string NEW_PHONE_NUMBER_OCCUPANT_LIZA_LIKE = "5151234321";
+        public const string EMAIL_CURRENT_OCCUPANT_ONE = "tenantoccupantliza@xitroo.com";
+        public const string FIRST_NAME_OCCUPANT_ONE = "Liza-Like";
+        public const string LAST_NAME_OCCUPANT_ONE = "Junior";
+        public const string PHONE_NUMBER_OCCUPANT_ONE = "2128765556";
+        public const string NEW_FIRST_NAME_OCCUPANT_ONE = "Elizabeth";
+        public const string NEW_LAST_NAME_OCCUPANT_ONE = "Taylor";
+        public const string NEW_PHONE_NUMBER_OCCUPANT_ONE = "5151234321";
 
         public const string EMAIL_CURRENT_OCCUPANT_ALFRED = "tenantoccupantalfred123@xitroo.com";
         public const string FIRST_NAME_OCCUPANT_ALFRED = "Alfred";
