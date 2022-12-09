@@ -73,13 +73,13 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         public MyAccountCazamioTenant EnterFirstLastNameEmailPhoneNumberMyAccntPgTabAccnt()
         {
             WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputFirsNameMyAccntPgTabAccnt, TestDataForWebSiteTenant.FIRST_NAME_OCCUPANT_LIZA_LIKE);
+            InputGeneral.InputFunctionWithClear(FieldInputFirsNameMyAccntPgTabAccnt, TestDataForWebSiteTenant.FIRST_NAME_OCCUPANT_ONE);
             WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputLastNameMyAccntPgTabAccnt, TestDataForWebSiteTenant.LAST_NAME_OCCUPANT_LIZA_LIKE);
+            InputGeneral.InputFunctionWithClear(FieldInputLastNameMyAccntPgTabAccnt, TestDataForWebSiteTenant.LAST_NAME_OCCUPANT_ONE);
             WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputEmailMyAccntPgTabAccnt, TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_LIZA_LIKE);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailMyAccntPgTabAccnt, TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_ONE);
             WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputPhoneNumberMyAccntPgTabAccnt, TestDataForWebSiteTenant.PHONE_NUMBER_OCCUPANT_LIZA_LIKE);
+            InputGeneral.InputFunctionWithClear(FieldInputPhoneNumberMyAccntPgTabAccnt, TestDataForWebSiteTenant.PHONE_NUMBER_OCCUPANT_ONE);
 
             return this;
         }
@@ -122,10 +122,10 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         [AllureStep("EnterStreetCityStateZipMyAccntPgTabAccnt")]
         public MyAccountCazamioTenant EnterStreetCityStateZipCodeMyAccntPgTabAccnt()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputStreetMyAccntPgTabAccnt, TestDataForWebSiteTenant.YOUR_NEW__CURRENT_ADDRESS_STREET_ALFRED);
-            InputGeneral.InputFunctionWithClear(FieldInputCityMyAccntPgTabAccnt, TestDataForWebSiteTenant.YOUR_NEW__CURRENT_ADDRESS_CITY_ALFRED);
-            InputGeneral.InputFunctionWithClear(FieldInputStateMyAccntPgTabAccnt, TestDataForWebSiteTenant.YOUR_NEW__CURRENT_ADDRESS_STATE_ALFRED);
-            InputGeneral.InputFunctionWithClear(FieldInputZipCodeSectionYourCrrntAdrsMyAccntPgTabAccnt, TestDataForWebSiteTenant.YOUR_NEW__CURRENT_ADDRESS_ZIP_ALFRED);
+            InputGeneral.InputFunctionWithClear(FieldInputStreetMyAccntPgTabAccnt, TestDataForWebSiteTenant.YOUR_NEW__CURRENT_ADDRESS_STREET_SECOND);
+            InputGeneral.InputFunctionWithClear(FieldInputCityMyAccntPgTabAccnt, TestDataForWebSiteTenant.YOUR_NEW__CURRENT_ADDRESS_CITY_SECOND);
+            InputGeneral.InputFunctionWithClear(FieldInputStateMyAccntPgTabAccnt, TestDataForWebSiteTenant.YOUR_NEW__CURRENT_ADDRESS_STATE_SECOND);
+            InputGeneral.InputFunctionWithClear(FieldInputZipCodeSectionYourCrrntAdrsMyAccntPgTabAccnt, TestDataForWebSiteTenant.YOUR_NEW__CURRENT_ADDRESS_ZIP_SECOND);
 
             return this;
         }
@@ -134,11 +134,11 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         public MyAccountCazamioTenant EnterSectionReferenceNamePhnNmbrExtensionNmbrMyAccntPgTabAccnt()
         {
             WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputNameSectionReferenceMyAccntPgTabAccnt, TestDataForWebSiteTenant.SECTION_REFERENCE_NAME_ALFRED);
+            InputGeneral.InputFunctionWithClear(FieldInputNameSectionReferenceMyAccntPgTabAccnt, TestDataForWebSiteTenant.SECTION_REFERENCE_NAME_SECOND);
             WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputPhnNmbrSectionReferenceMyAccntPgTabAccnt, TestDataForWebSiteTenant.SECTION_REFERENCE_NEW_PHONE_NUMBER_ALFRED);
+            InputGeneral.InputFunctionWithClear(FieldInputPhnNmbrSectionReferenceMyAccntPgTabAccnt, TestDataForWebSiteTenant.SECTION_REFERENCE_NEW_PHONE_NUMBER_SECOND);
             WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputExtensionNmbrSectionReferenceMyAccntPgTabAccnt, TestDataForWebSiteTenant.SECTION_REFERENCE_EXTENSION_NUMBER_ALFRED);
+            InputGeneral.InputFunctionWithClear(FieldInputExtensionNmbrSectionReferenceMyAccntPgTabAccnt, TestDataForWebSiteTenant.SECTION_REFERENCE_EXTENSION_NUMBER_SECOND);
 
             return this;
         }
@@ -160,7 +160,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
             WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputPriceRentMortgageCostMyAccntPgTabAccnt, GenerateRandomDataHelper.RandomCostRentMortgageCost(2));
             WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputZipCodeSectionDoYouRentOrOwnThisPropertMyAccntPgTabAccnt, TestDataForWebSiteTenant.YOUR_NEW__CURRENT_ADDRESS_STREET_ALFRED);
+            InputGeneral.InputFunctionWithClear(FieldInputZipCodeSectionDoYouRentOrOwnThisPropertMyAccntPgTabAccnt, TestDataForWebSiteTenant.YOUR_NEW__CURRENT_ADDRESS_STREET_SECOND);
 
             return this;
         }

@@ -45,28 +45,28 @@ namespace CazamioProgect.Helpers
         public const string NEW_LAST_NAME_OCCUPANT_ONE = "Taylor";
         public const string NEW_PHONE_NUMBER_OCCUPANT_ONE = "5151234321";
 
-        public const string EMAIL_CURRENT_OCCUPANT_ALFRED = "tenantoccupantalfred123@xitroo.com";
-        public const string FIRST_NAME_OCCUPANT_ALFRED = "Alfred";
-        public const string LAST_NAME_OCCUPANT_ALFRED = "Dickins";
+        public const string EMAIL_CURRENT_OCCUPANT_SECOND = "tenantoccupantalfred123@xitroo.com";
+        public const string FIRST_NAME_OCCUPANT_SECOND = "Alfred";
+        public const string LAST_NAME_OCCUPANT_SECOND = "Dickins";
 
         public const string EMAIL_GUARANTOR_JIMMY = "tenantguarantor333jimmy@xitroo.com";
         public const string FIRST_NAME_GUARANTOR_JIMMY = "Jimmy";
 
-        public const string YOUR_CURRENT_ADDRESS_STREET_ALFRED = "Frank";
-        public const string YOUR_CURRENT_ADDRESS_CITY_ALFRED = "Saint-Germain-du-Corbéis";
-        public const string YOUR_CURRENT_ADDRESS_STATE_ALFRED = "Normandy";
-        public const string YOUR_CURRENT_ADDRESS_ZIP_ALFRED = "61000";
-        public const string SECTION_REFERENCE_NAME_ALFRED = "Bob";
-        public const string SECTION_REFERENCE_PHONE_NUMBER_ALFRED = "5857771234";
-        public const string SECTION_REFERENCE_EXTENSION_NUMBER_ALFRED = "212";
+        public const string YOUR_CURRENT_ADDRESS_STREET_SECOND = "Frank";
+        public const string YOUR_CURRENT_ADDRESS_CITY_SECOND = "Saint-Germain-du-Corbéis";
+        public const string YOUR_CURRENT_ADDRESS_STATE_SECOND = "Normandy";
+        public const string YOUR_CURRENT_ADDRESS_ZIP_SECOND = "61000";
+        public const string SECTION_REFERENCE_NAME_SECOND = "Bob";
+        public const string SECTION_REFERENCE_PHONE_NUMBER_SECOND = "5857771234";
+        public const string SECTION_REFERENCE_EXTENSION_NUMBER_SECOND = "212";
 
-        public const string YOUR_NEW__CURRENT_ADDRESS_STREET_ALFRED = "Beaubien Street";
-        public const string YOUR_NEW__CURRENT_ADDRESS_CITY_ALFRED = "Detroit Lakes";
-        public const string YOUR_NEW__CURRENT_ADDRESS_STATE_ALFRED = "MN";
-        public const string YOUR_NEW__CURRENT_ADDRESS_ZIP_ALFRED = "56501";
-        public const string SECTION_REFERENCE_NEW_NAME_ALFRED = "Duglas";
-        public const string SECTION_REFERENCE_NEW_PHONE_NUMBER_ALFRED = "5854321333";
-        public const string SECTION_REFERENCE_NEW_EXTENSION_NUMBER_ALFRED = "585";
+        public const string YOUR_NEW__CURRENT_ADDRESS_STREET_SECOND = "Beaubien Street";
+        public const string YOUR_NEW__CURRENT_ADDRESS_CITY_SECOND = "Detroit Lakes";
+        public const string YOUR_NEW__CURRENT_ADDRESS_STATE_SECOND = "MN";
+        public const string YOUR_NEW__CURRENT_ADDRESS_ZIP_SECOND = "56501";
+        public const string SECTION_REFERENCE_NEW_NAME_SECOND = "Duglas";
+        public const string SECTION_REFERENCE_NEW_PHONE_NUMBER_SECOND = "5854321333";
+        public const string SECTION_REFERENCE_NEW_EXTENSION_NUMBER_SECOND = "585";
     }
 
     public class TestDataForWebSiteAdmin
