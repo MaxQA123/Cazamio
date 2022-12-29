@@ -146,25 +146,9 @@ namespace BrokerTests
             Pages.ListOfApplications
                 .VerifyTitleListOfApplicationsPg();
             Pages.SideBarLandlord
-                .ClickButtonPreApprovalsSidebar();
-            Pages.PreApprovals
-                .VerifyTitlePreApprovalsPagePg();
-            Pages.SideBarLandlord
-                .ClickButtonLeaseSignDocumentsSidebar();
-            Pages.Templates
-                .VerifyTitleTemplatesPagePg();
-            Pages.SideBarLandlord
-                .ClickButtonPaymentSettingsSidebar();
-            Pages.PaymentSettings
-                .VerifyTitlePaymentSettingsPagePg();
-            Pages.SideBarLandlord
                 .ClickButtonTransactionsSidebar();
             Pages.ListOfTransactions
                 .VerifyTitleListOfTransactionsPg();
-            Pages.SideBarLandlord
-                .ClickButtonOwnersSidebar();
-            Pages.ListOfOwners
-                .VerifyTitleListOfOwnersPg();
             Pages.SideBarLandlord
                 .ClickButtonLogOutSidebar();
             Pages.LogInLandlord

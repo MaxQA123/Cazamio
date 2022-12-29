@@ -49,8 +49,8 @@ namespace CazamioProgect.Helpers
         public const string FIRST_NAME_OCCUPANT_SECOND = "Alfred";
         public const string LAST_NAME_OCCUPANT_SECOND = "Dickins";
 
-        public const string EMAIL_GUARANTOR_JIMMY = "tenantguarantor333jimmy@xitroo.com";
-        public const string FIRST_NAME_GUARANTOR_JIMMY = "Jimmy";
+        public const string EMAIL_GUARANTOR = "tenantguarantor333jimmy@xitroo.com";
+        public const string FIRST_NAME_GUARANTOR = "Jimmy";
 
         public const string YOUR_CURRENT_ADDRESS_STREET_SECOND = "Frank";
         public const string YOUR_CURRENT_ADDRESS_CITY_SECOND = "Saint-Germain-du-Corbéis";
