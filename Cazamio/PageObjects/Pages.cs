@@ -34,6 +34,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HomePageCazamioTenant;
 
 namespace CazamioProgect.PageObjects
 {
@@ -61,6 +62,7 @@ namespace CazamioProgect.PageObjects
         public static MyAccountCazamioTenant MyAccountCazamioTenant => GetPage<MyAccountCazamioTenant>();
         public static ForgotPassword ForgotPassword => GetPage<ForgotPassword>();
         public static CreateNewPassword CreateNewPassword => GetPage<CreateNewPassword>();
+        public static HomeCazamioTenant HomeCazamioTenant => GetPage<HomeCazamioTenant>();
 
         #endregion
 

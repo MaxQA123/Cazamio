@@ -69,6 +69,11 @@ namespace CazamioProgect.Helpers
         public const string SECTION_REFERENCE_NEW_EXTENSION_NUMBER_SECOND = "585";
     }
 
+    public class TestDataHomePageTenant
+    {
+        public const string NUMBER_BUILDING = "12";
+    }
+
     public class TestDataForWebSiteAdmin
     {
         public const string EMAIL_ADMIN_TEST_GARY = "admin123@putsbox.com";

@@ -265,5 +265,35 @@ namespace TenantCazamioTests
 
             WaitUntil.WaitSomeInterval(2000);
         }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("DemoTenant")]
+        [AllureSubSuite("DemoSignUp")]
+
+        //Date of publication:
+        //Version\Build:
+        //The date last publication on which been testing:
+        //Willingness for testing: Done.
+        //This test case is doing checking: The successfully SignUp as tenant.
+        //Comment:
+        public void DemoSearchHomePage()
+        {
+            Pages.HeaderCazamioTenant
+                .ClickButtonLogInHdrCzmTnnt();
+            Pages.LogInCazamioTenant
+                .EnterEmailPasswordOnLgInAsTenantApplicant()
+                .ClickIconShowLgInCazmTnnt()
+                .SetCheckBoxRememberMeLgInCazmTnnt()
+                .ClickButtonLogInLgInCazmTnnt();
+            Pages.HomeCazamioTenant
+                .SearchNumberBuildingHomePg();
+
+            WaitUntil.WaitSomeInterval(2000);
+        }
     }
 }
