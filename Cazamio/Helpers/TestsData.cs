@@ -257,4 +257,20 @@ namespace CazamioProgect.Helpers
         public const int tabSpecials = 3;
         public const int tabImages = 4;
     }
+
+    public class CardApartmentOnListOfApartments
+    {
+        public const int apartmentCardOne = 0;
+        public const int apartmentCardTwo = 1;
+        public const int apartmentCardThree = 2;
+        public const int apartmentCardFour = 3;
+        public const int apartmentCardFive = 4;
+        public const int apartmentCardSix = 5;
+        public const int apartmentCardSeven = 6;
+        public const int apartmentCardEight = 7;
+        public const int apartmentCardNine = 8;
+        public const int apartmentCardTen = 9;
+        public const int apartmentCardEleven = 10;
+        public const int apartmentCardTwelve = 11;
+    }
 }
