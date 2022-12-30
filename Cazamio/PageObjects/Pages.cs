@@ -36,6 +36,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HomePageCazamioTenant;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.ListOfApartmentsTenantPage;
+using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.ApartmentDetailsTenantPage;
 
 namespace CazamioProgect.PageObjects
 {
@@ -65,6 +66,7 @@ namespace CazamioProgect.PageObjects
         public static CreateNewPassword CreateNewPassword => GetPage<CreateNewPassword>();
         public static HomeCazamioTenant HomeCazamioTenant => GetPage<HomeCazamioTenant>();
         public static ListOfApartmentsTenant ListOfApartmentsTenant => GetPage<ListOfApartmentsTenant>();
+        public static ApartmentDetailsTenant ApartmentDetailsTenant => GetPage<ApartmentDetailsTenant>();
 
         #endregion
 

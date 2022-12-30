@@ -168,7 +168,7 @@ namespace TenantCazamioTests
         //Version\Build:
         //The date last publication on which been testing: 
         //Willingness for testing: Done.
-        //This test case is doing checking: An apartmentThe successfully SignUp as tenant.
+        //This test case is doing checking: An apartment had found via the field search on the home page.
         //Comment:
 
         public void SearchApartmentViaHomePage()
@@ -313,11 +313,11 @@ namespace TenantCazamioTests
         //Date of publication:
         //Version\Build:
         //The date last publication on which been testing:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully SignUp as tenant.
+        //Willingness for testing: in progress.
+        //This test case is doing checking: 
         //Comment:
 
-        public void DemoSearchHomePage()
+        public void DemoPaymentHoldDeposit()
         {
             Pages.HeaderCazamioTenant
                 .ClickButtonLogInHdrCzmTnnt();
@@ -330,6 +330,8 @@ namespace TenantCazamioTests
                 .SearchNumberBuildingHomePg();
             Pages.ListOfApartmentsTenant
                 .SelectApartmentCard(CardApartmentOnListOfApartments.apartmentCardOne, "");
+            Pages.ApartmentDetailsTenant
+                .ClickButtonSubmitApplicationTn();
 
             WaitUntil.WaitSomeInterval(5000);
         }

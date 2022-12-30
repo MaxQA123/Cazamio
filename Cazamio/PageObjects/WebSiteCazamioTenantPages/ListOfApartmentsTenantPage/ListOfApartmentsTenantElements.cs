@@ -11,6 +11,6 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.ListOfApartmentsT
     public partial class ListOfApartmentsTenant
     {
         //[FindsBy(How = How.XPath, Using = "")]
-        //public IWebElement 
+        //public IWebElement
     }
 }

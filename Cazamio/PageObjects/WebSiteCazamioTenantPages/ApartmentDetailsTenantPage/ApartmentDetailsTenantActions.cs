@@ -13,6 +13,10 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.ApartmentDetailsT
         [AllureStep("ClickButtonSubmitApplicationTn")]
         public ApartmentDetailsTenant ClickButtonSubmitApplicationTn()
         {
+            WaitUntil.WaitSomeInterval(500);
+            List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
+            Browser._Driver.SwitchTo().Window(tabsList[1]);
+            WaitUntil.WaitSomeInterval(2000);
             Button.Click(ButtonSubmitApplication);
 
             return this;
