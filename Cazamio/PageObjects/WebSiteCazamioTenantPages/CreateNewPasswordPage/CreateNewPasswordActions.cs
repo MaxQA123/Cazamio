@@ -15,7 +15,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.CreateNewPassword
         {
             WaitUntil.WaitSomeInterval(1000);
             List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
-            Browser._Driver.SwitchTo().Window(tabsList[2]);
+            Browser._Driver.SwitchTo().Window(tabsList[3]);
 
             WaitUntil.WaitSomeInterval(1000);
             InputGeneral.InputFunctionWithClear(InputFieldPassswordCreateNewPsswrdPg, GeneralTestDataForAllUsers.PASSWORD_NEW_GENEREAL);

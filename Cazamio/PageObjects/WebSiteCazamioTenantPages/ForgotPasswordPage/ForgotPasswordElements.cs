@@ -13,7 +13,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.ForgotPasswordPag
         [FindsBy(How = How.XPath, Using = "//input[@id = 'email']")]
         public IWebElement InputFieldEmailFrgtPsswrdPg;
 
-        [FindsBy(How = How.XPath, Using = "//input[@id = 'email']")]
+        [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Send recovery link']")]
         public IWebElement ButtonSendRecoveryLinkFrgtPsswrdPg;
     }
 }

@@ -40,7 +40,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTena
         [AllureStep("ClickButtonMyApplicationsHdrCzmTnnt")]
         public HeaderCazamioTenant ClickButtonMyApplicationsHdrCzmTnnt()
         {
-            WaitUntil.WaitSomeInterval(2000);
+            WaitUntil.WaitSomeInterval(5000);
             ButtonMyApplicationsHdrCzmTnnt.Click();
 
             return this;

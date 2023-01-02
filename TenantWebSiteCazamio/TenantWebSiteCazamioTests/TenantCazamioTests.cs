@@ -121,17 +121,14 @@ namespace TenantCazamioTests
             Pages.LogInCazamioTenant
                 .ClickButtonForgotPasswordLgInCazmTnnt();
             Pages.ForgotPassword
-                .EnterEmailOnFrgtPsswrdPg();
+                .EnterEmailOnFrgtPsswrdPg()
+                .ClickButtonSendRecoveryLinkFrgtPsswrdPg();
             Pages.JScriptExecutorHelper
                 .OpenNewTab();
-            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_XITROO_STATIC_TENANT);
-
-            //string email = Pages.EmailXitroo.CopyEmailFromXitrooPage();
-
-            Pages.EmailXitroo
-                .ClickSearchButton()
-                .OpenNewlyLetter()
-                .ClickLinkForResetPasswordTenant();
+            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_PUTSBOX_EMAIL_STATIC_TENANT_APPLICANT);
+            Pages.PutsBox
+                .ClickButtonBodyHtml()
+                .ClickButtonResetPasswordForTenant();
             Pages.CreateNewPassword
                 .EnterInputFieldPassswordCreateNewPsswrdPg()
                 .ClickIconShowCreateNewPsswrdPg()

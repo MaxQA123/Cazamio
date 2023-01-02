@@ -20,9 +20,9 @@ namespace CazamioProgect.Helpers
         public const string URL_PUTSBOX_EMAIL_STATIC_SUPER_ADMIN = "https://putsbox.com/superadmin123/inspect";
         public const string URL_PUTSBOX_EMAIL_STATIC_BROKER = "https://putsbox.com/broker123/inspect";
         public const string URL_PUTSBOX_EMAIL_STATIC_ADMIN = "https://putsbox.com/admin123/inspect";
-        public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_APPLICANT = "https://putsbox.com/tenantapp123/inspect";
-        public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_OCCUPANT = "https://putsbox.com/tenantocc123/inspect";
-        public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_GUARANTOR = "https://putsbox.com/tenantgua123/inspect";
+        public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_APPLICANT = "https://putsbox.com/tenantapp123ray/inspect";
+        public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_OCCUPANT = "https://putsbox.com/tenantocc123liza/inspect";
+        public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_GUARANTOR = "https://putsbox.com/tenantgua123jim/inspect";
     }
 
     public class GeneralTestDataForAllUsers

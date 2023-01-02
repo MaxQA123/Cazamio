@@ -101,7 +101,7 @@ namespace CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant
         public LogInCazamioTenant EnterEmailNewPasswordOnLogInPg()
         {
             WaitUntil.WaitSomeInterval(1000);
-            InputGeneral.InputFunctionWithClear(FieldInputEmailAddressLgInCazmTnnt, TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_ONE);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailAddressLgInCazmTnnt, TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT);
             WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputPasswordLgInCazmTnnt, GeneralTestDataForAllUsers.PASSWORD_NEW_GENEREAL);
 
