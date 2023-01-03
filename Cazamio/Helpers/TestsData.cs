@@ -27,7 +27,7 @@ namespace CazamioProgect.Helpers
 
     public class ConnectionDb
     {
-        public const string GET_CONNECTION_STRING_TO_DB = "Server=20.110.40.246,1433;Database=CazamioStageDb;User Id=CazaQA;Password=sadvN742sJGB;";
+        public const string GET_CONNECTION_STRING_TO_DB = "Server=20.110.40.246,1433;Database=CazamioStageDb;User Id=CazaQA;Password=sadvN742sJGB;TrustServerCertificate=True";
     }
 
 

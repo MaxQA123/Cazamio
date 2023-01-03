@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CazamioProgect.Helpers
 {
-    public class WebSiteDBHelper
+    public class DBBuildings
     {
         public static string GetBuildingName()
         {
@@ -30,6 +30,30 @@ namespace CazamioProgect.Helpers
 
             return data;
         }
+    }
 
+    public class DBApartments
+    {
+        public static string GetIdApartment()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id" +
+                    " FROM Apartments" + " WHERE Unit = '20'", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+
+            return data;
+        }
     }
 }

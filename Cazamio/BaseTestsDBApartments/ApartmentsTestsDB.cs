@@ -9,33 +9,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProgect.BaseTestsDB
+namespace CazamioProject.BaseTestsDBApartments
 {
     [TestFixture]
     [AllureNUnit]
 
-    public class TestsDB
+    public class ApartmentsTestsDB
     {
+
         [Test]
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingBD")]
-        [AllureSubSuite("GetBuildingNameFromBD")]
+        [AllureSubSuite("GetIdApartmentFromBD")]
 
         //Date of publication:
         //Version\Build:
         //Willingness for testing: Done.
-        //This test case is doing checking: The name email had been got successfully.
+        //This test case is doing checking: 
         //Comment: 
         //Path to cheking's: 
 
-        public void DisplayingBuildingName()
+        public void DisplayingIdApartments()
         {
-            string buildingName = WebSiteDBHelper.GetBuildingName();
+            string idApartment = DBApartments.GetIdApartment();
 
-            Console.WriteLine(buildingName);
+            Console.WriteLine(idApartment);
         }
     }
 }
