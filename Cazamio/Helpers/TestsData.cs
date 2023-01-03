@@ -25,6 +25,12 @@ namespace CazamioProgect.Helpers
         public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_GUARANTOR = "https://putsbox.com/tenantgua123jim/inspect";
     }
 
+    public class ConnectionDb
+    {
+        public const string GET_CONNECTION_STRING_TO_DB = "Server=20.110.40.246,1433;Database=CazamioStageDb;User Id=CazaQA;Password=sadvN742sJGB;";
+    }
+
+
     public class GeneralTestDataForAllUsers
     {
         public const string PASSWORD_GENERAL = "Qwerty123!";
