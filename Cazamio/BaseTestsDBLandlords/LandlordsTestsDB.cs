@@ -1,6 +1,5 @@
 ﻿using Allure.Commons;
 using CazamioProgect.Helpers;
-using CazamioProgect.PageObjects;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
@@ -10,34 +9,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProject.BaseTestsDBApartments
+namespace CazamioProject.BaseTestsDBLandlords
 {
     [TestFixture]
     [AllureNUnit]
-
-    public class ApartmentsTestsDB
+    public class LandlordsTestsDB
     {
-
         [Test]
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingBD")]
-        [AllureSubSuite("GetIdApartmentFromBD")]
+        [AllureSubSuite("GetIdBuildingByName")]
 
         //Date of publication:
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: 
+        //Comment: The table "Lanlords".
         //Path to cheking's: 
 
-        public void DisplayingIdApartments()
+        public void DisplayingIdForLandlordFromLandlordsTable()
         {
-            string idApartment = DBApartments.GetIdApartment();
-
-            Console.WriteLine(idApartment);
+            string idLandlord = DBLandlords.GetIdForLandlordFromLandlordsT();
+            Console.WriteLine($"Id for admin from table Landlords: {idLandlord}");
         }
 
         [Test]
@@ -52,14 +48,13 @@ namespace CazamioProject.BaseTestsDBApartments
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: 
+        //Comment: The table "Lanlords".
         //Path to cheking's: 
 
-        public void CompareApartmentBuildingAdmin()
+        public void DisplayingIdForLandlordFromAspNetUsersTable()
         {
-            string getLandlordId = DBApartments.GetLandlordIdFromApartmentsT("Diamond Hall");
-            Console.WriteLine($"LandlordId from table Apartments: {getLandlordId}");
-            
+            string idLandlord = DBLandlords.GetIdForLandlordFromAspNetUsersT();
+            Console.WriteLine($"Id for admin from table AspNetUsers: {idLandlord}");
         }
     }
 }
