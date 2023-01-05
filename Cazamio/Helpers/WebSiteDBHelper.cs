@@ -227,7 +227,7 @@ namespace CazamioProgect.Helpers
             {
                 SqlCommand command = new("SELECT Id FROM Landlords WHERE UserId IN " +
                 "(SELECT Id FROM AspNetUsers WHERE Email = 'su1per2ad3min@gmail.com')", db);
-                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = idAdmin;
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = idAdmin;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -249,7 +249,7 @@ namespace CazamioProgect.Helpers
             {
                 SqlCommand command = new("SELECT MarketplaceId FROM Landlords WHERE UserId IN " +
                 "(SELECT Id FROM AspNetUsers WHERE Email = 'su1per2ad3min@gmail.com')", db);
-                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = idMarketplace;
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = idMarketplace;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -299,7 +299,7 @@ namespace CazamioProgect.Helpers
             {
                 SqlCommand command = new("SELECT Id FROM Brokers WHERE UserId IN " +
                 "(SELECT Id FROM AspNetUsers WHERE Email = 'joingilbert901broker@gmail.com')", db);
-                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = idBroker;
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = idBroker;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -323,7 +323,7 @@ namespace CazamioProgect.Helpers
                     " WHERE BrokerId IN" +
                     " (SELECT Id FROM Brokers WHERE UserId IN" +
                     " (SELECT Id FROM AspNetUsers WHERE Email = 'joingilbert901broker@gmail.com'));", db);
-                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = idBroker;
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = idBroker;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -382,8 +382,73 @@ namespace CazamioProgect.Helpers
                     }
                 }
             }
-
             return idBuilding;
+        }
+
+        public static string GetLandlordIdByOwnerEmail(string landlordId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT LandlordId FROM Owners" +
+                " WHERE OwnerEmail = 'g6gd433j@xitroo.com'", db);
+                command.Parameters.AddWithValue("@OwnerEmail", DbType.String).Value = landlordId;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetMarketplaceIdByOwnerEmail(string marketplaceId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT MarketplaceId FROM Owners" +
+                " WHERE OwnerEmail = 'g6gd433j@xitroo.com'", db);
+                command.Parameters.AddWithValue("@OwnerEmail", DbType.String).Value = marketplaceId;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetOwnerIdByNameOwnerMgmt(string ownerId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT OwnerId FROM OwnerManagements" +
+                " WHERE Email = 'gf645gd43h@xitroo.com'", db);
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = ownerId;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
         }
     }
 }
