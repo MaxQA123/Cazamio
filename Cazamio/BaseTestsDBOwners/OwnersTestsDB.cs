@@ -21,8 +21,8 @@ namespace CazamioProject.BaseTestsDBOwners
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingDBBroker")]
-        [AllureSubSuite("GetIdApartmentFromBD")]
+        [AllureSuite("TestingDBOwner")]
+        [AllureSubSuite("RelatedOwnerWithAdmin")]
 
         //Date of publication:
         //Version\Build:
@@ -50,8 +50,6 @@ namespace CazamioProject.BaseTestsDBOwners
             Console.WriteLine($"Id for admin {adminName} from table Landlords: {idAdmin}");
             Assert.AreEqual(landlordId, idAdmin);
             Console.WriteLine($"LandlordId for owner {ownerName} from table Owners: {landlordId} = {idAdmin} IdAdmin for owner {ownerName} in the table Landlords");
-
-
         }
     }
 }

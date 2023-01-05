@@ -48,7 +48,7 @@ namespace CazamioProject.BaseTestsDBAdmins
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: The table "Lanlords".
+        //Comment: 
         //Path to cheking's: 
 
         public void RelatedUserIdAdminWithMarkeplaceId()

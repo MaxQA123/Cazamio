@@ -29,7 +29,6 @@ namespace CazamioProgect.Helpers
                     }
                 }
             }
-
             return idBuilding;
         }
 
@@ -157,6 +156,136 @@ namespace CazamioProgect.Helpers
                 SqlCommand command = new("SELECT Unit FROM Apartments WHERE BuildingId IN " +
                 "(SELECT Id FROM Buildings WHERE BuildingName = 'Royal House')", db);
                 command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = buildingName;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+    }
+
+    #endregion
+
+    #region Applications
+
+    public class DBApplications
+    {
+        public static string GetTenantIdApplicant(string idApplicant)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM Tenants WHERE UserId IN" +
+                " (SELECT Id FROM AspNetUsers WHERE UserName = 'tenantswife@gmail.com'); ", db);
+                command.Parameters.AddWithValue("@UserName", DbType.String).Value = idApplicant;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetIdNewApplication()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT ApartmentApplicationId" +
+                    " FROM ApartmentApplicationProgress" +
+                    " WHERE ApartmentApplicationId = (SELECT MAX(ApartmentApplicationId)" +
+                    " FROM ApartmentApplicationProgress);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetApartmentApplicationIdApplicant()
+        {
+            string tenantIdApplicant = "38";
+
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT ApartmentApplicationId" +
+                    " FROM ApartmentApplicationProgress" +
+                    " WHERE TenantId = '38'" +
+                    " AND ApartmentApplicationId = (SELECT MAX(ApartmentApplicationId)" +
+                    " FROM ApartmentApplicationProgress);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetApartmentApplicationIdOccupant()
+        {
+            string tenantIdOccupant = "47";
+
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT ApartmentApplicationId" +
+                    " FROM ApartmentApplicationProgress" +
+                    " WHERE TenantId = '47'" +
+                    " AND ApartmentApplicationId = (SELECT MAX(ApartmentApplicationId)" +
+                    " FROM ApartmentApplicationProgress);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetApartmentApplicationIdGuarantor()
+        {
+            string tenantIdGuarantor = "48";
+
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT ApartmentApplicationId" +
+                    " FROM ApartmentApplicationProgress" +
+                    " WHERE TenantId = '1'" +
+                    " AND ApartmentApplicationId = (SELECT MAX(ApartmentApplicationId)" +
+                    " FROM ApartmentApplicationProgress);", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -362,6 +491,8 @@ namespace CazamioProgect.Helpers
 
     #endregion
 
+    #region Owners
+
     public class DBOwners
     {
         public static string GetIdOwnerByEmail()
@@ -451,4 +582,6 @@ namespace CazamioProgect.Helpers
             return data;
         }
     }
+
+    #endregion
 }
