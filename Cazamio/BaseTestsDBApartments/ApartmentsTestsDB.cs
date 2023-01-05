@@ -57,9 +57,18 @@ namespace CazamioProject.BaseTestsDBApartments
 
         public void CompareApartmentBuildingAdmin()
         {
-            string getLandlordId = DBApartments.GetLandlordIdFromApartmentsT("Diamond Hall");
-            Console.WriteLine($"LandlordId from table Apartments: {getLandlordId}");
-            
+            string buildingName = "Royal House";
+
+            string getLandlordId = DBApartments.GetLandlordIdFromApartmentsT("Royal House");
+            Console.WriteLine($"LandlordId from table Apartments for {buildingName}: {getLandlordId}");
+            string getBuildingId = DBApartments.GetBuildingIdFromApartmentsT("Royal House");
+            Console.WriteLine($"BuildingId from table Apartments for {buildingName}: {getBuildingId}");
+            string getUnitNumber = DBApartments.GetUnitFromApartmentsT("Royal House");
+            Console.WriteLine($"Unit number from table Apartments for {buildingName}: {getUnitNumber}");
+            string idBuilding = DBBuildings.GetIdBuildingByName();
+            Console.WriteLine($"Id for {buildingName} in the table Buildings: {idBuilding}");
+            Assert.AreEqual(getBuildingId, idBuilding);
+            Console.WriteLine($"BuildingId in table Apartments for {buildingName}: {getBuildingId} = {idBuilding} Id building in the table Buildings for {buildingName}");
         }
     }
 }

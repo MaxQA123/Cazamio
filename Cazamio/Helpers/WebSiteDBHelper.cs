@@ -17,7 +17,7 @@ namespace CazamioProgect.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id" +
-                    " FROM Buildings" + " WHERE BuildingName = 'Wooman House'", db);
+                    " FROM Buildings" + " WHERE BuildingName = 'Royal House'", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -39,7 +39,7 @@ namespace CazamioProgect.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT AddressId" +
-                    " FROM Buildings" + " WHERE BuildingName = 'Wooman House'", db);
+                    " FROM Buildings" + " WHERE BuildingName = 'Royal House'", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -61,7 +61,7 @@ namespace CazamioProgect.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT LandlordId" +
-                    " FROM Buildings" + " WHERE BuildingName = 'Wooman House'", db);
+                    " FROM Buildings" + " WHERE BuildingName = 'Royal House'", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -102,7 +102,6 @@ namespace CazamioProgect.Helpers
                     }
                 }
             }
-
             return data;
         }
 
@@ -112,7 +111,7 @@ namespace CazamioProgect.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT LandlordId FROM Apartments WHERE BuildingId IN " +
-                "(SELECT Id FROM Buildings WHERE BuildingName = 'Diamond Hall')", db);
+                "(SELECT Id FROM Buildings WHERE BuildingName = 'Royal House')", db);
                 command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = buildingName;
                 db.Open();
 
@@ -125,7 +124,50 @@ namespace CazamioProgect.Helpers
                     }
                 }
             }
+            return data;
+        }
 
+        public static string GetBuildingIdFromApartmentsT(string buildingName)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT BuildingId FROM Apartments WHERE BuildingId IN " +
+                "(SELECT Id FROM Buildings WHERE BuildingName = 'Royal House')", db);
+                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = buildingName;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetUnitFromApartmentsT(string buildingName)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Unit FROM Apartments WHERE BuildingId IN " +
+                "(SELECT Id FROM Buildings WHERE BuildingName = 'Royal House')", db);
+                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = buildingName;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
             return data;
         }
     }
