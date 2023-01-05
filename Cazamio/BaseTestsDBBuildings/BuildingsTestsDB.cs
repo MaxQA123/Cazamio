@@ -81,7 +81,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
             Console.WriteLine($"AddressId in the table Buildings By BuildingName: {AddressidBuilding}");
             string landlordIdForBuilding = DBBuildings.GetLandlordIdForBuilding();
             Console.WriteLine($"LandlordId in the table Buildings: {landlordIdForBuilding}");
-            string idAdmin = DBLandlords.GetIdForLandlordFromLandlordsT();
+            string idAdmin = DBAdmins.GetIdForLandlordFromLandlordsT();
             Console.WriteLine($"Id for admin from table Landlords: {idAdmin}");
             Assert.AreEqual(landlordIdForBuilding, idAdmin);
             Console.WriteLine($"LanlordId in table Buildings: {landlordIdForBuilding} = {idAdmin} Id admin in the table Landlords");

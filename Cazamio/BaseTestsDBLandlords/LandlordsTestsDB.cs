@@ -9,11 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProject.BaseTestsDBLandlords
+namespace CazamioProject.BaseTestsDBAdmins
 {
     [TestFixture]
     [AllureNUnit]
-    public class LandlordsTestsDB
+    public class AdminsTestsDB
     {
         [Test]
         [AllureTag("Regression")]
@@ -32,8 +32,8 @@ namespace CazamioProject.BaseTestsDBLandlords
 
         public void DisplayingIdForLandlordFromLandlordsTable()
         {
-            string idLandlord = DBLandlords.GetIdForLandlordFromLandlordsT();
-            Console.WriteLine($"Id for admin from table Landlords: {idLandlord}");
+            //string idLandlord = DBLandlords.GetIdForLandlordFromLandlordsT();
+            //Console.WriteLine($"Id for admin from table Landlords: {idLandlord}");
         }
 
         [Test]
@@ -51,10 +51,18 @@ namespace CazamioProject.BaseTestsDBLandlords
         //Comment: The table "Lanlords".
         //Path to cheking's: 
 
-        public void DisplayingIdForLandlordFromAspNetUsersTable()
+        public void CompareUserIdAdminWithMarkeplaceId()
         {
-            string idLandlord = DBLandlords.GetIdForLandlordFromAspNetUsersT();
-            Console.WriteLine($"Id for admin from table AspNetUsers: {idLandlord}");
+            string adminName = "Fred Dred";
+
+            string idAdmin = DBAdmins.GetIdAdminFromLandlordsT("su1per2ad3min@gmail.com");
+            Console.WriteLine($"Id for admin {adminName} from table Landlords: {idAdmin}");
+            string marketplaceIdByAdminEmail = DBAdmins.GetMarketplaceIdFromLandlordsT("su1per2ad3min@gmail.com");
+            Console.WriteLine($"MarketplaceId for admin {adminName} from table Landlords: {marketplaceIdByAdminEmail}");
+            string marketplaceIdForNewAdmin = DBAdmins.GetMarketplaceIdForNewAdmin();
+            Console.WriteLine($"MarketplaceId for admin {adminName} from table Landlords: {marketplaceIdForNewAdmin}");
+            Assert.AreEqual(marketplaceIdByAdminEmail, marketplaceIdForNewAdmin);
+            Console.WriteLine($"MarketplaceId by email new admin AspNetUsers: {marketplaceIdByAdminEmail} = {marketplaceIdForNewAdmin} MarketplaceId for new admin in the table Landlords");
         }
     }
 }
