@@ -21,7 +21,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingBD")]
+        [AllureSuite("TestingDBBuilding")]
         [AllureSubSuite("GetIdBuildingByName")]
 
         //Date of publication:
@@ -42,7 +42,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingBD")]
+        [AllureSuite("TestingDBBuilding")]
         [AllureSubSuite("GetIdBuildingByName")]
 
         //Date of publication:
@@ -63,8 +63,8 @@ namespace CazamioProgect.BaseTestsDBBuildings
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingBD")]
-        [AllureSubSuite("GetIdBuildingByName")]
+        [AllureSuite("TestingDBBuilding")]
+        [AllureSubSuite("CompareBuidingAdmin")]
 
         //Date of publication:
         //Version\Build:
@@ -73,7 +73,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
         //Comment: 
         //Path to cheking's: 
 
-        public void CompareBuidingAdmin()
+        public void RelatedBuidingAdmin()
         {
             string idBuilding = DBBuildings.GetIdBuildingByName();
             Console.WriteLine($"Id in the table Buildings By BuildingName: {idBuilding}");

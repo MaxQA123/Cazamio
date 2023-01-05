@@ -20,7 +20,7 @@ namespace CazamioProject.BaseTestsDBAdmins
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingBD")]
+        [AllureSuite("TestingDBAdmin")]
         [AllureSubSuite("GetIdBuildingByName")]
 
         //Date of publication:
@@ -41,8 +41,8 @@ namespace CazamioProject.BaseTestsDBAdmins
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingBD")]
-        [AllureSubSuite("GetIdBuildingByName")]
+        [AllureSuite("TestingDBAdmin")]
+        [AllureSubSuite("CompareUserIdAdminWithMarkeplaceId")]
 
         //Date of publication:
         //Version\Build:
@@ -51,7 +51,7 @@ namespace CazamioProject.BaseTestsDBAdmins
         //Comment: The table "Lanlords".
         //Path to cheking's: 
 
-        public void CompareUserIdAdminWithMarkeplaceId()
+        public void RelatedUserIdAdminWithMarkeplaceId()
         {
             string adminName = "Fred Dred";
 

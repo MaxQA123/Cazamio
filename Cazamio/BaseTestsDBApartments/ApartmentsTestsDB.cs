@@ -23,7 +23,7 @@ namespace CazamioProject.BaseTestsDBApartments
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingBD")]
+        [AllureSuite("TestingDBApartments")]
         [AllureSubSuite("GetIdApartmentFromBD")]
 
         //Date of publication:
@@ -45,8 +45,8 @@ namespace CazamioProject.BaseTestsDBApartments
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingBD")]
-        [AllureSubSuite("GetIdBuildingByName")]
+        [AllureSuite("TestingDBApartments")]
+        [AllureSubSuite("CompareApartmentBuildingAdmin")]
 
         //Date of publication:
         //Version\Build:
@@ -55,7 +55,7 @@ namespace CazamioProject.BaseTestsDBApartments
         //Comment: 
         //Path to cheking's: 
 
-        public void CompareApartmentBuildingAdmin()
+        public void RelatedeApartmentBuildingAdmin()
         {
             string buildingName = "Royal House";
 
