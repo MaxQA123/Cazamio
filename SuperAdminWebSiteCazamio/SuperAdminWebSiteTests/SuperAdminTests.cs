@@ -24,15 +24,52 @@ namespace SuperAdminTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("SuperAdmin")]
-        [AllureSubSuite("LogInAsSuperAdmin")]
+        [AllureSubSuite("CreateNewAdmin")]
 
         //Date of publication: 
         //Version\Build:
-        //Willingness for testing: 
+        //Willingness for testing: in progress
+        //This test case is doing checking: The successfully create a new admin in the role super admin.
+        //Comment: 
+
+        public void CreateNewAdmin()
+        {
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsSuperAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifySuperAdminUserName(getUserNameCompare, getUserNameRoleCompare)
+                .ClickButtonLandlordsSidebar();
+            Pages.ListOfLandlords
+                .VerifyTitleListOfLandlordsPg()
+                .ClickButtonCreateLandlord();
+            Pages.ModalWndwCreateNewLandlord
+                .VerifyTitleMdlWndwCreateNewLandlord();
+
+            WaitUntil.WaitSomeInterval(2000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("SuperAdmin")]
+        [AllureSubSuite("LogIn")]
+
+        //Date of publication: 
+        //Version\Build:
+        //Willingness for testing: Done
         //This test case is doing checking: The successfully LogIn as super admin.
         //Comment: 
 
-        public void LogInAsSuperAdmin()
+        public void LogIn()
         {
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsSuperAdmin()

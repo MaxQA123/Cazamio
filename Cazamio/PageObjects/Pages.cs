@@ -37,6 +37,8 @@ using System.Threading.Tasks;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HomePageCazamioTenant;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.ListOfApartmentsTenantPage;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.ApartmentDetailsTenantPage;
+using CazamioProject.PageObjects.WebSiteLandlordPages.ListOfLandlordsPage;
+using CazamioProject.PageObjects.ModalWndwCreateNewLandlordPage;
 
 namespace CazamioProgect.PageObjects
 {
@@ -78,6 +80,7 @@ namespace CazamioProgect.PageObjects
         public static ListOfBuildings ListOfBuildings => GetPage<ListOfBuildings>();
         public static ListOfApartments ListOfApartments => GetPage<ListOfApartments>();
         public static ListOfApplications ListOfApplications => GetPage<ListOfApplications>();
+        public static ListOfLandlords ListOfLandlords => GetPage<ListOfLandlords>();
         public static PreApprovals PreApprovals => GetPage<PreApprovals>();
         public static Templates Templates => GetPage<Templates>();
         public static PaymentSettings PaymentSettings => GetPage<PaymentSettings>();
@@ -87,6 +90,7 @@ namespace CazamioProgect.PageObjects
         public static Marketplace Marketplace => GetPage<Marketplace>();
         public static ModalWindowAreYouSureLogOutLandlordBroker ModalWindowAreYouSureLogOutLandlordBroker => GetPage<ModalWindowAreYouSureLogOutLandlordBroker>();
         public static ModalWindowCreateNewBroker ModalWindowCreateNewBroker => GetPage<ModalWindowCreateNewBroker>();
+        public static ModalWndwCreateNewLandlord ModalWndwCreateNewLandlord => GetPage<ModalWndwCreateNewLandlord>();
         public static ResetYourPassword ResetYourPassword => GetPage<ResetYourPassword>();
         public static NewBuilding NewBuilding => GetPage<NewBuilding>();
         public static ModalWindowPaymentOptions ModalWindowPaymentOptions => GetPage<ModalWindowPaymentOptions>();

@@ -131,6 +131,16 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
             return this;
         }
 
+        [AllureStep("ClickButtonLandlordsSidebar")]
+        public SideBarLandlord ClickButtonLandlordsSidebar()
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            Button.Click(ButtonLandlordsSidebar);
+            WaitUntil.WaitSomeInterval(1000);
+
+            return this;
+        }
+
         [AllureStep("ClickButtonLeaseSignDocumentsSidebar")]
         public SideBarLandlord ClickButtonLeaseSignDocumentsSidebar()
         {

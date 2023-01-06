@@ -73,5 +73,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
 
         [FindsBy(How = How.XPath, Using = "//div[@class= 'sidebar-layout']")]
         public IWebElement ButtonLogOutSidebar;
+
+        [FindsBy(How = How.XPath, Using = "//a[@href= '/administrator/landlords-list']")]
+        public IWebElement ButtonLandlordsSidebar;
     }
 }
