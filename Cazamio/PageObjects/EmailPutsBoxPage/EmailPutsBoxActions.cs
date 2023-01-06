@@ -41,6 +41,22 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
             return this;
         }
 
+        [AllureStep("ClickButtonResetPasswordForAdmin")]
+        public PutsBox ClickButtonResetPasswordForAdmin()
+        {
+            WaitUntil.WaitSomeInterval(3000);
+            List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
+            Browser._Driver.SwitchTo().Window(tabsList[2]);
+            WaitUntil.WaitSomeInterval(1000);
+            ButtonConfirmEmailForTenant.Click();
+            WaitUntil.WaitSomeInterval(3000);
+            List<string> tabsListSecond = new List<string>(Browser._Driver.WindowHandles);
+            Browser._Driver.SwitchTo().Window(tabsListSecond[3]);
+            WaitUntil.WaitSomeInterval(3000);
+
+            return this;
+        }
+
         [AllureStep("ClickButtonResetPasswordForTenant")]
         public PutsBox ClickButtonResetPasswordForTenant()
         {

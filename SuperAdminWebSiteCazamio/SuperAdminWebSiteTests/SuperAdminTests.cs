@@ -49,9 +49,27 @@ namespace SuperAdminTests
                 .VerifyTitleListOfLandlordsPg()
                 .ClickButtonCreateLandlord();
             Pages.ModalWndwCreateNewLandlord
-                .VerifyTitleMdlWndwCreateNewLandlord();
+                .VerifyTitleMdlWndwCreateNewLandlord()
+                .FillMandatoryFields().VerifyNameHostMarketplaceSubdomainMdlWndwCrtNwLndlrd();
 
-            WaitUntil.WaitSomeInterval(2000);
+            string partEmailPutsBox = Pages.ModalWndwCreateNewLandlord.CopyEmailBeforeDogFromMdlWndwCreateNewLandlord();
+
+            Pages.ModalWndwCreateNewLandlord
+                .ClickButtonCreateMdlWndwCrtNwLndlrd()
+                .VerifyMessageLandlordHasBeenSuccessfullyCreated();
+            Pages.SideBarLandlord
+                .ClickButtonLogOutSidebar();
+
+            Pages.JScriptExecutorHelper
+                .OpenNewTab();
+            Browser._Driver.Navigate().GoToUrl(($"https://putsbox.com/{partEmailPutsBox}/inspect"));
+            Pages.PutsBox
+                .VerifyTitleLetterCreateAdmin()
+                .ClickButtonBodyHtml()
+                .ClickButtonResetPasswordForAdmin();
+
+
+            WaitUntil.WaitSomeInterval(5000);
         }
 
         [Test]

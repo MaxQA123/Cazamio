@@ -25,7 +25,14 @@ namespace CazamioProject.PageObjects.ModalWndwCreateNewLandlordPage
         [FindsBy(How = How.XPath, Using = ("//input[@id = 'subDomain']"))]
         public IWebElement FieldInputMarketplaceSubdomainMdlWndwCrtNwLndlrd;
 
-        [FindsBy(How = How.XPath, Using = (""))]
+        [FindsBy(How = How.XPath, Using = ("//label[text() = 'Host : https://testlandlord-demo.cazamiodemo.com/']"))]
+        public IWebElement NameHostMarketplaceSubdomainMdlWndwCrtNwLndlrd;
+
+        [FindsBy(How = How.XPath, Using = ("//button//span[text() = 'Create']"))]
         public IWebElement ButtonCreateMdlWndwCrtNwLndlrd;
+
+        [FindsBy(How = How.XPath, Using = ("//span[text() = 'Landlord has been successfully created']"))]
+        public IWebElement MessageLandlordHasBeenSuccessfullyCreated;
+        
     }
 }

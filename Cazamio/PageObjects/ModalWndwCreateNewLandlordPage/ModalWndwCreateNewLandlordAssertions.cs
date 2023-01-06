@@ -18,5 +18,21 @@ namespace CazamioProject.PageObjects.ModalWndwCreateNewLandlordPage
 
             return this;
         }
+
+        [AllureStep("VerifyNameHostMarketplaceSubdomainMdlWndwCrtNwLndlrd")]
+        public ModalWndwCreateNewLandlord VerifyNameHostMarketplaceSubdomainMdlWndwCrtNwLndlrd()
+        {
+            Assert.IsTrue(Successfully.IsVisible(NameHostMarketplaceSubdomainMdlWndwCrtNwLndlrd));
+
+            return this;
+        }
+
+        [AllureStep("VerifyMessageLandlordHasBeenSuccessfullyCreated")]
+        public ModalWndwCreateNewLandlord VerifyMessageLandlordHasBeenSuccessfullyCreated()
+        {
+            Assert.IsTrue(Successfully.IsVisible(MessageLandlordHasBeenSuccessfullyCreated));
+
+            return this;
+        }
     }
 }
