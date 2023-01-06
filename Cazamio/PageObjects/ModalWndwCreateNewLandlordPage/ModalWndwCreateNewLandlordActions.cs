@@ -36,6 +36,15 @@ namespace CazamioProject.PageObjects.ModalWndwCreateNewLandlordPage
             return partEmail;
         }
 
+        [AllureStep("CopyFullEmailFromMdlWndwCreateNewLandlord")]
+        public string CopyFullEmailFromMdlWndwCreateNewLandlord()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            string copyFullEmail = FieldInputEmailMdlWndwCrtNwLndlrd.GetAttribute("value");
+
+            return copyFullEmail;
+        }
+
         [AllureStep("ClickButtonCreateMdlWndwCrtNwLndlrd")]
         public ModalWndwCreateNewLandlord ClickButtonCreateMdlWndwCrtNwLndlrd()
         {

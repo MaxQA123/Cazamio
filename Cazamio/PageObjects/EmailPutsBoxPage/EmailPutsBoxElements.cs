@@ -35,7 +35,9 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
         [FindsBy(How = How.XPath, Using = "//td[text() = 'You’re (Almost) In!']")]
         public IWebElement TitleLetterCreateAdmin;
 
-        //td[text() = 'You’re (Almost) In!']
+        [FindsBy(How = How.XPath, Using = "//td[@class = 'esd-block-text']//p[3]")]
+        public IWebElement TextPasswordForConfirmAdmin;
+        
 
         #endregion
     }

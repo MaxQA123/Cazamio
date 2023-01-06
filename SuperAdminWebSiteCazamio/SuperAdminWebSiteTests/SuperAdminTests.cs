@@ -50,8 +50,10 @@ namespace SuperAdminTests
                 .ClickButtonCreateLandlord();
             Pages.ModalWndwCreateNewLandlord
                 .VerifyTitleMdlWndwCreateNewLandlord()
-                .FillMandatoryFields().VerifyNameHostMarketplaceSubdomainMdlWndwCrtNwLndlrd();
+                .FillMandatoryFields()
+                .VerifyNameHostMarketplaceSubdomainMdlWndwCrtNwLndlrd();
 
+            string fullEmailPutsBox = Pages.ModalWndwCreateNewLandlord.CopyFullEmailFromMdlWndwCreateNewLandlord();
             string partEmailPutsBox = Pages.ModalWndwCreateNewLandlord.CopyEmailBeforeDogFromMdlWndwCreateNewLandlord();
 
             Pages.ModalWndwCreateNewLandlord
@@ -65,11 +67,20 @@ namespace SuperAdminTests
             Browser._Driver.Navigate().GoToUrl(($"https://putsbox.com/{partEmailPutsBox}/inspect"));
             Pages.PutsBox
                 .VerifyTitleLetterCreateAdmin()
-                .ClickButtonBodyHtml()
+                .ClickButtonBodyHtml();
+
+            string getTextPasswordActual = Pages.PutsBox.CopyPasswordFromEmailForCreateAdmin();
+
+            Pages.PutsBox
                 .ClickButtonResetPasswordForAdmin();
+            Pages.LogInLandlord
+                .CopiedForEnterEmailFromEmailCreateAdmin(fullEmailPutsBox)
+                .CopiedForEnterPsswrdFromEmailCreateAdmin(getTextPasswordActual)
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
 
 
-            WaitUntil.WaitSomeInterval(5000);
+            WaitUntil.WaitSomeInterval(2000);
         }
 
         [Test]

@@ -122,5 +122,29 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
 
             return this;
         }
+
+        [AllureStep("CopiedForEnterEmailFromEmailCreateAdmin")]
+        public LogInLandlord CopiedForEnterEmailFromEmailCreateAdmin(string _email)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
+            Browser._Driver.SwitchTo().Window(tabsList[3]);
+            WaitUntil.WaitSomeInterval(1000);
+            FieldInputEmailLogInPg.SendKeys(_email);
+
+            return this;
+        }
+
+        [AllureStep("CopiedForEnterPsswrdFromEmailCreateAdmin")]
+        public LogInLandlord CopiedForEnterPsswrdFromEmailCreateAdmin(string code)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
+            Browser._Driver.SwitchTo().Window(tabsList[3]);
+            WaitUntil.WaitSomeInterval(1000);
+            FieldInputPasswordLogInPg.SendKeys(code);
+
+            return this;
+        }
     }
 }
