@@ -79,6 +79,10 @@ namespace SuperAdminTests
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
+            string getUserNameRoleCompareAdmin = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyOnlyAdminUserNameRole(getUserNameRoleCompareAdmin);
 
             WaitUntil.WaitSomeInterval(2000);
         }

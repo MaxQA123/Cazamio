@@ -37,7 +37,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         {
             WaitUntil.WaitSomeInterval(1500);
             string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_ADMIN_TEST_GARY;
-            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_ADMIN_TEST_GARY;
+            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_ADMIN;
 
             Assert.Multiple(() =>
             {
@@ -47,6 +47,20 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
                 Console.WriteLine($"First Last name EX: {getUserNameExpected} First Last name AC: {getUserNameActual}");
                 Console.WriteLine($"Name Role EX: {getUserNameRoleExpected} Name Role AC: {getUserNameRoleActual}");
             });
+            return this;
+        }
+
+        [AllureStep("VerifyOnlyAdminUserNameRole")]
+        public SideBarLandlord VerifyOnlyAdminUserNameRole(string getUserNameRoleActual)
+        {
+            WaitUntil.WaitSomeInterval(1500);
+            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_ADMIN;
+
+            
+                Assert.AreEqual(getUserNameRoleExpected, getUserNameRoleActual);
+
+                Console.WriteLine($"Name Role EX: {getUserNameRoleExpected} Name Role AC: {getUserNameRoleActual}");
+            
             return this;
         }
 
