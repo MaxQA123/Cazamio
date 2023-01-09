@@ -44,9 +44,11 @@ namespace CazamioProgect.Helpers
         
         public const string OCCUPANT_CROCODILE_DENDY_TENANTID = "47";
         public const string OCCUPANT_CROCODILE_DENDY_USERID = "1397a512-6600-40d8-95cd-e76f1e3af5e2";
+        public const string OCCUPANT_CROCODILE_DENDY_EMAIL = "apipostman65455@gmail.com";
 
         public const string GUARANTOR_RODGER_VANPIECE_TENANTID = "48";
         public const string GUARANTOR_RODGER_VANPIECE_USERID = "149fcd30-8ddb-4c3d-9ffb-4c466861f25a";
+        public const string GUARANTOR_RODGER_VANPIECE_EMAIL = "guarantor5935 @gmail.com";
     }
 
     public class TestDataDBForWebSiteAdmin

@@ -409,6 +409,27 @@ namespace CazamioProgect.Helpers
             return data;
         }
 
+        public static string GetApartmentApplicationIdGuarantorS()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT MAX(ApartmentApplicationId) ApartmentApplicationId" +
+                    " FROM ApartmentApplicationApplicants;", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
         public static string GetApartmentApplicationIdByUserIdOcc()
         {
             string data = null;
@@ -417,6 +438,52 @@ namespace CazamioProgect.Helpers
                 SqlCommand command = new("SELECT MAX(ApartmentApplicationId) ApartmentApplicationId" +
                     " FROM ApartmentApplicationApplicants" +
                     " WHERE UserId = '1397a512-6600-40d8-95cd-e76f1e3af5e2';", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetApartmentApplicationIdByEmailOcc(string apartmentApplicationId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT ApartmentApplicationId" +
+                    " FROM Occupants WHERE Contacts ='apipostman65455@gmail.com'" +
+                    " AND ApartmentApplicationId = (SELECT MAX(ApartmentApplicationId) FROM Occupants);", db);
+                command.Parameters.AddWithValue("@Contacts", DbType.String).Value = apartmentApplicationId;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetApartmentApplicationIdByEmailGua(string apartmentApplicationId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT ApartmentApplicationId" +
+                    " FROM Guarantors WHERE Contacts ='guarantor5935@gmail.com'" +
+                    " AND ApartmentApplicationId = (SELECT MAX(ApartmentApplicationId) FROM Guarantors);", db);
+                command.Parameters.AddWithValue("@Contacts", DbType.String).Value = apartmentApplicationId;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

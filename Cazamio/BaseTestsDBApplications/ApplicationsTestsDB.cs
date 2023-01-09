@@ -28,7 +28,7 @@ namespace CazamioProject.BaseTestsDBApplications
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: by table dbo.ApartmentApplicationProgress
+        //Comment: new record by table dbo.ApartmentApplicationProgress
         //Path to cheking's: 
 
         public void RelatedApplicationWithTenantApplicant()
@@ -59,7 +59,7 @@ namespace CazamioProject.BaseTestsDBApplications
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: by table dbo.ApartmentApplicationProgress
+        //Comment: new record by table dbo.ApartmentApplicationProgress
         //Path to cheking's: 
 
         public void RelatedApplicationWithTenantsAppOccGua()
@@ -136,10 +136,10 @@ namespace CazamioProject.BaseTestsDBApplications
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: by table dbo.ApartmentApplicationApplicants when at the tenant-applicant with set check the box "Joint applicant"
+        //Comment: new record by table dbo.ApartmentApplicationApplicants when at the tenant-applicant with set check the box "Joint applicant"
         //Path to cheking's: 
 
-        public void RelateApplicationWithOccupantGuarantor()
+        public void RelateApplicationWithOccGuaSetJoin()
         {
             string building = "Royal House";
             string apartmentNumber = "4E";
@@ -152,6 +152,10 @@ namespace CazamioProject.BaseTestsDBApplications
             Console.WriteLine($"ApartmentApplicationId for occupant: {apartmentApplicationIdForOccupant}");
             string apartmentApplicationIdForGuarantor = DBApplications.GetApartmentApplicationIdByUserIdGua();
             Console.WriteLine($"ApartmentApplicationId for guarantor: {apartmentApplicationIdForGuarantor}");
+            string apartmentApplicationIdForOccByEmail = DBApplications.GetApartmentApplicationIdByEmailOcc("apipostman65455@gmail.com");
+            Console.WriteLine($"ApartmentApplicationId for guarantor by email in table Occupants: {apartmentApplicationIdForOccByEmail}");
+            string apartmentApplicationIdForGuaByEmail = DBApplications.GetApartmentApplicationIdByEmailOcc("guarantor5935@gmail.com");
+            Console.WriteLine($"ApartmentApplicationId for guarantor by email in table Occupants: {apartmentApplicationIdForGuaByEmail}");
 
             Assert.Multiple(() =>
             {
@@ -161,8 +165,51 @@ namespace CazamioProject.BaseTestsDBApplications
                 Console.WriteLine($"New ApartmentApplicationId: {newApartmentApplicationId} = {apartmentApplicationIdForOccupant} ApartmentApplicationId For Occupant");
                 Assert.AreEqual(newApartmentApplicationId, apartmentApplicationIdForGuarantor);
                 Console.WriteLine($"New ApartmentApplicationId: {newApartmentApplicationId} = {apartmentApplicationIdForGuarantor} ApartmentApplicationId For Guarantor");
+                Assert.AreEqual(newApartmentApplicationId, apartmentApplicationIdForOccByEmail);
+                Console.WriteLine($"New ApartmentApplicationId: {newApartmentApplicationId} = {apartmentApplicationIdForOccByEmail} ApartmentApplicationId For Occupant in table Occupants");
+                Assert.AreEqual(newApartmentApplicationId, apartmentApplicationIdForGuaByEmail);
+                Console.WriteLine($"New ApartmentApplicationId: {newApartmentApplicationId} = {apartmentApplicationIdForGuaByEmail} ApartmentApplicationId For Occupant in table Guarantors");
             });
-            
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBApplication")]
+        [AllureSubSuite("RelatedApplicationWithTenantsAppOccGua")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
+        //Comment: new record by table dbo.ApartmentApplicationApplicants when at the tenant-applicant with set check the box "Joint applicant"
+        //Path to cheking's: 
+
+        public void RelateApplicationWithOccGuaNoSetJoin()
+        {
+            string building = "Royal House";
+            string apartmentNumber = "4E";
+
+            string newApartmentApplicationId = DBApplications.GetNewApartmentApplicationId();
+            Console.WriteLine($"Building name {building} apartemnt name {apartmentNumber}, New ApartmentApplicationId: {newApartmentApplicationId}");
+            string apartmentApplicationIdForGuaS = DBApplications.GetApartmentApplicationIdGuarantorS();
+            Console.WriteLine($"ApartmentApplicationId for occupant and guarantor: {apartmentApplicationIdForGuaS}");
+            string apartmentApplicationIdForOccupant = DBApplications.GetApartmentApplicationIdByUserIdOcc();
+            Console.WriteLine($"ApartmentApplicationId for occupant: {apartmentApplicationIdForOccupant}");
+            string apartmentApplicationIdForGuarantor = DBApplications.GetApartmentApplicationIdByUserIdGua();
+            Console.WriteLine($"ApartmentApplicationId for guarantor: {apartmentApplicationIdForGuarantor}");
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(newApartmentApplicationId, apartmentApplicationIdForGuaS);
+                Console.WriteLine($"New ApartmentApplicationId: {newApartmentApplicationId} = {apartmentApplicationIdForGuaS} ApartmentApplicationId For Occupant Guarantor");
+                Assert.AreNotEqual(newApartmentApplicationId, apartmentApplicationIdForOccupant);
+                Console.WriteLine($"New ApartmentApplicationId: {newApartmentApplicationId} = {apartmentApplicationIdForOccupant} ApartmentApplicationId For Occupant");
+                Assert.AreEqual(newApartmentApplicationId, apartmentApplicationIdForGuarantor);
+                Console.WriteLine($"New ApartmentApplicationId: {newApartmentApplicationId} = {apartmentApplicationIdForGuarantor} ApartmentApplicationId For Guarantor");
+            });
         }
     }
 }
