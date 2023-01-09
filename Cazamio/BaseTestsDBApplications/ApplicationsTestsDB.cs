@@ -33,8 +33,7 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelatedApplicationWithTenantApplicant()
         {
-            string tenantApplicant = "Applicant";
-            string apartmentNumber = "Fred Dred";
+            string tenantApplicant = TestDataDBForWebSiteTenant.NAME_ROLE_APPLICANT;
 
             string idTenantApplicant = DBApplications.GetTenantIdApplicant("tenantswife@gmail.com");
             Console.WriteLine($"Id for tenant {tenantApplicant} from table tenants: {idTenantApplicant}");
@@ -64,10 +63,9 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelatedApplicationWithTenantsAppOccGua()
         {
-            string tenantApplicant = "Applicant";
-            string tenantOccupant = "Occupant";
-            string tenantGuarantor = "Guarantor";
-            string apartmentNumber = "Fred Dred";
+            string tenantApplicant = TestDataDBForWebSiteTenant.NAME_ROLE_APPLICANT;
+            string tenantOccupant = TestDataDBForWebSiteTenant.NAME_ROLE_OCCUPANT;
+            string tenantGuarantor = TestDataDBForWebSiteTenant.NAME_ROLE_GUARANTOR;
 
             string idTenantApplicant = DBApplications.GetTenantIdApplicant("tenantswife@gmail.com");
             Console.WriteLine($"Id for tenant {tenantApplicant} from table tenants: {idTenantApplicant}");
@@ -114,8 +112,8 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelateApplicationWithApartment()
         {
-            string building = "Royal House";
-            string apartmentNumber = "4E";
+            string building = TestDataDBForWebSiteAdmin.BUILDIN_NAME_ROYAL_HOUS;
+            string apartmentNumber = TestDataDBForWebSiteAdmin.UNIT_NUMBER;
 
             string apartmentId = DBApplications.GetApartmentId();
             Console.WriteLine($"Building name {building} apartemnt name {apartmentNumber}, ApartmentID: {apartmentId}");
@@ -141,8 +139,8 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelateApplicationWithOccGuaSetJoin()
         {
-            string building = "Royal House";
-            string apartmentNumber = "4E";
+            string building = TestDataDBForWebSiteAdmin.BUILDIN_NAME_ROYAL_HOUS;
+            string apartmentNumber = TestDataDBForWebSiteAdmin.UNIT_NUMBER;
 
             string newApartmentApplicationId = DBApplications.GetNewApartmentApplicationId();
             Console.WriteLine($"Building name {building} apartemnt name {apartmentNumber}, New ApartmentApplicationId: {newApartmentApplicationId}");
@@ -155,7 +153,7 @@ namespace CazamioProject.BaseTestsDBApplications
             string apartmentApplicationIdForOccByEmail = DBApplications.GetApartmentApplicationIdByEmailOcc("apipostman65455@gmail.com");
             Console.WriteLine($"ApartmentApplicationId for guarantor by email in table Occupants: {apartmentApplicationIdForOccByEmail}");
             string apartmentApplicationIdForGuaByEmail = DBApplications.GetApartmentApplicationIdByEmailOcc("guarantor5935@gmail.com");
-            Console.WriteLine($"ApartmentApplicationId for guarantor by email in table Occupants: {apartmentApplicationIdForGuaByEmail}");
+            Console.WriteLine($"ApartmentApplicationId for guarantor by email in table Guarantors: {apartmentApplicationIdForGuaByEmail}");
 
             Assert.Multiple(() =>
             {
@@ -189,8 +187,8 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelateApplicationWithOccGuaNoSetJoin()
         {
-            string building = "Royal House";
-            string apartmentNumber = "4E";
+            string building = TestDataDBForWebSiteAdmin.BUILDIN_NAME_ROYAL_HOUS;
+            string apartmentNumber = TestDataDBForWebSiteAdmin.UNIT_NUMBER;
 
             string newApartmentApplicationId = DBApplications.GetNewApartmentApplicationId();
             Console.WriteLine($"Building name {building} apartemnt name {apartmentNumber}, New ApartmentApplicationId: {newApartmentApplicationId}");
@@ -198,6 +196,8 @@ namespace CazamioProject.BaseTestsDBApplications
             Console.WriteLine($"ApartmentApplicationId for occupant and guarantor: {apartmentApplicationIdForGuaS}");
             string apartmentApplicationIdForOccupant = DBApplications.GetApartmentApplicationIdByUserIdOcc();
             Console.WriteLine($"ApartmentApplicationId for occupant: {apartmentApplicationIdForOccupant}");
+            string apartmentApplicationIdForOccByEmail = DBApplications.GetApartmentApplicationIdByEmailOcc("apipostman65455@gmail.com");
+            Console.WriteLine($"ApartmentApplicationId for occupant: {apartmentApplicationIdForOccByEmail}");
             string apartmentApplicationIdForGuarantor = DBApplications.GetApartmentApplicationIdByUserIdGua();
             Console.WriteLine($"ApartmentApplicationId for guarantor: {apartmentApplicationIdForGuarantor}");
 
@@ -206,7 +206,9 @@ namespace CazamioProject.BaseTestsDBApplications
                 Assert.AreEqual(newApartmentApplicationId, apartmentApplicationIdForGuaS);
                 Console.WriteLine($"New ApartmentApplicationId: {newApartmentApplicationId} = {apartmentApplicationIdForGuaS} ApartmentApplicationId For Occupant Guarantor");
                 Assert.AreNotEqual(newApartmentApplicationId, apartmentApplicationIdForOccupant);
-                Console.WriteLine($"New ApartmentApplicationId: {newApartmentApplicationId} = {apartmentApplicationIdForOccupant} ApartmentApplicationId For Occupant");
+                Console.WriteLine($"New ApartmentApplicationId: {newApartmentApplicationId} = {apartmentApplicationIdForOccupant} ApartmentApplicationId For Occupant from table ApartmentApplicationApplicant");
+                Assert.AreEqual(newApartmentApplicationId, apartmentApplicationIdForOccByEmail);
+                Console.WriteLine($"New ApartmentApplicationId: {newApartmentApplicationId} = {apartmentApplicationIdForOccByEmail} ApartmentApplicationId For Occupant from table Occupants");
                 Assert.AreEqual(newApartmentApplicationId, apartmentApplicationIdForGuarantor);
                 Console.WriteLine($"New ApartmentApplicationId: {newApartmentApplicationId} = {apartmentApplicationIdForGuarantor} ApartmentApplicationId For Guarantor");
             });

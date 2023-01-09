@@ -804,4 +804,75 @@ namespace CazamioProgect.Helpers
     }
 
     #endregion
+
+    #region Tenants
+
+    public class DBTenants
+    {
+        public static string GetIdForNewTenantTableTenants()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT MAX(Id) Id FROM Tenants;", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetUserIdForNewTenantTableTenants()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT UserId" +
+                    " FROM Tenants WHERE Id = (SELECT MAX(Id) FROM Tenants);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetIdForNewTenantTableAspNetUsers(string idTenantAspNetUsers)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id" +
+                    " FROM AspNetUsers WHERE UserName = 'indigo123fgh@putsbox.com'", db);
+                command.Parameters.AddWithValue("@Contacts", DbType.String).Value = idTenantAspNetUsers;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+    }
+
+    #endregion
 }
+
