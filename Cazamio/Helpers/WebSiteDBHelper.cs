@@ -199,6 +199,50 @@ namespace CazamioProgect.Helpers
             return data;
         }
 
+        public static string GetTenantIOccupant(string idOccupant)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM Tenants WHERE UserId IN" +
+                " (SELECT Id FROM AspNetUsers WHERE UserName = 'apipostman65455@gmail.com'); ", db);
+                command.Parameters.AddWithValue("@UserName", DbType.String).Value = idOccupant;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetTenantIGuarantor(string idGuarantor)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM Tenants WHERE UserId IN" +
+                " (SELECT Id FROM AspNetUsers WHERE UserName = 'guarantor5935@gmail.com'); ", db);
+                command.Parameters.AddWithValue("@UserName", DbType.String).Value = idGuarantor;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
         public static string GetIdNewApplication()
         {
             string data = null;
@@ -283,7 +327,7 @@ namespace CazamioProgect.Helpers
             {
                 SqlCommand command = new("SELECT ApartmentApplicationId" +
                     " FROM ApartmentApplicationProgress" +
-                    " WHERE TenantId = '1'" +
+                    " WHERE TenantId = '48'" +
                     " AND ApartmentApplicationId = (SELECT MAX(ApartmentApplicationId)" +
                     " FROM ApartmentApplicationProgress);", db);
                 db.Open();

@@ -37,6 +37,13 @@ namespace CazamioProgect.Helpers
         public const string PASSWORD_NEW_GENEREAL = "!321Qwerty";
     }
 
+    public class TestDataDBForWebSiteTenant
+    {
+        public const string APPLICANT_WIFE_TENANT_TENANTID = "38";
+        public const string OCCUPANT_CROCODILE_DENDY_TENANTID = "47";
+        public const string GUARANTOR_RODGER_VANPIECE_TENANTID = "48";
+    }
+
     public class TestDataForWebSiteTenant
     {
         public const string EMAIL_TENANT_APPLICANT = "tenantapp123ray@putsbox.com";
