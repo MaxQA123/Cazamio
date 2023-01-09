@@ -40,8 +40,21 @@ namespace CazamioProgect.Helpers
     public class TestDataDBForWebSiteTenant
     {
         public const string APPLICANT_WIFE_TENANT_TENANTID = "38";
+        public const string APPLICANT_WIFE_TENANT_USERID = "4e370c3e-c42e-48ac-938f-eb25ac823ba8";
+        
         public const string OCCUPANT_CROCODILE_DENDY_TENANTID = "47";
+        public const string OCCUPANT_CROCODILE_DENDY_USERID = "1397a512-6600-40d8-95cd-e76f1e3af5e2";
+
         public const string GUARANTOR_RODGER_VANPIECE_TENANTID = "48";
+        public const string GUARANTOR_RODGER_VANPIECE_USERID = "149fcd30-8ddb-4c3d-9ffb-4c466861f25a";
+    }
+
+    public class TestDataDBForWebSiteAdmin
+    {
+        public const string ADMIN_AXEL_FOLLY_LANDLORDID = "2";
+        public const string BUILDINGID_ROYAL_HOUSE = "22";
+        public const string ID_TABLE_APARTMENTS_APARTMENTID = "83";
+        public const string ID_UNIT_FOUR_E = "83";
     }
 
     public class TestDataForWebSiteTenant

@@ -343,6 +343,115 @@ namespace CazamioProgect.Helpers
             }
             return data;
         }
+
+        public static string GetApartmentId()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT ApartmentId" +
+                    " FROM ApartmentApplications" +
+                    " WHERE Id = (SELECT MAX(Id)" +
+                    " FROM ApartmentApplications);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetNewApartmentApplicationId()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT MAX(ApartmentApplicationId) ApartmentApplicationId" +
+                    " FROM ApartmentApplicationApplicants;", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetApartmentApplicationIdOccGua()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT TOP (2) ApartmentApplicationId" +
+                    " FROM ApartmentApplicationApplicants ORDER BY Id DESC;", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetApartmentApplicationIdByUserIdOcc()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT MAX(ApartmentApplicationId) ApartmentApplicationId" +
+                    " FROM ApartmentApplicationApplicants" +
+                    " WHERE UserId = '1397a512-6600-40d8-95cd-e76f1e3af5e2';", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetApartmentApplicationIdByUserIdGua()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT MAX(ApartmentApplicationId) ApartmentApplicationId" +
+                    " FROM ApartmentApplicationApplicants" +
+                    " WHERE UserId = '149fcd30-8ddb-4c3d-9ffb-4c466861f25a';", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
     }
 
     #endregion
