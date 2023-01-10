@@ -28,7 +28,7 @@ namespace CazamioProject.BaseTestsDBTenants
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: records about a new tenant in the tables "Tenants" and 
+        //Comment: records about a new tenant in the tables "Tenants", "AspNetUsers" and "AspNetUserRoles"
         //Path to cheking's: 
         public void RecordsAboutNewTenant()
         {
@@ -43,8 +43,17 @@ namespace CazamioProject.BaseTestsDBTenants
             string idTenantAspNetUsers = DBTenants.GetIdForNewTenantTableAspNetUsers("globo34f6fhj@putsbox.com");
             Console.WriteLine($"Id for new tenant {newTenant} from table AspNetUsers: {idTenantAspNetUsers}");
 
-            Assert.AreEqual(userIdTenantTenants, idTenantAspNetUsers);
-            Console.WriteLine($"UserId a new tenant from table Tenants: {userIdTenantTenants} = {idTenantAspNetUsers} Id for tenant from table AspNetUsers");
+            string idTenantAspNetUserRoles = DBTenants.GetRoleIdForNewTenantTableAspNetUserRoles();
+            Console.WriteLine($"RoleId for new tenant {newTenant} from table AspNetUserRoles: {idTenantAspNetUserRoles}");
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(userIdTenantTenants, idTenantAspNetUsers);
+                Console.WriteLine($"UserId a new tenant from table Tenants: {userIdTenantTenants} = {idTenantAspNetUsers} Id for tenant from table AspNetUsers");
+
+                Assert.AreEqual(idTenantAspNetUserRoles, TestDataDBGeneral.ID_NAME_ROLE_TENANT);
+                Console.WriteLine($"RoleId tenant for a new tenant AR: {idTenantAspNetUserRoles} = {TestDataDBGeneral.ID_NAME_ROLE_TENANT} RoleId tenant for a new tenant ER");
+            });
         }
     }
 }

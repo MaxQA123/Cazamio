@@ -21,7 +21,7 @@ namespace CazamioProject.BaseTestsDBAdmins
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBAdmin")]
-        [AllureSubSuite("GetIdBuildingByName")]
+        [AllureSubSuite("RecordsDBAboutNewAdmin")]
 
         //Date of publication:
         //Version\Build:
@@ -30,10 +30,27 @@ namespace CazamioProject.BaseTestsDBAdmins
         //Comment: The table "Lanlords".
         //Path to cheking's: 
 
-        public void DisplayingIdForLandlordFromLandlordsTable()
+        public void RecordsDBAboutNewAdmin()
         {
-            //string idLandlord = DBLandlords.GetIdForLandlordFromLandlordsT();
-            //Console.WriteLine($"Id for admin from table Landlords: {idLandlord}");
+            string newAdmin = TestDataDBForWebSiteAdmin.NEW_ADMIN_FIRST_LAST_NAME;
+
+            string userIdAdmin = DBAdmins.GetUserIdNewAdminFromLandlords();
+            Console.WriteLine($"UserId for new admin {newAdmin} from table Landlords: {userIdAdmin}");
+
+            string roleIdAdmin = DBAdmins.GetRoleIdNewAdminFromAspNetUserRoles();
+            Console.WriteLine($"RoleId for new admin {newAdmin} from table AspNetUserRoles: {roleIdAdmin}");
+
+            string marketplaceIdByAdminEmail = DBAdmins.GetMarketplaceIdFromLandlordsT("twysb@putsbox.com");
+            Console.WriteLine($"MarketplaceId for admin {newAdmin} from table Landlords: {marketplaceIdByAdminEmail}");
+            
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(roleIdAdmin, TestDataDBGeneral.ID_NAME_ROLE_ADMIN);
+                Console.WriteLine($"RoleId a new admin from table AspNetUserRoles: {roleIdAdmin} = {TestDataDBGeneral.ID_NAME_ROLE_ADMIN} Id for tenant from table AspNetUsers");
+
+                Assert.AreEqual(marketplaceIdByAdminEmail, TestDataDBGeneral.MARKETPLACE_ID);
+                Console.WriteLine($"MarketplaceId admin for a new admin AR: {marketplaceIdByAdminEmail} = {TestDataDBGeneral.MARKETPLACE_ID} MarketplaceId admin for a new admin ER");
+            });
         }
 
         [Test]
@@ -61,6 +78,7 @@ namespace CazamioProject.BaseTestsDBAdmins
             Console.WriteLine($"MarketplaceId for admin {adminName} from table Landlords: {marketplaceIdByAdminEmail}");
             string marketplaceIdForNewAdmin = DBAdmins.GetMarketplaceIdForNewAdmin();
             Console.WriteLine($"MarketplaceId for admin {adminName} from table Landlords: {marketplaceIdForNewAdmin}");
+            
             Assert.AreEqual(marketplaceIdByAdminEmail, marketplaceIdForNewAdmin);
             Console.WriteLine($"MarketplaceId by email new admin AspNetUsers: {marketplaceIdByAdminEmail} = {marketplaceIdForNewAdmin} MarketplaceId for new admin in the table Landlords");
         }

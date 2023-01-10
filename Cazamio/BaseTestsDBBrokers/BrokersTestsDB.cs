@@ -22,6 +22,44 @@ namespace CazamioProject.BaseTestsDBBrokers
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBBroker")]
+        [AllureSubSuite("RecordsDBAboutNewBroker")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
+        //Comment: The table "Lanlords".
+        //Path to cheking's: 
+
+        public void RecordsDBAboutNewBroker()
+        {
+            string newBroker = TestDataDBForWebSiteAdmin.NEW_ADMIN_FIRST_LAST_NAME;
+
+            string userIdBroker = DBBrokers.GetUserIdNewBrokerFromBrokers();
+            Console.WriteLine($"UserId for new broker {newBroker} from table Brokers: {userIdBroker}");
+
+            string roleIdBroker = DBBrokers.GetRoleIdNewBrokerFromAspNetUserRoles();
+            Console.WriteLine($"RoleId for new admin {newBroker} from table AspNetUserRoles: {roleIdBroker}");
+
+            string marketplaceIdBroker = DBBrokers.GetMarketplaceIdFromBrokers();
+            Console.WriteLine($"MarketplaceId for broker {newBroker} from table Brokers: {marketplaceIdBroker}");
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(roleIdBroker, TestDataDBGeneral.ID_NAME_ROLE_BROKER);
+                Console.WriteLine($"RoleId a new broker from table AspNetUserRoles: {roleIdBroker} = {TestDataDBGeneral.ID_NAME_ROLE_BROKER} Id for broker from table AspNetUserRoles");
+
+                Assert.AreEqual(marketplaceIdBroker, TestDataDBGeneral.MARKETPLACE_ID);
+                Console.WriteLine($"MarketplaceId admin for a new broker AR: {marketplaceIdBroker} = {TestDataDBGeneral.MARKETPLACE_ID} MarketplaceId broker for a new broker ER");
+            });
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBBroker")]
         [AllureSubSuite("GetIdApartmentFromBD")]
 
         //Date of publication:
