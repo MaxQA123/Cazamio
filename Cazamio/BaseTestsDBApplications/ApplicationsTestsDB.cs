@@ -70,9 +70,9 @@ namespace CazamioProject.BaseTestsDBApplications
             string idTenantApplicant = DBApplications.GetTenantIdApplicant("tenantswife@gmail.com");
             Console.WriteLine($"Id for tenant {tenantApplicant} from table tenants: {idTenantApplicant}");
             string idTenantOccupant = DBApplications.GetTenantIOccupant("apipostman65455@gmail.com");
-            Console.WriteLine($"Id for tenant {tenantApplicant} from table tenants: {idTenantOccupant}");
+            Console.WriteLine($"Id for tenant {tenantOccupant} from table tenants: {idTenantOccupant}");
             string idTenantGuarantor = DBApplications.GetTenantIGuarantor("guarantor5935@gmail.com");
-            Console.WriteLine($"Id for tenant {tenantApplicant} from table tenants: {idTenantGuarantor}");
+            Console.WriteLine($"Id for tenant {tenantGuarantor} from table tenants: {idTenantGuarantor}");
             string idApplication = DBApplications.GetIdNewApplication();
             Console.WriteLine($"Id for new application from table tenants: {idApplication}");
 

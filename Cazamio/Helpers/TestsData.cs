@@ -50,6 +50,8 @@ namespace CazamioProgect.Helpers
     {
         public const string NEW_TENANT_EMAIL = "indigo123fgh@putsbox.com";
         public const string NEW_TENANT_FIRST_LAST_NAME = "Indigo Alfa";
+        public const string NEW_TENANT_FIRST_NAME = "Indigo";
+        public const string NEW_TENANT_LAST_NAME = "Alfa";
         public const string PASSED_BACKGROUND_CHECK_TENANT = "Passed";
         public const string PASSED_CREDIT_SCREENING_TENANT = "Passed";
 
