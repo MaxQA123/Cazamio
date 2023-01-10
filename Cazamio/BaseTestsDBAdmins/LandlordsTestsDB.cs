@@ -46,7 +46,7 @@ namespace CazamioProject.BaseTestsDBAdmins
             Assert.Multiple(() =>
             {
                 Assert.AreEqual(roleIdAdmin, TestDataDBGeneral.ID_NAME_ROLE_ADMIN);
-                Console.WriteLine($"RoleId a new admin from table AspNetUserRoles: {roleIdAdmin} = {TestDataDBGeneral.ID_NAME_ROLE_ADMIN} Id for tenant from table AspNetUsers");
+                Console.WriteLine($"RoleId a new admin from table AspNetUserRoles: {roleIdAdmin} = {TestDataDBGeneral.ID_NAME_ROLE_ADMIN} Id for admin from table AspNetUsers");
 
                 Assert.AreEqual(marketplaceIdByAdminEmail, TestDataDBGeneral.MARKETPLACE_ID);
                 Console.WriteLine($"MarketplaceId admin for a new admin AR: {marketplaceIdByAdminEmail} = {TestDataDBGeneral.MARKETPLACE_ID} MarketplaceId admin for a new admin ER");
@@ -59,7 +59,7 @@ namespace CazamioProject.BaseTestsDBAdmins
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBAdmin")]
-        [AllureSubSuite("CompareUserIdAdminWithMarkeplaceId")]
+        [AllureSubSuite("RelatedUserIdAdminWithMarkeplaceId")]
 
         //Date of publication:
         //Version\Build:

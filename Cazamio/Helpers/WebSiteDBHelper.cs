@@ -1001,6 +1001,54 @@ namespace CazamioProgect.Helpers
             }
             return data;
         }
+
+        public static string GetTenantIdForNewTenantTableTenantBackgroundChecks()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT TOP(1) CheckStatus" +
+                    " FROM TenantBackgroundChecks INNER JOIN Tenants" + 
+                    " ON TenantId IN" +
+                    " (SELECT UserId FROM Tenants WHERE Id = (SELECT MAX(Id) FROM Tenants)" +
+                    " AND TenantBackgroundChecks.BackgroundCheckType = 'BackgroundCheck'); ", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetTenantIdForNewTenantTableTenantCreditScreening()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT TOP(1) CheckStatus" +
+                    " FROM TenantBackgroundChecks INNER JOIN Tenants" +
+                    " ON TenantId IN" +
+                    " (SELECT UserId FROM Tenants WHERE Id = (SELECT MAX(Id) FROM Tenants)" +
+                    " AND TenantBackgroundChecks.BackgroundCheckType = 'CreditScreening'); ", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
     }
 
     #endregion

@@ -22,7 +22,7 @@ namespace CazamioProject.BaseTestsDBApplications
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
-        [AllureSubSuite("RelatedApplicationWithTenantsAppOccGua")]
+        [AllureSubSuite("RelatedApplicationWithTenantApplicant")]
 
         //Date of publication:
         //Version\Build:
@@ -101,7 +101,7 @@ namespace CazamioProject.BaseTestsDBApplications
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
-        [AllureSubSuite("RelatedApplicationWithTenantsAppOccGua")]
+        [AllureSubSuite("RelateApplicationWithApartment")]
 
         //Date of publication:
         //Version\Build:
@@ -128,7 +128,7 @@ namespace CazamioProject.BaseTestsDBApplications
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
-        [AllureSubSuite("RelatedApplicationWithTenantsAppOccGua")]
+        [AllureSubSuite("RelateApplicationWithOccGuaSetJoin")]
 
         //Date of publication:
         //Version\Build:
@@ -176,7 +176,7 @@ namespace CazamioProject.BaseTestsDBApplications
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
-        [AllureSubSuite("RelatedApplicationWithTenantsAppOccGua")]
+        [AllureSubSuite("RelateApplicationWithOccGuaNoSetJoin")]
 
         //Date of publication:
         //Version\Build:

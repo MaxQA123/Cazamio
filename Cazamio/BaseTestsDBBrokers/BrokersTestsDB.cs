@@ -60,7 +60,7 @@ namespace CazamioProject.BaseTestsDBBrokers
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBBroker")]
-        [AllureSubSuite("GetIdApartmentFromBD")]
+        [AllureSubSuite("RelatedBrokerWithAdmin")]
 
         //Date of publication:
         //Version\Build:

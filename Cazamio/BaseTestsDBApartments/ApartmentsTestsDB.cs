@@ -46,7 +46,7 @@ namespace CazamioProject.BaseTestsDBApartments
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApartments")]
-        [AllureSubSuite("CompareApartmentBuildingAdmin")]
+        [AllureSubSuite("RelatedeApartmentBuildingAdmin")]
 
         //Date of publication:
         //Version\Build:
