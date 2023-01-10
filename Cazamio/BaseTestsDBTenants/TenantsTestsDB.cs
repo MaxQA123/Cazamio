@@ -29,7 +29,7 @@ namespace CazamioProject.BaseTestsDBTenants
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: records about a new tenant in the tables "Tenants", "AspNetUsers" and "AspNetUserRoles".
+        //Comment: records about a new tenant in the tables "dbo.Tenants", "dbo.AspNetUsers" and "dbo.AspNetUserRoles".
         //Path to cheking's: 
         public void RecordsAboutNewTenant()
         {
@@ -69,7 +69,7 @@ namespace CazamioProject.BaseTestsDBTenants
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: 
+        //Comment:  new records about background check and credit screening in the table "dbo.BackgroundChecks".
         //Path to cheking's: 
         public void RecordsAboutBackgroundCheckCreditScreening()
         {
@@ -103,7 +103,7 @@ namespace CazamioProject.BaseTestsDBTenants
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: records about a new tenant (First Name and Last Name) in the table "TenantExtractedIdentities".
+        //Comment: new records about a new tenant (First Name and Last Name) in the table "dbo.TenantExtractedIdentities".
         //Path to cheking's: 
         public void RecordsInTableTenantExtractedIdentities()
         {
@@ -137,7 +137,7 @@ namespace CazamioProject.BaseTestsDBTenants
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: new record in the table dbo.TenantLeases
+        //Comment: new record in the table "dbo.TenantLeases"
         //Path to cheking's: 
 
         public void RelatedTenantsWithApplication()
@@ -171,5 +171,47 @@ namespace CazamioProject.BaseTestsDBTenants
             });
         }
 
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBTenant")]
+        [AllureSubSuite("RecordsAboutNewTenant")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
+        //Comment:  new records about that the an apartemnt added in the favorities in the table "dbo.TenantApartmentFavorities".
+        //Path to cheking's: 
+        public void NewRecordInTableTenantApartmentFavorities()
+        {
+            string newTenant = TestDataDBForWebSiteTenant.NEW_TENANT_FIRST_LAST_NAME;
+
+            string idNewTenantApartmentFavorites = DBTenants.GetNewIdTableTenantApartmentFavorites();
+            Console.WriteLine($"{idNewTenantApartmentFavorites} :IdNewTenantApartmentFavorites {newTenant} from table TenantApartmentFavorites");
+
+            string tenantIdNewTenantApartmentFavorites = DBTenants.GetNewTenantIdTableTenantApartmentFavorites();
+            Console.WriteLine($"{tenantIdNewTenantApartmentFavorites} :TenantIdNewTenantApartmentFavorites {newTenant} from table TenantApartmentFavorites");
+
+            string apartmentIdFromTableApartments = DBApartments.GetIdForUnitFromApartments("Royal House");
+            Console.WriteLine($"{apartmentIdFromTableApartments} :ApartmentId {newTenant} from table Apartments");
+
+            string apartmentIdFromTableTenantApartmentFavorites = DBTenants.GetNewApartmentIdTableTenantApartmentFavorites();
+            Console.WriteLine($"{apartmentIdFromTableTenantApartmentFavorites} :ApartmentId {newTenant} from table TenantApartmentFavorites");
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(tenantIdNewTenantApartmentFavorites, TestDataDBForWebSiteTenant.APPLICANT_WIFE_TENANT_USERID);
+                Console.WriteLine($"TenantId for a new apartment favorities from table TenantApartmentFavorites AR: {tenantIdNewTenantApartmentFavorites} = {TestDataDBForWebSiteTenant.APPLICANT_WIFE_TENANT_USERID} TenantId for a new apartment favorities from table TenantApartmentFavorites ER");
+
+                Assert.AreEqual(tenantIdNewTenantApartmentFavorites, TestDataDBForWebSiteTenant.APPLICANT_WIFE_TENANT_USERID);
+                Console.WriteLine($"TenantId for a new apartment favorities from table TenantApartmentFavorites AR: {tenantIdNewTenantApartmentFavorites} = {TestDataDBForWebSiteTenant.APPLICANT_WIFE_TENANT_USERID} TenantId for a new apartment favorities from table TenantApartmentFavorites ER");
+
+                Assert.AreEqual(apartmentIdFromTableApartments, apartmentIdFromTableTenantApartmentFavorites);
+                Console.WriteLine($"TenantId for a new apartment favorities from table TenantApartmentFavorites AR: {apartmentIdFromTableApartments} = {apartmentIdFromTableTenantApartmentFavorites} TenantId for a new apartment favorities from table TenantApartmentFavorites ER");
+            });
+        }
     }
 }

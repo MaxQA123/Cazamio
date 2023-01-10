@@ -97,5 +97,27 @@ namespace CazamioProject.Helpers
             }
             return data;
         }
+
+        public static string GetIdForUnitFromApartments(string buildingName)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM Apartments WHERE BuildingId IN" +
+                " (SELECT Id FROM Buildings WHERE BuildingName = 'Royal House') AND Unit = '4E'; ", db);
+                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = buildingName;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
     }
 }
