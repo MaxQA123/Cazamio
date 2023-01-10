@@ -1,5 +1,6 @@
 ﻿using Allure.Commons;
 using CazamioProgect.Helpers;
+using CazamioProject.Helpers;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
@@ -36,13 +37,13 @@ namespace CazamioProject.BaseTestsDBBrokers
             string newBroker = TestDataDBForWebSiteAdmin.NEW_ADMIN_FIRST_LAST_NAME;
 
             string userIdBroker = DBBrokers.GetUserIdNewBrokerFromBrokers();
-            Console.WriteLine($"UserId for new broker {newBroker} from table Brokers: {userIdBroker}");
+            Console.WriteLine($"{userIdBroker} :UserId for new broker {newBroker} from table Brokers");
 
             string roleIdBroker = DBBrokers.GetRoleIdNewBrokerFromAspNetUserRoles();
-            Console.WriteLine($"RoleId for new admin {newBroker} from table AspNetUserRoles: {roleIdBroker}");
+            Console.WriteLine($"{roleIdBroker} :RoleId for new admin {newBroker} from table AspNetUserRoles");
 
             string marketplaceIdBroker = DBBrokers.GetMarketplaceIdFromBrokers();
-            Console.WriteLine($"MarketplaceId for broker {newBroker} from table Brokers: {marketplaceIdBroker}");
+            Console.WriteLine($"{marketplaceIdBroker} :MarketplaceId for broker {newBroker} from table Brokers");
 
             Assert.Multiple(() =>
             {
@@ -60,7 +61,7 @@ namespace CazamioProject.BaseTestsDBBrokers
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBBroker")]
-        [AllureSubSuite("RelatedBrokerWithAdmin")]
+        [AllureSubSuite("RelatedNewBrokerWithAdmin")]
 
         //Date of publication:
         //Version\Build:
@@ -69,16 +70,19 @@ namespace CazamioProject.BaseTestsDBBrokers
         //Comment: 
         //Path to cheking's: 
 
-        public void RelatedBrokerWithAdmin()
+        public void RelatedNewBrokerWithAdmin()
         {
             string brokerName = "Fred Dred";
 
             string idBroker = DBBrokers.GetIdBrokerFromBrokersT("joingilbert901broker@gmail.com");
-            Console.WriteLine($"Id for broker {brokerName} from table Brokers: {idBroker}");
+            Console.WriteLine($"{idBroker} :Id for broker {brokerName} from table Brokers");
+            
             string landlordIdByEmail = DBBrokers.GetLandlordIdByBrokerId("joingilbert901broker@gmail.com");
-            Console.WriteLine($"LandlordId by Email for broker {brokerName} from table LandlordBrokers: {landlordIdByEmail}");
+            Console.WriteLine($"{landlordIdByEmail} :LandlordId by Email for broker {brokerName} from table LandlordBrokers");
+            
             string landlordIdByBrokerid = DBBrokers.GetLandlordIdForNewBroker();
-            Console.WriteLine($"LandlordId for new broker {brokerName} from table LandlordBrokers: {landlordIdByBrokerid}");
+            Console.WriteLine($"{landlordIdByBrokerid} :LandlordId for new broker {brokerName} from table LandlordBrokers");
+
             Assert.AreEqual(landlordIdByEmail, landlordIdByBrokerid);
             Console.WriteLine($"LandlordId by email broker AspNetUsers: {landlordIdByEmail} = {landlordIdByBrokerid} LandlordId for new broker in the table LandlordBrokers");
         }

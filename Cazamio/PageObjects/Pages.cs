@@ -97,12 +97,5 @@ namespace CazamioProgect.PageObjects
         public static PopUpWndowNewBrokerCreatedSuccessfully PopUpWndowNewBrokerCreatedSuccessfully => GetPage<PopUpWndowNewBrokerCreatedSuccessfully>();
 
         #endregion
-
-        #region DB
-
-        public static DBApartments DBApartments => GetPage<DBApartments>();
-
-        #endregion
-
     }
 }

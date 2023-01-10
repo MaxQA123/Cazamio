@@ -1,5 +1,6 @@
 ﻿using Allure.Commons;
 using CazamioProgect.Helpers;
+using CazamioProject.Helpers;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
@@ -77,7 +78,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
         {
             string idBuilding = DBBuildings.GetIdBuildingByName();
             Console.WriteLine($"Id in the table Buildings By BuildingName: {idBuilding}");
-            string AddressidBuilding = DBBuildings.GetAddressIdBuildingByName();
+            string AddressidBuilding = CazamioProject.Helpers.DBBuildings.GetAddressIdBuildingByName();
             Console.WriteLine($"AddressId in the table Buildings By BuildingName: {AddressidBuilding}");
             string landlordIdForBuilding = DBBuildings.GetLandlordIdForBuilding();
             Console.WriteLine($"LandlordId in the table Buildings: {landlordIdForBuilding}");
