@@ -46,6 +46,19 @@ namespace CazamioProgect.Helpers
         public const string MARKETPLACE_ID = "1";
     }
 
+    public class TestDataDBPayments
+    {
+        public const string TRANSACTION_ID_DELIVER_CHECK = "DeliverCheck";
+        public const string TRANSACTION_STATUS_FAILED = "Failed";
+        public const string TRANSACTION_STATUS_COMPLETED = "Completed";
+        public const string TRANSACTION_STATUS_PENDING = "Pending";
+        public const string TRANSACTION_TYPE_TENANT_APPLICATION = "TenantApplication";
+        public const string TRANSACTION_TYPE_TENANT_HOLDING_DEPOSIT = "SigningLease";
+";
+        public const string ID_NAME_ROLE_ADMIN = "";
+        public const string MARKETPLACE_ID = "1";
+    }
+
     public class TestDataDBForWebSiteTenant
     {
         public const string NEW_TENANT_EMAIL = "indigo123fgh@putsbox.com";
