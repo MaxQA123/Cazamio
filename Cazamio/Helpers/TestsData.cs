@@ -53,10 +53,10 @@ namespace CazamioProgect.Helpers
         public const string TRANSACTION_STATUS_COMPLETED = "Completed";
         public const string TRANSACTION_STATUS_PENDING = "Pending";
         public const string TRANSACTION_TYPE_TENANT_APPLICATION = "TenantApplication";
-        public const string TRANSACTION_TYPE_TENANT_HOLDING_DEPOSIT = "SigningLease";
-";
-        public const string ID_NAME_ROLE_ADMIN = "";
-        public const string MARKETPLACE_ID = "1";
+        public const string TRANSACTION_TYPE_TENANT_HOLDING_DEPOSIT = "HoldingDepositPayment";
+        public const string TRANSACTION_TYPE_TENANT_SINGING_LEASE = "SigningLease";
+        public const string PROVIDER_NAME_CARDKNOX = "Cardknox";
+        public const string PROVIDER_NAME_DELIVER_CHECK = "DeliverCheck";
     }
 
     public class TestDataDBForWebSiteTenant
