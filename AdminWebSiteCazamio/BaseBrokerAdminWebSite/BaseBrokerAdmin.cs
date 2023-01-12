@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdminTests
+namespace BrokerAdminTests
 {
-    public class BaseAdmin : BaseWeb
+    public class BaseBrokerAdmin : BaseWeb
     {
         [SetUp]
         public void SetUp()

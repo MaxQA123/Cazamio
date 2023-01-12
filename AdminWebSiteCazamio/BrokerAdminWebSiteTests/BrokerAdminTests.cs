@@ -7,12 +7,12 @@ using NUnit.Allure.Core;
 using PutsboxWrapper;
 using NUnit.Framework;
 
-namespace AdminTests
+namespace BrokerAdminTests
 {
     [TestFixture]
     [AllureNUnit]
 
-    public class Tests : BaseAdmin
+    public class Tests : BaseBrokerAdmin
     {
         [Test]
         [AllureTag("Regression")]
@@ -20,7 +20,7 @@ namespace AdminTests
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("Admin")]
+        [AllureSuite("BrokerAdmin")]
         [AllureSubSuite("LogIn")]
 
         //Date of publication: 25.08.2022.
@@ -52,7 +52,7 @@ namespace AdminTests
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("Admin")]
+        [AllureSuite("BrokerAdmin")]
         [AllureSubSuite("ChangePassword")]
 
         //Date of publication:
@@ -101,7 +101,7 @@ namespace AdminTests
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("Admin")]
+        [AllureSuite("BrokerAdmin")]
         [AllureSubSuite("VerifySidebar")]
 
         //Date of publication:
@@ -191,7 +191,7 @@ namespace AdminTests
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("Admin")]
+        [AllureSuite("BrokerAdmin")]
         [AllureSubSuite("CreateNewBroker")]
 
         //Date of publication:
@@ -260,7 +260,7 @@ namespace AdminTests
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("Admin")]
+        [AllureSuite("BrokerAdmin")]
         [AllureSubSuite("AddBuilding")]
 
         //Date of publication:
@@ -301,8 +301,8 @@ namespace AdminTests
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("Demo")]
-        [AllureSubSuite("PutsBox")]
+        [AllureSuite("BrokerAdmin")]
+        [AllureSubSuite("DemoPutsBox")]
 
         //Date of publication:
         //Version\Build:
