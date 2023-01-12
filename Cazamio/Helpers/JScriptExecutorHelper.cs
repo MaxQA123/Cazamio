@@ -1,5 +1,6 @@
 ﻿using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,39 @@ namespace CazamioProgect.Helpers
             Browser._Driver.SwitchTo().Window(Browser._Driver.WindowHandles.First());
 
             return this;
+        }
+
+        public void OpenPutsBox(IWebElement element, string partEmailPutsBox)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            WebDriverWait wait = new(Browser._Driver, TimeSpan.FromSeconds(10));
+            wait.PollingInterval = TimeSpan.FromSeconds(2);
+            try
+            {
+                wait.Until(e =>
+                {
+                    try
+                    {
+                        if (element.Enabled == true)
+                        {
+
+                            return true;
+                        }
+
+                        return false;
+
+                    }
+                    catch (Exception)
+                    {
+                        Browser._Driver.Navigate().GoToUrl(($"https://putsbox.com/{partEmailPutsBox}/inspect"));
+
+                        return false;
+                    }
+                });
+            }
+            catch (NoSuchElementException) { }
+
+            catch (StaleElementReferenceException) { }
         }
     }
 

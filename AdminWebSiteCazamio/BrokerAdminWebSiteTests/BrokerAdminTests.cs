@@ -189,7 +189,7 @@ namespace BrokerAdminTests
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
-        [Retry(2)]
+        //[Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("BrokerAdmin")]
         [AllureSubSuite("CreateNewBroker")]
@@ -218,38 +218,38 @@ namespace BrokerAdminTests
             Pages.ModalWindowCreateNewBroker
                 .EnterFirstLastNameEmailPhnNmbrCellMdlWndw();
 
-            string email = Pages.ModalWindowCreateNewBroker.CopyEmailFromMdlWndwCreateBroker();
+            string fullEmailPutsBox = Pages.ModalWindowCreateNewBroker.CopyEmailFromMdlWndwCreateBroker();
+            string partEmailPutsBox = Pages.ModalWindowCreateNewBroker.CopyEmailBeforeDogFromModalWindowCreateNewBroker();
 
             Pages.ModalWindowCreateNewBroker
                 .ClickButtonSaveCrtNwBrkrOnMdlwndw()
                 .VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw();
-            Pages.JScriptExecutorHelper
-                .OpenNewTab();
-            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_XITROO_EMAIL_RANDOM);
-            Pages.EmailXitroo
-                .CopiedForEnterEmail(email)
-                .ClickSearchButton();
-            Pages.EmailXitroo
-                .OpenNewlyLetter();
-
-            string copyPasswordFromEmail = Pages.EmailXitroo.CopyPasswordFromEmailForCreateBroker();
-
-            Pages.EmailXitroo
-                .ClickLinkForConfirmAccountBroker();
-            Pages.SideBarLandlord
-                .SwitchTabClickButtonBrokersSidebar();
-            Pages.EmailXitroo
-                .VerifyEmailForCretingBroker(email);
+            KeyBoardActions.ClickEscapeButton();
+            
             Pages.SideBarLandlord
                 .ClickButtonLogOutSidebar();
-            Pages.EmailXitroo
-                .ClickLinkForConfirmAccountBrokerTwice();
+            Pages.JScriptExecutorHelper
+                .OpenNewTab()
+                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, partEmailPutsBox);
+            Pages.PutsBox
+                .VerifyTitleLetterCreateAdmin()
+                .ClickButtonBodyHtml();
+
+            string getTextPasswordActual = Pages.PutsBox.CopyPasswordFromEmailForCreateAdmin();
+
+            Pages.PutsBox
+                .ClickButtonResetPasswordForAdmin();
+            
             Pages.LogInLandlord
-                .CopiedForEnterEmailFromEmailCreateBroker(email);
-            Pages.LogInLandlord
-                .CopiedForEnterPsswrdFromEmailCreateBroker(copyPasswordFromEmail)
+                .CopiedForEnterEmailFromEmailCreateAdmin(fullEmailPutsBox)
+                .CopiedForEnterPsswrdFromEmailCreateAdmin(getTextPasswordActual)
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
+
+            string getUserNameRoleCompareBroker = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyOnlyBrokerUserNameRole(getUserNameRoleCompareBroker);
 
             WaitUntil.WaitSomeInterval(2000);
         }

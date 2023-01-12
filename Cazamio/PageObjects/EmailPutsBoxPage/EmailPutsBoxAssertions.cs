@@ -14,7 +14,9 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
         [AllureStep("VerifyTitleLetterCreateAdmin")]
         public PutsBox VerifyTitleLetterCreateAdmin()
         {
-            Assert.IsTrue(Successfully.IsVisible(TitleLetterCreateAdmin));
+            WaitUntil.CustomElementIsVisible(TitleLetterCreateAdmin);
+            Assert.IsTrue(TitleLetterCreateAdmin.Displayed);
+            Console.WriteLine(TitleLetterCreateAdmin.Text);
 
             return this;
         }

@@ -64,6 +64,20 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
             return this;
         }
 
+        [AllureStep("VerifyOnlyBrokerUserNameRole")]
+        public SideBarLandlord VerifyOnlyBrokerUserNameRole(string getUserNameRoleActual)
+        {
+            WaitUntil.WaitSomeInterval(1500);
+            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_BROKER;
+
+
+            Assert.AreEqual(getUserNameRoleExpected, getUserNameRoleActual);
+
+            Console.WriteLine($"Name Role EX: {getUserNameRoleExpected} Name Role AC: {getUserNameRoleActual}");
+
+            return this;
+        }
+
         [AllureStep("VerifySuperAdminUserName")]
         public SideBarLandlord VerifySuperAdminUserName(string getUserNameActual, string getUserNameRoleActual)
         {

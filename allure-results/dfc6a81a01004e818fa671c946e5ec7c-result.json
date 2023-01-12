@@ -1,0 +1,633 @@
+{
+  "uuid": "ebb1b1e2-275d-4e7c-a305-8fd3f10225b5-tr-0-1004",
+  "historyId": "BrokerAdminTests.Tests.CreateNewBroker",
+  "fullName": "BrokerAdminTests.Tests.CreateNewBroker",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "BrokerAdminTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "CreateNewBroker"
+    },
+    {
+      "name": "testClass",
+      "value": "Tests"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "BrokerAdmin"
+    },
+    {
+      "name": "subSuite",
+      "value": "CreateNewBroker"
+    }
+  ],
+  "links": [],
+  "name": "CreateNewBroker",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "  Expected: True\r\n  But was:  False\r\n",
+    "trace": "   at CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage.ModalWindowCreateNewBroker.__a$_around_VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw_100663546_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ModalWindowCreateNewBrokerPage\\ModalWindowCreateNewBrokerAssertions.cs:line 26\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage.ModalWindowCreateNewBroker.__a$_around_VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw_100663546_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage.ModalWindowCreateNewBroker.__a$_around_VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw_100663546_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage.ModalWindowCreateNewBroker.VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ModalWindowCreateNewBrokerPage\\ModalWindowCreateNewBrokerActions.cs:line 18\r\n   at BrokerAdminTests.Tests.CreateNewBroker() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BrokerAdminWebSiteTests\\BrokerAdminTests.cs:line 224\r\n"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "CreateNewBroker",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "  Expected: True\r\n  But was:  False\r\n",
+        "trace": "   at CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage.ModalWindowCreateNewBroker.__a$_around_VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw_100663546_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ModalWindowCreateNewBrokerPage\\ModalWindowCreateNewBrokerAssertions.cs:line 26\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage.ModalWindowCreateNewBroker.__a$_around_VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw_100663546_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage.ModalWindowCreateNewBroker.__a$_around_VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw_100663546_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage.ModalWindowCreateNewBroker.VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ModalWindowCreateNewBrokerPage\\ModalWindowCreateNewBrokerActions.cs:line 18\r\n   at BrokerAdminTests.Tests.CreateNewBroker() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BrokerAdminWebSiteTests\\BrokerAdminTests.cs:line 224\r\n"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "EnterEmailPasswordLogInPgAsAdmin",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "admin123@putsbox.com"
+                }
+              ],
+              "start": 1673532943378,
+              "stop": 1673532944378
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1673532944900,
+              "stop": 1673532945779
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673532943374,
+          "stop": 1673532945779
+        },
+        {
+          "name": "ClickIconShowLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1673532945781,
+              "stop": 1673532946669
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673532945780,
+          "stop": 1673532946669
+        },
+        {
+          "name": "ClickButtonLetsGoLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1673532946670,
+              "stop": 1673532947740
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673532946670,
+          "stop": 1673532948802
+        },
+        {
+          "name": "GetUserNameFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673532948804,
+          "stop": 1673532950950
+        },
+        {
+          "name": "GetUserNameRoleFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673532950951,
+          "stop": 1673532951549
+        },
+        {
+          "name": "VerifyAdminUserName",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Martin Macflay"
+            },
+            {
+              "name": "String",
+              "value": "Admin"
+            }
+          ],
+          "start": 1673532951550,
+          "stop": 1673532953868
+        },
+        {
+          "name": "ClickButtonBrokersSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1673532955739,
+              "stop": 1673532956464
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673532953869,
+          "stop": 1673532957473
+        },
+        {
+          "name": "ClickButtonCreateBrokerBrokersPage",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1673532957477,
+              "stop": 1673532958737
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673532957477,
+          "stop": 1673532958737
+        },
+        {
+          "name": "EnterFirstLastNameEmailPhnNmbrCellMdlWndw",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Darrick"
+                }
+              ],
+              "start": 1673532959221,
+              "stop": 1673532959934
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Grady"
+                }
+              ],
+              "start": 1673532959935,
+              "stop": 1673532960768
+            },
+            {
+              "name": "RandomEmail",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "7"
+                }
+              ],
+              "start": 1673532960768,
+              "stop": 1673532960774
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "ntywvwv@putsbox.com"
+                }
+              ],
+              "start": 1673532960775,
+              "stop": 1673532962284
+            },
+            {
+              "name": "RandomPhoneNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "10"
+                }
+              ],
+              "start": 1673532962285,
+              "stop": 1673532962285
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "3314397942"
+                }
+              ],
+              "start": 1673532962286,
+              "stop": 1673532963222
+            },
+            {
+              "name": "RandomPhoneNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "10"
+                }
+              ],
+              "start": 1673532963222,
+              "stop": 1673532963222
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "9355818364"
+                }
+              ],
+              "start": 1673532963222,
+              "stop": 1673532964116
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673532958739,
+          "stop": 1673532964116
+        },
+        {
+          "name": "CopyEmailFromMdlWndwCreateBroker",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673532964117,
+          "stop": 1673532964681
+        },
+        {
+          "name": "CopyEmailFromMdlWndwCreateBroker",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673532964681,
+          "stop": 1673532965288
+        },
+        {
+          "name": "ClickButtonSaveCrtNwBrkrOnMdlwndw",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1673532965290,
+              "stop": 1673532966219
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673532965289,
+          "stop": 1673532966219
+        },
+        {
+          "name": "VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "  Expected: True\r\n  But was:  False\r\n",
+            "trace": "   at NUnit.Framework.Assert.ReportFailure(String message)\r\n   at NUnit.Framework.Assert.ReportFailure(ConstraintResult result, String message, Object[] args)\r\n   at NUnit.Framework.Assert.That[TActual](TActual actual, IResolveConstraint expression, String message, Object[] args)\r\n   at NUnit.Framework.Assert.IsTrue(Boolean condition)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage.ModalWindowCreateNewBroker.__a$_around_VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw_100663546_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ModalWindowCreateNewBrokerPage\\ModalWindowCreateNewBrokerAssertions.cs:line 26\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage.ModalWindowCreateNewBroker.__a$_around_VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw_100663546_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673532966219,
+          "stop": 1673532968665
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "b8e0654682644372ac78cc9bf6354a25-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1673532933740,
+      "stop": 1673532973516
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1673532933739,
+  "stop": 1673532973528
+}

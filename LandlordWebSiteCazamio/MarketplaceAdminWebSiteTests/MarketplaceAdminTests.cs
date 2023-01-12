@@ -1,18 +1,18 @@
 using Allure.Commons;
 using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
-using LandlordTests;
+using MarketplaceAdminTests;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
 using System.Threading;
 
-namespace LandlordTests
+namespace MarketplaceAdminTests
 {
     [TestFixture]
     [AllureNUnit]
 
-    public class TestsBaseWeb : BaseLandlord
+    public class TestsBaseWeb : BaseMarketplaceAdmin
     {
         [Test]
         [AllureTag("Regression")]
@@ -20,16 +20,16 @@ namespace LandlordTests
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("Landlord")]
+        [AllureSuite("MarketplaceAdmin")]
         [AllureSubSuite("LogInAsLandlord")]
 
-        //Date of publication: 25.08.2022.
+        //Date of publication: 
         //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully LogIn as lanlord.
+        //Willingness for testing: 
+        //This test case is doing checking: 
         //Comment: 
 
-        public void LogInAsLandlord()
+        public void LogInMarketplaceAdmin()
         {
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsAdmin()

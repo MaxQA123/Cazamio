@@ -24,6 +24,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBr
         {
             WaitUntil.WaitSomeInterval(1000);
             Assert.IsTrue(Successfully.IsVisible(MessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw));
+            
 
             return this;
         }

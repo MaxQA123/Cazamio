@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LandlordTests
+namespace MarketplaceAdminTests
 {
-    public class BaseLandlord : BaseWeb
+    public class BaseMarketplaceAdmin : BaseWeb
     {
         [SetUp]
         public void SetUp()
