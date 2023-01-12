@@ -18,7 +18,7 @@ namespace CazamioProgect.Helpers
         public const string URL_XITROO_STATIC_TENANT = "https://xitroo.com/#tenantoccupantliza@xitroo.com";
 
         public const string URL_PUTSBOX_EMAIL_STATIC_SUPER_ADMIN = "https://putsbox.com/superadmin123/inspect";
-        public const string URL_PUTSBOX_EMAIL_STATIC_BROKER = "https://putsbox.com/broker123/inspect";
+        public const string URL_PUTSBOX_EMAIL_STATIC_BROKER = "https://putsbox.com/broker123test/inspect";
         public const string URL_PUTSBOX_EMAIL_STATIC_ADMIN = "https://putsbox.com/admin123/inspect";
         public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_APPLICANT = "https://putsbox.com/tenantapp123ray/inspect";
         public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_OCCUPANT = "https://putsbox.com/tenantocc123liza/inspect";
@@ -151,8 +151,8 @@ namespace CazamioProgect.Helpers
         public const string USER_NAME_ROLE_OWNER = "OWNER";
 
 
-        public const string EMAIL_ADMIN_TEST_GARY = "admin123@putsbox.com";
-        public const string USER_NAME_ADMIN_TEST_GARY = "Martin Macflay";
+        public const string EMAIL_ADMIN_MARTIN_MACFLY = "admin123@putsbox.com";
+        public const string USER_NAME_ADMIN_MARTIN_MACFLY = "Martin Macflay";
         public const string USER_NAME_ROLE_ADMIN = "Admin";
 
         public const string EMAIL_SUPER_ADMIN_SUPER = "superadmin123@putsbox.com";

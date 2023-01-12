@@ -40,11 +40,12 @@ namespace BrokerTests
                 .VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg();
             Pages.JScriptExecutorHelper
                 .OpenNewTab();
-            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_XITROO_STATIC_BROKER);
-            Pages.EmailXitroo
-                .ClickSearchButton()
-                .OpenNewlyLetter()
-                .ClickLinkForResetPasswordBroker();
+            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_PUTSBOX_EMAIL_STATIC_BROKER);
+            Pages.PutsBox
+                //.VerifyTitleLetterCreateBroker()
+                .ClickButtonBodyHtml()
+                .ClickButtonResetPasswordForAdmin();
+
             Pages.ResetYourPassword
                 .EnterNewConfirmPassword()
                 .ClickIconsShowPasswordNewConfirm()

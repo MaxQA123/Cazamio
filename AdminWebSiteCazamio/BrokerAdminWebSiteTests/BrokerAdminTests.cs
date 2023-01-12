@@ -71,18 +71,19 @@ namespace BrokerAdminTests
                 .VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg();
             Pages.JScriptExecutorHelper
                 .OpenNewTab();
-            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_XITROO_STATIC_ADMIN);
-            Pages.EmailXitroo
-                .ClickSearchButton()
-                .OpenNewlyLetter()
-                .ClickLinkForResetPasswordBroker();
+            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_PUTSBOX_EMAIL_STATIC_ADMIN);
+            Pages.PutsBox
+                //.VerifyTitleLetterCreateBroker()
+                .ClickButtonBodyHtml()
+                .ClickButtonResetPasswordForAdmin();
+
             Pages.ResetYourPassword
                 .EnterNewConfirmPassword()
                 .ClickIconsShowPasswordNewConfirm()
                 .ClickButtonResetPasswordlRstPsswrdPg()
                 .ClickButtonBackToLogInPageRstPsswrdPg();
             Pages.LogInLandlord
-                .EnterChangingEmailPasswordLogInPgAsAdmin()
+                .EnterEmailPasswordLogInPgAsAdmin()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
@@ -90,7 +91,7 @@ namespace BrokerAdminTests
             string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare);
+                .VerifyAdminUserName(getUserNameCompare, getUserNameRoleCompare);
 
             WaitUntil.WaitSomeInterval(2000);
         }
@@ -225,14 +226,13 @@ namespace BrokerAdminTests
                 .ClickButtonSaveCrtNwBrkrOnMdlwndw()
                 .VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw();
             KeyBoardActions.ClickEscapeButton();
-            
             Pages.SideBarLandlord
                 .ClickButtonLogOutSidebar();
             Pages.JScriptExecutorHelper
                 .OpenNewTab()
                 .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, partEmailPutsBox);
             Pages.PutsBox
-                .VerifyTitleLetterCreateAdmin()
+                .VerifyTitleLetterCreateBroker()
                 .ClickButtonBodyHtml();
 
             string getTextPasswordActual = Pages.PutsBox.CopyPasswordFromEmailForCreateAdmin();
