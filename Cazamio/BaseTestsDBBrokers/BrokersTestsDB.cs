@@ -50,8 +50,8 @@ namespace CazamioProject.BaseTestsDBBrokers
                 Assert.AreEqual(roleIdBroker, TestDataDBGeneral.ID_NAME_ROLE_BROKER);
                 Console.WriteLine($"RoleId a new broker from table AspNetUserRoles: {roleIdBroker} = {TestDataDBGeneral.ID_NAME_ROLE_BROKER} Id for broker from table AspNetUserRoles");
 
-                Assert.AreEqual(marketplaceIdBroker, TestDataDBGeneral.MARKETPLACE_ID);
-                Console.WriteLine($"MarketplaceId admin for a new broker AR: {marketplaceIdBroker} = {TestDataDBGeneral.MARKETPLACE_ID} MarketplaceId broker for a new broker ER");
+                Assert.AreEqual(marketplaceIdBroker, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+                Console.WriteLine($"MarketplaceId admin for a new broker AR: {marketplaceIdBroker} = {TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId broker for a new broker ER");
             });
         }
 
