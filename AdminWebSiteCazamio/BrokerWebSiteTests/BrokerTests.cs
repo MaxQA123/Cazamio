@@ -12,7 +12,7 @@ namespace BrokerAdminTests
     [TestFixture]
     [AllureNUnit]
 
-    public class Tests : BaseBrokerAdmin
+    public class Tests : BaseBroker
     {
         [Test]
         [AllureTag("Regression")]
@@ -20,7 +20,7 @@ namespace BrokerAdminTests
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("BrokerAdmin")]
+        [AllureSuite("Broker")]
         [AllureSubSuite("LogIn")]
 
         //Date of publication: 25.08.2022.
@@ -52,7 +52,7 @@ namespace BrokerAdminTests
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("BrokerAdmin")]
+        [AllureSuite("Broker")]
         [AllureSubSuite("ChangePassword")]
 
         //Date of publication:
@@ -102,7 +102,7 @@ namespace BrokerAdminTests
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("BrokerAdmin")]
+        [AllureSuite("Broker")]
         [AllureSubSuite("VerifySidebar")]
 
         //Date of publication:
@@ -192,8 +192,8 @@ namespace BrokerAdminTests
         [AllureSeverity(SeverityLevel.critical)]
         //[Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("BrokerAdmin")]
-        [AllureSubSuite("CreateNewBroker")]
+        [AllureSuite("Broker")]
+        [AllureSubSuite("CreateNewAgent")]
 
         //Date of publication:
         //Version\Build:
@@ -201,7 +201,7 @@ namespace BrokerAdminTests
         //This test case is doing checking: The successfully creaated a new broker.
         //Comment: 
 
-        public void CreateNewBroker()
+        public void CreateNewAgent()
         {
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsAdmin()
@@ -260,7 +260,7 @@ namespace BrokerAdminTests
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("BrokerAdmin")]
+        [AllureSuite("Broker")]
         [AllureSubSuite("AddBuilding")]
 
         //Date of publication:
@@ -301,7 +301,7 @@ namespace BrokerAdminTests
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("BrokerAdmin")]
+        [AllureSuite("Broker")]
         [AllureSubSuite("DemoPutsBox")]
 
         //Date of publication:

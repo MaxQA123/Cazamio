@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BrokerAdminTests
 {
-    public class BaseBrokerAdmin : BaseWeb
+    public class BaseBroker : BaseWeb
     {
         [SetUp]
         public void SetUp()

@@ -98,6 +98,5 @@ namespace CazamioProgect.Helpers
             catch (NoSuchElementException) { }
             catch (StaleElementReferenceException) { }
         }
-
     }
 }

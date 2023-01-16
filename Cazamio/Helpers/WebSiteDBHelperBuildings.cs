@@ -16,7 +16,7 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id" +
-                    " FROM Buildings" + " WHERE BuildingName = 'Royal House'", db);
+                    " FROM Buildings" + " WHERE BuildingName = 'LLC Atlant House'", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -37,7 +37,7 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT AddressId" +
-                    " FROM Buildings" + " WHERE BuildingName = 'Royal House'", db);
+                    " FROM Buildings" + " WHERE BuildingName = 'LLC Atlant House'", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -59,7 +59,7 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT LandlordId" +
-                    " FROM Buildings" + " WHERE BuildingName = 'Royal House'", db);
+                    " FROM Buildings" + " WHERE BuildingName = 'LLC Atlant House'", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

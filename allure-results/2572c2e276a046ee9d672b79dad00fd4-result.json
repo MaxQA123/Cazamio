@@ -1,0 +1,233 @@
+{
+  "uuid": "4244fdd4-e18c-43bc-8726-97489b8be0c4-tr-0-1002",
+  "historyId": "TenantCazamioTests.TestsBaseWeb.LogInAsTenant",
+  "fullName": "TenantCazamioTests.TestsBaseWeb.LogInAsTenant",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "TenantCazamioTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "LogInAsTenant"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "WebSiteTenant"
+    },
+    {
+      "name": "subSuite",
+      "value": "LogInAsTenant"
+    }
+  ],
+  "links": [],
+  "name": "LogInAsTenant",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//a[@href= '/my-info/applications']\"}\n  (Session info: chrome=109.0.5414.75)",
+    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.get_ButtonMyApplicationsHdrCzmTnnt() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantElements.cs:line 23\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonMyApplicationsHdrCzmTnnt_100663644_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantActions.cs:line 44\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonMyApplicationsHdrCzmTnnt_100663644_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonMyApplicationsHdrCzmTnnt_100663644_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.ClickButtonMyApplicationsHdrCzmTnnt()\r\n   at TenantCazamioTests.TestsBaseWeb.LogInAsTenant() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 87"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "LogInAsTenant",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//a[@href= '/my-info/applications']\"}\n  (Session info: chrome=109.0.5414.75)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.get_ButtonMyApplicationsHdrCzmTnnt() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantElements.cs:line 23\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonMyApplicationsHdrCzmTnnt_100663644_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantActions.cs:line 44\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonMyApplicationsHdrCzmTnnt_100663644_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonMyApplicationsHdrCzmTnnt_100663644_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.ClickButtonMyApplicationsHdrCzmTnnt()\r\n   at TenantCazamioTests.TestsBaseWeb.LogInAsTenant() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 87"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "ClickButtonLogInHdrCzmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673795137738,
+          "stop": 1673795139890
+        },
+        {
+          "name": "EnterEmailPasswordOnLgInAsTenantApplicant",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElement",
+                  "value": "Element (id = ddd0f4c6-fc9d-4024-902a-f8a625268e7c)"
+                },
+                {
+                  "name": "String",
+                  "value": "tenantapp123ray@putsbox.com"
+                }
+              ],
+              "start": 1673795140604,
+              "stop": 1673795141413
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElement",
+                  "value": "Element (id = 62035d2d-7b1d-41c3-bf13-fb1afd383103)"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1673795141436,
+              "stop": 1673795142043
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673795139892,
+          "stop": 1673795142043
+        },
+        {
+          "name": "ClickIconShowLgInCazmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673795142043,
+          "stop": 1673795142730
+        },
+        {
+          "name": "SetCheckBoxRememberMeLgInCazmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673795142731,
+          "stop": 1673795143402
+        },
+        {
+          "name": "ClickButtonLogInLgInCazmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673795143402,
+          "stop": 1673795144443
+        },
+        {
+          "name": "ClickButtonMyApplicationsHdrCzmTnnt",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//a[@href= '/my-info/applications']\"}\n  (Session info: chrome=109.0.5414.75)",
+            "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.get_ButtonMyApplicationsHdrCzmTnnt() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantElements.cs:line 23\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonMyApplicationsHdrCzmTnnt_100663644_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantActions.cs:line 44\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonMyApplicationsHdrCzmTnnt_100663644_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1673795144444,
+          "stop": 1673795149558
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "74916642620f483094459e6f69fa938b-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1673795124739,
+      "stop": 1673795153076
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1673795124736,
+  "stop": 1673795153085
+}

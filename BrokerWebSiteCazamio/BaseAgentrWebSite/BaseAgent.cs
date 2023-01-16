@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BrokerTests
 {
-    public class BaseBroker : BaseWeb
+    public class BaseAgent : BaseWeb
     {
         [SetUp]
         public void SetUp()

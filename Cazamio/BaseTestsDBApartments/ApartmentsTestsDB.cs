@@ -58,13 +58,13 @@ namespace CazamioProject.BaseTestsDBApartments
 
         public void RelatedeApartmentBuildingAdmin()
         {
-            string buildingName = "Royal House";
+            string buildingName = "LLC Atlant House";
 
-            string getLandlordId = DBApartments.GetLandlordIdFromApartmentsT("Royal House");
+            string getLandlordId = DBApartments.GetLandlordIdFromApartmentsT("LLC Atlant House");
             Console.WriteLine($"LandlordId from table Apartments for {buildingName}: {getLandlordId}");
-            string getBuildingId = DBApartments.GetBuildingIdFromApartmentsT("Royal House");
+            string getBuildingId = DBApartments.GetBuildingIdFromApartmentsT("LLC Atlant Housee");
             Console.WriteLine($"BuildingId from table Apartments for {buildingName}: {getBuildingId}");
-            string getUnitNumber = DBApartments.GetUnitFromApartmentsT("Royal House");
+            string getUnitNumber = DBApartments.GetUnitFromApartmentsT("LLC Atlant Housee");
             Console.WriteLine($"Unit number from table Apartments for {buildingName}: {getUnitNumber}");
             string idBuilding = DBBuildings.GetIdBuildingByName();
             Console.WriteLine($"Id for {buildingName} in the table Buildings: {idBuilding}");

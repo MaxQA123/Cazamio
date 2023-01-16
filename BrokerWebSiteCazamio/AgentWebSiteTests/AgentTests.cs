@@ -12,7 +12,7 @@ namespace BrokerTests
     [TestFixture]
     [AllureNUnit]
 
-    public class TestsBaseWeb : BaseBroker
+    public class TestsBaseWeb : BaseAgent
     {
 
         [Test]
@@ -21,8 +21,8 @@ namespace BrokerTests
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("Broker")]
-        [AllureSubSuite("ChangePasswordAsBroker")]
+        [AllureSuite("Agent")]
+        [AllureSubSuite("ChangePassword")]
 
         //Date of publication:
         //Version\Build:
@@ -30,7 +30,7 @@ namespace BrokerTests
         //This test case is doing checking: The broker successfully had been changed the password.
         //Comment: 
 
-        public void ChangePasswordAsBroker()
+        public void ChangePassword()
         {
             Pages.LogInLandlord
                 .ClickLinkForgotPassword();
@@ -71,8 +71,8 @@ namespace BrokerTests
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("Broker")]
-        [AllureSubSuite("LogInAsBroker")]
+        [AllureSuite("Agent")]
+        [AllureSubSuite("LogIn")]
 
         //Date of publication: 25.08.2022.
         //Version\Build:
@@ -80,7 +80,7 @@ namespace BrokerTests
         //This test case is doing checking: The successfully LogIn as lanlord.
         //Comment: 
 
-        public void LogInAsBroker()
+        public void LogIn()
         {
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsBroker()
@@ -102,7 +102,7 @@ namespace BrokerTests
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("Broker")]
+        [AllureSuite("Agent")]
         [AllureSubSuite("VerifySidebar")]
 
         //Date of publication:

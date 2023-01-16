@@ -63,7 +63,7 @@ namespace CazamioProgect.Helpers
     public class TestDataDBForWebSiteTenant
     {
         public const string NEW_TENANT_EMAIL = "indigo123fgh@putsbox.com";
-        public const string NEW_TENANT_FIRST_LAST_NAME = "Indigo Alfa";
+        public const string NEW_TENANT_FIRST_LAST_NAME = "Kelail Wolf";
         public const string NEW_TENANT_FIRST_NAME = "Indigo";
         public const string NEW_TENANT_LAST_NAME = "Alfa";
         public const string PASSED_BACKGROUND_CHECK_TENANT = "Passed";
@@ -74,8 +74,8 @@ namespace CazamioProgect.Helpers
         public const string NAME_ROLE_OCCUPANT = "Occupant";
         public const string NAME_ROLE_GUARANTOR = "Guarantor";
 
-        public const string APPLICANT_WIFE_TENANT_TENANTID = "38";
-        public const string APPLICANT_WIFE_TENANT_USERID = "4e370c3e-c42e-48ac-938f-eb25ac823ba8";
+        public const string APPLICANT_WIFE_TENANT_TENANTID = "75";
+        public const string APPLICANT_WIFE_TENANT_USERID = "5efc0edc-d03f-4f1e-9bf2-c1cc2453b36f";
         
         public const string OCCUPANT_CROCODILE_DENDY_TENANTID = "47";
         public const string OCCUPANT_CROCODILE_DENDY_USERID = "1397a512-6600-40d8-95cd-e76f1e3af5e2";
