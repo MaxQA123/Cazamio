@@ -66,7 +66,7 @@ namespace CazamioProject.BaseTestsDBApartments
             Console.WriteLine($"BuildingId from table Apartments for {buildingName}: {getBuildingId}");
             string getUnitNumber = DBApartments.GetUnitFromApartmentsT("LLC Atlant Housee");
             Console.WriteLine($"Unit number from table Apartments for {buildingName}: {getUnitNumber}");
-            string idBuilding = DBBuildings.GetIdBuildingByName();
+            string idBuilding = DBBuildings.GetIdBuildingByName("Atlant");
             Console.WriteLine($"Id for {buildingName} in the table Buildings: {idBuilding}");
             Assert.AreEqual(getBuildingId, idBuilding);
             Console.WriteLine($"BuildingId in table Apartments for {buildingName}: {getBuildingId} = {idBuilding} Id building in the table Buildings for {buildingName}");

@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +11,14 @@ namespace CazamioProject.Helpers
 {
     public class DBBuildings
     {
-        public static string GetIdBuildingByName()
+        public static string GetIdBuildingByName(string idBuilding)
         {
-            string idBuilding = null;
+            string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id" +
-                    " FROM Buildings" + " WHERE BuildingName = 'LLC Atlant House'", db);
+                    " FROM Buildings" + " WHERE BuildingName = 'New Beautifull'", db);
+                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = idBuilding;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -24,20 +26,21 @@ namespace CazamioProject.Helpers
                 {
                     while (reader.Read())
                     {
-                        idBuilding = reader.GetValue(0).ToString();
+                        data = reader.GetValue(0).ToString();
                     }
                 }
             }
-            return idBuilding;
+            return data;
         }
 
-        public static string GetAddressIdBuildingByName()
+        public static string GetIdBuildingByLlcName(string idBuilding)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT AddressId" +
-                    " FROM Buildings" + " WHERE BuildingName = 'LLC Atlant House'", db);
+                SqlCommand command = new("SELECT Id" +
+                    " FROM Buildings" + " WHERE LLCName = 'LLC beauty house'", db);
+                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = idBuilding;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -53,13 +56,14 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetLandlordIdForBuilding()
+        public static string GetLandlordIdForBuilding(string landlordId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT LandlordId" +
-                    " FROM Buildings" + " WHERE BuildingName = 'LLC Atlant House'", db);
+                    " FROM Buildings" + " WHERE BuildingName = 'New Beautifull'", db);
+                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = landlordId;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

@@ -32,13 +32,16 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetIdForLandlordFromLandlordsT()
+        public static string GetIdForAdminFromLandlords()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT Id" +
-                    " FROM Landlords" + " WHERE Userid = '78cd1917-e267-428b-bb89-8cbc05c00a83'", db);
+                SqlCommand command = new("SELECT DISTINCT LandlordId" +
+                    " FROM Buildings B" +
+                    " INNER JOIN Landlords L ON L.Id = B.LandlordId" +
+                    " INNER JOIN AspNetUsers U ON U.Id = L.UserId" +
+                    " WHERE U.Email = 'baluigi456sec@putsbox.com';", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

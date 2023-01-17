@@ -23,7 +23,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBBuilding")]
-        [AllureSubSuite("GetIdBuildingByName")]
+        [AllureSubSuite("DisplayingIdBuildingByName")]
 
         //Date of publication:
         //Version\Build:
@@ -34,8 +34,10 @@ namespace CazamioProgect.BaseTestsDBBuildings
 
         public void DisplayingIdBuildingByName()
         {
-            string idBuildingByName = DBBuildings.GetIdBuildingByName();
-            Console.WriteLine($"Id building form table Buildings: {idBuildingByName}");
+            string buildingName = TestDataDBForWebSiteAdmin.BUILDIN_NAME;
+
+            string idBuildingByName = DBBuildings.GetIdBuildingByName("New Beautifull");
+            Console.WriteLine($"{idBuildingByName} :Id building for {buildingName} form table Buildings");
         }
 
         [Test]
@@ -53,10 +55,12 @@ namespace CazamioProgect.BaseTestsDBBuildings
         //Comment: The table "Addresses".
         //Path to cheking's: 
 
-        public void DisplayingIdBuildingByAddress()
+        public void DisplayingIdBuildingByLlcName()
         {
-            string idBuildingByAddress = DBBuildings.GetAddressIdBuildingByName();
-            Console.WriteLine(idBuildingByAddress);
+            string buildingLlcName = TestDataDBForWebSiteAdmin.BUILDING_LLC_NAME;
+
+            string idBuildingByLlcName = DBBuildings.GetIdBuildingByLlcName("LLC beauty house");
+            Console.WriteLine($"{idBuildingByLlcName} :Id building for {buildingLlcName} form table Buildings");
         }
 
         [Test]
@@ -76,16 +80,26 @@ namespace CazamioProgect.BaseTestsDBBuildings
 
         public void RelatedBuidingAdmin()
         {
-            string idBuilding = DBBuildings.GetIdBuildingByName();
-            Console.WriteLine($"Id in the table Buildings By BuildingName: {idBuilding}");
-            string AddressidBuilding = CazamioProject.Helpers.DBBuildings.GetAddressIdBuildingByName();
-            Console.WriteLine($"AddressId in the table Buildings By BuildingName: {AddressidBuilding}");
-            string landlordIdForBuilding = DBBuildings.GetLandlordIdForBuilding();
-            Console.WriteLine($"LandlordId in the table Buildings: {landlordIdForBuilding}");
-            string idAdmin = DBAdmins.GetIdForLandlordFromLandlordsT();
-            Console.WriteLine($"Id for admin from table Landlords: {idAdmin}");
-            Assert.AreEqual(landlordIdForBuilding, idAdmin);
-            Console.WriteLine($"LanlordId in table Buildings: {landlordIdForBuilding} = {idAdmin} Id admin in the table Landlords");
+            string idBuildingByName = DBBuildings.GetIdBuildingByName("New Beautifull");
+            Console.WriteLine($"{idBuildingByName} :Id in the table Buildings By BuildingName");
+
+            string idBuildingByLlcName = DBBuildings.GetIdBuildingByLlcName("LLC beauty house");
+            Console.WriteLine($"{idBuildingByLlcName} :AddressId in the table Buildings By BuildingName");
+            
+            string landlordIdForBuilding = DBBuildings.GetLandlordIdForBuilding("");
+            Console.WriteLine($"{landlordIdForBuilding} :LandlordId in the table Buildings");
+           
+            string idAdmin = DBAdmins.GetIdForAdminFromLandlords();
+            Console.WriteLine($"{idAdmin} :Id for admin from table Landlords");
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(idBuildingByName, idBuildingByLlcName);
+                Console.WriteLine($"Id for building by name in table Buildings: {idBuildingByName} = {idBuildingByLlcName} Id for building by LLC name in table Buildings");
+
+                Assert.AreEqual(landlordIdForBuilding, idAdmin);
+                Console.WriteLine($"LanlordId in table Buildings: {landlordIdForBuilding} = {idAdmin} Id admin in the table Landlords");
+            });
         }
     }
 }

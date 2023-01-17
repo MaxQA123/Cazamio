@@ -95,8 +95,10 @@ namespace CazamioProgect.Helpers
         public const string NEW_BROKER_FIRST_LAST_NAME = "Pauline Doyle";
 
         public const string ADMIN_AXEL_FOLLY_LANDLORDID = "2";
-        public const string BUILDIN_NAME_ROYAL_HOUS = "Royal House";
-        public const string BUILDINGID_ROYAL_HOUSE = "22";
+        public const string ADMIN_FIRST_NAME = "Luigi";
+        public const string BUILDIN_NAME = "New Beautifull";
+        public const string BUILDING_LLC_NAME = "LLC beauty house";
+        public const string BUILDINGID = "22";
         public const string UNIT_NUMBER = "4E";
         public const string ID_TABLE_APARTMENTS_APARTMENTID = "83";
         public const string ID_UNIT_FOUR_E = "83";

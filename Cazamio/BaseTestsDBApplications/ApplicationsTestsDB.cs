@@ -112,7 +112,7 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelateApplicationWithApartment()
         {
-            string building = TestDataDBForWebSiteAdmin.BUILDIN_NAME_ROYAL_HOUS;
+            string building = TestDataDBForWebSiteAdmin.BUILDIN_NAME;
             string apartmentNumber = TestDataDBForWebSiteAdmin.UNIT_NUMBER;
 
             string apartmentId = DBApplications.GetApartmentId();
@@ -139,7 +139,7 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelateApplicationWithOccGuaSetJoin()
         {
-            string building = TestDataDBForWebSiteAdmin.BUILDIN_NAME_ROYAL_HOUS;
+            string building = TestDataDBForWebSiteAdmin.BUILDIN_NAME;
             string apartmentNumber = TestDataDBForWebSiteAdmin.UNIT_NUMBER;
 
             string newApartmentApplicationId = DBApplications.GetNewApartmentApplicationId();
@@ -187,7 +187,7 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelateApplicationWithOccGuaNoSetJoin()
         {
-            string building = TestDataDBForWebSiteAdmin.BUILDIN_NAME_ROYAL_HOUS;
+            string building = TestDataDBForWebSiteAdmin.BUILDIN_NAME;
             string apartmentNumber = TestDataDBForWebSiteAdmin.UNIT_NUMBER;
 
             string newApartmentApplicationId = DBApplications.GetNewApartmentApplicationId();
