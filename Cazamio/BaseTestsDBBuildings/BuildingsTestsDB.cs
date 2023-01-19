@@ -36,8 +36,8 @@ namespace CazamioProgect.BaseTestsDBBuildings
         {
             string buildingName = TestDataDBForWebSiteAdmin.BUILDIN_NAME;
 
-            string idBuildingByName = DBBuildings.GetIdBuildingByName("New Beautifull");
-            Console.WriteLine($"{idBuildingByName} :Id building for {buildingName} form table Buildings");
+            string idBuildingByName = DBBuildings.GetIdBuildingByName("New Beautifull 1234 *&%&$5l");
+            Console.WriteLine($"{idBuildingByName} :Id building for {buildingName} from table Buildings");
         }
 
         [Test]
@@ -46,7 +46,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBBuilding")]
-        [AllureSubSuite("GetIdBuildingByName")]
+        [AllureSubSuite("DisplayingIdBuildingByLlcName")]
 
         //Date of publication:
         //Version\Build:
@@ -59,8 +59,54 @@ namespace CazamioProgect.BaseTestsDBBuildings
         {
             string buildingLlcName = TestDataDBForWebSiteAdmin.BUILDING_LLC_NAME;
 
-            string idBuildingByLlcName = DBBuildings.GetIdBuildingByLlcName("LLC beauty house");
-            Console.WriteLine($"{idBuildingByLlcName} :Id building for {buildingLlcName} form table Buildings");
+            string idBuildingByLlcName = DBBuildings.GetIdBuildingByLlcName("LLC Bredlye");
+            Console.WriteLine($"{idBuildingByLlcName} :Id building for {buildingLlcName} from table Buildings");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBBuilding")]
+        [AllureSubSuite("DisplayingMarketplaceIdForBuildingByAddress")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
+        //Comment: The table "Addresses".
+        //Path to cheking's: 
+
+        public void DisplayingMarketplaceIdForBuildingByAddress()
+        {
+            string buildingLlcName = TestDataDBForWebSiteAdmin.BUILDING_LLC_NAME;
+
+            string marketplaceIdForBuildingByAddress = DBBuildings.GetMarketplaceIdForBuildingByAddress("12 2708 Lords Hill Road");
+            Console.WriteLine($"{marketplaceIdForBuildingByAddress} :MarketplaceId for building {buildingLlcName} by address from table Buildings");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBBuilding")]
+        [AllureSubSuite("DisplayingMarketplaceIdForBuildingByAddress")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
+        //Comment: The table "Addresses".
+        //Path to cheking's: 
+
+        public void DisplayingMarketplaceIdForBuildingByBuildingName()
+        {
+            string buildingLlcName = TestDataDBForWebSiteAdmin.BUILDING_LLC_NAME;
+
+            string marketplaceIdForBuildingByBuildingName = DBBuildings.GetMarketplaceIdForBuildingByBuildingName("Created LUIGI 1234 ^&$654");
+            Console.WriteLine($"{marketplaceIdForBuildingByBuildingName} :MarketplaceId for building {buildingLlcName} by building name from table Buildings");
         }
 
         [Test]
@@ -80,17 +126,25 @@ namespace CazamioProgect.BaseTestsDBBuildings
 
         public void RelatedBuidingAdmin()
         {
-            string idBuildingByName = DBBuildings.GetIdBuildingByName("New Beautifull");
-            Console.WriteLine($"{idBuildingByName} :Id in the table Buildings By BuildingName");
+            string buildingLlcName = TestDataDBForWebSiteAdmin.BUILDING_LLC_NAME;
 
-            string idBuildingByLlcName = DBBuildings.GetIdBuildingByLlcName("LLC beauty house");
-            Console.WriteLine($"{idBuildingByLlcName} :AddressId in the table Buildings By BuildingName");
+            string idBuildingByName = DBBuildings.GetIdBuildingByName("New Beautifull 1234 *&%&$5");
+            Console.WriteLine($"{idBuildingByName} :Id for building {buildingLlcName} in the table Buildings By BuildingName");
+
+            string idBuildingByLlcName = DBBuildings.GetIdBuildingByLlcName("LLC Bredlye");
+            Console.WriteLine($"{idBuildingByLlcName} :AddressId for building {buildingLlcName} in the table Buildings By BuildingName");
             
             string landlordIdForBuilding = DBBuildings.GetLandlordIdForBuilding("");
-            Console.WriteLine($"{landlordIdForBuilding} :LandlordId in the table Buildings");
+            Console.WriteLine($"{landlordIdForBuilding} :LandlordId for building {buildingLlcName} in the table Buildings");
            
             string idAdmin = DBAdmins.GetIdForAdminFromLandlords();
             Console.WriteLine($"{idAdmin} :Id for admin from table Landlords");
+
+            string marketplaceIdForBuildingByAddress = DBBuildings.GetMarketplaceIdForBuildingByAddress("12 2708 Lords Hill Road");
+            Console.WriteLine($"{marketplaceIdForBuildingByAddress} :MarketplaceId for building {buildingLlcName} by address from table Buildings");
+
+            string marketplaceIdForBuildingByBuildingName = DBBuildings.GetMarketplaceIdForBuildingByBuildingName("Created LUIGI 1234 ^&$654");
+            Console.WriteLine($"{marketplaceIdForBuildingByBuildingName} :MarketplaceId for building {buildingLlcName} by building name from table Buildings");
 
             Assert.Multiple(() =>
             {
@@ -99,6 +153,9 @@ namespace CazamioProgect.BaseTestsDBBuildings
 
                 Assert.AreEqual(landlordIdForBuilding, idAdmin);
                 Console.WriteLine($"LanlordId in table Buildings: {landlordIdForBuilding} = {idAdmin} Id admin in the table Landlords");
+
+                Assert.AreEqual(landlordIdForBuilding, idAdmin);
+                Console.WriteLine($"MarketplaceId by address in table Buildings: {marketplaceIdForBuildingByAddress} = {marketplaceIdForBuildingByBuildingName} MarketplaceId by building name in table Buildings");
             });
         }
     }

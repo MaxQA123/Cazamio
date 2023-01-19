@@ -17,7 +17,7 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id" +
-                    " FROM Buildings" + " WHERE BuildingName = 'New Beautifull'", db);
+                    " FROM Buildings" + " WHERE BuildingName = 'Created LUIGI 1234 ^&$654'", db);
                 command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = idBuilding;
                 db.Open();
 
@@ -39,7 +39,7 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id" +
-                    " FROM Buildings" + " WHERE LLCName = 'LLC beauty house'", db);
+                    " FROM Buildings" + " WHERE LLCName = 'LLC Luigi FULL'", db);
                 command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = idBuilding;
                 db.Open();
 
@@ -52,7 +52,6 @@ namespace CazamioProject.Helpers
                     }
                 }
             }
-
             return data;
         }
 
@@ -62,7 +61,7 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT LandlordId" +
-                    " FROM Buildings" + " WHERE BuildingName = 'New Beautifull'", db);
+                    " FROM Buildings" + " WHERE BuildingName = 'Created LUIGI 1234 ^&$654'", db);
                 command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = landlordId;
                 db.Open();
 
@@ -75,7 +74,50 @@ namespace CazamioProject.Helpers
                     }
                 }
             }
+            return data;
+        }
 
+        public static string GetMarketplaceIdForBuildingByAddress(string marketplaceId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT MarketplaceId FROM Buildings WHERE AddressId IN" +
+                      " (SELECT Id FROM Addresses WHERE Street = '12 2708 Lords Hill Road'); ", db);
+                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = marketplaceId;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetMarketplaceIdForBuildingByBuildingName(string marketplaceId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT MarketplaceId FROM Buildings" +
+                    " WHERE BuildingName = 'Created LUIGI 1234 ^&$654';", db);
+                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = marketplaceId;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
             return data;
         }
     }
