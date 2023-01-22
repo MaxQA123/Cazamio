@@ -7,7 +7,7 @@ using NUnit.Allure.Core;
 using PutsboxWrapper;
 using NUnit.Framework;
 
-namespace BrokerAdminTests
+namespace BrokerTests
 {
     [TestFixture]
     [AllureNUnit]
@@ -32,7 +32,7 @@ namespace BrokerAdminTests
         public void LogIn()
         {
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPgAsAdmin()
+                .EnterEmailPasswordLogInPgAsBroker()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
@@ -40,7 +40,7 @@ namespace BrokerAdminTests
             string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare);
 
             WaitUntil.WaitSomeInterval(2000);
 
@@ -83,7 +83,7 @@ namespace BrokerAdminTests
                 .ClickButtonResetPasswordlRstPsswrdPg()
                 .ClickButtonBackToLogInPageRstPsswrdPg();
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPgAsAdmin()
+                .EnterEmailPasswordLogInPgAsBroker()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
@@ -91,7 +91,7 @@ namespace BrokerAdminTests
             string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare);
 
             WaitUntil.WaitSomeInterval(2000);
         }
@@ -114,7 +114,7 @@ namespace BrokerAdminTests
         public void VerifySidebar()
         {
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPgAsAdmin()
+                .EnterEmailPasswordLogInPgAsBroker()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
@@ -122,7 +122,7 @@ namespace BrokerAdminTests
             string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare);
 
             Pages.SideBarLandlord
                 .UploadImageLogoLandlordFirst()
@@ -204,7 +204,7 @@ namespace BrokerAdminTests
         public void CreateNewAgent()
         {
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPgAsAdmin()
+                .EnterEmailPasswordLogInPgAsBroker()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
@@ -212,7 +212,7 @@ namespace BrokerAdminTests
             string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyAdminUserName(getUserNameCompare, getUserNameRoleCompare)
+                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare)
                 .ClickButtonBrokersSidebar();
             Pages.Brokers
                 .ClickButtonCreateBrokerBrokersPage();
@@ -272,7 +272,7 @@ namespace BrokerAdminTests
         public void AddBuilding()
         {
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPgAsAdmin()
+                .EnterEmailPasswordLogInPgAsBroker()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
@@ -280,7 +280,7 @@ namespace BrokerAdminTests
             string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare);
             Pages.ListOfBuildings
                 .VerifyTitleListOfBuildingsPg()
                 .ClickButtonAddBuildingOnLstBldng();
@@ -313,7 +313,7 @@ namespace BrokerAdminTests
         public void DemoPutsBox()
         {
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPgAsAdmin();
+                .EnterEmailPasswordLogInPgAsBroker();
                 //.ClickIconShowLogInPg()
                 //.ClickButtonLetsGoLogInPg();
             Pages.JScriptExecutorHelper

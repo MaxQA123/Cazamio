@@ -20,8 +20,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
             return this;
         }
 
-        [AllureStep("EnterEmailPasswordLogInPgAsAdmin")]
-        public LogInLandlord EnterEmailPasswordLogInPgAsAdmin()
+        [AllureStep("EnterEmailPasswordLogInPgAsBroker")]
+        public LogInLandlord EnterEmailPasswordLogInPgAsBroker()
         {
             InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_ADMIN_MARTIN_MACFLY);
             WaitUntil.WaitSomeInterval(500);
@@ -31,7 +31,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         }
 
         [AllureStep("EnterEmailPasswordLogInPgAsBroker")]
-        public LogInLandlord EnterEmailPasswordLogInPgAsBroker()
+        public LogInLandlord EnterEmailPasswordLogInPgAsAgent()
         {
             InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_BROKER_TEST);
             WaitUntil.WaitSomeInterval(500);

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BrokerTests
+namespace AgentTests
 {
     public class BaseAgent : BaseWeb
     {

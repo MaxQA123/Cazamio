@@ -1,5 +1,5 @@
 using Allure.Commons;
-using BrokerTests;
+using AgentTests;
 using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
 using NUnit.Allure.Attributes;
@@ -7,7 +7,7 @@ using NUnit.Allure.Core;
 using NUnit.Framework;
 using System.Threading;
 
-namespace BrokerTests
+namespace AgentTests
 {
     [TestFixture]
     [AllureNUnit]
@@ -52,7 +52,7 @@ namespace BrokerTests
                 .ClickButtonResetPasswordlRstPsswrdPg()
                 .ClickButtonBackToLogInPageRstPsswrdPg();
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPgAsBroker()
+                .EnterEmailPasswordLogInPgAsAgent()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
@@ -60,7 +60,7 @@ namespace BrokerTests
             string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare);
+                .VerifyAgentUserName(getUserNameCompare, getUserNameRoleCompare);
 
             WaitUntil.WaitSomeInterval(2000);
         }
@@ -83,7 +83,7 @@ namespace BrokerTests
         public void LogIn()
         {
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPgAsBroker()
+                .EnterEmailPasswordLogInPgAsAgent()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
@@ -91,7 +91,7 @@ namespace BrokerTests
             string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare);
+                .VerifyAgentUserName(getUserNameCompare, getUserNameRoleCompare);
 
             WaitUntil.WaitSomeInterval(2000);
         }
@@ -114,7 +114,7 @@ namespace BrokerTests
         public void VerifySidebar()
         {
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPgAsBroker()
+                .EnterEmailPasswordLogInPgAsAgent()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
@@ -122,7 +122,7 @@ namespace BrokerTests
             string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare);
+                .VerifyAgentUserName(getUserNameCompare, getUserNameRoleCompare);
 
             Pages.SideBarLandlord
                 .UploadImageAvatarUserLandlordFirst()

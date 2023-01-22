@@ -155,16 +155,16 @@ namespace CazamioProgect.Helpers
 
 
         public const string EMAIL_ADMIN_MARTIN_MACFLY = "admin123@putsbox.com";
-        public const string USER_NAME_ADMIN_MARTIN_MACFLY = "Martin Macflay";
-        public const string USER_NAME_ROLE_ADMIN = "Admin";
+        public const string USER_NAME_ADMIN_MARTIN_MACFLY = "Martin Macfly";
+        public const string USER_NAME_ROLE_ADMIN = "Broker";
 
         public const string EMAIL_SUPER_ADMIN_SUPER = "superadmin123@putsbox.com";
         public const string USER_NAME_SUPER_ADMIN = "Super User";
         public const string USER_NAME_ROLE_SUPER_ADMIN = "Super Admin";
 
-        public const string EMAIL_BROKER_TEST = "broker123test@putsbox.com";
-        public const string USER_NAME_BROKER = "Test Broker";
-        public const string USER_NAME_ROLE_BROKER = "Broker";
+        public const string EMAIL_BROKER_TEST = "agent123test@putsbox.com";
+        public const string USER_NAME_Agent = "Test Agent";
+        public const string USER_NAME_ROLE_Agent = "Agent";
 
         public const string BUILDING_NAME = "Diamond Hall";
         public const string BUILDING_LLC_NAME = "LLC Rent Corporation";

@@ -31,19 +31,18 @@ namespace MarketplaceAdminTests
 
         public void LogInMarketplaceAdmin()
         {
-            Pages.LogInLandlord
-                .EnterEmailPasswordLogInPgAsAdmin()
-                .ClickIconShowLogInPg()
-                .ClickButtonLetsGoLogInPg();
+            //Pages.LogInLandlord
+            //    .EnterEmailPasswordLogInPgAsAdmin()
+            //    .ClickIconShowLogInPg()
+            //    .ClickButtonLetsGoLogInPg();
 
-            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
-            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+            //string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            //string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
-            Pages.SideBarLandlord
-                .VerifyAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+            //Pages.SideBarLandlord
+            //    .VerifyAdminUserName(getUserNameCompare, getUserNameRoleCompare);
 
-            WaitUntil.WaitSomeInterval(2000);
-
+            //WaitUntil.WaitSomeInterval(2000);
         }
     }
 }

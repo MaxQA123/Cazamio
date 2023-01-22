@@ -32,8 +32,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
             return getUserNameRoleActual;
         }
 
-        [AllureStep("VerifyAdminUserName")]
-        public SideBarLandlord VerifyAdminUserName(string getUserNameActual, string getUserNameRoleActual)
+        [AllureStep("VerifyBrokerUserName")]
+        public SideBarLandlord VerifyBrokerUserName(string getUserNameActual, string getUserNameRoleActual)
         {
             WaitUntil.WaitSomeInterval(1500);
             string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_ADMIN_MARTIN_MACFLY;
@@ -68,7 +68,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public SideBarLandlord VerifyOnlyBrokerUserNameRole(string getUserNameRoleActual)
         {
             WaitUntil.WaitSomeInterval(1500);
-            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_BROKER;
+            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_Agent;
 
 
             Assert.AreEqual(getUserNameRoleExpected, getUserNameRoleActual);
@@ -97,12 +97,12 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
             return this;
         }
 
-        [AllureStep("VerifyBrokerUserName")]
-        public SideBarLandlord VerifyBrokerUserName(string getUserNameActual, string getUserNameRoleActual)
+        [AllureStep("VerifyAgentUserName")]
+        public SideBarLandlord VerifyAgentUserName(string getUserNameActual, string getUserNameRoleActual)
         {
-            WaitUntil.WaitSomeInterval(2000);
-            string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_BROKER;
-            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_BROKER;
+            WaitUntil.WaitSomeInterval(3000);
+            string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_Agent;
+            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_Agent;
 
             Assert.Multiple(() =>
             {
