@@ -33,7 +33,7 @@ namespace CazamioProject.BaseTestsDBAdmins
 
         public void RecordsDBAboutNewAdmin()
         {
-            string newAdmin = TestDataDBForWebSiteAdmin.NEW_ADMIN_FIRST_LAST_NAME;
+            string newAdmin = TestDataDBForWebSiteAdmin.BROKER_AXEL_FOLLY_LANDLORDID;
 
             string userIdAdmin = DBAdmins.GetUserIdNewAdminFromLandlords();
             Console.WriteLine($"UserId for new admin {newAdmin} from table Landlords: {userIdAdmin}");

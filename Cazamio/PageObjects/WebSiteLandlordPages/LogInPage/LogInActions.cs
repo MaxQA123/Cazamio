@@ -23,7 +23,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         [AllureStep("EnterEmailPasswordLogInPgAsBroker")]
         public LogInLandlord EnterEmailPasswordLogInPgAsBroker()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_ADMIN_MARTIN_MACFLY);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
             WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
 
@@ -33,7 +33,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         [AllureStep("EnterEmailPasswordLogInPgAsBroker")]
         public LogInLandlord EnterEmailPasswordLogInPgAsAgent()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_BROKER_TEST);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
             WaitUntil.WaitSomeInterval(500);
 
             InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
@@ -44,7 +44,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         [AllureStep("EnterChangingEmailPasswordLogInPgAsAdmin")]
         public LogInLandlord EnterChangingEmailPasswordLogInPgAsAdmin()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_ADMIN_MARTIN_MACFLY);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
             WaitUntil.WaitSomeInterval(500);
 
             InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, GeneralTestDataForAllUsers.PASSWORD_NEW_GENEREAL);

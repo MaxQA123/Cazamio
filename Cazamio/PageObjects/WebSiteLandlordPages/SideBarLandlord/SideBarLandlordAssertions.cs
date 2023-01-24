@@ -36,8 +36,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public SideBarLandlord VerifyBrokerUserName(string getUserNameActual, string getUserNameRoleActual)
         {
             WaitUntil.WaitSomeInterval(1500);
-            string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_ADMIN_MARTIN_MACFLY;
-            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_ADMIN;
+            string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_BROKER_MARTIN_MACFLY;
+            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_BROKER;
 
             Assert.Multiple(() =>
             {
@@ -55,7 +55,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         {
             WaitUntil.WaitSomeInterval(1500);
 
-            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_ADMIN;
+            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_BROKER;
 
                 Assert.AreEqual(getUserNameRoleExpected, getUserNameRoleActual);
 
@@ -68,7 +68,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public SideBarLandlord VerifyOnlyBrokerUserNameRole(string getUserNameRoleActual)
         {
             WaitUntil.WaitSomeInterval(1500);
-            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_Agent;
+            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_AGENT;
 
 
             Assert.AreEqual(getUserNameRoleExpected, getUserNameRoleActual);
@@ -101,8 +101,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public SideBarLandlord VerifyAgentUserName(string getUserNameActual, string getUserNameRoleActual)
         {
             WaitUntil.WaitSomeInterval(3000);
-            string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_Agent;
-            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_Agent;
+            string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_AGENT;
+            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_AGENT;
 
             Assert.Multiple(() =>
             {

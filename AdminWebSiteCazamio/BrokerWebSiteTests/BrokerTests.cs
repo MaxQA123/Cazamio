@@ -71,7 +71,7 @@ namespace BrokerTests
                 .VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg();
             Pages.JScriptExecutorHelper
                 .OpenNewTab();
-            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_PUTSBOX_EMAIL_STATIC_ADMIN);
+            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_PUTSBOX_EMAIL_STATIC_BROKER);
             Pages.PutsBox
                 //.VerifyTitleLetterCreateBroker()
                 .ClickButtonBodyHtml()

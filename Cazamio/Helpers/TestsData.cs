@@ -18,8 +18,8 @@ namespace CazamioProgect.Helpers
         public const string URL_XITROO_STATIC_TENANT = "https://xitroo.com/#tenantoccupantliza@xitroo.com";
 
         public const string URL_PUTSBOX_EMAIL_STATIC_SUPER_ADMIN = "https://putsbox.com/superadmin123/inspect";
-        public const string URL_PUTSBOX_EMAIL_STATIC_BROKER = "https://putsbox.com/broker123test/inspect";
-        public const string URL_PUTSBOX_EMAIL_STATIC_ADMIN = "https://putsbox.com/admin123/inspect";
+        public const string URL_PUTSBOX_EMAIL_STATIC_AGENT = "https://putsbox.com/wer3ree/inspect";
+        public const string URL_PUTSBOX_EMAIL_STATIC_BROKER = "https://putsbox.com/admin123/inspect";
         public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_APPLICANT = "https://putsbox.com/tenantapp123ray/inspect";
         public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_OCCUPANT = "https://putsbox.com/tenantocc123liza/inspect";
         public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_GUARANTOR = "https://putsbox.com/tenantgua123jim/inspect";
@@ -88,14 +88,14 @@ namespace CazamioProgect.Helpers
 
     public class TestDataDBForWebSiteAdmin
     {
-        public const string NEW_ADMIN_EMAIL = "twysb@putsbox.com";
-        public const string NEW_ADMIN_FIRST_LAST_NAME = "Pauline Doyle";
-
         public const string NEW_BROKER_EMAIL = "twysb@putsbox.com";
         public const string NEW_BROKER_FIRST_LAST_NAME = "Pauline Doyle";
 
-        public const string ADMIN_AXEL_FOLLY_LANDLORDID = "2";
-        public const string ADMIN_FIRST_NAME = "Luigi";
+        public const string NEW_AGENT_EMAIL = "twysb@putsbox.com";
+        public const string NEW_AGENT_FIRST_LAST_NAME = "Pauline Doyle";
+
+        public const string BROKER_AXEL_FOLLY_LANDLORDID = "2";
+        public const string BROKER_FIRST_NAME = "Luigi";
         public const string BUILDIN_NAME = "New Beautifull";
         public const string BUILDING_LLC_NAME = "LLC beauty house";
         public const string BUILDINGID = "22";
@@ -151,20 +151,20 @@ namespace CazamioProgect.Helpers
     {
         public const string MARKETPLACE_SUBDOMAIN = "testlandlord-demo";
 
-        public const string USER_NAME_ROLE_OWNER = "OWNER";
+        public const string USER_NAME_ROLE_OWNER = "Owner";
 
 
-        public const string EMAIL_ADMIN_MARTIN_MACFLY = "admin123@putsbox.com";
-        public const string USER_NAME_ADMIN_MARTIN_MACFLY = "Martin Macfly";
-        public const string USER_NAME_ROLE_ADMIN = "Broker";
+        public const string EMAIL_BROKER_MARTIN_MACFLY = "admin123@putsbox.com";
+        public const string USER_NAME_BROKER_MARTIN_MACFLY = "Martin Macfly";
+        public const string USER_NAME_ROLE_BROKER = "Broker";
 
         public const string EMAIL_SUPER_ADMIN_SUPER = "superadmin123@putsbox.com";
         public const string USER_NAME_SUPER_ADMIN = "Super User";
         public const string USER_NAME_ROLE_SUPER_ADMIN = "Super Admin";
 
-        public const string EMAIL_BROKER_TEST = "agent123test@putsbox.com";
-        public const string USER_NAME_Agent = "Test Agent";
-        public const string USER_NAME_ROLE_Agent = "Agent";
+        public const string EMAIL_AGENT_TEST = "agent123test@putsbox.com";
+        public const string USER_NAME_AGENT = "Test Agent";
+        public const string USER_NAME_ROLE_AGENT = "Agent";
 
         public const string BUILDING_NAME = "Diamond Hall";
         public const string BUILDING_LLC_NAME = "LLC Rent Corporation";
