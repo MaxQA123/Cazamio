@@ -1,0 +1,80 @@
+{
+  "uuid": "ad513102-5953-480b-bb5f-e1a505ba7c28-tc-0-1000",
+  "name": "BrokerTests.Tests.LogIn",
+  "children": [
+    "b2bb59e4-1c9d-4adb-a5a1-23daab2b2755-tr-0-1001"
+  ],
+  "befores": [
+    {
+      "name": "DobeforeAllTheTests",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1674903412649,
+      "stop": 1674903412649
+    },
+    {
+      "name": "SetUp",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.WebDriverException : disconnected: received Inspector.detached event\n  (failed to check if window was closed: disconnected: Unable to receive message from renderer)\n  (Session info: chrome=109.0.5414.120)\r\nTearDown : OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=109.0.5414.120)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.set_Url(String value)\r\n   at OpenQA.Selenium.Navigator.GoToUrl(String url)\r\n   at BrokerTests.BaseBroker.SetUp() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BaseBrokerWebSite\\BaseBroker.cs:line 18\r\n--TearDown\r\n   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.GetScreenshot()\r\n   at PractisingPrivilegesProject.Helpers.ScreenShotHelper.MakeScreenShot() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\ScreenShotHelper.cs:line 16\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 32"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1674903412650,
+      "stop": 1674903412650
+    }
+  ],
+  "afters": [
+    {
+      "name": "DoAfterEach",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.WebDriverException : disconnected: received Inspector.detached event\n  (failed to check if window was closed: disconnected: Unable to receive message from renderer)\n  (Session info: chrome=109.0.5414.120)\r\nTearDown : OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=109.0.5414.120)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.set_Url(String value)\r\n   at OpenQA.Selenium.Navigator.GoToUrl(String url)\r\n   at BrokerTests.BaseBroker.SetUp() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BaseBrokerWebSite\\BaseBroker.cs:line 18\r\n--TearDown\r\n   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.GetScreenshot()\r\n   at PractisingPrivilegesProject.Helpers.ScreenShotHelper.MakeScreenShot() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\ScreenShotHelper.cs:line 16\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 32"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1674903412651,
+      "stop": 1674903412651
+    },
+    {
+      "name": "DoAfterAllTheTests",
+      "status": "none",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "It's not possible to get status of OneTimeTearDown",
+        "trace": "See Allure.NUnit wiki"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1674903412651,
+      "stop": 1674903412651
+    }
+  ],
+  "links": [],
+  "start": 1674903406649,
+  "stop": 1674903412754
+}

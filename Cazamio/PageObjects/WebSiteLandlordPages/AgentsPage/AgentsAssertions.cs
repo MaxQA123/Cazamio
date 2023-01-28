@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProgect.PageObjects.WebSiteLandlordPages.BrokersPage
+namespace CazamioProgect.PageObjects.WebSiteLandlordPages.AgentsPage
 {
-    public partial class Brokers
+    public partial class Agents
     {
         [AllureStep("VerifyTitleBrokersPg")]
-        public Brokers VerifyTitleBrokersPg()
+        public Agents VerifyTitleBrokersPg()
         {
-            Assert.IsTrue(Successfully.IsVisible(TitleBrokersPage));
+            Assert.IsTrue(Successfully.IsVisible(TitleAgentsPage));
 
             return this;
         }

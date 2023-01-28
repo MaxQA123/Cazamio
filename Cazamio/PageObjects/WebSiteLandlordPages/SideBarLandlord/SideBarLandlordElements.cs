@@ -63,7 +63,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public IWebElement ButtonTransactionsSidebar;
 
         [FindsBy(How = How.XPath, Using = "//a[@href= '/brokers']")]
-        public IWebElement ButtonBrokersSidebar;
+        public IWebElement ButtonAgentsSidebar;
 
         [FindsBy(How = How.XPath, Using = "//a[@href= '/owners']")]
         public IWebElement ButtonOwnersSidebar;

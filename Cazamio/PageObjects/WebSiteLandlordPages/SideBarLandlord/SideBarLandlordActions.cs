@@ -181,9 +181,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public SideBarLandlord ClickButtonBrokersSidebar()
         {
             WaitUntil.WaitSomeInterval(1000);
-            ButtonBrokersSidebar.SendKeys("");
+            ButtonAgentsSidebar.SendKeys("");
             WaitUntil.WaitSomeInterval(500);
-            Button.Click(ButtonBrokersSidebar);
+            Button.Click(ButtonAgentsSidebar);
             WaitUntil.WaitSomeInterval(1000);
 
             return this;
@@ -196,9 +196,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
             List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
             Browser._Driver.SwitchTo().Window(tabsList[2]);
             WaitUntil.WaitSomeInterval(1000);
-            ButtonBrokersSidebar.SendKeys("");
+            ButtonAgentsSidebar.SendKeys("");
             WaitUntil.WaitSomeInterval(500);
-            Button.Click(ButtonBrokersSidebar);
+            Button.Click(ButtonAgentsSidebar);
             WaitUntil.WaitSomeInterval(1000);
 
             return this;

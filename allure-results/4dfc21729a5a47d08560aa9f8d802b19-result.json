@@ -1,0 +1,878 @@
+{
+  "uuid": "7aa92050-ed30-405c-8c3b-9770f9d85d8c-tr-0-1003",
+  "historyId": "BrokerTests.Tests.VerifySidebar",
+  "fullName": "BrokerTests.Tests.VerifySidebar",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "BrokerTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "VerifySidebar"
+    },
+    {
+      "name": "testClass",
+      "value": "Tests"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "Broker"
+    },
+    {
+      "name": "subSuite",
+      "value": "VerifySidebar"
+    }
+  ],
+  "links": [],
+  "name": "VerifySidebar",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.ElementNotInteractableException : element not interactable\n  (Session info: chrome=109.0.5414.120)",
+    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.SendKeys(String text)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.SendKeys(String text)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.__a$_around_ClickButtonBrokersSidebar_100663502_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\SideBarLandlord\\SideBarLandlordActions.cs:line 184\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.__a$_around_ClickButtonBrokersSidebar_100663502_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.__a$_around_ClickButtonBrokersSidebar_100663502_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.ClickButtonBrokersSidebar() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\SideBarLandlord\\SideBarLandlordActions.cs:line 19\r\n   at BrokerTests.Tests.VerifySidebar() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 169"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "VerifySidebar",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.ElementNotInteractableException : element not interactable\n  (Session info: chrome=109.0.5414.120)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.SendKeys(String text)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.SendKeys(String text)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.__a$_around_ClickButtonBrokersSidebar_100663502_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\SideBarLandlord\\SideBarLandlordActions.cs:line 184\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.__a$_around_ClickButtonBrokersSidebar_100663502_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.__a$_around_ClickButtonBrokersSidebar_100663502_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.ClickButtonBrokersSidebar() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\SideBarLandlord\\SideBarLandlordActions.cs:line 19\r\n   at BrokerTests.Tests.VerifySidebar() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 169"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "EnterEmailPasswordLogInPgAsBroker",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "admin123@putsbox.com"
+                }
+              ],
+              "start": 1674904134337,
+              "stop": 1674904134938
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1674904135448,
+              "stop": 1674904135959
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904134335,
+          "stop": 1674904135959
+        },
+        {
+          "name": "ClickIconShowLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1674904135961,
+              "stop": 1674904136609
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904135960,
+          "stop": 1674904136609
+        },
+        {
+          "name": "ClickButtonLetsGoLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1674904136610,
+              "stop": 1674904137565
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904136610,
+          "stop": 1674904138627
+        },
+        {
+          "name": "GetUserNameFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904138629,
+          "stop": 1674904138875
+        },
+        {
+          "name": "GetUserNameRoleFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904138876,
+          "stop": 1674904139433
+        },
+        {
+          "name": "VerifyBrokerUserName",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Martin Macfly"
+            },
+            {
+              "name": "String",
+              "value": "Broker"
+            }
+          ],
+          "start": 1674904139438,
+          "stop": 1674904141022
+        },
+        {
+          "name": "UploadImageLogoLandlordFirst",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904141024,
+          "stop": 1674904145445
+        },
+        {
+          "name": "VerifyChangingLogoImageLandlord",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904145446,
+          "stop": 1674904146521
+        },
+        {
+          "name": "UploadImageLogoLandlordSecond",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904146522,
+          "stop": 1674904147654
+        },
+        {
+          "name": "VerifyChangingLogoImageLandlord",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904147654,
+          "stop": 1674904148723
+        },
+        {
+          "name": "UploadImageAvatarUserLandlordFirst",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904148723,
+          "stop": 1674904159635
+        },
+        {
+          "name": "VerifyChangingAvatarImageLandlord",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904159635,
+          "stop": 1674904160718
+        },
+        {
+          "name": "UploadImageAvatarUserLandlordSecond",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904160718,
+          "stop": 1674904161834
+        },
+        {
+          "name": "VerifyChangingAvatarImageLandlord",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904161834,
+          "stop": 1674904162872
+        },
+        {
+          "name": "ClicklinkRemovePhotoOfLandlord",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1674904162872,
+              "stop": 1674904163480
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904162872,
+          "stop": 1674904164053
+        },
+        {
+          "name": "VerifyRewmoveAvatarImageLandlord",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904164054,
+          "stop": 1674904165118
+        },
+        {
+          "name": "ClickButtonDashboardSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1674904166126,
+              "stop": 1674904166851
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904165118,
+          "stop": 1674904166851
+        },
+        {
+          "name": "VerifyTitleOfDashboardPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904166852,
+          "stop": 1674904167925
+        },
+        {
+          "name": "ClickButtonBuildingsSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1674904168936,
+              "stop": 1674904169635
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904167927,
+          "stop": 1674904169635
+        },
+        {
+          "name": "VerifyTitleListOfBuildingsPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904169636,
+          "stop": 1674904170702
+        },
+        {
+          "name": "ClickButtonApartmentsSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1674904172715,
+              "stop": 1674904173353
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904170703,
+          "stop": 1674904176365
+        },
+        {
+          "name": "VerifyTitleListOfApartmentsPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904176366,
+          "stop": 1674904181822
+        },
+        {
+          "name": "ClickButtonApplicationsSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1674904182841,
+              "stop": 1674904183598
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904181823,
+          "stop": 1674904184616
+        },
+        {
+          "name": "VerifyTitleListOfApplicationsPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904184617,
+          "stop": 1674904186682
+        },
+        {
+          "name": "ClickButtonPreApprovalsSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1674904187692,
+              "stop": 1674904188376
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904186683,
+          "stop": 1674904189390
+        },
+        {
+          "name": "VerifyTitlePreApprovalsPagePg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904189392,
+          "stop": 1674904190487
+        },
+        {
+          "name": "ClickButtonLeaseSignDocumentsSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1674904192095,
+              "stop": 1674904192720
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904190488,
+          "stop": 1674904193732
+        },
+        {
+          "name": "VerifyTitleTemplatesPagePg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904193733,
+          "stop": 1674904194797
+        },
+        {
+          "name": "ClickButtonPaymentSettingsSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1674904196405,
+              "stop": 1674904197040
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904194799,
+          "stop": 1674904198055
+        },
+        {
+          "name": "VerifyTitlePaymentSettingsPagePg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904198055,
+          "stop": 1674904199126
+        },
+        {
+          "name": "ClickButtonTransactionsSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1674904200740,
+              "stop": 1674904201356
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904199127,
+          "stop": 1674904202373
+        },
+        {
+          "name": "VerifyTitleListOfTransactionsPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904202374,
+          "stop": 1674904203428
+        },
+        {
+          "name": "ClickButtonBrokersSidebar",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "element not interactable\n  (Session info: chrome=109.0.5414.120)",
+            "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.SendKeys(String text)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.SendKeys(String text)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.__a$_around_ClickButtonBrokersSidebar_100663502_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\SideBarLandlord\\SideBarLandlordActions.cs:line 184\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord.SideBarLandlord.__a$_around_ClickButtonBrokersSidebar_100663502_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1674904203429,
+          "stop": 1674904204621
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "209e4d5004f14c8eb984eece997abc91-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1674904127184,
+      "stop": 1674904207583
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1674904127183,
+  "stop": 1674904207593
+}

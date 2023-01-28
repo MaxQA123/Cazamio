@@ -7,7 +7,7 @@ using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.CreateNewPasswordPage
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.ForgotPasswordPage;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCazamioTenant;
-using CazamioProgect.PageObjects.WebSiteLandlordPages.BrokersPage;
+using CazamioProgect.PageObjects.WebSiteLandlordPages.AgentsPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.DashboardPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfApartmentsPage;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfApplicationsPage;
@@ -85,7 +85,7 @@ namespace CazamioProgect.PageObjects
         public static Templates Templates => GetPage<Templates>();
         public static PaymentSettings PaymentSettings => GetPage<PaymentSettings>();
         public static ListOfTransactions ListOfTransactions => GetPage<ListOfTransactions>();
-        public static Brokers Brokers => GetPage<Brokers>();
+        public static Agents Agents => GetPage<Agents>();
         public static ListOfOwners ListOfOwners => GetPage<ListOfOwners>();
         public static Marketplace Marketplace => GetPage<Marketplace>();
         public static ModalWindowAreYouSureLogOutLandlordBroker ModalWindowAreYouSureLogOutLandlordBroker => GetPage<ModalWindowAreYouSureLogOutLandlordBroker>();

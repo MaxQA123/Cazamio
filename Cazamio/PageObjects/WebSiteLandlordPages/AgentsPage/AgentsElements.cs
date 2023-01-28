@@ -6,14 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProgect.PageObjects.WebSiteLandlordPages.BrokersPage
+namespace CazamioProgect.PageObjects.WebSiteLandlordPages.AgentsPage
 {
-    public partial class Brokers
+    public partial class Agents
     {
-        [FindsBy(How = How.XPath, Using = ("//div[text()= 'Brokers']"))]
-        public IWebElement TitleBrokersPage;
+        [FindsBy(How = How.XPath, Using = ("//div[text()= 'Agents']"))]
+        public IWebElement TitleAgentsPage;
 
         [FindsBy(How = How.XPath, Using = ("//button[@class = 'middle primary-action absolute-loader']"))]
-        public IWebElement ButtonCreateBrokerBrkrsPage;
+        public IWebElement ButtonCreateAgentBrkrsPage;
     }
 }

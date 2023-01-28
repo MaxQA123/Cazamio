@@ -100,7 +100,7 @@ namespace BrokerTests
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
-        [Retry(2)]
+        //[Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Broker")]
         [AllureSubSuite("VerifySidebar")]
@@ -168,7 +168,7 @@ namespace BrokerTests
                 .VerifyTitleListOfTransactionsPg();
             Pages.SideBarLandlord
                 .ClickButtonBrokersSidebar();
-            Pages.Brokers
+            Pages.Agents
                 .VerifyTitleBrokersPg();
             Pages.SideBarLandlord
                 .ClickButtonOwnersSidebar();
@@ -214,8 +214,8 @@ namespace BrokerTests
             Pages.SideBarLandlord
                 .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare)
                 .ClickButtonBrokersSidebar();
-            Pages.Brokers
-                .ClickButtonCreateBrokerBrokersPage();
+            Pages.Agents
+                .ClickButtonCreateAgentAgentsPage();
             Pages.ModalWindowCreateNewBroker
                 .EnterFirstLastNameEmailPhnNmbrCellMdlWndw();
 
