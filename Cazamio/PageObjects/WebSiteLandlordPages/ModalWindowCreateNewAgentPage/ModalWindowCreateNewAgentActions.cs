@@ -9,26 +9,24 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage
+namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewAgentPage
 {
-    public partial class ModalWindowCreateNewBroker
+    public partial class ModalWindowCreateNewAgent
     {
         [AllureStep("EnterFirstLastNameEmailPhnNmbrCellMdlWndw")]
-        public ModalWindowCreateNewBroker EnterFirstLastNameEmailPhnNmbrCellMdlWndw()
+        public ModalWindowCreateNewAgent EnterFirstLastNameEmailPhnNmbrCellMdlWndw()
         {
             InputGeneral.InputFunctionWithClear(FieldInputFirstNameCrtNwBrkrOnMdlwndw, Name.FirstName());
             InputGeneral.InputFunctionWithClear(FieldInputLastNameCrtNwBrkrOnMdlwndw, Name.LastName());
-            //FieldInputEmailCrtNwBrkrOnMdlwndw.SendKeys("jhfhgfh");
             InputGeneral.InputFunctionWithClear(FieldInputEmailCrtNwBrkrOnMdlwndw, GenerateRandomDataHelper.RandomEmail(7) + NameDomen.PUTS_BOX);
-            //InputGeneral.InputFunctionWithClear(FieldInputEmailCrtNwBrkrOnMdlwndw, NameDomen.PUTS_BOX);
             InputGeneral.InputFunctionWithClear(FieldInputPhoneNumberCrtNwBrkrOnMdlwndw, GenerateRandomDataHelper.RandomPhoneNumber(10));
             InputGeneral.InputFunctionWithClear(FieldInputCellCrtNwBrkrOnMdlwndw, GenerateRandomDataHelper.RandomPhoneNumber(10));
 
             return this;
         }
 
-        [AllureStep("CopyEmailFromMdlWndwCreateBroker")]
-        public string CopyEmailFromMdlWndwCreateBroker()
+        [AllureStep("CopyEmailFromMdlWndwCreateAgent")]
+        public string CopyEmailFromMdlWndwCreateAgent()
         {
             WaitUntil.WaitSomeInterval(500);
             string copyEmail = Browser._Driver.FindElement(By.XPath("//input[@id = 'email']")).GetAttribute("value");
@@ -37,8 +35,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBr
             return copyEmailActual;
         }
 
-        [AllureStep("CopyEmailBeforeDogFromModalWindowCreateNewBroker")]
-        public string CopyEmailBeforeDogFromModalWindowCreateNewBroker()
+        [AllureStep("CopyEmailBeforeDogFromModalWindowCreateNewAgent")]
+        public string CopyEmailBeforeDogFromModalWindowCreateNewAgent()
         {
             WaitUntil.WaitSomeInterval(500);
             string copyPartEmail = FieldInputEmailCrtNwBrkrOnMdlwndw.GetAttribute("value");
@@ -48,18 +46,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBr
             return partEmail;
         }
 
-        //[AllureStep("CopyFirstNameFromMdlWndwCreateBroker")]
-        //public string CopyFirstNameFromMdlWndwCreateBroker()
-        //{
-        //    WaitUntil.WaitSomeInterval(500);
-        //    string copyFirstName = Browser._Driver.FindElement(By.XPath("//input[@id = 'first-name']")).GetAttribute("value");
-        //    string copyFirstNameActual = copyFirstName.ToString();
-
-        //    return copyFirstNameActual;
-        //}
-
-        [AllureStep("ClickButtonSaveCrtNwBrkrOnMdlwndw")]
-        public ModalWindowCreateNewBroker ClickButtonSaveCrtNwBrkrOnMdlwndw()
+        [AllureStep("ClickButtonSaveCrtNwAgntOnMdlwndw")]
+        public ModalWindowCreateNewAgent ClickButtonSaveCrtNwAgntOnMdlwndw()
         {
             Button.Click(ButtonSaveCrtNwBrkrOnMdlwndw);
 

@@ -64,8 +64,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
             return this;
         }
 
-        [AllureStep("VerifyOnlyBrokerUserNameRole")]
-        public SideBarLandlord VerifyOnlyBrokerUserNameRole(string getUserNameRoleActual)
+        [AllureStep("VerifyOnlyAgentUserNameRole")]
+        public SideBarLandlord VerifyOnlyAgentUserNameRole(string getUserNameRoleActual)
         {
             WaitUntil.WaitSomeInterval(1500);
             string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_AGENT;

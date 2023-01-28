@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage
+namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewAgentPage
 {
-    public partial class ModalWindowCreateNewBroker
+    public partial class ModalWindowCreateNewAgent
     {
         [FindsBy(How = How.XPath, Using = "//input[@id = 'first-name']")]
         public IWebElement FieldInputFirstNameCrtNwBrkrOnMdlwndw;
@@ -28,8 +28,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBr
         [FindsBy(How = How.XPath, Using = "//button[@class= 'middle primary-action absolute-loader ng-star-inserted']")]
         public IWebElement ButtonSaveCrtNwBrkrOnMdlwndw;
 
-        [FindsBy(How = How.XPath, Using = "//div[@class= 'success-container ng-star-inserted']//p[text() = 'New broker created successfully!']")]
-        public IWebElement MessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw;
+        [FindsBy(How = How.XPath, Using = "//div[@class= 'success-container ng-star-inserted']//p[text() = 'New agent created successfully!']")]
+        public IWebElement MessageNewAgentCreatedSuccessfullyCrtNwAgntOnMdlwndw;
 
         [FindsBy(How = How.XPath, Using = "//div[@class= 'input-msgs-error']")]
         public IWebElement ErrorFirstNameCrtNwBrkrOnMdlwndw;

@@ -35,14 +35,13 @@ namespace AgentTests
             Pages.LogInLandlord
                 .ClickLinkForgotPassword();
             Pages.ResetYourPassword
-                .EnterEmailBrokerForRstPsswrdPg()
+                .EnterEmailAgentForRstPsswrdPg()
                 .ClickButtonSendInstructionsRstPsswrdPg()
                 .VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg();
             Pages.JScriptExecutorHelper
                 .OpenNewTab();
             Browser._Driver.Navigate().GoToUrl(EndPoints.URL_PUTSBOX_EMAIL_STATIC_AGENT);
             Pages.PutsBox
-                //.VerifyTitleLetterCreateBroker()
                 .ClickButtonBodyHtml()
                 .ClickButtonResetPasswordForAdmin();
 

@@ -23,10 +23,10 @@ namespace BrokerTests
         [AllureSuite("Broker")]
         [AllureSubSuite("LogIn")]
 
-        //Date of publication: 25.08.2022.
+        //Date of publication: 
         //Version\Build:
         //Willingness for testing: Done.
-        //This test case is doing checking: The successfully LogIn as lanlord.
+        //This test case is doing checking: The successfully LogIn as broker.
         //Comment: 
 
         public void LogIn()
@@ -66,14 +66,13 @@ namespace BrokerTests
             Pages.LogInLandlord
                 .ClickLinkForgotPassword();
             Pages.ResetYourPassword
-                .EnterEmailLandlordForRstPsswrdPg()
+                .EnterEmailBrokerForRstPsswrdPg()
                 .ClickButtonSendInstructionsRstPsswrdPg()
                 .VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg();
             Pages.JScriptExecutorHelper
                 .OpenNewTab();
             Browser._Driver.Navigate().GoToUrl(EndPoints.URL_PUTSBOX_EMAIL_STATIC_BROKER);
             Pages.PutsBox
-                //.VerifyTitleLetterCreateBroker()
                 .ClickButtonBodyHtml()
                 .ClickButtonResetPasswordForAdmin();
 
@@ -100,7 +99,7 @@ namespace BrokerTests
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
-        //[Retry(2)]
+        [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Broker")]
         [AllureSubSuite("VerifySidebar")]
@@ -198,7 +197,7 @@ namespace BrokerTests
         //Date of publication:
         //Version\Build:
         //Willingness for testing: Done.
-        //This test case is doing checking: The successfully creaated a new broker.
+        //This test case is doing checking: The successfully creaated a new agent.
         //Comment: 
 
         public void CreateNewAgent()
@@ -216,15 +215,15 @@ namespace BrokerTests
                 .ClickButtonBrokersSidebar();
             Pages.Agents
                 .ClickButtonCreateAgentAgentsPage();
-            Pages.ModalWindowCreateNewBroker
+            Pages.ModalWindowCreateNewAgent
                 .EnterFirstLastNameEmailPhnNmbrCellMdlWndw();
 
-            string fullEmailPutsBox = Pages.ModalWindowCreateNewBroker.CopyEmailFromMdlWndwCreateBroker();
-            string partEmailPutsBox = Pages.ModalWindowCreateNewBroker.CopyEmailBeforeDogFromModalWindowCreateNewBroker();
+            string fullEmailPutsBox = Pages.ModalWindowCreateNewAgent.CopyEmailFromMdlWndwCreateAgent();
+            string partEmailPutsBox = Pages.ModalWindowCreateNewAgent.CopyEmailBeforeDogFromModalWindowCreateNewAgent();
 
-            Pages.ModalWindowCreateNewBroker
-                .ClickButtonSaveCrtNwBrkrOnMdlwndw()
-                .VerifyMessageNewBrokerCreatedSuccessfullyCrtNwBrkrOnMdlwndw();
+            Pages.ModalWindowCreateNewAgent
+                .ClickButtonSaveCrtNwAgntOnMdlwndw()
+                .VerifyMessageNewAgentCreatedSuccessfullyCrtNwAgntOnMdlwndw();
             KeyBoardActions.ClickEscapeButton();
             Pages.SideBarLandlord
                 .ClickButtonLogOutSidebar();
@@ -249,7 +248,7 @@ namespace BrokerTests
             string getUserNameRoleCompareBroker = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyOnlyBrokerUserNameRole(getUserNameRoleCompareBroker);
+                .VerifyOnlyAgentUserNameRole(getUserNameRoleCompareBroker);
 
             WaitUntil.WaitSomeInterval(2000);
         }

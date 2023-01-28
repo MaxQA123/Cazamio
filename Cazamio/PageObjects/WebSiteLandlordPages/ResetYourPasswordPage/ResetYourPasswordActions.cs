@@ -10,16 +10,16 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage
 {
     public partial class ResetYourPassword
     {
-        [AllureStep("EnterEmailBrokerForRstPsswrdPg")]
-        public ResetYourPassword EnterEmailBrokerForRstPsswrdPg()
+        [AllureStep("EnterEmailAgentForRstPsswrdPg")]
+        public ResetYourPassword EnterEmailAgentForRstPsswrdPg()
         {
             InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
 
             return this;
         }
 
-        [AllureStep("EnterEmailLandlordForRstPsswrdPg")]
-        public ResetYourPassword EnterEmailLandlordForRstPsswrdPg()
+        [AllureStep("EnterEmailBrokerForRstPsswrdPg")]
+        public ResetYourPassword EnterEmailBrokerForRstPsswrdPg()
         {
             InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
 
@@ -43,9 +43,6 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage
             Browser._Driver.SwitchTo().Window(tabsList[3]);
             InputGeneral.InputFunctionWithClear(FieldInputNewPasswordRstPsswrdPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
             InputGeneral.InputFunctionWithClear(FieldInputConfirmPasswordRstPsswrdPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
-
-            //InputGeneral.InputFunctionWithClear(FieldInputNewPasswordRstPsswrdPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
-            //InputGeneral.InputFunctionWithClear(FieldInputConfirmPasswordRstPsswrdPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
 
             return this;
         }

@@ -13,7 +13,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.AgentsPage
         [AllureStep("ClickButtonCreateAgentAgentsPage")]
         public Agents ClickButtonCreateAgentAgentsPage()
         {
-            Button.Click(ButtonCreateAgentBrkrsPage);
+            WaitUntil.WaitSomeInterval(500);
+            Button.Click(ButtonCreateAgentAgntsPage);
 
             return this;
         }

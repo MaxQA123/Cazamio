@@ -14,6 +14,6 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.AgentsPage
         public IWebElement TitleAgentsPage;
 
         [FindsBy(How = How.XPath, Using = ("//button[@class = 'middle primary-action absolute-loader']"))]
-        public IWebElement ButtonCreateAgentBrkrsPage;
+        public IWebElement ButtonCreateAgentAgntsPage;
     }
 }
