@@ -15,7 +15,7 @@ namespace CazamioProject.BaseTestsDBBrokers
     [TestFixture]
     [AllureNUnit]
 
-    public class BrokersTestsDB
+    public class AgentsTestsDB
     {
         [Test]
         [AllureTag("Regression")]
@@ -23,7 +23,7 @@ namespace CazamioProject.BaseTestsDBBrokers
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBBroker")]
-        [AllureSubSuite("RecordsDBAboutNewBroker")]
+        [AllureSubSuite("RecordsDBAboutNewAgentr")]
 
         //Date of publication:
         //Version\Build:
@@ -32,17 +32,17 @@ namespace CazamioProject.BaseTestsDBBrokers
         //Comment: The table "Lanlords".
         //Path to cheking's: 
 
-        public void RecordsDBAboutNewBroker()
+        public void RecordsDBAboutNewAgent()
         {
             string newBroker = TestDataDBForWebSiteAdmin.BROKER_AXEL_FOLLY_LANDLORDID;
 
-            string userIdBroker = DBBrokers.GetUserIdNewBrokerFromBrokers();
+            string userIdBroker = DBAgents.GetUserIdNewAgentFromBrokers();
             Console.WriteLine($"{userIdBroker} :UserId for new broker {newBroker} from table Brokers");
 
-            string roleIdBroker = DBBrokers.GetRoleIdNewBrokerFromAspNetUserRoles();
+            string roleIdBroker = DBAgents.GetRoleIdNewAgentFromAspNetUserRoles();
             Console.WriteLine($"{roleIdBroker} :RoleId for new admin {newBroker} from table AspNetUserRoles");
 
-            string marketplaceIdBroker = DBBrokers.GetMarketplaceIdFromBrokers();
+            string marketplaceIdBroker = DBAgents.GetMarketplaceIdFromBrokers();
             Console.WriteLine($"{marketplaceIdBroker} :MarketplaceId for broker {newBroker} from table Brokers");
 
             Assert.Multiple(() =>
@@ -60,8 +60,8 @@ namespace CazamioProject.BaseTestsDBBrokers
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingDBBroker")]
-        [AllureSubSuite("RelatedNewBrokerWithAdmin")]
+        [AllureSuite("TestingDBAgent")]
+        [AllureSubSuite("RelatedNewAgentrWithAdmin")]
 
         //Date of publication:
         //Version\Build:
@@ -70,21 +70,47 @@ namespace CazamioProject.BaseTestsDBBrokers
         //Comment: 
         //Path to cheking's: 
 
-        public void RelatedNewBrokerWithAdmin()
+        public void RelatedNewAgentWithAdmin()
         {
             string brokerName = "Fred Dred";
 
-            string idBroker = DBBrokers.GetIdBrokerFromBrokersT("joingilbert901broker@gmail.com");
+            string idBroker = DBAgents.GetIdAgentFromBrokersT("joingilbert901broker@gmail.com");
             Console.WriteLine($"{idBroker} :Id for broker {brokerName} from table Brokers");
             
-            string landlordIdByEmail = DBBrokers.GetLandlordIdByBrokerId("joingilbert901broker@gmail.com");
+            string landlordIdByEmail = DBAgents.GetLandlordIdByAgentId("joingilbert901broker@gmail.com");
             Console.WriteLine($"{landlordIdByEmail} :LandlordId by Email for broker {brokerName} from table LandlordBrokers");
             
-            string landlordIdByBrokerid = DBBrokers.GetLandlordIdForNewBroker();
+            string landlordIdByBrokerid = DBAgents.GetLandlordIdForNewAgent();
             Console.WriteLine($"{landlordIdByBrokerid} :LandlordId for new broker {brokerName} from table LandlordBrokers");
 
             Assert.AreEqual(landlordIdByEmail, landlordIdByBrokerid);
             Console.WriteLine($"LandlordId by email broker AspNetUsers: {landlordIdByEmail} = {landlordIdByBrokerid} LandlordId for new broker in the table LandlordBrokers");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBAgent")]
+        [AllureSubSuite("DeletedRecordsInTableBrokersLandlordBrokersDBAboutAgent")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
+        //Comment: The table "Lanlords".
+        //Path to cheking's: 
+
+        public void DeletedRecordsInTableBrokersLandlordBrokersDBAboutAgent()
+        {
+            string agentName = TestDataDBForWebSiteAdmin.DELETED_AGENT_FIRST_LAST_NAME;
+
+            string oneDeletedTableBrokers = DBAgents.GetDeleteAgentTablesBrokers("j8h5g3g3dd@putsbox.com");
+            Console.WriteLine($"{oneDeletedTableBrokers} :Displayed 1 for agent {agentName} from table Brokers");
+
+            string oneDeletedTableLandlordBrokers = DBAgents.GetDeleteAgentTablesBrokers("j8h5g3g3dd@putsbox.com");
+            Console.WriteLine($"{oneDeletedTableLandlordBrokers} :Displayed 1 for agent {agentName} from table Brokers");
         }
     }
 }

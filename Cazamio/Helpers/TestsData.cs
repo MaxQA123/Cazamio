@@ -93,6 +93,7 @@ namespace CazamioProgect.Helpers
 
         public const string NEW_AGENT_EMAIL = "twysb@putsbox.com";
         public const string NEW_AGENT_FIRST_LAST_NAME = "Pauline Doyle";
+        public const string DELETED_AGENT_FIRST_LAST_NAME = "Creator-martin Testing";
 
         public const string BROKER_AXEL_FOLLY_LANDLORDID = "2";
         public const string BROKER_FIRST_NAME = "Luigi";

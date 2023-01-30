@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace CazamioProject.Helpers
 {
-    public class DBBrokers
+    public class DBAgents
     {
-        public static string GetUserIdNewBrokerFromBrokers()
+        public static string GetUserIdNewAgentFromBrokers()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -32,7 +32,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetRoleIdNewBrokerFromAspNetUserRoles()
+        public static string GetRoleIdNewAgentFromAspNetUserRoles()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -76,7 +76,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetIdBrokerFromBrokersT(string idBroker)
+        public static string GetIdAgentFromBrokersT(string idBroker)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -98,7 +98,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetLandlordIdByBrokerId(string idBroker)
+        public static string GetLandlordIdByAgentId(string idBroker)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -122,13 +122,56 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetLandlordIdForNewBroker()
+        public static string GetLandlordIdForNewAgent()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT LandlordId FROM LandlordBrokers" +
                     " WHERE BrokerId = (SELECT MAX(BrokerId) FROM LandlordBrokers);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetDeleteAgentTablesBrokers(string idAgent)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT IsDeleted FROM Brokers WHERE UserId IN" +
+                      " (SELECT Id FROM AspNetUsers WHERE Email = 'j8h5g3g3dd@putsbox.com');", db);
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = idAgent;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetDeleteAgentTablesLandlordBrokers()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT IsDeleted FROM LandlordBrokers WHERE Id IN" +
+                         " (SELECT Id FROM Brokers WHERE UserId = 'f9197d23-efd2-4265-8035-eddd7a18b720');", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
