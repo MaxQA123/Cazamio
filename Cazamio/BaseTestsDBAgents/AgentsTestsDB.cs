@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProject.BaseTestsDBBrokers
+namespace CazamioProject.BaseTestsDBAgents
 {
     [TestFixture]
     [AllureNUnit]
@@ -106,11 +106,11 @@ namespace CazamioProject.BaseTestsDBBrokers
         {
             string agentName = TestDataDBForWebSiteAdmin.DELETED_AGENT_FIRST_LAST_NAME;
 
-            string oneDeletedTableBrokers = DBAgents.GetDeleteAgentTablesBrokers("j8h5g3g3dd@putsbox.com");
-            Console.WriteLine($"{oneDeletedTableBrokers} :Displayed 1 for agent {agentName} from table Brokers");
+            string oneDeletedTableBrokers = DBAgents.GetDeleteAgentTablesBrokers("agent175jibs1d@gmail.com");
+            Console.WriteLine($"{oneDeletedTableBrokers} :Displayed 1 for agent {agentName} from table LandlordBrokers");
 
-            string oneDeletedTableLandlordBrokers = DBAgents.GetDeleteAgentTablesBrokers("j8h5g3g3dd@putsbox.com");
-            Console.WriteLine($"{oneDeletedTableLandlordBrokers} :Displayed 1 for agent {agentName} from table Brokers");
+            string oneDeletedTableLandlordBrokers = DBAgents.GetDeleteAgentTablesBrokers("agent175jibs1d@gmail.com");
+            Console.WriteLine($"{oneDeletedTableLandlordBrokers} :Displayed 1 for agent {agentName} from table LandlordBrokers");
         }
     }
 }

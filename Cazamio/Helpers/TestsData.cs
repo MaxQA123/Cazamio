@@ -45,6 +45,9 @@ namespace CazamioProgect.Helpers
         public const string ID_NAME_ROLE_ADMIN = "ee430d91-8a3b-45a9-891c-94cb16935d49";
         public const string MARKETPLACE_ID_TESTLANDLORD_DEMO = "1";
         public const string MARKETPLACE_ID_TESTLANDLORDTWO_DEMO = "3";
+        public const string TRUE = "True";
+        public const string FALSE = "False";
+
     }
 
     public class TestDataDBPayments
