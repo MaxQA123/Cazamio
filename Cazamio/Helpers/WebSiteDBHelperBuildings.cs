@@ -17,7 +17,7 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id" +
-                    " FROM Buildings" + " WHERE BuildingName = 'Created LUIGI 1234 ^&$654'", db);
+                    " FROM Buildings" + $" WHERE BuildingName = @BuildingName", db);
                 command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = idBuilding;
                 db.Open();
 
@@ -39,8 +39,8 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id" +
-                    " FROM Buildings" + " WHERE LLCName = 'LLC Luigi FULL'", db);
-                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = idBuilding;
+                    " FROM Buildings" + " WHERE LLCName = @LLCName", db);
+                command.Parameters.AddWithValue("@LLCName", DbType.String).Value = idBuilding;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -61,7 +61,7 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT LandlordId" +
-                    " FROM Buildings" + " WHERE BuildingName = 'Created LUIGI 1234 ^&$654'", db);
+                    " FROM Buildings" + " WHERE BuildingName = @BuildingName", db);
                 command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = landlordId;
                 db.Open();
 
@@ -83,8 +83,8 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT MarketplaceId FROM Buildings WHERE AddressId IN" +
-                      " (SELECT Id FROM Addresses WHERE Street = '12 2708 Lords Hill Road'); ", db);
-                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = marketplaceId;
+                      " (SELECT Id FROM Addresses WHERE Street = @Street); ", db);
+                command.Parameters.AddWithValue("@Street", DbType.String).Value = marketplaceId;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -105,7 +105,7 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT MarketplaceId FROM Buildings" +
-                    " WHERE BuildingName = 'Created LUIGI 1234 ^&$654';", db);
+                    " WHERE BuildingName = @BuildingName;", db);
                 command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = marketplaceId;
                 db.Open();
 

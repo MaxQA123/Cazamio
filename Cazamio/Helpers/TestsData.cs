@@ -97,11 +97,13 @@ namespace CazamioProgect.Helpers
         public const string NEW_AGENT_EMAIL = "twysb@putsbox.com";
         public const string NEW_AGENT_FIRST_LAST_NAME = "Pauline Doyle";
         public const string DELETED_AGENT_FIRST_LAST_NAME = "Creator-martin Testing";
+        public const string DELETED_AGENT_EMAIL = "j8h5g3g3dd@putsbox.com";
 
         public const string BROKER_AXEL_FOLLY_LANDLORDID = "2";
         public const string BROKER_FIRST_NAME = "Luigi";
-        public const string BUILDIN_NAME = "New Beautifull";
-        public const string BUILDING_LLC_NAME = "LLC beauty house";
+        public const string BUILDIN_NAME = "Creator Martin two";
+        public const string BUILDING_LLC_NAME = "LLC Chudo";
+        public const string BUILDING_ADDRESS = "510 East 11th Street";
         public const string BUILDINGID = "22";
         public const string UNIT_NUMBER = "4E";
         public const string ID_TABLE_APARTMENTS_APARTMENTID = "83";

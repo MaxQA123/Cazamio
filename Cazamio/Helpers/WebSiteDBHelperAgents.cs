@@ -143,13 +143,13 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetDeleteAgentTablesBrokers(string idAgent)
+        public static string GetDeleteAgentTableBrokers(string idAgent)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT IsDeleted FROM Brokers WHERE UserId IN" +
-                      " (SELECT Id FROM AspNetUsers WHERE Email = 'agent175jibs1d@gmail.com');", db);
+                      $" (SELECT Id FROM AspNetUsers WHERE Email = @Email);", db);
                 command.Parameters.AddWithValue("@Email", DbType.String).Value = idAgent;
                 db.Open();
 
@@ -165,14 +165,14 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetDeleteAgentTablesLandlordBrokers(string idAgent)
+        public static string GetDeleteAgentTableLandlordBrokers(string idAgent)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT IsDeleted FROM LandlordBrokers WHERE Id IN" +
                            " (SELECT Id FROM Brokers WHERE UserId IN" +
-                           " (SELECT Id FROM AspNetUsers WHERE Email = 'agent175jibs1d@gmail.com'));", db);
+                           $" (SELECT Id FROM AspNetUsers WHERE Email = @Email));", db);
                 command.Parameters.AddWithValue("@Email", DbType.String).Value = idAgent;
                 db.Open();
 

@@ -99,18 +99,30 @@ namespace CazamioProject.BaseTestsDBAgents
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: The table "Lanlords".
+        //Comment: The table "Brokers", "LandlordBrokers".
         //Path to cheking's: 
 
         public void DeletedRecordsInTableBrokersLandlordBrokersDBAboutAgent()
         {
             string agentName = TestDataDBForWebSiteAdmin.DELETED_AGENT_FIRST_LAST_NAME;
+            string tableBrokers = TestDataDBNamesTables.TABLE_NAME_BROKERS;
+            string tableLandlordBrokers = TestDataDBNamesTables.TABLE_NAME_LANDLORD_BROKERS;
 
-            string oneDeletedTableBrokers = DBAgents.GetDeleteAgentTablesBrokers("agent175jibs1d@gmail.com");
-            Console.WriteLine($"{oneDeletedTableBrokers} :Displayed 1 for agent {agentName} from table LandlordBrokers");
+            string oneDeletedTableBrokers = DBAgents.GetDeleteAgentTableBrokers($"{TestDataDBForWebSiteAdmin.DELETED_AGENT_EMAIL}");
+            Console.WriteLine($"{oneDeletedTableBrokers} :Displayed 1 for agent {agentName} from table {tableBrokers}");
 
-            string oneDeletedTableLandlordBrokers = DBAgents.GetDeleteAgentTablesBrokers("agent175jibs1d@gmail.com");
-            Console.WriteLine($"{oneDeletedTableLandlordBrokers} :Displayed 1 for agent {agentName} from table LandlordBrokers");
+            string oneDeletedTableLandlordBrokers = DBAgents.GetDeleteAgentTableBrokers($"{TestDataDBForWebSiteAdmin.DELETED_AGENT_EMAIL}");
+            Console.WriteLine($"{oneDeletedTableLandlordBrokers} :Displayed 1 for agent {agentName} from table {tableLandlordBrokers}");
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(oneDeletedTableBrokers, TestDataDBGeneral.TRUE);
+                Console.WriteLine($"Deleted agent in table Brokers: {oneDeletedTableBrokers} = {TestDataDBGeneral.TRUE} Deleted agent in table {tableBrokers}");
+
+                Assert.AreEqual(oneDeletedTableLandlordBrokers, TestDataDBGeneral.TRUE);
+                Console.WriteLine($"Deleted agent in table LandlordBrokers: {oneDeletedTableLandlordBrokers} = {TestDataDBGeneral.TRUE} Deleted agent in table {tableLandlordBrokers}");
+
+            });
         }
     }
 }
