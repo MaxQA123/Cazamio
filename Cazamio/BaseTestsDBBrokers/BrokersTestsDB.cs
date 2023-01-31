@@ -10,11 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProject.BaseTestsDBAdmins
+namespace CazamioProject.BaseTestsDBBrokers
 {
     [TestFixture]
     [AllureNUnit]
-    public class AdminsTestsDB
+    public class BrokersTestsDB
     {
         [Test]
         [AllureTag("Regression")]
@@ -35,13 +35,13 @@ namespace CazamioProject.BaseTestsDBAdmins
         {
             string newAdmin = TestDataDBForWebSiteAdmin.BROKER_AXEL_FOLLY_LANDLORDID;
 
-            string userIdAdmin = DBAdmins.GetUserIdNewAdminFromLandlords();
+            string userIdAdmin = DBBrokers.GetUserIdNewAdminFromLandlords();
             Console.WriteLine($"UserId for new admin {newAdmin} from table Landlords: {userIdAdmin}");
 
-            string roleIdAdmin = DBAdmins.GetRoleIdNewAdminFromAspNetUserRoles();
+            string roleIdAdmin = DBBrokers.GetRoleIdNewAdminFromAspNetUserRoles();
             Console.WriteLine($"RoleId for new admin {newAdmin} from table AspNetUserRoles: {roleIdAdmin}");
 
-            string marketplaceIdByAdminEmail = DBAdmins.GetMarketplaceIdFromLandlordsT("twysb@putsbox.com");
+            string marketplaceIdByAdminEmail = DBBrokers.GetMarketplaceIdFromLandlordsT("twysb@putsbox.com");
             Console.WriteLine($"MarketplaceId for admin {newAdmin} from table Landlords: {marketplaceIdByAdminEmail}");
             
             Assert.Multiple(() =>
@@ -73,11 +73,11 @@ namespace CazamioProject.BaseTestsDBAdmins
         {
             string adminName = "Fred Dred";
 
-            string idAdmin = DBAdmins.GetIdAdminFromLandlordsT("su1per2ad3min@gmail.com");
+            string idAdmin = DBBrokers.GetIdAdminFromLandlordsT("su1per2ad3min@gmail.com");
             Console.WriteLine($"Id for admin {adminName} from table Landlords: {idAdmin}");
-            string marketplaceIdByAdminEmail = DBAdmins.GetMarketplaceIdFromLandlordsT("su1per2ad3min@gmail.com");
+            string marketplaceIdByAdminEmail = DBBrokers.GetMarketplaceIdFromLandlordsT("su1per2ad3min@gmail.com");
             Console.WriteLine($"MarketplaceId for admin {adminName} from table Landlords: {marketplaceIdByAdminEmail}");
-            string marketplaceIdForNewAdmin = DBAdmins.GetMarketplaceIdForNewAdmin();
+            string marketplaceIdForNewAdmin = DBBrokers.GetMarketplaceIdForNewAdmin();
             Console.WriteLine($"MarketplaceId for admin {adminName} from table Landlords: {marketplaceIdForNewAdmin}");
             
             Assert.AreEqual(marketplaceIdByAdminEmail, marketplaceIdForNewAdmin);

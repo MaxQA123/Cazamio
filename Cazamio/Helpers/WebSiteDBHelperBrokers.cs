@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CazamioProject.Helpers
 {
-    public class DBAdmins
+    public class DBBrokers
     {
         public static string GetIdForAdminFromAspNetUsersT()
         {

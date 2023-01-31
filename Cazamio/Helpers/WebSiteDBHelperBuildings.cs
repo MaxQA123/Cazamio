@@ -120,5 +120,26 @@ namespace CazamioProject.Helpers
             }
             return data;
         }
+
+        public static string GetAddressesIdInBuildingsNewBuilding()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT AddressId FROM Buildings" +
+                    " WHERE AddressId = (SELECT MAX(AddressId) FROM Buildings);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
     }
 }

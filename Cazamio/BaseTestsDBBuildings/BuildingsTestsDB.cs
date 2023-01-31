@@ -23,6 +23,29 @@ namespace CazamioProgect.BaseTestsDBBuildings
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBBuilding")]
+        [AllureSubSuite("RelatedBuidingBroker")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
+        //Comment: The table "Buildings".
+        //Path to cheking's: 
+
+        public void NewBuilding()
+        {
+            string buildingName = TestDataDBForWebSiteAdmin.BUILDIN_NAME;
+
+            string newAddressId = DBBuildings.GetAddressesIdInBuildingsNewBuilding();
+            Console.WriteLine($"{newAddressId} :AddressesId building for {buildingName} from table Buildings");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBBuilding")]
         [AllureSubSuite("DisplayingIdBuildingByName")]
 
         //Date of publication:
@@ -115,7 +138,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBBuilding")]
-        [AllureSubSuite("CompareBuidingAdmin")]
+        [AllureSubSuite("RelatedBuidingBroker")]
 
         //Date of publication:
         //Version\Build:
@@ -124,7 +147,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
         //Comment: The table "Buildings".
         //Path to cheking's: 
 
-        public void RelatedBuidingAdmin()
+        public void RelatedBuidingBroker()
         {
             string buildingLlcName = TestDataDBForWebSiteAdmin.BUILDING_LLC_NAME;
 
@@ -137,7 +160,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
             string landlordIdForBuilding = DBBuildings.GetLandlordIdForBuilding(TestDataDBForWebSiteAdmin.BUILDIN_NAME);
             Console.WriteLine($"{landlordIdForBuilding} :LandlordId for building {buildingLlcName} in the table Buildings");
 
-            string idAdmin = DBAdmins.GetIdForAdminFromLandlords(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
+            string idAdmin = DBBrokers.GetIdForAdminFromLandlords(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
             Console.WriteLine($"{idAdmin} :Id for admin from table Landlords");
 
             string marketplaceIdForBuildingByAddress = DBBuildings.GetMarketplaceIdForBuildingByAddress(TestDataDBForWebSiteAdmin.BUILDING_ADDRESS);

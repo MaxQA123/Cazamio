@@ -47,7 +47,7 @@ namespace CazamioProject.BaseTestsDBOwners
             Console.WriteLine($"MarketplaceId for owner {ownerName} from table Owners: {ownerId}");
             Assert.AreEqual(idOwner, ownerId);
             Console.WriteLine($"Id for owner {ownerName} from Owners: {idOwner} = {ownerId} OwnerId for owner {ownerName} in the table OwnerManagements");
-            string idAdmin = DBAdmins.GetIdAdminFromLandlordsT("su1per2ad3min@gmail.com");
+            string idAdmin = DBBrokers.GetIdAdminFromLandlordsT("su1per2ad3min@gmail.com");
             Console.WriteLine($"Id for admin {adminName} from table Landlords: {idAdmin}");
             Assert.AreEqual(landlordId, idAdmin);
             Console.WriteLine($"LandlordId for owner {ownerName} from table Owners: {landlordId} = {idAdmin} IdAdmin for owner {ownerName} in the table Landlords");
