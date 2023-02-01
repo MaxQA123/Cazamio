@@ -141,5 +141,68 @@ namespace CazamioProject.Helpers
             }
             return data;
         }
+
+        public static string GetAddressesIdInAddressesNewBuilding()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM Addresses" +
+                    " WHERE Street = (SELECT MAX(Street) FROM Addresses);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetMarketplaceIdInBuildingsNewBuilding()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT MarketplaceId FROM" +
+                    " Buildings WHERE BuildingName = (SELECT MAX(BuildingName) FROM Buildings);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetLandlordIdInBuildingsNewBuilding()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT LandlordId FROM" +
+                    " Buildings WHERE LLCName = (SELECT MAX(LLCNAME) FROM Buildings);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
     }
 }

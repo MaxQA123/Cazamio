@@ -21,36 +21,48 @@ namespace CazamioProject.BaseTestsDBBrokers
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingDBAdmin")]
-        [AllureSubSuite("RecordsDBAboutNewAdmin")]
+        [AllureSuite("TestingDBBroker")]
+        [AllureSubSuite("RecordsDBAboutNewBroker")]
 
         //Date of publication:
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: The table "Lanlords".
+        //Comment: The table "Lanlords", "AspNetUserRoles", "AspNetUsers".
         //Path to cheking's: 
 
-        public void RecordsDBAboutNewAdmin()
+        public void RecordsDBAboutNewBroker()
         {
-            string newAdmin = TestDataDBForWebSiteAdmin.BROKER_AXEL_FOLLY_LANDLORDID;
+            string newBroker = TestDataDBForWebSiteAdmin.NEW_BROKER_FIRST_LAST_NAME;
 
-            string userIdAdmin = DBBrokers.GetUserIdNewAdminFromLandlords();
-            Console.WriteLine($"UserId for new admin {newAdmin} from table Landlords: {userIdAdmin}");
+            string IdNewBroker = DBBrokers.GetIdForBrokerFromAspNetUsers(TestDataDBForWebSiteAdmin.NEW_BROKER_EMAIL);
+            Console.WriteLine($"{IdNewBroker}: Id for new broker {newBroker} from table AspNetUsers");
 
-            string roleIdAdmin = DBBrokers.GetRoleIdNewAdminFromAspNetUserRoles();
-            Console.WriteLine($"RoleId for new admin {newAdmin} from table AspNetUserRoles: {roleIdAdmin}");
+            string marketplaceIdNewBroker = DBBrokers.GetMarketplaceIdForBrokerFromAspNetUsers(TestDataDBForWebSiteAdmin.NEW_BROKER_EMAIL);
+            Console.WriteLine($"{marketplaceIdNewBroker}: Id for new broker {newBroker} from table AspNetUsers");
 
-            string marketplaceIdByAdminEmail = DBBrokers.GetMarketplaceIdFromLandlordsT("twysb@putsbox.com");
-            Console.WriteLine($"MarketplaceId for admin {newAdmin} from table Landlords: {marketplaceIdByAdminEmail}");
-            
+            //string userIdAdmin = DBBrokers.GetUserIdNewAdminFromLandlords();
+            //Console.WriteLine($"UserId for new broker {newBroker} from table Landlords: {userIdAdmin}");
+
+            //string roleIdAdmin = DBBrokers.GetRoleIdNewAdminFromAspNetUserRoles();
+            //Console.WriteLine($"RoleId for new broker {newBroker} from table AspNetUserRoles: {roleIdAdmin}");
+
+            //string marketplaceIdByAdminEmail = DBBrokers.GetMarketplaceIdFromLandlordsT("twysb@putsbox.com");
+            //Console.WriteLine($"MarketplaceId for broker {newBroker} from table Landlords: {marketplaceIdByAdminEmail}");
+
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(roleIdAdmin, TestDataDBGeneral.ID_NAME_ROLE_ADMIN);
-                Console.WriteLine($"RoleId a new admin from table AspNetUserRoles: {roleIdAdmin} = {TestDataDBGeneral.ID_NAME_ROLE_ADMIN} Id for admin from table AspNetUsers");
+                Assert.AreEqual(IdNewBroker, TestDataDBForWebSiteAdmin.NEW_BROKER_ID);
+                Console.WriteLine($"Id a new broker from table AspNetUsers: {IdNewBroker} = {TestDataDBForWebSiteAdmin.NEW_BROKER_ID} Id for broker ER");
 
-                Assert.AreEqual(marketplaceIdByAdminEmail, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
-                Console.WriteLine($"MarketplaceId admin for a new admin AR: {marketplaceIdByAdminEmail} = {TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId admin for a new admin ER");
+                Assert.AreEqual(marketplaceIdNewBroker, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+                Console.WriteLine($"MarketplaceId a new broker from table AspNetUsers: {marketplaceIdNewBroker} = {TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId for broker ER");
+
+                //Assert.AreEqual(roleIdAdmin, TestDataDBGeneral.ID_NAME_ROLE_BROKER);
+                //Console.WriteLine($"RoleId a new broker from table AspNetUserRoles: {roleIdAdmin} = {TestDataDBGeneral.ID_NAME_ROLE_BROKER} Id for admin from table AspNetUsers");
+
+                //Assert.AreEqual(marketplaceIdByAdminEmail, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+                //Console.WriteLine($"MarketplaceId broker for a new admin AR: {marketplaceIdByAdminEmail} = {TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId admin for a new admin ER");
             });
         }
 
@@ -59,7 +71,7 @@ namespace CazamioProject.BaseTestsDBBrokers
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingDBAdmin")]
+        [AllureSuite("TestingDBBroker")]
         [AllureSubSuite("RelatedUserIdAdminWithMarkeplaceId")]
 
         //Date of publication:

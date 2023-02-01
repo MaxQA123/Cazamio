@@ -11,13 +11,58 @@ namespace CazamioProject.Helpers
 {
     public class DBBrokers
     {
-        public static string GetIdForAdminFromAspNetUsersT()
+        public static string GetIdForBrokerFromAspNetUsers(string idBroker)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT Id" +
-                    " FROM AspNetUsers" + " WHERE UserName = 'testlivelandlord@gmail.com'", db);
+                SqlCommand command = new("SELECT Id FROM" +
+                    " AspNetUsers WHERE Email = @Email;", db);
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = idBroker;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetMarketplaceIdForBrokerFromAspNetUsers(string idBroker)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT MarketplaceId FROM" +
+                    " AspNetUsers WHERE Email = @Email;", db);
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = idBroker;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetIdForBrokerFromLanlords(string idBroker)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM Landlords" +
+                    " WHERE UserId = @UserId;", db);
+                command.Parameters.AddWithValue("@UserId", DbType.String).Value = idBroker;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

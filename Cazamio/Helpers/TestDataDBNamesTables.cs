@@ -9,6 +9,7 @@ namespace CazamioProject.Helpers
     public class TestDataDBNamesTables
     {
         public const string TABLE_NAME_BROKERS = "Brokers";
+        public const string TABLE_NAME_LANDLORDS = "Landlords";
         public const string TABLE_NAME_LANDLORD_BROKERS = "LandlordBrokers";
     }
 }

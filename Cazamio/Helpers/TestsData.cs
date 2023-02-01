@@ -41,8 +41,8 @@ namespace CazamioProgect.Helpers
     {
         public const string ID_NAME_ROLE_TENANT = "726b52a7-a146-4a18-b2cd-b133c377c715";
         public const string ID_NAME_ROLE_SUPER_ADMIN = "86779821-785f-4710-8d0c-2cc4ab5af6a9";
-        public const string ID_NAME_ROLE_BROKER = "a6841be6-7bc6-4510-bf70-bd8efc887486";
-        public const string ID_NAME_ROLE_ADMIN = "ee430d91-8a3b-45a9-891c-94cb16935d49";
+        public const string ID_NAME_ROLE_AGENT = "a6841be6-7bc6-4510-bf70-bd8efc887486";
+        public const string ID_NAME_ROLE_BROKER = "de0e57c0-6b1d-4f43-8640-f5592382c8be";
         public const string MARKETPLACE_ID_TESTLANDLORD_DEMO = "1";
         public const string MARKETPLACE_ID_TESTLANDLORDTWO_DEMO = "3";
         public const string TRUE = "True";
@@ -91,8 +91,9 @@ namespace CazamioProgect.Helpers
 
     public class TestDataDBForWebSiteAdmin
     {
-        public const string NEW_BROKER_EMAIL = "twysb@putsbox.com";
-        public const string NEW_BROKER_FIRST_LAST_NAME = "Pauline Doyle";
+        public const string NEW_BROKER_EMAIL = "broker7djil@putsbox.com";
+        public const string NEW_BROKER_FIRST_LAST_NAME = "Djill Coneri";
+        public const string NEW_BROKER_ID = "1d1d8a02-b40a-42c4-b59f-dd0313bb1613";
 
         public const string NEW_AGENT_EMAIL = "twysb@putsbox.com";
         public const string NEW_AGENT_FIRST_LAST_NAME = "Pauline Doyle";
