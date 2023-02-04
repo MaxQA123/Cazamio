@@ -83,7 +83,7 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT MarketplaceId FROM Buildings WHERE AddressId IN" +
-                      " (SELECT Id FROM Addresses WHERE Street = @Street); ", db);
+                      " (SELECT Id FROM Addresses WHERE Street = @Street);", db);
                 command.Parameters.AddWithValue("@Street", DbType.String).Value = marketplaceId;
                 db.Open();
 

@@ -55,7 +55,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetIdForBrokerFromLanlords()
+        public static string GetIdLastForBrokerFromLanlords()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -101,14 +101,14 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetIdAdminFromLandlordsT(string idAdmin)
+        public static string GetIdForBrokerFromLandlords(string idBroker)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id FROM Landlords WHERE UserId IN " +
-                "(SELECT Id FROM AspNetUsers WHERE Email = 'su1per2ad3min@gmail.com')", db);
-                command.Parameters.AddWithValue("@Email", DbType.String).Value = idAdmin;
+                "(SELECT Id FROM AspNetUsers WHERE Email = @Email)", db);
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = idBroker;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -123,7 +123,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetUserIdNewAdminFromLandlords()
+        public static string GetUserIdNewBrokerFromLandlords()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -144,7 +144,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetRoleIdNewAdminFromAspNetUserRoles()
+        public static string GetRoleIdNewBrokerFromAspNetUserRoles()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -166,13 +166,13 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetMarketplaceIdFromLandlordsT(string idMarketplace)
+        public static string GetMarketplaceIdBrokerFromLandlords(string idMarketplace)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT MarketplaceId FROM Landlords WHERE UserId IN " +
-                "(SELECT Id FROM AspNetUsers WHERE Email = 'twysb@putsbox.com')", db);
+                "(SELECT Id FROM AspNetUsers WHERE Email = @Email)", db);
                 command.Parameters.AddWithValue("@Email", DbType.String).Value = idMarketplace;
                 db.Open();
 
@@ -188,13 +188,37 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetMarketplaceIdForNewAdmin()
+        public static string GetRoleNameFromAspNetRoles(string roleName)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT MarketplaceId FROM Landlords" +
-                    " WHERE Id = (SELECT MAX(Id) FROM Landlords);", db);
+                SqlCommand command = new("SELECT Name FROM AspNetRoles WHERE Id IN" +
+                           " (SELECT RoleId FROM AspNetUserRoles WHERE UserId IN" +
+                           " (SELECT Id FROM AspNetUsers WHERE Email = @Email));", db);
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = roleName;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetFirstNameFromAspNetUsers(string firstName)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT FirstName" +
+                    " FROM AspNetUsers WHERE Email = @Email", db);
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = firstName;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

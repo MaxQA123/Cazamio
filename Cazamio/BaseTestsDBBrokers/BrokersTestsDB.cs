@@ -38,31 +38,37 @@ namespace CazamioProject.BaseTestsDBBrokers
             string IdNewBroker = DBBrokers.GetIdForBrokerFromAspNetUsers(TestDataDBForWebSiteAdmin.NEW_BROKER_EMAIL);
             Console.WriteLine($"{IdNewBroker}: Id for new broker {newBroker} from table AspNetUsers");
 
+            string userIdBroker = DBBrokers.GetUserIdNewBrokerFromLandlords();
+            Console.WriteLine($"{userIdBroker} :UserId for new broker {newBroker} from table Landlords");
+
             string marketplaceIdNewBroker = DBBrokers.GetMarketplaceIdForBrokerFromAspNetUsers(TestDataDBForWebSiteAdmin.NEW_BROKER_EMAIL);
-            Console.WriteLine($"{marketplaceIdNewBroker}: Id for new broker {newBroker} from table AspNetUsers");
+            Console.WriteLine($"{marketplaceIdNewBroker}: MarketplaceId for new broker {newBroker} from table AspNetUsers");
 
-            //string userIdAdmin = DBBrokers.GetUserIdNewAdminFromLandlords();
-            //Console.WriteLine($"UserId for new broker {newBroker} from table Landlords: {userIdAdmin}");
+            string roleIdBroker = DBBrokers.GetRoleIdNewBrokerFromAspNetUserRoles();
+            Console.WriteLine($"{roleIdBroker} :RoleId for new broker {newBroker} from table AspNetUserRoles");
 
-            //string roleIdAdmin = DBBrokers.GetRoleIdNewAdminFromAspNetUserRoles();
-            //Console.WriteLine($"RoleId for new broker {newBroker} from table AspNetUserRoles: {roleIdAdmin}");
+            string roleNameBroker = DBBrokers.GetRoleNameFromAspNetRoles(TestDataDBForWebSiteAdmin.NEW_BROKER_EMAIL);
+            Console.WriteLine($"{roleNameBroker} :Name role for broker {newBroker} from table AspNetRoles");
 
-            //string marketplaceIdByAdminEmail = DBBrokers.GetMarketplaceIdFromLandlordsT("twysb@putsbox.com");
-            //Console.WriteLine($"MarketplaceId for broker {newBroker} from table Landlords: {marketplaceIdByAdminEmail}");
+            string firstNameBroker = DBBrokers.GetFirstNameFromAspNetUsers(TestDataDBForWebSiteAdmin.NEW_BROKER_EMAIL);
+            Console.WriteLine($"{firstNameBroker} :First Name for broker {newBroker} from table AspNetRoles");
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(IdNewBroker, TestDataDBForWebSiteAdmin.NEW_BROKER_ID);
-                Console.WriteLine($"Id a new broker from table AspNetUsers: {IdNewBroker} = {TestDataDBForWebSiteAdmin.NEW_BROKER_ID} Id for broker ER");
+                Assert.AreEqual(IdNewBroker, userIdBroker);
+                Console.WriteLine($"Id a new broker from table AspNetUserRoles: {IdNewBroker} = {userIdBroker} Id for admin from table Landlords");
 
                 Assert.AreEqual(marketplaceIdNewBroker, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
                 Console.WriteLine($"MarketplaceId a new broker from table AspNetUsers: {marketplaceIdNewBroker} = {TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId for broker ER");
 
-                //Assert.AreEqual(roleIdAdmin, TestDataDBGeneral.ID_NAME_ROLE_BROKER);
-                //Console.WriteLine($"RoleId a new broker from table AspNetUserRoles: {roleIdAdmin} = {TestDataDBGeneral.ID_NAME_ROLE_BROKER} Id for admin from table AspNetUsers");
+                Assert.AreEqual(roleIdBroker, TestDataDBGeneral.ID_NAME_ROLE_BROKER);
+                Console.WriteLine($"RoleId a new broker from table AspNetUserRoles: {roleIdBroker} = {TestDataDBGeneral.ID_NAME_ROLE_BROKER} RoleId for broker ER");
 
-                //Assert.AreEqual(marketplaceIdByAdminEmail, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
-                //Console.WriteLine($"MarketplaceId broker for a new admin AR: {marketplaceIdByAdminEmail} = {TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId admin for a new admin ER");
+                Assert.AreEqual(roleNameBroker, TestDataDBGeneral.NAME_ROLE_BROKER);
+                Console.WriteLine($"Name role a broker: {roleNameBroker} = {TestDataDBGeneral.NAME_ROLE_BROKER} Name role a broker ER");
+
+                Assert.AreEqual(firstNameBroker, TestDataDBForWebSiteAdmin.NEW_BROKER_FIRST_NAME);
+                Console.WriteLine($"First Name a broker: {firstNameBroker} = {TestDataDBForWebSiteAdmin.NEW_BROKER_FIRST_NAME} First Name a broker ER");
             });
         }
 
@@ -72,28 +78,39 @@ namespace CazamioProject.BaseTestsDBBrokers
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBBroker")]
-        [AllureSubSuite("RelatedUserIdAdminWithMarkeplaceId")]
+        [AllureSubSuite("RelatedUserIdBrokerWithMarkeplaceId")]
 
         //Date of publication:
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: 
+        //Comment: The table "Lanlords", "AspNetUsers".
         //Path to cheking's: 
 
-        public void RelatedUserIdAdminWithMarkeplaceId()
+        public void RelatedUserIdBrokerWithMarkeplaceId()
         {
-            string adminName = "Fred Dred";
+            string brokerName = TestDataDBForWebSiteAdmin.BROKER_FIRST_NAME;
 
-            string idAdmin = DBBrokers.GetIdAdminFromLandlordsT("su1per2ad3min@gmail.com");
-            Console.WriteLine($"Id for admin {adminName} from table Landlords: {idAdmin}");
-            string marketplaceIdByAdminEmail = DBBrokers.GetMarketplaceIdFromLandlordsT("su1per2ad3min@gmail.com");
-            Console.WriteLine($"MarketplaceId for admin {adminName} from table Landlords: {marketplaceIdByAdminEmail}");
-            string marketplaceIdForNewAdmin = DBBrokers.GetMarketplaceIdForNewAdmin();
-            Console.WriteLine($"MarketplaceId for admin {adminName} from table Landlords: {marketplaceIdForNewAdmin}");
-            
-            Assert.AreEqual(marketplaceIdByAdminEmail, marketplaceIdForNewAdmin);
-            Console.WriteLine($"MarketplaceId by email new admin AspNetUsers: {marketplaceIdByAdminEmail} = {marketplaceIdForNewAdmin} MarketplaceId for new admin in the table Landlords");
+            string landlordIddBroker = DBBrokers.GetIdForBrokerFromLandlords(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
+            Console.WriteLine($"{landlordIddBroker} :Id for broker {brokerName} from table Landlords");
+
+            string marketplaceIdByBrokerEmail = DBBrokers.GetMarketplaceIdBrokerFromLandlords(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
+            Console.WriteLine($"{marketplaceIdByBrokerEmail} :MarketplaceId for broker {brokerName} from table Landlords");
+
+            string IdBroker = DBBrokers.GetIdForBrokerFromAspNetUsers(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
+            Console.WriteLine($"{IdBroker}: Id for new broker {brokerName} from table AspNetUsers");
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(landlordIddBroker, TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORDID);
+                Console.WriteLine($"LandlordId a broker from table Landlords: {landlordIddBroker} = {TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORDID} LandlordId a broker from table Landlords ER");
+
+                Assert.AreEqual(marketplaceIdByBrokerEmail, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+                Console.WriteLine($"MarketplaceId for a broker from table AspNetUsers: {marketplaceIdByBrokerEmail} = {TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId for broker ER");
+
+                Assert.AreEqual(IdBroker, TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_ID);
+                Console.WriteLine($"Id for a broker from table AspNetUsers: {IdBroker} = {TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_ID} Id for broker ER");
+            });
         }
     }
 }

@@ -46,7 +46,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
             string newMarketplaceIdBuildingsTable = DBBuildings.GetMarketplaceIdInBuildingsNewBuilding();
             Console.WriteLine($"{newMarketplaceIdBuildingsTable} :MarketplaceId building for {buildingName} from table Buildings");
 
-            string landlordIdLandlordsTable = DBBrokers.GetIdForBrokerFromLanlords();
+            string landlordIdLandlordsTable = DBBrokers.GetIdLastForBrokerFromLanlords();
             Console.WriteLine($"{landlordIdLandlordsTable} :LandlordId building for {buildingName} from table Buildings");
 
             string landlordIdBuildingsTable = DBBuildings.GetLandlordIdInBuildingsNewBuilding();
@@ -66,8 +66,8 @@ namespace CazamioProgect.BaseTestsDBBuildings
                 Assert.AreEqual(landlordIdLandlordsTable, landlordIdBuildingsTable);
                 Console.WriteLine($"MarketplaceId for building in table Buildings: {landlordIdLandlordsTable} = {TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORDID} MarketplaceId for building ER");
 
-                Assert.AreEqual(buildingNameBuildingsTable, TestDataDBForWebSiteAdmin.BUILDING_NAME);
-                Console.WriteLine($"MarketplaceId for building in table Buildings: {landlordIdBuildingsTable} = {TestDataDBForWebSiteAdmin.BUILDING_NAME} MarketplaceId for building ER");
+                Assert.AreEqual(buildingNameBuildingsTable, TestDataDBForWebSiteAdmin.NEW_BUILDING_NAME);
+                Console.WriteLine($"Building Name for building in table Buildings: {buildingNameBuildingsTable} = {TestDataDBForWebSiteAdmin.NEW_BUILDING_NAME} Building Name for building ER");
             });
         }
 
