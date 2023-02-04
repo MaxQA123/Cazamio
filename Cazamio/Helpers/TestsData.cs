@@ -100,9 +100,13 @@ namespace CazamioProgect.Helpers
         public const string DELETED_AGENT_FIRST_LAST_NAME = "Creator-martin Testing";
         public const string DELETED_AGENT_EMAIL = "j8h5g3g3dd@putsbox.com";
 
-        public const string BROKER_AXEL_FOLLY_LANDLORDID = "2";
-        public const string BROKER_FIRST_NAME = "Luigi";
-        public const string BUILDIN_NAME = "Creator Martin two";
+        public const string BROKER_MARTIN_MACFLY_ID = "de0e57c0-6b1d-4f43-8640-f5592382c8be";
+        public const string BROKER_MARTIN_MACFLY_LANDLORDID = "31";
+        public const string BROKER_FIRST_NAME = "Martin";
+
+        public const string NEW_BUILDING_NAME = "Creator Martin Barik";
+
+        public const string BUILDING_NAME = "Creator Martin two";
         public const string BUILDING_LLC_NAME = "LLC Chudo";
         public const string BUILDING_ADDRESS = "510 East 11th Street";
         public const string BUILDINGID = "22";

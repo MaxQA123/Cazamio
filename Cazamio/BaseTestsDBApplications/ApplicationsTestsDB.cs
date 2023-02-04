@@ -112,7 +112,7 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelateApplicationWithApartment()
         {
-            string building = TestDataDBForWebSiteAdmin.BUILDIN_NAME;
+            string building = TestDataDBForWebSiteAdmin.BUILDING_NAME;
             string apartmentNumber = TestDataDBForWebSiteAdmin.UNIT_NUMBER;
 
             string apartmentId = DBApplications.GetApartmentId();
@@ -139,7 +139,7 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelateApplicationWithOccGuaSetJoin()
         {
-            string building = TestDataDBForWebSiteAdmin.BUILDIN_NAME;
+            string building = TestDataDBForWebSiteAdmin.BUILDING_NAME;
             string apartmentNumber = TestDataDBForWebSiteAdmin.UNIT_NUMBER;
 
             string newApartmentApplicationId = DBApplications.GetNewApartmentApplicationId();
@@ -187,17 +187,21 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelateApplicationWithOccGuaNoSetJoin()
         {
-            string building = TestDataDBForWebSiteAdmin.BUILDIN_NAME;
+            string building = TestDataDBForWebSiteAdmin.BUILDING_NAME;
             string apartmentNumber = TestDataDBForWebSiteAdmin.UNIT_NUMBER;
 
             string newApartmentApplicationId = DBApplications.GetNewApartmentApplicationId();
             Console.WriteLine($"Building name {building} apartemnt name {apartmentNumber}, New ApartmentApplicationId: {newApartmentApplicationId}");
+
             string apartmentApplicationIdForGuaS = DBApplications.GetApartmentApplicationIdGuarantorS();
             Console.WriteLine($"ApartmentApplicationId for occupant and guarantor: {apartmentApplicationIdForGuaS}");
+
             string apartmentApplicationIdForOccupant = DBApplications.GetApartmentApplicationIdByUserIdOcc();
             Console.WriteLine($"ApartmentApplicationId for occupant: {apartmentApplicationIdForOccupant}");
+
             string apartmentApplicationIdForOccByEmail = DBApplications.GetApartmentApplicationIdByEmailOcc("apipostman65455@gmail.com");
             Console.WriteLine($"ApartmentApplicationId for occupant: {apartmentApplicationIdForOccByEmail}");
+
             string apartmentApplicationIdForGuarantor = DBApplications.GetApartmentApplicationIdByUserIdGua();
             Console.WriteLine($"ApartmentApplicationId for guarantor: {apartmentApplicationIdForGuarantor}");
 

@@ -148,7 +148,7 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id FROM Addresses" +
-                    " WHERE Street = (SELECT MAX(Street) FROM Addresses);", db);
+                    " WHERE Id = (SELECT MAX(Id) FROM Addresses);", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -191,6 +191,27 @@ namespace CazamioProject.Helpers
             {
                 SqlCommand command = new("SELECT LandlordId FROM" +
                     " Buildings WHERE LLCName = (SELECT MAX(LLCNAME) FROM Buildings);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetBuildingNameInBuildingsNewBuilding()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT BuildingName" +
+                    " FROM Buildings WHERE AddressId = (SELECT MAX(AddressId) FROM Buildings);", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

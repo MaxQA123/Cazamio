@@ -55,14 +55,13 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetIdForBrokerFromLanlords(string idBroker)
+        public static string GetIdForBrokerFromLanlords()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT Id FROM Landlords" +
-                    " WHERE UserId = @UserId;", db);
-                command.Parameters.AddWithValue("@UserId", DbType.String).Value = idBroker;
+                SqlCommand command = new("SELECT LandlordId FROM Buildings" +
+                    " WHERE AddressId = (SELECT MAX(AddressId) FROM Buildings);", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

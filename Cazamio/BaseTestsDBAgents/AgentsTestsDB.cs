@@ -34,7 +34,7 @@ namespace CazamioProject.BaseTestsDBAgents
 
         public void RecordsDBAboutNewAgent()
         {
-            string newBroker = TestDataDBForWebSiteAdmin.BROKER_AXEL_FOLLY_LANDLORDID;
+            string newBroker = TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORDID;
 
             string userIdBroker = DBAgents.GetUserIdNewAgentFromBrokers();
             Console.WriteLine($"{userIdBroker} :UserId for new broker {newBroker} from table Brokers");
