@@ -100,14 +100,18 @@ namespace CazamioProgect.Helpers
         public const string NEW_BROKER_FIRST_NAME = "Djill";
         public const string NEW_BROKER_ID = "1d1d8a02-b40a-42c4-b59f-dd0313bb1613";
 
-        public const string NEW_AGENT_EMAIL = "twysb@putsbox.com";
-        public const string NEW_AGENT_FIRST_LAST_NAME = "Pauline Doyle";
+        public const string NEW_AGENT_EMAIL = "new333ag@putsbox.com";
+        public const string NEW_AGENT_FIRST_LAST_NAME = "Tiger Lion";
         public const string DELETED_AGENT_FIRST_LAST_NAME = "Creator-martin Testing";
         public const string DELETED_AGENT_EMAIL = "j8h5g3g3dd@putsbox.com";
 
         public const string BROKER_MARTIN_MACFLY_ID = "de0e57c0-6b1d-4f43-8640-f5592382c8be";
         public const string BROKER_MARTIN_MACFLY_LANDLORDID = "31";
         public const string BROKER_FIRST_NAME = "Martin";
+
+        public const string AGENT_TEST_AGENT_ID = "f49afbfa-8834-4e59-991b-7ffbbe07e866";
+        public const string AGENT_TEST_AGENT_BROKERDID = "31";
+        public const string AGENT_FIRST_NAME = "Test";
 
         public const string NEW_BUILDING_NAME = "Creator Martin House two";
 

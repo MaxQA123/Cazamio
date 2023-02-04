@@ -22,36 +22,99 @@ namespace CazamioProject.BaseTestsDBAgents
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingDBBroker")]
-        [AllureSubSuite("RecordsDBAboutNewAgentr")]
+        [AllureSuite("TestingDBAgent")]
+        [AllureSubSuite("DispalyingIdAgentfromAspNetUsers")]
 
         //Date of publication:
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: The table "Lanlords".
+        //Comment: The table "AspNetUsers".
+        //Path to cheking's: 
+
+        public void DispalyingIdAgentfromAspNetUsers()
+        {
+            string IdAgent = DBAgents.GetIdAgentFromAspNetUsers(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
+            Console.WriteLine($"{IdAgent} :Id for broker from table AspNetUsers");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBAgent")]
+        [AllureSubSuite("DispalyingBrokerIdAgentFromBrokers")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
+        //Comment: The table "Brokers".
+        //Path to cheking's: 
+
+        public void DispalyingBrokerIdAgentFromBrokers()
+        {
+            string brokerId = DBAgents.GetBrokerIdAgentFromBrokers(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
+            Console.WriteLine($"{brokerId} :Id for broker from table Brokers");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBAgent")]
+        [AllureSubSuite("RelatedAgentWithBrokerFromLandlordBrokers")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
+        //Comment: The table "LandlordBrokers".
+        //Path to cheking's: 
+
+        public void RelatedAgentWithBrokerFromLandlordBrokers()
+        {
+            string landlordId = DBAgents.GetLandlordIdByBrokerIdFromLandlordBrokers(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
+            Console.WriteLine($"{landlordId} :LanlordId for broker from table LandlordBrokers");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBAgent")]
+        [AllureSubSuite("RecordsDBAboutNewAgent")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
+        //Comment: The table "Brokers".
         //Path to cheking's: 
 
         public void RecordsDBAboutNewAgent()
         {
-            string newBroker = TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORDID;
+            string firstLastNameAgent = TestDataDBForWebSiteAdmin.NEW_AGENT_FIRST_LAST_NAME;
 
-            string userIdBroker = DBAgents.GetUserIdNewAgentFromBrokers();
-            Console.WriteLine($"{userIdBroker} :UserId for new broker {newBroker} from table Brokers");
+            string userIdAgent = DBAgents.GetBrokerIdNewAgentFromBrokers();
+            Console.WriteLine($"{userIdAgent} :UserId for new agent {firstLastNameAgent} from table Brokers");
 
-            string roleIdBroker = DBAgents.GetRoleIdNewAgentFromAspNetUserRoles();
-            Console.WriteLine($"{roleIdBroker} :RoleId for new admin {newBroker} from table AspNetUserRoles");
+            string marketplaceIdAgent = DBAgents.GetMarketplaceIdFromNewAgents();
+            Console.WriteLine($"{marketplaceIdAgent} :MarketplaceId for broker {firstLastNameAgent} from table Brokers");
 
-            string marketplaceIdBroker = DBAgents.GetMarketplaceIdFromBrokers();
-            Console.WriteLine($"{marketplaceIdBroker} :MarketplaceId for broker {newBroker} from table Brokers");
+            string roleIdAgent = DBAgents.GetRoleIdNewAgentFromAspNetUserRoles();
+            Console.WriteLine($"{roleIdAgent} :RoleId for new admin {firstLastNameAgent} from table AspNetUserRoles");
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(roleIdBroker, TestDataDBGeneral.ID_NAME_ROLE_BROKER);
-                Console.WriteLine($"RoleId a new broker from table AspNetUserRoles: {roleIdBroker} = {TestDataDBGeneral.ID_NAME_ROLE_BROKER} Id for broker from table AspNetUserRoles");
+                Assert.AreEqual(marketplaceIdAgent, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+                Console.WriteLine($"MarketplaceId for a new agent: {marketplaceIdAgent} = {TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId for a new agent ER");
 
-                Assert.AreEqual(marketplaceIdBroker, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
-                Console.WriteLine($"MarketplaceId admin for a new broker AR: {marketplaceIdBroker} = {TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId broker for a new broker ER");
+                Assert.AreEqual(roleIdAgent, TestDataDBGeneral.ID_NAME_ROLE_AGENT);
+                Console.WriteLine($"RoleId a new broker from table AspNetUserRoles: {roleIdAgent} = {TestDataDBGeneral.ID_NAME_ROLE_AGENT} Id for broker from table AspNetUserRoles");
             });
         }
 
