@@ -76,7 +76,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetIdForAdminFromLandlords(string idAdmin)
+        public static string GetLandlordIdForBrokerFromLandlordsTable(string idAdmin)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
