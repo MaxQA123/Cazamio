@@ -47,10 +47,10 @@ namespace CazamioProject.BaseTestsDBBrokers
             string roleIdBroker = DBBrokers.GetRoleIdNewBrokerFromAspNetUserRoles();
             Console.WriteLine($"{roleIdBroker} :RoleId for new broker {newBroker} from table AspNetUserRoles");
 
-            string roleNameBroker = DBBrokers.GetRoleNameFromAspNetRoles(TestDataDBForWebSiteAdmin.NEW_BROKER_EMAIL);
+            string roleNameBroker = DBBrokers.GetRoleNameBrokerFromAspNetRoles(TestDataDBForWebSiteAdmin.NEW_BROKER_EMAIL);
             Console.WriteLine($"{roleNameBroker} :Name role for broker {newBroker} from table AspNetRoles");
 
-            string firstNameBroker = DBBrokers.GetFirstNameFromAspNetUsers(TestDataDBForWebSiteAdmin.NEW_BROKER_EMAIL);
+            string firstNameBroker = DBBrokers.GetFirstNameBrokerFromAspNetUsers(TestDataDBForWebSiteAdmin.NEW_BROKER_EMAIL);
             Console.WriteLine($"{firstNameBroker} :First Name for broker {newBroker} from table AspNetRoles");
 
             Assert.Multiple(() =>

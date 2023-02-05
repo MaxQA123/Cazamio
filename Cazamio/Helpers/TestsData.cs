@@ -102,6 +102,7 @@ namespace CazamioProgect.Helpers
 
         public const string NEW_AGENT_EMAIL = "new333ag@putsbox.com";
         public const string NEW_AGENT_FIRST_LAST_NAME = "Tiger Lion";
+        public const string NEW_AGENT_FIRST_NAME = "Tiger";
         public const string DELETED_AGENT_FIRST_LAST_NAME = "Creator-martin Testing";
         public const string DELETED_AGENT_EMAIL = "j8h5g3g3dd@putsbox.com";
 
