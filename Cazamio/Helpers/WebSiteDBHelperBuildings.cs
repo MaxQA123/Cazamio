@@ -17,7 +17,7 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id" +
-                    " FROM Buildings" + $" WHERE BuildingName = @BuildingName", db);
+                    " FROM Buildings" + " WHERE BuildingName = @BuildingName", db);
                 command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = idBuilding;
                 db.Open();
 

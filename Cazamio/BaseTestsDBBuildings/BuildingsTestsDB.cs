@@ -34,7 +34,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
 
         public void NewBuilding()
         {
-            string buildingName = TestDataDBForWebSiteAdmin.BUILDING_NAME;
+            string buildingName = TestDataDBForWebSiteAdmin.NEW_BUILDING_NAME;
             string nameLandlordsTable = TestDataDBNamesTables.TABLE_NAME_LANDLORDS;
 
             string newAddressIdBuildingsTable = DBBuildings.GetAddressesIdInBuildingsNewBuilding();
@@ -64,7 +64,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
                 Console.WriteLine($"MarketplaceId for building in table Buildings: {newMarketplaceIdBuildingsTable} = {TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId for building ER");
 
                 Assert.AreEqual(landlordIdLandlordsTable, landlordIdBuildingsTable);
-                Console.WriteLine($"MarketplaceId for building in table Buildings: {landlordIdLandlordsTable} = {TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORDID} MarketplaceId for building ER");
+                Console.WriteLine($"MarketplaceId for building in table Buildings: {landlordIdLandlordsTable} = {TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORD_ID} MarketplaceId for building ER");
 
                 Assert.AreEqual(buildingNameBuildingsTable, TestDataDBForWebSiteAdmin.NEW_BUILDING_NAME);
                 Console.WriteLine($"Building Name for building in table Buildings: {buildingNameBuildingsTable} = {TestDataDBForWebSiteAdmin.NEW_BUILDING_NAME} Building Name for building ER");

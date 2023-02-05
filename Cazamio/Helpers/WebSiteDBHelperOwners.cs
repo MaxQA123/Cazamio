@@ -140,12 +140,54 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetIdOwnerByEmail()
+        public static string GetEmailNewOwnerByIdOwners()
         {
             string idBuilding = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT Id FROM Owners" +
+                SqlCommand command = new("SELECT OwnerEmail FROM Owners" +
+                    " WHERE Id = (SELECT MAX(Id) FROM Owners);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        idBuilding = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return idBuilding;
+        }
+
+        public static string GetOwnerNameNewOwnerByIdOwners()
+        {
+            string idBuilding = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT OwnerName FROM Owners" +
+                    " WHERE Id = (SELECT MAX(Id) FROM Owners);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        idBuilding = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return idBuilding;
+        }
+
+        public static string GetCompanyNameNewOwnerByIdOwners()
+        {
+            string idBuilding = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT CompanyName FROM Owners" +
                     " WHERE Id = (SELECT MAX(Id) FROM Owners);", db);
                 db.Open();
 

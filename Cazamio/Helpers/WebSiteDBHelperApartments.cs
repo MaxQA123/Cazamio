@@ -11,6 +11,92 @@ namespace CazamioProject.Helpers
 {
     public class DBApartments
     {
+        public static string GetApartmentIdApartmentForApartments()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id" +
+                    " FROM Apartments WHERE Id = (SELECT MAX(Id) FROM Apartments);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetApartmentIdApartmentByBuildingNameForApartments(string apartmentId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM" +
+                    " Apartments WHERE Id = (SELECT MAX(Id) FROM Apartments) AND BuildingId IN" +
+                    " (SELECT Id FROM Buildings WHERE BuildingName = @BuildingName);", db);
+                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = apartmentId;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetLandlordIdApartmentForApartments()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT LandlordId FROM Apartments" +
+                    " WHERE Id = (SELECT MAX(Id) FROM Apartments);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetBuildingIdApartmentForApartments()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT BuildingId FROM Apartments" +
+                    " WHERE Id = (SELECT MAX(Id) FROM Apartments);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
         public static string GetIdApartment()
         {
             string data = null;

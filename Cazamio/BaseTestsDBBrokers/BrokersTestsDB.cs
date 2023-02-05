@@ -102,8 +102,8 @@ namespace CazamioProject.BaseTestsDBBrokers
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(landlordIddBroker, TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORDID);
-                Console.WriteLine($"LandlordId a broker from table Landlords: {landlordIddBroker} = {TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORDID} LandlordId a broker from table Landlords ER");
+                Assert.AreEqual(landlordIddBroker, TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORD_ID);
+                Console.WriteLine($"LandlordId a broker from table Landlords: {landlordIddBroker} = {TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORD_ID} LandlordId a broker from table Landlords ER");
 
                 Assert.AreEqual(marketplaceIdByBrokerEmail, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
                 Console.WriteLine($"MarketplaceId for a broker from table AspNetUsers: {marketplaceIdByBrokerEmail} = {TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId for broker ER");

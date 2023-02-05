@@ -54,6 +54,15 @@ namespace CazamioProject.BaseTestsDBOwners
             string marketplaceIdOwnerViaId = DBOwners.GetMarketplaceIdOwnerByIdFromOwners();
             Console.WriteLine($"{marketplaceIdOwnerViaId} :LandlordId owner via id for owner {nameOwner} from table Owners");
 
+            string emailOwnerViaId = DBOwners.GetEmailNewOwnerByIdOwners();
+            Console.WriteLine($"{emailOwnerViaId} :Email owner via id for owner {nameOwner} from table Owners");
+
+            string ownerNameOwnerViaId = DBOwners.GetOwnerNameNewOwnerByIdOwners();
+            Console.WriteLine($"{ownerNameOwnerViaId} :Owner Name owner via id for owner {nameOwner} from table Owners");
+
+            string companyNameOwnerViaId = DBOwners.GetCompanyNameNewOwnerByIdOwners();
+            Console.WriteLine($"{companyNameOwnerViaId} :Company Name owner via id for owner {nameOwner} from table Owners");
+
             Assert.Multiple(() =>
             {
                 Assert.AreEqual(ownerIdOwnerViaEmail, ownerIdOwnerViaId);
@@ -64,6 +73,15 @@ namespace CazamioProject.BaseTestsDBOwners
 
                 Assert.AreEqual(marketplaceIdOwnerViaEmail, marketplaceIdOwnerViaId);
                 Console.WriteLine($"LandlordId owner via email for owner from table Owners: {marketplaceIdOwnerViaEmail} = {marketplaceIdOwnerViaId} LandlordId owner via id for owner from table Owners");
+
+                Assert.AreEqual(emailOwnerViaId, TestDataDBForWebSiteAdmin.NEW_OWNER_EMAIL);
+                Console.WriteLine($"Email owner via email for owner from table Owners: {emailOwnerViaId} = {TestDataDBForWebSiteAdmin.NEW_OWNER_EMAIL} Email owner via id for owner ER");
+
+                Assert.AreEqual(ownerNameOwnerViaId, TestDataDBForWebSiteAdmin.NEW_OWNER_FIRST_LAST_NAME);
+                Console.WriteLine($"Owner Name owner via email for owner from table Owners: {companyNameOwnerViaId} = {TestDataDBForWebSiteAdmin.NEW_OWNER_FIRST_LAST_NAME} Owner Name owner via id for owner ER");
+
+                Assert.AreEqual(companyNameOwnerViaId, TestDataDBForWebSiteAdmin.NEW_COMPANY_NAME_OWNER);
+                Console.WriteLine($"Company Owner owner via email for owner from table Owners: {companyNameOwnerViaId} = {TestDataDBForWebSiteAdmin.NEW_COMPANY_NAME_OWNER} LandlordId owner via id for owner ER");
             });
         }
 
@@ -73,7 +91,7 @@ namespace CazamioProject.BaseTestsDBOwners
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBOwner")]
-        [AllureSubSuite("RelatedOwnerWithAdmin")]
+        [AllureSubSuite("Empty")]
 
         //Date of publication:
         //Version\Build:
@@ -82,7 +100,7 @@ namespace CazamioProject.BaseTestsDBOwners
         //Comment: 
         //Path to cheking's: 
 
-        public void RelatedOwnerWithAdmin()
+        public void Empty()
         {
             
         }

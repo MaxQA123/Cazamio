@@ -47,6 +47,51 @@ namespace CazamioProject.BaseTestsDBApartments
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApartments")]
+        [AllureSubSuite("GetIdApartmentFromBD")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
+        //Comment: 
+        //Path to cheking's: 
+
+        public void RecordsDBAboutNewApartments()
+        {
+            string numberApartment = TestDataDBForWebSiteAdmin.NEW_UNIT_NUMBER;
+            string buildingName = TestDataDBForWebSiteAdmin.BUILDING_NAME;
+
+            string apartmentIdLast = DBApartments.GetApartmentIdApartmentForApartments();
+            Console.WriteLine($"{apartmentIdLast} :ApartmentId Last from table Apartments for {buildingName} related {numberApartment}");
+
+            string apartmentIdByNameBuilding = DBApartments.GetApartmentIdApartmentByBuildingNameForApartments(TestDataDBForWebSiteAdmin.BUILDING_NAME);
+            Console.WriteLine($"{apartmentIdByNameBuilding} :ApartmentId by NameBuilding from table Apartments for {buildingName} related {numberApartment}");
+
+            string landlordId = DBApartments.GetLandlordIdApartmentForApartments();
+            Console.WriteLine($"{landlordId} :LandlordId from table Apartments for {buildingName} related {numberApartment}");
+
+            string buildingId = DBApartments.GetBuildingIdApartmentForApartments();
+            Console.WriteLine($"{buildingId} :BuildingId from table Apartments for {buildingName} related {numberApartment}");
+            
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(apartmentIdLast, apartmentIdByNameBuilding);
+                Console.WriteLine($"ApartmentId Last from table Apartments: {apartmentIdLast} = {apartmentIdByNameBuilding} ApartmentId by NameBuilding from table Apartments");
+
+                Assert.AreEqual(landlordId, TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORD_ID);
+                Console.WriteLine($"LandlordId from table Apartments: {landlordId} = {TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORD_ID} LandlordId from table Apartments ER");
+
+                Assert.AreEqual(buildingId, TestDataDBForWebSiteAdmin.BUILDING_ID);
+                Console.WriteLine($"BuildingId from table Apartments: {buildingId} = {TestDataDBForWebSiteAdmin.BUILDING_ID} BuildingId from table Apartments ER");
+            });
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBApartments")]
         [AllureSubSuite("RelatedeApartmentBuildingAdmin")]
 
         //Date of publication:

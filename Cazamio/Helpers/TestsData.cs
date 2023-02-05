@@ -113,7 +113,7 @@ namespace CazamioProgect.Helpers
         public const string NEW_OFFICE_LOCATION_OWNER = "Denver";
 
         public const string BROKER_MARTIN_MACFLY_ID = "de0e57c0-6b1d-4f43-8640-f5592382c8be";
-        public const string BROKER_MARTIN_MACFLY_LANDLORDID = "31";
+        public const string BROKER_MARTIN_MACFLY_LANDLORD_ID = "31";
         public const string BROKER_FIRST_NAME = "Martin";
 
         public const string AGENT_TEST_AGENT_ID = "f49afbfa-8834-4e59-991b-7ffbbe07e866";
@@ -122,10 +122,12 @@ namespace CazamioProgect.Helpers
 
         public const string NEW_BUILDING_NAME = "Creator Martin House two";
 
+        public const string NEW_UNIT_NUMBER = "5K";
+
         public const string BUILDING_NAME = "Creator Martin two";
         public const string BUILDING_LLC_NAME = "LLC Chudo";
         public const string BUILDING_ADDRESS = "510 East 11th Street";
-        public const string BUILDINGID = "22";
+        public const string BUILDING_ID = "48";
         public const string UNIT_NUMBER = "4E";
         public const string ID_TABLE_APARTMENTS_APARTMENTID = "83";
         public const string ID_UNIT_FOUR_E = "83";

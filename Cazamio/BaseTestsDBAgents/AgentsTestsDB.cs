@@ -137,8 +137,8 @@ namespace CazamioProject.BaseTestsDBAgents
                 Assert.AreEqual(brokerIdAgentBrokers, brokerdIdNewAgentLandlordBrokers);
                 Console.WriteLine($"BrokerId a new agent from table Brokers: {brokerIdAgentBrokers} = {brokerdIdNewAgentLandlordBrokers} BrokerId a new agent from table LandlordBrokers");
 
-                Assert.AreEqual(LandlordIdRelatedNewAgent, TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORDID);
-                Console.WriteLine($"LandlordId for a new agent from table LandlordBrokers: {LandlordIdRelatedNewAgent} = {TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORDID} LandlordId for a new agent from table ER");
+                Assert.AreEqual(LandlordIdRelatedNewAgent, TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORD_ID);
+                Console.WriteLine($"LandlordId for a new agent from table LandlordBrokers: {LandlordIdRelatedNewAgent} = {TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORD_ID} LandlordId for a new agent from table ER");
 
                 Assert.AreEqual(roleNameNewAgentAspNetRoles, TestDataDBGeneral.NAME_ROLE_AGENT);
                 Console.WriteLine($"Name role for new agent AspNetRoles: {roleNameNewAgentAspNetRoles} = {TestDataDBGeneral.NAME_ROLE_AGENT} Name role for new agent ER");
