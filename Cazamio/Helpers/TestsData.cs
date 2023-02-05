@@ -106,6 +106,12 @@ namespace CazamioProgect.Helpers
         public const string DELETED_AGENT_FIRST_LAST_NAME = "Creator-martin Testing";
         public const string DELETED_AGENT_EMAIL = "j8h5g3g3dd@putsbox.com";
 
+        public const string NEW_OWNER_EMAIL = "new321ow@putsbox.com";
+        public const string NEW_OWNER_FIRST_LAST_NAME = "Alfa Beta";
+        public const string NEW_OWNER_FIRST_NAME = "Alfa";
+        public const string NEW_COMPANY_NAME_OWNER = "LLC Gonolulu";
+        public const string NEW_OFFICE_LOCATION_OWNER = "Denver";
+
         public const string BROKER_MARTIN_MACFLY_ID = "de0e57c0-6b1d-4f43-8640-f5592382c8be";
         public const string BROKER_MARTIN_MACFLY_LANDLORDID = "31";
         public const string BROKER_FIRST_NAME = "Martin";

@@ -154,7 +154,7 @@ namespace CazamioProject.BaseTestsDBAgents
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBAgent")]
-        [AllureSubSuite("RelatedNewAgentrWithAdmin")]
+        [AllureSubSuite("Empty")]
 
         //Date of publication:
         //Version\Build:
@@ -163,7 +163,7 @@ namespace CazamioProject.BaseTestsDBAgents
         //Comment: 
         //Path to cheking's: 
 
-        public void RelatedNewAgentWithAdmin()
+        public void Empty()
         {
             
         }
@@ -202,7 +202,6 @@ namespace CazamioProject.BaseTestsDBAgents
 
                 Assert.AreEqual(oneDeletedTableLandlordBrokers, TestDataDBGeneral.TRUE);
                 Console.WriteLine($"Deleted agent in table LandlordBrokers: {oneDeletedTableLandlordBrokers} = {TestDataDBGeneral.TRUE} Deleted agent in table {tableLandlordBrokers}");
-
             });
         }
     }

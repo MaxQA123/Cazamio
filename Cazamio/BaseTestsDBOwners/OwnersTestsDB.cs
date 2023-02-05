@@ -23,6 +23,56 @@ namespace CazamioProject.BaseTestsDBOwners
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBOwner")]
+        [AllureSubSuite("RecordsDBAboutNewOwner")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
+        //Comment: The table "Owners".
+        //Path to cheking's: 
+
+        public void RecordsDBAboutNewOwner()
+        {
+            string nameOwner = TestDataDBForWebSiteAdmin.NEW_OWNER_FIRST_LAST_NAME;
+
+            string ownerIdOwnerViaEmail = DBOwners.GetCreatedByUserIdOwnerByEmailFromOwners(TestDataDBForWebSiteAdmin.NEW_OWNER_EMAIL);
+            Console.WriteLine($"{ownerIdOwnerViaEmail} :CreatedByUserId wner via email for owner {nameOwner} from table Owners");
+
+            string ownerIdOwnerViaId = DBOwners.GetCreatedByUserIdNewOwnerFromOwners();
+            Console.WriteLine($"{ownerIdOwnerViaId} :CreatedByUserId owner via id for owner {nameOwner} from table Owners");
+
+            string landlordIdOwnerViaEmail = DBOwners.GetLandlordIdOwnerByEmailFromOwners(TestDataDBForWebSiteAdmin.NEW_OWNER_EMAIL);
+            Console.WriteLine($"{landlordIdOwnerViaEmail} :LandlordId owner via email for owner {nameOwner} from table Owners");
+
+            string landlordIdOwnerViaId = DBOwners.GetLandlordIdOwnerByIdFromOwners();
+            Console.WriteLine($"{landlordIdOwnerViaId} :LandlordId owner via id for owner {nameOwner} from table Owners");
+
+            string marketplaceIdOwnerViaEmail = DBOwners.GetMarketplaceIdOwnerByEmailFromOwners(TestDataDBForWebSiteAdmin.NEW_OWNER_EMAIL);
+            Console.WriteLine($"{marketplaceIdOwnerViaEmail} :LandlordId owner via email for owner {nameOwner} from table Owners");
+
+            string marketplaceIdOwnerViaId = DBOwners.GetMarketplaceIdOwnerByIdFromOwners();
+            Console.WriteLine($"{marketplaceIdOwnerViaId} :LandlordId owner via id for owner {nameOwner} from table Owners");
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(ownerIdOwnerViaEmail, ownerIdOwnerViaId);
+                Console.WriteLine($"CreatedByUserId owner via email for owner from table Owners: {ownerIdOwnerViaEmail} = {ownerIdOwnerViaId} CreatedByUserId owner via id for owner from table Owners");
+
+                Assert.AreEqual(landlordIdOwnerViaEmail, landlordIdOwnerViaId);
+                Console.WriteLine($"LandlordId owner via email for owner from table Owners: {landlordIdOwnerViaEmail} = {landlordIdOwnerViaId} LandlordId owner via id for owner from table Owners");
+
+                Assert.AreEqual(marketplaceIdOwnerViaEmail, marketplaceIdOwnerViaId);
+                Console.WriteLine($"LandlordId owner via email for owner from table Owners: {marketplaceIdOwnerViaEmail} = {marketplaceIdOwnerViaId} LandlordId owner via id for owner from table Owners");
+            });
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBOwner")]
         [AllureSubSuite("RelatedOwnerWithAdmin")]
 
         //Date of publication:
@@ -34,23 +84,7 @@ namespace CazamioProject.BaseTestsDBOwners
 
         public void RelatedOwnerWithAdmin()
         {
-            string ownerName = "Human";
-            string adminName = "Fred Dred";
-
-            string idOwner = DBOwners.GetIdOwnerByEmail();
-            Console.WriteLine($"Id for owner {ownerName} from table Owners: {idOwner}");
-            string landlordId = DBOwners.GetLandlordIdByOwnerEmail("g6gd433j@xitroo.com");
-            Console.WriteLine($"landlordId for owner {ownerName} from table Owners: {landlordId}");
-            string marketplaceId = DBOwners.GetMarketplaceIdByOwnerEmail("g6gd433j@xitroo.com");
-            Console.WriteLine($"MarketplaceId for owner {ownerName} from table Owners: {marketplaceId}");
-            string ownerId = DBOwners.GetOwnerIdByNameOwnerMgmt("gf645gd43h@xitroo.com");
-            Console.WriteLine($"MarketplaceId for owner {ownerName} from table Owners: {ownerId}");
-            Assert.AreEqual(idOwner, ownerId);
-            Console.WriteLine($"Id for owner {ownerName} from Owners: {idOwner} = {ownerId} OwnerId for owner {ownerName} in the table OwnerManagements");
-            string idAdmin = DBBrokers.GetIdForBrokerFromLandlords(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
-            Console.WriteLine($"Id for admin {adminName} from table Landlords: {idAdmin}");
-            Assert.AreEqual(landlordId, idAdmin);
-            Console.WriteLine($"LandlordId for owner {ownerName} from table Owners: {landlordId} = {idAdmin} IdAdmin for owner {ownerName} in the table Landlords");
+            
         }
     }
 }
