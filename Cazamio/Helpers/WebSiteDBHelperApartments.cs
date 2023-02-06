@@ -76,12 +76,96 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetBuildingIdApartmentForApartments()
+        public static string GetBuildingIdNewApartmentForApartments()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT BuildingId FROM Apartments" +
+                    " WHERE Id = (SELECT MAX(Id) FROM Apartments);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetMarketplaceIdApartmentForApartments()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT MarketplaceId FROM Apartments" +
+                    " WHERE Id = (SELECT MAX(Id) FROM Apartments);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetUnitNameNewApartmentForApartments()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Unit FROM Apartments" +
+                    " WHERE Id = (SELECT MAX(Id) FROM Apartments);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetBrokerIdApartmentForApartments()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT BrokerId FROM Apartments" +
+                    " WHERE Id = (SELECT MAX(Id) FROM Apartments);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetOwnerIdApartmentForApartments()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT OwnerId FROM Apartments" +
                     " WHERE Id = (SELECT MAX(Id) FROM Apartments);", db);
                 db.Open();
 
@@ -124,7 +208,7 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT LandlordId FROM Apartments WHERE BuildingId IN " +
-                "(SELECT Id FROM Buildings WHERE BuildingName = 'LLC Atlant House')", db);
+                "(SELECT Id FROM Buildings WHERE BuildingName = @BuildingName)", db);
                 command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = buildingName;
                 db.Open();
 
@@ -140,13 +224,13 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetBuildingIdFromApartmentsT(string buildingName)
+        public static string GetBuildingIdApartmentFromApartments(string buildingName)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT BuildingId FROM Apartments WHERE BuildingId IN " +
-                "(SELECT Id FROM Buildings WHERE BuildingName = 'LLC Atlant House')", db);
+                "(SELECT Id FROM Buildings WHERE BuildingName = @BuildingName)", db);
                 command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = buildingName;
                 db.Open();
 
@@ -162,7 +246,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetUnitFromApartmentsT(string buildingName)
+        public static string GetUnitByBuildingNameFromApartmentsT(string buildingName)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -190,7 +274,7 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id FROM Apartments WHERE BuildingId IN" +
-                " (SELECT Id FROM Buildings WHERE BuildingName = 'LLC Atlant House') AND Unit = '1'; ", db);
+                " (SELECT Id FROM Buildings WHERE BuildingName = 'LLC Atlant House') AND Unit = '1';", db);
                 command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = buildingName;
                 db.Open();
 

@@ -54,6 +54,49 @@ namespace CazamioProject.Helpers
             return data;
         }
 
+        public static string GetOwnerIdOwnerByEmailFromOwners(string ownerId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM Owners" +
+                " WHERE OwnerEmail = @OwnerEmail", db);
+                command.Parameters.AddWithValue("@OwnerEmail", DbType.String).Value = ownerId;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetOwnerIdNewOwnerFromOwners()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM Owners" +
+                " WHERE Id = (SELECT MAX(Id) FROM Owners)", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
         public static string GetLandlordIdOwnerByEmailFromOwners(string landlordId)
         {
             string data = null;
