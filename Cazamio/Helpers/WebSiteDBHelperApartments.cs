@@ -287,7 +287,6 @@ namespace CazamioProject.Helpers
                     }
                 }
             }
-            return data;
-        }
+            return data;        }
     }
 }
