@@ -29,31 +29,64 @@ namespace CazamioProject.BaseTestsDBTenants
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: records about a new tenant in the tables "dbo.Tenants", "dbo.AspNetUsers" and "dbo.AspNetUserRoles".
+        //Comment: The tables "Tenants", "AspNetUsers" and "AspNetUserRoles".
         //Path to cheking's: 
         public void RecordsAboutNewTenant()
         {
             string newTenant = TestDataDBForWebSiteTenant.NEW_TENANT_FIRST_LAST_NAME;
 
-            string idTenantTenants = DBTenants.GetIdForNewTenantTableTenants();
-            Console.WriteLine($"{idTenantTenants} :Id for new tenant {newTenant} from table tenants");
+            string idLastTenantTenants = DBTenants.GetIdByLastForNewTenantFromTenants();
+            Console.WriteLine($"{idLastTenantTenants} :Id for new tenant {newTenant} from table Tenants");
+
+            string idByEmailTenantTenants = DBTenants.GetIdByEmailForTenantFromTenants(TestDataDBForWebSiteTenant.NEW_TENANT_EMAIL);
+            Console.WriteLine($"{idByEmailTenantTenants} :Id for new tenant {newTenant} from table Tenants");
+
+            string marketplaceIdByEmailTenantTenants = DBTenants.GetMarketplaceIdByEmailForTenantFromTenants(TestDataDBForWebSiteTenant.NEW_TENANT_EMAIL);
+            Console.WriteLine($"{marketplaceIdByEmailTenantTenants} :MarketplaceId for new tenant {newTenant} from table Tenants");
+
+            string marketplaceIdLastTenantAspNetUsers = DBTenants.GetMarketplaceIdForNewTenantFromAspNetUsers();
+            Console.WriteLine($"{marketplaceIdByEmailTenantTenants} :MarketplaceId for new tenant {newTenant} from table AspNetUsers");
+
+            string emailConfirmedTenantAspNetUsers = DBTenants.GetEmailComfirmedByEmailForTenantFromAspNetUsers(TestDataDBForWebSiteTenant.NEW_TENANT_EMAIL);
+            Console.WriteLine($"{emailConfirmedTenantAspNetUsers} :EmailConfirmed for new tenant {newTenant} from table AspNetUsers");
 
             string userIdTenantTenants = DBTenants.GetUserIdForNewTenantTableTenants();
-            Console.WriteLine($"{userIdTenantTenants} :UserId for new tenant {newTenant} from table tenants");
+            Console.WriteLine($"{userIdTenantTenants} :UserId for new tenant {newTenant} from table Tenants");
             
-            string idTenantAspNetUsers = DBTenants.GetIdForNewTenantTableAspNetUsers("globo34f6fhj@putsbox.com");
-            Console.WriteLine($"{idTenantAspNetUsers} :Id for new tenant {newTenant} from table AspNetUsers");
+            string userIdTenantAspNetUsers = DBTenants.GetIdByEmailForNewTenantFromAspNetUsers(TestDataDBForWebSiteTenant.NEW_TENANT_EMAIL);
+            Console.WriteLine($"{userIdTenantAspNetUsers} :Id for new tenant {newTenant} from table AspNetUsers");
 
             string idTenantAspNetUserRoles = DBTenants.GetRoleIdForNewTenantTableAspNetUserRoles();
             Console.WriteLine($"{idTenantAspNetUserRoles} :RoleId for new tenant {newTenant} from table AspNetUserRoles");
 
+            string emailTenantAspNetUsers = DBTenants.GetEmailByLastIdForTenantFromAspNetUsers(TestDataDBForWebSiteTenant.NEW_TENANT_USER_NAME);
+            Console.WriteLine($"{emailTenantAspNetUsers} :Email for new tenant {newTenant} from table AspNetUsers");
+
+            string firstNameTenantAspNetUsers = DBTenants.GetFirstNameByLastIdForTenantFromAspNetUsers(TestDataDBForWebSiteTenant.NEW_TENANT_USER_NAME);
+            Console.WriteLine($"{firstNameTenantAspNetUsers} :FirstName for new tenant {newTenant} from table AspNetUsers");
+
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(userIdTenantTenants, idTenantAspNetUsers);
-                Console.WriteLine($"UserId a new tenant from table Tenants: {userIdTenantTenants} = {idTenantAspNetUsers} Id for tenant from table AspNetUsers");
+                Assert.AreEqual(idLastTenantTenants, idByEmailTenantTenants);
+                Console.WriteLine($"Id a new tenant from table Tenants: {idLastTenantTenants} = {idByEmailTenantTenants} Id for tenant from table AspNetUsers");
+
+                Assert.AreEqual(marketplaceIdByEmailTenantTenants, marketplaceIdLastTenantAspNetUsers);
+                Console.WriteLine($"MarketplaceId a new tenant from table Tenants: {marketplaceIdByEmailTenantTenants} = {marketplaceIdLastTenantAspNetUsers} MarketplaceId for tenant from table AspNetUsers");
+
+                Assert.AreEqual(emailConfirmedTenantAspNetUsers, TestDataDBGeneral.TRUE);
+                Console.WriteLine($"EmailConfirmed a new tenant from table AspNetUsers: {emailConfirmedTenantAspNetUsers} = {TestDataDBGeneral.TRUE} MarketplaceId for tenant ER");
+
+                Assert.AreEqual(userIdTenantTenants, userIdTenantAspNetUsers);
+                Console.WriteLine($"UserId a new tenant from table Tenants: {userIdTenantTenants} = {userIdTenantAspNetUsers} UserId for tenant from table AspNetUsers");
 
                 Assert.AreEqual(idTenantAspNetUserRoles, TestDataDBGeneral.ID_NAME_ROLE_TENANT);
-                Console.WriteLine($"RoleId tenant for a new tenant AR: {idTenantAspNetUserRoles} = {TestDataDBGeneral.ID_NAME_ROLE_TENANT} RoleId tenant for a new tenant ER");
+                Console.WriteLine($"RoleId tenant for a new tenant AspNetUserRoles: {idTenantAspNetUserRoles} = {TestDataDBGeneral.ID_NAME_ROLE_TENANT} RoleId tenant for a new tenant ER");
+
+                Assert.AreEqual(emailTenantAspNetUsers, TestDataDBForWebSiteTenant.NEW_TENANT_EMAIL);
+                Console.WriteLine($"Email a new tenant AspNetUsers: {emailTenantAspNetUsers} = {TestDataDBForWebSiteTenant.NEW_TENANT_EMAIL} Email for a new tenant ER");
+
+                Assert.AreEqual(firstNameTenantAspNetUsers, TestDataDBForWebSiteTenant.NEW_TENANT_FIRST_NAME);
+                Console.WriteLine($"FirstName a new tenant AspNetUsers: {firstNameTenantAspNetUsers} = {TestDataDBForWebSiteTenant.NEW_TENANT_FIRST_NAME} FirstName a new tenant ER");
             });
         }
 
