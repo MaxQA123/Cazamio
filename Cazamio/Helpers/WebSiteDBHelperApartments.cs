@@ -274,7 +274,7 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id FROM Apartments WHERE BuildingId IN" +
-                " (SELECT Id FROM Buildings WHERE BuildingName = 'LLC Atlant House') AND Unit = '1';", db);
+                " (SELECT Id FROM Buildings WHERE BuildingName = 'Creator Martin two') AND Unit = '3';", db);
                 command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = buildingName;
                 db.Open();
 

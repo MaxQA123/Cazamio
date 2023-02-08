@@ -183,14 +183,15 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetIdByEmailForNewTenantFromAspNetUsers(string idTenantAspNetUsers)
+        public static string GetIdByEmailForNewTenantFromAspNetUsers(string email, string marketplaceId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id" +
-                    " FROM AspNetUsers WHERE Email = @Email", db);
-                command.Parameters.AddWithValue("@Email", DbType.String).Value = idTenantAspNetUsers;
+                    " FROM AspNetUsers WHERE Email = @Email AND MarketplaceId = @MarketplaceId", db);
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = email;
+                command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -421,6 +422,29 @@ namespace CazamioProject.Helpers
             {
                 SqlCommand command = new("SELECT Id FROM TenantApartmentFavorites" +
                     " WHERE Id = (SELECT MAX(Id) FROM TenantApartmentFavorites);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetNewIdByTenantIdFromTenantApartmentFavorites(string id)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM" +
+                    " TenantApartmentFavorites WHERE TenantId IN" +
+                    " (SELECT Id FROM AspNetUsers WHERE Email = @Email);", db);
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = id;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

@@ -82,16 +82,14 @@ namespace CazamioProgect.Helpers
         public const string NAME_ROLE_OCCUPANT = "Occupant";
         public const string NAME_ROLE_GUARANTOR = "Guarantor";
 
-        public const string APPLICANT_WIFE_TENANT_TENANTID = "75";
-        public const string APPLICANT_WIFE_TENANT_USERID = "5efc0edc-d03f-4f1e-9bf2-c1cc2453b36f";
+        public const string TENANT_APPLICANT_RAY_ID = "83";
+        public const string TENANT_APPLICANT_RAY_USER_ID = "4bb26583-6a79-40c7-8839-508774a9daf8";
         
-        public const string OCCUPANT_CROCODILE_DENDY_TENANTID = "47";
-        public const string OCCUPANT_CROCODILE_DENDY_USERID = "1397a512-6600-40d8-95cd-e76f1e3af5e2";
-        public const string OCCUPANT_CROCODILE_DENDY_EMAIL = "apipostman65455@gmail.com";
+        public const string TENANT_OCCUPANT_LIZA_TENANT_ID = "90";
+        public const string TENANT_OCCUPANT_LIZA_USER_ID = "74af5e76-4590-44b4-9a24-72cae8aa7201";
 
-        public const string GUARANTOR_RODGER_VANPIECE_TENANTID = "48";
-        public const string GUARANTOR_RODGER_VANPIECE_USERID = "149fcd30-8ddb-4c3d-9ffb-4c466861f25a";
-        public const string GUARANTOR_RODGER_VANPIECE_EMAIL = "guarantor5935@gmail.com";
+        public const string TENANT_GUARANTOR_JIMMY_TENANT_ID = "88";
+        public const string TENANT_GUARANTOR_JIMMY_USER_ID = "ca977e7a-726f-4bbf-b5a9-1506d4c57469";
     }
 
     public class TestDataDBForWebSiteAdmin

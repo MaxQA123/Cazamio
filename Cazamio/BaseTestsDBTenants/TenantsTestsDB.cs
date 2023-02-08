@@ -29,6 +29,32 @@ namespace CazamioProject.BaseTestsDBTenants
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
+        //Comment:  new records about that the an apartemnt added in the favorities in the table "dbo.TenantApartmentFavorities".
+        //Path to cheking's: 
+
+        public void NewTenantIdAndId()
+        {
+            string newTenant = TestDataDBForWebSiteTenant.NEW_TENANT_FIRST_LAST_NAME;
+
+            string tenantIdByEmail = DBTenants.GetIdByEmailForNewTenantFromAspNetUsers(TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+            Console.WriteLine($"{tenantIdByEmail} :Id for new tenant {newTenant} from table AspNetUsers");
+            
+            string idLast = DBTenants.GetIdByLastForNewTenantFromTenants();
+            Console.WriteLine($"{idLast} :Id for new tenant {newTenant} from table Tenants");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBTenant")]
+        [AllureSubSuite("RecordsAboutNewTenant")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
         //Comment: The tables "Tenants", "AspNetUsers" and "AspNetUserRoles".
         //Path to cheking's: 
         public void RecordsAboutNewTenant()
@@ -53,7 +79,7 @@ namespace CazamioProject.BaseTestsDBTenants
             string userIdTenantTenants = DBTenants.GetUserIdForNewTenantTableTenants();
             Console.WriteLine($"{userIdTenantTenants} :UserId for new tenant {newTenant} from table Tenants");
             
-            string userIdTenantAspNetUsers = DBTenants.GetIdByEmailForNewTenantFromAspNetUsers(TestDataDBForWebSiteTenant.NEW_TENANT_EMAIL);
+            string userIdTenantAspNetUsers = DBTenants.GetIdByEmailForNewTenantFromAspNetUsers(TestDataDBForWebSiteTenant.NEW_TENANT_EMAIL, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{userIdTenantAspNetUsers} :Id for new tenant {newTenant} from table AspNetUsers");
 
             string idTenantAspNetUserRoles = DBTenants.GetRoleIdForNewTenantTableAspNetUserRoles();
@@ -193,14 +219,14 @@ namespace CazamioProject.BaseTestsDBTenants
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(apartmentApplicationIdForApplicant, TestDataDBForWebSiteTenant.APPLICANT_WIFE_TENANT_TENANTID);
-                Console.WriteLine($"TenantId {tenantApplicant} AR: {apartmentApplicationIdForApplicant} = {TestDataDBForWebSiteTenant.APPLICANT_WIFE_TENANT_TENANTID} :TenantId {tenantApplicant} ER");
+                Assert.AreEqual(apartmentApplicationIdForApplicant, TestDataDBForWebSiteTenant.TENANT_APPLICANT_RAY_ID);
+                Console.WriteLine($"TenantId {tenantApplicant} AR: {apartmentApplicationIdForApplicant} = {TestDataDBForWebSiteTenant.TENANT_APPLICANT_RAY_ID} :TenantId {tenantApplicant} ER");
 
-                Assert.AreEqual(apartmentApplicationIdForOccupant, TestDataDBForWebSiteTenant.OCCUPANT_CROCODILE_DENDY_TENANTID);
-                Console.WriteLine($"TenantId {tenantOccupant} AR: {apartmentApplicationIdForOccupant} = {TestDataDBForWebSiteTenant.OCCUPANT_CROCODILE_DENDY_TENANTID} :TenantId {tenantOccupant} ER");
+                Assert.AreEqual(apartmentApplicationIdForOccupant, TestDataDBForWebSiteTenant.TENANT_OCCUPANT_LIZA_TENANT_ID);
+                Console.WriteLine($"TenantId {tenantOccupant} AR: {apartmentApplicationIdForOccupant} = {TestDataDBForWebSiteTenant.TENANT_OCCUPANT_LIZA_TENANT_ID} :TenantId {tenantOccupant} ER");
 
-                Assert.AreEqual(apartmentApplicationIdForGuarantor, TestDataDBForWebSiteTenant.GUARANTOR_RODGER_VANPIECE_TENANTID);
-                Console.WriteLine($"TenantId {tenantGuarantor} AR: {apartmentApplicationIdForGuarantor} = {TestDataDBForWebSiteTenant.GUARANTOR_RODGER_VANPIECE_TENANTID} :TenantId {tenantGuarantor} ER");
+                Assert.AreEqual(apartmentApplicationIdForGuarantor, TestDataDBForWebSiteTenant.TENANT_GUARANTOR_JIMMY_TENANT_ID);
+                Console.WriteLine($"TenantId {tenantGuarantor} AR: {apartmentApplicationIdForGuarantor} = {TestDataDBForWebSiteTenant.TENANT_GUARANTOR_JIMMY_TENANT_ID} :TenantId {tenantGuarantor} ER");
             });
         }
 
@@ -220,27 +246,30 @@ namespace CazamioProject.BaseTestsDBTenants
         //Path to cheking's: 
         public void NewRecordInTableTenantApartmentFavorities()
         {
-            string newTenant = TestDataDBForWebSiteTenant.NEW_TENANT_FIRST_LAST_NAME;
+            string tenantApplicant = TestDataForWebSiteTenant.FIRST_NAME_TENANT_APPLICANT;
 
-            string idNewTenantApartmentFavorites = DBTenants.GetNewIdTableTenantApartmentFavorites();
-            Console.WriteLine($"{idNewTenantApartmentFavorites} :IdNewTenantApartmentFavorites {newTenant} from table TenantApartmentFavorites");
+            string idLastFavorites = DBTenants.GetNewIdTableTenantApartmentFavorites();
+            Console.WriteLine($"{idLastFavorites} :Id last {tenantApplicant} from table TenantApartmentFavorites");
+
+            string idFavoritesByEmail = DBTenants.GetNewIdByTenantIdFromTenantApartmentFavorites(TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT);
+            Console.WriteLine($"{idFavoritesByEmail} :Id by email {tenantApplicant} from table TenantApartmentFavorites");
 
             string tenantIdNewTenantApartmentFavorites = DBTenants.GetNewTenantIdTableTenantApartmentFavorites();
-            Console.WriteLine($"{tenantIdNewTenantApartmentFavorites} :TenantIdNewTenantApartmentFavorites {newTenant} from table TenantApartmentFavorites");
+            Console.WriteLine($"{tenantIdNewTenantApartmentFavorites} :TenantIdNewTenantApartmentFavorites {tenantApplicant} from table TenantApartmentFavorites");
 
-            string apartmentIdFromTableApartments = DBApartments.GetIdForUnitFromApartments("Royal House");
-            Console.WriteLine($"{apartmentIdFromTableApartments} :ApartmentId {newTenant} from table Apartments");
+            string apartmentIdFromTableApartments = DBApartments.GetIdForUnitFromApartments(TestDataDBForWebSiteAdmin.BUILDING_NAME);
+            Console.WriteLine($"{apartmentIdFromTableApartments} :ApartmentId {tenantApplicant} from table Apartments");
 
             string apartmentIdFromTableTenantApartmentFavorites = DBTenants.GetNewApartmentIdTableTenantApartmentFavorites();
-            Console.WriteLine($"{apartmentIdFromTableTenantApartmentFavorites} :ApartmentId {newTenant} from table TenantApartmentFavorites");
+            Console.WriteLine($"{apartmentIdFromTableTenantApartmentFavorites} :ApartmentId {tenantApplicant} from table TenantApartmentFavorites");
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(tenantIdNewTenantApartmentFavorites, TestDataDBForWebSiteTenant.APPLICANT_WIFE_TENANT_USERID);
-                Console.WriteLine($"TenantId for a new apartment favorities from table TenantApartmentFavorites AR: {tenantIdNewTenantApartmentFavorites} = {TestDataDBForWebSiteTenant.APPLICANT_WIFE_TENANT_USERID} TenantId for a new apartment favorities from table TenantApartmentFavorites ER");
+                Assert.AreEqual(idLastFavorites, idFavoritesByEmail);
+                Console.WriteLine($"Id for a new favorities from table TenantApartmentFavorites: {idLastFavorites} = {idFavoritesByEmail} Id for a favorities from table TenantApartmentFavorites");
 
-                Assert.AreEqual(tenantIdNewTenantApartmentFavorites, TestDataDBForWebSiteTenant.APPLICANT_WIFE_TENANT_USERID);
-                Console.WriteLine($"TenantId for a new apartment favorities from table TenantApartmentFavorites AR: {tenantIdNewTenantApartmentFavorites} = {TestDataDBForWebSiteTenant.APPLICANT_WIFE_TENANT_USERID} TenantId for a new apartment favorities from table TenantApartmentFavorites ER");
+                Assert.AreEqual(tenantIdNewTenantApartmentFavorites, TestDataDBForWebSiteTenant.TENANT_APPLICANT_RAY_USER_ID);
+                Console.WriteLine($"TenantId for a new favorities from table TenantApartmentFavorites: {tenantIdNewTenantApartmentFavorites} = {TestDataDBForWebSiteTenant.TENANT_APPLICANT_RAY_USER_ID} TenantId for a favorities ER");
 
                 Assert.AreEqual(apartmentIdFromTableApartments, apartmentIdFromTableTenantApartmentFavorites);
                 Console.WriteLine($"TenantId for a new apartment favorities from table TenantApartmentFavorites AR: {apartmentIdFromTableApartments} = {apartmentIdFromTableTenantApartmentFavorites} TenantId for a new apartment favorities from table TenantApartmentFavorites ER");
