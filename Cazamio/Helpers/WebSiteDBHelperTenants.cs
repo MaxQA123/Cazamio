@@ -183,7 +183,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetIdByEmailForNewTenantFromAspNetUsers(string email, string marketplaceId)
+        public static string GetTenantIdByEmailForNewTenantFromAspNetUsers(string email, string marketplaceId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -228,7 +228,99 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetTenantIdForNewTenantTableTenantBackgroundChecks()
+        public static string GetLastIdByEmailFromTenantBackgroundChecks(string email, string marketplaceId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM TenantBackgroundChecks" +
+                    " WHERE Id = (SELECT MAX(Id) FROM TenantBackgroundChecks) OR TenantId IN" +
+                    " (SELECT Id FROM AspNetUsers WHERE Email = @Email AND MarketplaceId = @MarketplaceId);", db);
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = email;
+                command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetLastIdFromTenantBackgroundChecks()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM TenantBackgroundChecks" +
+                    " WHERE Id = (SELECT MAX(Id) FROM TenantBackgroundChecks);", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetLastIdCreditScreeningFromTenantBackgroundChecks(string email, string marketplaceId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM TenantBackgroundChecks" +
+                    " WHERE BackgroundCheckType = 'CreditScreening' AND TenantId IN" +
+                    " (SELECT Id FROM AspNetUsers WHERE Email = @Email AND MarketplaceId = @MarketplaceId);", db);
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = email;
+                command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetLastCreditScreeningFromTenantBackgroundChecks(string email, string marketplaceId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM TenantBackgroundChecks" +
+                    " WHERE TenantId = @TenantId AND BackgroundCheckType = @BackgroundCheckType ORDER BY Id DESC;", db);
+                command.Parameters.AddWithValue("@TenantId", DbType.String).Value = email;
+                command.Parameters.AddWithValue("@BackgroundCheckType", DbType.String).Value = marketplaceId;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetCheckStatusForFromTenantBackgroundChecks()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))

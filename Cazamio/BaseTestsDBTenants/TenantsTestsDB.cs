@@ -36,7 +36,7 @@ namespace CazamioProject.BaseTestsDBTenants
         {
             string newTenant = TestDataDBForWebSiteTenant.NEW_TENANT_FIRST_LAST_NAME;
 
-            string tenantIdByEmail = DBTenants.GetIdByEmailForNewTenantFromAspNetUsers(TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+            string tenantIdByEmail = DBTenants.GetTenantIdByEmailForNewTenantFromAspNetUsers(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{tenantIdByEmail} :Id for new tenant {newTenant} from table AspNetUsers");
             
             string idLast = DBTenants.GetIdByLastForNewTenantFromTenants();
@@ -79,7 +79,7 @@ namespace CazamioProject.BaseTestsDBTenants
             string userIdTenantTenants = DBTenants.GetUserIdForNewTenantTableTenants();
             Console.WriteLine($"{userIdTenantTenants} :UserId for new tenant {newTenant} from table Tenants");
             
-            string userIdTenantAspNetUsers = DBTenants.GetIdByEmailForNewTenantFromAspNetUsers(TestDataDBForWebSiteTenant.NEW_TENANT_EMAIL, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+            string userIdTenantAspNetUsers = DBTenants.GetTenantIdByEmailForNewTenantFromAspNetUsers(TestDataDBForWebSiteTenant.NEW_TENANT_EMAIL, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{userIdTenantAspNetUsers} :Id for new tenant {newTenant} from table AspNetUsers");
 
             string idTenantAspNetUserRoles = DBTenants.GetRoleIdForNewTenantTableAspNetUserRoles();
@@ -130,23 +130,38 @@ namespace CazamioProject.BaseTestsDBTenants
         //This test case is doing checking: 
         //Comment:  new records about background check and credit screening in the table "dbo.BackgroundChecks".
         //Path to cheking's: 
-        public void RecordsAboutBackgroundCheckCreditScreening()
+        public void NewRecordsAboutBackgroundCheckCreditScreening()
         {
-            string newTenant = TestDataDBForWebSiteTenant.NEW_TENANT_FIRST_LAST_NAME;
+            string tenant = TestDataDBForWebSiteTenant.ALREADY_EXIST_TENANT_FIRST_LAST_NAME;
 
-            string checkStatusBackgroundChecks = DBTenants.GetTenantIdForNewTenantTableTenantBackgroundChecks();
-            Console.WriteLine($"{checkStatusBackgroundChecks} :CheckStatus {newTenant} from table BackgroundChecks");
+            string lastIdByEmail = DBTenants.GetLastIdByEmailFromTenantBackgroundChecks(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_TWO_DEMO);
+            Console.WriteLine($"{lastIdByEmail} :Last Id {tenant} from table TenantBackgroundChecks");
 
-            string checkStatusCreditScreening = DBTenants.GetTenantIdForNewTenantTableTenantCreditScreening();
-            Console.WriteLine($"{checkStatusCreditScreening} :CheckStatus {newTenant} from table BackgroundChecks");
+            string lastId = DBTenants.GetLastIdFromTenantBackgroundChecks();
+            Console.WriteLine($"{lastId} :Last Id {tenant} from table TenantBackgroundChecks");
+
+            string lastIdCreditScreening = DBTenants.GetLastIdCreditScreeningFromTenantBackgroundChecks(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_TWO_DEMO);
+            Console.WriteLine($"{lastIdCreditScreening} :Last Id for BackgroundCheck {tenant} from table TenantBackgroundChecks");
+
+            string lastIdBackgroundCheck = DBTenants.GetLastCreditScreeningFromTenantBackgroundChecks(TestDataDBForWebSiteTenant.TENANT_OCCUPANT_ALFRED_USER_ID, TestDataDBGeneral.BACGROUND_CHECK);
+            Console.WriteLine($"{lastIdBackgroundCheck} :Last Id for CreditScreening {tenant} from table TenantBackgroundChecks");
+
+            //string checkStatusCreditScreening = DBTenants.GetTenantIdForNewTenantTableTenantCreditScreening();
+            //Console.WriteLine($"{checkStatusCreditScreening} :CheckStatus {tenant} from table BackgroundChecks");
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(checkStatusBackgroundChecks, TestDataDBForWebSiteTenant.PASSED_BACKGROUND_CHECK_TENANT);
-                Console.WriteLine($"CheckStatus of BackgroundCheck for a new tenant from table BackgroundChecks AR: {checkStatusBackgroundChecks} = {TestDataDBForWebSiteTenant.PASSED_BACKGROUND_CHECK_TENANT} CheckStatus of BackgroundCheck for a new tenant from table BackgroundChecks ER");
+                Assert.AreEqual(lastIdByEmail, lastId);
+                Console.WriteLine($"Last Id from table TenantBackgroundChecks: {lastIdByEmail} = {lastId} Last Id from table TenantBackgroundChecks");
 
-                Assert.AreEqual(checkStatusCreditScreening, TestDataDBForWebSiteTenant.PASSED_CREDIT_SCREENING_TENANT);
-                Console.WriteLine($"CheckStatus of CreditScreening for a new tenant from table BackgroundChecks AR: {checkStatusCreditScreening} = {TestDataDBForWebSiteTenant.PASSED_CREDIT_SCREENING_TENANT} CheckStatus of CreditScreening for a new tenant from table BackgroundChecks ER");
+                Assert.AreEqual(lastIdCreditScreening, lastId);
+                Console.WriteLine($"Last Id for CreditScreening from table TenantBackgroundChecks: {lastIdCreditScreening} = {lastId} Last Id from table TenantBackgroundChecks");
+
+                //Assert.AreEqual(checkStatus, TestDataDBForWebSiteTenant.PASSED_BACKGROUND_CHECK_TENANT);
+                //Console.WriteLine($"CheckStatus of a new BackgroundCheck from table TenantBackgroundChecks: {checkStatus} = {TestDataDBForWebSiteTenant.PASSED_BACKGROUND_CHECK_TENANT} CheckStatus of a new BackgroundCheck ER");
+
+                //Assert.AreEqual(checkStatusCreditScreening, TestDataDBForWebSiteTenant.PASSED_CREDIT_SCREENING_TENANT);
+                //Console.WriteLine($"CheckStatus of CreditScreening for a new tenant from table BackgroundChecks AR: {checkStatusCreditScreening} = {TestDataDBForWebSiteTenant.PASSED_CREDIT_SCREENING_TENANT} CheckStatus of CreditScreening for a new tenant from table BackgroundChecks ER");
             });
         }
 

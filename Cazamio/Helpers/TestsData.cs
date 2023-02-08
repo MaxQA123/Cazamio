@@ -48,9 +48,11 @@ namespace CazamioProgect.Helpers
         public const string NAME_ROLE_AGENT = "Broker";
         public const string NAME_ROLE_BROKER = "Landlord";
         public const string MARKETPLACE_ID_TESTLANDLORD_DEMO = "1";
-        public const string MARKETPLACE_ID_TESTLANDLORDTWO_DEMO = "3";
+        public const string MARKETPLACE_ID_TESTLANDLORD_TWO_DEMO = "3";
         public const string TRUE = "True";
         public const string FALSE = "False";
+        public const string BACGROUND_CHECK = "BackgroundCheck";
+        public const string CREDIT_SCREENING = "CreditScreening";
 
     }
 
@@ -76,6 +78,7 @@ namespace CazamioProgect.Helpers
         public const string NEW_TENANT_LAST_NAME = "Abba";
         public const string PASSED_BACKGROUND_CHECK_TENANT = "Passed";
         public const string PASSED_CREDIT_SCREENING_TENANT = "Passed";
+        public const string ALREADY_EXIST_TENANT_FIRST_LAST_NAME = "Testing Test";
 
 
         public const string NAME_ROLE_APPLICANT = "Applicant";
@@ -87,6 +90,9 @@ namespace CazamioProgect.Helpers
         
         public const string TENANT_OCCUPANT_LIZA_TENANT_ID = "90";
         public const string TENANT_OCCUPANT_LIZA_USER_ID = "74af5e76-4590-44b4-9a24-72cae8aa7201";
+
+        public const string TENANT_OCCUPANT_ALFRED_TENANT_ID = "102";
+        public const string TENANT_OCCUPANT_ALFRED_USER_ID = "1e037059-0fd0-43d8-b972-167a7351c4e1";
 
         public const string TENANT_GUARANTOR_JIMMY_TENANT_ID = "88";
         public const string TENANT_GUARANTOR_JIMMY_USER_ID = "ca977e7a-726f-4bbf-b5a9-1506d4c57469";
@@ -143,7 +149,7 @@ namespace CazamioProgect.Helpers
         public const string FIRST_NAME_TENANT_APPLICANT = "Ray";
         public const string LAST_NAME_TENANT_APPLICANT = "Anderson";
 
-        public const string EMAIL_CURRENT_OCCUPANT_ONE = "tenantoccupantliza@xitroo.com";
+        public const string EMAIL_CURRENT_OCCUPANT_ONE = "tenantocc123liza@putsbox.com";
         public const string FIRST_NAME_OCCUPANT_ONE = "Liza-Like";
         public const string LAST_NAME_OCCUPANT_ONE = "Junior";
         public const string PHONE_NUMBER_OCCUPANT_ONE = "2128765556";
@@ -151,7 +157,7 @@ namespace CazamioProgect.Helpers
         public const string NEW_LAST_NAME_OCCUPANT_ONE = "Taylor";
         public const string NEW_PHONE_NUMBER_OCCUPANT_ONE = "5151234321";
 
-        public const string EMAIL_CURRENT_OCCUPANT_SECOND = "tenantoccupantalfred123@xitroo.com";
+        public const string EMAIL_CURRENT_OCCUPANT_SECOND = "tenantocc333alfred@putsbox.com";
         public const string FIRST_NAME_OCCUPANT_SECOND = "Alfred";
         public const string LAST_NAME_OCCUPANT_SECOND = "Dickins";
 
