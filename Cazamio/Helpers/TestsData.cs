@@ -53,6 +53,7 @@ namespace CazamioProgect.Helpers
         public const string FALSE = "False";
         public const string BACGROUND_CHECK = "BackgroundCheck";
         public const string CREDIT_SCREENING = "CreditScreening";
+        public const string PASSED = "Passed";
 
     }
 
@@ -76,8 +77,6 @@ namespace CazamioProgect.Helpers
         public const string NEW_TENANT_FIRST_LAST_NAME = "Prada Abba";
         public const string NEW_TENANT_FIRST_NAME = "Prada";
         public const string NEW_TENANT_LAST_NAME = "Abba";
-        public const string PASSED_BACKGROUND_CHECK_TENANT = "Passed";
-        public const string PASSED_CREDIT_SCREENING_TENANT = "Passed";
         public const string ALREADY_EXIST_TENANT_FIRST_LAST_NAME = "Testing Test";
 
 

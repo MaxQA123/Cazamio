@@ -37,7 +37,7 @@ namespace CazamioProject.BaseTestsDBTenants
             string newTenant = TestDataDBForWebSiteTenant.NEW_TENANT_FIRST_LAST_NAME;
 
             string tenantIdByEmail = DBTenants.GetTenantIdByEmailForNewTenantFromAspNetUsers(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
-            Console.WriteLine($"{tenantIdByEmail} :Id for new tenant {newTenant} from table AspNetUsers");
+            Console.WriteLine($"{tenantIdByEmail} :TenantId for new tenant {newTenant} from table AspNetUsers");
             
             string idLast = DBTenants.GetIdByLastForNewTenantFromTenants();
             Console.WriteLine($"{idLast} :Id for new tenant {newTenant} from table Tenants");
@@ -140,14 +140,29 @@ namespace CazamioProject.BaseTestsDBTenants
             string lastId = DBTenants.GetLastIdFromTenantBackgroundChecks();
             Console.WriteLine($"{lastId} :Last Id {tenant} from table TenantBackgroundChecks");
 
-            string lastIdCreditScreening = DBTenants.GetLastIdCreditScreeningFromTenantBackgroundChecks(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_TWO_DEMO);
+            string lastIdCreditScreening = DBTenants.GetLastIdCreditScreeningFromTenantBackgroundChecks(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{lastIdCreditScreening} :Last Id for BackgroundCheck {tenant} from table TenantBackgroundChecks");
 
-            string lastIdBackgroundCheck = DBTenants.GetLastCreditScreeningFromTenantBackgroundChecks(TestDataDBForWebSiteTenant.TENANT_OCCUPANT_ALFRED_USER_ID, TestDataDBGeneral.BACGROUND_CHECK);
-            Console.WriteLine($"{lastIdBackgroundCheck} :Last Id for CreditScreening {tenant} from table TenantBackgroundChecks");
+            string tenantIdByEmail = DBTenants.GetTenantIdByEmailForNewTenantFromAspNetUsers(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+            Console.WriteLine($"{tenantIdByEmail} :TenantId for new tenant {tenant} from table AspNetUsers");
 
-            //string checkStatusCreditScreening = DBTenants.GetTenantIdForNewTenantTableTenantCreditScreening();
-            //Console.WriteLine($"{checkStatusCreditScreening} :CheckStatus {tenant} from table BackgroundChecks");
+            string lastIdByEmailBackgroundCheck = DBTenants.GetLastBackgroundCheckByTenantIdFromTenantBackgroundChecks($"{tenantIdByEmail}", TestDataDBGeneral.BACGROUND_CHECK);
+            Console.WriteLine($"{lastIdByEmailBackgroundCheck} :Last Id by email for BackgroundCheck {tenant} from table TenantBackgroundChecks");
+
+            string lastIdBackgroundCheck = DBTenants.GetLastBackgroundCheckFromTenantBackgroundChecks(TestDataDBGeneral.BACGROUND_CHECK);
+            Console.WriteLine($"{lastIdBackgroundCheck} :Last Id BackgroundCheck {tenant} from table BackgroundChecks");
+
+            string nameBackgroundCheck = DBTenants.GetNameBackgroundCheckFromTenantBackgroundChecks($"{lastIdByEmailBackgroundCheck}");
+            Console.WriteLine($"{nameBackgroundCheck} :Name this is BackgroundCheck {tenant} from table BackgroundChecks");
+
+            string nameCreditScreening = DBTenants.GetNameCreditScreeningFromTenantBackgroundChecks($"{lastIdCreditScreening}");
+            Console.WriteLine($"{nameCreditScreening} :Name this is CreditScreening {tenant} from table BackgroundChecks");
+
+            string passedBackgroundCheck = DBTenants.GetCheckStatusBackgroundCheckFromTenantBackgroundChecks($"{lastIdBackgroundCheck}", TestDataDBGeneral.BACGROUND_CHECK);
+            Console.WriteLine($"{passedBackgroundCheck} :Passed BackgroundCheck {tenant} from table BackgroundChecks");
+
+            string passedCreditScreening = DBTenants.GetCheckStatusCreditScreeningFromTenantBackgroundChecks($"{lastIdCreditScreening}", TestDataDBGeneral.CREDIT_SCREENING);
+            Console.WriteLine($"{passedCreditScreening} :Passed CreditScreening {tenant} from table BackgroundChecks");
 
             Assert.Multiple(() =>
             {
@@ -157,11 +172,20 @@ namespace CazamioProject.BaseTestsDBTenants
                 Assert.AreEqual(lastIdCreditScreening, lastId);
                 Console.WriteLine($"Last Id for CreditScreening from table TenantBackgroundChecks: {lastIdCreditScreening} = {lastId} Last Id from table TenantBackgroundChecks");
 
-                //Assert.AreEqual(checkStatus, TestDataDBForWebSiteTenant.PASSED_BACKGROUND_CHECK_TENANT);
-                //Console.WriteLine($"CheckStatus of a new BackgroundCheck from table TenantBackgroundChecks: {checkStatus} = {TestDataDBForWebSiteTenant.PASSED_BACKGROUND_CHECK_TENANT} CheckStatus of a new BackgroundCheck ER");
+                Assert.AreEqual(lastIdByEmailBackgroundCheck, lastIdBackgroundCheck);
+                Console.WriteLine($"Last Id by email for BackgroundCheck from table TenantBackgroundChecks: {lastIdByEmailBackgroundCheck} = {lastIdBackgroundCheck} Last Id BackgroundCheck of a new BackgroundCheck");
 
-                //Assert.AreEqual(checkStatusCreditScreening, TestDataDBForWebSiteTenant.PASSED_CREDIT_SCREENING_TENANT);
-                //Console.WriteLine($"CheckStatus of CreditScreening for a new tenant from table BackgroundChecks AR: {checkStatusCreditScreening} = {TestDataDBForWebSiteTenant.PASSED_CREDIT_SCREENING_TENANT} CheckStatus of CreditScreening for a new tenant from table BackgroundChecks ER");
+                Assert.AreEqual(nameBackgroundCheck, TestDataDBGeneral.BACGROUND_CHECK);
+                Console.WriteLine($"Name BackgroundCheck from table BackgroundChecks: {nameBackgroundCheck} = {TestDataDBGeneral.BACGROUND_CHECK} Name BackgroundCheck ER");
+
+                Assert.AreEqual(nameCreditScreening, TestDataDBGeneral.CREDIT_SCREENING);
+                Console.WriteLine($"Name CreditScreening from table BackgroundChecks: {nameCreditScreening} = {TestDataDBGeneral.CREDIT_SCREENING} Name CreditScreening ER");
+
+                Assert.AreEqual(passedBackgroundCheck, TestDataDBGeneral.PASSED);
+                Console.WriteLine($"Passed BackgroundCheck from table BackgroundChecks: {passedBackgroundCheck} = {TestDataDBGeneral.PASSED} Passed BackgroundCheck ER");
+
+                Assert.AreEqual(passedCreditScreening, TestDataDBGeneral.PASSED);
+                Console.WriteLine($"Passed CreditScreening from table BackgroundChecks: {passedCreditScreening} = {TestDataDBGeneral.PASSED} Passed CreditScreening ER");
             });
         }
 

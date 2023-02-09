@@ -297,7 +297,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetLastCreditScreeningFromTenantBackgroundChecks(string email, string marketplaceId)
+        public static string GetLastBackgroundCheckByTenantIdFromTenantBackgroundChecks(string email, string backgroundCheck)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -305,7 +305,7 @@ namespace CazamioProject.Helpers
                 SqlCommand command = new("SELECT Id FROM TenantBackgroundChecks" +
                     " WHERE TenantId = @TenantId AND BackgroundCheckType = @BackgroundCheckType ORDER BY Id DESC;", db);
                 command.Parameters.AddWithValue("@TenantId", DbType.String).Value = email;
-                command.Parameters.AddWithValue("@BackgroundCheckType", DbType.String).Value = marketplaceId;
+                command.Parameters.AddWithValue("@BackgroundCheckType", DbType.String).Value = backgroundCheck;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -320,16 +320,14 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetCheckStatusForFromTenantBackgroundChecks()
+        public static string GetLastBackgroundCheckFromTenantBackgroundChecks(string backgroundCheck)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT TOP(1) CheckStatus" +
-                    " FROM TenantBackgroundChecks INNER JOIN Tenants" +
-                    " ON TenantId IN" +
-                    " (SELECT UserId FROM Tenants WHERE Id = (SELECT MAX(Id) FROM Tenants)" +
-                    " AND TenantBackgroundChecks.BackgroundCheckType = 'BackgroundCheck'); ", db);
+                SqlCommand command = new("SELECT TOP (1) Id" +
+                    " FROM TenantBackgroundChecks WHERE BackgroundCheckType = @BackgroundCheckType ORDER BY Id DESC;", db);
+                command.Parameters.AddWithValue("@BackgroundCheckType", DbType.String).Value = backgroundCheck;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -344,16 +342,84 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetTenantIdForNewTenantTableTenantCreditScreening()
+        public static string GetNameBackgroundCheckFromTenantBackgroundChecks(string id)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT TOP(1) CheckStatus" +
-                    " FROM TenantBackgroundChecks INNER JOIN Tenants" +
-                    " ON TenantId IN" +
-                    " (SELECT UserId FROM Tenants WHERE Id = (SELECT MAX(Id) FROM Tenants)" +
-                    " AND TenantBackgroundChecks.BackgroundCheckType = 'CreditScreening'); ", db);
+                SqlCommand command = new("SELECT BackgroundCheckType" +
+                    " FROM TenantBackgroundChecks WHERE Id = @Id", db);
+                command.Parameters.AddWithValue("@Id", DbType.String).Value = id;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetNameCreditScreeningFromTenantBackgroundChecks(string id)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT BackgroundCheckType" +
+                    " FROM TenantBackgroundChecks WHERE Id = @Id", db);
+                command.Parameters.AddWithValue("@Id", DbType.String).Value = id;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetCheckStatusBackgroundCheckFromTenantBackgroundChecks(string id, string backgroundCheck)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT CheckStatus" +
+                    " FROM TenantBackgroundChecks" +
+                    " WHERE Id = @Id AND BackgroundCheckType = @BackgroundCheck", db);
+                command.Parameters.AddWithValue("@Id", DbType.String).Value = id;
+                command.Parameters.AddWithValue("@BackgroundCheck", DbType.String).Value = backgroundCheck;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetCheckStatusCreditScreeningFromTenantBackgroundChecks(string id, string creditScreening)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT CheckStatus" +
+                    " FROM TenantBackgroundChecks" +
+                    " WHERE Id = @Id AND BackgroundCheckType = @CreditScreening", db);
+                command.Parameters.AddWithValue("@Id", DbType.String).Value = id;
+                command.Parameters.AddWithValue("@CreditScreening", DbType.String).Value = creditScreening;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
