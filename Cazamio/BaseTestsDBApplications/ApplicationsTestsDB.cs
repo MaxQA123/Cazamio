@@ -33,7 +33,7 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelatedApplicationWithTenantApplicant()
         {
-            string tenantApplicant = TestDataDBForWebSiteTenant.NAME_ROLE_APPLICANT;
+            string tenantApplicant = TestDataDBGeneral.NAME_ROLE_APPLICANT;
 
             string idTenantApplicant = DBApplications.GetTenantIdApplicant("tenantswife@gmail.com");
             Console.WriteLine($"Id for tenant {tenantApplicant} from table tenants: {idTenantApplicant}");
@@ -63,9 +63,9 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelatedApplicationWithTenantsAppOccGua()
         {
-            string tenantApplicant = TestDataDBForWebSiteTenant.NAME_ROLE_APPLICANT;
-            string tenantOccupant = TestDataDBForWebSiteTenant.NAME_ROLE_OCCUPANT;
-            string tenantGuarantor = TestDataDBForWebSiteTenant.NAME_ROLE_GUARANTOR;
+            string tenantApplicant = TestDataDBGeneral.NAME_ROLE_APPLICANT;
+            string tenantOccupant = TestDataDBGeneral.NAME_ROLE_OCCUPANT;
+            string tenantGuarantor = TestDataDBGeneral.NAME_ROLE_GUARANTOR;
 
             string idTenantApplicant = DBApplications.GetTenantIdApplicant("tenantswife@gmail.com");
             Console.WriteLine($"Id for tenant {tenantApplicant} from table tenants: {idTenantApplicant}");

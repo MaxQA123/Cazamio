@@ -183,6 +183,54 @@ namespace CazamioProject.Helpers
             return data;
         }
 
+        public static string GetMarketplaceIdTwoForTenantFromAspNetUsers(string email)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT MarketplaceId" +
+                    " FROM AspNetUsers" +
+                    " WHERE MarketplaceId = (SELECT MAX(MarketplaceId) FROM AspNetUsers)" +
+                    " AND Email = @Email", db);
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = email;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetMarketplaceIdOneForTenantFromAspNetUsers(string email)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT MarketplaceId" +
+                    " FROM AspNetUsers" +
+                    " WHERE MarketplaceId = (SELECT MIN(MarketplaceId) FROM AspNetUsers)" +
+                    " AND Email = @Email", db);
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = email;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
         public static string GetTenantIdByEmailForNewTenantFromAspNetUsers(string email, string marketplaceId)
         {
             string data = null;
@@ -478,7 +526,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetNewApartmentApplicationIdTableTenantLeases()
+        public static string GetLastApartmentApplicationIdfromTenantLeases()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -501,16 +549,18 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetApartmentApplicationIdForApplicantTableTenantLeases()
+        public static string GetApartmentApplicationIdForApplicantTableTenantLeases(string id)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT TOP(1) TenantId, ApartmentApplicationId" +
+                SqlCommand command = new("SELECT TOP(1) ApartmentApplicationId" +
                     " FROM Tenants INNER JOIN TenantLeases" +
                     " ON TenantId IN" +
-                    " (SELECT Id FROM Tenants WHERE Id = '38')" +
-                    " AND TenantLeases.ApartmentApplicationId = (SELECT MAX(ApartmentApplicationId) FROM TenantLeases);", db);
+                    " (SELECT Id FROM Tenants WHERE Id = @Id)" +
+                    " AND TenantLeases.ApartmentApplicationId = (SELECT MAX(ApartmentApplicationId)" +
+                    " FROM TenantLeases);", db);
+                command.Parameters.AddWithValue("@Id", DbType.String).Value = id;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -525,16 +575,18 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetApartmentApplicationIdForOccupantTableTenantLeases()
+        public static string GetApartmentApplicationIdForOccupantTableTenantLeases(string id)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT TOP(1) TenantId, ApartmentApplicationId" +
+                SqlCommand command = new("SELECT TOP(1) ApartmentApplicationId" +
                     " FROM Tenants INNER JOIN TenantLeases" +
                     " ON TenantId IN" +
-                    " (SELECT Id FROM Tenants WHERE Id = '47')" +
-                    " AND TenantLeases.ApartmentApplicationId = (SELECT MAX(ApartmentApplicationId) FROM TenantLeases);", db);
+                    " (SELECT Id FROM Tenants WHERE Id = @Id)" +
+                    " AND TenantLeases.ApartmentApplicationId = (SELECT MAX(ApartmentApplicationId)" +
+                    " FROM TenantLeases);", db);
+                command.Parameters.AddWithValue("@Id", DbType.String).Value = id;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -549,16 +601,41 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetApartmentApplicationIdForGuarantorTableTenantLeases()
+        public static string GetApartmentApplicationIdForGuarantorTableTenantLeases(string id)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT TOP(1) TenantId, ApartmentApplicationId" +
+                SqlCommand command = new("SELECT TOP(1) ApartmentApplicationId" +
                     " FROM Tenants INNER JOIN TenantLeases" +
                     " ON TenantId IN" +
-                    " (SELECT Id FROM Tenants WHERE Id = '48')" +
-                    " AND TenantLeases.ApartmentApplicationId = (SELECT MAX(ApartmentApplicationId) FROM TenantLeases);", db);
+                    " (SELECT Id FROM Tenants WHERE Id = @Id)" +
+                    " AND TenantLeases.ApartmentApplicationId = (SELECT MAX(ApartmentApplicationId)" +
+                    " FROM TenantLeases);", db);
+                command.Parameters.AddWithValue("@Id", DbType.String).Value = id;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetIsLeaseSignedFromTenantLeases(string id, string apartmentApplicationId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT IsLeaseSigned" +
+                    " FROM TenantLeases WHERE TenantId = @Id AND ApartmentApplicationId = @ApartmentApplicationId", db);
+                command.Parameters.AddWithValue("@Id", DbType.String).Value = id;
+                command.Parameters.AddWithValue("@ApartmentApplicationId", DbType.String).Value = apartmentApplicationId;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

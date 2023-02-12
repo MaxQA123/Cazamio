@@ -54,6 +54,9 @@ namespace CazamioProgect.Helpers
         public const string BACGROUND_CHECK = "BackgroundCheck";
         public const string CREDIT_SCREENING = "CreditScreening";
         public const string PASSED = "Passed";
+        public const string NAME_ROLE_APPLICANT = "Applicant";
+        public const string NAME_ROLE_OCCUPANT = "Occupant";
+        public const string NAME_ROLE_GUARANTOR = "Guarantor";
 
     }
 
@@ -70,21 +73,16 @@ namespace CazamioProgect.Helpers
         public const string PROVIDER_NAME_DELIVER_CHECK = "DeliverCheck";
     }
 
-    public class TestDataDBForWebSiteTenant
+    public class TestDataDBForWebSiteTenantMarketplaceOne
     {
-        public const string NEW_TENANT_EMAIL = "pr44ab@putsbox.com";
-        public const string NEW_TENANT_USER_NAME = "pr44ab@putsbox.com";
+        public const string NEW_TENANT_EMAIL = "k34m5n6bgg@putsbox.com";
+        public const string NEW_TENANT_USER_NAME = "k34m5n6bgg@putsbox.com";
         public const string NEW_TENANT_FIRST_LAST_NAME = "Prada Abba";
-        public const string NEW_TENANT_FIRST_NAME = "Prada";
+        public const string NEW_TENANT_FIRST_NAME = "L";
         public const string NEW_TENANT_LAST_NAME = "Abba";
         public const string ALREADY_EXIST_TENANT_FIRST_LAST_NAME = "Testing Test";
 
-
-        public const string NAME_ROLE_APPLICANT = "Applicant";
-        public const string NAME_ROLE_OCCUPANT = "Occupant";
-        public const string NAME_ROLE_GUARANTOR = "Guarantor";
-
-        public const string TENANT_APPLICANT_RAY_ID = "83";
+        public const string TENANT_APPLICANT_RAY_TENANT_ID = "87";
         public const string TENANT_APPLICANT_RAY_USER_ID = "4bb26583-6a79-40c7-8839-508774a9daf8";
         
         public const string TENANT_OCCUPANT_LIZA_TENANT_ID = "90";
@@ -95,6 +93,28 @@ namespace CazamioProgect.Helpers
 
         public const string TENANT_GUARANTOR_JIMMY_TENANT_ID = "88";
         public const string TENANT_GUARANTOR_JIMMY_USER_ID = "ca977e7a-726f-4bbf-b5a9-1506d4c57469";
+    }
+
+    public class TestDataDBForWebSiteTenantMarketplaceTwo
+    {
+        public const string NEW_TENANT_EMAIL = "";
+        public const string NEW_TENANT_USER_NAME = "";
+        public const string NEW_TENANT_FIRST_LAST_NAME = "";
+        public const string NEW_TENANT_FIRST_NAME = "";
+        public const string NEW_TENANT_LAST_NAME = "";
+        public const string ALREADY_EXIST_TENANT_FIRST_LAST_NAME = "";
+
+        public const string TENANT_APPLICANT_RAY_TENANT_ID = "";
+        public const string TENANT_APPLICANT_RAY_USER_ID = "";
+
+        public const string TENANT_OCCUPANT_LIZA_TENANT_ID = "";
+        public const string TENANT_OCCUPANT_LIZA_USER_ID = "";
+
+        public const string TENANT_OCCUPANT_ALFRED_TENANT_ID = "";
+        public const string TENANT_OCCUPANT_ALFRED_USER_ID = "";
+
+        public const string TENANT_GUARANTOR_JIMMY_TENANT_ID = "";
+        public const string TENANT_GUARANTOR_JIMMY_USER_ID = "";
     }
 
     public class TestDataDBForWebSiteAdmin
