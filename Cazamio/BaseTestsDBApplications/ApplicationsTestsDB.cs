@@ -78,6 +78,14 @@ namespace CazamioProject.BaseTestsDBApplications
         {
             string buildingAddress = DBTestDataDBForAdmins.BUILDING_ADDRESS;
 
+            string tenantApplicant = DBTestDataGeneral.NAME_ROLE_APPLICANT;
+            string tenantOccupant = DBTestDataGeneral.NAME_ROLE_OCCUPANT;
+            string tenantGuarantor = DBTestDataGeneral.NAME_ROLE_GUARANTOR;
+
+            string tenantRay = TestDataForWebSiteTenant.FIRST_NAME_TENANT_APPLICANT;
+            string tenantLiza = TestDataForWebSiteTenant.FIRST_NAME_OCCUPANT_ONE;
+            string tenantJimmy = TestDataForWebSiteTenant.FIRST_NAME_GUARANTOR;
+
             string lastApplicationIdApartmentApplications = DBTableApartmentApplications.GetLastApartmentApplicationId();
             Console.WriteLine($"{lastApplicationIdApartmentApplications} :Last Id for application for {buildingAddress} from table ApartmentApplications");
 
@@ -90,11 +98,20 @@ namespace CazamioProject.BaseTestsDBApplications
             string lastApplicationIdByTenantId = DBTableApartmentApplications.GetLastApartmentApplicationIdByTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
             Console.WriteLine($"{lastApplicationIdByTenantId} :Last Id by tenantId for application for {buildingAddress} from table ApartmentApplications");
 
-            string lastApplicationId = DBTableApartmentApplicationApplicants.GetLastId();
-            Console.WriteLine($"{lastApplicationId} :Last Id for application for {buildingAddress} from table ApartmentApplicationApplicants");
+            string lastIdApartmentApplicationApplicant = DBTableApartmentApplicationApplicants.GetLastId();
+            Console.WriteLine($"{lastIdApartmentApplicationApplicant} :Last Id for application for {buildingAddress} from table ApartmentApplicationApplicants");
 
-            string lastApplicationIdApartmentApplicationApplicants = DBTableApartmentApplicationApplicants.GetIdByUserIdOccupant(DBTestDataForTenantMarketplaceOne.TENANT_OCCUPANT_LIZA_USER_ID);
-            Console.WriteLine($"{lastApplicationIdApartmentApplicationApplicants} :Last Id for application for {buildingAddress} from table ApartmentApplicationApplicants");
+            string lastIdOccupantApartmentApplicationApplicants = DBTableApartmentApplicationApplicants.GetLastIdByUserIdOccupant(DBTestDataForTenantMarketplaceOne.TENANT_OCCUPANT_LIZA_USER_ID);
+            Console.WriteLine($"{lastIdOccupantApartmentApplicationApplicants} :Last by UserId for application for {tenantLiza} {tenantOccupant} for {buildingAddress} from table ApartmentApplicationApplicants");
+
+            string occupantId = DBTableOccupants.GetLastOccupantIdByApartmentApplicationId($"{lastApplicationIdApartmentApplications}");
+            Console.WriteLine($"{occupantId} :Last by UserId for application for {tenantLiza} {tenantOccupant} for {buildingAddress} from table ApartmentApplicationApplicants");
+
+            string lastIdOccupantByOccupantId = DBTableApartmentApplicationApplicants.GetLastIdByOccupantIdOccupant($"{occupantId}");
+            Console.WriteLine($"{lastIdOccupantByOccupantId} :Last by OccuoantId Id for application for {tenantLiza} {tenantOccupant} for {buildingAddress} from table ApartmentApplicationApplicants");
+
+            string applicationIdGuarantor = DBTableApartmentApplicationApplicants.GetIdByUserIdGuarantor(DBTestDataForTenantMarketplaceOne.TENANT_GUARANTOR_JIMMY_USER_ID);
+            Console.WriteLine($"{applicationIdGuarantor} :Last Id by UserId for application for {tenantJimmy} {tenantGuarantor} for {buildingAddress} from table ApartmentApplicationApplicants");
 
             Assert.Multiple(() =>
             {
@@ -103,6 +120,12 @@ namespace CazamioProject.BaseTestsDBApplications
 
                 Assert.AreEqual(lastApplicationIdApartmentApplications, lastApplicationIdByTenantId);
                 Console.WriteLine($"ApplicationId last from ApartmentApplications: {lastApplicationIdApartmentApplications} = {lastApplicationIdByTenantId} ApplicationId last by TenantId from ApartmentApplications");
+
+                Assert.AreEqual(lastIdApartmentApplicationApplicant, applicationIdGuarantor);
+                Console.WriteLine($"Id last from ApartmentApplicationApplicants: {lastIdApartmentApplicationApplicant} = {applicationIdGuarantor} Id last by UserId of the {tenantJimmy} {tenantGuarantor} from ApartmentApplications");
+
+                Assert.AreEqual(lastIdOccupantApartmentApplicationApplicants, lastIdOccupantByOccupantId);
+                Console.WriteLine($"Id last from ApartmentApplicationApplicants: {lastIdOccupantApartmentApplicationApplicants} = {lastIdOccupantByOccupantId} Id last by UserId of the {tenantLiza} {tenantOccupant} from ApartmentApplications");
             });
         }
 
