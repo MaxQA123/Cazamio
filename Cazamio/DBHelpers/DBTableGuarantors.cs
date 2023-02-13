@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace CazamioProject.DBHelpers
 {
-    public class DBTableOccupants
+    public class DBTableGuarantors
     {
-        public static string GetLastOccupantIdByApartmentApplicationId(string guarantorId)
+        public static string GetLastGuarantorIdByApartmentApplicationId(string guarantorId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT Id FROM Occupants WHERE ApartmentApplicationId = @ApartmentApplicationId", db);
+                SqlCommand command = new("SELECT Id FROM Guarantors WHERE ApartmentApplicationId = @ApartmentApplicationId", db);
                 command.Parameters.AddWithValue("@ApartmentApplicationId", DbType.String).Value = guarantorId;
                 db.Open();
 
