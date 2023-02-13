@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CazamioProject.Helpers
 {
-    public class WebSiteDBHelperPayments
+    public class DBTablePayments
     {
     }
 }

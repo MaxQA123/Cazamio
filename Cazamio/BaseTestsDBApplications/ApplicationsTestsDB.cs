@@ -1,5 +1,7 @@
 ﻿using Allure.Commons;
 using CazamioProgect.Helpers;
+using CazamioProject.DBHelpers;
+using CazamioProject.Helpers;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
@@ -22,6 +24,91 @@ namespace CazamioProject.BaseTestsDBApplications
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
+        [AllureSubSuite("NewApplication")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
+        //Comment: The table "ApartmentApplications", "Apartments".
+        //Path to cheking's: 
+
+        public void NewApplicationTenantApplicant()
+        {
+            string buildingAddress = TestDataDBForWebSiteAdmin.BUILDING_ADDRESS;
+
+            string lastApplicationId = DBTableApartmentApplications.GetLastApartmentApplicationId();
+            Console.WriteLine($"{lastApplicationId} :Last Id for application for {buildingAddress} from table ApartmentApplications");
+
+            string idApartmentByBuildingId = DBApartments.GetApartmentIdByBuildingIdFromApartments(TestDataDBForWebSiteAdmin.BUILDING_ID, TestDataDBForWebSiteAdmin.UNIT_NUMBER);
+            Console.WriteLine($"{idApartmentByBuildingId} :ApartmentId by BuildingId from Apartments");
+
+            string lastApplicationIdByBuildingId = DBTableApartmentApplications.GetLastApartmentApplicationIdByApartmentId($"{idApartmentByBuildingId}");
+            Console.WriteLine($"{lastApplicationIdByBuildingId} :Last Id by BuildingId for application for {buildingAddress} from table ApartmentApplications");
+
+            string lastApplicationIdByTenantId = DBTableApartmentApplications.GetLastApartmentApplicationIdByTenantId(TestDataDBForWebSiteTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
+            Console.WriteLine($"{lastApplicationIdByTenantId} :Last Id by tenantId for application for {buildingAddress} from table ApartmentApplications");
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(lastApplicationId, lastApplicationIdByBuildingId);
+                Console.WriteLine($"ApplicationId last from ApartmentApplications: {lastApplicationId} = {lastApplicationIdByBuildingId} ApplicationId last by BuildingId from ApartmentApplications");
+
+                Assert.AreEqual(lastApplicationId, lastApplicationIdByTenantId);
+                Console.WriteLine($"ApplicationId last from ApartmentApplications: {lastApplicationId} = {lastApplicationIdByTenantId} ApplicationId last by TenantId from ApartmentApplications");
+            });
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBApplication")]
+        [AllureSubSuite("NewApplicationTenantApplicantOccupantGuarantor")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
+        //Comment: The table "ApartmentApplications", "Apartments".
+        //Path to cheking's: 
+
+        public void NewApplicationTenantApplicantOccupantGuarantor()
+        {
+            string buildingAddress = TestDataDBForWebSiteAdmin.BUILDING_ADDRESS;
+
+            string lastApplicationIdApartmentApplications = DBTableApartmentApplications.GetLastApartmentApplicationId();
+            Console.WriteLine($"{lastApplicationIdApartmentApplications} :Last Id for application for {buildingAddress} from table ApartmentApplications");
+
+            string idApartmentByBuildingId = DBApartments.GetApartmentIdByBuildingIdFromApartments(TestDataDBForWebSiteAdmin.BUILDING_ID, TestDataDBForWebSiteAdmin.UNIT_NUMBER);
+            Console.WriteLine($"{idApartmentByBuildingId} :ApartmentId by BuildingId from Apartments");
+
+            string lastApplicationIdByBuildingId = DBTableApartmentApplications.GetLastApartmentApplicationIdByApartmentId($"{idApartmentByBuildingId}");
+            Console.WriteLine($"{lastApplicationIdByBuildingId} :Last Id by BuildingId for application for {buildingAddress} from table ApartmentApplications");
+
+            string lastApplicationIdByTenantId = DBTableApartmentApplications.GetLastApartmentApplicationIdByTenantId(TestDataDBForWebSiteTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
+            Console.WriteLine($"{lastApplicationIdByTenantId} :Last Id by tenantId for application for {buildingAddress} from table ApartmentApplications");
+
+            string lastApplicationId = DBTableApartmentApplicationApplicants.GetLastId();
+            Console.WriteLine($"{lastApplicationId} :Last Id for application for {buildingAddress} from table ApartmentApplicationApplicants");
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(lastApplicationIdApartmentApplications, lastApplicationIdByBuildingId);
+                Console.WriteLine($"ApplicationId last from ApartmentApplications: {lastApplicationIdApartmentApplications} = {lastApplicationIdByBuildingId} ApplicationId last by BuildingId from ApartmentApplications");
+
+                Assert.AreEqual(lastApplicationIdApartmentApplications, lastApplicationIdByTenantId);
+                Console.WriteLine($"ApplicationId last from ApartmentApplications: {lastApplicationIdApartmentApplications} = {lastApplicationIdByTenantId} ApplicationId last by TenantId from ApartmentApplications");
+            });
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBApplication")]
         [AllureSubSuite("RelatedApplicationWithTenantApplicant")]
 
         //Date of publication:
@@ -37,7 +124,7 @@ namespace CazamioProject.BaseTestsDBApplications
 
             string idTenantApplicant = DBApplications.GetTenantIdApplicant("tenantswife@gmail.com");
             Console.WriteLine($"Id for tenant {tenantApplicant} from table tenants: {idTenantApplicant}");
-            string idApplication = DBApplications.GetIdNewApplication();
+            string idApplication = DBApplications.GetLastIdFromApartmentApplicationProgress();
             Console.WriteLine($"Id for new application from table tenants: {idApplication}");
 
             string apartmentApplicationIdApp = DBApplications.GetApartmentApplicationIdApplicant();
@@ -73,7 +160,7 @@ namespace CazamioProject.BaseTestsDBApplications
             Console.WriteLine($"Id for tenant {tenantOccupant} from table tenants: {idTenantOccupant}");
             string idTenantGuarantor = DBApplications.GetTenantIGuarantor("guarantor5935@gmail.com");
             Console.WriteLine($"Id for tenant {tenantGuarantor} from table tenants: {idTenantGuarantor}");
-            string idApplication = DBApplications.GetIdNewApplication();
+            string idApplication = DBApplications.GetLastIdFromApartmentApplicationProgress();
             Console.WriteLine($"Id for new application from table tenants: {idApplication}");
 
             string apartmentApplicationIdApp = DBApplications.GetApartmentApplicationIdApplicant();
@@ -115,11 +202,11 @@ namespace CazamioProject.BaseTestsDBApplications
             string building = TestDataDBForWebSiteAdmin.BUILDING_NAME;
             string apartmentNumber = TestDataDBForWebSiteAdmin.UNIT_NUMBER;
 
-            string apartmentId = DBApplications.GetApartmentId();
+            string apartmentId = DBTableApartmentApplications.GetLastApartmentApplicationId();
             Console.WriteLine($"Building name {building} apartemnt name {apartmentNumber}, ApartmentID: {apartmentId}");
 
-            Assert.AreEqual(apartmentId, TestDataDBForWebSiteAdmin.ID_TABLE_APARTMENTS_APARTMENTID);
-            Console.WriteLine($"ApartmentID ER: {apartmentId} = {TestDataDBForWebSiteAdmin.ID_TABLE_APARTMENTS_APARTMENTID} ApartmentID AR");
+            Assert.AreEqual(apartmentId, TestDataDBForWebSiteAdmin.APARTMENT_ID_UNIT_NUMBER);
+            Console.WriteLine($"ApartmentID ER: {apartmentId} = {TestDataDBForWebSiteAdmin.APARTMENT_ID_UNIT_NUMBER} ApartmentID AR");
         }
 
         [Test]

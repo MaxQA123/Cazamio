@@ -25,7 +25,7 @@ namespace CazamioProject.BaseTestsDBApartments
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApartments")]
-        [AllureSubSuite("GetIdApartmentFromBD")]
+        [AllureSubSuite("DisplayingIdApartments")]
 
         //Date of publication:
         //Version\Build:
@@ -36,9 +36,8 @@ namespace CazamioProject.BaseTestsDBApartments
 
         public void DisplayingIdApartments()
         {
-            string idApartment = DBApartments.GetIdApartment();
-
-            Console.WriteLine(idApartment);
+            string idApartmentByBuildingId = DBApartments.GetApartmentIdByBuildingIdFromApartments(TestDataDBForWebSiteAdmin.BUILDING_ID, TestDataDBForWebSiteAdmin.UNIT_NUMBER);
+            Console.WriteLine($"{idApartmentByBuildingId} :ApartmentId from Apartments");
         }
 
         [Test]
@@ -61,10 +60,10 @@ namespace CazamioProject.BaseTestsDBApartments
             string numberApartment = TestDataDBForWebSiteAdmin.NEW_UNIT_NUMBER;
             string buildingName = TestDataDBForWebSiteAdmin.BUILDING_NAME;
 
-            string apartmentIdLast = DBApartments.GetApartmentIdApartmentForApartments();
+            string apartmentIdLast = DBApartments.GetLastApartmentIdFromApartments();
             Console.WriteLine($"{apartmentIdLast} :ApartmentId Last from table Apartments for {buildingName} related {numberApartment}");
 
-            string apartmentIdByNameBuilding = DBApartments.GetApartmentIdApartmentByBuildingNameForApartments(TestDataDBForWebSiteAdmin.BUILDING_NAME);
+            string apartmentIdByNameBuilding = DBApartments.GetApartmentIdByBuildingNameFromApartments(TestDataDBForWebSiteAdmin.BUILDING_NAME);
             Console.WriteLine($"{apartmentIdByNameBuilding} :ApartmentId by NameBuilding from table Apartments for {buildingName} related {numberApartment}");
 
             string landlordId = DBApartments.GetLandlordIdApartmentForApartments();

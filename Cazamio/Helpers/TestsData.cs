@@ -157,8 +157,8 @@ namespace CazamioProgect.Helpers
         public const string BUILDING_LLC_NAME = "LLC Chudo";
         public const string BUILDING_ADDRESS = "510 East 11th Street";
         public const string BUILDING_ID = "48";
-        public const string UNIT_NUMBER = "4E";
-        public const string ID_TABLE_APARTMENTS_APARTMENTID = "83";
+        public const string UNIT_NUMBER = "7";
+        public const string APARTMENT_ID_UNIT_NUMBER = "83";
         public const string ID_UNIT_FOUR_E = "83";
     }
 

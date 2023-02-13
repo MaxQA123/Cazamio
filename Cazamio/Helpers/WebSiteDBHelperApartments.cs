@@ -11,7 +11,7 @@ namespace CazamioProject.Helpers
 {
     public class DBApartments
     {
-        public static string GetApartmentIdApartmentForApartments()
+        public static string GetLastApartmentIdFromApartments()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -32,7 +32,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetApartmentIdApartmentByBuildingNameForApartments(string apartmentId)
+        public static string GetApartmentIdByBuildingNameFromApartments(string apartmentId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -181,13 +181,15 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetIdApartment()
+        public static string GetApartmentIdByBuildingIdFromApartments(string buildingId, string unit)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT Id" +
-                    " FROM Apartments" + " WHERE Unit = '1'", db);
+                SqlCommand command = new("SELECT Id FROM Apartments" +
+                    " WHERE BuildingId = @BuildingId AND Unit = @Unit", db);
+                command.Parameters.AddWithValue("@BuildingId", DbType.String).Value = buildingId;
+                command.Parameters.AddWithValue("@Unit", DbType.String).Value = unit;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -287,6 +289,7 @@ namespace CazamioProject.Helpers
                     }
                 }
             }
-            return data;        }
+            return data;        
+        }
     }
 }

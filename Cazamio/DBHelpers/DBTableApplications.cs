@@ -76,7 +76,7 @@ namespace CazamioProgect.Helpers
             return data;
         }
 
-        public static string GetIdNewApplication()
+        public static string GetLastIdFromApartmentApplicationProgress()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -163,29 +163,6 @@ namespace CazamioProgect.Helpers
                     " WHERE TenantId = '48'" +
                     " AND ApartmentApplicationId = (SELECT MAX(ApartmentApplicationId)" +
                     " FROM ApartmentApplicationProgress);", db);
-                db.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        data = reader.GetValue(0).ToString();
-                    }
-                }
-            }
-            return data;
-        }
-
-        public static string GetApartmentId()
-        {
-            string data = null;
-            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
-            {
-                SqlCommand command = new("SELECT ApartmentId" +
-                    " FROM ApartmentApplications" +
-                    " WHERE Id = (SELECT MAX(Id)" +
-                    " FROM ApartmentApplications);", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
