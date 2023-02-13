@@ -1,6 +1,7 @@
 ﻿using Allure.Commons;
 using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
+using CazamioProject.DBHelpers;
 using CazamioProject.Helpers;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
@@ -36,7 +37,7 @@ namespace CazamioProject.BaseTestsDBApartments
 
         public void DisplayingIdApartments()
         {
-            string idApartmentByBuildingId = DBApartments.GetApartmentIdByBuildingIdFromApartments(TestDataDBForWebSiteAdmin.BUILDING_ID, TestDataDBForWebSiteAdmin.UNIT_NUMBER);
+            string idApartmentByBuildingId = DBApartments.GetApartmentIdByBuildingIdFromApartments(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
             Console.WriteLine($"{idApartmentByBuildingId} :ApartmentId from Apartments");
         }
 
@@ -57,13 +58,13 @@ namespace CazamioProject.BaseTestsDBApartments
 
         public void RecordsDBAboutNewApartments()
         {
-            string numberApartment = TestDataDBForWebSiteAdmin.NEW_UNIT_NUMBER;
-            string buildingName = TestDataDBForWebSiteAdmin.BUILDING_NAME;
+            string numberApartment = DBTestDataDBForAdmins.NEW_UNIT_NUMBER;
+            string buildingName = DBTestDataDBForAdmins.BUILDING_NAME;
 
             string apartmentIdLast = DBApartments.GetLastApartmentIdFromApartments();
             Console.WriteLine($"{apartmentIdLast} :ApartmentId Last from table Apartments for {buildingName} related {numberApartment}");
 
-            string apartmentIdByNameBuilding = DBApartments.GetApartmentIdByBuildingNameFromApartments(TestDataDBForWebSiteAdmin.BUILDING_NAME);
+            string apartmentIdByNameBuilding = DBApartments.GetApartmentIdByBuildingNameFromApartments(DBTestDataDBForAdmins.BUILDING_NAME);
             Console.WriteLine($"{apartmentIdByNameBuilding} :ApartmentId by NameBuilding from table Apartments for {buildingName} related {numberApartment}");
 
             string landlordId = DBApartments.GetLandlordIdApartmentForApartments();
@@ -89,23 +90,23 @@ namespace CazamioProject.BaseTestsDBApartments
                 Assert.AreEqual(apartmentIdLast, apartmentIdByNameBuilding);
                 Console.WriteLine($"ApartmentId Last from table Apartments: {apartmentIdLast} = {apartmentIdByNameBuilding} ApartmentId by NameBuilding from table Apartments");
 
-                Assert.AreEqual(landlordId, TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORD_ID);
-                Console.WriteLine($"LandlordId from table Apartments: {landlordId} = {TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORD_ID} LandlordId ER");
+                Assert.AreEqual(landlordId, DBTestDataDBForAdmins.BROKER_MARTIN_MACFLY_LANDLORD_ID);
+                Console.WriteLine($"LandlordId from table Apartments: {landlordId} = {DBTestDataDBForAdmins.BROKER_MARTIN_MACFLY_LANDLORD_ID} LandlordId ER");
 
-                Assert.AreEqual(buildingId, TestDataDBForWebSiteAdmin.BUILDING_ID);
-                Console.WriteLine($"BuildingId from table Apartments: {buildingId} = {TestDataDBForWebSiteAdmin.BUILDING_ID} BuildingId ER");
+                Assert.AreEqual(buildingId, DBTestDataDBForAdmins.BUILDING_ID);
+                Console.WriteLine($"BuildingId from table Apartments: {buildingId} = {DBTestDataDBForAdmins.BUILDING_ID} BuildingId ER");
 
-                Assert.AreEqual(buildingId, TestDataDBForWebSiteAdmin.BUILDING_ID);
-                Console.WriteLine($"MarketplaceId from table Apartments: {marketplaceId} = {TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId ER");
+                Assert.AreEqual(buildingId, DBTestDataDBForAdmins.BUILDING_ID);
+                Console.WriteLine($"MarketplaceId from table Apartments: {marketplaceId} = {DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId ER");
 
-                Assert.AreEqual(unitName, TestDataDBForWebSiteAdmin.NEW_UNIT_NUMBER);
-                Console.WriteLine($"Unit Name from table Apartments: {unitName} = {TestDataDBForWebSiteAdmin.NEW_UNIT_NUMBER} Unit Name ER");
+                Assert.AreEqual(unitName, DBTestDataDBForAdmins.NEW_UNIT_NUMBER);
+                Console.WriteLine($"Unit Name from table Apartments: {unitName} = {DBTestDataDBForAdmins.NEW_UNIT_NUMBER} Unit Name ER");
 
-                Assert.AreEqual(brokerId, TestDataDBForWebSiteAdmin.AGENT_TEST_AGENT_BROKER_ID);
-                Console.WriteLine($"BrokerId from table Apartments: {brokerId} = {TestDataDBForWebSiteAdmin.AGENT_TEST_AGENT_BROKER_ID} BrokerId ER");
+                Assert.AreEqual(brokerId, DBTestDataDBForAdmins.AGENT_TEST_AGENT_BROKER_ID);
+                Console.WriteLine($"BrokerId from table Apartments: {brokerId} = {DBTestDataDBForAdmins.AGENT_TEST_AGENT_BROKER_ID} BrokerId ER");
 
-                Assert.AreEqual(ownerId, TestDataDBForWebSiteAdmin.OWNER_AGATA_OWNER_ID);
-                Console.WriteLine($"OwnerId from table Apartments: {ownerId} = {TestDataDBForWebSiteAdmin.OWNER_AGATA_OWNER_ID} OwnerId ER");
+                Assert.AreEqual(ownerId, DBTestDataDBForAdmins.OWNER_AGATA_OWNER_ID);
+                Console.WriteLine($"OwnerId from table Apartments: {ownerId} = {DBTestDataDBForAdmins.OWNER_AGATA_OWNER_ID} OwnerId ER");
             });
         }
 

@@ -35,18 +35,18 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void NewApplicationTenantApplicant()
         {
-            string buildingAddress = TestDataDBForWebSiteAdmin.BUILDING_ADDRESS;
+            string buildingAddress = DBTestDataDBForAdmins.BUILDING_ADDRESS;
 
             string lastApplicationId = DBTableApartmentApplications.GetLastApartmentApplicationId();
             Console.WriteLine($"{lastApplicationId} :Last Id for application for {buildingAddress} from table ApartmentApplications");
 
-            string idApartmentByBuildingId = DBApartments.GetApartmentIdByBuildingIdFromApartments(TestDataDBForWebSiteAdmin.BUILDING_ID, TestDataDBForWebSiteAdmin.UNIT_NUMBER);
+            string idApartmentByBuildingId = DBApartments.GetApartmentIdByBuildingIdFromApartments(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
             Console.WriteLine($"{idApartmentByBuildingId} :ApartmentId by BuildingId from Apartments");
 
             string lastApplicationIdByBuildingId = DBTableApartmentApplications.GetLastApartmentApplicationIdByApartmentId($"{idApartmentByBuildingId}");
             Console.WriteLine($"{lastApplicationIdByBuildingId} :Last Id by BuildingId for application for {buildingAddress} from table ApartmentApplications");
 
-            string lastApplicationIdByTenantId = DBTableApartmentApplications.GetLastApartmentApplicationIdByTenantId(TestDataDBForWebSiteTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
+            string lastApplicationIdByTenantId = DBTableApartmentApplications.GetLastApartmentApplicationIdByTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
             Console.WriteLine($"{lastApplicationIdByTenantId} :Last Id by tenantId for application for {buildingAddress} from table ApartmentApplications");
 
             Assert.Multiple(() =>
@@ -76,22 +76,25 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void NewApplicationTenantApplicantOccupantGuarantor()
         {
-            string buildingAddress = TestDataDBForWebSiteAdmin.BUILDING_ADDRESS;
+            string buildingAddress = DBTestDataDBForAdmins.BUILDING_ADDRESS;
 
             string lastApplicationIdApartmentApplications = DBTableApartmentApplications.GetLastApartmentApplicationId();
             Console.WriteLine($"{lastApplicationIdApartmentApplications} :Last Id for application for {buildingAddress} from table ApartmentApplications");
 
-            string idApartmentByBuildingId = DBApartments.GetApartmentIdByBuildingIdFromApartments(TestDataDBForWebSiteAdmin.BUILDING_ID, TestDataDBForWebSiteAdmin.UNIT_NUMBER);
+            string idApartmentByBuildingId = DBApartments.GetApartmentIdByBuildingIdFromApartments(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
             Console.WriteLine($"{idApartmentByBuildingId} :ApartmentId by BuildingId from Apartments");
 
             string lastApplicationIdByBuildingId = DBTableApartmentApplications.GetLastApartmentApplicationIdByApartmentId($"{idApartmentByBuildingId}");
             Console.WriteLine($"{lastApplicationIdByBuildingId} :Last Id by BuildingId for application for {buildingAddress} from table ApartmentApplications");
 
-            string lastApplicationIdByTenantId = DBTableApartmentApplications.GetLastApartmentApplicationIdByTenantId(TestDataDBForWebSiteTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
+            string lastApplicationIdByTenantId = DBTableApartmentApplications.GetLastApartmentApplicationIdByTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
             Console.WriteLine($"{lastApplicationIdByTenantId} :Last Id by tenantId for application for {buildingAddress} from table ApartmentApplications");
 
             string lastApplicationId = DBTableApartmentApplicationApplicants.GetLastId();
             Console.WriteLine($"{lastApplicationId} :Last Id for application for {buildingAddress} from table ApartmentApplicationApplicants");
+
+            string lastApplicationIdApartmentApplicationApplicants = DBTableApartmentApplicationApplicants.GetIdByUserIdOccupant(DBTestDataForTenantMarketplaceOne.TENANT_OCCUPANT_LIZA_USER_ID);
+            Console.WriteLine($"{lastApplicationIdApartmentApplicationApplicants} :Last Id for application for {buildingAddress} from table ApartmentApplicationApplicants");
 
             Assert.Multiple(() =>
             {
@@ -120,7 +123,7 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelatedApplicationWithTenantApplicant()
         {
-            string tenantApplicant = TestDataDBGeneral.NAME_ROLE_APPLICANT;
+            string tenantApplicant = DBTestDataGeneral.NAME_ROLE_APPLICANT;
 
             string idTenantApplicant = DBApplications.GetTenantIdApplicant("tenantswife@gmail.com");
             Console.WriteLine($"Id for tenant {tenantApplicant} from table tenants: {idTenantApplicant}");
@@ -150,9 +153,9 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelatedApplicationWithTenantsAppOccGua()
         {
-            string tenantApplicant = TestDataDBGeneral.NAME_ROLE_APPLICANT;
-            string tenantOccupant = TestDataDBGeneral.NAME_ROLE_OCCUPANT;
-            string tenantGuarantor = TestDataDBGeneral.NAME_ROLE_GUARANTOR;
+            string tenantApplicant = DBTestDataGeneral.NAME_ROLE_APPLICANT;
+            string tenantOccupant = DBTestDataGeneral.NAME_ROLE_OCCUPANT;
+            string tenantGuarantor = DBTestDataGeneral.NAME_ROLE_GUARANTOR;
 
             string idTenantApplicant = DBApplications.GetTenantIdApplicant("tenantswife@gmail.com");
             Console.WriteLine($"Id for tenant {tenantApplicant} from table tenants: {idTenantApplicant}");
@@ -199,14 +202,14 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelateApplicationWithApartment()
         {
-            string building = TestDataDBForWebSiteAdmin.BUILDING_NAME;
-            string apartmentNumber = TestDataDBForWebSiteAdmin.UNIT_NUMBER;
+            string building = DBTestDataDBForAdmins.BUILDING_NAME;
+            string apartmentNumber = DBTestDataDBForAdmins.UNIT_NUMBER;
 
             string apartmentId = DBTableApartmentApplications.GetLastApartmentApplicationId();
             Console.WriteLine($"Building name {building} apartemnt name {apartmentNumber}, ApartmentID: {apartmentId}");
 
-            Assert.AreEqual(apartmentId, TestDataDBForWebSiteAdmin.APARTMENT_ID_UNIT_NUMBER);
-            Console.WriteLine($"ApartmentID ER: {apartmentId} = {TestDataDBForWebSiteAdmin.APARTMENT_ID_UNIT_NUMBER} ApartmentID AR");
+            Assert.AreEqual(apartmentId, DBTestDataDBForAdmins.APARTMENT_ID_UNIT_NUMBER);
+            Console.WriteLine($"ApartmentID ER: {apartmentId} = {DBTestDataDBForAdmins.APARTMENT_ID_UNIT_NUMBER} ApartmentID AR");
         }
 
         [Test]
@@ -226,8 +229,8 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelateApplicationWithOccGuaSetJoin()
         {
-            string building = TestDataDBForWebSiteAdmin.BUILDING_NAME;
-            string apartmentNumber = TestDataDBForWebSiteAdmin.UNIT_NUMBER;
+            string building = DBTestDataDBForAdmins.BUILDING_NAME;
+            string apartmentNumber = DBTestDataDBForAdmins.UNIT_NUMBER;
 
             string newApartmentApplicationId = DBApplications.GetNewApartmentApplicationId();
             Console.WriteLine($"Building name {building} apartemnt name {apartmentNumber}, New ApartmentApplicationId: {newApartmentApplicationId}");
@@ -274,8 +277,8 @@ namespace CazamioProject.BaseTestsDBApplications
 
         public void RelateApplicationWithOccGuaNoSetJoin()
         {
-            string building = TestDataDBForWebSiteAdmin.BUILDING_NAME;
-            string apartmentNumber = TestDataDBForWebSiteAdmin.UNIT_NUMBER;
+            string building = DBTestDataDBForAdmins.BUILDING_NAME;
+            string apartmentNumber = DBTestDataDBForAdmins.UNIT_NUMBER;
 
             string newApartmentApplicationId = DBApplications.GetNewApartmentApplicationId();
             Console.WriteLine($"Building name {building} apartemnt name {apartmentNumber}, New ApartmentApplicationId: {newApartmentApplicationId}");

@@ -1,5 +1,6 @@
 ﻿using Allure.Commons;
 using CazamioProgect.Helpers;
+using CazamioProject.DBHelpers;
 using CazamioProject.Helpers;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
@@ -97,12 +98,12 @@ namespace CazamioProject.BaseTestsDBAgents
 
         public void RecordsDBAboutNewAgent()
         {
-            string firstLastNameAgent = TestDataDBForWebSiteAdmin.NEW_AGENT_FIRST_LAST_NAME;
+            string firstLastNameAgent = DBTestDataDBForAdmins.NEW_AGENT_FIRST_LAST_NAME;
 
             string brokerIdAgentBrokers = DBAgents.GetBrokerIdNewAgentFromBrokers();
             Console.WriteLine($"{brokerIdAgentBrokers} :BrokerId for new agent {firstLastNameAgent} from table Brokers");
 
-            string marketplaceIdAgentAspNetUsers = DBAgents.GetMarketplaceIDAgentFromAspNetUsers(TestDataDBForWebSiteAdmin.NEW_AGENT_EMAIL);
+            string marketplaceIdAgentAspNetUsers = DBAgents.GetMarketplaceIDAgentFromAspNetUsers(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
             Console.WriteLine($"{marketplaceIdAgentAspNetUsers} :MarketplaceId for agent {firstLastNameAgent} from table AspNetUsers");
 
             string marketplaceIdAgentBrokers = DBAgents.GetMarketplaceIDNewAgentFromBrokers();
@@ -117,34 +118,34 @@ namespace CazamioProject.BaseTestsDBAgents
             string LandlordIdRelatedNewAgent = DBBrokers.GetLandlordIdNewBrokerFromLandlordBrokers();
             Console.WriteLine($"{LandlordIdRelatedNewAgent} :LandlordId for new agent {firstLastNameAgent} from table LandlordBrokers");
 
-            string roleNameNewAgentAspNetRoles = DBAgents.GetRoleNameAgentFromAspNetRoles(TestDataDBForWebSiteAdmin.NEW_AGENT_EMAIL);
+            string roleNameNewAgentAspNetRoles = DBAgents.GetRoleNameAgentFromAspNetRoles(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
             Console.WriteLine($"{roleNameNewAgentAspNetRoles} :Name role for new agent {firstLastNameAgent} from table AspNetRoles");
 
-            string firstNameNewAgentAspNetUsers = DBAgents.GetFirstNameAgentFromAspNetUsers(TestDataDBForWebSiteAdmin.NEW_AGENT_EMAIL);
+            string firstNameNewAgentAspNetUsers = DBAgents.GetFirstNameAgentFromAspNetUsers(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
             Console.WriteLine($"{firstNameNewAgentAspNetUsers} :First Name for new agent {firstLastNameAgent} from table AspNetUsers");
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(marketplaceIdAgentAspNetUsers, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
-                Console.WriteLine($"MarketplaceId for a new agent AspNetUsers: {marketplaceIdAgentAspNetUsers} = {TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId for a new agent ER");
+                Assert.AreEqual(marketplaceIdAgentAspNetUsers, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+                Console.WriteLine($"MarketplaceId for a new agent AspNetUsers: {marketplaceIdAgentAspNetUsers} = {DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId for a new agent ER");
 
-                Assert.AreEqual(marketplaceIdAgentBrokers, TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
-                Console.WriteLine($"MarketplaceId for a new agent Brokers: {marketplaceIdAgentBrokers} = {TestDataDBGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId for a new agent ER");
+                Assert.AreEqual(marketplaceIdAgentBrokers, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+                Console.WriteLine($"MarketplaceId for a new agent Brokers: {marketplaceIdAgentBrokers} = {DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId for a new agent ER");
 
-                Assert.AreEqual(roleIdAgent, TestDataDBGeneral.ID_NAME_ROLE_AGENT);
-                Console.WriteLine($"RoleId a new agent from table AspNetUserRoles: {roleIdAgent} = {TestDataDBGeneral.ID_NAME_ROLE_AGENT} RoleId a new agent ER");
+                Assert.AreEqual(roleIdAgent, DBTestDataGeneral.ID_NAME_ROLE_AGENT);
+                Console.WriteLine($"RoleId a new agent from table AspNetUserRoles: {roleIdAgent} = {DBTestDataGeneral.ID_NAME_ROLE_AGENT} RoleId a new agent ER");
 
                 Assert.AreEqual(brokerIdAgentBrokers, brokerdIdNewAgentLandlordBrokers);
                 Console.WriteLine($"BrokerId a new agent from table Brokers: {brokerIdAgentBrokers} = {brokerdIdNewAgentLandlordBrokers} BrokerId a new agent from table LandlordBrokers");
 
-                Assert.AreEqual(LandlordIdRelatedNewAgent, TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORD_ID);
-                Console.WriteLine($"LandlordId for a new agent from table LandlordBrokers: {LandlordIdRelatedNewAgent} = {TestDataDBForWebSiteAdmin.BROKER_MARTIN_MACFLY_LANDLORD_ID} LandlordId for a new agent from table ER");
+                Assert.AreEqual(LandlordIdRelatedNewAgent, DBTestDataDBForAdmins.BROKER_MARTIN_MACFLY_LANDLORD_ID);
+                Console.WriteLine($"LandlordId for a new agent from table LandlordBrokers: {LandlordIdRelatedNewAgent} = {DBTestDataDBForAdmins.BROKER_MARTIN_MACFLY_LANDLORD_ID} LandlordId for a new agent from table ER");
 
-                Assert.AreEqual(roleNameNewAgentAspNetRoles, TestDataDBGeneral.NAME_ROLE_AGENT);
-                Console.WriteLine($"Name role for new agent AspNetRoles: {roleNameNewAgentAspNetRoles} = {TestDataDBGeneral.NAME_ROLE_AGENT} Name role for new agent ER");
+                Assert.AreEqual(roleNameNewAgentAspNetRoles, DBTestDataGeneral.NAME_ROLE_AGENT);
+                Console.WriteLine($"Name role for new agent AspNetRoles: {roleNameNewAgentAspNetRoles} = {DBTestDataGeneral.NAME_ROLE_AGENT} Name role for new agent ER");
 
-                Assert.AreEqual(firstNameNewAgentAspNetUsers, TestDataDBForWebSiteAdmin.NEW_AGENT_FIRST_NAME);
-                Console.WriteLine($"First Name for new agent AspNetUsers: {firstNameNewAgentAspNetUsers} = {TestDataDBForWebSiteAdmin.NEW_AGENT_FIRST_NAME} First Name for new agent ER");
+                Assert.AreEqual(firstNameNewAgentAspNetUsers, DBTestDataDBForAdmins.NEW_AGENT_FIRST_NAME);
+                Console.WriteLine($"First Name for new agent AspNetUsers: {firstNameNewAgentAspNetUsers} = {DBTestDataDBForAdmins.NEW_AGENT_FIRST_NAME} First Name for new agent ER");
             });
         }
 
@@ -185,23 +186,23 @@ namespace CazamioProject.BaseTestsDBAgents
 
         public void DeletedRecordsInTableBrokersLandlordBrokersDBAboutAgent()
         {
-            string agentName = TestDataDBForWebSiteAdmin.DELETED_AGENT_FIRST_LAST_NAME;
+            string agentName = DBTestDataDBForAdmins.DELETED_AGENT_FIRST_LAST_NAME;
             string tableBrokers = TestDataDBNamesTables.TABLE_NAME_BROKERS;
             string tableLandlordBrokers = TestDataDBNamesTables.TABLE_NAME_LANDLORD_BROKERS;
 
-            string oneDeletedTableBrokers = DBAgents.GetDeleteAgentTableBrokers($"{TestDataDBForWebSiteAdmin.DELETED_AGENT_EMAIL}");
+            string oneDeletedTableBrokers = DBAgents.GetDeleteAgentTableBrokers($"{DBTestDataDBForAdmins.DELETED_AGENT_EMAIL}");
             Console.WriteLine($"{oneDeletedTableBrokers} :Displayed 1 for agent {agentName} from table {tableBrokers}");
 
-            string oneDeletedTableLandlordBrokers = DBAgents.GetDeleteAgentTableLandlordBrokers($"{TestDataDBForWebSiteAdmin.DELETED_AGENT_EMAIL}");
+            string oneDeletedTableLandlordBrokers = DBAgents.GetDeleteAgentTableLandlordBrokers($"{DBTestDataDBForAdmins.DELETED_AGENT_EMAIL}");
             Console.WriteLine($"{oneDeletedTableLandlordBrokers} :Displayed 1 for agent {agentName} from table {tableLandlordBrokers}");
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(oneDeletedTableBrokers, TestDataDBGeneral.TRUE);
-                Console.WriteLine($"Deleted agent in table Brokers: {oneDeletedTableBrokers} = {TestDataDBGeneral.TRUE} Deleted agent in table {tableBrokers}");
+                Assert.AreEqual(oneDeletedTableBrokers, DBTestDataGeneral.TRUE);
+                Console.WriteLine($"Deleted agent in table Brokers: {oneDeletedTableBrokers} = {DBTestDataGeneral.TRUE} Deleted agent in table {tableBrokers}");
 
-                Assert.AreEqual(oneDeletedTableLandlordBrokers, TestDataDBGeneral.TRUE);
-                Console.WriteLine($"Deleted agent in table LandlordBrokers: {oneDeletedTableLandlordBrokers} = {TestDataDBGeneral.TRUE} Deleted agent in table {tableLandlordBrokers}");
+                Assert.AreEqual(oneDeletedTableLandlordBrokers, DBTestDataGeneral.TRUE);
+                Console.WriteLine($"Deleted agent in table LandlordBrokers: {oneDeletedTableLandlordBrokers} = {DBTestDataGeneral.TRUE} Deleted agent in table {tableLandlordBrokers}");
             });
         }
     }

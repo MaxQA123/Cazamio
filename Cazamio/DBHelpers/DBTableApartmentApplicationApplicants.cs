@@ -32,15 +32,15 @@ namespace CazamioProject.DBHelpers
             return data;
         }
 
-        public static string GetIdByUserIdOccupant(string UserId)
+        public static string GetIdByUserIdOccupant(string userId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id" +
-                    " FROM ApartmentApplications" +
-                    " WHERE ApartmentId = @ApartmentId", db);
-                command.Parameters.AddWithValue("@ApartmentId", DbType.String).Value = UserId;
+                    " FROM ApartmentApplicationApplicants" +
+                    " WHERE UserId = @UserId", db);
+                command.Parameters.AddWithValue("@UserId", DbType.String).Value = userId;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
