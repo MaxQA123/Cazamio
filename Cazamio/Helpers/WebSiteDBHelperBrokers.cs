@@ -55,95 +55,6 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetIdLastForBrokerFromLanlords()
-        {
-            string data = null;
-            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
-            {
-                SqlCommand command = new("SELECT LandlordId FROM Buildings" +
-                    " WHERE AddressId = (SELECT MAX(AddressId) FROM Buildings);", db);
-                db.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        data = reader.GetValue(0).ToString();
-                    }
-                }
-            }
-            return data;
-        }
-
-        public static string GetLandlordIdForBrokerFromLandlordsTable(string idAdmin)
-        {
-            string data = null;
-            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
-            {
-                SqlCommand command = new("SELECT DISTINCT LandlordId" +
-                    " FROM Buildings B" +
-                    " INNER JOIN Landlords L ON L.Id = B.LandlordId" +
-                    " INNER JOIN AspNetUsers U ON U.Id = L.UserId" +
-                    " WHERE U.Email = @Email;", db);
-                command.Parameters.AddWithValue("@Email", DbType.String).Value = idAdmin;
-                db.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        data = reader.GetValue(0).ToString();
-                    }
-                }
-            }
-            return data;
-        }
-
-        public static string GetIdForBrokerFromLandlords(string idBroker)
-        {
-            string data = null;
-            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
-            {
-                SqlCommand command = new("SELECT Id FROM Landlords WHERE UserId IN " +
-                "(SELECT Id FROM AspNetUsers WHERE Email = @Email)", db);
-                command.Parameters.AddWithValue("@Email", DbType.String).Value = idBroker;
-                db.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        data = reader.GetValue(0).ToString();
-                    }
-                }
-            }
-            return data;
-        }
-
-        public static string GetUserIdNewBrokerFromLandlords()
-        {
-            string data = null;
-            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
-            {
-                SqlCommand command = new("SELECT UserId FROM" +
-                    " Landlords WHERE Id = (SELECT MAX(Id) FROM Landlords);", db);
-                db.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        data = reader.GetValue(0).ToString();
-                    }
-                }
-            }
-            return data;
-        }
-
         public static string GetRoleIdNewBrokerFromAspNetUserRoles()
         {
             string data = null;
@@ -152,28 +63,6 @@ namespace CazamioProject.Helpers
                 SqlCommand command = new("SELECT RoleId FROM AspNetUserRoles" +
                     " WHERE UserId IN" +
                     " (SELECT UserId FROM Landlords WHERE Id = (SELECT MAX(Id) FROM Landlords));", db);
-                db.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        data = reader.GetValue(0).ToString();
-                    }
-                }
-            }
-            return data;
-        }
-
-        public static string GetMarketplaceIdBrokerFromLandlords(string idMarketplace)
-        {
-            string data = null;
-            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
-            {
-                SqlCommand command = new("SELECT MarketplaceId FROM Landlords WHERE UserId IN " +
-                "(SELECT Id FROM AspNetUsers WHERE Email = @Email)", db);
-                command.Parameters.AddWithValue("@Email", DbType.String).Value = idMarketplace;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -219,27 +108,6 @@ namespace CazamioProject.Helpers
                 SqlCommand command = new("SELECT FirstName" +
                     " FROM AspNetUsers WHERE Email = @Email", db);
                 command.Parameters.AddWithValue("@Email", DbType.String).Value = firstName;
-                db.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        data = reader.GetValue(0).ToString();
-                    }
-                }
-            }
-            return data;
-        }
-
-        public static string GetLandlordIdNewBrokerFromLandlordBrokers()
-        {
-            string data = null;
-            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
-            {
-                SqlCommand command = new("SELECT LandlordId FROM LandlordBrokers WHERE" +
-                    " Id = (SELECT MAX(Id) FROM LandlordBrokers);", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

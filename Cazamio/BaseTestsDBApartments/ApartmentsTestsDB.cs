@@ -96,7 +96,7 @@ namespace CazamioProject.BaseTestsDBApartments
                 Assert.AreEqual(buildingId, DBTestDataDBForAdmins.BUILDING_ID);
                 Console.WriteLine($"BuildingId from table Apartments: {buildingId} = {DBTestDataDBForAdmins.BUILDING_ID} BuildingId ER");
 
-                Assert.AreEqual(buildingId, DBTestDataDBForAdmins.BUILDING_ID);
+                Assert.AreEqual(marketplaceId, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
                 Console.WriteLine($"MarketplaceId from table Apartments: {marketplaceId} = {DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO} MarketplaceId ER");
 
                 Assert.AreEqual(unitName, DBTestDataDBForAdmins.NEW_UNIT_NUMBER);

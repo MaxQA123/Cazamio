@@ -87,22 +87,21 @@ namespace CazamioProject.DBHelpers
 
     public class DBTestDataDBForAdmins
     {
-        public const string NEW_BROKER_EMAIL = "broker7djil@putsbox.com";
-        public const string NEW_BROKER_FIRST_LAST_NAME = "Djill Coneri";
-        public const string NEW_BROKER_FIRST_NAME = "Djill";
-        public const string NEW_BROKER_ID = "1d1d8a02-b40a-42c4-b59f-dd0313bb1613";
+        public const string NEW_BROKER_EMAIL = "h7anbvf54g@putsbox.com";
+        public const string NEW_BROKER_FIRST_LAST_NAME = "Guido Bobs";
+        public const string NEW_BROKER_FIRST_NAME = "Guido";
 
-        public const string NEW_AGENT_EMAIL = "new333ag@putsbox.com";
-        public const string NEW_AGENT_FIRST_LAST_NAME = "Tiger Lion";
-        public const string NEW_AGENT_FIRST_NAME = "Tiger";
+        public const string NEW_AGENT_EMAIL = "al8kj3hf5@putsbox.com";
+        public const string NEW_AGENT_FIRST_LAST_NAME = "Fui Chui";
+        public const string NEW_AGENT_FIRST_NAME = "Fui";
         public const string DELETED_AGENT_FIRST_LAST_NAME = "Creator-martin Testing";
         public const string DELETED_AGENT_EMAIL = "j8h5g3g3dd@putsbox.com";
 
-        public const string NEW_OWNER_EMAIL = "owneragata@putsbox.com";
-        public const string NEW_OWNER_FIRST_LAST_NAME = "Alfa Beta";
-        public const string NEW_OWNER_FIRST_NAME = "Agata";
-        public const string NEW_COMPANY_NAME_OWNER = "Company Name LLC Central Agency USA";
-        public const string NEW_OFFICE_LOCATION_OWNER = "Denver";
+        public const string NEW_OWNER_EMAIL = "ryg8ff6f6f@putsbox.com";
+        public const string NEW_OWNER_FIRST_LAST_NAME = "Klara Lara";
+        public const string NEW_OWNER_FIRST_NAME = "Klara Lara";
+        public const string NEW_COMPANY_NAME_OWNER = "LLC Drozd";
+        public const string NEW_OFFICE_LOCATION_OWNER = "Colorado";
 
         public const string BROKER_MARTIN_MACFLY_ID = "de0e57c0-6b1d-4f43-8640-f5592382c8be";
         public const string BROKER_MARTIN_MACFLY_LANDLORD_ID = "31";
@@ -117,9 +116,9 @@ namespace CazamioProject.DBHelpers
         public const string OWNER_AGATA_EMAIL = "owneragata@putsbox.com";
         public const string OWNER_FIRST_NAME = "Agata";
 
-        public const string NEW_BUILDING_NAME = "Creator Martin House two";
+        public const string NEW_BUILDING_NAME = "Freedom Creator Martin Home";
 
-        public const string NEW_UNIT_NUMBER = "6N";
+        public const string NEW_UNIT_NUMBER = "12";
 
         public const string BUILDING_NAME = "Creator Martin two";
         public const string BUILDING_LLC_NAME = "LLC Chudo";

@@ -1,4 +1,6 @@
 ﻿using Allure.Commons;
+using CazamioProject.DBHelpers;
+using CazamioProject.Helpers;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
@@ -21,17 +23,21 @@ namespace CazamioProject.BaseTestsDBPayments
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBPayment")]
-        [AllureSubSuite("RecordsDBAboutNewAdmin")]
+        [AllureSubSuite("RecordsAboutNewPayments")]
 
         //Date of publication:
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: 
+        //Comment: The tables "Transactions".
         //Path to cheking's: 
-        public void Demo()
+        public void RecordsAboutNewPaymentHoldDeposit()
         {
+            string lastTransactionId = DBTableTransactions.GetLastTransactionId();
+            Console.WriteLine($"{lastTransactionId} :TransactionId last from table Transactions");
 
+            string lastTransactionIdBytenantId = DBTableTransactions.GetLastTransactionIdByTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
+            Console.WriteLine($"{lastTransactionIdBytenantId} :TransactionId last by TenantId from table Transactions");
         }
     }
 }

@@ -115,7 +115,7 @@ namespace CazamioProject.BaseTestsDBAgents
             string brokerdIdNewAgentLandlordBrokers = DBAgents.GetBrokerIdForNewAgent();
             Console.WriteLine($"{brokerdIdNewAgentLandlordBrokers} :BrokerId for new agent {firstLastNameAgent} from table LandlordBrokers");
 
-            string LandlordIdRelatedNewAgent = DBBrokers.GetLandlordIdNewBrokerFromLandlordBrokers();
+            string LandlordIdRelatedNewAgent = DBTableLandlordBrokers.GetLandlordIdNewBroker();
             Console.WriteLine($"{LandlordIdRelatedNewAgent} :LandlordId for new agent {firstLastNameAgent} from table LandlordBrokers");
 
             string roleNameNewAgentAspNetRoles = DBAgents.GetRoleNameAgentFromAspNetRoles(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);

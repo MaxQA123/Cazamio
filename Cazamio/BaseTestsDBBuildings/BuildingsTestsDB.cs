@@ -47,7 +47,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
             string newMarketplaceIdBuildingsTable = DBBuildings.GetMarketplaceIdInBuildingsNewBuilding();
             Console.WriteLine($"{newMarketplaceIdBuildingsTable} :MarketplaceId building for {buildingName} from table Buildings");
 
-            string landlordIdLandlordsTable = DBBrokers.GetIdLastForBrokerFromLanlords();
+            string landlordIdLandlordsTable = DBTableLandlords.GetIdLastForBroker();
             Console.WriteLine($"{landlordIdLandlordsTable} :LandlordId building for {buildingName} from table Buildings");
 
             string landlordIdBuildingsTable = DBBuildings.GetLandlordIdInBuildingsNewBuilding();
@@ -192,7 +192,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
             string landlordIdForBuilding = DBBuildings.GetLandlordIdForBuilding(DBTestDataDBForAdmins.BUILDING_NAME);
             Console.WriteLine($"{landlordIdForBuilding} :LandlordId for building {buildingLlcName} in the table Buildings");
 
-            string idBroker = DBBrokers.GetLandlordIdForBrokerFromLandlordsTable(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
+            string idBroker = DBTableLandlords.GetLandlordIdForBroker(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
             Console.WriteLine($"{idBroker} :Id for admin from table {TestDataDBNamesTables.TABLE_NAME_LANDLORDS}");
 
             string marketplaceIdForBuildingByAddress = DBBuildings.GetMarketplaceIdForBuildingByAddress(DBTestDataDBForAdmins.BUILDING_ADDRESS);
