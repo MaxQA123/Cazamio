@@ -52,6 +52,15 @@ namespace CazamioProject.BaseTestsDBPayments
             string lastTransactionIdByTenantId = DBTableTransactions.GetLastTransactionIdByTenantId(tenantIdByEmail);
             Console.WriteLine($"{lastTransactionId} :TransactionId by TenantId from table Transactions");
 
+            string lastApartmentId = DBTableTransactions.GetLastApartmentId();
+            Console.WriteLine($"{lastApartmentId} :ApartmentId table Transactions");
+
+            string lastApartmentIdByTenantId = DBTableTransactions.GetLastApartmentIdByTenantId(tenantIdByEmail);
+            Console.WriteLine($"{lastApartmentIdByTenantId} :ApartmentId by TenantId table Transactions");
+
+            string apartmentIdByBuildingIdUnit = DBTableApartments.GetApartmentIdByBuildingIdUnit(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
+            Console.WriteLine($"{apartmentIdByBuildingIdUnit} :ApartmentId by BuildingId Unit from Apartments");
+
             Assert.Multiple(() =>
            {
                Assert.AreEqual(lastId, lastIdByTenantId);
@@ -62,6 +71,9 @@ namespace CazamioProject.BaseTestsDBPayments
 
                Assert.AreEqual(lastTransactionId, lastTransactionIdByTenantId);
                Console.WriteLine($"TransactionId from table Transactions {lastTransactionId} = {lastTransactionIdByTenantId} TransactionId by TenantId from table AspNetUsers");
+
+               Assert.AreEqual(lastApartmentIdByTenantId, apartmentIdByBuildingIdUnit);
+               Console.WriteLine($"ApartmentId table Transactions {lastApartmentIdByTenantId} = {apartmentIdByBuildingIdUnit} ApartmentId by BuildingId Unit from Apartments");
            });
         }
     }

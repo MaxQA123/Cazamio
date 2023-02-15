@@ -98,7 +98,7 @@ namespace CazamioProject.BaseTestsDBApplications
             string lastApplicationId = DBTableApartmentApplications.GetLastApartmentApplicationId();
             Console.WriteLine($"{lastApplicationId} :Last Id for application for {buildingAddress} from table ApartmentApplications");
 
-            string idApartmentByBuildingId = DBApartments.GetApartmentIdByBuildingIdFromApartments(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
+            string idApartmentByBuildingId = DBTableApartments.GetApartmentIdByBuildingIdUnit(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
             Console.WriteLine($"{idApartmentByBuildingId} :ApartmentId by BuildingId from Apartments");
 
             string lastApplicationIdByBuildingId = DBTableApartmentApplications.GetLastApartmentApplicationIdByApartmentId($"{idApartmentByBuildingId}");
@@ -147,7 +147,7 @@ namespace CazamioProject.BaseTestsDBApplications
             string lastApartmentApplicationId = DBTableApartmentApplications.GetLastApartmentApplicationId();
             Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId for application for {buildingAddress} from table ApartmentApplications");
 
-            string idApartmentByBuildingId = DBApartments.GetApartmentIdByBuildingIdFromApartments(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
+            string idApartmentByBuildingId = DBTableApartments.GetApartmentIdByBuildingIdUnit(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
             Console.WriteLine($"{idApartmentByBuildingId} :ApartmentId by BuildingId from Apartments");
 
             string lastApplicationIdByBuildingId = DBTableApartmentApplications.GetLastApartmentApplicationIdByApartmentId(idApartmentByBuildingId);

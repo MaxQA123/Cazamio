@@ -142,5 +142,48 @@ namespace CazamioProject.Helpers
             }
             return data;
         }
+
+        public static string GetLastApartmentId()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT ApartmentId FROM Transactions" +
+                    " WHERE Id = (SELECT MAX(Id) FROM Transactions)", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetLastApartmentIdByTenantId(string tenantId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT ApartmentId FROM Transactions" +
+                    " WHERE Id = (SELECT MAX(Id) FROM Transactions) AND TenantId = @TenantId", db);
+                command.Parameters.AddWithValue("@TenantId", DbType.String).Value = tenantId;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
     }
 }

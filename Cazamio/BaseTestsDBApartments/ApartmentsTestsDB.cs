@@ -37,7 +37,7 @@ namespace CazamioProject.BaseTestsDBApartments
 
         public void DisplayingIdApartments()
         {
-            string idApartmentByBuildingId = DBApartments.GetApartmentIdByBuildingIdFromApartments(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
+            string idApartmentByBuildingId = DBTableApartments.GetApartmentIdByBuildingIdUnit(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
             Console.WriteLine($"{idApartmentByBuildingId} :ApartmentId from Apartments");
         }
 
@@ -61,10 +61,10 @@ namespace CazamioProject.BaseTestsDBApartments
             string numberApartment = DBTestDataDBForAdmins.NEW_UNIT_NUMBER;
             string buildingName = DBTestDataDBForAdmins.BUILDING_NAME;
 
-            string apartmentIdLast = DBApartments.GetLastApartmentIdFromApartments();
+            string apartmentIdLast = DBTableApartments.GetLastApartmentId();
             Console.WriteLine($"{apartmentIdLast} :ApartmentId Last from table Apartments for {buildingName} related {numberApartment}");
 
-            string apartmentIdByNameBuilding = DBApartments.GetApartmentIdByBuildingNameFromApartments(DBTestDataDBForAdmins.BUILDING_NAME);
+            string apartmentIdByNameBuilding = DBTableApartments.GetApartmentIdByBuildingNameF(DBTestDataDBForAdmins.BUILDING_NAME);
             Console.WriteLine($"{apartmentIdByNameBuilding} :ApartmentId by NameBuilding from table Apartments for {buildingName} related {numberApartment}");
 
             string landlordId = DBApartments.GetLandlordIdApartmentForApartments();
