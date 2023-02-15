@@ -40,6 +40,9 @@ namespace CazamioProject.BaseTestsDBPayments
             string lastIdByTenantId = DBTableTransactions.GetLastIdByTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
             Console.WriteLine($"{lastIdByTenantId} :TransactionId last by TenantId from table Transactions");
 
+            string apartmentIdByBuildingIdUnit = DBTableApartments.GetApartmentIdByBuildingIdUnit(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
+            Console.WriteLine($"{apartmentIdByBuildingIdUnit} :ApartmentId by BuildingId Unit from Apartments");
+
             string lastTenantIdByIdTransactionType = DBTableTransactions.GetLastTenantIdByIdTransactionType(DBTestDataPayments.TRANSACTION_TYPE_TENANT_HOLDING_DEPOSIT);
             Console.WriteLine($"{lastTenantIdByIdTransactionType} :TenantId last by TransactionId TransactionType from table Transactions");
 
@@ -49,17 +52,14 @@ namespace CazamioProject.BaseTestsDBPayments
             string lastTransactionId = DBTableTransactions.GetLastTransactionId();
             Console.WriteLine($"{lastTransactionId} :TransactionId from table Transactions");
 
-            string lastTransactionIdByTenantId = DBTableTransactions.GetLastTransactionIdByTenantId(tenantIdByEmail);
-            Console.WriteLine($"{lastTransactionId} :TransactionId by TenantId from table Transactions");
+            string lastTransactionIdByTenantId = DBTableTransactions.GetLastTransactionIdByTenantIdApartmentId(tenantIdByEmail, apartmentIdByBuildingIdUnit);
+            Console.WriteLine($"{lastTransactionId} :TransactionId by TenantId ApartmentId from table Transactions");
 
             string lastApartmentId = DBTableTransactions.GetLastApartmentId();
             Console.WriteLine($"{lastApartmentId} :ApartmentId table Transactions");
 
-            string lastApartmentIdByTenantId = DBTableTransactions.GetLastApartmentIdByTenantId(tenantIdByEmail);
-            Console.WriteLine($"{lastApartmentIdByTenantId} :ApartmentId by TenantId table Transactions");
-
-            string apartmentIdByBuildingIdUnit = DBTableApartments.GetApartmentIdByBuildingIdUnit(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
-            Console.WriteLine($"{apartmentIdByBuildingIdUnit} :ApartmentId by BuildingId Unit from Apartments");
+            string lastApartmentIdByTenantId = DBTableTransactions.GetLastApartmentIdByTenantIdApartmentId(tenantIdByEmail, apartmentIdByBuildingIdUnit);
+            Console.WriteLine($"{lastApartmentIdByTenantId} :ApartmentId by TenantId ApartmentId table Transactions");
 
             Assert.Multiple(() =>
            {

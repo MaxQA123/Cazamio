@@ -121,14 +121,15 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetLastTransactionIdByTenantId(string tenantId)
+        public static string GetLastTransactionIdByTenantIdApartmentId(string tenantId, string apartmentId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT TransactionId FROM Transactions" +
-                    " WHERE Id = (SELECT MAX(Id) FROM Transactions) AND TenantId = @TenantId", db);
+                    " WHERE Id = (SELECT MAX(Id) FROM Transactions) AND TenantId = @TenantId AND ApartmentId = @ApartmentId", db);
                 command.Parameters.AddWithValue("@TenantId", DbType.String).Value = tenantId;
+                command.Parameters.AddWithValue("@ApartmentId", DbType.String).Value = apartmentId;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -164,14 +165,15 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetLastApartmentIdByTenantId(string tenantId)
+        public static string GetLastApartmentIdByTenantIdApartmentId(string tenantId, string apartmentId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT ApartmentId FROM Transactions" +
-                    " WHERE Id = (SELECT MAX(Id) FROM Transactions) AND TenantId = @TenantId", db);
+                    " WHERE Id = (SELECT MAX(Id) FROM Transactions) AND TenantId = @TenantId AND ApartmentId = @ApartmentId", db);
                 command.Parameters.AddWithValue("@TenantId", DbType.String).Value = tenantId;
+                command.Parameters.AddWithValue("@ApartmentId", DbType.String).Value = apartmentId;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
