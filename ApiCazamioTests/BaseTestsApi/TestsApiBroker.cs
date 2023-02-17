@@ -1,4 +1,5 @@
 ﻿using Allure.Commons;
+using ApiCazamioTests.ApiHelpers;
 using ApiTets.ApiPagesObjects.ApiBrokerPages.LogInBroker;
 using CazamioProgect.Helpers;
 using NUnit.Allure.Attributes;
@@ -24,7 +25,7 @@ namespace ApiCazamioTests.BaseTestsApi
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("ApiBroker")]
-        [AllureSubSuite("LogInBroker")]
+        [AllureSubSuite("LogInAsBroker")]
 
         //Date of publication:
         //Version\Build:
@@ -37,7 +38,7 @@ namespace ApiCazamioTests.BaseTestsApi
         {
             var email = TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY;
 
-            var responseLogIn = LogInBroker.ExecuteLogIn(email, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
+            var responseLogIn = LogInBroker.ExecuteLogIn(email, GeneralTestDataForAllUsers.PASSWORD_GENERAL, RequestData.DEVICE_FINGERPRINT, RequestData.TRUE);
 
             Console.WriteLine(responseLogIn.Brand);
         }
