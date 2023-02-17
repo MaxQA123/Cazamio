@@ -77,5 +77,30 @@ namespace CazamioProject.Helpers
             }
             return data;
         }
+
+        public static string GetApartmentApplicationIdByTenantIdApartmentid(string tenantId, string buildingId, string unit)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM ApartmentApplications" +
+                    " WHERE TenantId = @TenantId AND ApartmentId IN" +
+                    " (SELECT Id FROM Apartments WHERE BuildingId = @BuildingId AND Unit = @Unit)", db);
+                command.Parameters.AddWithValue("@TenantId", DbType.String).Value = tenantId;
+                command.Parameters.AddWithValue("@BuildingId", DbType.String).Value = buildingId;
+                command.Parameters.AddWithValue("@Unit", DbType.String).Value = unit;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
     }
 }

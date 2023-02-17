@@ -33,6 +33,31 @@ namespace CazamioProject.BaseTestsDBApplications
         //Comment: The table "Occupants".
         //Path to cheking's: 
 
+        public void DisplayingApartmentApplicationId()
+        {
+            string userIdTenant = DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID;
+            string buildingId = DBTestDataDBForAdmins.BUILDING_ID;
+            string unitNumber = DBTestDataDBForAdmins.UNIT_NUMBER;
+
+            string ApartmentApplicationId = DBTableApartmentApplications.GetApartmentApplicationIdByTenantIdApartmentid(userIdTenant, buildingId, unitNumber);
+            Console.WriteLine($"{ApartmentApplicationId} :ApartmentApplicationId by TenantId BuildingId UnitNumber for application from table ApartmentApplications");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBApplication")]
+        [AllureSubSuite("RecordNewOccupantId")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
+        //Comment: The table "Occupants".
+        //Path to cheking's: 
+
         public void RecordNewOccupantId()
         {
             string buildingAddress = DBTestDataDBForAdmins.BUILDING_ADDRESS;
