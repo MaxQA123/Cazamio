@@ -103,7 +103,7 @@ namespace CazamioProject.BaseTestsDBPayments
         //This test case is doing checking: 
         //Comment: The tables "Transactions", "AspNetUsers.
         //Path to cheking's: 
-        public void RecordsAboutNewPaymentCreditScreeningFee()
+        public void RecordsAboutNewPaymentCreditScreeningFeeApplicant()
         {
             string userIdTenant = DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID;
             string buildingId = DBTestDataDBForAdmins.BUILDING_ID;
