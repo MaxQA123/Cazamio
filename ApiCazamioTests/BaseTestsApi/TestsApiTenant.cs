@@ -13,7 +13,7 @@ namespace ApiCazamioTests.BaseTestsApi
     [TestFixture]
     [AllureNUnit]
 
-    public class TestsApi
+    public class TestsApiTenant
     {
         [Test]
         [AllureTag("Regression")]

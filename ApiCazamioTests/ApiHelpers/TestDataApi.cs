@@ -8,7 +8,7 @@ namespace ApiCazamioTests.ApiHelpers
 {
     public class EndPointsApi
     {
-        public const string API_HOST_WEBSITE_ADMIN = "";
+        public const string API_HOST_WEBSITE_ADMIN = "https://api-cazamio-staging.azurewebsites.net/";
         public const string API_HOST_WEBSITE_TENANT = "";
     }
 }
