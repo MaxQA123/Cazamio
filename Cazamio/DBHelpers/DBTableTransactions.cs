@@ -280,7 +280,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetLastTransactionStatusdByIdApartmentApplicationIdTransactionType(string apartmentApplicationId, string transactionType)
+        public static string GetLastTransactionStatusByIdApartmentApplicationIdTransactionType(string apartmentApplicationId, string transactionType)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -290,6 +290,50 @@ namespace CazamioProject.Helpers
                     " AND ApartmentApplicationId = @ApartmentApplicationId AND TransactionType = @TransactionType", db);
                 command.Parameters.AddWithValue("@ApartmentApplicationId", DbType.String).Value = apartmentApplicationId;
                 command.Parameters.AddWithValue("@TransactionType", DbType.String).Value = transactionType;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetLastTransactionTypeByIdApartmentId(string apartmenId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT TransactionType FROM Transactions" +
+                    " WHERE Id = (SELECT MAX(Id) FROM Transactions) AND ApartmentId = @ApartmentId", db);
+                command.Parameters.AddWithValue("@ApartmentId", DbType.String).Value = apartmenId;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetLastTransactionTypeByIdApartmentApplicationId(string apartmenApplicationId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT TransactionType FROM Transactions" +
+                    " WHERE Id = (SELECT MAX(Id) FROM Transactions) AND ApartmentApplicationId = @ApartmentApplicationId", db);
+                command.Parameters.AddWithValue("@ApartmentApplicationId", DbType.String).Value = apartmenApplicationId;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
