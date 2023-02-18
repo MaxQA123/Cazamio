@@ -38,22 +38,22 @@ namespace CazamioProgect.BaseTestsDBBuildings
             string buildingName = DBTestDataDBForAdmins.NEW_BUILDING_NAME;
             string nameLandlordsTable = TestDataDBNamesTables.TABLE_NAME_LANDLORDS;
 
-            string newAddressIdBuildingsTable = DBBuildings.GetAddressesIdInBuildingsNewBuilding();
+            string newAddressIdBuildingsTable = DBTableBuildings.GetLastAddressesIdNewBuilding();
             Console.WriteLine($"{newAddressIdBuildingsTable} :AddressesId building for {buildingName} from table Buildings");
 
-            string newAddressIdAddressesTable = DBBuildings.GetAddressesIdInAddressesNewBuilding();
+            string newAddressIdAddressesTable = DBTableAddresses.GetLastIdNewBuilding();
             Console.WriteLine($"{newAddressIdAddressesTable} :AddressesId building for {buildingName} from table Addresses");
 
-            string newMarketplaceIdBuildingsTable = DBBuildings.GetMarketplaceIdInBuildingsNewBuilding();
+            string newMarketplaceIdBuildingsTable = DBTableBuildings.GetLastMarketplaceIdByBuildingNameNewBuilding();
             Console.WriteLine($"{newMarketplaceIdBuildingsTable} :MarketplaceId building for {buildingName} from table Buildings");
 
             string landlordIdLandlordsTable = DBTableLandlords.GetIdLastForBroker();
             Console.WriteLine($"{landlordIdLandlordsTable} :LandlordId building for {buildingName} from table Buildings");
 
-            string landlordIdBuildingsTable = DBBuildings.GetLandlordIdInBuildingsNewBuilding();
+            string landlordIdBuildingsTable = DBTableBuildings.GetLastLandlordByLlcNameNewBuilding();
             Console.WriteLine($"{landlordIdBuildingsTable} :LandlordId building for {buildingName} from table Buildings");
 
-            string buildingNameBuildingsTable = DBBuildings.GetBuildingNameInBuildingsNewBuilding();
+            string buildingNameBuildingsTable = DBTableBuildings.GetBuildingNameByAddressIdNewBuilding();
             Console.WriteLine($"{buildingNameBuildingsTable} :LandlordId building for {buildingName} from table Buildings");
 
             Assert.Multiple(() =>
@@ -91,7 +91,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
         {
             string buildingName = DBTestDataDBForAdmins.BUILDING_NAME;
 
-            string idBuildingByName = DBBuildings.GetIdBuildingByName(DBTestDataDBForAdmins.BUILDING_NAME);
+            string idBuildingByName = DBTableBuildings.GetIdBuildingByBuildingName(DBTestDataDBForAdmins.BUILDING_NAME);
             Console.WriteLine($"{idBuildingByName} :Id building for {buildingName} from table Buildings");
         }
 
@@ -114,7 +114,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
         {
             string buildingLlcName = DBTestDataDBForAdmins.BUILDING_LLC_NAME;
 
-            string idBuildingByLlcName = DBBuildings.GetIdBuildingByLlcName(DBTestDataDBForAdmins.BUILDING_LLC_NAME);
+            string idBuildingByLlcName = DBTableBuildings.GetIdBuildingByLlcName(DBTestDataDBForAdmins.BUILDING_LLC_NAME);
             Console.WriteLine($"{idBuildingByLlcName} :Id building for {buildingLlcName} from table Buildings");
         }
 
@@ -137,7 +137,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
         {
             string buildingLlcName = DBTestDataDBForAdmins.BUILDING_LLC_NAME;
 
-            string marketplaceIdForBuildingByAddress = DBBuildings.GetMarketplaceIdForBuildingByAddress(DBTestDataDBForAdmins.BUILDING_ADDRESS);
+            string marketplaceIdForBuildingByAddress = DBTableBuildings.GetMarketplaceIdByBuildingByAddress(DBTestDataDBForAdmins.BUILDING_ADDRESS);
             Console.WriteLine($"{marketplaceIdForBuildingByAddress} :MarketplaceId for building {buildingLlcName} by address from table Buildings");
         }
 
@@ -160,7 +160,7 @@ namespace CazamioProgect.BaseTestsDBBuildings
         {
             string buildingLlcName = DBTestDataDBForAdmins.BUILDING_LLC_NAME;
 
-            string marketplaceIdForBuildingByBuildingName = DBBuildings.GetMarketplaceIdForBuildingByBuildingName(DBTestDataDBForAdmins.BUILDING_NAME);
+            string marketplaceIdForBuildingByBuildingName = DBTableBuildings.GetMarketplaceIdByBuildingName(DBTestDataDBForAdmins.BUILDING_NAME);
             Console.WriteLine($"{marketplaceIdForBuildingByBuildingName} :MarketplaceId for building {buildingLlcName} by building name from table Buildings");
         }
 
@@ -183,22 +183,22 @@ namespace CazamioProgect.BaseTestsDBBuildings
         {
             string buildingLlcName = DBTestDataDBForAdmins.BUILDING_LLC_NAME;
 
-            string idBuildingByName = DBBuildings.GetIdBuildingByName(DBTestDataDBForAdmins.BUILDING_NAME);
+            string idBuildingByName = DBTableBuildings.GetIdBuildingByBuildingName(DBTestDataDBForAdmins.BUILDING_NAME);
             Console.WriteLine($"{idBuildingByName} :Id for building {buildingLlcName} in the table Buildings By BuildingName");
 
-            string idBuildingByLlcName = DBBuildings.GetIdBuildingByLlcName(DBTestDataDBForAdmins.BUILDING_LLC_NAME);
+            string idBuildingByLlcName = DBTableBuildings.GetIdBuildingByLlcName(DBTestDataDBForAdmins.BUILDING_LLC_NAME);
             Console.WriteLine($"{idBuildingByLlcName} :AddressId for building {buildingLlcName} in the table Buildings By BuildingName");
 
-            string landlordIdForBuilding = DBBuildings.GetLandlordIdForBuilding(DBTestDataDBForAdmins.BUILDING_NAME);
+            string landlordIdForBuilding = DBTableBuildings.GetLandlordIdByBuildingName(DBTestDataDBForAdmins.BUILDING_NAME);
             Console.WriteLine($"{landlordIdForBuilding} :LandlordId for building {buildingLlcName} in the table Buildings");
 
             string idBroker = DBTableLandlords.GetLandlordIdForBroker(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
             Console.WriteLine($"{idBroker} :Id for admin from table {TestDataDBNamesTables.TABLE_NAME_LANDLORDS}");
 
-            string marketplaceIdForBuildingByAddress = DBBuildings.GetMarketplaceIdForBuildingByAddress(DBTestDataDBForAdmins.BUILDING_ADDRESS);
+            string marketplaceIdForBuildingByAddress = DBTableBuildings.GetMarketplaceIdByBuildingByAddress(DBTestDataDBForAdmins.BUILDING_ADDRESS);
             Console.WriteLine($"{marketplaceIdForBuildingByAddress} :MarketplaceId for building {buildingLlcName} by address from table Buildings");
 
-            string marketplaceIdForBuildingByBuildingName = DBBuildings.GetMarketplaceIdForBuildingByBuildingName(DBTestDataDBForAdmins.BUILDING_NAME);
+            string marketplaceIdForBuildingByBuildingName = DBTableBuildings.GetMarketplaceIdByBuildingName(DBTestDataDBForAdmins.BUILDING_NAME);
             Console.WriteLine($"{marketplaceIdForBuildingByBuildingName} :MarketplaceId for building {buildingLlcName} by building name from table Buildings");
 
             Assert.Multiple(() =>

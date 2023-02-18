@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProject.Helpers
+namespace CazamioProject.DBHelpers
 {
-    public class DBBuildings
+    public class DBTableBuildings
     {
-        public static string GetIdBuildingByName(string idBuilding)
+        public static string GetIdBuildingByBuildingName(string idBuilding)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -39,7 +39,7 @@ namespace CazamioProject.Helpers
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id" +
-                    " FROM Buildings" + " WHERE LLCName = @LLCName", db);
+                    " FROM Buildings WHERE LLCName = @LLCName", db);
                 command.Parameters.AddWithValue("@LLCName", DbType.String).Value = idBuilding;
                 db.Open();
 
@@ -55,7 +55,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetLandlordIdForBuilding(string landlordId)
+        public static string GetLandlordIdByBuildingName(string landlordId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -77,7 +77,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetMarketplaceIdForBuildingByAddress(string marketplaceId)
+        public static string GetMarketplaceIdByBuildingByAddress(string marketplaceId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -99,7 +99,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetMarketplaceIdForBuildingByBuildingName(string marketplaceId)
+        public static string GetMarketplaceIdByBuildingName(string marketplaceId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -121,7 +121,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetAddressesIdInBuildingsNewBuilding()
+        public static string GetLastAddressesIdNewBuilding()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -142,28 +142,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetAddressesIdInAddressesNewBuilding()
-        {
-            string data = null;
-            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
-            {
-                SqlCommand command = new("SELECT Id FROM Addresses" +
-                    " WHERE Id = (SELECT MAX(Id) FROM Addresses);", db);
-                db.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        data = reader.GetValue(0).ToString();
-                    }
-                }
-            }
-            return data;
-        }
-
-        public static string GetMarketplaceIdInBuildingsNewBuilding()
+        public static string GetLastMarketplaceIdByBuildingNameNewBuilding()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -184,7 +163,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetLandlordIdInBuildingsNewBuilding()
+        public static string GetLastLandlordByLlcNameNewBuilding()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -205,7 +184,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetBuildingNameInBuildingsNewBuilding()
+        public static string GetBuildingNameByAddressIdNewBuilding()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))

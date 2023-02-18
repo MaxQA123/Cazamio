@@ -7,18 +7,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProject.Helpers
+namespace CazamioProject.DBHelpers
 {
-    public class DBBrokers
+    public class DBTableBrokers
     {
-        public static string GetIdForBrokerFromAspNetUsers(string idBroker)
+        public static string GetBrokerIdAgentByEmail(string idBroker)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM Brokers WHERE UserId IN" +
+                           " (SELECT Id FROM AspNetUsers WHERE Email = @Email);", db);
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = idBroker;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetLastBrokerIdNewAgent()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id FROM" +
-                    " AspNetUsers WHERE Email = @Email;", db);
-                command.Parameters.AddWithValue("@Email", DbType.String).Value = idBroker;
+                    " Brokers WHERE Id = (SELECT MAX(Id) FROM Brokers);", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -33,36 +54,14 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetMarketplaceIdForBrokerFromAspNetUsers(string idBroker)
+        public static string GetLastMarketplaceIdNewAgentByUserId()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT MarketplaceId FROM" +
-                    " AspNetUsers WHERE Email = @Email;", db);
-                command.Parameters.AddWithValue("@Email", DbType.String).Value = idBroker;
-                db.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        data = reader.GetValue(0).ToString();
-                    }
-                }
-            }
-            return data;
-        }
-
-        public static string GetRoleIdNewBrokerFromAspNetUserRoles()
-        {
-            string data = null;
-            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
-            {
-                SqlCommand command = new("SELECT RoleId FROM AspNetUserRoles" +
+                SqlCommand command = new("SELECT MarketplaceId FROM Brokers" +
                     " WHERE UserId IN" +
-                    " (SELECT UserId FROM Landlords WHERE Id = (SELECT MAX(Id) FROM Landlords));", db);
+                    " (SELECT UserId FROM Brokers WHERE Id = (SELECT MAX(Id) FROM Brokers));", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -77,37 +76,14 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetRoleNameBrokerFromAspNetRoles(string roleName)
+        public static string GetIsDeletedAgentByEmail(string idAgent)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT Name FROM AspNetRoles WHERE Id IN" +
-                           " (SELECT RoleId FROM AspNetUserRoles WHERE UserId IN" +
-                           " (SELECT Id FROM AspNetUsers WHERE Email = @Email));", db);
-                command.Parameters.AddWithValue("@Email", DbType.String).Value = roleName;
-                db.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        data = reader.GetValue(0).ToString();
-                    }
-                }
-            }
-            return data;
-        }
-
-        public static string GetFirstNameBrokerFromAspNetUsers(string firstName)
-        {
-            string data = null;
-            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
-            {
-                SqlCommand command = new("SELECT FirstName" +
-                    " FROM AspNetUsers WHERE Email = @Email", db);
-                command.Parameters.AddWithValue("@Email", DbType.String).Value = firstName;
+                SqlCommand command = new("SELECT IsDeleted FROM Brokers WHERE UserId IN" +
+                      " (SELECT Id FROM AspNetUsers WHERE Email = @Email);", db);
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = idAgent;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

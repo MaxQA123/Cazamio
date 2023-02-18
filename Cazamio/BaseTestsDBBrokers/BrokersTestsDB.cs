@@ -36,7 +36,7 @@ namespace CazamioProject.BaseTestsDBBrokers
         {
             string newBroker = DBTestDataDBForAdmins.NEW_BROKER_FIRST_LAST_NAME;
 
-            string userIdByEmailBroker = DBBrokers.GetIdForBrokerFromAspNetUsers(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
+            string userIdByEmailBroker = DBTableAspNetUsers.GetIdForBrokerFromAspNetUsers(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
             Console.WriteLine($"{userIdByEmailBroker}: Id for new broker {newBroker} from table AspNetUsers");
 
             string userIdBroker = DBTableLandlords.GetUserIdNewBroker();
@@ -48,16 +48,16 @@ namespace CazamioProject.BaseTestsDBBrokers
             string lastLandlordIdBrokerByUserId = DBTableLandlords.GetlastLandlordIdByUserIdForBroker(userIdByEmailBroker);
             Console.WriteLine($"{lastLandlordIdBroker} :LandlordId by UserId for new broker {newBroker} from table Landlords");
 
-            string marketplaceIdNewBroker = DBBrokers.GetMarketplaceIdForBrokerFromAspNetUsers(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
+            string marketplaceIdNewBroker = DBTableAspNetUsers.GetMarketplaceIdForBrokerByEmail(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
             Console.WriteLine($"{marketplaceIdNewBroker}: MarketplaceId for new broker {newBroker} from table AspNetUsers");
 
-            string roleIdBroker = DBBrokers.GetRoleIdNewBrokerFromAspNetUserRoles();
+            string roleIdBroker = DBTableAspNetUserRoles.GetRoleIdNewBrokerByUserId();
             Console.WriteLine($"{roleIdBroker} :RoleId for new broker {newBroker} from table AspNetUserRoles");
 
-            string roleNameBroker = DBBrokers.GetRoleNameBrokerFromAspNetRoles(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
+            string roleNameBroker = DBTableAspNetRoles.GetRoleNameByEmail(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
             Console.WriteLine($"{roleNameBroker} :Name role for broker {newBroker} from table AspNetRoles");
 
-            string firstNameBroker = DBBrokers.GetFirstNameBrokerFromAspNetUsers(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
+            string firstNameBroker = DBTableAspNetUsers.GetFirstNameBrokerByEmail(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
             Console.WriteLine($"{firstNameBroker} :First Name for broker {newBroker} from table AspNetRoles");
 
             Assert.Multiple(() =>
@@ -107,7 +107,7 @@ namespace CazamioProject.BaseTestsDBBrokers
             string marketplaceIdByBrokerEmail = DBTableLandlords.GetMarketplaceIdBroker(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
             Console.WriteLine($"{marketplaceIdByBrokerEmail} :MarketplaceId for broker {brokerName} from table Landlords");
 
-            string IdBroker = DBBrokers.GetIdForBrokerFromAspNetUsers(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
+            string IdBroker = DBTableAspNetUsers.GetIdForBrokerFromAspNetUsers(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
             Console.WriteLine($"{IdBroker}: Id for new broker {brokerName} from table AspNetUsers");
 
             Assert.Multiple(() =>

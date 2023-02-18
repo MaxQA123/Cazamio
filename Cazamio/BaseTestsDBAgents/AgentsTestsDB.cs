@@ -35,7 +35,7 @@ namespace CazamioProject.BaseTestsDBAgents
 
         public void DispalyingIdAgentfromAspNetUsers()
         {
-            string IdAgent = DBAgents.GetIdAgentFromAspNetUsers(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
+            string IdAgent = DBTableAspNetUsers.GetIdAgentByEmail(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
             Console.WriteLine($"{IdAgent} :Id for broker from table AspNetUsers");
         }
 
@@ -56,7 +56,7 @@ namespace CazamioProject.BaseTestsDBAgents
 
         public void DispalyingBrokerIdAgentFromBrokers()
         {
-            string brokerId = DBAgents.GetBrokerIdAgentFromBrokers(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
+            string brokerId = DBTableBrokers.GetBrokerIdAgentByEmail(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
             Console.WriteLine($"{brokerId} :Id for broker from table Brokers");
         }
 
@@ -77,7 +77,7 @@ namespace CazamioProject.BaseTestsDBAgents
 
         public void RelatedAgentWithBrokerFromLandlordBrokers()
         {
-            string landlordId = DBAgents.GetLandlordIdByBrokerIdFromLandlordBrokers(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
+            string landlordId = DBTableLandlordBrokers.GetLandlordIdByBrokerId(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
             Console.WriteLine($"{landlordId} :LanlordId for broker from table LandlordBrokers");
         }
 
@@ -100,28 +100,28 @@ namespace CazamioProject.BaseTestsDBAgents
         {
             string firstLastNameAgent = DBTestDataDBForAdmins.NEW_AGENT_FIRST_LAST_NAME;
 
-            string brokerIdAgentBrokers = DBAgents.GetBrokerIdNewAgentFromBrokers();
+            string brokerIdAgentBrokers = DBTableBrokers.GetLastBrokerIdNewAgent();
             Console.WriteLine($"{brokerIdAgentBrokers} :BrokerId for new agent {firstLastNameAgent} from table Brokers");
 
-            string marketplaceIdAgentAspNetUsers = DBAgents.GetMarketplaceIDAgentFromAspNetUsers(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
+            string marketplaceIdAgentAspNetUsers = DBTableAspNetUsers.GetMarketplaceIdAgentByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
             Console.WriteLine($"{marketplaceIdAgentAspNetUsers} :MarketplaceId for agent {firstLastNameAgent} from table AspNetUsers");
 
-            string marketplaceIdAgentBrokers = DBAgents.GetMarketplaceIDNewAgentFromBrokers();
+            string marketplaceIdAgentBrokers = DBTableBrokers.GetLastMarketplaceIdNewAgentByUserId();
             Console.WriteLine($"{marketplaceIdAgentBrokers} :MarketplaceId for agent {firstLastNameAgent} from table Brokers");
 
-            string roleIdAgent = DBAgents.GetRoleIdNewAgentFromAspNetUserRoles();
+            string roleIdAgent = DBTableAspNetUserRoles.GetLastRoleIdNewAgentByUserId();
             Console.WriteLine($"{roleIdAgent} :RoleId for new agent {firstLastNameAgent} from table AspNetUserRoles");
 
-            string brokerdIdNewAgentLandlordBrokers = DBAgents.GetBrokerIdForNewAgent();
+            string brokerdIdNewAgentLandlordBrokers = DBTableLandlordBrokers.GetLastBrokerIdNewAgent();
             Console.WriteLine($"{brokerdIdNewAgentLandlordBrokers} :BrokerId for new agent {firstLastNameAgent} from table LandlordBrokers");
 
             string LandlordIdRelatedNewAgent = DBTableLandlordBrokers.GetLandlordIdNewBroker();
             Console.WriteLine($"{LandlordIdRelatedNewAgent} :LandlordId for new agent {firstLastNameAgent} from table LandlordBrokers");
 
-            string roleNameNewAgentAspNetRoles = DBAgents.GetRoleNameAgentFromAspNetRoles(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
+            string roleNameNewAgentAspNetRoles = DBTableAspNetUserRoles.GetRoleNameAgentByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
             Console.WriteLine($"{roleNameNewAgentAspNetRoles} :Name role for new agent {firstLastNameAgent} from table AspNetRoles");
 
-            string firstNameNewAgentAspNetUsers = DBAgents.GetFirstNameAgentFromAspNetUsers(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
+            string firstNameNewAgentAspNetUsers = DBTableAspNetUsers.GetFirstNameAgentByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
             Console.WriteLine($"{firstNameNewAgentAspNetUsers} :First Name for new agent {firstLastNameAgent} from table AspNetUsers");
 
             Assert.Multiple(() =>
@@ -190,10 +190,10 @@ namespace CazamioProject.BaseTestsDBAgents
             string tableBrokers = TestDataDBNamesTables.TABLE_NAME_BROKERS;
             string tableLandlordBrokers = TestDataDBNamesTables.TABLE_NAME_LANDLORD_BROKERS;
 
-            string oneDeletedTableBrokers = DBAgents.GetDeleteAgentTableBrokers($"{DBTestDataDBForAdmins.DELETED_AGENT_EMAIL}");
+            string oneDeletedTableBrokers = DBTableBrokers.GetIsDeletedAgentByEmail(DBTestDataDBForAdmins.DELETED_AGENT_EMAIL);
             Console.WriteLine($"{oneDeletedTableBrokers} :Displayed 1 for agent {agentName} from table {tableBrokers}");
 
-            string oneDeletedTableLandlordBrokers = DBAgents.GetDeleteAgentTableLandlordBrokers($"{DBTestDataDBForAdmins.DELETED_AGENT_EMAIL}");
+            string oneDeletedTableLandlordBrokers = DBTableLandlordBrokers.GetIsDeletedAgentByEmail(DBTestDataDBForAdmins.DELETED_AGENT_EMAIL);
             Console.WriteLine($"{oneDeletedTableLandlordBrokers} :Displayed 1 for agent {agentName} from table {tableLandlordBrokers}");
 
             Assert.Multiple(() =>

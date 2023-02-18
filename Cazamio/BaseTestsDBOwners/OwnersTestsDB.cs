@@ -37,37 +37,37 @@ namespace CazamioProject.BaseTestsDBOwners
         {
             string nameOwner = DBTestDataDBForAdmins.NEW_OWNER_FIRST_LAST_NAME;
 
-            string createdByUserIdViaEmail = DBOwners.GetCreatedByUserIdOwnerByEmailFromOwners(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
+            string createdByUserIdViaEmail = DBTableOwners.GetCreatedByUserIdOwnerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
             Console.WriteLine($"{createdByUserIdViaEmail} :CreatedByUserId wner via email for owner {nameOwner} from table Owners");
 
-            string createdByUserIdViaId = DBOwners.GetCreatedByUserIdNewOwnerFromOwners();
+            string createdByUserIdViaId = DBTableOwners.GetLasCreatedByUserIdById();
             Console.WriteLine($"{createdByUserIdViaId} :CreatedByUserId owner via id for owner {nameOwner} from table Owners");
 
-            string ownerIdViaEmail = DBOwners.GetOwnerIdOwnerByEmailFromOwners(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
+            string ownerIdViaEmail = DBTableOwners.GetIdOwnerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
             Console.WriteLine($"{ownerIdViaEmail} :OwnerId wner via email for owner {nameOwner} from table Owners");
 
-            string ownerIdOwnerViaId = DBOwners.GetOwnerIdNewOwnerFromOwners();
+            string ownerIdOwnerViaId = DBTableOwners.GetLastIdNewOwner();
             Console.WriteLine($"{ownerIdOwnerViaId} :OwnerId owner via id for owner {nameOwner} from table Owners");
 
-            string landlordIdOwnerViaEmail = DBOwners.GetLandlordIdOwnerByEmailFromOwners(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
+            string landlordIdOwnerViaEmail = DBTableOwners.GetLandlordIdOwnerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
             Console.WriteLine($"{landlordIdOwnerViaEmail} :LandlordId owner via email for owner {nameOwner} from table Owners");
 
-            string landlordIdOwnerViaId = DBOwners.GetLandlordIdOwnerByIdFromOwners();
+            string landlordIdOwnerViaId = DBTableOwners.GetLastLandlordIdOwnerByIdOwner();
             Console.WriteLine($"{landlordIdOwnerViaId} :LandlordId owner via id for owner {nameOwner} from table Owners");
 
-            string marketplaceIdOwnerViaEmail = DBOwners.GetMarketplaceIdOwnerByEmailFromOwners(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
+            string marketplaceIdOwnerViaEmail = DBTableOwners.GetMarketplaceIdOwnerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
             Console.WriteLine($"{marketplaceIdOwnerViaEmail} :LandlordId owner via email for owner {nameOwner} from table Owners");
 
-            string marketplaceIdOwnerViaId = DBOwners.GetMarketplaceIdOwnerByIdFromOwners();
+            string marketplaceIdOwnerViaId = DBTableOwners.GetLastMarketplaceIdOwner();
             Console.WriteLine($"{marketplaceIdOwnerViaId} :LandlordId owner via id for owner {nameOwner} from table Owners");
 
-            string emailOwnerViaId = DBOwners.GetEmailNewOwnerByIdOwners();
+            string emailOwnerViaId = DBTableOwners.GetLastOwnerEmailNewOwnerByIdOwners();
             Console.WriteLine($"{emailOwnerViaId} :Email owner via id for owner {nameOwner} from table Owners");
 
-            string ownerNameOwnerViaId = DBOwners.GetOwnerNameNewOwnerByIdOwners();
+            string ownerNameOwnerViaId = DBTableOwners.GetOwnerNameNewOwnerByIdOwners();
             Console.WriteLine($"{ownerNameOwnerViaId} :Owner Name owner via id for owner {nameOwner} from table Owners");
 
-            string companyNameOwnerViaId = DBOwners.GetCompanyNameNewOwnerByIdOwners();
+            string companyNameOwnerViaId = DBTableOwners.GetLastCompanyNameNewOwnerByIdOwners();
             Console.WriteLine($"{companyNameOwnerViaId} :Company Name owner via id for owner {nameOwner} from table Owners");
 
             Assert.Multiple(() =>

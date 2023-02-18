@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProject.Helpers
+namespace CazamioProject.DBHelpers
 {
-    public class DBOwners
+    public class DBTableOwners
     {
-        public static string GetCreatedByUserIdOwnerByEmailFromOwners(string createdByUserId)
+        public static string GetCreatedByUserIdOwnerByOwnerEmail(string createdByUserId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -33,7 +33,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetCreatedByUserIdNewOwnerFromOwners()
+        public static string GetLasCreatedByUserIdById()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -54,7 +54,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetOwnerIdOwnerByEmailFromOwners(string ownerId)
+        public static string GetIdOwnerByOwnerEmail(string ownerId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -76,7 +76,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetOwnerIdNewOwnerFromOwners()
+        public static string GetLastIdNewOwner()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -97,7 +97,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetLandlordIdOwnerByEmailFromOwners(string landlordId)
+        public static string GetLandlordIdOwnerByOwnerEmail(string landlordId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -119,7 +119,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetLandlordIdOwnerByIdFromOwners()
+        public static string GetLastLandlordIdOwnerByIdOwner()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -140,7 +140,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetMarketplaceIdOwnerByEmailFromOwners(string landlordId)
+        public static string GetMarketplaceIdOwnerByOwnerEmail(string landlordId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -162,7 +162,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetMarketplaceIdOwnerByIdFromOwners()
+        public static string GetLastMarketplaceIdOwner()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -183,7 +183,7 @@ namespace CazamioProject.Helpers
             return data;
         }
 
-        public static string GetEmailNewOwnerByIdOwners()
+        public static string GetLastOwnerEmailNewOwnerByIdOwners()
         {
             string idBuilding = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -225,7 +225,7 @@ namespace CazamioProject.Helpers
             return idBuilding;
         }
 
-        public static string GetCompanyNameNewOwnerByIdOwners()
+        public static string GetLastCompanyNameNewOwnerByIdOwners()
         {
             string idBuilding = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))

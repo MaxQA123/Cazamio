@@ -46,7 +46,7 @@ namespace CazamioProject.BaseTestsDBPayments
             string lastTenantIdByIdTransactionType = DBTableTransactions.GetLastTenantIdByIdTransactionType(DBTestDataPayments.TRANSACTION_TYPE_TENANT_HOLDING_DEPOSIT);
             Console.WriteLine($"{lastTenantIdByIdTransactionType} :TenantId last by TransactionId TransactionType from table Transactions");
 
-            string tenantIdByEmail = DBTableAspNetUsers.GetIdByEmailMarketplaceIdForTenant(TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+            string tenantIdByEmail = DBTableAspNetUsers.GetIdByEmailMarketplaceId(TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{tenantIdByEmail} :TenantId by Email from table AspNetUsers");
 
             string lastTransactionId = DBTableTransactions.GetLastTransactionId();
@@ -124,7 +124,7 @@ namespace CazamioProject.BaseTestsDBPayments
             string lastTenantIdByIdTransactionType = DBTableTransactions.GetLastTenantIdByIdTransactionType(DBTestDataPayments.TRANSACTION_TYPE_TENANT_APPLICATION);
             Console.WriteLine($"{lastTenantIdByIdTransactionType} :TenantId last by TransactionId TransactionType from table Transactions");
 
-            string tenantIdByEmail = DBTableAspNetUsers.GetIdByEmailMarketplaceIdForTenant(TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+            string tenantIdByEmail = DBTableAspNetUsers.GetIdByEmailMarketplaceId(TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{tenantIdByEmail} :TenantId by Email from table AspNetUsers");
 
             string lastTransactionId = DBTableTransactions.GetLastTransactionId();
@@ -202,7 +202,7 @@ namespace CazamioProject.BaseTestsDBPayments
             string lastTenantIdByIdTransactionType = DBTableTransactions.GetLastTenantIdByIdTransactionType(DBTestDataPayments.TRANSACTION_TYPE_TENANT_SINGING_LEASE);
             Console.WriteLine($"{lastTenantIdByIdTransactionType} :TenantId last by TransactionId TransactionType from table Transactions");
 
-            string tenantIdByEmail = DBTableAspNetUsers.GetIdByEmailMarketplaceIdForTenant(TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+            string tenantIdByEmail = DBTableAspNetUsers.GetIdByEmailMarketplaceId(TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{tenantIdByEmail} :TenantId by Email from table AspNetUsers");
 
             string lastTransactionId = DBTableTransactions.GetLastTransactionId();

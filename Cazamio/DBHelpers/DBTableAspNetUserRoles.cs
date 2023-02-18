@@ -9,14 +9,16 @@ using System.Threading.Tasks;
 
 namespace CazamioProject.DBHelpers
 {
-    public class DBTableTenants
+    public class DBTableAspNetUserRoles
     {
-        public static string GetLastIdNewTenant()
+        public static string GetLastRoleIdNewAgentByUserId()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT MAX(Id) Id FROM Tenants;", db);
+                SqlCommand command = new("SELECT RoleId FROM AspNetUserRoles" +
+                    " WHERE UserId IN" +
+                    " (SELECT UserId FROM Brokers WHERE Id = (SELECT MAX(Id) FROM Brokers));", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -31,14 +33,15 @@ namespace CazamioProject.DBHelpers
             return data;
         }
 
-        public static string GetIdByEmail(string idTenant)
+        public static string GetRoleNameAgentByEmail(string roleName)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT Id FROM Tenants WHERE UserId IN" +
-                           " (SELECT Id FROM AspNetUsers WHERE Email = @Email);", db);
-                command.Parameters.AddWithValue("@Email", DbType.String).Value = idTenant;
+                SqlCommand command = new("SELECT Name FROM AspNetRoles WHERE Id IN" +
+                           " (SELECT RoleId FROM AspNetUserRoles WHERE UserId IN" +
+                           " (SELECT Id FROM AspNetUsers WHERE Email = @Email));", db);
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = roleName;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -53,14 +56,14 @@ namespace CazamioProject.DBHelpers
             return data;
         }
 
-        public static string GetMarketplaceIdByEmailUserId(string idTenant)
+        public static string GetRoleIdNewBrokerByUserId()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT MarketplaceId FROM Tenants WHERE UserId IN" +
-                           " (SELECT Id FROM AspNetUsers WHERE Email = @Email);", db);
-                command.Parameters.AddWithValue("@Email", DbType.String).Value = idTenant;
+                SqlCommand command = new("SELECT RoleId FROM AspNetUserRoles" +
+                    " WHERE UserId IN" +
+                    " (SELECT UserId FROM Landlords WHERE Id = (SELECT MAX(Id) FROM Landlords));", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -75,13 +78,14 @@ namespace CazamioProject.DBHelpers
             return data;
         }
 
-        public static string GetLastUserIdNewTenant()
+        public static string GetLastRoleIdNewTenantByUserId()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT UserId" +
-                    " FROM Tenants WHERE Id = (SELECT MAX(Id) FROM Tenants);", db);
+                SqlCommand command = new("SELECT RoleId FROM AspNetUserRoles" +
+                    " WHERE UserId IN" +
+                    " (SELECT UserId FROM Tenants WHERE Id = (SELECT MAX(Id) FROM Tenants));", db);
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

@@ -67,22 +67,22 @@ namespace CazamioProject.BaseTestsDBApartments
             string apartmentIdByNameBuilding = DBTableApartments.GetApartmentIdByBuildingNameF(DBTestDataDBForAdmins.BUILDING_NAME);
             Console.WriteLine($"{apartmentIdByNameBuilding} :ApartmentId by NameBuilding from table Apartments for {buildingName} related {numberApartment}");
 
-            string landlordId = DBApartments.GetLandlordIdApartmentForApartments();
+            string landlordId = DBTableApartments.GetLastLandlordIdNewApartment();
             Console.WriteLine($"{landlordId} :LandlordId from table Apartments for {buildingName} related {numberApartment}");
 
-            string buildingId = DBApartments.GetBuildingIdNewApartmentForApartments();
+            string buildingId = DBTableApartments.GetLastBuildingIdNewApartment();
             Console.WriteLine($"{buildingId} :BuildingId from table Apartments for {buildingName} related {numberApartment}");
 
-            string marketplaceId = DBApartments.GetMarketplaceIdApartmentForApartments();
+            string marketplaceId = DBTableApartments.GetLastMarketplaceIdNewApartment();
             Console.WriteLine($"{marketplaceId} :MarketplaceId from table Apartments for {buildingName} related {numberApartment}");
 
-            string unitName = DBApartments.GetUnitNameNewApartmentForApartments();
+            string unitName = DBTableApartments.GetLastUnitNameNewApartmentById();
             Console.WriteLine($"{unitName} :Unit Name from table Apartments for {buildingName} related {numberApartment}");
 
-            string brokerId = DBApartments.GetBrokerIdApartmentForApartments();
+            string brokerId = DBTableApartments.GetLastBrokerIdApartmentById();
             Console.WriteLine($"{brokerId} :BrokerId from table Apartments for {buildingName} related {numberApartment}");
 
-            string ownerId = DBApartments.GetOwnerIdApartmentForApartments();
+            string ownerId = DBTableApartments.GetLastOwnerIdApartmentById();
             Console.WriteLine($"{ownerId} :OwnerId from table Apartments for {buildingName} related {numberApartment}");
 
             Assert.Multiple(() =>
