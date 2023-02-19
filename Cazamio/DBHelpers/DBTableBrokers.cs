@@ -33,7 +33,7 @@ namespace CazamioProject.DBHelpers
             return data;
         }
 
-        public static string GetLastBrokerIdNewAgent()
+        public static string GetLastIdNewAgent()
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))

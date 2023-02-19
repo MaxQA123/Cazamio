@@ -100,7 +100,7 @@ namespace CazamioProject.BaseTestsDBAgents
         {
             string firstLastNameAgent = DBTestDataDBForAdmins.NEW_AGENT_FIRST_LAST_NAME;
 
-            string brokerIdAgentBrokers = DBTableBrokers.GetLastBrokerIdNewAgent();
+            string brokerIdAgentBrokers = DBTableBrokers.GetLastIdNewAgent();
             Console.WriteLine($"{brokerIdAgentBrokers} :BrokerId for new agent {firstLastNameAgent} from table Brokers");
 
             string marketplaceIdAgentAspNetUsers = DBTableAspNetUsers.GetMarketplaceIdAgentByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);

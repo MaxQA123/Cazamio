@@ -139,18 +139,18 @@ namespace CazamioProject.BaseTestsDBTenants
         //Path to cheking's: 
         public void NewRecordsAboutBackgroundCheckCreditScreening()
         {
-            string tenant = DBTestDataForTenantMarketplaceOne.ALREADY_EXIST_TENANT_FIRST_LAST_NAME;
+            string tenant = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_LAST_NAME;
 
-            string lastIdByEmail = DBTableTenantBackgroundChecks.GetLastIdByEmailMarketplaceId(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_TWO_DEMO);
-            Console.WriteLine($"{lastIdByEmail} :Last Id {tenant} from table TenantBackgroundChecks");
+            string lastIdByEmail = DBTableTenantBackgroundChecks.GetLastIdByEmailMarketplaceId(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+            Console.WriteLine($"{lastIdByEmail} :Last Id CreditScreening by email {tenant} from table TenantBackgroundChecks");
 
             string lastId = DBTableTenantBackgroundChecks.GetLastId();
-            Console.WriteLine($"{lastId} :Last Id {tenant} from table TenantBackgroundChecks");
+            Console.WriteLine($"{lastId} :Last Id CreditScreening {tenant} from table TenantBackgroundChecks");
 
-            string lastIdCreditScreening = DBTableTenantBackgroundChecks.GetLastIdCreditScreeningFromTenantBackgroundChecks(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
-            Console.WriteLine($"{lastIdCreditScreening} :Last Id for BackgroundCheck {tenant} from table TenantBackgroundChecks");
+            string lastIdCreditScreening = DBTableTenantBackgroundChecks.GetLastIdCreditScreeningByBackgroundCheckTypeTenantId(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO, DBTestDataGeneral.CREDIT_SCREENING);
+            Console.WriteLine($"{lastIdCreditScreening} :Last Id by BackgroundCheckType TenantId for BackgroundCheck {tenant} from table TenantBackgroundChecks");
 
-            string tenantIdByEmail = DBTableAspNetUsers.GetIdByEmailMarketplaceIdNewTenant(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+            string tenantIdByEmail = DBTableAspNetUsers.GetIdByEmailMarketplaceIdNewTenant(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{tenantIdByEmail} :TenantId for new tenant {tenant} from table AspNetUsers");
 
             string lastIdByEmailBackgroundCheck = DBTableTenantBackgroundChecks.GetLastIdBackgroundCheckByTenantIdBackgroundCheckType(tenantIdByEmail, DBTestDataGeneral.BACKGROUND_CHECK);
@@ -162,7 +162,7 @@ namespace CazamioProject.BaseTestsDBTenants
             string nameBackgroundCheck = DBTableTenantBackgroundChecks.GetNameBackgroundCheckTypeById(lastIdByEmailBackgroundCheck);
             Console.WriteLine($"{nameBackgroundCheck} :Name this is BackgroundCheck {tenant} from table BackgroundChecks");
 
-            string nameCreditScreening = DBTableTenantBackgroundChecks.GetNameBackgroundCheckTypeById($"{lastIdCreditScreening}");
+            string nameCreditScreening = DBTableTenantBackgroundChecks.GetNameBackgroundCheckTypeById(lastIdCreditScreening);
             Console.WriteLine($"{nameCreditScreening} :Name this is CreditScreening {tenant} from table BackgroundChecks");
 
             string passedBackgroundCheck = DBTableTenantBackgroundChecks.GetNameCheckStatusByIdBackgroundCheckType(lastIdBackgroundCheck, DBTestDataGeneral.BACKGROUND_CHECK);

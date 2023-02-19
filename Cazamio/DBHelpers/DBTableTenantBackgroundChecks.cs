@@ -56,16 +56,17 @@ namespace CazamioProject.DBHelpers
             return data;
         }
 
-        public static string GetLastIdCreditScreeningFromTenantBackgroundChecks(string email, string marketplaceId)
+        public static string GetLastIdCreditScreeningByBackgroundCheckTypeTenantId(string email, string marketplaceId, string backgroundCheckType)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id FROM TenantBackgroundChecks" +
-                    " WHERE BackgroundCheckType = 'CreditScreening' AND TenantId IN" +
+                    " WHERE BackgroundCheckType = @BackgroundCheckType AND TenantId IN" +
                     " (SELECT Id FROM AspNetUsers WHERE Email = @Email AND MarketplaceId = @MarketplaceId);", db);
                 command.Parameters.AddWithValue("@Email", DbType.String).Value = email;
                 command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
+                command.Parameters.AddWithValue("@BackgroundCheckType", DbType.String).Value = backgroundCheckType;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

@@ -11,13 +11,56 @@ namespace CazamioProject.DBHelpers
 {
     public class DBTableBuildings
     {
+        public static string GetLastIdNewBuilding()
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id" +
+                    " FROM Buildings WHERE Id = (SELECT MAX(Id) FROM Buildings)", db);
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
+        public static string GetLastIdNewBuildingByAddressId(string idBuilding)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM Buildings" +
+                    " WHERE AddressId = @AddressId", db);
+                command.Parameters.AddWithValue("@AddressId", DbType.String).Value = idBuilding;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
         public static string GetIdBuildingByBuildingName(string idBuilding)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id" +
-                    " FROM Buildings" + " WHERE BuildingName = @BuildingName", db);
+                    " FROM Buildings WHERE BuildingName = @BuildingName", db);
                 command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = idBuilding;
                 db.Open();
 
@@ -142,13 +185,14 @@ namespace CazamioProject.DBHelpers
             return data;
         }
 
-        public static string GetLastMarketplaceIdByBuildingNameNewBuilding()
+        public static string GetMarketplaceIdByBuildingNameNewBuilding(string marketplaceId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT MarketplaceId FROM" +
-                    " Buildings WHERE BuildingName = (SELECT MAX(BuildingName) FROM Buildings);", db);
+                SqlCommand command = new("SELECT MarketplaceId FROM Buildings" +
+                    " WHERE BuildingName = @BuildingName AND Id = (SELECT MAX(Id) FROM Buildings)", db);
+                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = marketplaceId;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -163,13 +207,15 @@ namespace CazamioProject.DBHelpers
             return data;
         }
 
-        public static string GetLastLandlordByLlcNameNewBuilding()
+        public static string GetLastLandlordByBuildingNameNewBuilding(string landlordId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT LandlordId FROM" +
-                    " Buildings WHERE LLCName = (SELECT MAX(LLCNAME) FROM Buildings);", db);
+                SqlCommand command = new("SELECT LandlordId FROM Buildings" +
+                    " WHERE Id = (SELECT MAX(Id) FROM Buildings)" +
+                    " AND BuildingName = @BuildingName", db);
+                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = landlordId;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

@@ -44,13 +44,19 @@ namespace CazamioProgect.BaseTestsDBBuildings
             string newAddressIdAddressesTable = DBTableAddresses.GetLastIdNewBuilding();
             Console.WriteLine($"{newAddressIdAddressesTable} :AddressesId building for {buildingName} from table Addresses");
 
-            string newMarketplaceIdBuildingsTable = DBTableBuildings.GetLastMarketplaceIdByBuildingNameNewBuilding();
+            string lastIdBuilding = DBTableBuildings.GetLastIdNewBuilding();
+            Console.WriteLine($"{lastIdBuilding} :Last Id building for {buildingName} from table Buildings");
+
+            string lastIdBuildingByAddressId = DBTableBuildings.GetLastIdNewBuildingByAddressId(newAddressIdBuildingsTable);
+            Console.WriteLine($"{lastIdBuilding} :Last Id building for {buildingName} from table Buildings");
+
+            string newMarketplaceIdBuildingsTable = DBTableBuildings.GetMarketplaceIdByBuildingNameNewBuilding(buildingName);
             Console.WriteLine($"{newMarketplaceIdBuildingsTable} :MarketplaceId building for {buildingName} from table Buildings");
 
             string landlordIdLandlordsTable = DBTableLandlords.GetIdLastForBroker();
             Console.WriteLine($"{landlordIdLandlordsTable} :LandlordId building for {buildingName} from table Buildings");
 
-            string landlordIdBuildingsTable = DBTableBuildings.GetLastLandlordByLlcNameNewBuilding();
+            string landlordIdBuildingsTable = DBTableBuildings.GetLastLandlordByBuildingNameNewBuilding(buildingName);
             Console.WriteLine($"{landlordIdBuildingsTable} :LandlordId building for {buildingName} from table Buildings");
 
             string buildingNameBuildingsTable = DBTableBuildings.GetBuildingNameByAddressIdNewBuilding();
@@ -58,6 +64,9 @@ namespace CazamioProgect.BaseTestsDBBuildings
 
             Assert.Multiple(() =>
             {
+                Assert.AreEqual(lastIdBuilding, lastIdBuildingByAddressId);
+                Console.WriteLine($"Last Id for building in table Buildings: {lastIdBuilding} = {lastIdBuildingByAddressId} Last Id by address for building in table Buildings");
+
                 Assert.AreEqual(newAddressIdBuildingsTable, newAddressIdAddressesTable);
                 Console.WriteLine($"AddressId for building in table Buildings: {newAddressIdBuildingsTable} = {newAddressIdAddressesTable} AddressId for building in table Addresses");
 
