@@ -20,7 +20,7 @@ namespace CazamioProject.DBHelpers
         public const string MARKETPLACE_ID_TESTLANDLORD_TWO_DEMO = "3";
         public const string TRUE = "True";
         public const string FALSE = "False";
-        public const string BACGROUND_CHECK = "BackgroundCheck";
+        public const string BACKGROUND_CHECK = "BackgroundCheck";
         public const string CREDIT_SCREENING = "CreditScreening";
         public const string PASSED = "Passed";
         public const string NAME_ROLE_APPLICANT = "Applicant";

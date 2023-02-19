@@ -141,34 +141,34 @@ namespace CazamioProject.BaseTestsDBTenants
         {
             string tenant = DBTestDataForTenantMarketplaceOne.ALREADY_EXIST_TENANT_FIRST_LAST_NAME;
 
-            string lastIdByEmail = DBTenants.GetLastIdByEmailFromTenantBackgroundChecks(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_TWO_DEMO);
+            string lastIdByEmail = DBTableTenantBackgroundChecks.GetLastIdByEmailMarketplaceId(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_TWO_DEMO);
             Console.WriteLine($"{lastIdByEmail} :Last Id {tenant} from table TenantBackgroundChecks");
 
-            string lastId = DBTenants.GetLastIdFromTenantBackgroundChecks();
+            string lastId = DBTableTenantBackgroundChecks.GetLastId();
             Console.WriteLine($"{lastId} :Last Id {tenant} from table TenantBackgroundChecks");
 
-            string lastIdCreditScreening = DBTenants.GetLastIdCreditScreeningFromTenantBackgroundChecks(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+            string lastIdCreditScreening = DBTableTenantBackgroundChecks.GetLastIdCreditScreeningFromTenantBackgroundChecks(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{lastIdCreditScreening} :Last Id for BackgroundCheck {tenant} from table TenantBackgroundChecks");
 
             string tenantIdByEmail = DBTableAspNetUsers.GetIdByEmailMarketplaceIdNewTenant(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{tenantIdByEmail} :TenantId for new tenant {tenant} from table AspNetUsers");
 
-            string lastIdByEmailBackgroundCheck = DBTenants.GetLastBackgroundCheckByTenantIdFromTenantBackgroundChecks($"{tenantIdByEmail}", DBTestDataGeneral.BACGROUND_CHECK);
+            string lastIdByEmailBackgroundCheck = DBTableTenantBackgroundChecks.GetLastIdBackgroundCheckByTenantIdBackgroundCheckType(tenantIdByEmail, DBTestDataGeneral.BACKGROUND_CHECK);
             Console.WriteLine($"{lastIdByEmailBackgroundCheck} :Last Id by email for BackgroundCheck {tenant} from table TenantBackgroundChecks");
 
-            string lastIdBackgroundCheck = DBTenants.GetLastBackgroundCheckFromTenantBackgroundChecks(DBTestDataGeneral.BACGROUND_CHECK);
+            string lastIdBackgroundCheck = DBTableTenantBackgroundChecks.GetLastIdBackgroundCheckBackgroundCheckType(DBTestDataGeneral.BACKGROUND_CHECK);
             Console.WriteLine($"{lastIdBackgroundCheck} :Last Id BackgroundCheck {tenant} from table BackgroundChecks");
 
-            string nameBackgroundCheck = DBTenants.GetNameBackgroundCheckFromTenantBackgroundChecks($"{lastIdByEmailBackgroundCheck}");
+            string nameBackgroundCheck = DBTableTenantBackgroundChecks.GetNameBackgroundCheckTypeById(lastIdByEmailBackgroundCheck);
             Console.WriteLine($"{nameBackgroundCheck} :Name this is BackgroundCheck {tenant} from table BackgroundChecks");
 
-            string nameCreditScreening = DBTenants.GetNameCreditScreeningFromTenantBackgroundChecks($"{lastIdCreditScreening}");
+            string nameCreditScreening = DBTableTenantBackgroundChecks.GetNameBackgroundCheckTypeById($"{lastIdCreditScreening}");
             Console.WriteLine($"{nameCreditScreening} :Name this is CreditScreening {tenant} from table BackgroundChecks");
 
-            string passedBackgroundCheck = DBTenants.GetCheckStatusBackgroundCheckFromTenantBackgroundChecks($"{lastIdBackgroundCheck}", DBTestDataGeneral.BACGROUND_CHECK);
+            string passedBackgroundCheck = DBTableTenantBackgroundChecks.GetNameCheckStatusByIdBackgroundCheckType(lastIdBackgroundCheck, DBTestDataGeneral.BACKGROUND_CHECK);
             Console.WriteLine($"{passedBackgroundCheck} :Passed BackgroundCheck {tenant} from table BackgroundChecks");
 
-            string passedCreditScreening = DBTenants.GetCheckStatusCreditScreeningFromTenantBackgroundChecks($"{lastIdCreditScreening}", DBTestDataGeneral.CREDIT_SCREENING);
+            string passedCreditScreening = DBTableTenantBackgroundChecks.GetNameCheckStatusByIdBackgroundCheckType(lastIdCreditScreening, DBTestDataGeneral.CREDIT_SCREENING);
             Console.WriteLine($"{passedCreditScreening} :Passed CreditScreening {tenant} from table BackgroundChecks");
 
             Assert.Multiple(() =>
@@ -182,8 +182,8 @@ namespace CazamioProject.BaseTestsDBTenants
                 Assert.AreEqual(lastIdByEmailBackgroundCheck, lastIdBackgroundCheck);
                 Console.WriteLine($"Last Id by email for BackgroundCheck from table TenantBackgroundChecks: {lastIdByEmailBackgroundCheck} = {lastIdBackgroundCheck} Last Id BackgroundCheck of a new BackgroundCheck");
 
-                Assert.AreEqual(nameBackgroundCheck, DBTestDataGeneral.BACGROUND_CHECK);
-                Console.WriteLine($"Name BackgroundCheck from table BackgroundChecks: {nameBackgroundCheck} = {DBTestDataGeneral.BACGROUND_CHECK} Name BackgroundCheck ER");
+                Assert.AreEqual(nameBackgroundCheck, DBTestDataGeneral.BACKGROUND_CHECK);
+                Console.WriteLine($"Name BackgroundCheck from table BackgroundChecks: {nameBackgroundCheck} = {DBTestDataGeneral.BACKGROUND_CHECK} Name BackgroundCheck ER");
 
                 Assert.AreEqual(nameCreditScreening, DBTestDataGeneral.CREDIT_SCREENING);
                 Console.WriteLine($"Name CreditScreening from table BackgroundChecks: {nameCreditScreening} = {DBTestDataGeneral.CREDIT_SCREENING} Name CreditScreening ER");
@@ -214,10 +214,10 @@ namespace CazamioProject.BaseTestsDBTenants
         {
             string newTenant = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_LAST_NAME;
 
-            string firstNameNewTenant = DBTenants.GetFirstNameTenantTableTenantExtractedIdentities();
+            string firstNameNewTenant = DBTableTenantExtractedIdentities.GetFirstNameTenantByTenantId();
             Console.WriteLine($"{firstNameNewTenant} :First name a new tenant {newTenant} from table TenantExtractedIdentities");
 
-            string lastNameNewTenant = DBTenants.GetLastNameTenantTableTenantExtractedIdentities();
+            string lastNameNewTenant = DBTableTenantExtractedIdentities.GetLastNameTenantByTenantId();
             Console.WriteLine($"{lastNameNewTenant} :Last name a new tenant {newTenant} from table TenantExtractedIdentities");
 
             Assert.Multiple(() =>
@@ -255,25 +255,25 @@ namespace CazamioProject.BaseTestsDBTenants
             string tenantLiza = TestDataForWebSiteTenant.FIRST_NAME_OCCUPANT_ONE;
             string tenantJimmy = TestDataForWebSiteTenant.FIRST_NAME_GUARANTOR;
 
-            string lastApartmentApplicationId = DBTenants.GetLastApartmentApplicationIdfromTenantLeases();
+            string lastApartmentApplicationId = DBTableTenantLeases.GetLastApartmentApplicationId();
             Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId from table TenantLeases");
 
-            string apartmentApplicationIdForApplicant = DBTenants.GetApartmentApplicationIdForApplicantTableTenantLeases(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_TENANT_ID);
+            string apartmentApplicationIdForApplicant = DBTableTenantLeases.GetApartmentApplicationIdByIdTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_TENANT_ID);
             Console.WriteLine($"{apartmentApplicationIdForApplicant} :ApartmentApplicationId for tenant {tenantRay} {tenantApplicant} from table TenantLeases");
 
-            string apartmentApplicationIdForOccupant = DBTenants.GetApartmentApplicationIdForOccupantTableTenantLeases(DBTestDataForTenantMarketplaceOne.TENANT_OCCUPANT_LIZA_TENANT_ID);
+            string apartmentApplicationIdForOccupant = DBTableTenantLeases.GetApartmentApplicationIdByIdTenantId(DBTestDataForTenantMarketplaceOne.TENANT_OCCUPANT_LIZA_TENANT_ID);
             Console.WriteLine($"{apartmentApplicationIdForOccupant} :ApartmentApplicationId for tenant {tenantOccupant} {tenantLiza} from table TenantLeases");
 
-            string apartmentApplicationIdForGuarantor = DBTenants.GetApartmentApplicationIdForGuarantorTableTenantLeases(DBTestDataForTenantMarketplaceOne.TENANT_GUARANTOR_JIMMY_TENANT_ID);
+            string apartmentApplicationIdForGuarantor = DBTableTenantLeases.GetApartmentApplicationIdByIdTenantId(DBTestDataForTenantMarketplaceOne.TENANT_GUARANTOR_JIMMY_TENANT_ID);
             Console.WriteLine($"{apartmentApplicationIdForGuarantor} :ApartmentApplicationId for tenant {tenantGuarantor} {tenantJimmy} from table TenantLeases");
 
-            string isLeaseSignedForApplicant = DBTenants.GetIsLeaseSignedFromTenantLeases(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_TENANT_ID, $"{lastApartmentApplicationId}");
+            string isLeaseSignedForApplicant = DBTableTenantLeases.GetIsLeaseSignedByTenantIdApartmentApplicationId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_TENANT_ID, lastApartmentApplicationId);
             Console.WriteLine($"{isLeaseSignedForApplicant} :IsLeaseSigned for tenant {tenantRay} {tenantApplicant} from table TenantLeases");
 
-            string isLeaseSignedForOccupant = DBTenants.GetIsLeaseSignedFromTenantLeases(DBTestDataForTenantMarketplaceOne.TENANT_OCCUPANT_LIZA_TENANT_ID, $"{lastApartmentApplicationId}");
+            string isLeaseSignedForOccupant = DBTableTenantLeases.GetIsLeaseSignedByTenantIdApartmentApplicationId(DBTestDataForTenantMarketplaceOne.TENANT_OCCUPANT_LIZA_TENANT_ID, lastApartmentApplicationId);
             Console.WriteLine($"{isLeaseSignedForOccupant} :IsLeaseSigned for tenant {tenantOccupant} {tenantLiza} from table TenantLeases");
 
-            string isLeaseSignedForGuarantor = DBTenants.GetIsLeaseSignedFromTenantLeases(DBTestDataForTenantMarketplaceOne.TENANT_GUARANTOR_JIMMY_TENANT_ID, $"{lastApartmentApplicationId}");
+            string isLeaseSignedForGuarantor = DBTableTenantLeases.GetIsLeaseSignedByTenantIdApartmentApplicationId(DBTestDataForTenantMarketplaceOne.TENANT_GUARANTOR_JIMMY_TENANT_ID, lastApartmentApplicationId);
             Console.WriteLine($"{isLeaseSignedForGuarantor} :IsLeaseSigned for tenant {tenantGuarantor} {tenantJimmy} from table TenantLeases");
 
             Assert.Multiple(() =>
@@ -316,19 +316,19 @@ namespace CazamioProject.BaseTestsDBTenants
         {
             string tenantApplicant = TestDataForWebSiteTenant.FIRST_NAME_TENANT_APPLICANT;
 
-            string idLastFavorites = DBTenants.GetNewIdTableTenantApartmentFavorites();
+            string idLastFavorites = DBTableTenantApartmentFavorites.GetLastId();
             Console.WriteLine($"{idLastFavorites} :Id last {tenantApplicant} from table TenantApartmentFavorites");
 
-            string idFavoritesByEmail = DBTenants.GetNewIdByTenantIdFromTenantApartmentFavorites(TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT);
+            string idFavoritesByEmail = DBTableTenantApartmentFavorites.GetLastIdByTenantIdEmail(TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT);
             Console.WriteLine($"{idFavoritesByEmail} :Id by email {tenantApplicant} from table TenantApartmentFavorites");
 
-            string tenantIdNewTenantApartmentFavorites = DBTenants.GetNewTenantIdTableTenantApartmentFavorites();
+            string tenantIdNewTenantApartmentFavorites = DBTableTenantApartmentFavorites.GetLastTenantIdById();
             Console.WriteLine($"{tenantIdNewTenantApartmentFavorites} :TenantIdNewTenantApartmentFavorites {tenantApplicant} from table TenantApartmentFavorites");
 
             string apartmentIdFromTableApartments = DBTableApartments.GetIdForUnitFromApartments(DBTestDataDBForAdmins.BUILDING_NAME, DBTestDataDBForAdmins.UNIT_NUMBER);
             Console.WriteLine($"{apartmentIdFromTableApartments} :ApartmentId {tenantApplicant} from table Apartments");
 
-            string apartmentIdFromTableTenantApartmentFavorites = DBTenants.GetNewApartmentIdTableTenantApartmentFavorites();
+            string apartmentIdFromTableTenantApartmentFavorites = DBTableTenantApartmentFavorites.GetLastApartmentIdById();
             Console.WriteLine($"{apartmentIdFromTableTenantApartmentFavorites} :ApartmentId {tenantApplicant} from table TenantApartmentFavorites");
 
             Assert.Multiple(() =>
@@ -342,6 +342,26 @@ namespace CazamioProject.BaseTestsDBTenants
                 Assert.AreEqual(apartmentIdFromTableApartments, apartmentIdFromTableTenantApartmentFavorites);
                 Console.WriteLine($"TenantId for a new apartment favorities from table TenantApartmentFavorites AR: {apartmentIdFromTableApartments} = {apartmentIdFromTableTenantApartmentFavorites} TenantId for a new apartment favorities from table TenantApartmentFavorites ER");
             });
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBTenant")]
+        [AllureSubSuite("RecordsAboutNewTenant")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: 
+        //Comment:  new records about that the an apartemnt added in the favorities in the table "dbo.TenantApartmentFavorities".
+        //Path to cheking's: 
+
+        public void Demo()
+        {
+
         }
     }
 }
