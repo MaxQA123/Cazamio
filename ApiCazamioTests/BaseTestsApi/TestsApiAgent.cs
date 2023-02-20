@@ -40,9 +40,9 @@ namespace ApiCazamioTests.BaseTestsApi
             var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
             var deviceFingerprint = ApiRequestData.DEVICE_FINGERPRINT;
 
-            var responseLogInBroker = LogInAdmins.ExecuteLogIn(email, passwordGeneral, deviceFingerprint, ApiRequestData.TRUE);
+            var responseLogInAgent = LogInAdmins.ExecuteLogIn(email, passwordGeneral, deviceFingerprint, ApiRequestData.TRUE);
 
-            LogInAdmins.VerifyingBrandNameAgent(responseLogInBroker);
+            LogInAdmins.VerifyingBrandUserNameEmailAgent(responseLogInAgent);
         }
     }
 }

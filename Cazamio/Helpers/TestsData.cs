@@ -85,7 +85,6 @@ namespace CazamioProgect.Helpers
 
         public const string USER_NAME_ROLE_OWNER = "Owner";
 
-
         public const string EMAIL_BROKER_MARTIN_MACFLY = "admin123@putsbox.com";
         public const string USER_NAME_BROKER_MARTIN_MACFLY = "Martin Macfly";
         public const string USER_NAME_ROLE_BROKER = "Broker";

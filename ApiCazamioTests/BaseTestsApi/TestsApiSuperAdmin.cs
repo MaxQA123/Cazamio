@@ -34,15 +34,15 @@ namespace ApiCazamioTests.BaseTestsApi
         //Comment: 
         //Path to cheking's: 
 
-        public void LogInAsBroker()
+        public void LogInAsSuperAdmin()
         {
             var email = TestDataForWebSiteAdmin.EMAIL_SUPER_ADMIN_SUPER;
             var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
             var deviceFingerprint = ApiRequestData.DEVICE_FINGERPRINT;
 
-            var responseLogInBroker = LogInAdmins.ExecuteLogIn(email, passwordGeneral, deviceFingerprint, ApiRequestData.TRUE);
+            var responseLogInSuperAdmin = LogInAdmins.ExecuteLogIn(email, passwordGeneral, deviceFingerprint, ApiRequestData.TRUE);
 
-            LogInAdmins.VerifyingBrandNameAgent(responseLogInBroker);
+            LogInAdmins.VerifyingUserNameEmailSuperAdmin(responseLogInSuperAdmin);
         }
     }
 }

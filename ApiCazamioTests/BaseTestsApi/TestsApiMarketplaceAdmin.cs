@@ -42,7 +42,7 @@ namespace ApiCazamioTests.BaseTestsApi
 
             var responseLogInBroker = LogInAdmins.ExecuteLogIn(email, passwordGeneral, deviceFingerprint, ApiRequestData.TRUE);
 
-            LogInAdmins.VerifyingBrandNameAgent(responseLogInBroker);
+            LogInAdmins.VerifyingBrandUserNameEmailAgent(responseLogInBroker);
         }
     }
 }
