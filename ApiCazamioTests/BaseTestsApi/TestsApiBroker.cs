@@ -1,6 +1,7 @@
 ﻿using Allure.Commons;
-using ApiCazamioTests.ApiHelpers;
+using CazamioProject.ApiHelpers;
 using ApiTests.ApiPagesObjects.ApiBrokerPages.CreateNewAgent;
+using ApiTests.ApiPagesObjects.ApiCommonPages.CreateOwnerAdmins;
 using ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins;
 using CazamioProgect.Helpers;
 using CazamioProject.DBHelpers;
@@ -54,11 +55,11 @@ namespace ApiCazamioTests.BaseTestsApi
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("ApiBroker")]
-        [AllureSubSuite("CreateNewAgent")]
+        [AllureSubSuite("SignUpNewAgent")]
 
         //Date of publication:
         //Version\Build:
-        //Willingness for testing: Done.
+        //Willingness for testing: IN PROGRESS.
         //This test case is doing checking: The successfully create a new "Agent".
         //Comment: 
         //Path to cheking's: 
@@ -76,6 +77,34 @@ namespace ApiCazamioTests.BaseTestsApi
             Console.WriteLine(responseCreateAgent.Email);
 
             //LogInBroker.VerifyingBrandNameNewAgent(responseLogInBroker);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("ApiBroker")]
+        [AllureSubSuite("SignUpNewOwner")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: The successfully create a new "Owner".
+        //Comment: 
+        //Path to cheking's: 
+
+        public void SignUpNewOwner()
+        {
+            var companyName = DBTestDataDBForAdmins.NEW_COMPANY_NAME_OWNER;
+            var ownerEmail = DBTestDataDBForAdmins.NEW_OWNER_EMAIL;
+            var ownerName = DBTestDataDBForAdmins.NEW_OWNER_FIRST_NAME;
+            var officeLocation = DBTestDataDBForAdmins.NEW_OFFICE_LOCATION_OWNER;
+
+            var responseCreateOwner = CreateOwnerAdmins.ExecuteCreateOwner(companyName, ownerEmail, ownerName, officeLocation);
+
+            Console.WriteLine(responseCreateOwner);
         }
     }
 }

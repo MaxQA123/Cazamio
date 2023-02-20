@@ -1,0 +1,67 @@
+{
+  "uuid": "b53ed64b-2681-4b7f-a380-f41c47ba2579-tr-0-1008",
+  "historyId": "TenantCazamioTests.TestsBaseWeb.DemoMix",
+  "fullName": "TenantCazamioTests.TestsBaseWeb.DemoMix",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "TenantCazamioTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "DemoMix"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    }
+  ],
+  "links": [],
+  "name": "DemoMix",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "System.ArgumentOutOfRangeException : Length cannot be less than zero. (Parameter 'length')",
+    "trace": "   at System.String.Substring(Int32 startIndex, Int32 length)\r\n   at PutsboxWrapper.Putsbox.GetJsonUrl(String email)\r\n   at PutsboxWrapper.Putsbox.GetJsonContent(String email)\r\n   at PutsboxWrapper.Putsbox.GetLinkFromEmailWithValue(String domain, String value)\r\n   at CazamioProgect.PageObjects.EmailPutsBox.VerifyPutsBox.VerifyVisibilityOfToaster(String email) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\EmailPutsBoxPage\\EmailPutsBoxActions.cs:line 102\r\n   at TenantCazamioTests.TestsBaseWeb.DemoMix() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 358"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "DemoMix",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "System.ArgumentOutOfRangeException : Length cannot be less than zero. (Parameter 'length')",
+        "trace": "   at System.String.Substring(Int32 startIndex, Int32 length)\r\n   at PutsboxWrapper.Putsbox.GetJsonUrl(String email)\r\n   at PutsboxWrapper.Putsbox.GetJsonContent(String email)\r\n   at PutsboxWrapper.Putsbox.GetLinkFromEmailWithValue(String domain, String value)\r\n   at CazamioProgect.PageObjects.EmailPutsBox.VerifyPutsBox.VerifyVisibilityOfToaster(String email) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\EmailPutsBoxPage\\EmailPutsBoxActions.cs:line 102\r\n   at TenantCazamioTests.TestsBaseWeb.DemoMix() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 358"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "120d7f97753042eda8af235e4143993e-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1676899584115,
+      "stop": 1676899602921
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1676899584114,
+  "stop": 1676899602931
+}

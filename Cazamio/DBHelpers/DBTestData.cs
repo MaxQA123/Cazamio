@@ -43,11 +43,11 @@ namespace CazamioProject.DBHelpers
 
     public class DBTestDataForTenantMarketplaceOne
     {
-        public const string NEW_TENANT_EMAIL = "h222erfd5dr4r@putsbox.com";
-        public const string NEW_TENANT_USER_NAME = "h222erfd5dr4r@putsbox.com";
-        public const string NEW_TENANT_FIRST_LAST_NAME = "Pete Duda";
-        public const string NEW_TENANT_FIRST_NAME = "Pete";
-        public const string NEW_TENANT_LAST_NAME = "Duda";
+        public const string NEW_TENANT_EMAIL = "j4f6ddd@putsbox.com";
+        public const string NEW_TENANT_USER_NAME = "j4f6ddd@putsbox.com";
+        public const string NEW_TENANT_FIRST_LAST_NAME = "Ghjh hhkJ";
+        public const string NEW_TENANT_FIRST_NAME = "Ghjh";
+        public const string NEW_TENANT_LAST_NAME = "hhkJ";
         public const string ALREADY_EXIST_TENANT_FIRST_LAST_NAME = "Testing Test";
 
         public const string TENANT_APPLICANT_RAY_TENANT_ID = "87";
@@ -104,8 +104,8 @@ namespace CazamioProject.DBHelpers
 
         public const string NEW_OWNER_EMAIL = "u3l4o8d6f@putsbox.com";
         public const string NEW_OWNER_FIRST_LAST_NAME = "Snow Row";
-        public const string NEW_OWNER_FIRST_NAME = "Snow";
-        public const string NEW_COMPANY_NAME_OWNER = "LLC New Daily";
+        public const string NEW_OWNER_FIRST_NAME = "Rubio";
+        public const string NEW_COMPANY_NAME_OWNER = "LLC Fruti Tutti";
         public const string NEW_OFFICE_LOCATION_OWNER = "Toronto";
 
         public const string BROKER_MARTIN_MACFLY_ID = "de0e57c0-6b1d-4f43-8640-f5592382c8be";

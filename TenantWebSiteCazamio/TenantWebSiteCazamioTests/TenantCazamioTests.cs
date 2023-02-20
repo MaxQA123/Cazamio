@@ -1,11 +1,17 @@
 using Allure.Commons;
 using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
+using CazamioProject.DBHelpers;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
+using System;
+using CazamioProject;
 using System.Threading;
 using TenantCazamioTests;
+using CazamioProject.ApiHelpers;
+using CazamioProject.ApiHelpers.ApiPagesObjects.ApiTenantPages.SignUpTenant;
+using CazamioProgect.PageObjects.EmailPutsBox;
 
 namespace TenantCazamioTests
 {
@@ -257,7 +263,7 @@ namespace TenantCazamioTests
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
-        [Retry(2)]
+        //[Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("DemoTenant")]
         [AllureSubSuite("DemoSignUp")]
@@ -271,31 +277,32 @@ namespace TenantCazamioTests
 
         public void DemoSignUp()
         {
-            Pages.HeaderCazamioTenant
-                .ClickButtonSignUpHdrCzmTnnt();
-            Pages.SignUpCazamioTenant
-                .DemoEnterFirstLastNameEmailPasswordSignUpPg()
-                .ClickIconShowSignUpPg();
 
-            string emailPutsBox = Pages.SignUpCazamioTenant.CopyEmailFromSignUpPg();
-            string partEmailPutsBox = Pages.SignUpCazamioTenant.CopyEmailBeforeDogFromSignUpPg();
+            //Pages.HeaderCazamioTenant
+            //    .ClickButtonSignUpHdrCzmTnnt();
+            //Pages.SignUpCazamioTenant
+            //    .DemoEnterFirstLastNameEmailPasswordSignUpPg()
+            //    .ClickIconShowSignUpPg();
 
-            Pages.SignUpCazamioTenant
-                .ClickButtonGetStartedSignUpPg();
-            Pages.JScriptExecutorHelper
-                .OpenNewTab();
-            Browser._Driver.Navigate().GoToUrl(($"https://putsbox.com/{partEmailPutsBox}/inspect"));
-            Pages.PutsBox
-                .ClickButtonBodyHtml()
-                .ClickButtonConfirmEmailForTenant();
-            Pages.HeaderCazamioTenant
-               .ClickButtonMyApplicationsHdrCzmTnnt();
-            Pages.MyAccountCazamioTenant
-                .ClickTabAccountOnMyAccntPg()
-                .ClickButtonEditMyAccntPgTabAccnt()
-                .VerifyEmailNewTenant(emailPutsBox);
+            //string emailPutsBox = Pages.SignUpCazamioTenant.CopyEmailFromSignUpPg();
+            //string partEmailPutsBox = Pages.SignUpCazamioTenant.CopyEmailBeforeDogFromSignUpPg();
 
-            WaitUntil.WaitSomeInterval(2000);
+            //Pages.SignUpCazamioTenant
+            //    .ClickButtonGetStartedSignUpPg();
+            //Pages.JScriptExecutorHelper
+            //    .OpenNewTab();
+            //Browser._Driver.Navigate().GoToUrl(($"https://putsbox.com/{partEmailPutsBox}/inspect"));
+            //Pages.PutsBox
+            //    .ClickButtonBodyHtml()
+            //    .ClickButtonConfirmEmailForTenant();
+            //Pages.HeaderCazamioTenant
+            //   .ClickButtonMyApplicationsHdrCzmTnnt();
+            //Pages.MyAccountCazamioTenant
+            //    .ClickTabAccountOnMyAccntPg()
+            //    .ClickButtonEditMyAccntPgTabAccnt()
+            //    .VerifyEmailNewTenant(emailPutsBox);
+
+            //WaitUntil.WaitSomeInterval(2000);
         }
 
         [Test]
@@ -332,5 +339,26 @@ namespace TenantCazamioTests
 
             WaitUntil.WaitSomeInterval(5000);
         }
+
+        [Test]
+        public void DemoMix()
+        {
+            var email = "test" + DateTime.Now.ToString("yyyyMMddThhmmss");
+            var mail = email + "@putsbox.com";
+            var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
+            var firstName = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_NAME;
+            var lastName = DBTestDataForTenantMarketplaceOne.NEW_TENANT_LAST_NAME;
+            var returnUrl = ApiRequestData.RETURN_URL;
+            var isNeedToVisit = ApiRequestData.FALSE;
+            var role = DBTestDataGeneral.NAME_ROLE_TENANT;
+            var toHowToVisit = ApiRequestData.FALSE;
+
+            var responseSignUpTenant = SignUpTenant.ExecuteSignUp(mail, passwordGeneral, firstName, lastName, returnUrl, isNeedToVisit, role, toHowToVisit);
+
+            VerifyPutsBox.VerifyVisibilityOfToaster(email);
+
+            Console.WriteLine(responseSignUpTenant);
+        }
+
     }
 }

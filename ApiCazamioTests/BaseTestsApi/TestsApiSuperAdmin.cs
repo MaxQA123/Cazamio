@@ -1,5 +1,5 @@
 ﻿using Allure.Commons;
-using ApiCazamioTests.ApiHelpers;
+using CazamioProject.ApiHelpers;
 using ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins;
 using CazamioProgect.Helpers;
 using NUnit.Allure.Attributes;

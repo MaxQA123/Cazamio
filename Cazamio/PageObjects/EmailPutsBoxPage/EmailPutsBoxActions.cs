@@ -1,5 +1,6 @@
 ﻿using CazamioProgect.Helpers;
 using NUnit.Allure.Attributes;
+using PutsboxWrapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -92,5 +93,16 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
 
         #endregion
 
+    }
+
+    public class VerifyPutsBox
+    {
+        public static void VerifyVisibilityOfToaster(string email)
+        {
+            string s = Putsbox.GetLinkFromEmailWithValue(email, "Comfirm Email");
+            Browser._Driver.Navigate().GoToUrl(s);
+            //WaitUntil.CustomElementIsVisible(toasterSuccessMessage);
+
+        }
     }
 }
