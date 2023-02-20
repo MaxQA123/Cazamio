@@ -1,0 +1,78 @@
+{
+  "uuid": "a3bc9f27-5ed2-4758-9aa6-d4748ecd9a49-tc-0-1000",
+  "name": "TenantCazamioTests.TestsBaseWeb.LogInAsTenant",
+  "children": [
+    "0021ef81-8e76-4a0f-8334-6dbc84210b83-tr-0-1002"
+  ],
+  "befores": [
+    {
+      "name": "DobeforeAllTheTests",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1676903761481,
+      "stop": 1676903761481
+    },
+    {
+      "name": "SetUp",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1676903761481,
+      "stop": 1676903761481
+    }
+  ],
+  "afters": [
+    {
+      "name": "DoAfterEach",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.WebDriverException : target frame detached\n  (failed to check if window was closed: disconnected: Unable to receive message from renderer)\n  (Session info: chrome=110.0.5481.104)\r\nTearDown : OpenQA.Selenium.WebDriverException : disconnected: not connected to DevTools\n  (failed to check if window was closed: disconnected: not connected to DevTools)\n  (Session info: chrome=110.0.5481.104)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.get_FieldInputPasswordLgInCazmTnnt() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\LogInPageCazamioTenant\\LogInCazamioTenantElements.cs:line 17\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInAsTenantApplicant_100663509_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\LogInPageCazamioTenant\\LogInCazamioTenantActions.cs:line 18\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInAsTenantApplicant_100663509_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInAsTenantApplicant_100663509_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.EnterEmailPasswordOnLgInAsTenantApplicant() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\LogInPageCazamioTenant\\LogInCazamioTenantElements.cs:line 14\r\n   at TenantCazamioTests.TestsBaseWeb.LogInAsTenant() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 88\r\n--TearDown\r\n   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.GetScreenshot()\r\n   at PractisingPrivilegesProject.Helpers.ScreenShotHelper.MakeScreenShot() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\ScreenShotHelper.cs:line 16\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 32"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1676903761481,
+      "stop": 1676903761481
+    },
+    {
+      "name": "DoAfterAllTheTests",
+      "status": "none",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "It's not possible to get status of OneTimeTearDown",
+        "trace": "See Allure.NUnit wiki"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1676903761482,
+      "stop": 1676903761482
+    }
+  ],
+  "links": [],
+  "start": 1676903749514,
+  "stop": 1676903761605
+}

@@ -1,0 +1,68 @@
+{
+  "uuid": "97201ba1-ca99-488b-8319-ff4b36e4769f-tr-0-1008",
+  "historyId": "TenantCazamioTests.TestsBaseWeb.DemoMix",
+  "fullName": "TenantCazamioTests.TestsBaseWeb.DemoMix",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "TenantCazamioTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "DemoMix"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    }
+  ],
+  "links": [],
+  "name": "DemoMix",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "System.ArgumentOutOfRangeException : StartIndex cannot be less than zero. (Parameter 'startIndex')\r\nTearDown : OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=110.0.5481.104)",
+    "trace": "   at System.String.Substring(Int32 startIndex, Int32 length)\r\n   at System.String.Substring(Int32 startIndex)\r\n   at PutsboxWrapper.Putsbox.GetBodyData(String value)\r\n   at PutsboxWrapper.Putsbox.GetLinkFromEmailWithValue(String domain, String value)\r\n   at CazamioProgect.PageObjects.EmailPutsBox.VerifyPutsBox.VerifyVisibilityOfToaster(String email) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\EmailPutsBoxPage\\EmailPutsBoxActions.cs:line 102\r\n   at TenantCazamioTests.TestsBaseWeb.DemoMix() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 359\r\n--TearDown\r\n   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.GetScreenshot()\r\n   at PractisingPrivilegesProject.Helpers.ScreenShotHelper.MakeScreenShot() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\ScreenShotHelper.cs:line 16\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 32"
+  },
+  "stage": "finished",
+  "description": "\nDoAfterEach TearDown method failed\n",
+  "steps": [
+    {
+      "name": "DemoMix",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "System.ArgumentOutOfRangeException : StartIndex cannot be less than zero. (Parameter 'startIndex')\r\nTearDown : OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=110.0.5481.104)",
+        "trace": "   at System.String.Substring(Int32 startIndex, Int32 length)\r\n   at System.String.Substring(Int32 startIndex)\r\n   at PutsboxWrapper.Putsbox.GetBodyData(String value)\r\n   at PutsboxWrapper.Putsbox.GetLinkFromEmailWithValue(String domain, String value)\r\n   at CazamioProgect.PageObjects.EmailPutsBox.VerifyPutsBox.VerifyVisibilityOfToaster(String email) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\EmailPutsBoxPage\\EmailPutsBoxActions.cs:line 102\r\n   at TenantCazamioTests.TestsBaseWeb.DemoMix() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 359\r\n--TearDown\r\n   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.GetScreenshot()\r\n   at PractisingPrivilegesProject.Helpers.ScreenShotHelper.MakeScreenShot() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\ScreenShotHelper.cs:line 16\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 32"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "b80160b3c21f42838c18418fbca8c3fc-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1676905970301,
+      "stop": 1676905982692
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1676905970300,
+  "stop": 1676905982700
+}

@@ -14,6 +14,8 @@ using System.Text;
 using System.Threading.Tasks;
 using CazamioProject.ApiHelpers.ApiPagesObjects.ApiTenantPages.SignUpTenant;
 using ApiTests.Base;
+using CazamioProgect.PageObjects.EmailPutsBox;
+using PutsboxWrapper;
 
 namespace ApiCazamioTests.BaseTestsApi
 {
@@ -38,10 +40,9 @@ namespace ApiCazamioTests.BaseTestsApi
         //Comment: 
         //Path to cheking's: 
 
-        public void SignUpAsTenant(string email)
+        public void SignUpAsTenant()
         {
-            //var email = DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL;
-            
+            var email = GenerateRandomDataHelper.RandomEmail(5) + NameDomen.PUTS_BOX;
             var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
             var firstName = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_NAME;
             var lastName = DBTestDataForTenantMarketplaceOne.NEW_TENANT_LAST_NAME;
@@ -52,7 +53,8 @@ namespace ApiCazamioTests.BaseTestsApi
 
             var responseSignUpTenant = SignUpTenant.ExecuteSignUp(email, passwordGeneral, firstName, lastName, returnUrl, isNeedToVisit, role, toHowToVisit);
 
-            //Pages.PutsBox.VerifyVisibilityOfToaster(email);
+            string link = Putsbox.GetLinkFromEmailWithValue(email, "Confirm Email");
+            Browser._Driver.Navigate().GoToUrl(link);
 
             Console.WriteLine(responseSignUpTenant);
         }

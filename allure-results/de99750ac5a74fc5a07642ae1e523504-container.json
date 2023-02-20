@@ -1,0 +1,78 @@
+{
+  "uuid": "5fcac806-e0c5-4790-b232-bd1f2a496382-tc-0-1000",
+  "name": "TenantCazamioTests.TestsBaseWeb.DemoMix",
+  "children": [
+    "97201ba1-ca99-488b-8319-ff4b36e4769f-tr-0-1008"
+  ],
+  "befores": [
+    {
+      "name": "DobeforeAllTheTests",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1676905982686,
+      "stop": 1676905982686
+    },
+    {
+      "name": "SetUp",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1676905982686,
+      "stop": 1676905982686
+    }
+  ],
+  "afters": [
+    {
+      "name": "DoAfterEach",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "System.ArgumentOutOfRangeException : StartIndex cannot be less than zero. (Parameter 'startIndex')\r\nTearDown : OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=110.0.5481.104)",
+        "trace": "   at System.String.Substring(Int32 startIndex, Int32 length)\r\n   at System.String.Substring(Int32 startIndex)\r\n   at PutsboxWrapper.Putsbox.GetBodyData(String value)\r\n   at PutsboxWrapper.Putsbox.GetLinkFromEmailWithValue(String domain, String value)\r\n   at CazamioProgect.PageObjects.EmailPutsBox.VerifyPutsBox.VerifyVisibilityOfToaster(String email) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\EmailPutsBoxPage\\EmailPutsBoxActions.cs:line 102\r\n   at TenantCazamioTests.TestsBaseWeb.DemoMix() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 359\r\n--TearDown\r\n   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.GetScreenshot()\r\n   at PractisingPrivilegesProject.Helpers.ScreenShotHelper.MakeScreenShot() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\ScreenShotHelper.cs:line 16\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 32"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1676905982686,
+      "stop": 1676905982686
+    },
+    {
+      "name": "DoAfterAllTheTests",
+      "status": "none",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "It's not possible to get status of OneTimeTearDown",
+        "trace": "See Allure.NUnit wiki"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1676905982687,
+      "stop": 1676905982687
+    }
+  ],
+  "links": [],
+  "start": 1676905970295,
+  "stop": 1676905982753
+}

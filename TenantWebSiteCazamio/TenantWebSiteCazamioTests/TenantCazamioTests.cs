@@ -12,6 +12,7 @@ using TenantCazamioTests;
 using CazamioProject.ApiHelpers;
 using CazamioProject.ApiHelpers.ApiPagesObjects.ApiTenantPages.SignUpTenant;
 using CazamioProgect.PageObjects.EmailPutsBox;
+using PutsboxWrapper;
 
 namespace TenantCazamioTests
 {
@@ -278,31 +279,21 @@ namespace TenantCazamioTests
         public void DemoSignUp()
         {
 
-            //Pages.HeaderCazamioTenant
-            //    .ClickButtonSignUpHdrCzmTnnt();
-            //Pages.SignUpCazamioTenant
-            //    .DemoEnterFirstLastNameEmailPasswordSignUpPg()
-            //    .ClickIconShowSignUpPg();
+            var email = GenerateRandomDataHelper.RandomEmail(5) + NameDomen.PUTS_BOX;
+            var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
+            var firstName = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_NAME;
+            var lastName = DBTestDataForTenantMarketplaceOne.NEW_TENANT_LAST_NAME;
+            var returnUrl = ApiRequestData.RETURN_URL;
+            var isNeedToVisit = ApiRequestData.FALSE;
+            var role = DBTestDataGeneral.NAME_ROLE_TENANT;
+            var toHowToVisit = ApiRequestData.FALSE;
 
-            //string emailPutsBox = Pages.SignUpCazamioTenant.CopyEmailFromSignUpPg();
-            //string partEmailPutsBox = Pages.SignUpCazamioTenant.CopyEmailBeforeDogFromSignUpPg();
+            var responseSignUpTenant = SignUpTenant.ExecuteSignUp(email, passwordGeneral, firstName, lastName, returnUrl, isNeedToVisit, role, toHowToVisit);
 
-            //Pages.SignUpCazamioTenant
-            //    .ClickButtonGetStartedSignUpPg();
-            //Pages.JScriptExecutorHelper
-            //    .OpenNewTab();
-            //Browser._Driver.Navigate().GoToUrl(($"https://putsbox.com/{partEmailPutsBox}/inspect"));
-            //Pages.PutsBox
-            //    .ClickButtonBodyHtml()
-            //    .ClickButtonConfirmEmailForTenant();
-            //Pages.HeaderCazamioTenant
-            //   .ClickButtonMyApplicationsHdrCzmTnnt();
-            //Pages.MyAccountCazamioTenant
-            //    .ClickTabAccountOnMyAccntPg()
-            //    .ClickButtonEditMyAccntPgTabAccnt()
-            //    .VerifyEmailNewTenant(emailPutsBox);
+            string link = Putsbox.GetLinkFromEmailWithValue(email, "Confirm Email");
+            Browser._Driver.Navigate().GoToUrl(link);
 
-            //WaitUntil.WaitSomeInterval(2000);
+            Console.WriteLine(responseSignUpTenant);
         }
 
         [Test]
@@ -338,26 +329,6 @@ namespace TenantCazamioTests
                 .ClickButtonSubmitApplicationTn();
 
             WaitUntil.WaitSomeInterval(5000);
-        }
-
-        [Test]
-        public void DemoMix()
-        {
-            var email = "test" + DateTime.Now.ToString("yyyyMMddThhmmss");
-            var mail = email + "@putsbox.com";
-            var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
-            var firstName = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_NAME;
-            var lastName = DBTestDataForTenantMarketplaceOne.NEW_TENANT_LAST_NAME;
-            var returnUrl = ApiRequestData.RETURN_URL;
-            var isNeedToVisit = ApiRequestData.FALSE;
-            var role = DBTestDataGeneral.NAME_ROLE_TENANT;
-            var toHowToVisit = ApiRequestData.FALSE;
-
-            var responseSignUpTenant = SignUpTenant.ExecuteSignUp(mail, passwordGeneral, firstName, lastName, returnUrl, isNeedToVisit, role, toHowToVisit);
-
-            VerifyPutsBox.VerifyVisibilityOfToaster(email);
-
-            Console.WriteLine(responseSignUpTenant);
         }
 
     }

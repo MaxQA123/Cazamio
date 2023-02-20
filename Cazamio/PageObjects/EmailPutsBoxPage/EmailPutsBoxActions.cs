@@ -99,7 +99,7 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
     {
         public static void VerifyVisibilityOfToaster(string email)
         {
-            string s = Putsbox.GetLinkFromEmailWithValue(email, "Comfirm Email");
+            string s = Putsbox.GetLinkFromEmailWithValue(email, "Confirm Email");
             Browser._Driver.Navigate().GoToUrl(s);
             //WaitUntil.CustomElementIsVisible(toasterSuccessMessage);
 
