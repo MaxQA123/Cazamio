@@ -1,4 +1,7 @@
 ﻿using Allure.Commons;
+using ApiCazamioTests.ApiHelpers;
+using ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins;
+using CazamioProgect.Helpers;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
@@ -13,7 +16,7 @@ namespace ApiCazamioTests.BaseTestsApi
     [TestFixture]
     [AllureNUnit]
 
-    public class TestsApiTenant
+    public class TestsApiAgent
     {
         [Test]
         [AllureTag("Regression")]
@@ -21,8 +24,8 @@ namespace ApiCazamioTests.BaseTestsApi
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("ApiTenant")]
-        [AllureSubSuite("LogInTenant")]
+        [AllureSuite("ApiAgent")]
+        [AllureSubSuite("LogInAsAgent")]
 
         //Date of publication:
         //Version\Build:
@@ -31,9 +34,15 @@ namespace ApiCazamioTests.BaseTestsApi
         //Comment: 
         //Path to cheking's: 
 
-        public void LogInTenant()
+        public void LogInAsAgent()
         {
+            var email = TestDataForWebSiteAdmin.EMAIL_AGENT_TEST;
+            var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
+            var deviceFingerprint = ApiRequestData.DEVICE_FINGERPRINT;
 
+            var responseLogInBroker = LogInAdmins.ExecuteLogIn(email, passwordGeneral, deviceFingerprint, ApiRequestData.TRUE);
+
+            LogInAdmins.VerifyingBrandNameAgent(responseLogInBroker);
         }
     }
 }

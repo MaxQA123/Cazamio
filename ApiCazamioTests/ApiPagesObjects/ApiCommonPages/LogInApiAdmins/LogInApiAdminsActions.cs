@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiTets.ApiPagesObjects.ApiBrokerPages.LogInBroker
+namespace ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins
 {
-    public partial class LogInBroker
+    public partial class LogInAdmins
     {
-        public static RequestLogInBroker RequestBody(string email, string password, string deviceFingerprint, bool rememberMe)
+        public static RequestLogInAdmins RequestBody(string email, string password, string deviceFingerprint, bool rememberMe)
         {
-            var payload = new RequestLogInBroker();
+            var payload = new RequestLogInAdmins();
             payload.Email = email;
             payload.Password = password;
             payload.DeviceFingerprint = deviceFingerprint;
@@ -22,7 +22,7 @@ namespace ApiTets.ApiPagesObjects.ApiBrokerPages.LogInBroker
             return payload;
         }
 
-        public static ResponseLogInBroker ExecuteLogIn(string email, string password, string deviceFingerprint, bool rememberMe)
+        public static ResponseLogInAdmins ExecuteLogIn(string email, string password, string deviceFingerprint, bool rememberMe)
         {
             var restClient = new RestClient(EndPointsApi.API_HOST_WEBSITE_ADMIN);
 
@@ -40,10 +40,9 @@ namespace ApiTets.ApiPagesObjects.ApiBrokerPages.LogInBroker
                 Console.WriteLine(response.Content);
             }
 
-            var dtoObject = JsonConvert.DeserializeObject<ResponseLogInBroker>(content);
+            var dtoObject = JsonConvert.DeserializeObject<ResponseLogInAdmins>(content);
 
             return dtoObject;
         }
     }
-
 }

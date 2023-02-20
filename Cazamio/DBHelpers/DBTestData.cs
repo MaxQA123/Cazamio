@@ -90,10 +90,15 @@ namespace CazamioProject.DBHelpers
         public const string NEW_BROKER_EMAIL = "m39mf745bb@putsbox.com";
         public const string NEW_BROKER_FIRST_LAST_NAME = "Frido Dido";
         public const string NEW_BROKER_FIRST_NAME = "Frido";
+        public const string NEW_BROKER_LAST_NAME = "Dido";
 
-        public const string NEW_AGENT_EMAIL = "j81ndv5s@putsbox.com";
-        public const string NEW_AGENT_FIRST_LAST_NAME = "Cowboy Malrboro";
-        public const string NEW_AGENT_FIRST_NAME = "Cowboy";
+        public const string NEW_AGENT_EMAIL = "a5s3s1s7kk@putsbox.com";
+        public const string NEW_AGENT_FIRST_LAST_NAME = "Alfa Romeo";
+        public const string NEW_AGENT_FIRST_NAME = "Alfa";
+        public const string NEW_AGENT_LAST_NAME = "Romeo";
+        public const string NEW_AGENT_PHONE_NUMBER = "2121234321";
+        public const string NEW_AGENT_CELL_PHONE_NUMBER = "5855679876";
+
         public const string DELETED_AGENT_FIRST_LAST_NAME = "Creator-martin Testing";
         public const string DELETED_AGENT_EMAIL = "j8h5g3g3dd@putsbox.com";
 

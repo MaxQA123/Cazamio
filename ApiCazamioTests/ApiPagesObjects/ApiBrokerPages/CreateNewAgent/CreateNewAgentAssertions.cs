@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiTenantTests.ApiPagesObjects.ApiTenantPages.LogInApiTenant
+namespace ApiTests.ApiPagesObjects.ApiBrokerPages.CreateNewAgent
 {
-    public partial class LogInTenant
+    public partial class CreateNewAgent
     {
     }
 }

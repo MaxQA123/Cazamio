@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiTenantTests.ApiPagesObjects.ApiTenantPages.LogInApiTenant
+namespace ApiCazamioTests.BaseTestsApi
 {
-    public partial class LogInTenant
+    public class TestsApiTenants
     {
     }
 }
