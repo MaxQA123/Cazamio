@@ -16,6 +16,7 @@ using CazamioProject.ApiHelpers.ApiPagesObjects.ApiTenantPages.SignUpTenant;
 using ApiTests.Base;
 using CazamioProgect.PageObjects.EmailPutsBox;
 using PutsboxWrapper;
+using RimuTec.Faker;
 
 namespace ApiCazamioTests.BaseTestsApi
 {
@@ -44,8 +45,8 @@ namespace ApiCazamioTests.BaseTestsApi
         {
             var email = GenerateRandomDataHelper.RandomEmail(5) + NameDomen.PUTS_BOX;
             var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
-            var firstName = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_NAME;
-            var lastName = DBTestDataForTenantMarketplaceOne.NEW_TENANT_LAST_NAME;
+            var firstName = Name.FirstName();
+            var lastName = Name.LastName();
             var returnUrl = ApiRequestData.RETURN_URL;
             var isNeedToVisit = ApiRequestData.FALSE;
             var role = DBTestDataGeneral.NAME_ROLE_TENANT;

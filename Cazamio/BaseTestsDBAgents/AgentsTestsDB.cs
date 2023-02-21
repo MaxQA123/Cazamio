@@ -33,9 +33,9 @@ namespace CazamioProject.BaseTestsDBAgents
         //Comment: The table "AspNetUsers".
         //Path to cheking's: 
 
-        public void DispalyingIdAgentfromAspNetUsers()
+        public void DispalyingIdAgentFromAspNetUsers()
         {
-            string IdAgent = DBTableAspNetUsers.GetIdAgentByEmail(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
+            string IdAgent = DBTableAspNetUsers.GetIdByEmail(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
             Console.WriteLine($"{IdAgent} :Id for broker from table AspNetUsers");
         }
 
@@ -100,6 +100,9 @@ namespace CazamioProject.BaseTestsDBAgents
         {
             string firstLastNameAgent = DBTestDataDBForAdmins.NEW_AGENT_FIRST_LAST_NAME;
 
+            string IdAgent = DBTableAspNetUsers.GetIdByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
+            Console.WriteLine($"{IdAgent} :Id for broker from table AspNetUsers");
+
             string brokerIdAgentBrokers = DBTableBrokers.GetLastIdNewAgent();
             Console.WriteLine($"{brokerIdAgentBrokers} :BrokerId for new agent {firstLastNameAgent} from table Brokers");
 
@@ -109,7 +112,7 @@ namespace CazamioProject.BaseTestsDBAgents
             string marketplaceIdAgentBrokers = DBTableBrokers.GetLastMarketplaceIdNewAgentByUserId();
             Console.WriteLine($"{marketplaceIdAgentBrokers} :MarketplaceId for agent {firstLastNameAgent} from table Brokers");
 
-            string roleIdAgent = DBTableAspNetUserRoles.GetLastRoleIdNewAgentByUserId();
+            string roleIdAgent = DBTableAspNetUserRoles.GetRoleIdNewByUserId(IdAgent);
             Console.WriteLine($"{roleIdAgent} :RoleId for new agent {firstLastNameAgent} from table AspNetUserRoles");
 
             string brokerdIdNewAgentLandlordBrokers = DBTableLandlordBrokers.GetLastBrokerIdNewAgent();

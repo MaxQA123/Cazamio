@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CazamioProject.DBHelpers;
 
 namespace ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins
 {
@@ -26,6 +27,22 @@ namespace ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins
                Assert.AreEqual(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST, response.AuthData.User.UserEmail);
                Console.WriteLine($"{response.AuthData.User.UserEmail} :email");
            });
+        }
+
+        [AllureStep("VerifyingBrandUserNameEmailMarketplaceAdmin")]
+        public static void VerifyingBrandUserNameEmailMarketplaceAdmin(ResponseLogInAdmins response)
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(ApiTestDataGeneral.BRAND_NAME_MARKETPLACE_ONE, response.Brand);
+                Console.WriteLine($"{response.Brand} :Brand Name");
+
+                Assert.AreEqual(DBTestDataDBForAdmins.MARKETPLACE_ADMIN_FIRST_LAST_NAME, response.AuthData.User.UserName);
+                Console.WriteLine($"{response.AuthData.User.UserName} :User Name");
+
+                Assert.AreEqual(DBTestDataDBForAdmins.MARKETPLACE_ADMIN_EMAIL, response.AuthData.User.UserEmail);
+                Console.WriteLine($"{response.AuthData.User.UserEmail} :email");
+            });
         }
 
         [AllureStep("VerifyingBrandUserNameEmailBroker")]

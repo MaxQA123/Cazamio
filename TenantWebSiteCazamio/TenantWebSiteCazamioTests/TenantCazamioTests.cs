@@ -13,6 +13,7 @@ using CazamioProject.ApiHelpers;
 using CazamioProject.ApiHelpers.ApiPagesObjects.ApiTenantPages.SignUpTenant;
 using CazamioProgect.PageObjects.EmailPutsBox;
 using PutsboxWrapper;
+using RimuTec.Faker;
 
 namespace TenantCazamioTests
 {
@@ -21,6 +22,42 @@ namespace TenantCazamioTests
 
     public class TestsBaseWeb : BaseTenantCazamio
     {
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("WebSiteTenant")]
+        [AllureSubSuite("ApiGuiSignUp")]
+
+        //Date of publication:
+        //Version\Build:
+        //The date last publication on which been testing:
+        //Willingness for testing: Done.
+        //This test case is doing checking: The successfully SignUp as tenant.
+        //Comment:
+
+        public void ApiGuiSignUp()
+        {
+
+            var email = GenerateRandomDataHelper.RandomEmail(5) + NameDomen.PUTS_BOX;
+            var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
+            var firstName = Name.FirstName();
+            var lastName = Name.LastName();
+            var returnUrl = ApiRequestData.RETURN_URL;
+            var isNeedToVisit = ApiRequestData.FALSE;
+            var role = DBTestDataGeneral.NAME_ROLE_TENANT;
+            var toHowToVisit = ApiRequestData.FALSE;
+
+            var responseSignUpTenant = SignUpTenant.ExecuteSignUp(email, passwordGeneral, firstName, lastName, returnUrl, isNeedToVisit, role, toHowToVisit);
+
+            string link = Putsbox.GetLinkFromEmailWithValue(email, "Confirm Email");
+            Browser._Driver.Navigate().GoToUrl(link);
+
+            Console.WriteLine(responseSignUpTenant);
+        }
+
         [Test]
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
@@ -256,44 +293,6 @@ namespace TenantCazamioTests
                 .VerifyEnterData();
 
             WaitUntil.WaitSomeInterval(2000);
-        }
-
-        
-
-        [Test]
-        [AllureTag("Regression")]
-        [AllureOwner("Maksim Perevalov")]
-        [AllureSeverity(SeverityLevel.critical)]
-        [Retry(2)]
-        [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("DemoTenant")]
-        [AllureSubSuite("DemoSignUp")]
-
-        //Date of publication:
-        //Version\Build:
-        //The date last publication on which been testing:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully SignUp as tenant.
-        //Comment:
-
-        public void ApiDemoSignUp()
-        {
-
-            var email = GenerateRandomDataHelper.RandomEmail(5) + NameDomen.PUTS_BOX;
-            var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
-            var firstName = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_NAME;
-            var lastName = DBTestDataForTenantMarketplaceOne.NEW_TENANT_LAST_NAME;
-            var returnUrl = ApiRequestData.RETURN_URL;
-            var isNeedToVisit = ApiRequestData.FALSE;
-            var role = DBTestDataGeneral.NAME_ROLE_TENANT;
-            var toHowToVisit = ApiRequestData.FALSE;
-
-            var responseSignUpTenant = SignUpTenant.ExecuteSignUp(email, passwordGeneral, firstName, lastName, returnUrl, isNeedToVisit, role, toHowToVisit);
-
-            string link = Putsbox.GetLinkFromEmailWithValue(email, "Confirm Email");
-            Browser._Driver.Navigate().GoToUrl(link);
-
-            Console.WriteLine(responseSignUpTenant);
         }
 
         [Test]

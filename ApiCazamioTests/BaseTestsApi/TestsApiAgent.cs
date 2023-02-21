@@ -39,28 +39,13 @@ namespace ApiCazamioTests.BaseTestsApi
 
         public void LogInAsAgent()
         {
-            //var email = TestDataForWebSiteAdmin.EMAIL_AGENT_TEST;
-            //var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
-            //var deviceFingerprint = ApiRequestData.DEVICE_FINGERPRINT;
-
-            //var responseLogInAgent = LogInAdmins.ExecuteLogIn(email, passwordGeneral, deviceFingerprint, ApiRequestData.TRUE);
-
-            //LogInAdmins.VerifyingBrandUserNameEmailAgent(responseLogInAgent);
-
-            var twoEmail = GenerateRandomDataHelper.RandomEmail + NameDomen.PUTS_BOX;
+            var email = TestDataForWebSiteAdmin.EMAIL_AGENT_TEST;
             var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
-            var firstName = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_NAME;
-            var lastName = DBTestDataForTenantMarketplaceOne.NEW_TENANT_LAST_NAME;
-            var returnUrl = ApiRequestData.RETURN_URL;
-            var isNeedToVisit = ApiRequestData.FALSE;
-            var role = DBTestDataGeneral.NAME_ROLE_TENANT;
-            var toHowToVisit = ApiRequestData.FALSE;
+            var deviceFingerprint = ApiRequestData.DEVICE_FINGERPRINT;
 
-            var responseSignUpTenant = SignUpTenant.ExecuteSignUp(twoEmail, passwordGeneral, firstName, lastName, returnUrl, isNeedToVisit, role, toHowToVisit);
+            var responseLogInAgent = LogInAdmins.ExecuteLogIn(email, passwordGeneral, deviceFingerprint, ApiRequestData.TRUE);
 
-            VerifyPutsBox.VerifyVisibilityOfToaster(twoEmail);
-
-            Console.WriteLine(responseSignUpTenant);
+            LogInAdmins.VerifyingBrandUserNameEmailAgent(responseLogInAgent);
         }
     }
 }

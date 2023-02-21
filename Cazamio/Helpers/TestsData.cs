@@ -34,6 +34,8 @@ namespace CazamioProgect.Helpers
     {
         public const string PASSWORD_GENERAL = "Qwerty123!";
         public const string PASSWORD_NEW_GENEREAL = "!321Qwerty";
+        public const string CODE_PHONE_NUMBER_ONE = "212";
+        public const string CODE_PHONE_NUMBER_TWO = "585";
     }
 
     public class TestDataForWebSiteTenant

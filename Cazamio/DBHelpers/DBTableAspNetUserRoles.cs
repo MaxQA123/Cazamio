@@ -11,14 +11,14 @@ namespace CazamioProject.DBHelpers
 {
     public class DBTableAspNetUserRoles
     {
-        public static string GetLastRoleIdNewAgentByUserId()
+        public static string GetRoleIdNewByUserId(string roleId)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT RoleId FROM AspNetUserRoles" +
-                    " WHERE UserId IN" +
-                    " (SELECT UserId FROM Brokers WHERE Id = (SELECT MAX(Id) FROM Brokers));", db);
+                    " WHERE UserId = @UserId", db);
+                command.Parameters.AddWithValue("@UserId", DbType.String).Value = roleId;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();

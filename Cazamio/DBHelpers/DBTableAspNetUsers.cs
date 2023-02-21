@@ -34,13 +34,13 @@ namespace CazamioProject.DBHelpers
             return data;
         }
 
-        public static string GetIdAgentByEmail(string idBroker)
+        public static string GetIdByEmail(string id)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
                 SqlCommand command = new("SELECT Id FROM AspNetUsers WHERE Email = @Email", db);
-                command.Parameters.AddWithValue("@Email", DbType.String).Value = idBroker;
+                command.Parameters.AddWithValue("@Email", DbType.String).Value = id;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -323,7 +323,7 @@ namespace CazamioProject.DBHelpers
             return data;
         }
 
-        public static string GetEmailByIdNewBroker(string id)
+        public static string GetEmailByIdNew(string id)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))

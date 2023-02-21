@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CazamioProject.DBHelpers;
 
 namespace ApiCazamioTests.BaseTestsApi
 {
@@ -36,13 +37,13 @@ namespace ApiCazamioTests.BaseTestsApi
 
         public void LogInAsMarketplaceAdmin()
         {
-            var email = TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY;
+            var email = DBTestDataDBForAdmins.MARKETPLACE_ADMIN_EMAIL;
             var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
             var deviceFingerprint = ApiRequestData.DEVICE_FINGERPRINT;
 
-            var responseLogInBroker = LogInAdmins.ExecuteLogIn(email, passwordGeneral, deviceFingerprint, ApiRequestData.TRUE);
+            var responseLogInMa = LogInAdmins.ExecuteLogIn(email, passwordGeneral, deviceFingerprint, ApiRequestData.TRUE);
 
-            LogInAdmins.VerifyingBrandUserNameEmailAgent(responseLogInBroker);
+            LogInAdmins.VerifyingBrandUserNameEmailMarketplaceAdmin(responseLogInMa);
         }
     }
 }

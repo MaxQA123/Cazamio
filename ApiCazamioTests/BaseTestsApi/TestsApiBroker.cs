@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RimuTec.Faker;
 
 namespace ApiCazamioTests.BaseTestsApi
 {
@@ -66,17 +67,15 @@ namespace ApiCazamioTests.BaseTestsApi
 
         public void SignUpNewAgent()
         {
-            var firstName = DBTestDataDBForAdmins.NEW_AGENT_FIRST_NAME;
-            var lastName = DBTestDataDBForAdmins.NEW_AGENT_LAST_NAME;
-            var email = DBTestDataDBForAdmins.NEW_AGENT_EMAIL;
-            var phoneNumber = DBTestDataDBForAdmins.NEW_AGENT_PHONE_NUMBER;
-            var cell = DBTestDataDBForAdmins.NEW_AGENT_CELL_PHONE_NUMBER;
+            var firstName = Name.FirstName();
+            var lastName = Name.LastName();
+            var email = GenerateRandomDataHelper.RandomEmail(5) + NameDomen.PUTS_BOX;
+            var phoneNumber = GeneralTestDataForAllUsers.CODE_PHONE_NUMBER_ONE + GenerateRandomDataHelper.RandomPhoneNumber(7);
+            var cell = GeneralTestDataForAllUsers.CODE_PHONE_NUMBER_TWO + GenerateRandomDataHelper.RandomPhoneNumber(7);
 
             var responseCreateAgent = CreateNewAgent.ExecuteCreateNewAgent(firstName, lastName, email, phoneNumber, cell);
 
-            Console.WriteLine(responseCreateAgent.Email);
-
-            //LogInBroker.VerifyingBrandNameNewAgent(responseLogInBroker);
+            Console.WriteLine(responseCreateAgent.FirstName);
         }
 
         [Test]
@@ -98,8 +97,8 @@ namespace ApiCazamioTests.BaseTestsApi
         public void SignUpNewOwner()
         {
             var companyName = DBTestDataDBForAdmins.NEW_COMPANY_NAME_OWNER;
-            var ownerEmail = DBTestDataDBForAdmins.NEW_OWNER_EMAIL;
-            var ownerName = DBTestDataDBForAdmins.NEW_OWNER_FIRST_NAME;
+            var ownerEmail = GenerateRandomDataHelper.RandomEmail(5) + NameDomen.PUTS_BOX;
+            var ownerName = Name.FirstName();
             var officeLocation = DBTestDataDBForAdmins.NEW_OFFICE_LOCATION_OWNER;
 
             var responseCreateOwner = CreateOwnerAdmins.ExecuteCreateOwner(companyName, ownerEmail, ownerName, officeLocation);

@@ -56,6 +56,12 @@ namespace CazamioProject.BaseTestsDBMarketplaceAdmin
             string nameRoleByEmailMA = DBTableAspNetRoles.GetRoleNameByEmail(DBTestDataDBForAdmins.NEW_MARKETPLACE_ADMIN_EMAIL);
             Console.WriteLine($"{nameRoleByEmailMA} :Name role by email MA from table AspNetRoles");
 
+            string roleIdByUserIdMA = DBTableAspNetUserRoles.GetRoleIdNewByUserId(userIdMAByEmail);
+            Console.WriteLine($"{roleIdByUserIdMA} :Name role by email MA from table AspNetRoles");
+
+            string emailMA = DBTableAspNetUsers.GetEmailByIdNew(userIdMAByEmail);
+            Console.WriteLine($"{emailMA} :Email by id MA from table AspNetUsers");
+
             Assert.Multiple(() =>
             {
                 Assert.AreEqual(userIdMAByEmail, lastUserIdMA);
@@ -69,6 +75,12 @@ namespace CazamioProject.BaseTestsDBMarketplaceAdmin
 
                 Assert.AreEqual(nameRoleByEmailMA, DBTestDataGeneral.NAME_ROLE_MARKETPLACE_ADMIN);
                 Console.WriteLine($"Name role by email for MA from table AspNetRoles: {nameRoleByEmailMA} = {DBTestDataGeneral.NAME_ROLE_MARKETPLACE_ADMIN} Name role for MA ER");
+
+                Assert.AreEqual(roleIdByUserIdMA, DBTestDataGeneral.ID_NAME_ROLE_MARKETPLACE_ADMIN);
+                Console.WriteLine($"RoleId by UserId for MA from table AspNetUserRoles: {roleIdByUserIdMA} = {DBTestDataGeneral.ID_NAME_ROLE_MARKETPLACE_ADMIN} RoleId for MA ER");
+
+                Assert.AreEqual(emailMA, DBTestDataDBForAdmins.NEW_MARKETPLACE_ADMIN_EMAIL);
+                Console.WriteLine($"Email by Id for MA from table AspNetUsers: {emailMA} = {DBTestDataDBForAdmins.NEW_MARKETPLACE_ADMIN_EMAIL} Email for MA ER");
             });
         }
     }

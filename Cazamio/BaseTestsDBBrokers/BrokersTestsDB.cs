@@ -60,7 +60,7 @@ namespace CazamioProject.BaseTestsDBBrokers
             string firstNameBroker = DBTableAspNetUsers.GetFirstNameBrokerByEmail(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
             Console.WriteLine($"{firstNameBroker} :First Name for broker {newBroker} from table AspNetRoles");
 
-            string emailNewBroker = DBTableAspNetUsers.GetEmailByIdNewBroker(userIdByEmailBroker);
+            string emailNewBroker = DBTableAspNetUsers.GetEmailByIdNew(userIdByEmailBroker);
             Console.WriteLine($"{emailNewBroker} :Email for broker {newBroker} from table AspNetUsers");
 
             Assert.Multiple(() =>
