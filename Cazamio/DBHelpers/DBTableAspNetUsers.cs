@@ -322,5 +322,27 @@ namespace CazamioProject.DBHelpers
             }
             return data;
         }
+
+        public static string GetEmailByIdNewBroker(string id)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Email" +
+                    " FROM AspNetUsers WHERE Id = @Id", db);
+                command.Parameters.AddWithValue("@Id", DbType.String).Value = id;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
     }
 }

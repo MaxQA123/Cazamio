@@ -264,7 +264,7 @@ namespace TenantCazamioTests
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
-        //[Retry(2)]
+        [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("DemoTenant")]
         [AllureSubSuite("DemoSignUp")]
@@ -276,7 +276,7 @@ namespace TenantCazamioTests
         //This test case is doing checking: The successfully SignUp as tenant.
         //Comment:
 
-        public void DemoSignUp()
+        public void ApiDemoSignUp()
         {
 
             var email = GenerateRandomDataHelper.RandomEmail(5) + NameDomen.PUTS_BOX;

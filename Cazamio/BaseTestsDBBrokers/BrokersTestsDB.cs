@@ -60,6 +60,9 @@ namespace CazamioProject.BaseTestsDBBrokers
             string firstNameBroker = DBTableAspNetUsers.GetFirstNameBrokerByEmail(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
             Console.WriteLine($"{firstNameBroker} :First Name for broker {newBroker} from table AspNetRoles");
 
+            string emailNewBroker = DBTableAspNetUsers.GetEmailByIdNewBroker(userIdByEmailBroker);
+            Console.WriteLine($"{emailNewBroker} :Email for broker {newBroker} from table AspNetUsers");
+
             Assert.Multiple(() =>
             {
                 Assert.AreEqual(userIdByEmailBroker, userIdBroker);
@@ -79,6 +82,9 @@ namespace CazamioProject.BaseTestsDBBrokers
 
                 Assert.AreEqual(firstNameBroker, DBTestDataDBForAdmins.NEW_BROKER_FIRST_NAME);
                 Console.WriteLine($"First Name a broker: {firstNameBroker} = {DBTestDataDBForAdmins.NEW_BROKER_FIRST_NAME} First Name a broker ER");
+
+                Assert.AreEqual(emailNewBroker, DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
+                Console.WriteLine($"Email a broker: {emailNewBroker} = {DBTestDataDBForAdmins.NEW_BROKER_EMAIL} Email a broker ER");
             });
         }
 

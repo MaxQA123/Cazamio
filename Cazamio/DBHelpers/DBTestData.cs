@@ -12,10 +12,12 @@ namespace CazamioProject.DBHelpers
         public const string ID_NAME_ROLE_SUPER_ADMIN = "86779821-785f-4710-8d0c-2cc4ab5af6a9";
         public const string ID_NAME_ROLE_AGENT = "a6841be6-7bc6-4510-bf70-bd8efc887486";
         public const string ID_NAME_ROLE_BROKER = "ee430d91-8a3b-45a9-891c-94cb16935d49";
+        public const string ID_NAME_ROLE_MARKETPLACE_ADMIN = "e5a4e959-d3f1-4242-9a72-6aac3acaecb4";
         public const string NAME_ROLE_TENANT = "Tenant";
         public const string NAME_ROLE_SUPER_ADMIN = "Admin";
         public const string NAME_ROLE_AGENT = "Broker";
         public const string NAME_ROLE_BROKER = "Landlord";
+        public const string NAME_ROLE_MARKETPLACE_ADMIN = "MarketplaceAdmin";
         public const string MARKETPLACE_ID_TESTLANDLORD_DEMO = "1";
         public const string MARKETPLACE_ID_TESTLANDLORD_TWO_DEMO = "3";
         public const string TRUE = "True";
@@ -87,10 +89,15 @@ namespace CazamioProject.DBHelpers
 
     public class DBTestDataDBForAdmins
     {
-        public const string NEW_BROKER_EMAIL = "m39mf745bb@putsbox.com";
-        public const string NEW_BROKER_FIRST_LAST_NAME = "Frido Dido";
-        public const string NEW_BROKER_FIRST_NAME = "Frido";
-        public const string NEW_BROKER_LAST_NAME = "Dido";
+        public const string NEW_MARKETPLACE_ADMIN_EMAIL = "marketplace1chui@putsbox.com";
+        public const string NEW_MARKETPLACE_ADMIN_FIRST_LAST_NAME = "Chui Chubaka";
+        public const string NEW_MARKETPLACE_ADMIN_FIRST_NAME = "Chui";
+        public const string NEW_MARKETPLACE_ADMIN_LAST_NAME = "Chubaka";
+
+        public const string NEW_BROKER_EMAIL = "three5bbnew@putsbox.com";
+        public const string NEW_BROKER_FIRST_LAST_NAME = "Threenew Testing";
+        public const string NEW_BROKER_FIRST_NAME = "Threenew";
+        public const string NEW_BROKER_LAST_NAME = "Testing";
 
         public const string NEW_AGENT_EMAIL = "a5s3s1s7kk@putsbox.com";
         public const string NEW_AGENT_FIRST_LAST_NAME = "Alfa Romeo";
@@ -107,6 +114,11 @@ namespace CazamioProject.DBHelpers
         public const string NEW_OWNER_FIRST_NAME = "Rubio";
         public const string NEW_COMPANY_NAME_OWNER = "LLC Fruti Tutti";
         public const string NEW_OFFICE_LOCATION_OWNER = "Toronto";
+
+        public const string MARKETPLACE_ADMIN_EMAIL = "marketplace1chui@putsbox.com";
+        public const string MARKETPLACE_ADMIN_FIRST_LAST_NAME = "Chui Chubaka";
+        public const string MARKETPLACE_ADMIN_FIRST_NAME = "Chui";
+        public const string MARKETPLACE_ADMIN_LAST_NAME = "Chubaka";
 
         public const string BROKER_MARTIN_MACFLY_ID = "de0e57c0-6b1d-4f43-8640-f5592382c8be";
         public const string BROKER_MARTIN_MACFLY_LANDLORD_ID = "31";
