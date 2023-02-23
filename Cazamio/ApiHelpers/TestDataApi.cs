@@ -31,6 +31,6 @@ namespace CazamioProject.ApiHelpers
 
     public class ApiTestDataTenants
     {
-        public const string DEVICE_FINGERPRINT = "";
+        public const string DEVICE_FINGERPRINT = "417d13cf3013cfd714a7c316d0415eca";
     }
 }

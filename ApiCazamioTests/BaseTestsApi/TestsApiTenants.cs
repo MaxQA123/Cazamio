@@ -43,7 +43,8 @@ namespace ApiCazamioTests.BaseTestsApi
 
         public void SignUpAsTenant()
         {
-            var email = GenerateRandomDataHelper.RandomEmail(5) + NameDomen.PUTS_BOX;
+            //var email = GenerateRandomDataHelper.RandomEmail(5) + NameDomen.PUTS_BOX;
+            var email = DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL;
             var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
             var firstName = Name.FirstName();
             var lastName = Name.LastName();
@@ -54,10 +55,13 @@ namespace ApiCazamioTests.BaseTestsApi
 
             var responseSignUpTenant = SignUpTenant.ExecuteSignUp(email, passwordGeneral, firstName, lastName, returnUrl, isNeedToVisit, role, toHowToVisit);
 
-            string link = Putsbox.GetLinkFromEmailWithValue(email, "Confirm Email");
-            Browser._Driver.Navigate().GoToUrl(link);
+            string lastIdtenant = DBTableAspNetUsers.GetIdByEmailMarketplaceId(email, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+            Console.WriteLine($"{lastIdtenant} :Id for tenant from table AspNetUsers");
 
-            Console.WriteLine(responseSignUpTenant);
+            //string link = Putsbox.GetLinkFromEmailWithValue(email, "Confirm Email");
+            //Browser._Driver.Navigate().GoToUrl(link);
+
+            //Console.WriteLine(responseSignUpTenant);
         }
 
         [Test]

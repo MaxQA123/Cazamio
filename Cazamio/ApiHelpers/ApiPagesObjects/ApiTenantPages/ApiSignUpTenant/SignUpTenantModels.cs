@@ -18,4 +18,12 @@ namespace CazamioProject.ApiHelpers.ApiPagesObjects.ApiTenantPages.SignUpTenant
         public string role { get; set; }
         public bool toHowToVisit { get; set; }
     }
+
+    public class RequestAuthWithTokenTenant
+    {
+        public string Token { get; set; }
+        public object LinkKey { get; set; }
+        public string DeviceFingerprint { get; set; }
+    }
+
 }

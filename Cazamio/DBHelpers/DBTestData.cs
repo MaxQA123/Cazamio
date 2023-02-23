@@ -45,7 +45,7 @@ namespace CazamioProject.DBHelpers
 
     public class DBTestDataForTenantMarketplaceOne
     {
-        public const string NEW_TENANT_EMAIL = "j4f6ddd@putsbox.com";
+        public const string NEW_TENANT_EMAIL = "g9b2b4b@putsbox.com";
         public const string NEW_TENANT_USER_NAME = "j4f6ddd@putsbox.com";
         public const string NEW_TENANT_FIRST_LAST_NAME = "Ghjh hhkJ";
         public const string NEW_TENANT_FIRST_NAME = "Ghjh";
