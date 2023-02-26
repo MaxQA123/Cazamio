@@ -1,4 +1,5 @@
 ﻿using Allure.Commons;
+using ApiTests.Base;
 using CazamioProgect.Helpers;
 using CazamioProject.DBHelpers;
 using CazamioProject.Helpers;
@@ -16,7 +17,7 @@ namespace DBTests.BaseTestsDB
     [TestFixture]
     [AllureNUnit]
 
-    public class BuildingsTestsDB
+    public class BuildingsTestsDB : Base
     {
         [Test]
         [AllureTag("Regression")]

@@ -13,13 +13,14 @@ using System.Threading.Tasks;
 using CazamioProject.DBHelpers;
 using CazamioProject.ApiHelpers.ApiPagesObjects.ApiTenantPages.SignUpTenant;
 using CazamioProgect.PageObjects.EmailPutsBox;
+using ApiTests.Base;
 
 namespace ApiCazamioTests.BaseTestsApi
 {
     [TestFixture]
     [AllureNUnit]
 
-    public class TestsApiAgent
+    public class TestsApiAgent : Base
     {
         [Test]
         [AllureTag("Regression")]

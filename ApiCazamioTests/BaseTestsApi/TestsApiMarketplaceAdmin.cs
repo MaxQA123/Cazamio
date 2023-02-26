@@ -11,13 +11,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CazamioProject.DBHelpers;
+using ApiTests.Base;
 
 namespace ApiCazamioTests.BaseTestsApi
 {
     [TestFixture]
     [AllureNUnit]
 
-    public class TestsApiMarketplaceAdmin
+    public class TestsApiMarketplaceAdmin : Base
     {
         [Test]
         [AllureTag("Regression")]

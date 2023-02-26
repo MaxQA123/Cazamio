@@ -10,13 +10,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ApiTests.Base;
 
 namespace ApiCazamioTests.BaseTestsApi
 {
     [TestFixture]
     [AllureNUnit]
 
-    public class TestsApiSuperAdmin
+    public class TestsApiSuperAdmin : Base
     {
         [Test]
         [AllureTag("Regression")]

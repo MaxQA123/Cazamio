@@ -1,4 +1,5 @@
 ﻿using Allure.Commons;
+using ApiTests.Base;
 using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
 using CazamioProject.DBHelpers;
@@ -17,7 +18,7 @@ namespace DBTests.BaseTestsDB
     [TestFixture]
     [AllureNUnit]
 
-    public class ApartmentsTestsDB
+    public class ApartmentsTestsDB : Base
     {
 
         [Test]

@@ -14,13 +14,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RimuTec.Faker;
+using ApiTests.Base;
 
 namespace ApiCazamioTests.BaseTestsApi
 {
     [TestFixture]
     [AllureNUnit]
 
-    public class TestsApiBroker
+    public class TestsApiBroker : Base
     {
         [Test]
         [AllureTag("Regression")]
