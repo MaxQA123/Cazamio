@@ -71,6 +71,7 @@ namespace ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins
 
                 Assert.AreEqual(TestDataForWebSiteAdmin.EMAIL_SUPER_ADMIN_SUPER, response.AuthData.User.UserEmail);
                 Console.WriteLine($"{response.AuthData.User.UserEmail} :Email");
+
             });
             
         }

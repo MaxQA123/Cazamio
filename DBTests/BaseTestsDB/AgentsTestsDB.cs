@@ -14,6 +14,8 @@ using System.Threading.Tasks;
 
 namespace DBTests.BaseTestsDB
 {
+        [AllureSubSuite("DispalyingIdAgentfromAspNetUsers")]
+
     [TestFixture]
     [AllureNUnit]
 
@@ -25,8 +27,6 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBAgent")]
-        [AllureSubSuite("DispalyingIdAgentfromAspNetUsers")]
-
         //Date of publication:
         //Version\Build:
         //Willingness for testing: Done.

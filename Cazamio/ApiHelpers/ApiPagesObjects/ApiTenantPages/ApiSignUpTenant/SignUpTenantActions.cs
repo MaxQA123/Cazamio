@@ -47,14 +47,14 @@ namespace CazamioProject.ApiHelpers.ApiPagesObjects.ApiTenantPages.SignUpTenant
             return content;
         }
 
-        //public static ResponseLogInTenant ExecuteLogIn(string email, string password, string deviceFingerprint, bool rememberMe)
+        //public static string ExecuteGetCodeUserId()
         //{
-        //    var restClient = new RestClient(EndPointsApi.API_HOST_WEBSITE_ADMIN);
+        //    var restClient = new RestClient(EndPointsApi.API_HOST_WEBSITE_ADMIN_CONFIRM_EMAIL);
 
-        //    var restRequest = new RestRequest("/api/identity/login", Method.Post);
+        //    var restRequest = new RestRequest("/account/email-confirm", Method.Get);
         //    restRequest.AddHeaders(Headers.HeadersTenant());
 
-        //    restRequest.AddJsonBody(RequestBody(email, password, deviceFingerprint, rememberMe));
+        //    restRequest.AddJsonBody(RequestBody());
 
         //    var response = restClient.Execute(restRequest);
 
@@ -65,9 +65,7 @@ namespace CazamioProject.ApiHelpers.ApiPagesObjects.ApiTenantPages.SignUpTenant
         //        Console.WriteLine(response.Content);
         //    }
 
-        //    var dtoObject = JsonConvert.DeserializeObject<ResponseLogInTenant>(content);
-
-        //    return dtoObject;
+        //    return content;
         //}
     }
 }
