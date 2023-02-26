@@ -1,4 +1,7 @@
-﻿using CazamioProject.DBHelpers;
+﻿using Allure.Commons;
+using CazamioProject.DBHelpers;
+using NUnit.Allure.Attributes;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -6,14 +9,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProject.BaseTestsDBOwners
+namespace DBTests.BaseTestsDB
 {
     [TestFixture]
+    [AllureNUnit]
 
     public class OwnersTestsDB
     {
         [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBOwner")]
+        [AllureSubSuite("RecordsDBAboutNewOwner")]
+
 
         //Date of publication:
         //Version\Build:

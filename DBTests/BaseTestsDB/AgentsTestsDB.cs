@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProject.BaseTestsDBAgents
+namespace DBTests.BaseTestsDB
 {
     [TestFixture]
     [AllureNUnit]

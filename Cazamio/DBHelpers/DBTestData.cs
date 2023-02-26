@@ -45,11 +45,11 @@ namespace CazamioProject.DBHelpers
 
     public class DBTestDataForTenantMarketplaceOne
     {
-        public const string NEW_TENANT_EMAIL = "g9b2b4b@putsbox.com";
-        public const string NEW_TENANT_USER_NAME = "j4f6ddd@putsbox.com";
-        public const string NEW_TENANT_FIRST_LAST_NAME = "Ghjh hhkJ";
-        public const string NEW_TENANT_FIRST_NAME = "Ghjh";
-        public const string NEW_TENANT_LAST_NAME = "hhkJ";
+        public const string NEW_TENANT_EMAIL = "i4i4i4t@putsbox.com";
+        public const string NEW_TENANT_USER_NAME = "i4i4i4t@putsbox.com";
+        public const string NEW_TENANT_FIRST_LAST_NAME = "Oro Pop";
+        public const string NEW_TENANT_FIRST_NAME = "Oro";
+        public const string NEW_TENANT_LAST_NAME = "Pop";
         public const string ALREADY_EXIST_TENANT_FIRST_LAST_NAME = "Testing Test";
 
         public const string TENANT_APPLICANT_RAY_TENANT_ID = "87";
@@ -89,31 +89,31 @@ namespace CazamioProject.DBHelpers
 
     public class DBTestDataDBForAdmins
     {
-        public const string NEW_MARKETPLACE_ADMIN_EMAIL = "marketplace1chui@putsbox.com";
-        public const string NEW_MARKETPLACE_ADMIN_FIRST_LAST_NAME = "Chui Chubaka";
-        public const string NEW_MARKETPLACE_ADMIN_FIRST_NAME = "Chui";
-        public const string NEW_MARKETPLACE_ADMIN_LAST_NAME = "Chubaka";
+        public const string NEW_MARKETPLACE_ADMIN_EMAIL = "b11df@putsbox.com";
+        public const string NEW_MARKETPLACE_ADMIN_FIRST_LAST_NAME = "Katrin Fransua";
+        public const string NEW_MARKETPLACE_ADMIN_FIRST_NAME = "Katrin";
+        public const string NEW_MARKETPLACE_ADMIN_LAST_NAME = "Fransua";
 
-        public const string NEW_BROKER_EMAIL = "three5bbnew@putsbox.com";
-        public const string NEW_BROKER_FIRST_LAST_NAME = "Threenew Testing";
-        public const string NEW_BROKER_FIRST_NAME = "Threenew";
-        public const string NEW_BROKER_LAST_NAME = "Testing";
+        public const string NEW_BROKER_EMAIL = "j8k6g4g@putsbox.com";
+        public const string NEW_BROKER_FIRST_LAST_NAME = "Numer Boomer";
+        public const string NEW_BROKER_FIRST_NAME = "Numer";
+        public const string NEW_BROKER_LAST_NAME = "Boomer";
 
-        public const string NEW_AGENT_EMAIL = "a5s3s1s7kk@putsbox.com";
-        public const string NEW_AGENT_FIRST_LAST_NAME = "Alfa Romeo";
-        public const string NEW_AGENT_FIRST_NAME = "Alfa";
-        public const string NEW_AGENT_LAST_NAME = "Romeo";
+        public const string NEW_AGENT_EMAIL = "j8v4f55tr@putsbox.com";
+        public const string NEW_AGENT_FIRST_LAST_NAME = "Nora Lora";
+        public const string NEW_AGENT_FIRST_NAME = "Nora";
+        public const string NEW_AGENT_LAST_NAME = "Lora";
         public const string NEW_AGENT_PHONE_NUMBER = "2121234321";
         public const string NEW_AGENT_CELL_PHONE_NUMBER = "5855679876";
 
         public const string DELETED_AGENT_FIRST_LAST_NAME = "Creator-martin Testing";
         public const string DELETED_AGENT_EMAIL = "j8h5g3g3dd@putsbox.com";
 
-        public const string NEW_OWNER_EMAIL = "u3l4o8d6f@putsbox.com";
-        public const string NEW_OWNER_FIRST_LAST_NAME = "Snow Row";
-        public const string NEW_OWNER_FIRST_NAME = "Rubio";
-        public const string NEW_COMPANY_NAME_OWNER = "LLC Fruti Tutti";
-        public const string NEW_OFFICE_LOCATION_OWNER = "Toronto";
+        public const string NEW_OWNER_EMAIL = "y9u76y4f@putsbox.com";
+        public const string NEW_OWNER_FIRST_LAST_NAME = "Mamba Rumba";
+        public const string NEW_OWNER_FIRST_NAME = "Mamba";
+        public const string NEW_COMPANY_NAME_OWNER = "LLC Yahooo";
+        public const string NEW_OFFICE_LOCATION_OWNER = "Colorado";
 
         public const string MARKETPLACE_ADMIN_EMAIL = "marketplace1chui@putsbox.com";
         public const string MARKETPLACE_ADMIN_FIRST_LAST_NAME = "Chui Chubaka";
@@ -135,7 +135,7 @@ namespace CazamioProject.DBHelpers
 
         public const string NEW_BUILDING_NAME = "House Creator Martin 111 four";
 
-        public const string NEW_UNIT_NUMBER = "16";
+        public const string NEW_UNIT_NUMBER = "17";
 
         public const string BUILDING_NAME = "Creator Martin two";
         public const string BUILDING_LLC_NAME = "LLC Chudo";

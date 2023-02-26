@@ -1,7 +1,7 @@
 ﻿using Allure.Commons;
 using NUnit.Allure.Attributes;
 using NUnit.Framework;
-using PractisingPrivileges.Helpers;
+using Cazamio.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

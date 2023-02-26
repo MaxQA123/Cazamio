@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PractisingPrivileges.Helpers
+namespace Cazamio.Helpers
 {
     public class AllureConfigFilesHelper
     {

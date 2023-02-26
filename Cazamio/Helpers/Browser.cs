@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using PractisingPrivileges.Helpers;
+using Cazamio.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;

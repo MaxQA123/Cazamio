@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProject.BaseTestsDBApartments
+namespace DBTests.BaseTestsDB
 {
     [TestFixture]
     [AllureNUnit]
