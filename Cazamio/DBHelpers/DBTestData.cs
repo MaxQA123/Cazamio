@@ -133,15 +133,15 @@ namespace CazamioProject.DBHelpers
         public const string OWNER_AGATA_EMAIL = "owneragata@putsbox.com";
         public const string OWNER_FIRST_NAME = "Agata";
 
-        public const string NEW_BUILDING_NAME = "House Creator Martin 111 four";
+        public const string NEW_BUILDING_NAME = "X creator YODA Marketplace admin 123456789 (%^^&%*%^*)";
 
-        public const string NEW_UNIT_NUMBER = "17";
+        public const string NEW_UNIT_NUMBER = "19";
 
         public const string BUILDING_NAME = "Creator Martin two";
         public const string BUILDING_LLC_NAME = "LLC Chudo";
         public const string BUILDING_ADDRESS = "510 East 11th Street";
         public const string BUILDING_ID = "48";
-        public const string UNIT_NUMBER = "9";
+        public const string UNIT_NUMBER = "22";
         public const string APARTMENT_ID_UNIT_NUMBER = "83";
         public const string ID_UNIT_FOUR_E = "83";
     }

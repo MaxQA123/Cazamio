@@ -114,15 +114,15 @@ namespace DBTests.BaseTestsDB
         //Version\Build:
         //Willingness for testing: Done.
         //This test case is doing checking: 
-        //Comment: The table "ApartmentApplications", "Apartments".
+        //Comment: The table "ApartmentApplications", "Apartments". Application in the statuses "Draft", "Submitted application".
         //Path to cheking's: 
 
         public void NewApplicationTenantApplicant()
         {
             string buildingAddress = DBTestDataDBForAdmins.BUILDING_ADDRESS;
 
-            string lastApplicationId = DBTableApartmentApplications.GetLastApartmentApplicationId();
-            Console.WriteLine($"{lastApplicationId} :Last Id for application for {buildingAddress} from table ApartmentApplications");
+            string lastId = DBTableApartmentApplications.GetLastApartmentApplicationId();
+            Console.WriteLine($"{lastId} :Last Id for application for {buildingAddress} from table ApartmentApplications");
 
             string idApartmentByBuildingId = DBTableApartments.GetApartmentIdByBuildingIdUnit(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
             Console.WriteLine($"{idApartmentByBuildingId} :ApartmentId by BuildingId from Apartments");
@@ -135,11 +135,11 @@ namespace DBTests.BaseTestsDB
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(lastApplicationId, lastApplicationIdByBuildingId);
-                Console.WriteLine($"ApplicationId last from ApartmentApplications: {lastApplicationId} = {lastApplicationIdByBuildingId} ApplicationId last by BuildingId from ApartmentApplications");
+                Assert.AreEqual(lastId, lastApplicationIdByBuildingId);
+                Console.WriteLine($"ApplicationId last from ApartmentApplications: {lastId} = {lastApplicationIdByBuildingId} ApplicationId last by BuildingId from ApartmentApplications");
 
-                Assert.AreEqual(lastApplicationId, lastApplicationIdByTenantId);
-                Console.WriteLine($"ApplicationId last from ApartmentApplications: {lastApplicationId} = {lastApplicationIdByTenantId} ApplicationId last by TenantId from ApartmentApplications");
+                Assert.AreEqual(lastId, lastApplicationIdByTenantId);
+                Console.WriteLine($"ApplicationId last from ApartmentApplications: {lastId} = {lastApplicationIdByTenantId} ApplicationId last by TenantId from ApartmentApplications");
             });
         }
 
