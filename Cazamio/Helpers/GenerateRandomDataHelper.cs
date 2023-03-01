@@ -18,6 +18,15 @@ namespace CazamioProgect.Helpers
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
+        [AllureStep("RandomNumber")]
+        public static string RandomNumber(int size)
+        {
+            Random random = new Random();
+            const string chars = "123456789";
+            return new string(Enumerable.Repeat(chars, size)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
         [AllureStep("RandomEmail")]
         public static string RandomEmail(int size)
         {

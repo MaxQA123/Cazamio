@@ -1,0 +1,358 @@
+{
+  "uuid": "75056789-355b-421f-8155-914ab693319b-tr-0-1007",
+  "historyId": "BrokerTests.Tests.DemoPagination",
+  "fullName": "BrokerTests.Tests.DemoPagination",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "BrokerTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "DemoPagination"
+    },
+    {
+      "name": "testClass",
+      "value": "Tests"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "Broker"
+    },
+    {
+      "name": "subSuite",
+      "value": "DemoPutsBox"
+    }
+  ],
+  "links": [],
+  "name": "DemoPagination",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.NoSuchElementException : Could not find element by: By.XPath: //ul[@aria-label = 'Pagination']//li[@class = 'pagination-next']",
+    "trace": "   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at OpenQA.Selenium.WebDriver.ConvertObjectToJavaScriptObject(Object arg)\r\n   at OpenQA.Selenium.WebDriver.ConvertArgumentsToJavaScriptObjects(Object[] args)\r\n   at OpenQA.Selenium.WebDriver.ExecuteScriptCommand(String script, String commandName, Object[] args)\r\n   at OpenQA.Selenium.WebDriver.ExecuteScript(String script, Object[] args)\r\n   at CazamioProgect.Helpers.ScrollingJScriptExecutorHelper.__a$_around_ScrollToElement_100663680_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\JScriptExecutorHelper.cs:line 72\r\n   at CazamioProgect.Helpers.ScrollingJScriptExecutorHelper.__a$_around_ScrollToElement_100663680_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.ScrollingJScriptExecutorHelper.__a$_around_ScrollToElement_100663680_w_0(Object[] )\r\n   at CazamioProgect.Helpers.ScrollingJScriptExecutorHelper.ScrollToElement(IWebElement element)\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SctollToButtonNext_100663752_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\PaginationPickerPage\\PaginationPickerActions.cs:line 40\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SctollToButtonNext_100663752_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SctollToButtonNext_100663752_w_0(Object[] )\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.SctollToButtonNext()\r\n   at BrokerTests.Tests.DemoPagination() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 371"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "DemoPagination",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.NoSuchElementException : Could not find element by: By.XPath: //ul[@aria-label = 'Pagination']//li[@class = 'pagination-next']",
+        "trace": "   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at OpenQA.Selenium.WebDriver.ConvertObjectToJavaScriptObject(Object arg)\r\n   at OpenQA.Selenium.WebDriver.ConvertArgumentsToJavaScriptObjects(Object[] args)\r\n   at OpenQA.Selenium.WebDriver.ExecuteScriptCommand(String script, String commandName, Object[] args)\r\n   at OpenQA.Selenium.WebDriver.ExecuteScript(String script, Object[] args)\r\n   at CazamioProgect.Helpers.ScrollingJScriptExecutorHelper.__a$_around_ScrollToElement_100663680_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\JScriptExecutorHelper.cs:line 72\r\n   at CazamioProgect.Helpers.ScrollingJScriptExecutorHelper.__a$_around_ScrollToElement_100663680_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.ScrollingJScriptExecutorHelper.__a$_around_ScrollToElement_100663680_w_0(Object[] )\r\n   at CazamioProgect.Helpers.ScrollingJScriptExecutorHelper.ScrollToElement(IWebElement element)\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SctollToButtonNext_100663752_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\PaginationPickerPage\\PaginationPickerActions.cs:line 40\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SctollToButtonNext_100663752_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SctollToButtonNext_100663752_w_0(Object[] )\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.SctollToButtonNext()\r\n   at BrokerTests.Tests.DemoPagination() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 371"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "EnterEmailPasswordLogInPgAsBroker",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "admin123@putsbox.com"
+                }
+              ],
+              "start": 1677660296433,
+              "stop": 1677660297020
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1677660297528,
+              "stop": 1677660298078
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1677660296432,
+          "stop": 1677660298078
+        },
+        {
+          "name": "ClickIconShowLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1677660298079,
+              "stop": 1677660298699
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1677660298078,
+          "stop": 1677660298699
+        },
+        {
+          "name": "ClickButtonLetsGoLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1677660298701,
+              "stop": 1677660299560
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1677660298700,
+          "stop": 1677660300611
+        },
+        {
+          "name": "GetUserNameFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1677660300613,
+          "stop": 1677660300909
+        },
+        {
+          "name": "GetUserNameRoleFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1677660300910,
+          "stop": 1677660301003
+        },
+        {
+          "name": "VerifyBrokerUserName",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Martin Macfly"
+            },
+            {
+              "name": "String",
+              "value": "Broker"
+            }
+          ],
+          "start": 1677660301004,
+          "stop": 1677660302626
+        },
+        {
+          "name": "ClickButtonOwnersSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1677660304218,
+              "stop": 1677660304805
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1677660302627,
+          "stop": 1677660305814
+        },
+        {
+          "name": "SctollToButtonNext",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "Could not find element by: By.XPath: //ul[@aria-label = 'Pagination']//li[@class = 'pagination-next']",
+            "trace": "   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at OpenQA.Selenium.WebDriver.ConvertObjectToJavaScriptObject(Object arg)\r\n   at OpenQA.Selenium.WebDriver.ConvertArgumentsToJavaScriptObjects(Object[] args)\r\n   at OpenQA.Selenium.WebDriver.ExecuteScriptCommand(String script, String commandName, Object[] args)\r\n   at OpenQA.Selenium.WebDriver.ExecuteScript(String script, Object[] args)\r\n   at CazamioProgect.Helpers.ScrollingJScriptExecutorHelper.__a$_around_ScrollToElement_100663680_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\JScriptExecutorHelper.cs:line 72\r\n   at CazamioProgect.Helpers.ScrollingJScriptExecutorHelper.__a$_around_ScrollToElement_100663680_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.ScrollingJScriptExecutorHelper.__a$_around_ScrollToElement_100663680_w_0(Object[] )\r\n   at CazamioProgect.Helpers.ScrollingJScriptExecutorHelper.ScrollToElement(IWebElement element)\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SctollToButtonNext_100663752_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\PaginationPickerPage\\PaginationPickerActions.cs:line 40\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SctollToButtonNext_100663752_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "ScrollToElement",
+              "status": "failed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false,
+                "message": "Could not find element by: By.XPath: //ul[@aria-label = 'Pagination']//li[@class = 'pagination-next']",
+                "trace": "   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at OpenQA.Selenium.WebDriver.ConvertObjectToJavaScriptObject(Object arg)\r\n   at OpenQA.Selenium.WebDriver.ConvertArgumentsToJavaScriptObjects(Object[] args)\r\n   at OpenQA.Selenium.WebDriver.ExecuteScriptCommand(String script, String commandName, Object[] args)\r\n   at OpenQA.Selenium.WebDriver.ExecuteScript(String script, Object[] args)\r\n   at CazamioProgect.Helpers.ScrollingJScriptExecutorHelper.__a$_around_ScrollToElement_100663680_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\JScriptExecutorHelper.cs:line 72\r\n   at CazamioProgect.Helpers.ScrollingJScriptExecutorHelper.__a$_around_ScrollToElement_100663680_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1677660306067,
+              "stop": 1677660306136
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1677660305815,
+          "stop": 1677660306136
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "6c459f0f22f7499eb04b24b1afeeebe3-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1677660289071,
+      "stop": 1677660309019
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1677660289070,
+  "stop": 1677660309034
+}

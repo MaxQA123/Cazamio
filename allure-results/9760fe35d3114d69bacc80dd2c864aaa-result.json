@@ -1,0 +1,382 @@
+{
+  "uuid": "d6449b36-ffa5-489e-9011-776f0533ce5a-tr-0-1007",
+  "historyId": "BrokerTests.Tests.DemoPagination",
+  "fullName": "BrokerTests.Tests.DemoPagination",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "BrokerTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "DemoPagination"
+    },
+    {
+      "name": "testClass",
+      "value": "Tests"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "Broker"
+    },
+    {
+      "name": "subSuite",
+      "value": "DemoPutsBox"
+    }
+  ],
+  "links": [],
+  "name": "DemoPagination",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.InvalidSelectorException : invalid selector: Unable to locate an element with the xpath expression //ul[@aria-label = 'Pagination'//li] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': Type conversion failed while evaluating the expression.\n  (Session info: chrome=110.0.5481.178)",
+    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectorNumberPage_100663750_o(String _locationButton) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\PaginationPickerPage\\PaginationPickerActions.cs:line 21\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectorNumberPage_100663750_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectorNumberPage_100663750_w_0(Object[] )\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.SelectorNumberPage(String _locationButton) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\PaginationPickerPage\\PaginationPickerActions.cs:line 19\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectNumberPage_100663751_o(Int32 page, String locationPage) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\PaginationPickerPage\\PaginationPickerActions.cs:line 29\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectNumberPage_100663751_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectNumberPage_100663751_w_0(Object[] )\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.SelectNumberPage(Int32 page, String locationPage)\r\n   at BrokerTests.Tests.DemoPagination() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 372"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "DemoPagination",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.InvalidSelectorException : invalid selector: Unable to locate an element with the xpath expression //ul[@aria-label = 'Pagination'//li] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': Type conversion failed while evaluating the expression.\n  (Session info: chrome=110.0.5481.178)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectorNumberPage_100663750_o(String _locationButton) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\PaginationPickerPage\\PaginationPickerActions.cs:line 21\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectorNumberPage_100663750_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectorNumberPage_100663750_w_0(Object[] )\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.SelectorNumberPage(String _locationButton) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\PaginationPickerPage\\PaginationPickerActions.cs:line 19\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectNumberPage_100663751_o(Int32 page, String locationPage) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\PaginationPickerPage\\PaginationPickerActions.cs:line 29\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectNumberPage_100663751_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectNumberPage_100663751_w_0(Object[] )\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.SelectNumberPage(Int32 page, String locationPage)\r\n   at BrokerTests.Tests.DemoPagination() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 372"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "EnterEmailPasswordLogInPgAsBroker",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "admin123@putsbox.com"
+                }
+              ],
+              "start": 1677659502443,
+              "stop": 1677659503067
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1677659503584,
+              "stop": 1677659504150
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1677659502442,
+          "stop": 1677659504150
+        },
+        {
+          "name": "ClickIconShowLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1677659504151,
+              "stop": 1677659504761
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1677659504150,
+          "stop": 1677659504761
+        },
+        {
+          "name": "ClickButtonLetsGoLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1677659504762,
+              "stop": 1677659505573
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1677659504762,
+          "stop": 1677659506621
+        },
+        {
+          "name": "GetUserNameFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1677659506622,
+          "stop": 1677659506721
+        },
+        {
+          "name": "GetUserNameRoleFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1677659506722,
+          "stop": 1677659506815
+        },
+        {
+          "name": "VerifyBrokerUserName",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Martin Macfly"
+            },
+            {
+              "name": "String",
+              "value": "Broker"
+            }
+          ],
+          "start": 1677659506817,
+          "stop": 1677659508345
+        },
+        {
+          "name": "ClickButtonOwnersSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1677659509948,
+              "stop": 1677659510603
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1677659508346,
+          "stop": 1677659511613
+        },
+        {
+          "name": "ScrollToUp",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1677659511613,
+          "stop": 1677659511638
+        },
+        {
+          "name": "SelectNumberPage",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "invalid selector: Unable to locate an element with the xpath expression //ul[@aria-label = 'Pagination'//li] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': Type conversion failed while evaluating the expression.\n  (Session info: chrome=110.0.5481.178)",
+            "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectorNumberPage_100663750_o(String _locationButton) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\PaginationPickerPage\\PaginationPickerActions.cs:line 21\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectorNumberPage_100663750_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectorNumberPage_100663750_w_0(Object[] )\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.SelectorNumberPage(String _locationButton) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\PaginationPickerPage\\PaginationPickerActions.cs:line 19\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectNumberPage_100663751_o(Int32 page, String locationPage) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\PaginationPickerPage\\PaginationPickerActions.cs:line 29\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectNumberPage_100663751_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "SelectorNumberPage",
+              "status": "failed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false,
+                "message": "invalid selector: Unable to locate an element with the xpath expression //ul[@aria-label = 'Pagination'//li] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': Type conversion failed while evaluating the expression.\n  (Session info: chrome=110.0.5481.178)",
+                "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectorNumberPage_100663750_o(String _locationButton) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\PaginationPickerPage\\PaginationPickerActions.cs:line 21\r\n   at CazamioProject.PageObjects.PaginationPickerPage.PaginationPicker.__a$_around_SelectorNumberPage_100663750_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "String",
+                  "value": ""
+                }
+              ],
+              "start": 1677659512155,
+              "stop": 1677659513274
+            }
+          ],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "0"
+            },
+            {
+              "name": "String",
+              "value": ""
+            }
+          ],
+          "start": 1677659511638,
+          "stop": 1677659513291
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "437d8505962a4e31a5619f4dc6d35249-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1677659494773,
+      "stop": 1677659516287
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1677659494772,
+  "stop": 1677659516298
+}

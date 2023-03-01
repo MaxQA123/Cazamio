@@ -40,6 +40,7 @@ using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.ApartmentDetailsTenan
 using CazamioProject.PageObjects.WebSiteLandlordPages.ListOfLandlordsPage;
 using CazamioProject.PageObjects.ModalWndwCreateNewLandlordPage;
 using CazamioProject.PageObjects.ModalWndwCreateNewOwner;
+using CazamioProject.PageObjects.PaginationPickerPage;
 
 namespace CazamioProgect.PageObjects
 {
@@ -97,6 +98,8 @@ namespace CazamioProgect.PageObjects
         public static ModalWindowPaymentOptions ModalWindowPaymentOptions => GetPage<ModalWindowPaymentOptions>();
         public static PopUpWndowNewAgentCreatedSuccessfully PopUpWndowNewAgentCreatedSuccessfully => GetPage<PopUpWndowNewAgentCreatedSuccessfully>();
         public static ModalWndwCreateNewOwner ModalWndwCreateNewOwner => GetPage<ModalWndwCreateNewOwner>();
+        public static PaginationPicker PaginationPicker => GetPage<PaginationPicker>();
+
         #endregion
     }
 }

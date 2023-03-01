@@ -19,5 +19,15 @@ namespace CazamioProject.PageObjects.ModalWndwCreateNewOwner
 
             return this;
         }
+
+        [AllureStep("GetEmailFromFieldOwnerEmail")]
+        public string GetEmailFromFieldOwnerEmail()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            string getUserName = FieldInputOwnerEmail.GetAttribute("value");
+            string getUserNameActual = getUserName.ToString();
+
+            return getUserNameActual;
+        }
     }
 }

@@ -286,4 +286,13 @@ namespace CazamioProgect.Helpers
         public const int apartmentCardEleven = 10;
         public const int apartmentCardTwelve = 11;
     }
+
+    public class PaginationList
+    {
+        public const int PAGE_TWO = 0;
+        public const int apartmentCardTwo = 1;
+        public const int apartmentCardThree = 2;
+        public const int apartmentCardFour = 3;
+        public const int apartmentCardFive = 4;
+    }
 }

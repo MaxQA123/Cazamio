@@ -96,6 +96,15 @@ namespace CazamioProgect.Helpers
                 .Perform();
         }
 
+        [AllureStep("ClickSpaceButton")]
+        public static void ClickSpaceButton()
+        {
+            new Actions(Browser._Driver)
+                .SendKeys(Keys.Space)
+                .Build()
+                .Perform();
+        }
+
         [AllureStep("ScrollToElement")]
         public static void ScrollToElement(IWebElement element)
         {

@@ -6,6 +6,7 @@ using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using PutsboxWrapper;
 using NUnit.Framework;
+using System;
 
 namespace BrokerTests
 {
@@ -284,7 +285,27 @@ namespace BrokerTests
             Pages.ListOfOwners
                 .ClickButtonCreateOwner();
             Pages.ModalWndwCreateNewOwner
-                .VerifyTitleCreateANewOwnerg();
+                .VerifyTitleCreateANewOwnerg()
+                .EnterCompanyName()
+                .EnterOwnerName()
+                .EnterOwnerEmaiL()
+                .EnterOfficeLocation()
+                .EnterInternalNotes();
+
+            string getOwnerEmailFromModalWndw = Pages.ModalWndwCreateNewOwner.GetEmailFromFieldOwnerEmail();
+
+            Pages.ModalWndwCreateNewOwner
+                .ClickButtonCreate();
+            Pages.ListOfOwners
+                .VerifyMessageSuccessCreatedOwner();
+            Pages.PaginationPicker
+                .SctollToButtonNext()
+                .ClickButtonNext();
+
+            string getLastEmailFromPage = Pages.ListOfOwners.GetLastEmailFromTable();
+
+            Pages.ListOfOwners
+                .VerifyEmailForNewOwner(getOwnerEmailFromModalWndw, getLastEmailFromPage);
 
             WaitUntil.WaitSomeInterval(2000);
         }
@@ -345,15 +366,26 @@ namespace BrokerTests
         //This test case is doing checking:
         //Comment: 
 
-        public void DemoPutsBox()
+        public void DemoPagination()
         {
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPgAsBroker();
-                //.ClickIconShowLogInPg()
-                //.ClickButtonLetsGoLogInPg();
-            Pages.JScriptExecutorHelper
-                .OpenNewTab();
-            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_PUTSBOX_EMAIL_STATIC_TENANT_APPLICANT);
+                .EnterEmailPasswordLogInPgAsBroker()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare)
+                .ClickButtonOwnersSidebar();
+            Pages.PaginationPicker
+                .SctollToButtonNext()
+                .ClickButtonNext();
+
+            string getLastEmailFromPage = Pages.ListOfOwners.GetLastEmailFromTable();
+
+            Console.WriteLine(getLastEmailFromPage);
 
             WaitUntil.WaitSomeInterval(2000);
         }

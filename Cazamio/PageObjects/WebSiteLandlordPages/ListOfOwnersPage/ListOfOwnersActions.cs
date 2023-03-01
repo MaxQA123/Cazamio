@@ -18,5 +18,15 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage
 
             return this;
         }
+
+        [AllureStep("GetLastEmailFromTable")]
+        public string GetLastEmailFromTable()
+        {
+            WaitUntil.CustomElementIsVisible(LastOwnerOnPage);
+            string getEmail = LastOwnerOnPage.Text;
+            string getEmailActual = getEmail.ToString();
+
+            return getEmailActual;
+        }
     }
 }
