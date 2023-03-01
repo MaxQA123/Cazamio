@@ -44,10 +44,10 @@ namespace SuperAdminTests
 
             Pages.SideBarLandlord
                 .VerifySuperAdminUserName(getUserNameCompare, getUserNameRoleCompare)
-                .ClickButtonLandlordsSidebar();
-            Pages.ListOfLandlords
-                .VerifyTitleListOfLandlordsPg()
-                .ClickButtonCreateLandlord();
+                .ClickButtonMarketplaceAdminsSidebar();
+            Pages.ListOfMarketplaceAdmins
+                .VerifyTitleListOfMarketplaceAdmins()
+                .ClickButtonCreateMarketplaceAdmin();
             Pages.ModalWndwCreateNewLandlord
                 .VerifyTitleMdlWndwCreateNewLandlord()
                 .FillMandatoryFields()
@@ -114,6 +114,57 @@ namespace SuperAdminTests
 
             Pages.SideBarLandlord
                 .VerifySuperAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+
+            WaitUntil.WaitSomeInterval(2000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("SuperAdmin")]
+        [AllureSubSuite("CreateMarketplaceAdmin")]
+
+        //Date of publication: 
+        //Version\Build:
+        //Willingness for testing: in progress
+        //This test case is doing checking: The successfully create a new broker.
+        //Comment: 
+
+        public void CreateMarketplaceAdmin()
+        {
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsSuperAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifySuperAdminUserName(getUserNameCompare, getUserNameRoleCompare)
+                .ClickButtonMarketplaceAdminsSidebar();
+            Pages.ListOfMarketplaceAdmins
+                .VerifyTitleListOfMarketplaceAdmins()
+                .ClickButtonCreateMarketplaceAdmin();
+            Pages.MdlWndwCreateANewMarketplaceAdmin
+                .VerifyTitleCreateANewMarketplaceadmin()
+                .FillInMandatoryFields()
+                .VerifyNameHostMarketplaceSubdomain();
+
+            string getAdminEmailFromModalWndw = Pages.MdlWndwCreateANewMarketplaceAdmin.GetEmailFromFieldInputEmail();
+
+            Pages.MdlWndwCreateANewMarketplaceAdmin
+                .ClickButtonCreate();
+            Pages.ListOfMarketplaceAdmins
+                .VerifyMessageMarketplaceAdminHasBeenSuccessfullyCreated();
+            Pages.PaginationPicker
+                .SctollToButtonNext()
+                .ClickButtonNextOnce();
+
+            string getLastEmailFromPage = Pages.ListOfMarketplaceAdmins.GetLastEmailFromTable();
 
             WaitUntil.WaitSomeInterval(2000);
         }

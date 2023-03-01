@@ -42,9 +42,20 @@ namespace CazamioProject.PageObjects.PaginationPickerPage
             return this;
         }
 
-        [AllureStep("ClickButtonNext")]
-        public PaginationPicker ClickButtonNext()
+        [AllureStep("ClickButtonNextOnce")]
+        public PaginationPicker ClickButtonNextOnce()
         {
+            WaitUntil.WaitSomeInterval(250);
+            Button.Click(ButtonNext);
+
+            return this;
+        }
+
+        [AllureStep("ClickButtonNextTwice")]
+        public PaginationPicker ClickButtonNextTwice()
+        {
+            WaitUntil.WaitSomeInterval(250);
+            Button.Click(ButtonNext);
             WaitUntil.WaitSomeInterval(250);
             Button.Click(ButtonNext);
 

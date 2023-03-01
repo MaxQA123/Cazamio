@@ -217,6 +217,30 @@ namespace CazamioProgect.Helpers
         }
     }
 
+    public class SuccessfullyTwo
+    {
+        public static Boolean IsVisible(IWebElement element)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            try
+            {
+                if (element.Enabled == true)
+                {
+                    Console.WriteLine(element.GetAttribute("value"));
+
+                    return true;
+                }
+
+                return false;
+
+
+            }
+            catch (NoSuchElementException) { return false; }
+
+            catch (StaleElementReferenceException) { return false; }
+        }
+    }
+
     public class SwitchingTabs
     {
         public static void SwitchTabOne()

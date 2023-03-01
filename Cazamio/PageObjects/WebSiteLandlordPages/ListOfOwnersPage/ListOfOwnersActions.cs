@@ -22,8 +22,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage
         [AllureStep("GetLastEmailFromTable")]
         public string GetLastEmailFromTable()
         {
-            WaitUntil.CustomElementIsVisible(LastOwnerOnPage);
-            string getEmail = LastOwnerOnPage.Text;
+            WaitUntil.CustomElementIsVisible(LastOwnerEmailOnPage);
+            string getEmail = LastOwnerEmailOnPage.Text;
             string getEmailActual = getEmail.ToString();
 
             return getEmailActual;

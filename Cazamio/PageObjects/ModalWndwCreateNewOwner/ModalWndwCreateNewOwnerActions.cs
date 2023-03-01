@@ -24,7 +24,7 @@ namespace CazamioProject.PageObjects.ModalWndwCreateNewOwner
         public ModalWndwCreateNewOwner EnterOwnerName()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputOwnerName, Name.FullName());
+            InputGeneral.InputFunctionWithClear(FieldInputOwnerName, Name.FirstName());
 
             return this;
         }

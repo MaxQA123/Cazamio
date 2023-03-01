@@ -12,10 +12,11 @@ namespace CazamioProject.PageObjects.ModalWndwCreateNewOwner
     public partial class ModalWndwCreateNewOwner
     {
         [AllureStep("VerifyTitleCreateANewOwnerg")]
-        public ModalWndwCreateNewOwner VerifyTitleCreateANewOwnerg()
+        public ModalWndwCreateNewOwner VerifyTitleCreateANewOwner()
         {
             WaitUntil.CustomElementIsVisible(TitleCreateANewOwner);
             Assert.IsTrue(Successfully.IsVisible(TitleCreateANewOwner));
+            Console.WriteLine($"{TitleCreateANewOwner.Text} :Name modal window");
 
             return this;
         }

@@ -285,7 +285,7 @@ namespace BrokerTests
             Pages.ListOfOwners
                 .ClickButtonCreateOwner();
             Pages.ModalWndwCreateNewOwner
-                .VerifyTitleCreateANewOwnerg()
+                .VerifyTitleCreateANewOwner()
                 .EnterCompanyName()
                 .EnterOwnerName()
                 .EnterOwnerEmaiL()
@@ -300,7 +300,7 @@ namespace BrokerTests
                 .VerifyMessageSuccessCreatedOwner();
             Pages.PaginationPicker
                 .SctollToButtonNext()
-                .ClickButtonNext();
+                .ClickButtonNextTwice();
 
             string getLastEmailFromPage = Pages.ListOfOwners.GetLastEmailFromTable();
 
@@ -380,8 +380,7 @@ namespace BrokerTests
                 .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare)
                 .ClickButtonOwnersSidebar();
             Pages.PaginationPicker
-                .SctollToButtonNext()
-                .ClickButtonNext();
+                .SctollToButtonNext();
 
             string getLastEmailFromPage = Pages.ListOfOwners.GetLastEmailFromTable();
 

@@ -37,10 +37,11 @@ using System.Threading.Tasks;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HomePageCazamioTenant;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.ListOfApartmentsTenantPage;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.ApartmentDetailsTenantPage;
-using CazamioProject.PageObjects.WebSiteLandlordPages.ListOfLandlordsPage;
 using CazamioProject.PageObjects.ModalWndwCreateNewLandlordPage;
 using CazamioProject.PageObjects.ModalWndwCreateNewOwner;
 using CazamioProject.PageObjects.PaginationPickerPage;
+using CazamioProject.PageObjects.WebSiteLandlordPages.ListOfMarketplaceAdmins;
+using CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage;
 
 namespace CazamioProgect.PageObjects
 {
@@ -82,7 +83,7 @@ namespace CazamioProgect.PageObjects
         public static ListOfBuildings ListOfBuildings => GetPage<ListOfBuildings>();
         public static ListOfApartments ListOfApartments => GetPage<ListOfApartments>();
         public static ListOfApplications ListOfApplications => GetPage<ListOfApplications>();
-        public static ListOfLandlords ListOfLandlords => GetPage<ListOfLandlords>();
+        public static ListOfMarketplaceAdmins ListOfMarketplaceAdmins => GetPage<ListOfMarketplaceAdmins>();
         public static PreApprovals PreApprovals => GetPage<PreApprovals>();
         public static Templates Templates => GetPage<Templates>();
         public static PaymentSettings PaymentSettings => GetPage<PaymentSettings>();
@@ -99,6 +100,7 @@ namespace CazamioProgect.PageObjects
         public static PopUpWndowNewAgentCreatedSuccessfully PopUpWndowNewAgentCreatedSuccessfully => GetPage<PopUpWndowNewAgentCreatedSuccessfully>();
         public static ModalWndwCreateNewOwner ModalWndwCreateNewOwner => GetPage<ModalWndwCreateNewOwner>();
         public static PaginationPicker PaginationPicker => GetPage<PaginationPicker>();
+        public static MdlWndwCreateANewMarketplaceAdmin MdlWndwCreateANewMarketplaceAdmin => GetPage<MdlWndwCreateANewMarketplaceAdmin>();
 
         #endregion
     }
