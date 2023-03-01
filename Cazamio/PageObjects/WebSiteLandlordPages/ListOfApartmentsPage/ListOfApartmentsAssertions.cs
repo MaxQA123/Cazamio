@@ -14,7 +14,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfApartmentsPage
         [AllureStep("VerifyTitleListOfApartmentsPg")]
         public ListOfApartments VerifyTitleListOfApartmentsPg()
         {
-            WaitUntil.WaitSomeInterval(2000);
+            WaitUntil.CustomElementIsVisible(TitleListOfApartmentsPage);
             Assert.IsTrue(Successfully.IsVisible(TitleListOfApartmentsPage));
 
             return this;

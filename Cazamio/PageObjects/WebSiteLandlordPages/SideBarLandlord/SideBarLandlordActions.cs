@@ -106,7 +106,6 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         {
             WaitUntil.WaitSomeInterval(2000);
             Button.Click(ButtonApartmentsSidebar);
-            WaitUntil.WaitSomeInterval(3000);
 
             return this;
         }
@@ -177,8 +176,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
             return this;
         }
 
-        [AllureStep("ClickButtonBrokersSidebar")]
-        public SideBarLandlord ClickButtonBrokersSidebar()
+        [AllureStep("ClickButtonAgentsSidebar")]
+        public SideBarLandlord ClickButtonAgentsSidebar()
         {
             WaitUntil.WaitSomeInterval(1000);
             ButtonAgentsSidebar.SendKeys("");

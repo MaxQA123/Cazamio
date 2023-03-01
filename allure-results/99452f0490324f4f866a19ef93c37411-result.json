@@ -1,0 +1,112 @@
+{
+  "uuid": "c11ca8f7-3656-46db-8c5e-62226ffa33ca-tr-0-1005",
+  "historyId": "BrokerTests.Tests.CreateNewOwner",
+  "fullName": "BrokerTests.Tests.CreateNewOwner",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "BrokerTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "CreateNewOwner"
+    },
+    {
+      "name": "testClass",
+      "value": "Tests"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "Broker"
+    },
+    {
+      "name": "subSuite",
+      "value": "CreateNewOwner"
+    }
+  ],
+  "links": [],
+  "name": "CreateNewOwner",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.WebDriverArgumentException : invalid argument\n  (Session info: chrome=110.0.5481.178)",
+    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.set_Url(String value)\r\n   at OpenQA.Selenium.Navigator.GoToUrl(String url)\r\n   at BrokerTests.Tests.CreateNewOwner() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 283"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "CreateNewOwner",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.WebDriverArgumentException : invalid argument\n  (Session info: chrome=110.0.5481.178)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.set_Url(String value)\r\n   at OpenQA.Selenium.Navigator.GoToUrl(String url)\r\n   at BrokerTests.Tests.CreateNewOwner() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 283"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "VerifyingBrandUserNameEmailBroker",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "ResponseLogInAdmins",
+              "value": "ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins.ResponseLogInAdmins"
+            }
+          ],
+          "start": 1677651048341,
+          "stop": 1677651048351
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "c1b61072ee3f4e47b13c80999113482f-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1677651039332,
+      "stop": 1677651052767
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1677651039328,
+  "stop": 1677651052776
+}

@@ -12,5 +12,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage
     {
         [FindsBy(How = How.XPath, Using = ("//div[text()= 'List of owners']"))]
         public IWebElement TitleListOfOwnersPage;
+
+        [FindsBy(How = How.XPath, Using = ("//button//span[text() = 'Create Owner']"))]
+        public IWebElement ButtonCreateOwner;
     }
 }

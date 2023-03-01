@@ -10,7 +10,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ListOfLandlordsPage
 {
     public partial class ListOfLandlords
     {
-        [AllureStep("EnterNewConfirmPassword")]
+        [AllureStep("ClickButtonCreateLandlord")]
         public ListOfLandlords ClickButtonCreateLandlord()
         {
             Button.Click(ButtonCreateLandlord);

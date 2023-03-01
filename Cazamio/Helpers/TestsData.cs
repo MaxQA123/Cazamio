@@ -10,7 +10,8 @@ namespace CazamioProgect.Helpers
     {
         public const string URL_HOME_PAGE_TENANT_WEBSITE_CAZAMIO = "https://testlandlord-demo.cazamiodemo.com/";
         public const string URL_LOGIN_ADMIN_WEBSITE = "https://landlord-demo.cazamiodemo.com/account/signin";
-        
+        //public const string URL_LIST_OF_BUILDINGS_ADMIN_WEBSITE = "https://landlord-demo.cazamiodemo.com/buildings/list-of-buildings";
+
         public const string URL_XITROO_EMAIL_RANDOM = "https://xitroo.com/";
         public const string URL_XITROO_STATIC_SUPER_ADMIN = "https://xitroo.com/#testadmin@xitroo.com";
         public const string URL_XITROO_STATIC_BROKER = "https://xitroo.com/#evilhtingale@xitroo.com";

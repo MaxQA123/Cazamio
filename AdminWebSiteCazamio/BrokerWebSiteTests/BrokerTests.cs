@@ -57,7 +57,7 @@ namespace BrokerTests
 
         //Date of publication:
         //Version\Build:
-        //Willingness for testing: in progress.
+        //Willingness for testing: Done.
         //This test case is doing checking: The broker successfully had been changed the password.
         //Comment: 
 
@@ -166,7 +166,7 @@ namespace BrokerTests
             Pages.ListOfTransactions
                 .VerifyTitleListOfTransactionsPg();
             Pages.SideBarLandlord
-                .ClickButtonBrokersSidebar();
+                .ClickButtonAgentsSidebar();
             Pages.Agents
                 .VerifyTitleBrokersPg();
             Pages.SideBarLandlord
@@ -189,7 +189,7 @@ namespace BrokerTests
         [AllureTag("Regression")]
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
-        //[Retry(2)]
+        [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Broker")]
         [AllureSubSuite("CreateNewAgent")]
@@ -212,7 +212,7 @@ namespace BrokerTests
 
             Pages.SideBarLandlord
                 .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare)
-                .ClickButtonBrokersSidebar();
+                .ClickButtonAgentsSidebar();
             Pages.Agents
                 .ClickButtonCreateAgentAgentsPage();
             Pages.ModalWindowCreateNewAgent
@@ -249,6 +249,42 @@ namespace BrokerTests
 
             Pages.SideBarLandlord
                 .VerifyOnlyAgentUserNameRole(getUserNameRoleCompareBroker);
+
+            WaitUntil.WaitSomeInterval(2000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("Broker")]
+        [AllureSubSuite("CreateNewOwner")]
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: In progress.
+        //This test case is doing checking: The successfully creaated a new owner.
+        //Comment: 
+
+        public void CreateNewOwner()
+        {
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsBroker()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare)
+                .ClickButtonOwnersSidebar();
+            Pages.ListOfOwners
+                .ClickButtonCreateOwner();
+            Pages.ModalWndwCreateNewOwner
+                .VerifyTitleCreateANewOwnerg();
 
             WaitUntil.WaitSomeInterval(2000);
         }
