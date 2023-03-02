@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage
@@ -35,6 +36,24 @@ namespace CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage
             return this;
         }
 
+        [AllureStep("CopyEmailBeforeDogFromFieldInputEmail")]
+        public string CopyEmailBeforeDogFromFieldInputEmail()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            string copyPartEmail = FieldInputEmail.GetAttribute("value");
+            Regex regexPartEmail = new Regex(@"^..........");
+            string partEmail = regexPartEmail.Match(copyPartEmail).ToString();
 
+            return partEmail;
+        }
+
+        [AllureStep("CopyFullEmailFromFieldInputEmail")]
+        public string CopyFullEmailFromFieldInputEmail()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            string copyFullEmail = FieldInputEmail.GetAttribute("value");
+
+            return copyFullEmail;
+        }
     }
 }
