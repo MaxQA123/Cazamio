@@ -89,31 +89,31 @@ namespace CazamioProject.DBHelpers
 
     public class DBTestDataDBForAdmins
     {
-        public const string NEW_MARKETPLACE_ADMIN_EMAIL = "b11df@putsbox.com";
-        public const string NEW_MARKETPLACE_ADMIN_FIRST_LAST_NAME = "Katrin Fransua";
-        public const string NEW_MARKETPLACE_ADMIN_FIRST_NAME = "Katrin";
-        public const string NEW_MARKETPLACE_ADMIN_LAST_NAME = "Fransua";
+        public const string NEW_MARKETPLACE_ADMIN_EMAIL = "marketplace1110ne@gmail.com";
+        public const string NEW_MARKETPLACE_ADMIN_FIRST_LAST_NAME = "Master Yoda";
+        public const string NEW_MARKETPLACE_ADMIN_FIRST_NAME = "Master";
+        public const string NEW_MARKETPLACE_ADMIN_LAST_NAME = "Yoda";
 
-        public const string NEW_BROKER_EMAIL = "j8k6g4g@putsbox.com";
-        public const string NEW_BROKER_FIRST_LAST_NAME = "Numer Boomer";
-        public const string NEW_BROKER_FIRST_NAME = "Numer";
-        public const string NEW_BROKER_LAST_NAME = "Boomer";
+        public const string NEW_BROKER_EMAIL = "admin123@putsbox.com";
+        public const string NEW_BROKER_FIRST_LAST_NAME = "Martin Macfly";
+        public const string NEW_BROKER_FIRST_NAME = "Martin";
+        public const string NEW_BROKER_LAST_NAME = "Macfly";
 
-        public const string NEW_AGENT_EMAIL = "j8v4f55tr@putsbox.com";
-        public const string NEW_AGENT_FIRST_LAST_NAME = "Nora Lora";
-        public const string NEW_AGENT_FIRST_NAME = "Nora";
-        public const string NEW_AGENT_LAST_NAME = "Lora";
+        public const string NEW_AGENT_EMAIL = "agent123test@putsbox.com";
+        public const string NEW_AGENT_FIRST_LAST_NAME = "Test Agent";
+        public const string NEW_AGENT_FIRST_NAME = "Test";
+        public const string NEW_AGENT_LAST_NAME = "Agent";
         public const string NEW_AGENT_PHONE_NUMBER = "2121234321";
         public const string NEW_AGENT_CELL_PHONE_NUMBER = "5855679876";
 
         public const string DELETED_AGENT_FIRST_LAST_NAME = "Creator-martin Testing";
         public const string DELETED_AGENT_EMAIL = "j8h5g3g3dd@putsbox.com";
 
-        public const string NEW_OWNER_EMAIL = "y9u76y4f@putsbox.com";
-        public const string NEW_OWNER_FIRST_LAST_NAME = "Mamba Rumba";
-        public const string NEW_OWNER_FIRST_NAME = "Mamba";
-        public const string NEW_COMPANY_NAME_OWNER = "LLC Yahooo";
-        public const string NEW_OFFICE_LOCATION_OWNER = "Colorado";
+        public const string NEW_OWNER_EMAIL = "owneragata@putsbox.com";
+        public const string NEW_OWNER_FIRST_LAST_NAME = "Testing Agata";
+        public const string NEW_OWNER_FIRST_NAME = "Testing";
+        public const string NEW_COMPANY_NAME_OWNER = "LLC Central Agency USA";
+        public const string NEW_OFFICE_LOCATION_OWNER = "Las Vegas";
 
         public const string MARKETPLACE_ADMIN_EMAIL = "marketplace1chui@putsbox.com";
         public const string MARKETPLACE_ADMIN_FIRST_LAST_NAME = "Chui Chubaka";
