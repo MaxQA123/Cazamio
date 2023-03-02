@@ -53,7 +53,7 @@ namespace CazamioProgect.Helpers
         public const string NEW_LAST_NAME_OCCUPANT_ONE = "Taylor";
         public const string NEW_PHONE_NUMBER_OCCUPANT_ONE = "5151234321";
 
-        public const string EMAIL_CURRENT_OCCUPANT_SECOND = "tenantocc333alfred@putsbox.com";
+        public const string EMAIL_CURRENT_OCCUPANT_SECOND = "tenantocc123liza@putsbox.com";
         public const string FIRST_NAME_OCCUPANT_SECOND = "Alfred";
         public const string LAST_NAME_OCCUPANT_SECOND = "Dickins";
 

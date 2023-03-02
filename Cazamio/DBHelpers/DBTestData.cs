@@ -45,24 +45,24 @@ namespace CazamioProject.DBHelpers
 
     public class DBTestDataForTenantMarketplaceOne
     {
-        public const string NEW_TENANT_EMAIL = "i4i4i4t@putsbox.com";
-        public const string NEW_TENANT_USER_NAME = "i4i4i4t@putsbox.com";
-        public const string NEW_TENANT_FIRST_LAST_NAME = "Oro Pop";
-        public const string NEW_TENANT_FIRST_NAME = "Oro";
-        public const string NEW_TENANT_LAST_NAME = "Pop";
+        public const string NEW_TENANT_EMAIL = "guarantor5935@gmail.com";
+        public const string NEW_TENANT_USER_NAME = "guarantor5935@gmail.com";
+        public const string NEW_TENANT_FIRST_LAST_NAME = "Rodger Vanpiece";
+        public const string NEW_TENANT_FIRST_NAME = "Rodger";
+        public const string NEW_TENANT_LAST_NAME = "Vanpiece";
         public const string ALREADY_EXIST_TENANT_FIRST_LAST_NAME = "Testing Test";
 
-        public const string TENANT_APPLICANT_RAY_TENANT_ID = "87";
-        public const string TENANT_APPLICANT_RAY_USER_ID = "4bb26583-6a79-40c7-8839-508774a9daf8";
+        public const string TENANT_APPLICANT_RAY_TENANT_ID = "153";
+        public const string TENANT_APPLICANT_RAY_USER_ID = "dc996051-30d9-4960-8660-2fc99f650549";
 
-        public const string TENANT_OCCUPANT_LIZA_TENANT_ID = "90";
-        public const string TENANT_OCCUPANT_LIZA_USER_ID = "74af5e76-4590-44b4-9a24-72cae8aa7201";
+        public const string TENANT_OCCUPANT_LIZA_TENANT_ID = "156";
+        public const string TENANT_OCCUPANT_LIZA_USER_ID = "8fef0101-e209-4227-9bde-a5fd1d205d09";
 
-        public const string TENANT_OCCUPANT_ALFRED_TENANT_ID = "102";
-        public const string TENANT_OCCUPANT_ALFRED_USER_ID = "1e037059-0fd0-43d8-b972-167a7351c4e1";
+        public const string TENANT_OCCUPANT_ALFRED_TENANT_ID = "155";
+        public const string TENANT_OCCUPANT_ALFRED_USER_ID = "31f14a24-ac0a-4d7c-a3b3-41277a44d860";
 
-        public const string TENANT_GUARANTOR_JIMMY_TENANT_ID = "88";
-        public const string TENANT_GUARANTOR_JIMMY_USER_ID = "ca977e7a-726f-4bbf-b5a9-1506d4c57469";
+        public const string TENANT_GUARANTOR_JIMMY_TENANT_ID = "154";
+        public const string TENANT_GUARANTOR_JIMMY_USER_ID = "283d4524-1ba6-4860-952c-350c70be47aa";
     }
 
     public class DBTestDataForTenantMarketplaceThree
@@ -120,25 +120,25 @@ namespace CazamioProject.DBHelpers
         public const string MARKETPLACE_ADMIN_FIRST_NAME = "Chui";
         public const string MARKETPLACE_ADMIN_LAST_NAME = "Chubaka";
 
-        public const string BROKER_MARTIN_MACFLY_ID = "de0e57c0-6b1d-4f43-8640-f5592382c8be";
-        public const string BROKER_MARTIN_MACFLY_LANDLORD_ID = "31";
+        public const string BROKER_MARTIN_MACFLY_ID = "fd05b9e1-e219-4b56-962f-1b0b1b54c443";
+        public const string BROKER_MARTIN_MACFLY_LANDLORD_ID = "53";
         public const string BROKER_FIRST_NAME = "Martin";
 
-        public const string AGENT_TEST_AGENT_ID = "f49afbfa-8834-4e59-991b-7ffbbe07e866";
-        public const string AGENT_TEST_AGENT_BROKER_ID = "49";
+        public const string AGENT_TEST_AGENT_ID = "";
+        public const string AGENT_TEST_AGENT_BROKER_ID = "";
         public const string AGENT_FIRST_NAME = "Test";
 
-        public const string OWNER_AGATA_ID = "de0e57c0-6b1d-4f43-8640-f5592382c8be";
-        public const string OWNER_AGATA_OWNER_ID = "35";
+        public const string OWNER_AGATA_ID = "";
+        public const string OWNER_AGATA_OWNER_ID = "";
         public const string OWNER_AGATA_EMAIL = "owneragata@putsbox.com";
         public const string OWNER_FIRST_NAME = "Agata";
 
-        public const string NEW_BUILDING_NAME = "X creator YODA Marketplace admin 123456789 (%^^&%*%^*)";
+        public const string NEW_BUILDING_NAME = "Creator Yoda assigned to Martin 12345 House Home";
 
         public const string NEW_UNIT_NUMBER = "19";
 
-        public const string BUILDING_NAME = "Creator Martin two";
-        public const string BUILDING_LLC_NAME = "LLC Chudo";
+        public const string BUILDING_NAME = "Creator Yoda assigned to Martin 12345 House Home";
+        public const string BUILDING_LLC_NAME = "LLC Chudo life 888 wonderful";
         public const string BUILDING_ADDRESS = "510 East 11th Street";
         public const string BUILDING_ID = "48";
         public const string UNIT_NUMBER = "22";
