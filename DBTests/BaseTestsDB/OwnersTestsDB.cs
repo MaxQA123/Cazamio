@@ -46,14 +46,8 @@ namespace DBTests.BaseTestsDB
             string ownerIdViaEmail = DBTableOwners.GetIdOwnerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
             Console.WriteLine($"{ownerIdViaEmail} :OwnerId wner via email for owner {nameOwner} from table Owners");
 
-            string ownerIdOwnerViaId = DBTableOwners.GetLastIdNewOwner();
-            Console.WriteLine($"{ownerIdOwnerViaId} :OwnerId owner via id for owner {nameOwner} from table Owners");
-
-            string landlordIdOwnerViaEmail = DBTableOwners.GetLandlordIdOwnerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
-            Console.WriteLine($"{landlordIdOwnerViaEmail} :LandlordId owner via email for owner {nameOwner} from table Owners");
-
-            string landlordIdOwnerViaId = DBTableOwners.GetLastLandlordIdOwnerByIdOwner();
-            Console.WriteLine($"{landlordIdOwnerViaId} :LandlordId owner via id for owner {nameOwner} from table Owners");
+            string lastIdOwner = DBTableOwners.GetLastIdNewOwner();
+            Console.WriteLine($"{lastIdOwner} :OwnerId owner via id for owner {nameOwner} from table Owners");
 
             string marketplaceIdOwnerViaEmail = DBTableOwners.GetMarketplaceIdOwnerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
             Console.WriteLine($"{marketplaceIdOwnerViaEmail} :LandlordId owner via email for owner {nameOwner} from table Owners");
@@ -75,11 +69,8 @@ namespace DBTests.BaseTestsDB
                 Assert.AreEqual(createdByUserIdViaEmail, createdByUserIdViaId);
                 Console.WriteLine($"CreatedByUserId owner via email for owner from table Owners: {createdByUserIdViaEmail} = {createdByUserIdViaId} CreatedByUserId owner via id for owner from table Owners");
 
-                Assert.AreEqual(ownerIdViaEmail, ownerIdOwnerViaId);
-                Console.WriteLine($"OwnerId owner via email for owner from table Owners: {ownerIdViaEmail} = {ownerIdOwnerViaId} OwnerId owner via id for owner from table Owners");
-
-                Assert.AreEqual(landlordIdOwnerViaEmail, landlordIdOwnerViaId);
-                Console.WriteLine($"LandlordId owner via email for owner from table Owners: {landlordIdOwnerViaEmail} = {landlordIdOwnerViaId} LandlordId owner via id for owner from table Owners");
+                Assert.AreEqual(ownerIdViaEmail, lastIdOwner);
+                Console.WriteLine($"Id owner via email for owner from table Owners: {ownerIdViaEmail} = {lastIdOwner} Id owner via id for owner from table Owners");
 
                 Assert.AreEqual(marketplaceIdOwnerViaEmail, marketplaceIdOwnerViaId);
                 Console.WriteLine($"LandlordId owner via email for owner from table Owners: {marketplaceIdOwnerViaEmail} = {marketplaceIdOwnerViaId} LandlordId owner via id for owner from table Owners");

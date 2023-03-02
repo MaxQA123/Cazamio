@@ -54,6 +54,27 @@ namespace CazamioProject.DBHelpers
             return data;
         }
 
+        public static string GetIdByUserId(string userId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT Id FROM Brokers WHERE UserId = @UserId", db);
+                command.Parameters.AddWithValue("@UserId", DbType.String).Value = userId;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
         public static string GetLastMarketplaceIdNewAgentByUserId()
         {
             string data = null;

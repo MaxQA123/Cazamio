@@ -76,10 +76,9 @@ namespace DBTests.BaseTestsDB
         //Comment: The table "LandlordBrokers".
         //Path to cheking's: 
 
-        public void RelatedAgentWithBrokerFromLandlordBrokers()
+        public void Empty()
         {
-            string landlordId = DBTableLandlordBrokers.GetLandlordIdByBrokerId(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
-            Console.WriteLine($"{landlordId} :LanlordId for broker from table LandlordBrokers");
+
         }
 
         [Test]
@@ -104,8 +103,11 @@ namespace DBTests.BaseTestsDB
             string IdAgent = DBTableAspNetUsers.GetIdByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
             Console.WriteLine($"{IdAgent} :Id for broker from table AspNetUsers");
 
-            string brokerIdAgentBrokers = DBTableBrokers.GetLastIdNewAgent();
-            Console.WriteLine($"{brokerIdAgentBrokers} :BrokerId for new agent {firstLastNameAgent} from table Brokers");
+            string lastIdAgent = DBTableBrokers.GetLastIdNewAgent();
+            Console.WriteLine($"{lastIdAgent} :BrokerId for new agent {firstLastNameAgent} from table Brokers");
+
+            string IdAgentByUserId = DBTableBrokers.GetIdByUserId(IdAgent);
+            Console.WriteLine($"{IdAgentByUserId} :BrokerId for new agent {firstLastNameAgent} from table Brokers");
 
             string marketplaceIdAgentAspNetUsers = DBTableAspNetUsers.GetMarketplaceIdAgentByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
             Console.WriteLine($"{marketplaceIdAgentAspNetUsers} :MarketplaceId for agent {firstLastNameAgent} from table AspNetUsers");
@@ -115,12 +117,6 @@ namespace DBTests.BaseTestsDB
 
             string roleIdAgent = DBTableAspNetUserRoles.GetRoleIdNewByUserId(IdAgent);
             Console.WriteLine($"{roleIdAgent} :RoleId for new agent {firstLastNameAgent} from table AspNetUserRoles");
-
-            string brokerdIdNewAgentLandlordBrokers = DBTableLandlordBrokers.GetLastBrokerIdNewAgent();
-            Console.WriteLine($"{brokerdIdNewAgentLandlordBrokers} :BrokerId for new agent {firstLastNameAgent} from table LandlordBrokers");
-
-            string LandlordIdRelatedNewAgent = DBTableLandlordBrokers.GetLandlordIdNewBroker();
-            Console.WriteLine($"{LandlordIdRelatedNewAgent} :LandlordId for new agent {firstLastNameAgent} from table LandlordBrokers");
 
             string roleNameNewAgentAspNetRoles = DBTableAspNetUserRoles.GetRoleNameAgentByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
             Console.WriteLine($"{roleNameNewAgentAspNetRoles} :Name role for new agent {firstLastNameAgent} from table AspNetRoles");
@@ -139,11 +135,8 @@ namespace DBTests.BaseTestsDB
                 Assert.AreEqual(roleIdAgent, DBTestDataGeneral.ID_NAME_ROLE_AGENT);
                 Console.WriteLine($"RoleId a new agent from table AspNetUserRoles: {roleIdAgent} = {DBTestDataGeneral.ID_NAME_ROLE_AGENT} RoleId a new agent ER");
 
-                Assert.AreEqual(brokerIdAgentBrokers, brokerdIdNewAgentLandlordBrokers);
-                Console.WriteLine($"BrokerId a new agent from table Brokers: {brokerIdAgentBrokers} = {brokerdIdNewAgentLandlordBrokers} BrokerId a new agent from table LandlordBrokers");
-
-                Assert.AreEqual(LandlordIdRelatedNewAgent, DBTestDataDBForAdmins.BROKER_MARTIN_MACFLY_LANDLORD_ID);
-                Console.WriteLine($"LandlordId for a new agent from table LandlordBrokers: {LandlordIdRelatedNewAgent} = {DBTestDataDBForAdmins.BROKER_MARTIN_MACFLY_LANDLORD_ID} LandlordId for a new agent from table ER");
+                Assert.AreEqual(lastIdAgent, IdAgentByUserId);
+                Console.WriteLine($"BrokerId a new agent from table Brokers: {lastIdAgent} = {IdAgentByUserId} BrokerId a new agent from table LandlordBrokers");
 
                 Assert.AreEqual(roleNameNewAgentAspNetRoles, DBTestDataGeneral.NAME_ROLE_AGENT);
                 Console.WriteLine($"Name role for new agent AspNetRoles: {roleNameNewAgentAspNetRoles} = {DBTestDataGeneral.NAME_ROLE_AGENT} Name role for new agent ER");
@@ -168,7 +161,7 @@ namespace DBTests.BaseTestsDB
         //Comment: 
         //Path to cheking's: 
 
-        public void Empty()
+        public void EmptyTwo()
         {
             
         }
@@ -192,22 +185,12 @@ namespace DBTests.BaseTestsDB
         {
             string agentName = DBTestDataDBForAdmins.DELETED_AGENT_FIRST_LAST_NAME;
             string tableBrokers = TestDataDBNamesTables.TABLE_NAME_BROKERS;
-            string tableLandlordBrokers = TestDataDBNamesTables.TABLE_NAME_LANDLORD_BROKERS;
 
-            string oneDeletedTableBrokers = DBTableBrokers.GetIsDeletedAgentByEmail(DBTestDataDBForAdmins.DELETED_AGENT_EMAIL);
-            Console.WriteLine($"{oneDeletedTableBrokers} :Displayed 1 for agent {agentName} from table {tableBrokers}");
+            string numberOneIsDeleted = DBTableBrokers.GetIsDeletedAgentByEmail(DBTestDataDBForAdmins.DELETED_AGENT_EMAIL);
+            Console.WriteLine($"{numberOneIsDeleted} :Displayed 1 for agent {agentName} from table {tableBrokers}");
 
-            string oneDeletedTableLandlordBrokers = DBTableLandlordBrokers.GetIsDeletedAgentByEmail(DBTestDataDBForAdmins.DELETED_AGENT_EMAIL);
-            Console.WriteLine($"{oneDeletedTableLandlordBrokers} :Displayed 1 for agent {agentName} from table {tableLandlordBrokers}");
-
-            Assert.Multiple(() =>
-            {
-                Assert.AreEqual(oneDeletedTableBrokers, DBTestDataGeneral.TRUE);
-                Console.WriteLine($"Deleted agent in table Brokers: {oneDeletedTableBrokers} = {DBTestDataGeneral.TRUE} Deleted agent in table {tableBrokers}");
-
-                Assert.AreEqual(oneDeletedTableLandlordBrokers, DBTestDataGeneral.TRUE);
-                Console.WriteLine($"Deleted agent in table LandlordBrokers: {oneDeletedTableLandlordBrokers} = {DBTestDataGeneral.TRUE} Deleted agent in table {tableLandlordBrokers}");
-            });
+            Assert.AreEqual(numberOneIsDeleted, DBTestDataGeneral.TRUE);
+            Console.WriteLine($"Record IsDeleted for agent in table Brokers: {numberOneIsDeleted} = {DBTestDataGeneral.TRUE} Record IsDeleted agent ER");
         }
     }
 }
