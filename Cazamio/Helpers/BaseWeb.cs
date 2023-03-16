@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using NUnit.Framework.Interfaces;
-using PractisingPrivilegesProject.Helpers;
+using CazamioProject.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -13,7 +13,7 @@ namespace BrokerTests
     [TestFixture]
     [AllureNUnit]
 
-    public class Tests : BaseBroker
+    public class TestsBaseWeb : BaseBroker
     {
         [Test]
         [AllureTag("Regression")]
@@ -67,7 +67,7 @@ namespace BrokerTests
             Pages.LogInLandlord
                 .ClickLinkForgotPassword();
             Pages.ResetYourPassword
-                .EnterEmailBrokerForRstPsswrdPg()
+                .EnterEmailBroker()
                 .ClickButtonSendInstructionsRstPsswrdPg()
                 .VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg();
             Pages.JScriptExecutorHelper

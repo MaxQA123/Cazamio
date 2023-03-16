@@ -6,7 +6,7 @@ using CazamioProgect.Helpers;
 using System.IO;
 using System;
 
-namespace PractisingPrivilegesProject.Helpers
+namespace CazamioProject.Helpers
 {
     public class ScreenShotHelper
     {

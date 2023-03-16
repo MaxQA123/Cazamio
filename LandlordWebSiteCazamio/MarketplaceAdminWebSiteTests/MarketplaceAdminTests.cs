@@ -21,28 +21,76 @@ namespace MarketplaceAdminTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
-        [AllureSubSuite("LogInAsLandlord")]
+        [AllureSubSuite("LogIn")]
 
         //Date of publication: 
         //Version\Build:
-        //Willingness for testing: 
-        //This test case is doing checking: 
+        //Willingness for testing: Done.
+        //This test case is doing checking: The successfully LogIn as marketplace admin.
         //Comment: 
 
-        public void LogInMarketplaceAdmin()
+        public void LogIn()
         {
-            //Pages.LogInLandlord
-            //    .EnterEmailPasswordLogInPgAsAdmin()
-            //    .ClickIconShowLogInPg()
-            //    .ClickButtonLetsGoLogInPg();
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
 
-            //string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
-            //string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
-            //Pages.SideBarLandlord
-            //    .VerifyAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+            Pages.SideBarLandlord
+                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
 
-            //WaitUntil.WaitSomeInterval(2000);
+            WaitUntil.WaitSomeInterval(2000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("MarketplaceAdmin")]
+        [AllureSubSuite("LogIn")]
+
+        //Date of publication: 
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: The successfully LogIn as marketplace admin.
+        //Comment: 
+
+        public void ChangePassword()
+        {
+            Pages.LogInLandlord
+                .ClickLinkForgotPassword();
+            Pages.ResetYourPassword
+                .EnterEmailMarketplaceAdmin()
+                .ClickButtonSendInstructionsRstPsswrdPg()
+                .VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg();
+            Pages.JScriptExecutorHelper
+                .OpenNewTab();
+            Browser._Driver.Navigate().GoToUrl(EndPoints.URL_PUTSBOX_EMAIL_STATIC_MARKETPLACE_ADMIN);
+            Pages.PutsBox
+                .ClickButtonBodyHtml()
+                .ClickButtonResetPasswordForAdmin();
+            Pages.ResetYourPassword
+                .EnterNewConfirmPassword()
+                .ClickIconsShowPasswordNewConfirm()
+                .ClickButtonResetPasswordlRstPsswrdPg()
+                .ClickButtonBackToLogInPageRstPsswrdPg();
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+
+            WaitUntil.WaitSomeInterval(2000);
         }
     }
 }

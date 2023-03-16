@@ -16,7 +16,7 @@ namespace CazamioProgect.Helpers
         [Test]
         [AllureTag("Regression")]
         [AllureSeverity(SeverityLevel.critical)]
-        [AllureOwner("Sukharevsky Artem")]
+        [AllureOwner("Perevalov Maksim")]
         [AllureSuite("WebSite")]
         [AllureSubSuite("Client")]
 

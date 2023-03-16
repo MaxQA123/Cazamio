@@ -10,18 +10,26 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage
 {
     public partial class ResetYourPassword
     {
-        [AllureStep("EnterEmailAgentForRstPsswrdPg")]
-        public ResetYourPassword EnterEmailAgentForRstPsswrdPg()
+        [AllureStep("EnterEmailAgent")]
+        public ResetYourPassword EnterEmailAgent()
         {
             InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
 
             return this;
         }
 
-        [AllureStep("EnterEmailBrokerForRstPsswrdPg")]
-        public ResetYourPassword EnterEmailBrokerForRstPsswrdPg()
+        [AllureStep("EnterEmailBroker")]
+        public ResetYourPassword EnterEmailBroker()
         {
             InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
+
+            return this;
+        }
+
+        [AllureStep("EnterEmailMarketplaceAdmin")]
+        public ResetYourPassword EnterEmailMarketplaceAdmin()
+        {
+            InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, TestDataForWebSiteAdmin.EMAIL_MARKETPLACE_ADMIN_CHUI_CHUBAKA);
 
             return this;
         }

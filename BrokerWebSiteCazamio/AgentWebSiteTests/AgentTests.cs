@@ -35,7 +35,7 @@ namespace AgentTests
             Pages.LogInLandlord
                 .ClickLinkForgotPassword();
             Pages.ResetYourPassword
-                .EnterEmailAgentForRstPsswrdPg()
+                .EnterEmailAgent()
                 .ClickButtonSendInstructionsRstPsswrdPg()
                 .VerifyMessageYourPasswordWasSuccessfullySentRstPsswrdPg();
             Pages.JScriptExecutorHelper

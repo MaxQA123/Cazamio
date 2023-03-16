@@ -50,6 +50,24 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
             return this;
         }
 
+        [AllureStep("VerifyMarketplaceAdminUserName")]
+        public SideBarLandlord VerifyMarketplaceAdminUserName(string getUserNameActual, string getUserNameRoleActual)
+        {
+            WaitUntil.WaitSomeInterval(1500);
+            string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_MARKETPLACE_ADMIN_CHUI_CHUBAKA;
+            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_MARKETPLACE_ADMIN;
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(getUserNameExpected, getUserNameActual);
+                Assert.AreEqual(getUserNameRoleExpected, getUserNameRoleActual);
+
+                Console.WriteLine($"First Last name EX: {getUserNameExpected} First Last name AC: {getUserNameActual}");
+                Console.WriteLine($"Name Role EX: {getUserNameRoleExpected} Name Role AC: {getUserNameRoleActual}");
+            });
+            return this;
+        }
+
         [AllureStep("VerifyOnlyAdminUserNameRole")]
         public SideBarLandlord VerifyOnlyAdminUserNameRole(string getUserNameRoleActual)
         {

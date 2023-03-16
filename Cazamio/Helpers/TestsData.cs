@@ -20,6 +20,7 @@ namespace CazamioProgect.Helpers
         public const string URL_PUTSBOX_EMAIL_STATIC_SUPER_ADMIN = "https://putsbox.com/superadmin123/inspect";
         public const string URL_PUTSBOX_EMAIL_STATIC_AGENT = "https://putsbox.com/agent123test/inspect";
         public const string URL_PUTSBOX_EMAIL_STATIC_BROKER = "https://putsbox.com/admin123/inspect";
+        public const string URL_PUTSBOX_EMAIL_STATIC_MARKETPLACE_ADMIN = "https://putsbox.com/marketplace1chui/inspect";
         public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_APPLICANT = "https://putsbox.com/tenantapp123ray/inspect";
         public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_OCCUPANT = "https://putsbox.com/tenantocc123liza/inspect";
         public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_GUARANTOR = "https://putsbox.com/tenantgua123jim/inspect";
@@ -87,6 +88,10 @@ namespace CazamioProgect.Helpers
         public const string MARKETPLACE_SUBDOMAIN = "testlandlord-demo";
 
         public const string USER_NAME_ROLE_OWNER = "Owner";
+
+        public const string EMAIL_MARKETPLACE_ADMIN_CHUI_CHUBAKA = "marketplace1chui@putsbox.com";
+        public const string USER_NAME_MARKETPLACE_ADMIN_CHUI_CHUBAKA = "Chui Chubaka";
+        public const string USER_NAME_ROLE_MARKETPLACE_ADMIN = "Marketplace Admin";
 
         public const string EMAIL_BROKER_MARTIN_MACFLY = "admin123@putsbox.com";
         public const string USER_NAME_BROKER_MARTIN_MACFLY = "Martin Macfly";
