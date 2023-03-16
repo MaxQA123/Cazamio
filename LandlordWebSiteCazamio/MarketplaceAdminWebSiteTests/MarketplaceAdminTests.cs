@@ -83,7 +83,7 @@ namespace MarketplaceAdminTests
                 .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
-
+            
             string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
             string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
