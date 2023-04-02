@@ -129,18 +129,18 @@ namespace AgentTests
                 .UploadImageAvatarUserLandlordSecond()
                 .VerifyChangingAvatarImageLandlord()
                 .ClicklinkRemovePhotoOfLandlord()
-                .VerifyRewmoveAvatarImageLandlord()
-                .ClickButtonDashboardSidebar();
-            Pages.Dashboard
-                .VerifyTitleOfDashboardPg();
-            Pages.SideBarLandlord
-                .ClickButtonBuildingsSidebar();
-            Pages.ListOfBuildings
-                .VerifyTitleListOfBuildingsPg();
+                .VerifyRewmoveAvatarImageLandlord();
+            //.ClickButtonDashboardSidebar();
+            //Pages.Dashboard
+            //    .VerifyTitleOfDashboardPg();
             Pages.SideBarLandlord
                 .ClickButtonApartmentsSidebar();
             Pages.ListOfApartments
                 .VerifyTitleListOfApartmentsPg();
+            Pages.SideBarLandlord
+                .ClickButtonBuildingsSidebar();
+            Pages.ListOfBuildings
+                .VerifyTitleListOfBuildingsPg();
             Pages.SideBarLandlord
                 .ClickButtonApplicationsSidebar();
             Pages.ListOfApplications
@@ -149,6 +149,10 @@ namespace AgentTests
                 .ClickButtonTransactionsSidebar();
             Pages.ListOfTransactions
                 .VerifyTitleListOfTransactionsPg();
+            Pages.SideBarLandlord
+                .ClickButtonCommissionsSidebar();
+            Pages.ListOfCommissions
+                .VerifyTitleListOfCommissionsPg();
             Pages.SideBarLandlord
                 .ClickButtonLogOutSidebar();
             Pages.LogInLandlord

@@ -42,6 +42,8 @@ using CazamioProject.PageObjects.ModalWndwCreateNewOwner;
 using CazamioProject.PageObjects.PaginationPickerPage;
 using CazamioProject.PageObjects.WebSiteLandlordPages.ListOfMarketplaceAdmins;
 using CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage;
+using CazamioProject.PageObjects.WebSiteLandlordPages.ListOfCommissionsPage;
+using CazamioProject.PageObjects.WebSiteLandlordPages.ListOfBrokersPage;
 
 namespace CazamioProgect.PageObjects
 {
@@ -101,6 +103,8 @@ namespace CazamioProgect.PageObjects
         public static ModalWndwCreateNewOwner ModalWndwCreateNewOwner => GetPage<ModalWndwCreateNewOwner>();
         public static PaginationPicker PaginationPicker => GetPage<PaginationPicker>();
         public static MdlWndwCreateANewMarketplaceAdmin MdlWndwCreateANewMarketplaceAdmin => GetPage<MdlWndwCreateANewMarketplaceAdmin>();
+        public static ListOfCommissions ListOfCommissions => GetPage<ListOfCommissions>();
+        public static ListOfBrokers ListOfBrokers => GetPage<ListOfBrokers>();
 
         #endregion
     }

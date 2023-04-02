@@ -167,6 +167,10 @@ namespace BrokerTests
             Pages.ListOfTransactions
                 .VerifyTitleListOfTransactionsPg();
             Pages.SideBarLandlord
+                .ClickButtonCommissionsSidebar();
+            Pages.ListOfCommissions
+                .VerifyTitleListOfCommissionsPg();
+            Pages.SideBarLandlord
                 .ClickButtonAgentsSidebar();
             Pages.Agents
                 .VerifyTitleBrokersPg();

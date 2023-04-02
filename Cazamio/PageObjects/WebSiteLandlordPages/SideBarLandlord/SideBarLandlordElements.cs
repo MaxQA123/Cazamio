@@ -38,6 +38,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
 
         #endregion
 
+        #region ButtonsTabs
+
         [FindsBy(How = How.XPath, Using = "//a[@href= '/dashboard']")]
         public IWebElement ButtonDashboardSidebar;
 
@@ -50,6 +52,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         [FindsBy(How = How.XPath, Using = "//a[@href= '/applications']")]
         public IWebElement ButtonApplicationsSidebar;
 
+        [FindsBy(How = How.XPath, Using = "//a[@href= '/brokers']")]
+        public IWebElement ButtonBrokersSidebar;
+
         [FindsBy(How = How.XPath, Using = "//a[@href= '/pre-approvals']")]
         public IWebElement ButtonPreApprovalsSidebar;
 
@@ -61,6 +66,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
 
         [FindsBy(How = How.XPath, Using = "//a[@href= '/transactions']")]
         public IWebElement ButtonTransactionsSidebar;
+
+        [FindsBy(How = How.XPath, Using = "//a[@href= '/commissions']")]
+        public IWebElement ButtonCommissionsSidebar;
 
         [FindsBy(How = How.XPath, Using = "//a[@href = '/agents']")]
         public IWebElement ButtonAgentsSidebar;
@@ -76,5 +84,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
 
         [FindsBy(How = How.XPath, Using = "//a[@href= '/administrator/marketplace-admins-list']")]
         public IWebElement ButtonMarketplaceAdminsSidebar;
+
+        #endregion
     }
 }

@@ -120,6 +120,16 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
             return this;
         }
 
+        [AllureStep("ClickButtonBrokersSidebar")]
+        public SideBarLandlord ClickButtonBrokersSidebar()
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            Button.Click(ButtonBrokersSidebar);
+            WaitUntil.WaitSomeInterval(1000);
+
+            return this;
+        }
+
         [AllureStep("ClickButtonPreApprovalsSidebar")]
         public SideBarLandlord ClickButtonPreApprovalsSidebar()
         {
@@ -171,6 +181,18 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
             ButtonTransactionsSidebar.SendKeys("");
             WaitUntil.WaitSomeInterval(500);
             Button.Click(ButtonTransactionsSidebar);
+            WaitUntil.WaitSomeInterval(1000);
+
+            return this;
+        }
+
+        [AllureStep("ClickButtonCommissionsSidebar")]
+        public SideBarLandlord ClickButtonCommissionsSidebar()
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            ButtonCommissionsSidebar.SendKeys("");
+            WaitUntil.WaitSomeInterval(500);
+            Button.Click(ButtonCommissionsSidebar);
             WaitUntil.WaitSomeInterval(1000);
 
             return this;
