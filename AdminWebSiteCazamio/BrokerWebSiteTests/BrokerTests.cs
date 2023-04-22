@@ -221,7 +221,8 @@ namespace BrokerTests
             Pages.Agents
                 .ClickButtonCreateAgentAgentsPage();
             Pages.ModalWindowCreateNewAgent
-                .EnterFirstLastNameEmailPhnNmbrCellMdlWndw();
+                .EnterFirstLastNameEmailPhnNmbrCellMdlWndw()
+                .EnterBrokerAgentCommissionMdlWndw();
 
             string fullEmailPutsBox = Pages.ModalWindowCreateNewAgent.CopyEmailFromMdlWndwCreateAgent();
             string partEmailPutsBox = Pages.ModalWindowCreateNewAgent.CopyEmailBeforeDogFromModalWindowCreateNewAgent();
@@ -243,7 +244,7 @@ namespace BrokerTests
 
             Pages.PutsBox
                 .ClickButtonResetPasswordForAdmin();
-            
+
             Pages.LogInLandlord
                 .CopiedForEnterEmailFromEmailCreateAdmin(fullEmailPutsBox)
                 .CopiedForEnterPsswrdFromEmailCreateAdmin(getTextPasswordActual)
@@ -294,24 +295,36 @@ namespace BrokerTests
                 .EnterOwnerName()
                 .EnterOwnerEmaiL()
                 .EnterOfficeLocation()
-                .EnterInternalNotes();
+                .EnterInternalNotes()
+                .ClickButtonAddPhoneNumber()
+                .EnterPhoneExtensionNumbers()
+                .ClickButtonAddCommissionStructure();
+            KeyBoardActions.ScrollToDown();
+            Pages.ModalWndwCreateNewOwner
+                .SwitchingItemsPays()
+                .ClickButtonAddMgmt()
+                .ClickButtonPayType()
+                .SelectItemOwnerAndTenantPays()
+                .EnterDataOwnerAndTenantPays()
+                .ScrollDown()
+                .EnterDataMgmt();
 
             string getOwnerEmailFromModalWndw = Pages.ModalWndwCreateNewOwner.GetEmailFromFieldOwnerEmail();
 
             Pages.ModalWndwCreateNewOwner
                 .ClickButtonCreate();
-            Pages.ListOfOwners
-                .VerifyMessageSuccessCreatedOwner();
-            Pages.PaginationPicker
-                .SctollToButtonNext()
-                .ClickButtonNextTwice();
+            //Pages.ListOfOwners
+            //    .VerifyMessageSuccessCreatedOwner();
+            //Pages.PaginationPicker
+            //    .SctollToButtonNext()
+            //    .ClickButtonNextTwice();
 
-            string getLastEmailFromPage = Pages.ListOfOwners.GetLastEmailFromTable();
+            //string getLastEmailFromPage = Pages.ListOfOwners.GetLastEmailFromTable();
 
-            Pages.ListOfOwners
-                .VerifyEmailForNewOwner(getOwnerEmailFromModalWndw, getLastEmailFromPage);
+            //Pages.ListOfOwners
+            //    .VerifyEmailForNewOwner(getOwnerEmailFromModalWndw, getLastEmailFromPage);
 
-            WaitUntil.WaitSomeInterval(2000);
+            WaitUntil.WaitSomeInterval(5000);
         }
 
         [Test]

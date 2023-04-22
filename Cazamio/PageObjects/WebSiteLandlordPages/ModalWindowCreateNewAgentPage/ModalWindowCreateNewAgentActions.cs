@@ -25,6 +25,15 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewAg
             return this;
         }
 
+        [AllureStep("EnterBrokerAgentCommissionMdlWndw")]
+        public ModalWindowCreateNewAgent EnterBrokerAgentCommissionMdlWndw()
+        {
+            InputGeneral.InputFunctionWithClear(FieldInputBrokerCommissionMdlwndw, GenerateRandomDataHelper.RandomNumber(12));
+            InputGeneral.InputFunctionWithClear(FieldInputAgentCommissionMdlwndw, GenerateRandomDataHelper.RandomNumber(12));
+
+            return this;
+        }
+
         [AllureStep("CopyEmailFromMdlWndwCreateAgent")]
         public string CopyEmailFromMdlWndwCreateAgent()
         {

@@ -25,6 +25,12 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewAg
         [FindsBy(How = How.XPath, Using = "//input[@id = 'cell']")]
         public IWebElement FieldInputCellCrtNwBrkrOnMdlwndw;
 
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'broker-commission']")]
+        public IWebElement FieldInputBrokerCommissionMdlwndw;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'agent-commission']")]
+        public IWebElement FieldInputAgentCommissionMdlwndw;
+
         [FindsBy(How = How.XPath, Using = "//button[@class= 'middle primary-action absolute-loader ng-star-inserted']")]
         public IWebElement ButtonSaveCrtNwBrkrOnMdlwndw;
 
