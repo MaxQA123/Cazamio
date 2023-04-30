@@ -219,6 +219,11 @@ namespace MarketplaceAdminTests
 
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+            Pages.SideBarLandlord
+                .ClickButtonBrokersSidebar();
+            Pages.ListOfBrokers
+                .VerifyTitleListOfBrokersPg()
+                .ClickButtonCreateBroker();
 
             WaitUntil.WaitSomeInterval(2000);
         }

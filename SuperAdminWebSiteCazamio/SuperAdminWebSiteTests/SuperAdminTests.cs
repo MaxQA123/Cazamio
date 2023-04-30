@@ -17,75 +17,6 @@ namespace SuperAdminTests
 
     public class SuperAdminTests : BaseSuperAdmin
     {
-        [Test]
-        [AllureTag("Regression")]
-        [AllureOwner("Maksim Perevalov")]
-        [AllureSeverity(SeverityLevel.critical)]
-        [Retry(2)]
-        [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("SuperAdmin")]
-        [AllureSubSuite("CreateNewAdmin")]
-
-        //Date of publication: 
-        //Version\Build:
-        //Willingness for testing: in progress
-        //This test case is doing checking: The successfully create a new admin in the role super admin.
-        //Comment: 
-
-        public void CreateNewAdmin()
-        {
-            Pages.LogInLandlord
-                .EnterEmailPasswordLogInPgAsSuperAdmin()
-                .ClickIconShowLogInPg()
-                .ClickButtonLetsGoLogInPg();
-
-            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
-            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
-
-            Pages.SideBarLandlord
-                .VerifySuperAdminUserName(getUserNameCompare, getUserNameRoleCompare)
-                .ClickButtonMarketplaceAdminsSidebar();
-            Pages.ListOfMarketplaceAdmins
-                .VerifyTitleListOfMarketplaceAdmins()
-                .ClickButtonCreateMarketplaceAdmin();
-            Pages.ModalWndwCreateNewLandlord
-                .VerifyTitleMdlWndwCreateNewLandlord()
-                .FillMandatoryFields()
-                .VerifyNameHostMarketplaceSubdomainMdlWndwCrtNwLndlrd();
-
-            string fullEmailPutsBox = Pages.ModalWndwCreateNewLandlord.CopyFullEmailFromMdlWndwCreateNewLandlord();
-            string partEmailPutsBox = Pages.ModalWndwCreateNewLandlord.CopyEmailBeforeDogFromMdlWndwCreateNewLandlord();
-
-            Pages.ModalWndwCreateNewLandlord
-                .ClickButtonCreateMdlWndwCrtNwLndlrd()
-                .VerifyMessageLandlordHasBeenSuccessfullyCreated();
-            Pages.SideBarLandlord
-                .ClickButtonLogOutSidebar();
-
-            Pages.JScriptExecutorHelper
-                .OpenNewTab();
-            Browser._Driver.Navigate().GoToUrl(($"https://putsbox.com/{partEmailPutsBox}/inspect"));
-            Pages.PutsBox
-                .VerifyTitleLetterCreateAdmin()
-                .ClickButtonBodyHtml();
-
-            string getTextPasswordActual = Pages.PutsBox.CopyPasswordFromEmailForCreateAdmin();
-
-            Pages.PutsBox
-                .ClickButtonResetPasswordForAdmin();
-            Pages.LogInLandlord
-                .CopiedForEnterEmailFromEmailCreateAdmin(fullEmailPutsBox)
-                .CopiedForEnterPsswrdFromEmailCreateAdmin(getTextPasswordActual)
-                .ClickIconShowLogInPg()
-                .ClickButtonLetsGoLogInPg();
-
-            string getUserNameRoleCompareAdmin = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
-
-            Pages.SideBarLandlord
-                .VerifyOnlyAdminUserNameRole(getUserNameRoleCompareAdmin);
-
-            WaitUntil.WaitSomeInterval(2000);
-        }
 
         [Test]
         [AllureTag("Regression")]
@@ -129,8 +60,8 @@ namespace SuperAdminTests
 
         //Date of publication: 
         //Version\Build:
-        //Willingness for testing: in progress
-        //This test case is doing checking: The successfully create a new broker.
+        //Willingness for testing: DONE
+        //This test case is doing checking: The successfully created a new Marketplace Admin.
         //Comment: 
 
         public void CreateMarketplaceAdmin()
@@ -154,7 +85,8 @@ namespace SuperAdminTests
                 .FillInMandatoryFields()
                 .VerifyNameHostMarketplaceSubdomain();
 
-            string getAdminEmailFromModalWndw = Pages.MdlWndwCreateANewMarketplaceAdmin.GetEmailFromFieldInputEmail();
+            string fullEmailPutsBox = Pages.MdlWndwCreateANewMarketplaceAdmin.GetEmailFromFieldInputEmail();
+            string partEmailPutsBox = Pages.MdlWndwCreateANewMarketplaceAdmin.CopyEmailBeforeDogFromFieldInputEmail();
 
             Pages.MdlWndwCreateANewMarketplaceAdmin
                 .ClickButtonCreate();
@@ -162,9 +94,32 @@ namespace SuperAdminTests
                 .VerifyMessageMarketplaceAdminHasBeenSuccessfullyCreated();
             Pages.PaginationPicker
                 .SctollToButtonNext()
-                .ClickButtonNextOnce();
+                .ClickButtonLastNumberPage();
 
-            string getLastEmailFromPage = Pages.ListOfMarketplaceAdmins.GetLastEmailFromTable();
+            Pages.SideBarLandlord
+                .ClickButtonLogOutSidebar();
+            Pages.JScriptExecutorHelper
+                .OpenNewTab()
+                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, partEmailPutsBox);
+            Pages.PutsBox
+                .VerifyTitleLetterCreateBroker()
+                .ClickButtonBodyHtml();
+
+            string getTextPasswordActual = Pages.PutsBox.CopyPasswordFromEmailForCreateAdmin();
+
+            Pages.PutsBox
+                .ClickButtonConfirmEmailForAdmin();
+
+            Pages.LogInLandlord
+                .CopiedForEnterEmailFromEmailCreateAdmin(fullEmailPutsBox)
+                .CopiedForEnterPsswrdFromEmailCreateAdmin(getTextPasswordActual)
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameRoleCompareBroker = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyMarketplaceAdminUserNameRole(getUserNameRoleCompareBroker);
 
             WaitUntil.WaitSomeInterval(2000);
         }

@@ -13,20 +13,20 @@ namespace CazamioProject.PageObjects.PaginationPickerPage
     {
         private static IWebElement _element;
 
-        [AllureStep("SelectorNumberPage")]
-        public static IList<IWebElement> SelectorNumberPage(string _locationButton)
+        [AllureStep("SelectorNumberPageListOfMarketplaceAdmins")]
+        public static IList<IWebElement> SelectorNumberPageListOfMarketplaceAdmins(string _locationButton)
         {
             WaitUntil.WaitSomeInterval(1000);
-            var str = "//ul[@aria-label = 'Pagination']";
+            var str = "//ul[@role= 'navigation']";
             _element = Browser._Driver.FindElement(By.XPath(str));
             return _element.FindElements(By.XPath($".//li//a[contains(@tabindex, '{_locationButton}]')]"));
         }
 
         [AllureStep("SelectNumberPage")]
-        public PaginationPicker SelectNumberPage(int page, string locationPage)
+        public PaginationPicker SelectorNumberPageListOfMarketplaceAdmins(int page, string locationPage)
         {
             WaitUntil.WaitSomeInterval(500);
-            IList<IWebElement> _page = SelectorNumberPage(locationPage);
+            IList<IWebElement> _page = SelectorNumberPageListOfMarketplaceAdmins(locationPage);
 
             _page[page].Click();
 
@@ -38,6 +38,15 @@ namespace CazamioProject.PageObjects.PaginationPickerPage
         {
             WaitUntil.WaitSomeInterval(1000);
             ScrollingJScriptExecutorHelper.ScrollToElement(ButtonNext);
+
+            return this;
+        }
+
+        [AllureStep("ClickButtonLastNumberPage")]
+        public PaginationPicker ClickButtonLastNumberPage()
+        {
+            WaitUntil.WaitSomeInterval(250);
+            Button.Click(ButtonLastNumberPage);
 
             return this;
         }
@@ -54,6 +63,19 @@ namespace CazamioProject.PageObjects.PaginationPickerPage
         [AllureStep("ClickButtonNextTwice")]
         public PaginationPicker ClickButtonNextTwice()
         {
+            WaitUntil.WaitSomeInterval(250);
+            Button.Click(ButtonNext);
+            WaitUntil.WaitSomeInterval(250);
+            Button.Click(ButtonNext);
+
+            return this;
+        }
+
+        [AllureStep("ClickButtonNextThree")]
+        public PaginationPicker ClickButtonNextThree()
+        {
+            WaitUntil.WaitSomeInterval(250);
+            Button.Click(ButtonNext);
             WaitUntil.WaitSomeInterval(250);
             Button.Click(ButtonNext);
             WaitUntil.WaitSomeInterval(250);

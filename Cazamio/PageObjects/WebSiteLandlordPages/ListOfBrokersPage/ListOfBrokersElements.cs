@@ -13,5 +13,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ListOfBrokersPage
         [FindsBy(How = How.XPath, Using = ("//div[text()= 'List of brokers']"))]
         public IWebElement TitleListOfBrokers;
 
+        [FindsBy(How = How.XPath, Using = ("//span[text() = 'Create Broker']"))]
+        public IWebElement ButtonCreateBroker;
+
     }
 }

@@ -243,7 +243,7 @@ namespace BrokerTests
             string getTextPasswordActual = Pages.PutsBox.CopyPasswordFromEmailForCreateAdmin();
 
             Pages.PutsBox
-                .ClickButtonResetPasswordForAdmin();
+                .ClickButtonConfirmEmailForAdmin();
 
             Pages.LogInLandlord
                 .CopiedForEnterEmailFromEmailCreateAdmin(fullEmailPutsBox)

@@ -299,4 +299,13 @@ namespace CazamioProgect.Helpers
         public const int apartmentCardFour = 3;
         public const int apartmentCardFive = 4;
     }
+
+    public class PaginationListOfMarketplaceAdminsPage
+    {
+        public const int PAGE_TWO = 0;
+        public const int PAGE_THREE = 1;
+        public const int PAGE_FOUR = 2;
+        public const int PAGE_FIVE = 3;
+        public const int PAGE_SIX = 4;
+    }
 }

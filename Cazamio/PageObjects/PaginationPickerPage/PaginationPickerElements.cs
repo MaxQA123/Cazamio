@@ -12,5 +12,8 @@ namespace CazamioProject.PageObjects.PaginationPickerPage
     {
         [FindsBy(How = How.XPath, Using = "//ul[@aria-label = 'Pagination']//li[@class = 'pagination-next']")]
         public IWebElement ButtonNext;
+
+        [FindsBy(How = How.XPath, Using = "//ul[@role= 'navigation']//li[last()-1]")]
+        public IWebElement ButtonLastNumberPage;
     }
 }

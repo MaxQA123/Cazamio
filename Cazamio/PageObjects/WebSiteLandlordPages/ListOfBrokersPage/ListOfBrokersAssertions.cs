@@ -14,7 +14,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ListOfBrokersPage
         [AllureStep("VerifyTitleListOfBrokersPg")]
         public ListOfBrokers VerifyTitleListOfBrokersPg()
         {
-            WaitUntil.WaitSomeInterval(1000);
+            WaitUntil.CustomElementIsVisible(TitleListOfBrokers);
             Assert.IsTrue(Successfully.IsVisible(TitleListOfBrokers));
 
             return this;
