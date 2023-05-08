@@ -111,8 +111,8 @@ namespace SuperAdminTests
                 .ClickButtonConfirmEmailForAdmin();
 
             Pages.LogInLandlord
-                .CopiedForEnterEmailFromEmailCreateAdmin(fullEmailPutsBox)
-                .CopiedForEnterPsswrdFromEmailCreateAdmin(getTextPasswordActual)
+                .PasteForEnterEmailFromEmailCreateAdmin(fullEmailPutsBox)
+                .PasteForEnterPsswrdFromEmailCreateAdmin(getTextPasswordActual)
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 

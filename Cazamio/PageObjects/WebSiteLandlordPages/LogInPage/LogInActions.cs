@@ -131,8 +131,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
             return this;
         }
 
-        [AllureStep("CopiedForEnterEmailFromEmailCreateAdmin")]
-        public LogInLandlord CopiedForEnterEmailFromEmailCreateAdmin(string _email)
+        [AllureStep("PasteForEnterEmailFromEmailCreateAdmin")]
+        public LogInLandlord PasteForEnterEmailFromEmailCreateAdmin(string _email)
         {
             WaitUntil.WaitSomeInterval(1000);
             List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
@@ -143,8 +143,32 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
             return this;
         }
 
-        [AllureStep("CopiedForEnterPsswrdFromEmailCreateAdmin")]
-        public LogInLandlord CopiedForEnterPsswrdFromEmailCreateAdmin(string code)
+        [AllureStep("PasteForEnterPsswrdFromEmailCreateAdmin")]
+        public LogInLandlord PasteForEnterPsswrdFromEmailCreateAdmin(string code)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
+            Browser._Driver.SwitchTo().Window(tabsList[3]);
+            WaitUntil.WaitSomeInterval(1000);
+            FieldInputPasswordLogInPg.SendKeys(code);
+
+            return this;
+        }
+
+        [AllureStep("PasteForEnterEmailFromEmailCreateAgent")]
+        public LogInLandlord PasteForEnterEmailFromEmailCreateAgent(string _email)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
+            Browser._Driver.SwitchTo().Window(tabsList[3]);
+            WaitUntil.WaitSomeInterval(1000);
+            FieldInputEmailLogInPg.SendKeys(_email);
+
+            return this;
+        }
+
+        [AllureStep("PasteForEnterPsswrdFromEmailCreateAgent")]
+        public LogInLandlord PasteForEnterPsswrdFromEmailCreateAgent(string code)
         {
             WaitUntil.WaitSomeInterval(1000);
             List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);

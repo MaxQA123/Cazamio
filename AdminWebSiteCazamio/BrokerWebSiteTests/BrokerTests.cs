@@ -246,8 +246,8 @@ namespace BrokerTests
                 .ClickButtonConfirmEmailForAdmin();
 
             Pages.LogInLandlord
-                .CopiedForEnterEmailFromEmailCreateAdmin(fullEmailPutsBox)
-                .CopiedForEnterPsswrdFromEmailCreateAdmin(getTextPasswordActual)
+                .PasteForEnterEmailFromEmailCreateAgent(fullEmailPutsBox)
+                .PasteForEnterPsswrdFromEmailCreateAgent(getTextPasswordActual)
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
