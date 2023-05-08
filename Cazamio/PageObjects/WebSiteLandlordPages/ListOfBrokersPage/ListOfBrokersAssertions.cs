@@ -19,5 +19,14 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ListOfBrokersPage
 
             return this;
         }
+
+        [AllureStep("VerifyMessageBrokerHasBeenSuccessfullyCreated")]
+        public ListOfBrokers VerifyMessageBrokerHasBeenSuccessfullyCreated()
+        {
+            WaitUntil.CustomElementIsVisible(MessageBrokerHasBeenSuccessfullyCreated);
+            Assert.IsTrue(Successfully.IsVisible(MessageBrokerHasBeenSuccessfullyCreated));
+
+            return this;
+        }
     }
 }

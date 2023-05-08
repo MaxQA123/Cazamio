@@ -224,6 +224,17 @@ namespace MarketplaceAdminTests
             Pages.ListOfBrokers
                 .VerifyTitleListOfBrokersPg()
                 .ClickButtonCreateBroker();
+            Pages.ModalWindowCreateNewBroker
+                .VerifyTitleCreateNewBroker()
+                .EnterFirstLastNamesEmail()
+                .ClickButtonCreateMdlWndwCrtNwBrkr();
+            Pages.ListOfBrokers
+                .VerifyMessageBrokerHasBeenSuccessfullyCreated();
+
+
+
+            Pages.PaginationPicker
+                .ClickButtonNextOnce();
 
             WaitUntil.WaitSomeInterval(2000);
         }

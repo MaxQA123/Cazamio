@@ -16,5 +16,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ListOfBrokersPage
         [FindsBy(How = How.XPath, Using = ("//span[text() = 'Create Broker']"))]
         public IWebElement ButtonCreateBroker;
 
+        [FindsBy(How = How.XPath, Using = "//span[text() = 'Broker has been successfully created']")]
+        public IWebElement MessageBrokerHasBeenSuccessfullyCreated;
     }
 }
