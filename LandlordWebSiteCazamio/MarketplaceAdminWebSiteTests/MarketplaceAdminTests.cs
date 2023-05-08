@@ -203,7 +203,7 @@ namespace MarketplaceAdminTests
 
         //Date of publication: 
         //Version\Build:
-        //Willingness for testing: In Progress.
+        //Willingness for testing: Done.
         //This test case is doing checking: The successfully created a "Broker" as marketplace admin.
         //Comment: 
 
@@ -226,15 +226,46 @@ namespace MarketplaceAdminTests
                 .ClickButtonCreateBroker();
             Pages.ModalWindowCreateNewBroker
                 .VerifyTitleCreateNewBroker()
-                .EnterFirstLastNamesEmail()
+                .EnterFirstLastNamesEmail();
+
+            string getFullEmail = Pages.ModalWindowCreateNewBroker.CopyEmailFromModalWindowCreateNewBroker();
+            string getEmailBeforeDog = Pages.ModalWindowCreateNewBroker.CopyEmailBeforeDogFromModalWindowCreateNewBroker();
+
+            Pages.ModalWindowCreateNewBroker
                 .ClickButtonCreateMdlWndwCrtNwBrkr();
             Pages.ListOfBrokers
                 .VerifyMessageBrokerHasBeenSuccessfullyCreated();
-
-
-
             Pages.PaginationPicker
                 .ClickButtonNextOnce();
+
+            string getEmailFromListOfBrokers = Pages.ListOfBrokers.CopyEmailLastRecordEmailForLastBrokerInList();
+
+            Pages.ListOfBrokers
+                .VerifyEmailInListOfBrokers(getFullEmail, getEmailFromListOfBrokers);
+            Pages.SideBarLandlord
+                .ClickButtonLogOutSidebar();
+            Pages.JScriptExecutorHelper
+               .OpenNewTab()
+               .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, getEmailBeforeDog);
+            Pages.PutsBox
+                .VerifyTitleLetterCreateBroker()
+                .ClickButtonBodyHtml();
+
+            string getTextPasswordActual = Pages.PutsBox.CopyPasswordFromEmailForCreateAdmin();
+
+            Pages.PutsBox
+                .ClickButtonConfirmEmailForAdmin();
+
+            Pages.LogInLandlord
+                .PasteForEnterEmailFromEmailCreateBroker(getFullEmail)
+                .PasteForEnterPsswrdFromEmailCreateBroker(getTextPasswordActual)
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameRoleCompareBroker = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyOnlyBrokerUserNameRole(getUserNameRoleCompareBroker);
 
             WaitUntil.WaitSomeInterval(2000);
         }

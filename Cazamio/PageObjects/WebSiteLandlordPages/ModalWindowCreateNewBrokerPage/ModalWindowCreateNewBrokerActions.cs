@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage
@@ -14,9 +15,9 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBr
         [AllureStep("EnterFirstLastNamesEmail")]
         public ModalWindowCreateNewBroker EnterFirstLastNamesEmail()
         {
-            InputGeneral.InputFunctionWithClear(InputFieldFirstName, Name.FirstName());
-            InputGeneral.InputFunctionWithClear(InputFieldLastName, Name.LastName());
-            InputGeneral.InputFunctionWithClear(InputFieldEmail, GenerateRandomDataHelper.RandomEmail(5) + GenerateRandomDataHelper.RandomNumber(3) + GenerateRandomDataHelper.RandomEmail(2) + NameDomen.PUTS_BOX);
+            InputGeneral.InputFunctionWithClear(FieldInputFirstName, Name.FirstName());
+            InputGeneral.InputFunctionWithClear(FieldInputLastName, Name.LastName());
+            InputGeneral.InputFunctionWithClear(FieldInputEmail, GenerateRandomDataHelper.RandomEmail(5) + GenerateRandomDataHelper.RandomNumber(3) + GenerateRandomDataHelper.RandomEmail(2) + NameDomen.PUTS_BOX);
 
             return this;
         }
@@ -27,6 +28,27 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBr
             Button.Click(ButtonCreate);
 
             return this;
+        }
+
+        [AllureStep("CopyEmailFromModalWindowCreateNewBroker")]
+        public string CopyEmailFromModalWindowCreateNewBroker()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            string copyEmail = FieldInputEmail.GetAttribute("value");
+            string copyEmailActual = copyEmail.ToString();
+
+            return copyEmailActual;
+        }
+
+        [AllureStep("CopyEmailBeforeDogFromModalWindowCreateNewBroker")]
+        public string CopyEmailBeforeDogFromModalWindowCreateNewBroker()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            string copyPartEmail = FieldInputEmail.GetAttribute("value");
+            Regex regexPartEmail = new Regex(@"^..........");
+            string partEmail = regexPartEmail.Match(copyPartEmail).ToString();
+
+            return partEmail;
         }
     }
 }

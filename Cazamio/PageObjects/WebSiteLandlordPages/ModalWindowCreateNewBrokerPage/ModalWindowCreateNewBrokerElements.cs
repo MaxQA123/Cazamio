@@ -14,13 +14,13 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBr
         public IWebElement TitleCreateNewBroker;
 
         [FindsBy(How = How.XPath, Using = "//input[@id = 'first-name']")]
-        public IWebElement InputFieldFirstName;
+        public IWebElement FieldInputFirstName;
 
         [FindsBy(How = How.XPath, Using = "//input[@id = 'last-name']")]
-        public IWebElement InputFieldLastName;
+        public IWebElement FieldInputLastName;
 
         [FindsBy(How = How.XPath, Using = "//input[@id = 'email']")]
-        public IWebElement InputFieldEmail;
+        public IWebElement FieldInputEmail;
 
         [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Create']")]
         public IWebElement ButtonCreate;

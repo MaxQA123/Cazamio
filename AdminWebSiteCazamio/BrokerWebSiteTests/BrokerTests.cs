@@ -251,10 +251,10 @@ namespace BrokerTests
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
-            string getUserNameRoleCompareBroker = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+            string getUserNameRoleCompareAgent = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyOnlyAgentUserNameRole(getUserNameRoleCompareBroker);
+                .VerifyOnlyAgentUserNameRole(getUserNameRoleCompareAgent);
 
             WaitUntil.WaitSomeInterval(2000);
         }

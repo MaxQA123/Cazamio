@@ -28,5 +28,16 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ListOfBrokersPage
 
             return this;
         }
+
+        [AllureStep("VerifyEmailInListOfBrokers")]
+        public ListOfBrokers VerifyEmailInListOfBrokers(string getFullEmail, string getEmailFromListOfBrokers)
+        {
+            WaitUntil.WaitSomeInterval(500);
+            Assert.AreEqual(getFullEmail, getEmailFromListOfBrokers);
+
+            Console.WriteLine($"Email a new broker: {getFullEmail}");
+
+            return this;
+        }
     }
 }

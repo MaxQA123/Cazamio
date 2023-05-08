@@ -107,24 +107,24 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
             return this;
         }
 
-        [AllureStep("CopiedForEnterPsswrdFromEmailCreateBroker")]
-        public LogInLandlord CopiedForEnterPsswrdFromEmailCreateBroker(string code)
+        [AllureStep("PasteForEnterPsswrdFromEmailCreateBroker")]
+        public LogInLandlord PasteForEnterPsswrdFromEmailCreateBroker(string code)
         {
             WaitUntil.WaitSomeInterval(1000);
             List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
-            Browser._Driver.SwitchTo().Window(tabsList[2]);
+            Browser._Driver.SwitchTo().Window(tabsList[3]);
             WaitUntil.WaitSomeInterval(1000);
             FieldInputPasswordLogInPg.SendKeys(code);
 
             return this;
         }
 
-        [AllureStep("CopiedForEnterEmailFromEmailCreateBroker")]
-        public LogInLandlord CopiedForEnterEmailFromEmailCreateBroker(string _email)
+        [AllureStep("PasteForEnterEmailFromEmailCreateBroker")]
+        public LogInLandlord PasteForEnterEmailFromEmailCreateBroker(string _email)
         {
             WaitUntil.WaitSomeInterval(1000);
             List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
-            Browser._Driver.SwitchTo().Window(tabsList[2]);
+            Browser._Driver.SwitchTo().Window(tabsList[3]);
             WaitUntil.WaitSomeInterval(1000);
             FieldInputEmailLogInPg.SendKeys(_email);
 
