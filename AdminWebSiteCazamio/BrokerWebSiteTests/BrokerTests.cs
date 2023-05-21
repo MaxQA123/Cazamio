@@ -313,16 +313,16 @@ namespace BrokerTests
 
             Pages.ModalWndwCreateNewOwner
                 .ClickButtonCreate();
-            //Pages.ListOfOwners
-            //    .VerifyMessageSuccessCreatedOwner();
-            //Pages.PaginationPicker
-            //    .SctollToButtonNext()
-            //    .ClickButtonNextTwice();
+            Pages.ListOfOwners
+                .VerifyMessageSuccessCreatedOwner();
+            Pages.PaginationPicker
+                .SctollToButtonNext()
+                .ClickButtonLastNumberPage();
 
-            //string getLastEmailFromPage = Pages.ListOfOwners.GetLastEmailFromTable();
+            string getLastEmailFromPage = Pages.ListOfOwners.GetLastEmailFromTable();
 
-            //Pages.ListOfOwners
-            //    .VerifyEmailForNewOwner(getOwnerEmailFromModalWndw, getLastEmailFromPage);
+            Pages.ListOfOwners
+                .VerifyEmailForNewOwner(getOwnerEmailFromModalWndw, getLastEmailFromPage);
 
             WaitUntil.WaitSomeInterval(5000);
         }

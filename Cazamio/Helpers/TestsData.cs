@@ -97,7 +97,7 @@ namespace CazamioProgect.Helpers
         public const string USER_NAME_BROKER_MARTIN_MACFLY = "Martin Macfly";
         public const string USER_NAME_ROLE_BROKER = "Broker";
 
-        public const string EMAIL_SUPER_ADMIN_SUPER = "superadmin123@putsbox.com";
+        public const string EMAIL_SUPER_ADMIN = "superadmin123@putsbox.com";
         public const string USER_NAME_SUPER_ADMIN = "Super User";
         public const string USER_NAME_ROLE_SUPER_ADMIN = "Super Admin";
 

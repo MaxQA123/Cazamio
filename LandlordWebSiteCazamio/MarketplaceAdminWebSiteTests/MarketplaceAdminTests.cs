@@ -204,7 +204,7 @@ namespace MarketplaceAdminTests
         //Date of publication: 
         //Version\Build:
         //Willingness for testing: Done.
-        //This test case is doing checking: The successfully created a "Broker" as marketplace admin.
+        //This test case is doing checking: The successfully created a "Broker" as "Marketplace Admin".
         //Comment: 
 
         public void CreateBroker()
@@ -268,6 +268,163 @@ namespace MarketplaceAdminTests
                 .VerifyOnlyBrokerUserNameRole(getUserNameRoleCompareBroker);
 
             WaitUntil.WaitSomeInterval(2000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("MarketplaceAdmin")]
+        [AllureSubSuite("CreateAgent")]
+
+        //Date of publication: 
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: The successfully created an "Agent" as "Marketplace Admin".
+        //Comment: 
+
+        public void CreateAgent()
+        {
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare)
+                .ClickButtonAgentsSidebar();
+            Pages.Agents
+                .ClickButtonCreateAgentAgentsPage();
+            Pages.ModalWindowCreateNewAgent
+                .EnterFirstLastNameEmailPhnNmbrCellMdlWndw()
+                .EnterBrokerAgentCommissionMdlWndw();
+
+            string fullEmailPutsBox = Pages.ModalWindowCreateNewAgent.CopyEmailFromMdlWndwCreateAgent();
+            string partEmailPutsBox = Pages.ModalWindowCreateNewAgent.CopyEmailBeforeDogFromModalWindowCreateNewAgent();
+
+            Pages.ModalWindowCreateNewAgent
+                .ClickButtonSaveCrtNwAgntOnMdlwndw()
+                .VerifyMessageNewAgentCreatedSuccessfullyCrtNwAgntOnMdlwndw();
+            KeyBoardActions.ClickEscapeButton();
+            Pages.SideBarLandlord
+                .ClickButtonLogOutSidebar();
+            Pages.JScriptExecutorHelper
+                .OpenNewTab()
+                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, partEmailPutsBox);
+            Pages.PutsBox
+                .VerifyTitleLetterCreateBroker()
+                .ClickButtonBodyHtml();
+
+            string getTextPasswordActual = Pages.PutsBox.CopyPasswordFromEmailForCreateAdmin();
+
+            Pages.PutsBox
+                .ClickButtonConfirmEmailForAdmin();
+
+            Pages.LogInLandlord
+                .PasteForEnterEmailFromEmailCreateAgent(fullEmailPutsBox)
+                .PasteForEnterPsswrdFromEmailCreateAgent(getTextPasswordActual)
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameRoleCompareAgent = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyOnlyAgentUserNameRole(getUserNameRoleCompareAgent);
+
+            WaitUntil.WaitSomeInterval(2000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("MarketplaceAdmin")]
+        [AllureSubSuite("CreateOwner")]
+
+        //Date of publication: 
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: The successfully created "Owner" as "Marketplace Admin".
+        //Comment: 
+
+        public void CreateOwner()
+        {
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare)
+                .ClickButtonOwnersSidebar();
+            Pages.ListOfOwners
+                .ClickButtonCreateOwner();
+            Pages.ModalWndwCreateNewOwner
+                .VerifyTitleCreateANewOwner()
+                .EnterCompanyName()
+                .EnterOwnerName()
+                .EnterOwnerEmaiL()
+                .EnterOfficeLocation()
+                .EnterInternalNotes()
+                .ClickButtonAddPhoneNumber()
+                .EnterPhoneExtensionNumbers()
+                .ClickButtonAddCommissionStructure();
+            KeyBoardActions.ScrollToDown();
+            Pages.ModalWndwCreateNewOwner
+                .SwitchingItemsPays()
+                .ClickButtonAddMgmt()
+                .ClickButtonPayType()
+                .SelectItemOwnerAndTenantPays()
+                .EnterDataOwnerAndTenantPays()
+                .ScrollDown()
+                .EnterDataMgmt();
+
+            string getOwnerEmailFromModalWndw = Pages.ModalWndwCreateNewOwner.GetEmailFromFieldOwnerEmail();
+
+            Pages.ModalWndwCreateNewOwner
+                .ClickButtonCreate();
+            Pages.ListOfOwners
+                .VerifyMessageSuccessCreatedOwner();
+            Pages.PaginationPicker
+                .SctollToButtonNext()
+                .ClickButtonLastNumberPage();
+
+            string getLastEmailFromPage = Pages.ListOfOwners.GetLastEmailFromTable();
+
+            Pages.ListOfOwners
+                .VerifyEmailForNewOwner(getOwnerEmailFromModalWndw, getLastEmailFromPage);
+
+            WaitUntil.WaitSomeInterval(2000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("MarketplaceAdmin")]
+        [AllureSubSuite("CreateOwner")]
+
+        //Date of publication: 
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: The successfully created "Owner" as "Marketplace Admin".
+        //Comment: 
+
+        public void AddBuilding()
+        {
+
         }
     }
 }

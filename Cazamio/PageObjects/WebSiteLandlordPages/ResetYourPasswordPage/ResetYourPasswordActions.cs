@@ -11,6 +11,14 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage
     public partial class ResetYourPassword
     {
         [AllureStep("EnterEmailAgent")]
+        public ResetYourPassword EnterEmailSuperAdmin()
+        {
+            InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, TestDataForWebSiteAdmin.EMAIL_SUPER_ADMIN);
+
+            return this;
+        }
+
+        [AllureStep("EnterEmailAgent")]
         public ResetYourPassword EnterEmailAgent()
         {
             InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);

@@ -69,7 +69,7 @@ namespace ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins
                 Assert.AreEqual(TestDataForWebSiteAdmin.USER_NAME_SUPER_ADMIN, response.AuthData.User.UserName);
                 Console.WriteLine($"{response.AuthData.User.UserName} :User Name");
 
-                Assert.AreEqual(TestDataForWebSiteAdmin.EMAIL_SUPER_ADMIN_SUPER, response.AuthData.User.UserEmail);
+                Assert.AreEqual(TestDataForWebSiteAdmin.EMAIL_SUPER_ADMIN, response.AuthData.User.UserEmail);
                 Console.WriteLine($"{response.AuthData.User.UserEmail} :Email");
 
             });
