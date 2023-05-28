@@ -68,10 +68,28 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
+        [AllureStep("ClickButtonSelectPetPolicies")]
+        public NewBuilding ClickButtonSelectPetPolicies()
+        {
+            Button.Click(ButtonSelectPetPolicies);
+
+            return this;
+        }
+
+        [AllureStep("EnterCreditScreeningFee")]
+        public NewBuilding EnterCreditScreeningFee()
+        {
+            InputGeneral.InputFunctionWithClear(FieldInputCreditScreeningFee, GenerateRandomDataHelper.RandomNumber(2));
+
+            return this;
+        }
+
         [AllureStep("SelectPaymentsMethodsNwBldngPage")]
         public NewBuilding SelectPaymentsMethodsNwBldngPage()
         {
             Button.Click(ButtonSelectPeymentsMethodsNwBldngPg);
+            Pages.ModalWindowPaymentOptions
+                .VerifyTitlePaymentOptionsMdlWndwOptns();
             Pages.ModalWindowPaymentOptions
                 .SelectPaymentsMethodsNwBldngPg();
 

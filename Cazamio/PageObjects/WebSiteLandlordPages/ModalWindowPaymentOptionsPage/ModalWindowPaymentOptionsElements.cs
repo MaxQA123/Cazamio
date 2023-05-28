@@ -10,6 +10,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
 {
     public partial class ModalWindowPaymentOptions
     {
+        [FindsBy(How = How.XPath, Using = "//h2[text() = 'Payment options']")]
+        public IWebElement TitlePaymentOptionsMdlWndwOptns;
+
         [FindsBy(How = How.XPath, Using = "//span[text() = ' Credit Card ']")]
         public IWebElement CheckBoxCreditCardMdlWndwOptns;
 

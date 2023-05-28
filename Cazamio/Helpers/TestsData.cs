@@ -286,6 +286,16 @@ namespace CazamioProgect.Helpers
         public const int tabImages = 4;
     }
 
+    public class ItemsPetPolicies
+    {
+        public const int CASE_BY_CASE = 0;
+        public const int PETS_FEE = 1;
+        public const int ALL_PETS_ALLOWED = 2;
+        public const int SMALL_PETS_ALLOWED = 3;
+        public const int CATS_ONLY = 4;
+        public const int NO_PETS = 5;
+    }
+
     public class CardApartmentOnListOfApartments
     {
         public const int apartmentCardOne = 0;

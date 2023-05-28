@@ -45,6 +45,7 @@ using CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage;
 using CazamioProject.PageObjects.WebSiteLandlordPages.ListOfCommissionsPage;
 using CazamioProject.PageObjects.WebSiteLandlordPages.ListOfBrokersPage;
 using CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBrokerPage;
+using CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowPetPolicies;
 
 namespace CazamioProgect.PageObjects
 {
@@ -107,7 +108,7 @@ namespace CazamioProgect.PageObjects
         public static ListOfCommissions ListOfCommissions => GetPage<ListOfCommissions>();
         public static ListOfBrokers ListOfBrokers => GetPage<ListOfBrokers>();
         public static ModalWindowCreateNewBroker ModalWindowCreateNewBroker => GetPage<ModalWindowCreateNewBroker>();
-
+        public static ModalWindowPetPolicies ModalWindowPetPolicies => GetPage<ModalWindowPetPolicies>();
         #endregion
     }
 }

@@ -49,10 +49,13 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [FindsBy(How = How.XPath, Using = "//textarea[@id= 'internalNotes']")]
         public IWebElement FieldInputInternalNotesNwBldngPg;
 
-        [FindsBy(How = How.XPath, Using = "//input[@formcontrolname= 'screeningFee']")]
-        public IWebElement FieldInputCreditScreeningFeeNwBldngPg;
+        [FindsBy(How = How.XPath, Using = "//span[text() = 'Select Pet Policies']")]
+        public IWebElement ButtonSelectPetPolicies;
 
-        [FindsBy(How = How.XPath, Using = "//button[@class= 'middle important']")]
+        [FindsBy(How = How.XPath, Using = "//input[@formcontrolname= 'screeningFee']")]
+        public IWebElement FieldInputCreditScreeningFee;
+
+        [FindsBy(How = How.XPath, Using = "//button//span[text()= 'Select Payment Methods']")]
         public IWebElement ButtonSelectPeymentsMethodsNwBldngPg;
 
         #endregion

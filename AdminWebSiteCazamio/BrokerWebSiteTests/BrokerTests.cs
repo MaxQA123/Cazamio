@@ -354,16 +354,6 @@ namespace BrokerTests
 
             Pages.SideBarLandlord
                 .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare);
-            Pages.ListOfBuildings
-                .VerifyTitleListOfBuildingsPg()
-                .ClickButtonAddBuilding();
-            Pages.NewBuilding
-                .VerifyTitleNewBuildingPg()
-                .EnterMandatoryAddressNewBuilding()
-                .EnterBuildingLlcNamesDescription()
-                .SelectPaymentsMethodsNwBldngPage()
-                .ClickButtonGeneralNextNwBldngPg();
-            //.SelectTabOnNewBuildingsPg(TabsOnNewBuildingPage.tabAmenities, "");
 
             WaitUntil.WaitSomeInterval(2000);
         }

@@ -11,6 +11,14 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
 {
     public partial class ModalWindowPaymentOptions
     {
+        [AllureStep("TitlePaymentOptionsMdlWndwOptns")]
+        public ModalWindowPaymentOptions VerifyTitlePaymentOptionsMdlWndwOptns()
+        {
+            Assert.IsTrue(Successfully.IsVisible(TitlePaymentOptionsMdlWndwOptns));
+
+            return this;
+        }
+
         [AllureStep("VerifySuccessSelectPmntMthds")]
         public ModalWindowPaymentOptions VerifySuccessSelectPmntMthds()
         {
@@ -18,6 +26,5 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
 
             return this;
         }
-        
     }
 }

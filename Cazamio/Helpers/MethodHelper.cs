@@ -133,6 +133,15 @@ namespace CazamioProgect.Helpers
                 .Perform();
         }
 
+        [AllureStep("ClickTab")]
+        public static void ClickTab()
+        {
+            new Actions(Browser._Driver)
+                .SendKeys(Keys.Tab)
+                .Build()
+                .Perform();
+        }
+
         //[AllureStep("EnterData")]
         //public static void EnterData()
         //{

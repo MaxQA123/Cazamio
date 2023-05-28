@@ -20,7 +20,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
             InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNoteMdlWndwOptns, Lorem.Sentence());
             Button.Click(ButtonSaveMdlWndwOptns);
             VerifySuccessSelectPmntMthds();
-            Button.Click(ButtonInFormCrossMdlWndwOptns);
+            //Button.Click(ButtonInFormCrossMdlWndwOptns);
 
             return this;
         }

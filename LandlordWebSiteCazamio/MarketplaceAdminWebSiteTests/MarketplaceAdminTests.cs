@@ -441,7 +441,22 @@ namespace MarketplaceAdminTests
                 .ClickDropDownMenuBrokerSelect()
                 .EnterAddressNewBuilding()
                 .EnterBuildingLlcNamesDescription();
-            
+            KeyBoardActions.ClickTab();
+            Pages.NewBuilding
+                .ClickButtonSelectPetPolicies();
+            Pages.ModalWindowPetPolicies
+                .VerifyTitlePetPoliciesMdlWndw()
+                .SelectItemPetPolocies(ItemsPetPolicies.PETS_FEE, " ")
+                .SelectItemPetPolocies(ItemsPetPolicies.CATS_ONLY, " ")
+                .SelectItemPetPolocies(ItemsPetPolicies.SMALL_PETS_ALLOWED, " ")
+                .SelectItemPetPolocies(ItemsPetPolicies.CASE_BY_CASE, " ")
+                .SelectItemPetPolocies(ItemsPetPolicies.ALL_PETS_ALLOWED, " ")
+                .SelectItemPetPolocies(ItemsPetPolicies.NO_PETS, " ")
+                .ClickButtonSave();
+            Pages.NewBuilding
+                .EnterCreditScreeningFee()
+                .SelectPaymentsMethodsNwBldngPage();
+
 
             WaitUntil.WaitSomeInterval(5000);
         }
