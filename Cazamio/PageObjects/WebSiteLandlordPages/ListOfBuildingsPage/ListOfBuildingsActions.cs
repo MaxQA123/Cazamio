@@ -10,10 +10,10 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
 {
     public partial class ListOfBuildings
     {
-        [AllureStep("ClickButtonAddListOfBuildings")]
-        public ListOfBuildings ClickButtonAddBuildingOnLstBldng()
+        [AllureStep("ClickButtonAddBuilding")]
+        public ListOfBuildings ClickButtonAddBuilding()
         {
-            Button.Click(ButtonAddListOfBuildings);
+            Button.Click(ButtonAdd);
 
             return this;
         }

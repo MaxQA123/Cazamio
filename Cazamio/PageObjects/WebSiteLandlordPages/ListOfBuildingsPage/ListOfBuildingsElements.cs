@@ -13,7 +13,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
         [FindsBy(How = How.XPath, Using = "//div[text()= 'List of buildings']")]
         public IWebElement TitleListOfBuildingsPage;
 
-        [FindsBy(How = How.XPath, Using = "//button[@class = 'large primary-action relative-loader add-desktop-btn']")]
-        public IWebElement ButtonAddListOfBuildings;
+        [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Add']")]
+        public IWebElement ButtonAdd;
     }
 }

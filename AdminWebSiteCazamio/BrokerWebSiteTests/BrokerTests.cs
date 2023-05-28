@@ -356,7 +356,7 @@ namespace BrokerTests
                 .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare);
             Pages.ListOfBuildings
                 .VerifyTitleListOfBuildingsPg()
-                .ClickButtonAddBuildingOnLstBldng();
+                .ClickButtonAddBuilding();
             Pages.NewBuilding
                 .VerifyTitleNewBuildingPg()
                 .EnterMandatoryAddressNewBuilding()

@@ -12,13 +12,43 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 {
     public partial class NewBuilding
     {
+        [AllureStep("ClickDropDownMenuBrokerSelect")]
+        public NewBuilding ClickDropDownMenuBrokerSelect()
+        {
+            Button.Click(DropDownMenuBrokerSelect);
+            KeyBoardActions.ClickEnterButton();
+
+            return this;
+        }
+
         [AllureStep("EnterMandatoryAddressNewBuilding")]
         public NewBuilding EnterMandatoryAddressNewBuilding()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputAddressNwBldngPg, Address.FullAddress());
-            InputGeneral.InputFunctionWithClear(FieldInputCityNwBldngPg, Address.City());
-            InputGeneral.InputFunctionWithClear(FieldInputStateNwBldngPg, Address.State());
-            InputGeneral.InputFunctionWithClear(FieldInputZipNwBldngPg, Address.ZipCode());
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputAddressNwBldngPg, TestDataForWebSiteAdmin.ADDRESS_BUILDING);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputCityNwBldngPg, TestDataForWebSiteAdmin.CITY_BUILDING);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputStateNwBldngPg, TestDataForWebSiteAdmin.STATE_BUILDING);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputZipNwBldngPg, TestDataForWebSiteAdmin.ZIP_BUILDING);
+
+            return this;
+        }
+
+        [AllureStep("EnterAddressNewBuilding")]
+        public NewBuilding EnterAddressNewBuilding()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputAddressNwBldngPg, TestDataForWebSiteAdmin.ADDRESS_BUILDING);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputCityNwBldngPg, TestDataForWebSiteAdmin.CITY_BUILDING);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputStateNwBldngPg, TestDataForWebSiteAdmin.STATE_BUILDING);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputZipNwBldngPg, TestDataForWebSiteAdmin.ZIP_BUILDING);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputNeighborhoodNwBldngPg, TestDataForWebSiteAdmin.NEIGHBORHOOD_BUILDING);
 
             return this;
         }
@@ -26,10 +56,14 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [AllureStep("EnterBuildingLlcNamesDescription")]
         public NewBuilding EnterBuildingLlcNamesDescription()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputBuildingNameNwBldngPg, TestDataForWebSiteAdmin.BUILDING_NAME);
-            InputGeneral.InputFunctionWithClear(FieldInputLlcNameNwBldngPg, TestDataForWebSiteAdmin.BUILDING_LLC_NAME);
-            InputGeneral.InputFunctionWithClear(FieldInputDescroptionNwBldngPg, Lorem.Sentence());
-            InputGeneral.InputFunctionWithClear(FieldInputCreditScreeningFeeNwBldngPg, GenerateRandomDataHelper.RandomPriceCreditScreeningFee(2));
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputBuildingNameNwBldngPg, TestDataForWebSiteAdmin.BUILDING_NAME_NEW_BUILDING);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputLlcNameNwBldngPg, TestDataForWebSiteAdmin.BUILDING_LLC_NAME_NEW_BUILDING);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputDescroptionNwBldngPg, TestDataForWebSiteAdmin.DESCRIPTION_NEW_BUILDING + TestDataForWebSiteAdmin.TEXT_LOREM);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputInternalNotesNwBldngPg, TestDataForWebSiteAdmin.INTERNAL_NOTES_NEW_BUILDING + TestDataForWebSiteAdmin.TEXT_LOREM);
 
             return this;
         }

@@ -10,29 +10,17 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 {
     public partial class NewBuilding
     {
-        #region TabsNewBuilging
+        #region PageNewBuilging
 
-        //[FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]
-        //public IWebElement TitleNewBuildingPage;
-
-        //[FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]
-        //public IWebElement TitleNewBuildingPage;
-
-        //[FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]
-        //public IWebElement TitleNewBuildingPage;
-
-        //[FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]
-        //public IWebElement TitleNewBuildingPage;
-
-        //[FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]
-        //public IWebElement TitleNewBuildingPage;
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]
+        public IWebElement TitleNewBuildingPage;
 
         #endregion
 
         #region TabBasicDetails
 
-        [FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]
-        public IWebElement TitleNewBuildingPage;
+        [FindsBy(How = How.XPath, Using = "//ng-select[@bindlabel= 'fullName']")]
+        public IWebElement DropDownMenuBrokerSelect;
 
         [FindsBy(How = How.CssSelector, Using = "input#inputAddress")]
         public IWebElement FieldInputAddressNwBldngPg;
@@ -46,6 +34,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [FindsBy(How = How.CssSelector, Using = "input#zip")]
         public IWebElement FieldInputZipNwBldngPg;
 
+        [FindsBy(How = How.XPath, Using = "//input[@id= 'neighborhood']")]
+        public IWebElement FieldInputNeighborhoodNwBldngPg;
+
         [FindsBy(How = How.CssSelector, Using = "input#buildingName")]
         public IWebElement FieldInputBuildingNameNwBldngPg;
 
@@ -54,6 +45,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         [FindsBy(How = How.CssSelector, Using = "textarea#description")]
         public IWebElement FieldInputDescroptionNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//textarea[@id= 'internalNotes']")]
+        public IWebElement FieldInputInternalNotesNwBldngPg;
 
         [FindsBy(How = How.XPath, Using = "//input[@formcontrolname= 'screeningFee']")]
         public IWebElement FieldInputCreditScreeningFeeNwBldngPg;

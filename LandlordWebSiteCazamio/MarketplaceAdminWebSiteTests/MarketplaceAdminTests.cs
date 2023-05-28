@@ -414,17 +414,36 @@ namespace MarketplaceAdminTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
-        [AllureSubSuite("CreateOwner")]
+        [AllureSubSuite("AddBuilding")]
 
         //Date of publication: 
         //Version\Build:
         //Willingness for testing: Done.
-        //This test case is doing checking: The successfully created "Owner" as "Marketplace Admin".
+        //This test case is doing checking: The successfully created "Building" as "Marketplace Admin".
         //Comment: 
 
         public void AddBuilding()
         {
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
 
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+            Pages.ListOfBuildings
+                .ClickButtonAddBuilding();
+            Pages.NewBuilding
+                .VerifyTitleNewBuildingPg()
+                .ClickDropDownMenuBrokerSelect()
+                .EnterAddressNewBuilding()
+                .EnterBuildingLlcNamesDescription();
+            
+
+            WaitUntil.WaitSomeInterval(5000);
         }
     }
 }
