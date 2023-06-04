@@ -18,5 +18,25 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
             return this;
         }
+
+        public string CopyNameLocation()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputLocationForAccessNwBldngPg, 10);
+            string getNameLocation = (FieldInputLocationForAccessNwBldngPg).GetAttribute("value");
+            string nameLocationActual = getNameLocation.ToString();
+
+            return nameLocationActual;
+        }
+
+
+        [AllureStep("VerifyLocationAccessNewBuildingPg")]
+        public NewBuilding VerifyLocationAccessNewBuildingPg(string nameLocationActual)
+        {
+            Assert.AreEqual(nameLocationActual, TestDataForWebSiteAdmin.FIRST_NAME_LOCATION);
+
+            Console.WriteLine($"AR: {nameLocationActual} ER: {TestDataForWebSiteAdmin.FIRST_NAME_LOCATION}");
+
+            return this;
+        }
     }
 }

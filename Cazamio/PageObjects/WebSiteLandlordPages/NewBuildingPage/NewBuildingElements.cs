@@ -56,7 +56,36 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         public IWebElement FieldInputCreditScreeningFee;
 
         [FindsBy(How = How.XPath, Using = "//button//span[text()= 'Select Payment Methods']")]
-        public IWebElement ButtonSelectPeymentsMethodsNwBldngPg;
+        public IWebElement ButtonSelectPaymentsMethodsNwBldngPg;
+
+        #endregion
+
+        #region Amenities
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'input-amenity']")]
+        public IWebElement FieldInputSearchForAmenitiesNwBldngPg;
+
+        #endregion
+
+        #region Access
+
+        [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Add lock']")]
+        public IWebElement ButtonAddLockForAccessNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'location']")]
+        public IWebElement FieldInputLocationForAccessNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'accessType']")]
+        public IWebElement ButtonAccessTypeForAccessNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//input[@autocomplete = 'ab6a07d3a4cb']")]
+        public IWebElement FieldInputLockForAccessNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//textarea[@formcontrolname = 'customNote']")]
+        public IWebElement FieldInputCustomNoteForAccessNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'add-note-image']")]
+        public IWebElement ButtonSelectImageForAccessNwBldngPg;
 
         #endregion
 

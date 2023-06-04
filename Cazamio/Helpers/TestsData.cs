@@ -115,6 +115,7 @@ namespace CazamioProgect.Helpers
         public const string DESCRIPTION_NEW_BUILDING = "DESCRIPTION FOR BUILDING 1234567890 ";
         public const string INTERNAL_NOTES_NEW_BUILDING = "Internal Notes FOR BUILDING 0987654321 ";
         public const string TEXT_LOREM = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,";
+        public const string FIRST_NAME_LOCATION = "Main Entrance";
 
         public const string BUILDING_NAME = "Diamond Hall";
         public const string BUILDING_LLC_NAME = "LLC Rent Corporation";
@@ -329,4 +330,19 @@ namespace CazamioProgect.Helpers
         public const int PAGE_FIVE = 3;
         public const int PAGE_SIX = 4;
     }
+
+    public class ListOfAmenitiesForBuildingAdminsPage
+    {
+        public const int FIRST_TAG = 0;
+    }
+
+    public class ListOfAccessTypesForBuildingAdminsPage
+    {
+        public const int BLUETOOTH = 0;
+        public const int WIFI = 1;
+        public const int PIN_CODE = 2;
+        public const int NOTE = 3;
+        public const int CAB = 4;
+    }
+
 }

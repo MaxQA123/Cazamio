@@ -455,8 +455,21 @@ namespace MarketplaceAdminTests
                 .ClickButtonSave();
             Pages.NewBuilding
                 .EnterCreditScreeningFee()
-                .SelectPaymentsMethodsNwBldngPage();
+                .SelectPaymentsMethodsNwBldngPage()
+                .ClickButtonGeneralNextNwBldngPg()
+                .ClickFieldInputSearchForAmenitiesNwBldngPg()
+                .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+                .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+                .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+                .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+                .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+                .ClickButtonGeneralNextNwBldngPg()
+                .ClickButtonAddLockForAccessNwBldngPg();
 
+            string copyActualNameLocation = Pages.NewBuilding.CopyNameLocation();
+
+            Pages.NewBuilding
+                .VerifyLocationAccessNewBuildingPg(copyActualNameLocation);
 
             WaitUntil.WaitSomeInterval(5000);
         }
