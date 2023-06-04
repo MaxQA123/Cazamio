@@ -177,33 +177,17 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        [AllureStep("ClickButtonAccessTypeForAccessNwBldngPg")]
-        public NewBuilding ClickButtonAccessTypeForAccessNwBldngPg()
+        [AllureStep("ClickItemAccessTypePinCodeForAccessNwBldngPg")]
+        public NewBuilding ClickItemAccessTypePinCodeForAccessNwBldngPg()
         {
             WaitUntil.CustomElementIsVisible(ButtonAccessTypeForAccessNwBldngPg, 10);
             Button.Click(ButtonAccessTypeForAccessNwBldngPg);
-
-            return this;
-        }
-
-        private static IWebElement _itemAccessTypeForBuilding;
-
-        [AllureStep("SelectorAmenitiesForBuilding")]
-        public static IList<IWebElement> SelectorAccessTypeForBuilding(string _itemAccessType)
-        {
-            WaitUntil.WaitSomeInterval(1000);
-            var str = "//div[@class = 'ng-dropdown-panel-items scroll-host']";
-            _itemAccessTypeForBuilding = Browser._Driver.FindElement(By.XPath(str));
-            return _itemAccessTypeForBuilding.FindElements(By.XPath($".//span[contains(text(), '{_itemAccessType}')]"));
-        }
-
-        [AllureStep("SelectAmenitiesForBuilding")]
-        public NewBuilding SelectAccessTypeForBuilding(int numberItem, string itemAccessType)
-        {
-            WaitUntil.WaitSomeInterval(500);
-            IList<IWebElement> _numberItem = SelectorAccessTypeForBuilding(itemAccessType);
-
-            _numberItem[numberItem].Click();
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickArrowDown();
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickArrowDown();
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickEnterButton();
 
             return this;
         }

@@ -110,7 +110,7 @@ namespace CazamioProgect.Helpers
         public const string STATE_BUILDING = "NY";
         public const string ZIP_BUILDING = "10036";
         public const string NEIGHBORHOOD_BUILDING = "Manhattan";
-        public const string BUILDING_NAME_NEW_BUILDING = "Original ZIP Manhattan Craetor Chui Assigned Martin";
+        public const string BUILDING_NAME_NEW_BUILDING = "Original ZIP Manhattan Creator Chui Assigned Martin";
         public const string BUILDING_LLC_NAME_NEW_BUILDING = "LLC Home-House town";
         public const string DESCRIPTION_NEW_BUILDING = "DESCRIPTION FOR BUILDING 1234567890 ";
         public const string INTERNAL_NOTES_NEW_BUILDING = "Internal Notes FOR BUILDING 0987654321 ";
