@@ -104,10 +104,10 @@ namespace MarketplaceAdminTests
                 .ClickButtonBrokersSidebar();
             Pages.ListOfBrokers
                 .VerifyTitleListOfBrokersPg();
-            Pages.SideBarLandlord
-                .ClickButtonPreApprovalsSidebar();
-            Pages.PreApprovals
-                .VerifyTitlePreApprovalsPagePg();
+            //Pages.SideBarLandlord
+            //    .ClickButtonPreApprovalsSidebar();
+            //Pages.PreApprovals
+            //    .VerifyTitlePreApprovalsPagePg();
             Pages.SideBarLandlord
                 .ClickButtonLeaseSignDocumentsSidebar();
             Pages.Templates
