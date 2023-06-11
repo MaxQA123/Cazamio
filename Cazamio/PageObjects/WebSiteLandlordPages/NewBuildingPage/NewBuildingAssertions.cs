@@ -29,8 +29,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         }
 
 
-        [AllureStep("VerifyLocationAccessNewBuildingPg")]
-        public NewBuilding VerifyLocationAccessNewBuildingPg(string nameLocationActual)
+        [AllureStep("VerifyLocationMainAccessNewBuildingPg")]
+        public NewBuilding VerifyLocationMainAccessNewBuildingPg(string nameLocationActual)
         {
             Assert.AreEqual(nameLocationActual, TestDataForWebSiteAdmin.FIRST_NAME_LOCATION);
 
@@ -38,5 +38,56 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
             return this;
         }
+
+        [AllureStep("VerifyLocationApartmentAccessNewBuildingPg")]
+        public NewBuilding VerifyLocationApartmentAccessNewBuildingPg(string copyActualNameLocationTwo)
+        {
+            Assert.AreEqual(copyActualNameLocationTwo, TestDataForWebSiteAdmin.SECOND_NAME_LOCATION);
+
+            Console.WriteLine($"AR: {copyActualNameLocationTwo} ER: {TestDataForWebSiteAdmin.SECOND_NAME_LOCATION}");
+
+            return this;
+        }
+
+        public string GetNameCabTypeAccessFromTable()
+        {
+            WaitUntil.CustomElementIsVisible(RecordCABInTableAccessNwBldngPg, 10);
+            string getNameCab = (RecordCABInTableAccessNwBldngPg).Text;
+            string nameCabActual = getNameCab.ToString();
+
+            return nameCabActual;
+        }
+
+        public string GetNameNoteTypeAccessFromTable()
+        {
+            WaitUntil.CustomElementIsVisible(RecordNoteInTableAccessNwBldngPg, 10);
+            string getNameNote = (RecordNoteInTableAccessNwBldngPg).Text;
+            string nameNoteActual = getNameNote.ToString();
+
+            return nameNoteActual;
+        }
+
+        public string GetNamePinCodeTypeAccessFromTable()
+        {
+            WaitUntil.CustomElementIsVisible(RecordPinCodeInTableAccessNwBldngPg, 10);
+            string getNamePinCode = (RecordPinCodeInTableAccessNwBldngPg).Text;
+            string namePinCodeActual = getNamePinCode.ToString();
+
+            return namePinCodeActual;
+        }
+
+        public void VerifyTypeAccessFromTable(string nameCabActual, string nameNoteActual, string namePinCodeActual)
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(nameCabActual, TestDataForWebSiteAdmin.CAB_NAME_LOCK_ACCESS);
+                //Console.Write($"{nameCabActual} = {TestDataForWebSiteAdmin.CAB_NAME_LOCK_ACCESS}");
+                Assert.AreEqual(nameNoteActual, TestDataForWebSiteAdmin.NOTE_NAME_LOCK_ACCESS);
+                //Console.Write($"{nameNoteActual} = {TestDataForWebSiteAdmin.NOTE_NAME_LOCK_ACCESS}");
+                Assert.AreEqual(namePinCodeActual, TestDataForWebSiteAdmin.PIN_CODE_NAME_LOCK_ACCESS);
+                Console.Write($"{nameCabActual} = {TestDataForWebSiteAdmin.CAB_NAME_LOCK_ACCESS}; {nameNoteActual} = {TestDataForWebSiteAdmin.NOTE_NAME_LOCK_ACCESS}; {namePinCodeActual} = {TestDataForWebSiteAdmin.PIN_CODE_NAME_LOCK_ACCESS}");
+            });
+        }
+
     }
 }

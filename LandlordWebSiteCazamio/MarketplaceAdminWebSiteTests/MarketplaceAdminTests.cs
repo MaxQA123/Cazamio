@@ -469,8 +469,27 @@ namespace MarketplaceAdminTests
             string copyActualNameLocation = Pages.NewBuilding.CopyNameLocation();
 
             Pages.NewBuilding
-                .VerifyLocationAccessNewBuildingPg(copyActualNameLocation)
+                .VerifyLocationMainAccessNewBuildingPg(copyActualNameLocation)
                 .AddItemAccessTypePinCodeForAccessNwBldngPg();
+            Pages.NewBuilding
+                .ClickButtonAddLockForAccessNwBldngPg();
+
+            string copyActualNameLocationTwo = Pages.NewBuilding.CopyNameLocation();
+
+            Pages.NewBuilding
+                .VerifyLocationApartmentAccessNewBuildingPg(copyActualNameLocationTwo)
+                .AddItemAccessTypeNoteForAccessNwBldngPg()
+                .ClickButtonAddLockForAccessNwBldngPg()
+                .AddItemAccessTypeCabForAccessNwBldngPg();
+
+            string copyActualNameCab = Pages.NewBuilding.GetNameCabTypeAccessFromTable();
+            string copyActualNameNote = Pages.NewBuilding.GetNameNoteTypeAccessFromTable();
+            string copyActualNamePinCode = Pages.NewBuilding.GetNamePinCodeTypeAccessFromTable();
+
+            Pages.NewBuilding
+                .VerifyTypeAccessFromTable(copyActualNameCab, copyActualNameNote, copyActualNamePinCode);
+
+
 
             WaitUntil.WaitSomeInterval(5000);
         }

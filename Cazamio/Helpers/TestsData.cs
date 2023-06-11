@@ -116,6 +116,11 @@ namespace CazamioProgect.Helpers
         public const string DESCRIPTION_NEW_BUILDING = "DESCRIPTION FOR BUILDING 1234567890 ";
         public const string INTERNAL_NOTES_NEW_BUILDING = "Internal Notes FOR BUILDING 0987654321 ";
         public const string FIRST_NAME_LOCATION = "Main Entrance";
+        public const string SECOND_NAME_LOCATION = "Apartment";
+        public const string THIRD_NAME_LOCATION = "Concierge";
+        public const string CAB_NAME_LOCK_ACCESS = "CAB";
+        public const string NOTE_NAME_LOCK_ACCESS = "Note";
+        public const string PIN_CODE_NAME_LOCK_ACCESS = "PinCode";
 
         public const string BUILDING_NAME = "Diamond Hall";
         public const string BUILDING_LLC_NAME = "LLC Rent Corporation";

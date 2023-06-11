@@ -84,13 +84,16 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [FindsBy(How = How.XPath, Using = "//input[@placeholder = 'Pin term']")]
         public IWebElement FieldInputPinCodeForAccessNwBldngPg;
 
+        [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'lockGuid']")]
+        public IWebElement FieldInputLockGuideForAccessNwBldngPg;
+
         [FindsBy(How = How.XPath, Using = "//textarea[@formcontrolname = 'customNote']")]
         public IWebElement FieldInputCustomNoteForAccessNwBldngPg;
 
         [FindsBy(How = How.XPath, Using = "//input[@id = 'add-note-image']")]
         public IWebElement ButtonSelectImageForAccessNwBldngPg;
 
-        [FindsBy(How = How.XPath, Using = "//span[text() = 'Image was upload successfully']")]
+        [FindsBy(How = How.XPath, Using = "//span[text() = 'Image was upload successfully.']")]
         public IWebElement MessageSuccessUploadImageForAccessNwBldngPg;
 
         [FindsBy(How = How.XPath, Using = "//span[text() = ' Time Restriction Enabled ']")]
@@ -101,6 +104,15 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Cancel']")]
         public IWebElement ButtonCancelForAccessNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//table//tbody//tr//td[text() = 'CAB']")]
+        public IWebElement RecordCABInTableAccessNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//table//tbody//tr//td[text() = 'Note']")]
+        public IWebElement RecordNoteInTableAccessNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//table//tbody//tr//td[text() = 'PinCode']")]
+        public IWebElement RecordPinCodeInTableAccessNwBldngPg;
 
         #endregion
 

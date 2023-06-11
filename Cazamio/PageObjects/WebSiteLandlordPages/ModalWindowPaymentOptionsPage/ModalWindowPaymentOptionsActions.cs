@@ -20,6 +20,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
             InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNoteMdlWndwOptns, Lorem.Sentence());
             Button.Click(ButtonSaveMdlWndwOptns);
             VerifySuccessSelectPmntMthds();
+            WaitUntil.SuccessCustomElementIsVisible(MessageSuccessPaymentMethodsSelectedMdlWndwOptns);
             //Button.Click(ButtonInFormCrossMdlWndwOptns);
 
             return this;

@@ -36,6 +36,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
         [FindsBy(How = How.XPath, Using = "//span[text() = 'Success']")]
         public IWebElement MessageSuccessMdlWndwOptns;
 
+        [FindsBy(How = How.XPath, Using = "//span[text() = 'Payment methods selected, Click save to confirm']")]
+        public IWebElement MessageSuccessPaymentMethodsSelectedMdlWndwOptns;
+
         #endregion
     }
 }

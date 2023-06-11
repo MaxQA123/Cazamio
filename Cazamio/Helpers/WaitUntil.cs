@@ -68,6 +68,39 @@ namespace CazamioProgect.Helpers
             catch (StaleElementReferenceException) { }
         }
 
+        public static void SuccessCustomElementIsVisible(IWebElement element, int seconds = 10)
+        {
+            WebDriverWait wait = new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds));
+            wait.PollingInterval = TimeSpan.FromMilliseconds(100);
+            try
+            {
+                wait.Until(e =>
+                {
+                    try
+                    {
+                        if (element.Enabled == true)
+                        {
+                            Console.WriteLine(element.Text);
+
+                            return true;
+                        }
+                        return false;
+                    }
+                    catch (NoSuchElementException)
+                    {
+                        return false;
+                    }
+                    catch (StaleElementReferenceException)
+                    {
+                        return false;
+                    }
+
+                });
+            }
+            catch (NoSuchElementException) { }
+            catch (StaleElementReferenceException) { }
+        }
+
         public static void CustomElementIsInVisible(IWebElement element, int seconds = 10)
         {
             WebDriverWait wait = new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds));

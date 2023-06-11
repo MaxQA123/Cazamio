@@ -167,7 +167,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         #endregion
 
-        #region Amenities
+        #region Access
 
         [AllureStep("ClickButtonAddLockForAccessNwBldngPg")]
         public NewBuilding ClickButtonAddLockForAccessNwBldngPg()
@@ -204,7 +204,64 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccessNwBldngPg, GeneralTestDataForAllUsers.TEXT_LOREM);
             WaitUntil.WaitSomeInterval(100);
             ButtonSelectImageForAccessNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_LOCK_OK));
-            //WaitUntil.CustomElementIsVisible(MessageSuccessUploadImageForAccessNwBldngPg);
+            WaitUntil.SuccessCustomElementIsVisible(MessageSuccessUploadImageForAccessNwBldngPg);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(CheckBoxTimeRestrictionEnabledForAccessNwBldngPg);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonSaveForAccessNwBldngPg);
+
+            return this;
+        }
+
+        [AllureStep("AddItemAccessTypeNoteForAccessNwBldngPg")]
+        public NewBuilding AddItemAccessTypeNoteForAccessNwBldngPg()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonAccessTypeForAccessNwBldngPg, 10);
+            Button.Click(ButtonAccessTypeForAccessNwBldngPg);
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickArrowDown();
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickArrowDown();
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickArrowDown();
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickEnterButton();
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccessNwBldngPg, GeneralTestDataForAllUsers.TEXT_LOREM);
+            WaitUntil.WaitSomeInterval(100);
+            ButtonSelectImageForAccessNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_LOCK_OK));
+            WaitUntil.SuccessCustomElementIsVisible(MessageSuccessUploadImageForAccessNwBldngPg);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(CheckBoxTimeRestrictionEnabledForAccessNwBldngPg);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonSaveForAccessNwBldngPg);
+
+            return this;
+        }
+
+        [AllureStep("AddItemAccessTypeCabForAccessNwBldngPg")]
+        public NewBuilding AddItemAccessTypeCabForAccessNwBldngPg()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonAccessTypeForAccessNwBldngPg, 10);
+            InputGeneral.InputFunctionWithClear(FieldInputLocationForAccessNwBldngPg, TestDataForWebSiteAdmin.THIRD_NAME_LOCATION);
+            Button.Click(ButtonAccessTypeForAccessNwBldngPg);
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickArrowDown();
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickArrowDown();
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickArrowDown();
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickArrowDown();
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickEnterButton();
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputLockGuideForAccessNwBldngPg, GenerateRandomDataHelper.RandomNumber(5));
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccessNwBldngPg, GeneralTestDataForAllUsers.TEXT_LOREM);
+            WaitUntil.WaitSomeInterval(100);
+            ButtonSelectImageForAccessNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_LOCK_OK));
+            WaitUntil.SuccessCustomElementIsVisible(MessageSuccessUploadImageForAccessNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
             Button.Click(CheckBoxTimeRestrictionEnabledForAccessNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
