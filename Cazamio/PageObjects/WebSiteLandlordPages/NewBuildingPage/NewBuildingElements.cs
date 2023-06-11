@@ -81,11 +81,26 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [FindsBy(How = How.XPath, Using = "//input[@autocomplete = 'ab6a07d3a4cb']")]
         public IWebElement FieldInputLockForAccessNwBldngPg;
 
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder = 'Pin term']")]
+        public IWebElement FieldInputPinCodeForAccessNwBldngPg;
+
         [FindsBy(How = How.XPath, Using = "//textarea[@formcontrolname = 'customNote']")]
         public IWebElement FieldInputCustomNoteForAccessNwBldngPg;
 
         [FindsBy(How = How.XPath, Using = "//input[@id = 'add-note-image']")]
         public IWebElement ButtonSelectImageForAccessNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//span[text() = 'Image was upload successfully']")]
+        public IWebElement MessageSuccessUploadImageForAccessNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//span[text() = ' Time Restriction Enabled ']")]
+        public IWebElement CheckBoxTimeRestrictionEnabledForAccessNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Save']")]
+        public IWebElement ButtonSaveForAccessNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Cancel']")]
+        public IWebElement ButtonCancelForAccessNwBldngPg;
 
         #endregion
 

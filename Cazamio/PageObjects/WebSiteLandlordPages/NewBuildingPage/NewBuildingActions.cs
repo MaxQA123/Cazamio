@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using RimuTec.Faker;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -85,9 +86,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputLlcNameNwBldngPg, TestDataForWebSiteAdmin.BUILDING_LLC_NAME_NEW_BUILDING);
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputDescroptionNwBldngPg, TestDataForWebSiteAdmin.DESCRIPTION_NEW_BUILDING + TestDataForWebSiteAdmin.TEXT_LOREM);
+            InputGeneral.InputFunctionWithClear(FieldInputDescroptionNwBldngPg, TestDataForWebSiteAdmin.DESCRIPTION_NEW_BUILDING + GeneralTestDataForAllUsers.TEXT_LOREM);
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputInternalNotesNwBldngPg, TestDataForWebSiteAdmin.INTERNAL_NOTES_NEW_BUILDING + TestDataForWebSiteAdmin.TEXT_LOREM);
+            InputGeneral.InputFunctionWithClear(FieldInputInternalNotesNwBldngPg, TestDataForWebSiteAdmin.INTERNAL_NOTES_NEW_BUILDING + GeneralTestDataForAllUsers.TEXT_LOREM);
 
             return this;
         }
@@ -177,8 +178,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        [AllureStep("ClickItemAccessTypePinCodeForAccessNwBldngPg")]
-        public NewBuilding ClickItemAccessTypePinCodeForAccessNwBldngPg()
+        [AllureStep("AddItemAccessTypePinCodeForAccessNwBldngPg")]
+        public NewBuilding AddItemAccessTypePinCodeForAccessNwBldngPg()
         {
             WaitUntil.CustomElementIsVisible(ButtonAccessTypeForAccessNwBldngPg, 10);
             Button.Click(ButtonAccessTypeForAccessNwBldngPg);
@@ -188,6 +189,26 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             KeyBoardActions.ClickArrowDown();
             WaitUntil.WaitSomeInterval(100);
             KeyBoardActions.ClickEnterButton();
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputPinCodeForAccessNwBldngPg, GenerateRandomDataHelper.RandomNumber(1));
+            KeyBoardActions.ClickSpaceButton();
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithoutClear(FieldInputPinCodeForAccessNwBldngPg, GenerateRandomDataHelper.RandomNumber(1));
+            KeyBoardActions.ClickSpaceButton();
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithoutClear(FieldInputPinCodeForAccessNwBldngPg, GenerateRandomDataHelper.RandomNumber(1));
+            KeyBoardActions.ClickSpaceButton();
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithoutClear(FieldInputPinCodeForAccessNwBldngPg, GenerateRandomDataHelper.RandomNumber(1));
+            KeyBoardActions.ClickSpaceButton();
+            InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccessNwBldngPg, GeneralTestDataForAllUsers.TEXT_LOREM);
+            WaitUntil.WaitSomeInterval(100);
+            ButtonSelectImageForAccessNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_LOCK_OK));
+            //WaitUntil.CustomElementIsVisible(MessageSuccessUploadImageForAccessNwBldngPg);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(CheckBoxTimeRestrictionEnabledForAccessNwBldngPg);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonSaveForAccessNwBldngPg);
 
             return this;
         }

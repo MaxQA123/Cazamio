@@ -470,7 +470,7 @@ namespace MarketplaceAdminTests
 
             Pages.NewBuilding
                 .VerifyLocationAccessNewBuildingPg(copyActualNameLocation)
-                .ClickItemAccessTypePinCodeForAccessNwBldngPg();
+                .AddItemAccessTypePinCodeForAccessNwBldngPg();
 
             WaitUntil.WaitSomeInterval(5000);
         }
