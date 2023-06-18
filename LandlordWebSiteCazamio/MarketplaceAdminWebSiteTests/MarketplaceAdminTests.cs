@@ -493,6 +493,11 @@ namespace MarketplaceAdminTests
                 .ClickButtonAddSpecialsNwBldngPg()
                 .AddConcessionSpecialsNwBldngPg();
 
+            string getNameConcession = Pages.NewBuilding.GetNameConcessionFromTable();
+
+            Pages.NewBuilding
+                .VerifyNameSpecialsConcessionInTableNewBuildingPg(getNameConcession);
+
 
 
             WaitUntil.WaitSomeInterval(5000);

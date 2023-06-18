@@ -183,11 +183,11 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         {
             WaitUntil.CustomElementIsVisible(ButtonAccessTypeForAccessNwBldngPg, 10);
             Button.Click(ButtonAccessTypeForAccessNwBldngPg);
-            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.WaitSomeInterval(500);
             KeyBoardActions.ClickArrowDown();
-            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.WaitSomeInterval(500);
             KeyBoardActions.ClickArrowDown();
-            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.WaitSomeInterval(500);
             KeyBoardActions.ClickEnterButton();
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputPinCodeForAccessNwBldngPg, GenerateRandomDataHelper.RandomNumber(1));
@@ -297,6 +297,21 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             KeyBoardActions.ClickEnterButton();
             WaitUntil.WaitSomeInterval(100);
             Button.Click(ButtonYesSpecialsNwBldngPg);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(FieldInputDateFromSpecialsNwBldngPg);
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .SelectDayOnDatePickerFourthLine(DaysFourthLineForDatePiker.FOURTH_LINE_FIRST_NUMBER, " ");
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(FieldInputDateToSpecialsNwBldngPg);
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .ClickButtonArrowNextMonth();
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .SelectDayOnDatePickerThirdLine(DaysThirdLineForDatePiker.THIRD_LINE_SECOND_NUMBER, " ");
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonSaveSpecialsNwBldngPg);
 
             return this;
         }

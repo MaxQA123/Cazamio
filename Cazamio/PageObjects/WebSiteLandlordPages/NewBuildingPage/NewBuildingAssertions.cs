@@ -89,5 +89,24 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             });
         }
 
+        public string GetNameConcessionFromTable()
+        {
+            WaitUntil.CustomElementIsVisible(RecordNameInTableConcessionNwBldngPg, 10);
+            string getNameConcession = (RecordNameInTableConcessionNwBldngPg).Text;
+            string nameConcessionActual = getNameConcession.ToString();
+
+            return nameConcessionActual;
+        }
+
+        [AllureStep("VerifyNameSpecialsConcessionInTableNewBuildingPg")]
+        public NewBuilding VerifyNameSpecialsConcessionInTableNewBuildingPg(string nameConcessionActual)
+        {
+            Assert.AreEqual(nameConcessionActual, TestDataForWebSiteAdmin.CONCESSION_NAME);
+
+            Console.WriteLine($" ;AR: {nameConcessionActual} ER: {TestDataForWebSiteAdmin.CONCESSION_NAME}");
+
+            return this;
+        }
+
     }
 }

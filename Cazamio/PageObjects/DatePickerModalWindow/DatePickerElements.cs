@@ -18,5 +18,8 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
 
         [FindsBy(How = How.XPath, Using = "//button[@aria-label = 'Next year']")]
         public IWebElement ButtonArrowNextYear;
+
+        [FindsBy(How = How.XPath, Using = "//button[@aria-label = 'Next month']")]
+        public IWebElement ButtonArrowNextMonth;
     }
 }

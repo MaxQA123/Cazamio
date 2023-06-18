@@ -147,60 +147,60 @@ namespace CazamioProgect.Helpers
 
     #region TestsDataDaysForDatePickerTenant
 
-    public class DaysFirstWeekForDatePiker
+    public class DaysFirstLineForDatePiker
     {
-        public const int firstWeekfirstNumber = 0;
-        public const int firstWeeksecondNumber = 1;
-        public const int firstWeekthirdNumber = 2;
-        public const int firstWeekfourthNumber = 3;
-        public const int firstWeekfivethNumber = 4;
-        public const int firstWeekksixthNumber = 5;
-        public const int firstWeekseventhNumber = 6;
+        public const int FIRST_LINE_FIRST_NUMBER = 0;
+        public const int FIRST_LINE_SECOND_NUMBER = 1;
+        public const int FIRST_LINE_THIRD_NUMBER = 2;
+        public const int FIRST_LINE_FOURTH_NUMBER = 3;
+        public const int FIRST_LINE_FIVETH_NUMBER = 4;
+        public const int FIRST_LINE_SIXTH_NUMBER = 5;
+        public const int FIRST_LINE_SEVENTH_NUMBER = 6;
 
     }
 
-    public class DaysSecondWeekForDatePiker
+    public class DaysSecondLineForDatePiker
     {
-        public const int secondWeekeighthNumber = 0;
-        public const int secondWeekninethNumber = 1;
-        public const int secondWeektenthNumber = 2;
-        public const int secondWeekeleventhNumber = 3;
-        public const int secondWeektwelvethNumber = 4;
-        public const int secondWeekthirteenthNumber = 5;
-        public const int secondWeekfourteenthNumber = 6;
+        public const int SECOND_LINE_FIRST_NUMBER = 0;
+        public const int SECOND_LINE_SECOND_NUMBER = 1;
+        public const int SECOND_LINE_THIRD_NUMBER = 2;
+        public const int SECOND_LINE_FOURTH_NUMBER = 3;
+        public const int SECOND_LINE_FIVETH_NUMBER = 4;
+        public const int SECOND_LINE_SIXTH_NUMBER = 5;
+        public const int SECOND_LINE_SEVENTH_NUMBER = 6;
     }
 
-    public class DaysThirdWeekForDatePiker
+    public class DaysThirdLineForDatePiker
     {
-        public const int thirdWeekfiveteenthNumber = 0;
-        public const int thirdWeeksixteenthNumber = 1;
-        public const int thirdWeekseventeenthNumber = 2;
-        public const int thirdWeekeighteenthNumber = 3;
-        public const int thirdWeeknineteenthNumber = 4;
-        public const int thirdWeektwentythNumber = 5;
-        public const int thirdWeektwentyFirstNumber = 6;
+        public const int THIRD_LINE_FIRST_NUMBER = 0;
+        public const int THIRD_LINE_SECOND_NUMBER = 1;
+        public const int THIRD_LINE_THIRD_NUMBER = 2;
+        public const int THIRD_LINE_FOURTH_NUMBER = 3;
+        public const int THIRD_LINE_FIVETH_NUMBER = 4;
+        public const int THIRD_LINE_SIXTH_NUMBER = 5;
+        public const int THIRD_LINE_SEVENTH_NUMBER = 6;
     }
 
-    public class DaysFourthWeekForDatePiker
+    public class DaysFourthLineForDatePiker
     {
-        public const int fourthWeektwentySecondNumber = 0;
-        public const int fourthWeektwentyThirdNumber = 1;
-        public const int fourthWeektwentyFourthNumber = 2;
-        public const int fourthWeektwentyFivethNumber = 3;
-        public const int fourthWeektwentySixthNumber = 4;
-        public const int fourthWeektwentySeventhNumber = 5;
-        public const int fourthWeektwentyEightthNumber = 6;
+        public const int FOURTH_LINE_FIRST_NUMBER = 0;
+        public const int FOURTH_LINE_SECOND_NUMBER = 1;
+        public const int FOURTH_LINE_THIRD_NUMBER = 2;
+        public const int FOURTH_LINE_FOURTH_NUMBER = 3;
+        public const int FOURTH_LINE_FIVETH_NUMBER = 4;
+        public const int FOURTH_LINE_SIXTH_NUMBER = 5;
+        public const int FOURTH_LINE_SEVENTH_NUMBER = 6;
     }
 
-    public class DaysFivethWeekForDatePiker
+    public class DaysFivethLineForDatePiker
     {
-        public const int fivethWeektwentyNinethNumber = 0;
-        public const int fivethWeekthirtyNumber = 1;
-        public const int fivethWeekthirtyFirstNumber = 2;
-        public const int fivethWeekthirtySecondNumber = 3;
-        public const int fivethWeekthirtyThirdNumber = 4;
-        public const int fivethWeekthirtyFourthNumber = 5;
-        public const int fivethWeekthirtyFivethNumber = 6;
+        public const int FIVETH_LINE_FIRST_NUMBER = 0;
+        public const int FIVETH_LINE_SECOND_NUMBER = 1;
+        public const int FIVETH_LINE_THIRD_NUMBER = 2;
+        public const int FIVETH_LINE_FOURTH_NUMBER = 3;
+        public const int FIVETH_LINE_FIVETH_NUMBER = 4;
+        public const int FIVETH_LINE_SIXTH_NUMBER = 5;
+        public const int FIVETH_LINE_SEVENTH_NUMBER = 6;
     }
 
     #endregion

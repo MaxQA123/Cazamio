@@ -134,7 +134,19 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         public IWebElement ButtonYesSpecialsNwBldngPg;
 
         [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'dateFrom']")]
-        public IWebElement ButtonDateFromSpecialsNwBldngPg;
+        public IWebElement FieldInputDateFromSpecialsNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'dateTo']")]
+        public IWebElement FieldInputDateToSpecialsNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Save']")]
+        public IWebElement ButtonSaveSpecialsNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Cancel']")]
+        public IWebElement ButtonCancelSpecialsNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'building-specials-container ng-star-inserted'] //table//tbody//td[1]")]
+        public IWebElement RecordNameInTableConcessionNwBldngPg;
 
         #endregion
 
