@@ -121,6 +121,9 @@ namespace CazamioProgect.Helpers
         public const string CAB_NAME_LOCK_ACCESS = "CAB";
         public const string NOTE_NAME_LOCK_ACCESS = "Note";
         public const string PIN_CODE_NAME_LOCK_ACCESS = "PinCode";
+        public const string CONCESSION_NAME = "Concess1";
+        public const string CONCESSION_MONTHS_FREE = "7";
+        public const string CONCESSION_LEASE_TERMS = "55";
 
         public const string BUILDING_NAME = "Diamond Hall";
         public const string BUILDING_LLC_NAME = "LLC Rent Corporation";

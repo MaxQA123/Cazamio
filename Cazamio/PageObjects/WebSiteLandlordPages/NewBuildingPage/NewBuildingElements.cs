@@ -116,6 +116,28 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         #endregion
 
+        #region Specials
+
+        [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Add']")]
+        public IWebElement ButtonAddSpecialsNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'name']")]
+        public IWebElement FieldInputNameSpecialsNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'monthsFree']")]
+        public IWebElement FieldInputMonthsFreeSpecialsNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'leaseTerms']")]
+        public IWebElement FieldInputLeaseTermsSpecialsNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//mat-button-toggle-group//mat-button-toggle[2]")]
+        public IWebElement ButtonYesSpecialsNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'dateFrom']")]
+        public IWebElement ButtonDateFromSpecialsNwBldngPg;
+
+        #endregion
+
         [FindsBy(How = How.XPath, Using = "//cazamio-button[@text = 'Next']//button[@type = 'button']")]
         public IWebElement ButtonGeneralNextNwBldngPg;
         

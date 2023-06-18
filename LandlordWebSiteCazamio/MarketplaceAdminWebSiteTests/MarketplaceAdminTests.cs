@@ -488,6 +488,10 @@ namespace MarketplaceAdminTests
 
             Pages.NewBuilding
                 .VerifyTypeAccessFromTable(copyActualNameCab, copyActualNameNote, copyActualNamePinCode);
+            Pages.NewBuilding
+                .ClickButtonGeneralNextNwBldngPg()
+                .ClickButtonAddSpecialsNwBldngPg()
+                .AddConcessionSpecialsNwBldngPg();
 
 
 

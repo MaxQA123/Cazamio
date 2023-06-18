@@ -272,5 +272,36 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         #endregion
 
+        #region Specials
+
+        [AllureStep("ClickButtonAddSpecialsNwBldngPg")]
+        public NewBuilding ClickButtonAddSpecialsNwBldngPg()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonAddSpecialsNwBldngPg, 10);
+            Button.Click(ButtonAddSpecialsNwBldngPg);
+
+            return this;
+        }
+
+        [AllureStep("AddConcessionSpecialsNwBldngPg")]
+        public NewBuilding AddConcessionSpecialsNwBldngPg()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputNameSpecialsNwBldngPg, 10);
+            InputGeneral.InputFunctionWithClear(FieldInputNameSpecialsNwBldngPg, TestDataForWebSiteAdmin.CONCESSION_NAME);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputMonthsFreeSpecialsNwBldngPg, TestDataForWebSiteAdmin.CONCESSION_MONTHS_FREE);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputLeaseTermsSpecialsNwBldngPg, TestDataForWebSiteAdmin.CONCESSION_LEASE_TERMS);
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickArrowDown();
+            KeyBoardActions.ClickEnterButton();
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonYesSpecialsNwBldngPg);
+
+            return this;
+        }
+
+        #endregion
+
     }
 }
