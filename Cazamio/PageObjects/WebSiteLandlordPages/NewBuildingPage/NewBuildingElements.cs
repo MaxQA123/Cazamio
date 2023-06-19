@@ -118,6 +118,12 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         #region Specials
 
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'building-specials-container ng-star-inserted']//a[text() = 'Concessions']")]
+        public IWebElement TabConcessionsSpecialsNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'building-specials-container ng-star-inserted']//a[text() = 'Free Stuff']")]
+        public IWebElement TabFreeStuffSpecialsNwBldngPg;
+
         [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Add']")]
         public IWebElement ButtonAddSpecialsNwBldngPg;
 

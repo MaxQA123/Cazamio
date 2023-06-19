@@ -496,9 +496,9 @@ namespace MarketplaceAdminTests
             string getNameConcession = Pages.NewBuilding.GetNameConcessionFromTable();
 
             Pages.NewBuilding
-                .VerifyNameSpecialsConcessionInTableNewBuildingPg(getNameConcession);
-
-
+                .VerifyNameSpecialsConcessionInTableNewBuildingPg(getNameConcession)
+                .ClickTabFreeStuffSpecialsNwBldngPg()
+                .ClickButtonAddSpecialsNwBldngPg();
 
             WaitUntil.WaitSomeInterval(5000);
         }

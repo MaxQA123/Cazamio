@@ -283,6 +283,15 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
+        [AllureStep("ClickTabFreeStuffSpecialsNwBldngPg")]
+        public NewBuilding ClickTabFreeStuffSpecialsNwBldngPg()
+        {
+            WaitUntil.CustomElementIsVisible(TabFreeStuffSpecialsNwBldngPg, 10);
+            Button.Click(TabFreeStuffSpecialsNwBldngPg);
+
+            return this;
+        }
+
         [AllureStep("AddConcessionSpecialsNwBldngPg")]
         public NewBuilding AddConcessionSpecialsNwBldngPg()
         {
@@ -301,7 +310,40 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             Button.Click(FieldInputDateFromSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFourthLine(DaysFourthLineForDatePiker.FOURTH_LINE_FIRST_NUMBER, " ");
+                .SelectDayOnDatePickerFourthLine(DaysFourthLineForDatePiker.FOURTH_LINE_SECOND_NUMBER, " ");
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(FieldInputDateToSpecialsNwBldngPg);
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .ClickButtonArrowNextMonth();
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .SelectDayOnDatePickerThirdLine(DaysThirdLineForDatePiker.THIRD_LINE_SECOND_NUMBER, " ");
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonSaveSpecialsNwBldngPg);
+
+            return this;
+        }
+
+        [AllureStep("AddFreeStuffSpecialsNwBldngPg")]
+        public NewBuilding AddFreeStuffSpecialsNwBldngPg()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputNameSpecialsNwBldngPg, 10);
+            InputGeneral.InputFunctionWithClear(FieldInputNameSpecialsNwBldngPg, TestDataForWebSiteAdmin.CONCESSION_NAME);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputMonthsFreeSpecialsNwBldngPg, TestDataForWebSiteAdmin.CONCESSION_MONTHS_FREE);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputLeaseTermsSpecialsNwBldngPg, TestDataForWebSiteAdmin.CONCESSION_LEASE_TERMS);
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickArrowDown();
+            KeyBoardActions.ClickEnterButton();
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonYesSpecialsNwBldngPg);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(FieldInputDateFromSpecialsNwBldngPg);
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .SelectDayOnDatePickerFourthLine(DaysFourthLineForDatePiker.FOURTH_LINE_SECOND_NUMBER, " ");
             WaitUntil.WaitSomeInterval(100);
             Button.Click(FieldInputDateToSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
