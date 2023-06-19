@@ -329,11 +329,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         public NewBuilding AddFreeStuffSpecialsNwBldngPg()
         {
             WaitUntil.CustomElementIsVisible(FieldInputNameSpecialsNwBldngPg, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputNameSpecialsNwBldngPg, TestDataForWebSiteAdmin.CONCESSION_NAME);
+            InputGeneral.InputFunctionWithClear(FieldInputNameSpecialsNwBldngPg, TestDataForWebSiteAdmin.FREE_STUFF_NAME);
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputMonthsFreeSpecialsNwBldngPg, TestDataForWebSiteAdmin.CONCESSION_MONTHS_FREE);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputLeaseTermsSpecialsNwBldngPg, TestDataForWebSiteAdmin.CONCESSION_LEASE_TERMS);
+            
             WaitUntil.WaitSomeInterval(100);
             KeyBoardActions.ClickArrowDown();
             KeyBoardActions.ClickEnterButton();

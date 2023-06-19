@@ -124,6 +124,7 @@ namespace CazamioProgect.Helpers
         public const string CONCESSION_NAME = "Concess1";
         public const string CONCESSION_MONTHS_FREE = "7";
         public const string CONCESSION_LEASE_TERMS = "55";
+        public const string FREE_STUFF_NAME = "FreeStuff1";
 
         public const string BUILDING_NAME = "Diamond Hall";
         public const string BUILDING_LLC_NAME = "LLC Rent Corporation";
@@ -145,7 +146,7 @@ namespace CazamioProgect.Helpers
         public const string IMAGE_FOR_LOCK_OK = $"\\UploadImages\\OK.jpg";
     }
 
-    #region TestsDataDaysForDatePickerTenant
+    #region TestsDataDaysForDatePickerAdmins
 
     public class DaysFirstLineForDatePiker
     {

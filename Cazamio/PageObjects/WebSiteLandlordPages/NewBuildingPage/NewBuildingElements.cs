@@ -154,6 +154,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [FindsBy(How = How.XPath, Using = "//div[@class = 'building-specials-container ng-star-inserted'] //table//tbody//td[1]")]
         public IWebElement RecordNameInTableConcessionNwBldngPg;
 
+        [FindsBy(How = How.XPath, Using = "")]
+        public IWebElement FieldInputSelectItemsSpecialsNwBldngPg;
+
         #endregion
 
         [FindsBy(How = How.XPath, Using = "//cazamio-button[@text = 'Next']//button[@type = 'button']")]
