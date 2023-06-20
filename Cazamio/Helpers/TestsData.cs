@@ -144,6 +144,10 @@ namespace CazamioProgect.Helpers
         public const string AVATAR_IMG_ADMIN_FIRST = $"\\UploadImages\\2AvatarLandLord.jpg";
         public const string AVATAR_IMG_ADMIN_SECOND = $"\\UploadImages\\3AvatarKoalaLandlord.jpg";
         public const string IMAGE_FOR_LOCK_OK = $"\\UploadImages\\OK.jpg";
+        public const string IMAGE_HOUSE_FOR_BUILDING = $"\\UploadImages\\HouseOne.jpg";
+        public const string IMAGE_POOL_FOR_BUILDING = $"\\UploadImages\\Pool.jpg";
+        public const string IMAGE_PARKING_FOR_BUILDING = $"\\UploadImages\\Parking.jpg";
+        public const string IMAGE_YARD_FOR_BUILDING = $"\\UploadImages\\Yard.jpg";
     }
 
     #region TestsDataDaysForDatePickerAdmins
@@ -290,11 +294,11 @@ namespace CazamioProgect.Helpers
 
     public class TabsOnNewBuildingPage
     {
-        public const int tabBasicDetails = 0;
-        public const int tabAmenities = 1;
-        public const int tabAccess = 2;
-        public const int tabSpecials = 3;
-        public const int tabImages = 4;
+        public const int TAB_BASIC_DETAILS = 0;
+        public const int TAB_AMENITIES = 1;
+        public const int TAB_ACCESS = 2;
+        public const int TAB_SPECIALS = 3;
+        public const int TAB_IMAGES = 4;
     }
 
     public class ItemsPetPolicies

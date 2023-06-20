@@ -16,12 +16,12 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         private static IWebElement _tabsForSwitchingOnPage;
 
         [AllureStep("SelectorTabsOnNewBuildingsPg")]
-        public static IList<IWebElement> SelectorTabsOnNewBuildingsPg(string _locationTab)
+        public static IList <IWebElement> SelectorTabsOnNewBuildingsPg(string _locationTab)
         {
             WaitUntil.WaitSomeInterval(1000);
-            var str = "//div[@class = 'wizard-navigation']//ul";
+            var str = "//div[@class = 'wizard-navigation']//ul[@class = 'nav nav-pills']";
             _tabsForSwitchingOnPage = Browser._Driver.FindElement(By.XPath(str));
-            return _tabsForSwitchingOnPage.FindElements(By.XPath($".//li//a[contains(@role, '{_locationTab}')]"));
+            return _tabsForSwitchingOnPage.FindElements(By.XPath($"./li[contains(@class, 'nav-item')]"));
         }
 
         [AllureStep("SelectTabOnNewBuildingsPg")]
@@ -30,7 +30,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             WaitUntil.WaitSomeInterval(500);
             IList<IWebElement> _tab = SelectorTabsOnNewBuildingsPg(locationTab);
 
-            _tab[tab].Click();
+            _tab.Where(x => x.Text== "Images").Select(x => x).FirstOrDefault().Click();
 
             return this;
         }
@@ -181,6 +181,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [AllureStep("AddItemAccessTypePinCodeForAccessNwBldngPg")]
         public NewBuilding AddItemAccessTypePinCodeForAccessNwBldngPg()
         {
+            WaitUntil.WaitSomeInterval(3000);
             WaitUntil.CustomElementIsVisible(ButtonAccessTypeForAccessNwBldngPg, 10);
             Button.Click(ButtonAccessTypeForAccessNwBldngPg);
             WaitUntil.WaitSomeInterval(500);
@@ -216,6 +217,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [AllureStep("AddItemAccessTypeNoteForAccessNwBldngPg")]
         public NewBuilding AddItemAccessTypeNoteForAccessNwBldngPg()
         {
+            WaitUntil.WaitSomeInterval(3000);
             WaitUntil.CustomElementIsVisible(ButtonAccessTypeForAccessNwBldngPg, 10);
             Button.Click(ButtonAccessTypeForAccessNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
@@ -242,6 +244,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [AllureStep("AddItemAccessTypeCabForAccessNwBldngPg")]
         public NewBuilding AddItemAccessTypeCabForAccessNwBldngPg()
         {
+            WaitUntil.WaitSomeInterval(3000);
             WaitUntil.CustomElementIsVisible(ButtonAccessTypeForAccessNwBldngPg, 10);
             InputGeneral.InputFunctionWithClear(FieldInputLocationForAccessNwBldngPg, TestDataForWebSiteAdmin.THIRD_NAME_LOCATION);
             Button.Click(ButtonAccessTypeForAccessNwBldngPg);
@@ -310,7 +313,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             Button.Click(FieldInputDateFromSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFourthLine(DaysFourthLineForDatePiker.FOURTH_LINE_SECOND_NUMBER, " ");
+                .SelectDayOnDatePickerFourthLine(DaysFourthLineForDatePiker.FOURTH_LINE_THIRD_NUMBER, " ");
             WaitUntil.WaitSomeInterval(100);
             Button.Click(FieldInputDateToSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
@@ -331,17 +334,18 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             WaitUntil.CustomElementIsVisible(FieldInputNameSpecialsNwBldngPg, 10);
             InputGeneral.InputFunctionWithClear(FieldInputNameSpecialsNwBldngPg, TestDataForWebSiteAdmin.FREE_STUFF_NAME);
             WaitUntil.WaitSomeInterval(100);
-            
+            Button.Click(FieldInputSelectItemsSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
-            KeyBoardActions.ClickArrowDown();
-            KeyBoardActions.ClickEnterButton();
+            Button.Click(ItemFreeNetflixSpecialsNwBldngPg);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ItemGoogleSpeakerSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
             Button.Click(ButtonYesSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
             Button.Click(FieldInputDateFromSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFourthLine(DaysFourthLineForDatePiker.FOURTH_LINE_SECOND_NUMBER, " ");
+                .SelectDayOnDatePickerFourthLine(DaysFourthLineForDatePiker.FOURTH_LINE_THIRD_NUMBER, " ");
             WaitUntil.WaitSomeInterval(100);
             Button.Click(FieldInputDateToSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
@@ -352,6 +356,35 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
                 .SelectDayOnDatePickerThirdLine(DaysThirdLineForDatePiker.THIRD_LINE_SECOND_NUMBER, " ");
             WaitUntil.WaitSomeInterval(100);
             Button.Click(ButtonSaveSpecialsNwBldngPg);
+
+            return this;
+        }
+
+        #endregion
+
+        #region Images
+
+        [AllureStep("UploadImagesForNewBuilding")]
+        public NewBuilding UploadImagesForNewBuilding()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonUploadImageNwBldngPg, 10);
+            ButtonUploadImageNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_HOUSE_FOR_BUILDING));
+            WaitUntil.WaitSomeInterval(100);
+            ButtonUploadImageNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_PARKING_FOR_BUILDING));
+            WaitUntil.WaitSomeInterval(100);
+            ButtonUploadImageNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_POOL_FOR_BUILDING));
+            WaitUntil.WaitSomeInterval(100);
+            ButtonUploadImageNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_YARD_FOR_BUILDING));
+            WaitUntil.WaitSomeInterval(100);
+
+            return this;
+        }
+
+        [AllureStep("ClickButtonSaveNwBldngPg")]
+        public NewBuilding ClickButtonSaveNwBldngPg()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonSaveNwBldngPg);
 
             return this;
         }

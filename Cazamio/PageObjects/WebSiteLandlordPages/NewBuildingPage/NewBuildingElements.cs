@@ -154,8 +154,26 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [FindsBy(How = How.XPath, Using = "//div[@class = 'building-specials-container ng-star-inserted'] //table//tbody//td[1]")]
         public IWebElement RecordNameInTableConcessionNwBldngPg;
 
-        [FindsBy(How = How.XPath, Using = "")]
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder = 'Search for specials']")]
         public IWebElement FieldInputSelectItemsSpecialsNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//div[text() = ' Free Netflix ']")]
+        public IWebElement ItemFreeNetflixSpecialsNwBldngPg;
+
+        [FindsBy(How = How.XPath, Using = "//div[text() = ' Google Speaker ']")]
+        public IWebElement ItemGoogleSpeakerSpecialsNwBldngPg;
+
+        #endregion
+
+        #region Images
+
+        [FindsBy(How = How.XPath, Using = "//span[text() = 'Browse files']")]
+        public IWebElement ButtonUploadImageNwBldngPg;
+
+        //label[@class = 'label-upload']//input[@id = 'file-upload']
+
+        [FindsBy(How = How.XPath, Using = "//span[text() = 'Save']")]
+        public IWebElement ButtonSaveNwBldngPg;
 
         #endregion
 
