@@ -167,9 +167,12 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         #region Images
 
-        [FindsBy(How = How.XPath, Using = "//span[text() = 'Browse files']")]
+        [FindsBy(How = How.XPath, Using = "//input[@class = 'ngx-file-drop__file-input']")]
         public IWebElement ButtonUploadImageNwBldngPg;
 
+        //ngx-file-drop[@dropzonelabel = 'Drop files here']
+        //input[@class = 'ngx-file-drop__file-input']
+        //div[@class = 'btn-file-upload']
         //label[@class = 'label-upload']//input[@id = 'file-upload']
 
         [FindsBy(How = How.XPath, Using = "//span[text() = 'Save']")]

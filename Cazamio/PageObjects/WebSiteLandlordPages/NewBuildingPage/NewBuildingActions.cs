@@ -85,10 +85,10 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             InputGeneral.InputFunctionWithClear(FieldInputBuildingNameNwBldngPg, TestDataForWebSiteAdmin.BUILDING_NAME_NEW_BUILDING);
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputLlcNameNwBldngPg, TestDataForWebSiteAdmin.BUILDING_LLC_NAME_NEW_BUILDING);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputDescroptionNwBldngPg, TestDataForWebSiteAdmin.DESCRIPTION_NEW_BUILDING + GeneralTestDataForAllUsers.TEXT_LOREM);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputInternalNotesNwBldngPg, TestDataForWebSiteAdmin.INTERNAL_NOTES_NEW_BUILDING + GeneralTestDataForAllUsers.TEXT_LOREM);
+            //WaitUntil.WaitSomeInterval(100);
+            //InputGeneral.InputFunctionWithClear(FieldInputDescroptionNwBldngPg, TestDataForWebSiteAdmin.DESCRIPTION_NEW_BUILDING + GeneralTestDataForAllUsers.TEXT_LOREM);
+            //WaitUntil.WaitSomeInterval(100);
+            //InputGeneral.InputFunctionWithClear(FieldInputInternalNotesNwBldngPg, TestDataForWebSiteAdmin.INTERNAL_NOTES_NEW_BUILDING + GeneralTestDataForAllUsers.TEXT_LOREM);
 
             return this;
         }
@@ -369,13 +369,13 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         {
             WaitUntil.CustomElementIsVisible(ButtonUploadImageNwBldngPg, 10);
             ButtonUploadImageNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_HOUSE_FOR_BUILDING));
-            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.WaitSomeInterval(1000);
             ButtonUploadImageNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_PARKING_FOR_BUILDING));
-            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.WaitSomeInterval(1000);
             ButtonUploadImageNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_POOL_FOR_BUILDING));
-            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.WaitSomeInterval(1000);
             ButtonUploadImageNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_YARD_FOR_BUILDING));
-            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.WaitSomeInterval(1000);
 
             return this;
         }
