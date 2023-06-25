@@ -170,17 +170,15 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [FindsBy(How = How.XPath, Using = "//input[@class = 'ngx-file-drop__file-input']")]
         public IWebElement ButtonUploadImageNwBldngPg;
 
-        //ngx-file-drop[@dropzonelabel = 'Drop files here']
-        //input[@class = 'ngx-file-drop__file-input']
-        //div[@class = 'btn-file-upload']
-        //label[@class = 'label-upload']//input[@id = 'file-upload']
-
         [FindsBy(How = How.XPath, Using = "//span[text() = 'Save']")]
         public IWebElement ButtonSaveNwBldngPg;
 
+        [FindsBy(How = How.XPath, Using = "//span[text() = 'Saved successfully!']")]
+        public IWebElement MessageSavedSuccessfullyBuildingNwBldngPg;
+        
         #endregion
 
-        [FindsBy(How = How.XPath, Using = "//cazamio-button[@text = 'Next']//button[@type = 'button']")]
+        [FindsBy(How = How.XPath, Using = "//cazamio-button[@text = 'Next']")]
         public IWebElement ButtonGeneralNextNwBldngPg;
         
     }

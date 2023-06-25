@@ -13,6 +13,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
         [AllureStep("ClickButtonAddBuilding")]
         public ListOfBuildings ClickButtonAddBuilding()
         {
+            WaitUntil.ElementIsClickable(ButtonAdd, 10);
             Button.Click(ButtonAdd);
 
             return this;

@@ -108,5 +108,14 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
+        [AllureStep("VerifyMessageSavedSuccessfullyBuildingNwBldngPg")]
+        public NewBuilding VerifyMessageSavedSuccessfullyBuildingNwBldngPg()
+        {
+            WaitUntil.CustomElementIsVisible(MessageSavedSuccessfullyBuildingNwBldngPg, 10);
+            Assert.IsTrue(Successfully.IsVisible(MessageSavedSuccessfullyBuildingNwBldngPg));
+
+            return this;
+        }
+        
     }
 }
