@@ -418,7 +418,7 @@ namespace MarketplaceAdminTests
 
         //Date of publication: 
         //Version\Build:
-        //Willingness for testing: Done.
+        //Willingness for testing: In Progress.
         //This test case is doing checking: The successfully created "Building" as "Marketplace Admin".
         //Comment: 
 
@@ -506,6 +506,47 @@ namespace MarketplaceAdminTests
                 .UploadImagesForNewBuilding()
                 .ClickButtonSaveNwBldngPg()
                 .VerifyMessageSavedSuccessfullyBuildingNwBldngPg();
+
+            WaitUntil.WaitSomeInterval(5000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("MarketplaceAdmin")]
+        [AllureSubSuite("AddApartment")]
+
+        //Date of publication: 
+        //Version\Build:
+        //Willingness for testing: In Progress.
+        //This test case is doing checking: The successfully created "Building" as "Marketplace Admin".
+        //Comment: 
+
+        public void AddApartment()
+        {
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+            Pages.ListOfBuildings
+                .SelectItemFirstBuildingOnPage();
+            Pages.BuildingView
+                .VerifyTitleBuildingViewPage()
+                .ClickTabApartmentsBldngVwPg();
+            KeyBoardActions.ScrollToDown();
+            Pages.BuildingView
+                .ClickButtonAddInTabApartmentsBldngVwPg();
+            Pages.AddApartments
+                .VerifyTitleAddApartmentsPage();
 
             WaitUntil.WaitSomeInterval(5000);
         }

@@ -18,5 +18,14 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
 
             return this;
         }
+
+        [AllureStep("SelectItemFirstBuildingOnPage")]
+        public ListOfBuildings SelectItemFirstBuildingOnPage()
+        {
+            WaitUntil.ElementIsClickable(ItemFirstBuildingOnPage, 10);
+            Button.Click(ItemFirstBuildingOnPage);
+
+            return this;
+        }
     }
 }
