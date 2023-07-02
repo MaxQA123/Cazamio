@@ -1,0 +1,78 @@
+{
+  "uuid": "731b2537-f356-4dea-a369-9764871fb412-tc-0-1000",
+  "name": "MarketplaceAdminTests.TestsBaseWeb.AddApartment",
+  "children": [
+    "36f64574-c59e-4a1b-a7d5-7178ad6dd576-tr-0-1008"
+  ],
+  "befores": [
+    {
+      "name": "DobeforeAllTheTests",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1688299339004,
+      "stop": 1688299339004
+    },
+    {
+      "name": "SetUp",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.WebDriverException : unknown error: cannot determine loading status\nfrom no such window\n  (Session info: chrome=114.0.5735.199)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.CookieJar.DeleteAllCookies()\r\n   at CazamioProgect.Helpers.Browser.Initialize() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\Browser.cs:line 36\r\n   at MarketplaceAdminTests.BaseMarketplaceAdmin.SetUp() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\BaseMarketplaceAdminWebSite\\BaseMarketplaceAdmin.cs:line 16"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1688299339005,
+      "stop": 1688299339005
+    }
+  ],
+  "afters": [
+    {
+      "name": "DoAfterEach",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1688299339007,
+      "stop": 1688299339007
+    },
+    {
+      "name": "DoAfterAllTheTests",
+      "status": "none",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "It's not possible to get status of OneTimeTearDown",
+        "trace": "See Allure.NUnit wiki"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1688299339007,
+      "stop": 1688299339007
+    }
+  ],
+  "links": [],
+  "start": 1688299333646,
+  "stop": 1688299339101
+}

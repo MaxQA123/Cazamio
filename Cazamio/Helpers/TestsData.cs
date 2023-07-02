@@ -128,6 +128,10 @@ namespace CazamioProgect.Helpers
 
         public const string BUILDING_NAME = "Diamond Hall";
         public const string BUILDING_LLC_NAME = "LLC Rent Corporation";
+
+        public const string UNIT_NUMBER = "1Q";
+        public const string HALF_BEDS_BATHS_NUMBER = "1";
+        public const string DEFAULT_MONTHLY_RENTS_PREPAYMENT = "1";
     }
 
     public class NameDomen

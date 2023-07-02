@@ -552,6 +552,25 @@ namespace MarketplaceAdminTests
             Pages.AddApartments
                 .VerifyTitleAddApartmentsPage();
 
+            string getBuildingNameAddApartmentsPage = Pages.AddApartments.GetBuildingNameAddApartmentsPage();
+
+            Pages.AddApartments
+                .VerifyBuildingNameAddApartmentsPage(getBuildingNameAddApartmentsPage)
+                .EnterUnitNumberBedsBathsSqFoot()
+                .EnterLeasePriceSecurityDeposit();
+
+            string getLeasePrice = Pages.AddApartments.GetLeasePriceAddApartmentsPage();
+            string getSecurityDeposit = Pages.AddApartments.GetSecurityDepositAddApartmentsPage();
+
+            Pages.AddApartments
+                .VerifySecurityDepositAddApartmentsPage(getLeasePrice, getSecurityDeposit);
+
+            string getMonthlyRentsPrePayment = Pages.AddApartments.GetMonthlyRentsPrePaymentAddApartmentsPage();
+
+            Pages.AddApartments
+                .VerifyMonthlyRentsPrePaymentAddApartmentsPage(getMonthlyRentsPrePayment)
+                .EnterFieldInputFloorAddAprtmntsUnitsPage();
+
             WaitUntil.WaitSomeInterval(5000);
         }
     }
