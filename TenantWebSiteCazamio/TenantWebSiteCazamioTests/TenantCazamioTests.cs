@@ -271,8 +271,8 @@ namespace TenantCazamioTests
                 .EnterFirstLastNameEmailPhoneNumberMyAccntPgTabAccnt()
                 .SctollToDateOfBirth()
                 .ClickFieldInputDateOfBirthMyAccntPgTabAccnt();
-            Pages.DatePicker //Date of birth
-                .SelectDayOnDatePickerSecondWeek(DaysSecondWeekForDatePiker.secondWeekfourteenthNumber, "");
+            //Pages.DatePicker //Date of birth
+                //.SelectDayOnDatePickerSecondWeek(DaysSecondWeekForDatePiker.secondWeekfourteenthNumber, "");
             Pages.MyAccountCazamioTenant
                 .EnterStreetCityStateZipCodeMyAccntPgTabAccnt()
                 .SelectItemFromDrpDwnIRentThisPropertyDoYouRntMyAccntPgTabAccnt()

@@ -106,7 +106,7 @@ namespace CazamioProgect.Helpers
         public const string USER_NAME_AGENT = "Test Agent";
         public const string USER_NAME_ROLE_AGENT = "Agent";
 
-        public const string ADDRESS_BUILDING = "3 Times Square";
+        public const string ADDRESS_BUILDING = "4 Times Square";
         public const string CITY_BUILDING = "New York";
         public const string STATE_BUILDING = "NY";
         public const string ZIP_BUILDING = "10036";

@@ -137,6 +137,10 @@ namespace MarketplaceAdminTests
             Pages.Marketplace
                 .VerifyTitleMarketplacePg();
             Pages.SideBarLandlord
+                .ClickButtonReportsAdminsSidebar();
+            Pages.Reports
+                .VerifyTitleReportsPage();
+            Pages.SideBarLandlord
                 .ClickButtonLogOutSidebar();
             Pages.LogInLandlord
                 .VerifyTitleLogInPg();
@@ -418,7 +422,7 @@ namespace MarketplaceAdminTests
 
         //Date of publication: 
         //Version\Build:
-        //Willingness for testing: In Progress.
+        //Willingness for testing: Done.
         //This test case is doing checking: The successfully created "Building" as "Marketplace Admin".
         //Comment: 
 

@@ -315,7 +315,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             Button.Click(FieldInputDateFromSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFivethLine(DaysFivethLineForDatePiker.FIVETH_LINE_FIRST_NUMBER, " ");
+                .SelectDayOnDatePickerFivethLine(DaysSecondLineForDatePiker.SECOND_LINE_FIRST_NUMBER, " ");
             WaitUntil.WaitSomeInterval(100);
             Button.Click(FieldInputDateToSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
@@ -347,7 +347,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             Button.Click(FieldInputDateFromSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFivethLine(DaysFivethLineForDatePiker.FIVETH_LINE_FIRST_NUMBER, " ");
+                .SelectDayOnDatePickerFivethLine(DaysSecondLineForDatePiker.SECOND_LINE_FIRST_NUMBER, " ");
             WaitUntil.WaitSomeInterval(100);
             Button.Click(FieldInputDateToSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
@@ -370,16 +370,10 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         public NewBuilding UploadImagesForNewBuilding()
         {
             WaitUntil.CustomElementIsVisible(ButtonUploadImageNwBldngPg, 10);
-            ButtonUploadImageNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_HOUSE_FOR_BUILDING));
-            //WaitUntil.CustomElementIsVisible(ButtonUploadImageNwBldngPg, 10);
-            //WaitUntil.WaitSomeInterval(1000);
-            //ButtonUploadImageNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_PARKING_FOR_BUILDING));
-            //WaitUntil.CustomElementIsVisible(ButtonUploadImageNwBldngPg, 10);
-            //WaitUntil.WaitSomeInterval(1000);
-            //ButtonUploadImageNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_POOL_FOR_BUILDING));
-            //WaitUntil.CustomElementIsVisible(ButtonUploadImageNwBldngPg, 10);
-            //WaitUntil.WaitSomeInterval(1000);
-            //ButtonUploadImageNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_YARD_FOR_BUILDING));
+            ButtonUploadImageNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(Browser.RootPath() + UploadImages.IMAGE_HOUSE_FOR_BUILDING) + "\n" +
+                                                                      Browser.RootPath() + UploadImages.IMAGE_PARKING_FOR_BUILDING + "\n" +
+                                                                      Browser.RootPath() + UploadImages.IMAGE_POOL_FOR_BUILDING + "\n" +
+                                                                      Browser.RootPath() + UploadImages.IMAGE_YARD_FOR_BUILDING));
             WaitUntil.WaitSomeInterval(3000);
 
             return this;

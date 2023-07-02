@@ -85,6 +85,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         [FindsBy(How = How.XPath, Using = "//a[@href= '/administrator/marketplace-admins-list']")]
         public IWebElement ButtonMarketplaceAdminsSidebar;
 
+        [FindsBy(How = How.XPath, Using = "//a[@href= '/reports']")]
+        public IWebElement ButtonReportsAdminsSidebar;
+
         #endregion
     }
 }
