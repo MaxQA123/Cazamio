@@ -132,6 +132,9 @@ namespace CazamioProgect.Helpers
         public const string UNIT_NUMBER = "1Q";
         public const string HALF_BEDS_BATHS_NUMBER = "1";
         public const string DEFAULT_MONTHLY_RENTS_PREPAYMENT = "1";
+        public const string DEFAULT_APARTMENT_TYPE = "MultiFamily";
+        public const string DEFAULT_APARTMENT_HOLD_DEPOSIT = "500";
+        public const string DEFAULT_RENTAL_TERMS = "12 months\r\ncancel";
     }
 
     public class NameDomen

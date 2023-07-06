@@ -1,0 +1,437 @@
+{
+  "uuid": "50d2d5ee-7896-456d-a823-50446322d09b-tr-0-1008",
+  "historyId": "MarketplaceAdminTests.TestsBaseWeb.AddApartment",
+  "fullName": "MarketplaceAdminTests.TestsBaseWeb.AddApartment",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "MarketplaceAdminTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "AddApartment"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "MarketplaceAdmin"
+    },
+    {
+      "name": "subSuite",
+      "value": "AddApartment"
+    }
+  ],
+  "links": [],
+  "name": "AddApartment",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "  Expected: True\r\n  But was:  False\r\n",
+    "trace": "   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.__a$_around_VerifyTitleAddApartmentsPage_100663840_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\AddApartmentsPage\\AddApartmentsAssertions.cs:line 18\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.__a$_around_VerifyTitleAddApartmentsPage_100663840_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.__a$_around_VerifyTitleAddApartmentsPage_100663840_w_0(Object[] )\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.VerifyTitleAddApartmentsPage() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\AddApartmentsPage\\AddApartmentsActions.cs:line 15\r\n   at MarketplaceAdminTests.TestsBaseWeb.AddApartment() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\MarketplaceAdminWebSiteTests\\MarketplaceAdminTests.cs:line 552\r\n"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "AddApartment",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "  Expected: True\r\n  But was:  False\r\n",
+        "trace": "   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.__a$_around_VerifyTitleAddApartmentsPage_100663840_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\AddApartmentsPage\\AddApartmentsAssertions.cs:line 18\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.__a$_around_VerifyTitleAddApartmentsPage_100663840_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.__a$_around_VerifyTitleAddApartmentsPage_100663840_w_0(Object[] )\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.VerifyTitleAddApartmentsPage() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\AddApartmentsPage\\AddApartmentsActions.cs:line 15\r\n   at MarketplaceAdminTests.TestsBaseWeb.AddApartment() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\MarketplaceAdminWebSiteTests\\MarketplaceAdminTests.cs:line 552\r\n"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "EnterEmailPasswordLogInPgAsMarketplaceAdmin",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "marketplace1chui@putsbox.com"
+                }
+              ],
+              "start": 1688639038586,
+              "stop": 1688639039281
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1688639039796,
+              "stop": 1688639040370
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688639038585,
+          "stop": 1688639040371
+        },
+        {
+          "name": "ClickIconShowLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1688639040372,
+              "stop": 1688639041009
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688639040371,
+          "stop": 1688639041009
+        },
+        {
+          "name": "ClickButtonLetsGoLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1688639041010,
+              "stop": 1688639041838
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688639041010,
+          "stop": 1688639042851
+        },
+        {
+          "name": "GetUserNameFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688639042853,
+          "stop": 1688639047685
+        },
+        {
+          "name": "GetUserNameRoleFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688639047686,
+          "stop": 1688639047751
+        },
+        {
+          "name": "VerifyMarketplaceAdminUserName",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Chui Chubaka"
+            },
+            {
+              "name": "String",
+              "value": "Marketplace Admin"
+            }
+          ],
+          "start": 1688639047753,
+          "stop": 1688639049278
+        },
+        {
+          "name": "SelectItemFirstBuildingOnPage",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1688639049891,
+              "stop": 1688639050717
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688639049281,
+          "stop": 1688639050717
+        },
+        {
+          "name": "VerifyTitleBuildingViewPage",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688639050728,
+          "stop": 1688639051842
+        },
+        {
+          "name": "ClickTabApartmentsBldngVwPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1688639051964,
+              "stop": 1688639052644
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688639051843,
+          "stop": 1688639052644
+        },
+        {
+          "name": "ScrollToDown",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688639052647,
+          "stop": 1688639052673
+        },
+        {
+          "name": "ClickButtonAddInTabApartmentsBldngVwPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1688639052712,
+              "stop": 1688639053541
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688639052673,
+          "stop": 1688639053541
+        },
+        {
+          "name": "VerifyTitleAddApartmentsPage",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "  Expected: True\r\n  But was:  False\r\n",
+            "trace": "   at NUnit.Framework.Assert.ReportFailure(String message)\r\n   at NUnit.Framework.Assert.ReportFailure(ConstraintResult result, String message, Object[] args)\r\n   at NUnit.Framework.Assert.That[TActual](TActual actual, IResolveConstraint expression, String message, Object[] args)\r\n   at NUnit.Framework.Assert.IsTrue(Boolean condition)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.__a$_around_VerifyTitleAddApartmentsPage_100663840_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\AddApartmentsPage\\AddApartmentsAssertions.cs:line 18\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.__a$_around_VerifyTitleAddApartmentsPage_100663840_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688639053542,
+          "stop": 1688639055306
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "160eea3a8ddb47329505c71baa3f0310-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1688639031540,
+      "stop": 1688639058176
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1688639031539,
+  "stop": 1688639058188
+}

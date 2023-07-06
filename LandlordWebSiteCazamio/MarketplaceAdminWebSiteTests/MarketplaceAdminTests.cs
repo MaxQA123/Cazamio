@@ -569,8 +569,31 @@ namespace MarketplaceAdminTests
 
             Pages.AddApartments
                 .VerifyMonthlyRentsPrePaymentAddApartmentsPage(getMonthlyRentsPrePayment)
-                .EnterFieldInputFloorAddAprtmntsUnitsPage();
+                .EnterFieldInputFloorAddAprtmntsUnitsPage()
+                .SelectStatusVacantAddAprtmntsUnitsPage()
+                .SelectAgentAddAprtmntsUnitsPage()
+                .SelectDateAvailableFromAprtmntsUnitsPage();
 
+            string getApartmentType = Pages.AddApartments.GetApartmentTypeAddApartmentsPage();
+
+            Pages.AddApartments
+                .VerifyApartmentTypeAddApartmentsPage(getApartmentType);
+
+            string getgetApartmentHoldDeposit = Pages.AddApartments.GetApartmentHoldDepositAddApartmentsPage();
+
+            KeyBoardActions.ScrollToDown();
+            Pages.AddApartments
+                .VerifyApartmentHoldDepositAddApartmentsPage(getgetApartmentHoldDeposit)
+                .ClickButtonPaymentMethodsAddAprtmntsUnitsPage();
+            Pages.ModalWindowPaymentOptions
+                .VerifyTitlePaymentOptionsMdlWndwOptns()
+                .SelectPaymentsMethodsNwBldngPg();
+
+            string getRentalTerms = Pages.AddApartments.GetRentalTermsAddApartmentsPage();
+
+            Pages.AddApartments
+                .VerifyRentalTermsAddApartmentsPage(getRentalTerms);
+               
             WaitUntil.WaitSomeInterval(5000);
         }
     }

@@ -1,0 +1,959 @@
+{
+  "uuid": "5cc03cb9-6704-477c-8547-fceba3cc542f-tr-0-1008",
+  "historyId": "MarketplaceAdminTests.TestsBaseWeb.AddApartment",
+  "fullName": "MarketplaceAdminTests.TestsBaseWeb.AddApartment",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "MarketplaceAdminTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "AddApartment"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "MarketplaceAdmin"
+    },
+    {
+      "name": "subSuite",
+      "value": "AddApartment"
+    }
+  ],
+  "links": [],
+  "name": "AddApartment",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.WebDriverTimeoutException : Timed out after 10 seconds",
+    "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.CustomElementIsVisible(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 46\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663740_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 39\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663740_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663740_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.__a$_around_SelectStatusVacantAddAprtmntsUnitsPage_100663839_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\AddApartmentsPage\\AddApartmentsActions.cs:line 62\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.__a$_around_SelectStatusVacantAddAprtmntsUnitsPage_100663839_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.__a$_around_SelectStatusVacantAddAprtmntsUnitsPage_100663839_w_0(Object[] )\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.SelectStatusVacantAddAprtmntsUnitsPage() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\AddApartmentsPage\\AddApartmentsActions.cs:line 15\r\n   at MarketplaceAdminTests.TestsBaseWeb.AddApartment() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\MarketplaceAdminWebSiteTests\\MarketplaceAdminTests.cs:line 570"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "AddApartment",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.WebDriverTimeoutException : Timed out after 10 seconds",
+        "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.CustomElementIsVisible(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 46\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663740_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 39\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663740_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663740_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.__a$_around_SelectStatusVacantAddAprtmntsUnitsPage_100663839_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\AddApartmentsPage\\AddApartmentsActions.cs:line 62\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.__a$_around_SelectStatusVacantAddAprtmntsUnitsPage_100663839_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.__a$_around_SelectStatusVacantAddAprtmntsUnitsPage_100663839_w_0(Object[] )\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.SelectStatusVacantAddAprtmntsUnitsPage() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\AddApartmentsPage\\AddApartmentsActions.cs:line 15\r\n   at MarketplaceAdminTests.TestsBaseWeb.AddApartment() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\MarketplaceAdminWebSiteTests\\MarketplaceAdminTests.cs:line 570"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "EnterEmailPasswordLogInPgAsMarketplaceAdmin",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "marketplace1chui@putsbox.com"
+                }
+              ],
+              "start": 1688638715496,
+              "stop": 1688638716235
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1688638716760,
+              "stop": 1688638717370
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638715494,
+          "stop": 1688638717370
+        },
+        {
+          "name": "ClickIconShowLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1688638717371,
+              "stop": 1688638718025
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638717370,
+          "stop": 1688638718025
+        },
+        {
+          "name": "ClickButtonLetsGoLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1688638718026,
+              "stop": 1688638718903
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638718026,
+          "stop": 1688638719931
+        },
+        {
+          "name": "GetUserNameFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638719933,
+          "stop": 1688638720028
+        },
+        {
+          "name": "GetUserNameRoleFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638720029,
+          "stop": 1688638720110
+        },
+        {
+          "name": "VerifyMarketplaceAdminUserName",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Chui Chubaka"
+            },
+            {
+              "name": "String",
+              "value": "Marketplace Admin"
+            }
+          ],
+          "start": 1688638720112,
+          "stop": 1688638721719
+        },
+        {
+          "name": "SelectItemFirstBuildingOnPage",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1688638724138,
+              "stop": 1688638725152
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638721721,
+          "stop": 1688638725152
+        },
+        {
+          "name": "VerifyTitleBuildingViewPage",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638725154,
+          "stop": 1688638726249
+        },
+        {
+          "name": "ClickTabApartmentsBldngVwPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1688638726370,
+              "stop": 1688638727034
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638726250,
+          "stop": 1688638727034
+        },
+        {
+          "name": "ScrollToDown",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638727034,
+          "stop": 1688638727058
+        },
+        {
+          "name": "ClickButtonAddInTabApartmentsBldngVwPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1688638727107,
+              "stop": 1688638727811
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638727058,
+          "stop": 1688638727811
+        },
+        {
+          "name": "VerifyTitleAddApartmentsPage",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638727813,
+          "stop": 1688638729415
+        },
+        {
+          "name": "GetBuildingNameAddApartmentsPage",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638729416,
+          "stop": 1688638729472
+        },
+        {
+          "name": "VerifyBuildingNameAddApartmentsPage",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Original ZIP Manhattan Creator Chui Assigned Martin"
+            }
+          ],
+          "start": 1688638729473,
+          "stop": 1688638732497
+        },
+        {
+          "name": "EnterUnitNumberBedsBathsSqFoot",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "1Q"
+                }
+              ],
+              "start": 1688638732529,
+              "stop": 1688638733018
+            },
+            {
+              "name": "RandomNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "1"
+                }
+              ],
+              "start": 1688638733045,
+              "stop": 1688638733051
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "3"
+                }
+              ],
+              "start": 1688638733051,
+              "stop": 1688638733542
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "1"
+                }
+              ],
+              "start": 1688638733602,
+              "stop": 1688638734073
+            },
+            {
+              "name": "RandomNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "1"
+                }
+              ],
+              "start": 1688638734099,
+              "stop": 1688638734099
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "3"
+                }
+              ],
+              "start": 1688638734099,
+              "stop": 1688638734545
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "1"
+                }
+              ],
+              "start": 1688638734573,
+              "stop": 1688638735039
+            },
+            {
+              "name": "RandomNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "3"
+                }
+              ],
+              "start": 1688638735066,
+              "stop": 1688638735066
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "936"
+                }
+              ],
+              "start": 1688638735066,
+              "stop": 1688638735555
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638732498,
+          "stop": 1688638735555
+        },
+        {
+          "name": "EnterUnitNumberBedsBathsSqFoot",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "RandomNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "4"
+                }
+              ],
+              "start": 1688638735586,
+              "stop": 1688638735586
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "9445"
+                }
+              ],
+              "start": 1688638735586,
+              "stop": 1688638736122
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638735556,
+          "stop": 1688638736122
+        },
+        {
+          "name": "GetLeasePriceAddApartmentsPage",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638736126,
+          "stop": 1688638736230
+        },
+        {
+          "name": "GetSecurityDepositAddApartmentsPage",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638736231,
+          "stop": 1688638736334
+        },
+        {
+          "name": "VerifySecurityDepositAddApartmentsPage",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "9445"
+            },
+            {
+              "name": "String",
+              "value": "9445"
+            }
+          ],
+          "start": 1688638736335,
+          "stop": 1688638736336
+        },
+        {
+          "name": "GetMonthlyRentsPrePaymentAddApartmentsPage",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638736337,
+          "stop": 1688638736416
+        },
+        {
+          "name": "VerifyMonthlyRentsPrePaymentAddApartmentsPage",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "1"
+            }
+          ],
+          "start": 1688638736418,
+          "stop": 1688638736418
+        },
+        {
+          "name": "EnterFieldInputFloorAddAprtmntsUnitsPage",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "RandomNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "2"
+                }
+              ],
+              "start": 1688638736465,
+              "stop": 1688638736465
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "15"
+                }
+              ],
+              "start": 1688638736465,
+              "stop": 1688638737230
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638736419,
+          "stop": 1688638737230
+        },
+        {
+          "name": "SelectStatusVacantAddAprtmntsUnitsPage",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "Timed out after 10 seconds",
+            "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.CustomElementIsVisible(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 46\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663740_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 39\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663740_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663740_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.__a$_around_SelectStatusVacantAddAprtmntsUnitsPage_100663839_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\AddApartmentsPage\\AddApartmentsActions.cs:line 62\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage.AddApartments.__a$_around_SelectStatusVacantAddAprtmntsUnitsPage_100663839_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1688638737290,
+              "stop": 1688638738052
+            },
+            {
+              "name": "Click",
+              "status": "failed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false,
+                "message": "Timed out after 10 seconds",
+                "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.CustomElementIsVisible(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 46\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663740_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 39\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663740_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1688638738188,
+              "stop": 1688638748435
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1688638737230,
+          "stop": 1688638748437
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "dd6686a1f4994fa0a2c44c55b2d2e169-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1688638706620,
+      "stop": 1688638751238
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1688638706619,
+  "stop": 1688638751250
+}

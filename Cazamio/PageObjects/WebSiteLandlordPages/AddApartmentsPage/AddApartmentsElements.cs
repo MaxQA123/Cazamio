@@ -48,6 +48,51 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [FindsBy(How = How.XPath, Using = ("//input[@id = 'floor']"))]
         public IWebElement FieldInputFloorAddAprtmntsUnitsPage;
 
+        [FindsBy(How = How.XPath, Using = ("//ng-select[@formcontrolname = 'status']"))]
+        public IWebElement ButtonApartmentStatusAddAprtmntsUnitsPage;
+
+        //[FindsBy(How = How.XPath, Using = ("//div[@id = 'a306793add00']"))]
+        //public IWebElement ItemOffMarketAddAprtmntsUnitsPage;
+
+        //[FindsBy(How = How.XPath, Using = ("//div[@id = 'a071ad8d5d53']"))]
+        //public IWebElement ItemOccupiedAddAprtmntsUnitsPage;
+
+        //[FindsBy(How = How.XPath, Using = ("//div[@id = 'a306793add00']"))]
+        //public IWebElement ItemVacantAddAprtmntsUnitsPage;
+
+        //[FindsBy(How = How.XPath, Using = ("//div[@id = 'a306793add00']"))]
+        //public IWebElement ItemDepositReceivedAddAprtmntsUnitsPage;
+
+        //[FindsBy(How = How.XPath, Using = ("//div[@id = 'a306793add00']"))]
+        //public IWebElement ItemApplicationSubmittedAddAprtmntsUnitsPage;
+
+        //[FindsBy(How = How.XPath, Using = ("//div[@id = 'a306793add00']"))]
+        //public IWebElement ItemSignedLeaseAddAprtmntsUnitsPage;
+
+        [FindsBy(How = How.XPath, Using = ("//ng-select[@formcontrolname = 'broker']"))]
+        public IWebElement ButtonAssignedAgentAddAprtmntsUnitsPage;
+
+        [FindsBy(How = How.XPath, Using = ("//input[@formcontrolname = 'availableFrom']"))]
+        public IWebElement FieldInputAvailableFromAddAprtmntsUnitsPage;
+
+        [FindsBy(How = How.XPath, Using = ("//span[text() = 'MultiFamily']"))]
+        public IWebElement ItemApartmentTypeMultiFamilyAddAprtmntsUnitsPage;
+
+        [FindsBy(How = How.XPath, Using = ("//input[@formcontrolname = 'holdingDeposit']"))]
+        public IWebElement FieldInputApartmentHoldDepositAddAprtmntsUnitsPage;
+
+        [FindsBy(How = How.XPath, Using = ("//span[text() = 'Set default']"))]
+        public IWebElement ButtonSetDefaultAddAprtmntsUnitsPage;
+
+        [FindsBy(How = How.XPath, Using = ("//span[text() = 'Payment methods']"))]
+        public IWebElement ButtonPaymentMethodsAddAprtmntsUnitsPage;
+
+        [FindsBy(How = How.XPath, Using = ("//mat-chip-list[@id = 'mat-chip-list-1']"))]
+        public IWebElement FieldInputRentalTermsAddAprtmntsUnitsPage;
+
+        [FindsBy(How = How.XPath, Using = ("//mat-chip[text() =  ' 12 months ']"))]
+        public IWebElement ItemTwelveMonthsRentalTermsAddAprtmntsUnitsPage;
+
         #endregion
     }
 }

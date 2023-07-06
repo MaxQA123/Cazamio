@@ -14,7 +14,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [AllureStep("VerifyTitleAddApartmentsPage")]
         public AddApartments VerifyTitleAddApartmentsPage()
         {
-            WaitUntil.WaitSomeInterval(500);
+            WaitUntil.CustomElementIsVisible(TitleAddApartmentsPage, 10);
             Assert.IsTrue(Successfully.IsVisible(TitleAddApartmentsPage));
 
             return this;
@@ -33,7 +33,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [AllureStep("VerifyBuildingNameAddApartmentsPage")]
         public AddApartments VerifyBuildingNameAddApartmentsPage(string getBuildingNameAddApartmentsPage)
         {
-            WaitUntil.WaitSomeInterval(3000);
+            WaitUntil.WaitSomeInterval(5000);
             Assert.AreEqual(getBuildingNameAddApartmentsPage, TestDataForWebSiteAdmin.BUILDING_NAME_NEW_BUILDING);
 
             return this;
@@ -84,7 +84,67 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         {
             Assert.AreEqual(getMonthlyRentsPrePayment, TestDataForWebSiteAdmin.DEFAULT_MONTHLY_RENTS_PREPAYMENT);
 
-            Console.WriteLine($"AR: {getMonthlyRentsPrePayment} = {TestDataForWebSiteAdmin.DEFAULT_MONTHLY_RENTS_PREPAYMENT} :ER");
+            Console.WriteLine($"MonthlyRentsPrePayment AR: {getMonthlyRentsPrePayment} = {TestDataForWebSiteAdmin.DEFAULT_MONTHLY_RENTS_PREPAYMENT} :ER MonthlyRentsPrePayment");
+
+            return this;
+        }
+
+        [AllureStep("GetApartmentTypeAddApartmentsPage")]
+        public string GetApartmentTypeAddApartmentsPage()
+        {
+            WaitUntil.CustomElementIsVisible(ItemApartmentTypeMultiFamilyAddAprtmntsUnitsPage, 10);
+            string getApartmentType = ItemApartmentTypeMultiFamilyAddAprtmntsUnitsPage.Text;
+            string getApartmentTypeActual = getApartmentType.ToString();
+
+            return getApartmentTypeActual;
+        }
+
+        [AllureStep("VerifyApartmentTypeAddApartmentsPage")]
+        public AddApartments VerifyApartmentTypeAddApartmentsPage(string getApartmentType)
+        {
+            Assert.AreEqual(getApartmentType, TestDataForWebSiteAdmin.DEFAULT_APARTMENT_TYPE);
+
+            Console.WriteLine($"Apartment Type AR: {getApartmentType} = {TestDataForWebSiteAdmin.DEFAULT_APARTMENT_TYPE} :ER Apartment Type");
+
+            return this;
+        }
+
+        [AllureStep("GetApartmentHoldDepositAddApartmentsPage")]
+        public string GetApartmentHoldDepositAddApartmentsPage()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputApartmentHoldDepositAddAprtmntsUnitsPage, 10);
+            string getApartmentHoldDeposit = FieldInputApartmentHoldDepositAddAprtmntsUnitsPage.GetAttribute("value");
+            string getApartmentHoldDepositActual = getApartmentHoldDeposit.ToString();
+
+            return getApartmentHoldDepositActual;
+        }
+
+        [AllureStep("VerifyApartmentHoldDepositAddApartmentsPage")]
+        public AddApartments VerifyApartmentHoldDepositAddApartmentsPage(string getApartmentHoldDeposit)
+        {
+            Assert.AreEqual(getApartmentHoldDeposit, TestDataForWebSiteAdmin.DEFAULT_APARTMENT_HOLD_DEPOSIT);
+
+            Console.WriteLine($"Apartment Hold Deposit AR: {getApartmentHoldDeposit} = {TestDataForWebSiteAdmin.DEFAULT_APARTMENT_HOLD_DEPOSIT} :ER Apartment Hold Deposit");
+
+            return this;
+        }
+
+        [AllureStep("GetRentalTermsAddApartmentsPage")]
+        public string GetRentalTermsAddApartmentsPage()
+        {
+            WaitUntil.CustomElementIsVisible(ItemTwelveMonthsRentalTermsAddAprtmntsUnitsPage, 10);
+            string getRentalTerms = ItemTwelveMonthsRentalTermsAddAprtmntsUnitsPage.Text;
+            string getRentalTermsActual = getRentalTerms.ToString();
+
+            return getRentalTermsActual;
+        }
+
+        [AllureStep("VerifyRentalTermsAddApartmentsPage")]
+        public AddApartments VerifyRentalTermsAddApartmentsPage(string getRentalTerms)
+        {
+            Assert.AreEqual(getRentalTerms, TestDataForWebSiteAdmin.DEFAULT_RENTAL_TERMS);
+
+            Console.WriteLine($"Rental Terms AR: {getRentalTerms} = {TestDataForWebSiteAdmin.DEFAULT_RENTAL_TERMS} :ER Rental Terms");
 
             return this;
         }

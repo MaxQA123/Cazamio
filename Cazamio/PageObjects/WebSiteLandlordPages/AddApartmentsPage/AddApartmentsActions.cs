@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProgect.PageObjects;
 using NUnit.Allure.Attributes;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,50 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             WaitUntil.CustomElementIsVisible(FieldInputFloorAddAprtmntsUnitsPage, 10);
             InputGeneral.InputFunctionWithClear(FieldInputFloorAddAprtmntsUnitsPage, GenerateRandomDataHelper.RandomNumber(2));
 
+            return this;
+        }
+
+        [AllureStep("SelectStatusVacantAddAprtmntsUnitsPage")]
+        public AddApartments SelectStatusVacantAddAprtmntsUnitsPage()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonApartmentStatusAddAprtmntsUnitsPage, 10);
+            Button.Click(ButtonApartmentStatusAddAprtmntsUnitsPage);
+            KeyBoardActions.ClickArrowDown();
+            KeyBoardActions.ClickArrowDown();
+            KeyBoardActions.ClickEnterButton();
+
+            return this;
+        }
+
+        [AllureStep("SelectAgentAddAprtmntsUnitsPage")]
+        public AddApartments SelectAgentAddAprtmntsUnitsPage()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonAssignedAgentAddAprtmntsUnitsPage, 10);
+            Button.Click(ButtonAssignedAgentAddAprtmntsUnitsPage);
+            KeyBoardActions.ClickArrowDown();
+            KeyBoardActions.ClickEnterButton();
+
+            return this;
+        }
+
+        [AllureStep("SelectDateAvailableFromAprtmntsUnitsPage")]
+        public AddApartments SelectDateAvailableFromAprtmntsUnitsPage()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputAvailableFromAddAprtmntsUnitsPage, 10);
+            Button.Click(FieldInputAvailableFromAddAprtmntsUnitsPage);
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .SelectDayOnDatePickerSecondLine(DaysSecondLineForDatePiker.SECOND_LINE_FIVETH_NUMBER, " ");
+
+            return this;
+        }
+
+        [AllureStep("ClickButtonPaymentMethodsAddAprtmntsUnitsPage")]
+        public AddApartments ClickButtonPaymentMethodsAddAprtmntsUnitsPage()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonPaymentMethodsAddAprtmntsUnitsPage, 10);
+            Button.Click(ButtonPaymentMethodsAddAprtmntsUnitsPage);
+            
             return this;
         }
     }
