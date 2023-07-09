@@ -602,6 +602,13 @@ namespace MarketplaceAdminTests
             Pages.AddApartments
                 .VerifyRequiredDocumentsByDefaultAddApartmentsPage(getThreeRecentPaystubs, getPhotoId, getTwoMostRecentBankStatements, getMostRecentWTwoOrOneZeroNineNine)
                 .EnterDescriptionInternalNotesAddAprtmntsUnitsPage()
+                .ClickButtonGeneralNextAddAprtmntsgPg()
+                .ClickFieldInputSearchForAmenitiesAddAprtmntsgPg()
+                .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
+                .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
+                .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
+                .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
+                .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
                 .ClickButtonGeneralNextAddAprtmntsgPg();
 
             WaitUntil.WaitSomeInterval(5000);

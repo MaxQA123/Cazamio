@@ -365,6 +365,11 @@ namespace CazamioProgect.Helpers
         public const int FIRST_TAG = 0;
     }
 
+    public class ListOfAmenitiesForApartmentAdminsPage
+    {
+        public const int FIRST_TAG = 0;
+    }
+
     public class ListOfAccessTypesForBuildingAdminsPage
     {
         public const int BLUETOOTH = 0;

@@ -115,6 +115,16 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [FindsBy(How = How.XPath, Using = ("//textarea[@id = 'internalNotes' ]"))]
         public IWebElement FieldInputInternalNotesAddAprtmntsUnitsPage;
 
+        #region Amenities
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'input-amenity']")]
+        public IWebElement FieldInputSearchForAmenitiesAddAprtmntsgPg;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'input-included-amenity']")]
+        public IWebElement FieldInputSearchForDefaultIncludedInMonthlyRentAmenitiesAddAprtmntsgPg;
+
+        #endregion
+
         [FindsBy(How = How.XPath, Using = "//cazamio-button[@text = 'Next']")]
         public IWebElement ButtonGeneralNextAddAprtmntsgPg;
 
