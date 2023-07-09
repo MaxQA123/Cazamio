@@ -593,7 +593,17 @@ namespace MarketplaceAdminTests
 
             Pages.AddApartments
                 .VerifyRentalTermsAddApartmentsPage(getRentalTerms);
-               
+
+            string getThreeRecentPaystubs = Pages.AddApartments.GetRequiredDocumentsThreeRecentPaystubsAddApartmentsPage();
+            string getPhotoId = Pages.AddApartments.GetRequiredDocumentsPhotoIdAddApartmentsPage();
+            string getTwoMostRecentBankStatements = Pages.AddApartments.GetRequiredDocumentsTwoMostRecentBankStatementsAddApartmentsPage();
+            string getMostRecentWTwoOrOneZeroNineNine = Pages.AddApartments.GetRequiredDocumentsMostRecentWTwoOrOneZeroNineNineAddApartmentsPage();
+
+            Pages.AddApartments
+                .VerifyRequiredDocumentsByDefaultAddApartmentsPage(getThreeRecentPaystubs, getPhotoId, getTwoMostRecentBankStatements, getMostRecentWTwoOrOneZeroNineNine)
+                .EnterDescriptionInternalNotesAddAprtmntsUnitsPage()
+                .ClickButtonGeneralNextAddAprtmntsgPg();
+
             WaitUntil.WaitSomeInterval(5000);
         }
     }

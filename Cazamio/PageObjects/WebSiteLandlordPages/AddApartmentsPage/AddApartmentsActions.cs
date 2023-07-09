@@ -84,7 +84,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             Button.Click(FieldInputAvailableFromAddAprtmntsUnitsPage);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerSecondLine(DaysSecondLineForDatePiker.SECOND_LINE_FIVETH_NUMBER, " ");
+                .SelectDayOnDatePickerSecondLine(DaysThirdLineForDatePiker.THIRD_LINE_FIRST_NUMBER, " ");
 
             return this;
         }
@@ -95,6 +95,26 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             WaitUntil.CustomElementIsVisible(ButtonPaymentMethodsAddAprtmntsUnitsPage, 10);
             Button.Click(ButtonPaymentMethodsAddAprtmntsUnitsPage);
             
+            return this;
+        }
+
+        [AllureStep("EnterDescriptionInternalNotesAddAprtmntsUnitsPage")]
+        public AddApartments EnterDescriptionInternalNotesAddAprtmntsUnitsPage()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputDescriptionAddAprtmntsUnitsPage, 10);
+            InputGeneral.InputFunctionWithClear(FieldInputDescriptionAddAprtmntsUnitsPage, GeneralTestDataForAllUsers.TEXT_DESCRIPTION_FOR_APARTMENT + GeneralTestDataForAllUsers.TEXT_LOREM);
+            WaitUntil.CustomElementIsVisible(FieldInputInternalNotesAddAprtmntsUnitsPage, 10);
+            InputGeneral.InputFunctionWithClear(FieldInputInternalNotesAddAprtmntsUnitsPage, GeneralTestDataForAllUsers.TEXT_INTERNAL_NOTES_FOR_APARTMENT + GeneralTestDataForAllUsers.TEXT_LOREM);
+
+            return this;
+        }
+
+        [AllureStep("ClickButtonGeneralNextAddAprtmntsgPg")]
+        public AddApartments ClickButtonGeneralNextAddAprtmntsgPg()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonGeneralNextAddAprtmntsgPg, 10);
+            Button.Click(ButtonGeneralNextAddAprtmntsgPg);
+
             return this;
         }
     }

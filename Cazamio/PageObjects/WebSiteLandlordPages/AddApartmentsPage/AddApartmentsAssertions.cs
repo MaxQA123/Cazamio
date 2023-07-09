@@ -148,5 +148,68 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
 
             return this;
         }
+
+        #region RequiredDocuments
+
+        [AllureStep("GetRequiredDocumentsThreeRecentPaystubsAddApartmentsPage")]
+        public string GetRequiredDocumentsThreeRecentPaystubsAddApartmentsPage()
+        {
+            WaitUntil.CustomElementIsVisible(ItemThreeRecentPaystubsAddAprtmntsUnitsPage, 10);
+            string getThreeRecentPaystubs = ItemThreeRecentPaystubsAddAprtmntsUnitsPage.Text;
+            string getThreeRecentPaystubsActual = getThreeRecentPaystubs.ToString();
+
+            return getThreeRecentPaystubsActual;
+        }
+
+        [AllureStep("GetRequiredDocumentsPhotoIdAddApartmentsPage")]
+        public string GetRequiredDocumentsPhotoIdAddApartmentsPage()
+        {
+            WaitUntil.CustomElementIsVisible(ItemPhotoIdPaystubsAddAprtmntsUnitsPage, 10);
+            string getPhotoId = ItemPhotoIdPaystubsAddAprtmntsUnitsPage.Text;
+            string getPhotoIdActual = getPhotoId.ToString();
+
+            return getPhotoIdActual;
+        }
+
+        [AllureStep("GetRequiredDocumentsTwoMostRecentBankStatementsAddApartmentsPage")]
+        public string GetRequiredDocumentsTwoMostRecentBankStatementsAddApartmentsPage()
+        {
+            WaitUntil.CustomElementIsVisible(ItemTwoMostRecentBankStatementsAddAprtmntsUnitsPage, 10);
+            string getTwoMostRecentBankStatements = ItemTwoMostRecentBankStatementsAddAprtmntsUnitsPage.Text;
+            string getTwoMostRecentBankStatementsActual = getTwoMostRecentBankStatements.ToString();
+
+            return getTwoMostRecentBankStatementsActual;
+        }
+
+        [AllureStep("GetRequiredDocumentsMostRecentWTwoOrOneZeroNineNineAddApartmentsPage")]
+        public string GetRequiredDocumentsMostRecentWTwoOrOneZeroNineNineAddApartmentsPage()
+        {
+            WaitUntil.CustomElementIsVisible(ItemrMostRecentWTwoOrOneZeroNineNineAddAprtmntsUnitsPage, 10);
+            string getMostRecentWTwoOrOneZeroNineNine = ItemrMostRecentWTwoOrOneZeroNineNineAddAprtmntsUnitsPage.Text;
+            string getMostRecentWTwoOrOneZeroNineNineActual = getMostRecentWTwoOrOneZeroNineNine.ToString();
+
+            return getMostRecentWTwoOrOneZeroNineNineActual;
+        }
+
+        [AllureStep("VerifyRequiredDocumentsByDefaultAddApartmentsPage")]
+        public AddApartments VerifyRequiredDocumentsByDefaultAddApartmentsPage(string getThreeRecentPaystubsActual, string getPhotoIdActual, string getTwoMostRecentBankStatementsActual, string getMostRecentWTwoOrOneZeroNineNineActual)
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(getThreeRecentPaystubsActual, TestDataForWebSiteAdmin.DEFAULT_REQUIRED_DOCUMENT_THREE_RECENT_PAYSTUBS);
+                Assert.AreEqual(getPhotoIdActual, TestDataForWebSiteAdmin.DEFAULT_REQUIRED_DOCUMENT_PHOTO_ID);
+                Assert.AreEqual(getTwoMostRecentBankStatementsActual, TestDataForWebSiteAdmin.DEFAULT_REQUIRED_DOCUMENT_TWO_MOST_RECENT_BANK_STATEMENTS);
+                Assert.AreEqual(getMostRecentWTwoOrOneZeroNineNineActual, TestDataForWebSiteAdmin.DEFAULT_REQUIRED_DOCUMENT_MOST_W_TWO_OR_ONE_ZERO_NINE_NINE);
+
+                Console.WriteLine($"Three Recent Paystubs AR: {getThreeRecentPaystubsActual} = {TestDataForWebSiteAdmin.DEFAULT_REQUIRED_DOCUMENT_THREE_RECENT_PAYSTUBS} :ER Three Recent Paystubs");
+                Console.WriteLine($"Photo Id AR: {getPhotoIdActual} = {TestDataForWebSiteAdmin.DEFAULT_REQUIRED_DOCUMENT_PHOTO_ID} :ER Photo Id");
+                Console.WriteLine($"Two Most Recent Bank Statements AR: {getTwoMostRecentBankStatementsActual} = {TestDataForWebSiteAdmin.DEFAULT_REQUIRED_DOCUMENT_TWO_MOST_RECENT_BANK_STATEMENTS} :ER Two Most Recent Bank Statements");
+                Console.WriteLine($"Most Recent W Two Or One Zero Nine Nine AR: {getMostRecentWTwoOrOneZeroNineNineActual} = {TestDataForWebSiteAdmin.DEFAULT_REQUIRED_DOCUMENT_MOST_W_TWO_OR_ONE_ZERO_NINE_NINE} :ER Most Recent W Two Or One Zero Nine Nine");
+            });
+
+            return this;
+        }
+
+        #endregion
     }
 }

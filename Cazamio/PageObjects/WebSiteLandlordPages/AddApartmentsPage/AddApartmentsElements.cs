@@ -93,6 +93,31 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [FindsBy(How = How.XPath, Using = ("//mat-chip[text() =  ' 12 months ']"))]
         public IWebElement ItemTwelveMonthsRentalTermsAddAprtmntsUnitsPage;
 
+        #region RequiredDocuments
+
+        [FindsBy(How = How.XPath, Using = ("//app-required-documents//span[text() = ' 3 Recent paystubs ']"))]
+        public IWebElement ItemThreeRecentPaystubsAddAprtmntsUnitsPage;
+
+        [FindsBy(How = How.XPath, Using = ("//app-required-documents//span[text() = ' Photo ID ']"))]
+        public IWebElement ItemPhotoIdPaystubsAddAprtmntsUnitsPage;
+
+        [FindsBy(How = How.XPath, Using = ("//app-required-documents//span[text() = ' 2 Most recent bank statements ' ]"))]
+        public IWebElement ItemTwoMostRecentBankStatementsAddAprtmntsUnitsPage;
+
+        [FindsBy(How = How.XPath, Using = ("//app-required-documents//span[text() = ' Most recent W-2 or 1099 ' ]"))]
+        public IWebElement ItemrMostRecentWTwoOrOneZeroNineNineAddAprtmntsUnitsPage;
+
+        #endregion
+
+        [FindsBy(How = How.XPath, Using = ("//textarea[@id = 'description' ]"))]
+        public IWebElement FieldInputDescriptionAddAprtmntsUnitsPage;
+
+        [FindsBy(How = How.XPath, Using = ("//textarea[@id = 'internalNotes' ]"))]
+        public IWebElement FieldInputInternalNotesAddAprtmntsUnitsPage;
+
+        [FindsBy(How = How.XPath, Using = "//cazamio-button[@text = 'Next']")]
+        public IWebElement ButtonGeneralNextAddAprtmntsgPg;
+
         #endregion
     }
 }

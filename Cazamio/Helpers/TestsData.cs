@@ -37,7 +37,11 @@ namespace CazamioProgect.Helpers
         public const string PASSWORD_NEW_GENEREAL = "!321Qwerty";
         public const string CODE_PHONE_NUMBER_ONE = "212";
         public const string CODE_PHONE_NUMBER_TWO = "585";
-        public const string TEXT_LOREM = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,";
+        public const string TEXT_DESCRIPTION_FOR_BUILDING = "Description for building ";
+        public const string TEXT_INTERNAL_NOTES_FOR_BUILDING = "Internal Notes for building ";
+        public const string TEXT_DESCRIPTION_FOR_APARTMENT = "Description for apartment ";
+        public const string TEXT_INTERNAL_NOTES_FOR_APARTMENT = "Internal Notes for apartment ";
+        public const string TEXT_LOREM = "Lorem ipsum dolor sit amet, 12345 67890 !@# $%^ &*() adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,";
     }
 
     public class TestDataForWebSiteTenant
@@ -135,6 +139,10 @@ namespace CazamioProgect.Helpers
         public const string DEFAULT_APARTMENT_TYPE = "MultiFamily";
         public const string DEFAULT_APARTMENT_HOLD_DEPOSIT = "500";
         public const string DEFAULT_RENTAL_TERMS = "12 months\r\ncancel";
+        public const string DEFAULT_REQUIRED_DOCUMENT_THREE_RECENT_PAYSTUBS = "3 Recent paystubs\r\nx";
+        public const string DEFAULT_REQUIRED_DOCUMENT_PHOTO_ID = "Photo ID\r\nx";
+        public const string DEFAULT_REQUIRED_DOCUMENT_TWO_MOST_RECENT_BANK_STATEMENTS = "2 Most recent bank statements\r\nx";
+        public const string DEFAULT_REQUIRED_DOCUMENT_MOST_W_TWO_OR_ONE_ZERO_NINE_NINE = "Most recent W-2 or 1099\r\nx";
     }
 
     public class NameDomen
