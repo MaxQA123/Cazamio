@@ -76,6 +76,28 @@ namespace CazamioProject.DBHelpers
             return data;
         }
 
+        public static string GetIdBrokerByOwnerEmail(string ownerId)
+        {
+            string data = null;
+            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            {
+                SqlCommand command = new("SELECT BrokerId FROM Owners" +
+                " WHERE OwnerEmail = @OwnerEmail", db);
+                command.Parameters.AddWithValue("@OwnerEmail", DbType.String).Value = ownerId;
+                db.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data = reader.GetValue(0).ToString();
+                    }
+                }
+            }
+            return data;
+        }
+
         public static string GetLastIdNewOwner()
         {
             string data = null;

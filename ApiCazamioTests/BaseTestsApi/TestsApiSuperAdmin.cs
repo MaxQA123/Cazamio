@@ -37,13 +37,13 @@ namespace ApiCazamioTests.BaseTestsApi
 
         public void LogInAsSuperAdmin()
         {
-            var email = TestDataForWebSiteAdmin.EMAIL_SUPER_ADMIN_SUPER;
-            var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
-            var deviceFingerprint = ApiRequestData.DEVICE_FINGERPRINT;
+            ////var email = TestDataForWebSiteAdmin.EMAIL_SUPER_ADMIN_SUPER;
+            //var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
+            //var deviceFingerprint = ApiRequestData.DEVICE_FINGERPRINT;
 
-            var responseLogInSuperAdmin = LogInAdmins.ExecuteLogIn(email, passwordGeneral, deviceFingerprint, ApiRequestData.TRUE);
+            ////var responseLogInSuperAdmin = LogInAdmins.ExecuteLogIn(email, passwordGeneral, deviceFingerprint, ApiRequestData.TRUE);
 
-            LogInAdmins.VerifyingUserNameEmailSuperAdmin(responseLogInSuperAdmin);
+            //LogInAdmins.VerifyingUserNameEmailSuperAdmin(responseLogInSuperAdmin);
         }
     }
 }

@@ -109,11 +109,11 @@ namespace CazamioProject.DBHelpers
         public const string DELETED_AGENT_FIRST_LAST_NAME = "Creator-martin Testing";
         public const string DELETED_AGENT_EMAIL = "j8h5g3g3dd@putsbox.com";
 
-        public const string NEW_OWNER_EMAIL = "owneragata@putsbox.com";
-        public const string NEW_OWNER_FIRST_LAST_NAME = "Testing Agata";
-        public const string NEW_OWNER_FIRST_NAME = "Testing";
-        public const string NEW_COMPANY_NAME_OWNER = "LLC Central Agency USA";
-        public const string NEW_OFFICE_LOCATION_OWNER = "Las Vegas";
+        public const string NEW_OWNER_EMAIL = "j8k8owner@xitroo.com";
+        public const string NEW_OWNER_FIRST_LAST_NAME = "Fillip";
+        public const string NEW_OWNER_FIRST_NAME = "Fillip";
+        public const string NEW_COMPANY_NAME_OWNER = "LLC first house 555";
+        public const string NEW_OFFICE_LOCATION_OWNER = "London";
 
         public const string MARKETPLACE_ADMIN_EMAIL = "marketplace1chui@putsbox.com";
         public const string MARKETPLACE_ADMIN_FIRST_LAST_NAME = "Chui Chubaka";
@@ -123,6 +123,7 @@ namespace CazamioProject.DBHelpers
         public const string BROKER_MARTIN_MACFLY_ID = "fd05b9e1-e219-4b56-962f-1b0b1b54c443";
         public const string BROKER_MARTIN_MACFLY_LANDLORD_ID = "53";
         public const string BROKER_FIRST_NAME = "Martin";
+        public const string BROKER_EMAIL = "admin123@putsbox.com";
 
         public const string AGENT_TEST_AGENT_ID = "";
         public const string AGENT_TEST_AGENT_BROKER_ID = "";
@@ -145,4 +146,23 @@ namespace CazamioProject.DBHelpers
         public const string APARTMENT_ID_UNIT_NUMBER = "83";
         public const string ID_UNIT_FOUR_E = "83";
     }
+
+    public class DBTestDataDBForAdminsMySpace
+    {
+        #region MySpace
+
+        public const string NEW_OWNER_EMAIL = "asd4tyu@xitroo.com";
+        public const string NEW_OWNER_FIRST_LAST_NAME = "Jigo";
+        public const string NEW_OWNER_FIRST_NAME = "Jigo";
+        public const string NEW_COMPANY_NAME_OWNER = "OOO Almaz";
+        public const string NEW_OFFICE_LOCATION_OWNER = "London";
+
+        public const string BROKER_MANDO_MANDALORIAN_ID = "";
+        public const string BROKER_MANDO_MANDALORIAN_LANDLORD_ID = "63";
+        public const string BROKER_FIRST_NAME = "Martin";
+        public const string BROKER_EMAIL = "mando123broker@gmail.com";
+
+        #endregion
+    }
+
 }
