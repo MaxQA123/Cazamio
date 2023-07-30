@@ -37,7 +37,7 @@ namespace DBTests.BaseTestsDB
         public void DispalyingIdAgentFromAspNetUsers()
         {
             string IdAgent = DBTableAspNetUsers.GetIdByEmail(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
-            Console.WriteLine($"{IdAgent} :Id for broker from table AspNetUsers");
+            Console.WriteLine($"{IdAgent} :Id for agent from table AspNetUsers");
         }
 
         [Test]

@@ -34,13 +34,13 @@ namespace CazamioProject.DBHelpers
             return data;
         }
 
-        public static string GetIdByEmail(string id)
+        public static string GetIdByEmail(string email)
         {
             string data = null;
             using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
             {
-                SqlCommand command = new("SELECT Id FROM AspNetUsers WHERE Email = @Email", db);
-                command.Parameters.AddWithValue("@Email", DbType.String).Value = id;
+                SqlCommand command = new($"SELECT Id FROM AspNetUsers WHERE Email = {email}", db);
+                //command.Parameters.AddWithValue("@Email", DbType.String).Value = email;
                 db.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
