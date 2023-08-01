@@ -140,9 +140,9 @@ namespace CazamioProject.DBHelpers
 
         public const string BUILDING_NAME = "Creator Yoda assigned to Martin 12345 House Home";
         public const string BUILDING_LLC_NAME = "LLC Chudo life 888 wonderful";
-        public const string BUILDING_ADDRESS = "510 East 11th Street";
+        public const string BUILDING_ADDRESS = "101 Franklin Avenue";
         public const string BUILDING_ID = "48";
-        public const string UNIT_NUMBER = "22";
+        public const string UNIT_NUMBER = "26";
         public const string APARTMENT_ID_UNIT_NUMBER = "83";
         public const string ID_UNIT_FOUR_E = "83";
     }

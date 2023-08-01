@@ -1,0 +1,91 @@
+{
+  "uuid": "50d3a58b-49e3-41a4-a594-de1839e4e5c6-tr-0-1035",
+  "historyId": "DBTests.BaseTestsDB.CalculationsTestsDB.VarTwoPaymentForApartmentWithoutCommissionsHoldingDeposit",
+  "fullName": "DBTests.BaseTestsDB.CalculationsTestsDB.VarTwoPaymentForApartmentWithoutCommissionsHoldingDeposit",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "DBTests.BaseTestsDB"
+    },
+    {
+      "name": "testMethod",
+      "value": "VarTwoPaymentForApartmentWithoutCommissionsHoldingDeposit"
+    },
+    {
+      "name": "testClass",
+      "value": "CalculationsTestsDB"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "TestingDBMarketplaceAdmin"
+    },
+    {
+      "name": "subSuite",
+      "value": "RelatedBuidingBroker"
+    }
+  ],
+  "links": [],
+  "name": "VarTwoPaymentForApartmentWithoutCommissionsHoldingDeposit",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "System.ArgumentException : Error: Unable to cast object of type 'System.Int32' to type 'System.Decimal'.\r\n   at CazamioProject.DBHelpers.TablePrices.DBTablePrices.DBCalculations.GetValueOrDefault[T](SqlDataReader reader, Int32 index, T defaultValue) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TablePrices\\DBTablePrices.cs:line 21\r\n   at CazamioProject.DBHelpers.TablePrices.DBTablePrices.Prices.GetPaymentForApartmentWithoutCommissionsHoldingDeposit(String buildingAddress, String unitNumber) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TablePrices\\DBTablePrices.cs:line 57",
+    "trace": "   at CazamioProject.DBHelpers.TablePrices.DBTablePrices.Prices.GetPaymentForApartmentWithoutCommissionsHoldingDeposit(String buildingAddress, String unitNumber) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TablePrices\\DBTablePrices.cs:line 69\r\n   at DBTests.BaseTestsDB.CalculationsTestsDB.VarTwoPaymentForApartmentWithoutCommissionsHoldingDeposit() in C:\\Automation\\Cazamio\\DBTests\\BaseTestsDB\\CalculationsTestsDB.cs:line 68"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "VarTwoPaymentForApartmentWithoutCommissionsHoldingDeposit",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "System.ArgumentException : Error: Unable to cast object of type 'System.Int32' to type 'System.Decimal'.\r\n   at CazamioProject.DBHelpers.TablePrices.DBTablePrices.DBCalculations.GetValueOrDefault[T](SqlDataReader reader, Int32 index, T defaultValue) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TablePrices\\DBTablePrices.cs:line 21\r\n   at CazamioProject.DBHelpers.TablePrices.DBTablePrices.Prices.GetPaymentForApartmentWithoutCommissionsHoldingDeposit(String buildingAddress, String unitNumber) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TablePrices\\DBTablePrices.cs:line 57",
+        "trace": "   at CazamioProject.DBHelpers.TablePrices.DBTablePrices.Prices.GetPaymentForApartmentWithoutCommissionsHoldingDeposit(String buildingAddress, String unitNumber) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TablePrices\\DBTablePrices.cs:line 69\r\n   at DBTests.BaseTestsDB.CalculationsTestsDB.VarTwoPaymentForApartmentWithoutCommissionsHoldingDeposit() in C:\\Automation\\Cazamio\\DBTests\\BaseTestsDB\\CalculationsTestsDB.cs:line 68"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "e2b15d4cfd354ae3a7fea595b981ca91-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1690883684998,
+      "stop": 1690883686759
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1690883684996,
+  "stop": 1690883686765
+}

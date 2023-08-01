@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CazamioProject.DBHelpers
 {
-    public class DBCalculations
+    public class DBCalculationsCheckings
     {
         private static T GetValueOrDefault<T>(SqlDataReader reader, int index, T defaultValue = default(T))
         {
