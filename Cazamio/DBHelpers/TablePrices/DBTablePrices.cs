@@ -29,11 +29,12 @@ namespace CazamioProject.DBHelpers.TablePrices
 
         public class Prices
         {
-            public static List<DBModelPricesCombined> GetPaymentForApartmentWithoutCommissionsHoldingDeposit(string buildingAddress, string unitNumber)
+            // Если в селекте больше одного значения
+            public static DBModelPricesCombined GetPaymentForApartmentWithoutCommissionsHoldingDeposit(string buildingAddress, string unitNumber)
             {
-                var list = new List<DBModelPricesCombined>();
+                var row = new DBModelPricesCombined();
 
-                // SQL запит для вибірки даних
+                // SQL запрос для выборки данных
                 string query = "SELECT LeasePrice, DepositPrice, PaidMonths, ((LeasePrice*PaidMonths)+DepositPrice) AS PaymentOfApartment" +
                    " FROM [dbo].[Prices]" +
                    " WHERE ApartmentId" +
@@ -46,20 +47,17 @@ namespace CazamioProject.DBHelpers.TablePrices
                     using SqlCommand command = new(query, connection);
                     connection.Open();
 
-                    // Параметризований запит з одним параметром
+                    // Параметризованный запрос с двумя параметрами
                     command.Parameters.AddWithValue("@buildingAddress", DbType.String).Value = buildingAddress;
                     command.Parameters.AddWithValue("@unitNumber", DbType.String).Value = unitNumber;
 
                     using SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        var row = new DBModelPricesCombined();
                         row.LeasePrice = DBCalculations.GetValueOrDefault<decimal>(reader, 0);
                         row.DepositPrice = DBCalculations.GetValueOrDefault<decimal>(reader, 1);
                         row.PaidMonths = DBCalculations.GetValueOrDefault<int>(reader, 2);
                         row.PaymentOfApartment = DBCalculations.GetValueOrDefault<decimal>(reader, 3);
-
-                        list.Add(row);
                     }
 
                 }
@@ -70,86 +68,12 @@ namespace CazamioProject.DBHelpers.TablePrices
                 finally
                 {
 
-                    // Забезпечуємо вивільнення ресурсів
+                    // Обеспечиваем освобождение ресурсов
                     SqlConnection.ClearAllPools();
                 }
-                return list;
+           
+                return row;
             }
         }
-
-        public static string GetProba()
-        {
-            string data = null;
-            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
-            {
-                SqlCommand command = new("SELECT LeasePrice, DepositPrice, PaidMonths, ((LeasePrice*PaidMonths)+DepositPrice) AS PaymentOfApartment" +
-                   " FROM [Prices]" +
-                   " WHERE ApartmentId" +
-                   " IN(SELECT Id FROM [dbo].[Apartments] WHERE Unit = '26' AND BuildingId" +
-                   " IN(SELECT Id FROM [dbo].[Buildings] Where AddressId" +
-                   " IN(SELECT Id FROM [dbo].[Addresses] WHERE Street = '101 Franklin Avenue')))", db);
-                //command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = apartmentId;
-                db.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        data = reader.GetValue(0).ToString();
-                    }
-                }
-            }
-            return data;
-        }
-
-        //public static string GetProba()
-        //{
-        //    string data = null;
-        //    using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
-        //    {
-        //        SqlCommand command = new("SELECT LeasePrice, DepositPrice, PaidMonths, ((LeasePrice*PaidMonths)+DepositPrice) AS PaymentOfApartment" +
-        //           " FROM Prices" +
-        //           " WHERE ApartmentId IN(SELECT Id FROM Apartments WHERE Unit = '26' AND BuildingId" +
-        //           " IN(SELECT Id FROM Buildings Where AddressId" +
-        //           " IN(SELECT Id FROM Addresses WHERE Street = '101 Franklin Avenue')))", db);
-        //        //command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = apartmentId;
-        //        db.Open();
-
-        //        SqlDataReader reader = command.ExecuteReader();
-        //        if (reader.HasRows)
-        //        {
-        //            while (reader.Read())
-        //            {
-        //                data = reader.GetValue(0).ToString();
-        //            }
-        //        }
-        //    }
-        //    return data;
-        //}
-
-        public static string GetApartmentIdByBuildingNameF(string apartmentId)
-        {
-            string data = null;
-            using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
-            {
-                SqlCommand command = new("SELECT Id FROM" +
-                    " Apartments WHERE Id = (SELECT MAX(Id) FROM Apartments) AND BuildingId IN" +
-                    " (SELECT Id FROM Buildings WHERE BuildingName = @BuildingName);", db);
-                command.Parameters.AddWithValue("@BuildingName", DbType.String).Value = apartmentId;
-                db.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        data = reader.GetValue(0).ToString();
-                    }
-                }
-            }
-            return data;
-        }
-
     }
 }

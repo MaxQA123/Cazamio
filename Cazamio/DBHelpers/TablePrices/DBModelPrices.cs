@@ -26,6 +26,5 @@ namespace CazamioProject.DBHelpers.TablePrices
         public object? DepositPrice { get; set; }
         public object? PaidMonths { get; set; }
         public object? PaymentOfApartment { get; set; }
-
     }
 }
