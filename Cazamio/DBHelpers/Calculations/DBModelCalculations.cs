@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProject.DBHelpers.TablePrices
+namespace CazamioProject.DBHelpers.Calculations
 {
-    public class DBModelPrices
+    public class DBModelCalculations
     {
         public object? Id { get; set; } // this might be another data type
         public object? ApartmentId { get; set; }
@@ -20,12 +20,4 @@ namespace CazamioProject.DBHelpers.TablePrices
         public object? PaidMonths { get; set; }
         public object? PaymentOfApartment { get; set; }
     }
-
-    //public class DBModelPricesCombined
-    //{
-    //    public object? LeasePrice { get; set; }
-    //    public object? DepositPrice { get; set; }
-    //    public object? PaidMonths { get; set; }
-    //    public object? PaymentOfApartment { get; set; }
-    //}
 }

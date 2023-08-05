@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.DBHelpers.Calculations;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -7,10 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProject.DBHelpers.TablePrices
+namespace CazamioProject.DBHelpers
 {
-    //Вариант где мы учитываем возможность отображения значения NULL в ячейке.
-    public class DBTablePrices
+    public class DBCalculationsCheckings
     {
         private static T GetValueOrDefault<T>(SqlDataReader reader, int index, T defaultValue = default(T))
         {
@@ -24,12 +24,11 @@ namespace CazamioProject.DBHelpers.TablePrices
             }
         }
 
-        public class Prices
+        public class Calculations
         {
-            // Если в селекте больше одного значения
-            public static DBModelPrices GetPaymentForApartmentWithoutCommissionsHoldingDeposit(string buildingAddress, string unitNumber)
+            public static DBModelCalculations GetPaymentForApartmentWithoutCommissionsHoldingDeposit(string buildingAddress, string unitNumber)
             {
-                var row = new DBModelPrices();
+                var row = new DBModelCalculations();
 
                 // SQL запрос для выборки данных
                 string query = "SELECT LeasePrice, DepositPrice, PaidMonths, ((LeasePrice*PaidMonths)+DepositPrice) AS PaymentOfApartment" +
@@ -68,51 +67,9 @@ namespace CazamioProject.DBHelpers.TablePrices
                     // Обеспечиваем освобождение ресурсов
                     SqlConnection.ClearAllPools();
                 }
-           
+
                 return row;
             }
-        }
-
-        // Если в селекте одно значение
-        public static DBModelPrices GetLeasePrice(string buildingAddress, string unitNumber)
-        {
-            var row = new DBModelPrices();
-
-            // SQL запрос для выборки данных
-            string query = "SELECT LeasePrice" +
-               " FROM [dbo].[Prices]" +
-               " WHERE ApartmentId" +
-               " IN(SELECT Id FROM [dbo].[Apartments] WHERE Unit = @unitNumber AND BuildingId" +
-               " IN(SELECT Id FROM [dbo].[Buildings] Where AddressId" +
-               " IN(SELECT Id FROM [dbo].[Addresses] WHERE Street = @buildingAddress)))";
-            try
-            {
-                using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
-                using SqlCommand command = new(query, connection);
-                connection.Open();
-
-                // Параметризованный запрос с двумя параметрами
-                command.Parameters.AddWithValue("@buildingAddress", DbType.String).Value = buildingAddress;
-                command.Parameters.AddWithValue("@unitNumber", DbType.String).Value = unitNumber;
-
-                using SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    row.LeasePrice = GetValueOrDefault<decimal>(reader, 0);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException($"Error: {ex.Message}\r\n{ex.StackTrace}");
-            }
-            finally
-            {
-
-                // Обеспечиваем освобождение ресурсов
-                SqlConnection.ClearAllPools();
-            }
-            return row;
         }
     }
 }
