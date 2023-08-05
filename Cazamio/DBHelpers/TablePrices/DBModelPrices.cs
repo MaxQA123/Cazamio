@@ -21,11 +21,11 @@ namespace CazamioProject.DBHelpers.TablePrices
         public object? PaymentOfApartment { get; set; }
     }
 
-    //public class DBModelPricesCombined
-    //{
-    //    public object? LeasePrice { get; set; }
-    //    public object? DepositPrice { get; set; }
-    //    public object? PaidMonths { get; set; }
-    //    public object? PaymentOfApartment { get; set; }
-    //}
+    public class DBModelPricesCombined
+    {
+        public object? LeasePrice { get; set; }
+        public object? DepositPrice { get; set; }
+        public object? PaidMonths { get; set; }
+        public object? PaymentOfApartment { get; set; }
+    }
 }

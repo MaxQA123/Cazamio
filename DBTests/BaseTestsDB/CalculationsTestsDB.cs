@@ -39,10 +39,34 @@ namespace DBTests.BaseTestsDB
 
         #endregion
 
-        // Если в селекте больше одного значения
         public void PaymentForApartmentWithoutCommissionsHoldingDepositViaModel()
         {
             var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithoutCommissionsHoldingDeposit(DBTestDataDBForAdmins.BUILDING_ADDRESS, DBTestDataDBForAdmins.UNIT_NUMBER);
+            Console.WriteLine($"{payment.PaymentOfApartment}");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBMarketplaceAdmin")]
+        [AllureSubSuite("RelatedBuidingBroker")]
+
+        #region Basic info about test
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: Payment for the apartment without the commissions and with a holding deposit.
+        //Comment: The table "Prices".
+        //Path to cheking's:
+
+        #endregion
+
+        public void PaymentForApartmentWithoutCommissionsWithHoldingDepositViaModel()
+        {
+            var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithoutCommissionsWithHoldingDeposit(DBTestDataDBForAdmins.BUILDING_ADDRESS, DBTestDataDBForAdmins.UNIT_NUMBER);
             Console.WriteLine($"{payment.PaymentOfApartment}");
         }
 
@@ -65,7 +89,6 @@ namespace DBTests.BaseTestsDB
 
         #endregion
 
-        // Если в селекте больше одного значения
         public void DisplayingLeasePrice()
         {
             var lesePrice = DBTablePrices.GetLeasePrice(DBTestDataDBForAdmins.BUILDING_ADDRESS, DBTestDataDBForAdmins.UNIT_NUMBER);
