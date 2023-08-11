@@ -10,7 +10,7 @@ using CazamioProject.DBHelpers.TablePrices;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
-using static CazamioProject.DBHelpers.TablePrices.DBTablePrices;
+using static CazamioProject.DBHelpers.TablePrices.DBRequestPrices;
 
 namespace DBTests.BaseTestsDB
 {
@@ -91,7 +91,7 @@ namespace DBTests.BaseTestsDB
 
         public void DisplayingLeasePrice()
         {
-            var lesePrice = DBTablePrices.GetLeasePrice(DBTestDataDBForAdmins.BUILDING_ADDRESS, DBTestDataDBForAdmins.UNIT_NUMBER);
+            var lesePrice = DBRequestPrices.GetLeasePrice(DBTestDataDBForAdmins.BUILDING_ADDRESS, DBTestDataDBForAdmins.UNIT_NUMBER);
             Console.WriteLine($"{lesePrice.LeasePrice}");
         }
 

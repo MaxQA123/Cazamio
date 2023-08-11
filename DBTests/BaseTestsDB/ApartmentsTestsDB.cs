@@ -38,7 +38,7 @@ namespace DBTests.BaseTestsDB
 
         public void DisplayingIdApartments()
         {
-            string idApartmentByBuildingId = DBTableApartments.GetApartmentIdByBuildingIdUnit(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
+            string idApartmentByBuildingId = DBRequestApartments.GetApartmentIdByBuildingIdUnit(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
             Console.WriteLine($"{idApartmentByBuildingId} :ApartmentId from Apartments");
         }
 
@@ -62,28 +62,28 @@ namespace DBTests.BaseTestsDB
             string numberApartment = DBTestDataDBForAdmins.NEW_UNIT_NUMBER;
             string buildingName = DBTestDataDBForAdmins.BUILDING_NAME;
 
-            string apartmentIdLast = DBTableApartments.GetLastApartmentId();
+            string apartmentIdLast = DBRequestApartments.GetLastApartmentId();
             Console.WriteLine($"{apartmentIdLast} :ApartmentId Last from table Apartments for {buildingName} related {numberApartment}");
 
-            string apartmentIdByNameBuilding = DBTableApartments.GetApartmentIdByBuildingNameF(DBTestDataDBForAdmins.BUILDING_NAME);
+            string apartmentIdByNameBuilding = DBRequestApartments.GetApartmentIdByBuildingNameF(DBTestDataDBForAdmins.BUILDING_NAME);
             Console.WriteLine($"{apartmentIdByNameBuilding} :ApartmentId by NameBuilding from table Apartments for {buildingName} related {numberApartment}");
 
-            string landlordId = DBTableApartments.GetLastLandlordIdNewApartment();
+            string landlordId = DBRequestApartments.GetLastLandlordIdNewApartment();
             Console.WriteLine($"{landlordId} :LandlordId from table Apartments for {buildingName} related {numberApartment}");
 
-            string buildingId = DBTableApartments.GetLastBuildingIdNewApartment();
+            string buildingId = DBRequestApartments.GetLastBuildingIdNewApartment();
             Console.WriteLine($"{buildingId} :BuildingId from table Apartments for {buildingName} related {numberApartment}");
 
-            string marketplaceId = DBTableApartments.GetLastMarketplaceIdNewApartment();
+            string marketplaceId = DBRequestApartments.GetLastMarketplaceIdNewApartment();
             Console.WriteLine($"{marketplaceId} :MarketplaceId from table Apartments for {buildingName} related {numberApartment}");
 
-            string unitName = DBTableApartments.GetLastUnitNameNewApartmentById();
+            string unitName = DBRequestApartments.GetLastUnitNameNewApartmentById();
             Console.WriteLine($"{unitName} :Unit Name from table Apartments for {buildingName} related {numberApartment}");
 
-            string brokerId = DBTableApartments.GetLastBrokerIdApartmentById();
+            string brokerId = DBRequestApartments.GetLastBrokerIdApartmentById();
             Console.WriteLine($"{brokerId} :BrokerId from table Apartments for {buildingName} related {numberApartment}");
 
-            string ownerId = DBTableApartments.GetLastOwnerIdApartmentById();
+            string ownerId = DBRequestApartments.GetLastOwnerIdApartmentById();
             Console.WriteLine($"{ownerId} :OwnerId from table Apartments for {buildingName} related {numberApartment}");
 
             Assert.Multiple(() =>

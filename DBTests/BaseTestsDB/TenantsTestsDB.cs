@@ -326,7 +326,7 @@ namespace DBTests.BaseTestsDB
             string tenantIdNewTenantApartmentFavorites = DBTableTenantApartmentFavorites.GetLastTenantIdById();
             Console.WriteLine($"{tenantIdNewTenantApartmentFavorites} :TenantIdNewTenantApartmentFavorites {tenantApplicant} from table TenantApartmentFavorites");
 
-            string apartmentIdFromTableApartments = DBTableApartments.GetIdForUnitFromApartments(DBTestDataDBForAdmins.BUILDING_NAME, DBTestDataDBForAdmins.UNIT_NUMBER);
+            string apartmentIdFromTableApartments = DBRequestApartments.GetIdForUnitFromApartments(DBTestDataDBForAdmins.BUILDING_NAME, DBTestDataDBForAdmins.UNIT_NUMBER);
             Console.WriteLine($"{apartmentIdFromTableApartments} :ApartmentId {tenantApplicant} from table Apartments");
 
             string apartmentIdFromTableTenantApartmentFavorites = DBTableTenantApartmentFavorites.GetLastApartmentIdById();

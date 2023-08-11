@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace CazamioProject.DBHelpers.TablePrices
 {
     //Вариант где мы учитываем возможность отображения значения NULL в ячейке.
-    public class DBTablePrices
+    public class DBRequestPrices
     {
         private static T GetValueOrDefault<T>(SqlDataReader reader, int index, T defaultValue = default(T))
         {

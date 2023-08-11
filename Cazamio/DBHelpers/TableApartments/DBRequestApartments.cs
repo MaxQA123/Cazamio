@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace CazamioProject.DBHelpers
 {
     //Вариант где мы учитываем возможность отображения значения NULL в ячейке.
-    public class DBTableApartments
+    public class DBRequestApartments
     {
         //public class DBCalculations
         //{
