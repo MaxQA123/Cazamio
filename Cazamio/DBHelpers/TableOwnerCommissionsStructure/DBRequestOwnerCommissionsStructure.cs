@@ -45,9 +45,9 @@ namespace CazamioProject.DBHelpers.TableOwnerCommissionsStructure
                     using SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        row.PayType = GetValueOrDefault<decimal>(reader, 0);
+                        row.PayType = GetValueOrDefault<string>(reader, 0);
                         row.TenantNumberOfMonths = GetValueOrDefault<decimal>(reader, 1);
-                        row.TenantPercentage = GetValueOrDefault<int>(reader, 2);
+                        row.TenantPercentage = GetValueOrDefault<decimal>(reader, 2);
                         row.OwnerNumberOfMonths = GetValueOrDefault<decimal>(reader, 3);
                         row.OwnerPercentage = GetValueOrDefault<decimal>(reader, 4);
                         row.TakeOff = GetValueOrDefault<decimal>(reader, 5);

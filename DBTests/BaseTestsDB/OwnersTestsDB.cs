@@ -1,6 +1,7 @@
 ﻿using Allure.Commons;
 using ApiTests.Base;
 using CazamioProject.DBHelpers;
+using CazamioProject.DBHelpers.TableOwnerCommissionsStructure;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
@@ -25,6 +26,7 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBOwner")]
         [AllureSubSuite("RecordsDBAboutNewOwner")]
 
+        #region Basic info about test
 
         //Date of publication:
         //Version\Build:
@@ -33,9 +35,15 @@ namespace DBTests.BaseTestsDB
         //Comment: The table "Owners".
         //Path to cheking's: 
 
+        #endregion
+
         public void RecordsDBAboutNewOwnerCommon()
         {
+            #region Preconditions
+
             string nameOwner = DBTestDataDBForAdmins.NEW_OWNER_FIRST_LAST_NAME;
+
+            #endregion
 
             string createdByUserIdViaEmail = DBTableOwners.GetCreatedByUserIdOwnerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
             Console.WriteLine($"{createdByUserIdViaEmail} :CreatedByUserId wner via email for owner {nameOwner} from table Owners");
@@ -70,6 +78,8 @@ namespace DBTests.BaseTestsDB
             string brokerIdFromTestData = DBTableLandlords.GetIdForBroker(DBTestDataDBForAdmins.BROKER_EMAIL);
             Console.WriteLine($"{brokerIdFromTestData} :BrokerId for owner {nameOwner} from table AspNetUsers");
 
+            #region Assertions
+
             Assert.Multiple(() =>
             {
                 Assert.AreEqual(createdByUserIdViaEmail, createdByUserIdViaId);
@@ -93,6 +103,8 @@ namespace DBTests.BaseTestsDB
                 Assert.AreEqual(brokerIdByEmail, brokerIdFromTestData);
                 Console.WriteLine($"BrokerId by email owner: {brokerIdByEmail} = {brokerIdFromTestData} BrokerId for owner from table AspNetUsers");
             });
+
+            #endregion
         }
 
         [Test]
@@ -103,6 +115,7 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBOwner")]
         [AllureSubSuite("RecordsDBAboutNewOwner")]
 
+        #region Basic info about test
 
         //Date of publication:
         //Version\Build:
@@ -111,9 +124,15 @@ namespace DBTests.BaseTestsDB
         //Comment: The table "Owners".
         //Path to cheking's: 
 
+        #endregion
+
         public void RecordsDBAboutNewOwnerMySpace()
         {
+            #region Preconditions
+
             string nameOwner = DBTestDataDBForAdmins.NEW_OWNER_FIRST_LAST_NAME;
+
+            #endregion
 
             string createdByUserIdViaEmail = DBTableOwners.GetCreatedByUserIdOwnerByOwnerEmail(DBTestDataDBForAdminsMySpace.NEW_OWNER_EMAIL);
             Console.WriteLine($"{createdByUserIdViaEmail} :CreatedByUserId wner via email for owner {nameOwner} from table Owners");
@@ -148,6 +167,8 @@ namespace DBTests.BaseTestsDB
             string brokerIdFromTestData = DBTableLandlords.GetIdForBroker(DBTestDataDBForAdminsMySpace.BROKER_EMAIL);
             Console.WriteLine($"{brokerIdFromTestData} :BrokerId for owner {nameOwner} from table AspNetUsers");
 
+            #region Assertions
+
             Assert.Multiple(() =>
             {
                 Assert.AreEqual(createdByUserIdViaEmail, createdByUserIdViaId);
@@ -171,6 +192,33 @@ namespace DBTests.BaseTestsDB
                 Assert.AreEqual(brokerIdByEmail, brokerIdFromTestData);
                 Console.WriteLine($"BrokerId by email owner: {brokerIdByEmail} = {brokerIdFromTestData} BrokerId for owner from table AspNetUsers");
             });
+
+            #endregion
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBOwnerCommissionsStructure")]
+        [AllureSubSuite("BasicDataOwnerCommissionStructure")]
+
+        public void BasicDataOwnerCommissionStructure()
+        {
+            #region Preconditions
+
+            var ownerEmail = DBTestDataDBForAdminsMySpace.OWNER_EMAIL;
+
+            #endregion
+
+            var fromDbBasicDataOwnerCommissionStructure = DBRequestOwnerCommissionsStructure.OwnerCommissionsStructure.GetBasicDataOwnerCommissionStructure(ownerEmail);
+            Console.WriteLine($"Pay Type: {fromDbBasicDataOwnerCommissionStructure.PayType}");
+            Console.WriteLine($"Tenant Number Of Months: {fromDbBasicDataOwnerCommissionStructure.TenantNumberOfMonths}");
+            Console.WriteLine($"Tenant Percentage: {fromDbBasicDataOwnerCommissionStructure.TenantPercentage}");
+            Console.WriteLine($"Owner Number Of Months: {fromDbBasicDataOwnerCommissionStructure.OwnerNumberOfMonths}");
+            Console.WriteLine($"Owner Percentage: {fromDbBasicDataOwnerCommissionStructure.OwnerPercentage}");
+            Console.WriteLine($"Take Off: {fromDbBasicDataOwnerCommissionStructure.TakeOff}");
         }
     }
 }
