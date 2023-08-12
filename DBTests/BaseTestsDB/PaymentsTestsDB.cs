@@ -35,7 +35,14 @@ namespace DBTests.BaseTestsDB
 
         public void PaymentForApartmentWithoutCommissionsAndHoldingDeposit()
         {
-            var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithoutCommissionsAndHoldingDeposit(DBTestDataDBForAdmins.BUILDING_ADDRESS, DBTestDataDBForAdmins.UNIT_NUMBER);
+            #region Preconditions
+
+            string buildingAddress = "101 Franklin Avenue";
+            string unitNumber = "26";
+
+            #endregion
+
+            var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithoutCommissionsAndHoldingDeposit(buildingAddress, unitNumber);
             Console.WriteLine($" Payment of apartment: {payment.PaymentOfApartment}");
             Console.WriteLine($" Lease Price: {payment.LeasePrice}");
             Console.WriteLine($" Paid Months (Month's rent): {payment.PaidMonths}");
@@ -58,8 +65,12 @@ namespace DBTests.BaseTestsDB
 
         public void PaymentForApartmentWithoutCommissionsWithHoldingDeposit()
         {
+            #region Preconditions
+
             string buildingAddress = "101 Franklin Avenue";
             string unitNumber = "26";
+
+            #endregion
 
             var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithoutCommissionsWithHoldingDeposit(buildingAddress, unitNumber);
             Console.WriteLine($" Payment of apartment: {payment.PaymentOfApartment}");
