@@ -26,7 +26,7 @@ namespace CazamioProject.DBHelpers
 
         public class Calculations
         {
-            public static DBModelCalculations GetPaymentForApartmentWithoutCommissionsHoldingDeposit(string buildingAddress, string unitNumber)
+            public static DBModelCalculations GetPaymentForApartmentWithoutCommissionsAndHoldingDeposit(string buildingAddress, string unitNumber)
             {
                 var row = new DBModelCalculations();
 
@@ -76,7 +76,7 @@ namespace CazamioProject.DBHelpers
                 var row = new DBModelCalculations();
 
                 // SQL запрос для выборки данных
-                string query = "SELECT Prices.LeasePrice, Prices.DepositPrice, Prices.PaidMonths, ((LeasePrice*PaidMonths)+DepositPrice-PaymentOptions.Amount) AS PaymentOfApartment" +
+                string query = "SELECT Prices.LeasePrice, Prices.DepositPrice, Prices.PaidMonths, PaymentOptions.Amount, ((LeasePrice*PaidMonths)+DepositPrice-PaymentOptions.Amount) AS PaymentOfApartment" +
                                " FROM [dbo].[Prices] LEFT JOIN PaymentOptions" +
                                " ON Prices.ApartmentId = PaymentOptions.ApartmentId" +
                                " WHERE Prices.ApartmentId IN(SELECT AP.Id FROM Apartments AP" +
@@ -102,6 +102,7 @@ namespace CazamioProject.DBHelpers
                         row.DepositPrice = GetValueOrDefault<decimal>(reader, 1);
                         row.PaidMonths = GetValueOrDefault<int>(reader, 2);
                         row.PaymentOfApartment = GetValueOrDefault<decimal>(reader, 3);
+                        row.Amount = GetValueOrDefault<decimal>(reader, 3);
                     }
 
                 }

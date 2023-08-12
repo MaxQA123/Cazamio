@@ -19,5 +19,6 @@ namespace CazamioProject.DBHelpers.Calculations
         public object? IsDeleted { get; set; }
         public object? PaidMonths { get; set; }
         public object? PaymentOfApartment { get; set; }
+        public object? Amount { get; set; }
     }
 }

@@ -23,7 +23,7 @@ namespace DBTests.BaseTestsDB
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingDBOwner")]
+        [AllureSuite("TestingDBOwners")]
         [AllureSubSuite("RecordsDBAboutNewOwner")]
 
         #region Basic info about test
@@ -112,7 +112,7 @@ namespace DBTests.BaseTestsDB
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingDBOwner")]
+        [AllureSuite("TestingDBOwners")]
         [AllureSubSuite("RecordsDBAboutNewOwner")]
 
         #region Basic info about test
@@ -203,6 +203,17 @@ namespace DBTests.BaseTestsDB
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBOwnerCommissionsStructure")]
         [AllureSubSuite("BasicDataOwnerCommissionStructure")]
+
+        #region Basic info about test
+
+        //Date of publication:
+        //Version\Build:
+        //Willingness for testing: Done.
+        //This test case is doing checking: Getting the basic data of the owner commission structure
+        //Comment: The table "OwnerCommissionsStructure".
+        //Path to cheking's: 
+
+        #endregion
 
         public void BasicDataOwnerCommissionStructure()
         {

@@ -25,14 +25,72 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBPayment")]
+        [AllureSubSuite("PaymentForApartmentWithoutCommissionsAndHoldingDeposit")]
+
+        #region Preconditions
+
+        // (Lease Price * PaidMonyhs) + DepositPrice)
+
+        #endregion
+
+        public void PaymentForApartmentWithoutCommissionsAndHoldingDeposit()
+        {
+            var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithoutCommissionsAndHoldingDeposit(DBTestDataDBForAdmins.BUILDING_ADDRESS, DBTestDataDBForAdmins.UNIT_NUMBER);
+            Console.WriteLine($" Payment of apartment: {payment.PaymentOfApartment}");
+            Console.WriteLine($" Lease Price: {payment.LeasePrice}");
+            Console.WriteLine($" Paid Months (Month's rent): {payment.PaidMonths}");
+            Console.WriteLine($" Deposit Price (Security deposit): {payment.DepositPrice}");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBPayment")]
+        [AllureSubSuite("PaymentForApartmentWithoutCommissionsWithHoldingDeposit")]
+
+        #region Preconditions
+
+        // (Lease Price * PaidMonyhs) + DepositPrice - holding deposit)
+
+        #endregion
+
+        public void PaymentForApartmentWithoutCommissionsWithHoldingDeposit()
+        {
+            string buildingAddress = "101 Franklin Avenue";
+            string unitNumber = "26";
+
+            var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithoutCommissionsWithHoldingDeposit(buildingAddress, unitNumber);
+            Console.WriteLine($" Payment of apartment: {payment.PaymentOfApartment}");
+            Console.WriteLine($" Lease Price: {payment.LeasePrice}");
+            Console.WriteLine($" Paid Months (Month's rent): {payment.PaidMonths}");
+            Console.WriteLine($" Deposit Price (Security deposit): {payment.DepositPrice}");
+            Console.WriteLine($" Amount (Holding deposit): {payment.Amount}");
+        }
+
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBPayment")]
+        [AllureSubSuite("PaymentForApartmentWithoutCommissionsWithHoldingDeposit")]
+
+        public void PaymentForApartmentWithCommissionsAndHoldingDeposit()
+        {
+
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBPayment")]
         [AllureSubSuite("RecordsAboutNewPaymentHoldDeposit")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The tables "Transactions", "AspNetUsers.
-        //Path to cheking's: 
         public void RecordsAboutNewPaymentHoldDeposit()
         {
             string lastId = DBTableTransactions.GetLastId();
@@ -98,12 +156,6 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBPayment")]
         [AllureSubSuite("RecordsAboutNewPaymentCreditScreeningFee")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The tables "Transactions", "AspNetUsers.
-        //Path to cheking's: 
         public void RecordsAboutNewPaymentCreditScreeningFeeApplicant()
         {
             string userIdTenant = DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID;
@@ -176,12 +228,6 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBPayment")]
         [AllureSubSuite("RecordsAboutNewPaymentSignLeaseApplicant")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The tables "Transactions", "AspNetUsers.
-        //Path to cheking's: 
         public void RecordsAboutNewPaymentSignLeaseApplicant()
         {
             string userIdTenant = DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID;
