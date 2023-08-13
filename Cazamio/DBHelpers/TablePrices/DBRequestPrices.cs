@@ -27,9 +27,9 @@ namespace CazamioProject.DBHelpers.TablePrices
         public class Prices
         {
             // Если в селекте больше одного значения
-            public static DBModelPrices GetPaymentForApartmentWithoutCommissionsHoldingDeposit(string buildingAddress, string unitNumber)
+            public static DBModelPricesCombined GetPaymentForApartmentWithoutCommissionsHoldingDeposit(string buildingAddress, string unitNumber)
             {
-                var row = new DBModelPrices();
+                var row = new DBModelPricesCombined();
 
                 // SQL запрос для выборки данных
                 string query = "SELECT LeasePrice, DepositPrice, PaidMonths, ((LeasePrice*PaidMonths)+DepositPrice) AS PaymentOfApartment" +

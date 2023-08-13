@@ -23,19 +23,16 @@ namespace DBTests.BaseTestsDB
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingDBBroker")]
+        [AllureSuite("TestingDBBrokers")]
         [AllureSubSuite("RecordsDBAboutNewBroker")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The table "Lanlords", "AspNetUserRoles", "AspNetUsers".
-        //Path to cheking's: 
 
         public void RecordsDBAboutNewBroker()
         {
+            #region Precondotions
+
             string newBroker = DBTestDataDBForAdmins.NEW_BROKER_FIRST_LAST_NAME;
+
+            #endregion
 
             string userIdByEmailBroker = DBTableAspNetUsers.GetIdForBrokerFromAspNetUsers(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
             Console.WriteLine($"{userIdByEmailBroker}: Id for new broker {newBroker} from table AspNetUsers");
@@ -64,6 +61,8 @@ namespace DBTests.BaseTestsDB
             string emailNewBroker = DBTableAspNetUsers.GetEmailByIdNew(userIdByEmailBroker);
             Console.WriteLine($"{emailNewBroker} :Email for broker {newBroker} from table AspNetUsers");
 
+            #region Assertions
+
             Assert.Multiple(() =>
             {
                 Assert.AreEqual(userIdByEmailBroker, userIdBroker);
@@ -87,6 +86,8 @@ namespace DBTests.BaseTestsDB
                 Assert.AreEqual(emailNewBroker, DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
                 Console.WriteLine($"Email a broker: {emailNewBroker} = {DBTestDataDBForAdmins.NEW_BROKER_EMAIL} Email a broker ER");
             });
+
+            #endregion
         }
 
         [Test]
@@ -94,19 +95,16 @@ namespace DBTests.BaseTestsDB
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingDBBroker")]
+        [AllureSuite("TestingDBBrokers")]
         [AllureSubSuite("RelatedUserIdBrokerWithMarkeplaceId")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The table "Lanlords", "AspNetUsers".
-        //Path to cheking's: 
 
         public void RelatedUserIdBrokerWithMarkeplaceId()
         {
+            #region Precondotions
+
             string brokerName = DBTestDataDBForAdmins.BROKER_FIRST_NAME;
+
+            #endregion
 
             string landlordIddBroker = DBTableLandlords.GetIdForBroker(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
             Console.WriteLine($"{landlordIddBroker} :Id for broker {brokerName} from table Landlords");
@@ -116,6 +114,8 @@ namespace DBTests.BaseTestsDB
 
             string IdBroker = DBTableAspNetUsers.GetIdForBrokerFromAspNetUsers(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
             Console.WriteLine($"{IdBroker}: Id for new broker {brokerName} from table AspNetUsers");
+
+            #region Assertions
 
             Assert.Multiple(() =>
             {
@@ -128,6 +128,32 @@ namespace DBTests.BaseTestsDB
                 Assert.AreEqual(IdBroker, DBTestDataDBForAdmins.BROKER_MARTIN_MACFLY_ID);
                 Console.WriteLine($"Id for a broker from table AspNetUsers: {IdBroker} = {DBTestDataDBForAdmins.BROKER_MARTIN_MACFLY_ID} Id for broker ER");
             });
+
+            #endregion
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBBrokers")]
+        [AllureSubSuite("RelatedUserIdBrokerWithMarkeplaceId")]
+
+        public void AgentBasicCommissionStructure()
+        {
+            #region Precondotions
+
+            string agentEmail = TestDataForWebSiteAdmin.EMAIL_AGENT_TEST;
+
+            #endregion
+
+            var agentBasicData = DBRequestBrokers.DBBrokers.GetAgentBasicData(agentEmail);
+            Console.WriteLine($"First Name: {agentBasicData.FirstName}");
+            Console.WriteLine($"Last Name: {agentBasicData.LastName}");
+            Console.WriteLine($"Email: {agentBasicData.Email}");
+            Console.WriteLine($"Broker Commission: {agentBasicData.BrokerCommission}");
+            Console.WriteLine($"Agent Commission: {agentBasicData.AgentCommission}");
         }
     }
 }

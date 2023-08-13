@@ -215,7 +215,7 @@ namespace DBTests.BaseTestsDB
 
         #endregion
 
-        public void BasicDataOwnerCommissionStructure()
+        public void OwnerBasicDataCommissionStructure()
         {
             #region Preconditions
 

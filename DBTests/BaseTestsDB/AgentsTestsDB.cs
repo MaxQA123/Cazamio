@@ -57,7 +57,7 @@ namespace DBTests.BaseTestsDB
 
         public void DispalyingBrokerIdAgentFromBrokers()
         {
-            string brokerId = DBTableBrokers.GetBrokerIdAgentByEmail(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
+            string brokerId = DBRequestBrokers.GetBrokerIdAgentByEmail(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
             Console.WriteLine($"{brokerId} :Id for broker from table Brokers");
         }
 
@@ -103,16 +103,16 @@ namespace DBTests.BaseTestsDB
             string IdAgent = DBTableAspNetUsers.GetIdByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
             Console.WriteLine($"{IdAgent} :Id for broker from table AspNetUsers");
 
-            string lastIdAgent = DBTableBrokers.GetLastIdNewAgent();
+            string lastIdAgent = DBRequestBrokers.GetLastIdNewAgent();
             Console.WriteLine($"{lastIdAgent} :BrokerId for new agent {firstLastNameAgent} from table Brokers");
 
-            string IdAgentByUserId = DBTableBrokers.GetIdByUserId(IdAgent);
+            string IdAgentByUserId = DBRequestBrokers.GetIdByUserId(IdAgent);
             Console.WriteLine($"{IdAgentByUserId} :BrokerId for new agent {firstLastNameAgent} from table Brokers");
 
             string marketplaceIdAgentAspNetUsers = DBTableAspNetUsers.GetMarketplaceIdAgentByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
             Console.WriteLine($"{marketplaceIdAgentAspNetUsers} :MarketplaceId for agent {firstLastNameAgent} from table AspNetUsers");
 
-            string marketplaceIdAgentBrokers = DBTableBrokers.GetLastMarketplaceIdNewAgentByUserId();
+            string marketplaceIdAgentBrokers = DBRequestBrokers.GetLastMarketplaceIdNewAgentByUserId();
             Console.WriteLine($"{marketplaceIdAgentBrokers} :MarketplaceId for agent {firstLastNameAgent} from table Brokers");
 
             string roleIdAgent = DBTableAspNetUserRoles.GetRoleIdNewByUserId(IdAgent);
@@ -186,7 +186,7 @@ namespace DBTests.BaseTestsDB
             string agentName = DBTestDataDBForAdmins.DELETED_AGENT_FIRST_LAST_NAME;
             string tableBrokers = TestDataDBNamesTables.TABLE_NAME_BROKERS;
 
-            string numberOneIsDeleted = DBTableBrokers.GetIsDeletedAgentByEmail(DBTestDataDBForAdmins.DELETED_AGENT_EMAIL);
+            string numberOneIsDeleted = DBRequestBrokers.GetIsDeletedAgentByEmail(DBTestDataDBForAdmins.DELETED_AGENT_EMAIL);
             Console.WriteLine($"{numberOneIsDeleted} :Displayed 1 for agent {agentName} from table {tableBrokers}");
 
             Assert.AreEqual(numberOneIsDeleted, DBTestDataGeneral.TRUE);

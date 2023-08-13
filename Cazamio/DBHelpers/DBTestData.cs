@@ -158,6 +158,7 @@ namespace CazamioProject.DBHelpers
         public const string NEW_OFFICE_LOCATION_OWNER = "London";
 
         public const string OWNER_EMAIL = "gh67re@putsbox.com";
+        public const string OWNER_PAY_EMAIL = "owner111rubi@putsbox.com";
 
         public const string BROKER_MANDO_MANDALORIAN_ID = "";
         public const string BROKER_MANDO_MANDALORIAN_LANDLORD_ID = "63";

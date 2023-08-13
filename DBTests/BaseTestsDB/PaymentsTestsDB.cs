@@ -87,9 +87,9 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBPayment")]
-        [AllureSubSuite("PaymentForApartmentWithoutCommissionsWithHoldingDeposit")]
+        [AllureSubSuite("PaymentForApartmentWithOwnerPayCommissionAndHoldingDeposit")]
 
-        public void PaymentForApartmentWithCommissionsAndHoldingDeposit()
+        public void PaymentForApartmentWithOwnerPayCommissionAndHoldingDeposit()
         {
 
         }

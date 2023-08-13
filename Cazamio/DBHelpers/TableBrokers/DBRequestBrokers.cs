@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.DBHelpers.TableBrokers;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -9,8 +10,66 @@ using System.Threading.Tasks;
 
 namespace CazamioProject.DBHelpers
 {
-    public class DBTableBrokers
+    public class DBRequestBrokers
     {
+        private static T GetValueOrDefault<T>(SqlDataReader reader, int index, T defaultValue = default(T))
+        {
+            if (!reader.IsDBNull(index))
+            {
+                return (T)reader.GetValue(index);
+            }
+            else
+            {
+                return defaultValue;
+            }
+        }
+
+        public class DBBrokers
+        {
+            public static DBModelBrokersCombined GetAgentBasicData(string email)
+            {
+                var row = new DBModelBrokersCombined();
+
+                // SQL запрос для выборки данных
+                string query = "SELECT AspnetUsers.FirstName, AspnetUsers.LastName, AspnetUsers.Email, Brokers.BrokerCommission, Brokers.AgentCommission" +
+                       " FROM Brokers LEFT JOIN AspNetUsers" +
+                       " ON Brokers.UserId = AspNetUsers.Id" +
+                       " WHERE Brokers.UserId IN(SELECT Id FROM AspNetUsers WHERE Email = @email)";
+                try
+                {
+                    using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
+                    using SqlCommand command = new(query, connection);
+                    connection.Open();
+
+                    // Параметризованный запрос с двумя параметрами
+                    command.Parameters.AddWithValue("@email", DbType.String).Value = email;
+
+                    using SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        row.FirstName = GetValueOrDefault<string>(reader, 0);
+                        row.LastName = GetValueOrDefault<string>(reader, 1);
+                        row.Email = GetValueOrDefault<string>(reader, 2);
+                        row.BrokerCommission = GetValueOrDefault<decimal>(reader, 3);
+                        row.AgentCommission = GetValueOrDefault<decimal>(reader, 4);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw new ArgumentException($"Error: {ex.Message}\r\n{ex.StackTrace}");
+                }
+                finally
+                {
+
+                    // Обеспечиваем освобождение ресурсов
+                    SqlConnection.ClearAllPools();
+                }
+
+                return row;
+            }
+        }
+
         public static string GetBrokerIdAgentByEmail(string idBroker)
         {
             string data = null;
