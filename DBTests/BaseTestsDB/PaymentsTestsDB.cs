@@ -25,7 +25,7 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBPayment")]
-        [AllureSubSuite("PaymentForApartmentWithoutCommissionsAndHoldingDeposit")]
+        [AllureSubSuite("PaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit")]
 
         #region Preconditions
 
@@ -35,7 +35,7 @@ namespace DBTests.BaseTestsDB
 
         #endregion
 
-        public void PaymentForApartmentWithoutCommissionsAndHoldingDeposit()
+        public void PaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit()
         {
             #region Preconditions
 
@@ -44,11 +44,11 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
-            var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithoutCommissionsAndHoldingDeposit(buildingAddress, unitNumber);
-            Console.WriteLine($" Payment of apartment: {payment.PaymentOfApartment}");
-            Console.WriteLine($" Lease Price: {payment.LeasePrice}");
-            Console.WriteLine($" Paid Months (Month's rent): {payment.PaidMonths}");
-            Console.WriteLine($" Deposit Price (Security deposit): {payment.DepositPrice}");
+            var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit(buildingAddress, unitNumber);
+            Console.WriteLine($"Payment of apartment: {payment.PaymentOfApartment}");
+            Console.WriteLine($"Lease Price: {payment.LeasePrice}");
+            Console.WriteLine($"Paid Months (Month's rent): {payment.PaidMonths}");
+            Console.WriteLine($"Deposit Price (Security deposit): {payment.DepositPrice}");
         }
 
         [Test]
@@ -57,7 +57,7 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBPayment")]
-        [AllureSubSuite("PaymentForApartmentWithoutCommissionsWithHoldingDeposit")]
+        [AllureSubSuite("PaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit")]
 
         #region Preconditions
 
@@ -67,7 +67,7 @@ namespace DBTests.BaseTestsDB
 
         #endregion
 
-        public void PaymentForApartmentWithoutCommissionsWithHoldingDeposit()
+        public void PaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit()
         {
             #region Preconditions
 
@@ -76,12 +76,12 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
-            var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithoutCommissionsWithHoldingDeposit(buildingAddress, unitNumber);
-            Console.WriteLine($" Payment of apartment: {payment.PaymentOfApartment}");
-            Console.WriteLine($" Lease Price: {payment.LeasePrice}");
-            Console.WriteLine($" Paid Months (Month's rent): {payment.PaidMonths}");
-            Console.WriteLine($" Deposit Price (Security deposit): {payment.DepositPrice}");
-            Console.WriteLine($" Amount (Holding deposit): {payment.Amount}");
+            var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit(buildingAddress, unitNumber);
+            Console.WriteLine($"Payment of apartment: {payment.PaymentOfApartment}");
+            Console.WriteLine($"Lease Price: {payment.LeasePrice}");
+            Console.WriteLine($"Paid Months (Month's rent): {payment.PaidMonths}");
+            Console.WriteLine($"Deposit Price (Security deposit): {payment.DepositPrice}");
+            Console.WriteLine($"Amount (Holding deposit): {payment.Amount}");
         }
 
 
@@ -91,9 +91,9 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBPayment")]
-        [AllureSubSuite("PaymentForApartmentWithOwnerPayCommissionAndHoldingDeposit")]
+        [AllureSubSuite("PaymentForApartmentWithOwnerPayAndHoldingDeposit")]
 
-        public void PaymentForApartmentWithOwnerPayCommissionAndHoldingDeposit()
+        public void PaymentForApartmentWithOwnerPayAndHoldingDeposit()
         {
 
         }

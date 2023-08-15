@@ -26,7 +26,7 @@ namespace CazamioProject.DBHelpers
 
         public class Calculations
         {
-            public static DBModelCalculations GetPaymentForApartmentWithoutCommissionsAndHoldingDeposit(string buildingAddress, string unitNumber)
+            public static DBModelCalculations GetPaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit(string buildingAddress, string unitNumber)
             {
                 var row = new DBModelCalculations();
 
@@ -71,7 +71,7 @@ namespace CazamioProject.DBHelpers
                 return row;
             }
 
-            public static DBModelCalculations GetPaymentForApartmentWithoutCommissionsWithHoldingDeposit(string buildingAddress, string unitNumber)
+            public static DBModelCalculations GetPaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit(string buildingAddress, string unitNumber)
             {
                 var row = new DBModelCalculations();
 
