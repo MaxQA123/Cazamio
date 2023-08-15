@@ -30,6 +30,8 @@ namespace DBTests.BaseTestsDB
         #region Preconditions
 
         // (Lease Price * PaidMonyhs) + DepositPrice)
+        // Displayed at a tenant-applicant (without adding a tenant-occupant) in the modal window "Payment details" when payment for signing a lease.
+        // Can testing when had been set "OwnerPay".
 
         #endregion
 
@@ -38,7 +40,7 @@ namespace DBTests.BaseTestsDB
             #region Preconditions
 
             string buildingAddress = "101 Franklin Avenue";
-            string unitNumber = "26";
+            string unitNumber = "121";
 
             #endregion
 
@@ -60,6 +62,8 @@ namespace DBTests.BaseTestsDB
         #region Preconditions
 
         // (Lease Price * PaidMonyhs) + DepositPrice - holding deposit)
+        // Displayed at a tenant-applicant (without adding a tenant-occupant) in the modal window "Payment details" when payment for signing a lease.
+        // Can testing when had been set "OwnerPay".
 
         #endregion
 
@@ -68,7 +72,7 @@ namespace DBTests.BaseTestsDB
             #region Preconditions
 
             string buildingAddress = "101 Franklin Avenue";
-            string unitNumber = "26";
+            string unitNumber = "122";
 
             #endregion
 
