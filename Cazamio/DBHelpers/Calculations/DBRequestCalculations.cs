@@ -119,6 +119,58 @@ namespace CazamioProject.DBHelpers
 
                 return row;
             }
+
+            public static DBModelCalculationCombinedPays GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDeposit(string buildingAddress, string unitNumber)
+            {
+                var row = new DBModelCalculationCombinedPays();
+
+                // SQL запрос для выборки данных
+                string query = "SELECT Prices.LeasePrice, Prices.DepositPrice, Prices.PaidMonths, PaymentOptions.Amount," +
+                       " AP.PayType, AP.TenantNumberOfMonths, AP.TakeOff," +
+                       " ((LeasePrice * PaidMonths) + DepositPrice + ((AP.TenantNumberOfMonths * Prices.LeasePrice) * ((100 - AP.TakeOff) / 100)) - PaymentOptions.Amount) AS FullPaymentOfApartment" +
+                       " FROM Prices" +
+                       " LEFT JOIN PaymentOptions ON Prices.ApartmentId = PaymentOptions.ApartmentId" +
+                       " JOIN Apartments AP ON Prices.ApartmentId = AP.Id" +
+                       " JOIN Buildings B ON AP.BuildingId = B.Id" +
+                       " JOIN Addresses A ON B.AddressId = A.Id" +
+                       " WHERE AP.Unit = @unitNumber AND A.Street = @buildingAddress";
+                try
+                {
+                    using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
+                    using SqlCommand command = new(query, connection);
+                    connection.Open();
+
+                    // Параметризованный запрос с двумя параметрами
+                    command.Parameters.AddWithValue("@buildingAddress", DbType.String).Value = buildingAddress;
+                    command.Parameters.AddWithValue("@unitNumber", DbType.String).Value = unitNumber;
+
+                    using SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        row.LeasePrice = GetValueOrDefault<decimal>(reader, 0);
+                        row.DepositPrice = GetValueOrDefault<decimal>(reader, 1);
+                        row.PaidMonths = GetValueOrDefault<int>(reader, 2);
+                        row.Amount = GetValueOrDefault<decimal>(reader, 3);
+                        row.PayType = GetValueOrDefault<string>(reader, 4);
+                        row.TenantNumberOfMonths = GetValueOrDefault<decimal>(reader, 5);
+                        row.TakeOff = GetValueOrDefault<decimal>(reader, 6);
+                        row.FullPaymentOfApartment = GetValueOrDefault<decimal>(reader, 7);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw new ArgumentException($"Error: {ex.Message}\r\n{ex.StackTrace}");
+                }
+                finally
+                {
+
+                    // Обеспечиваем освобождение ресурсов
+                    SqlConnection.ClearAllPools();
+                }
+
+                return row;
+            }
         }
     }
 }

@@ -1,0 +1,91 @@
+{
+  "uuid": "a7461f21-f887-4e48-8daa-d6fd885873bd-tr-0-1043",
+  "historyId": "DBTests.BaseTestsDB.PaymentsTestsDB.PaymentForApartmentWithTenantPayAndHoldingDeposit",
+  "fullName": "DBTests.BaseTestsDB.PaymentsTestsDB.PaymentForApartmentWithTenantPayAndHoldingDeposit",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "DBTests.BaseTestsDB"
+    },
+    {
+      "name": "testMethod",
+      "value": "PaymentForApartmentWithTenantPayAndHoldingDeposit"
+    },
+    {
+      "name": "testClass",
+      "value": "PaymentsTestsDB"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "TestingDBPayment"
+    },
+    {
+      "name": "subSuite",
+      "value": "PaymentForApartmentWithOwnerPayAndHoldingDeposit"
+    }
+  ],
+  "links": [],
+  "name": "PaymentForApartmentWithTenantPayAndHoldingDeposit",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "System.ArgumentException : Error: Index was outside the bounds of the array.\r\n   at Microsoft.Data.SqlClient.SqlDataReader.CheckHeaderIsReady(Int32 columnIndex, Boolean permitAsync, String methodName)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.IsDBNull(Int32 i)\r\n   at CazamioProject.DBHelpers.DBCalculationsCheckings.GetValueOrDefault[T](SqlDataReader reader, Int32 index, T defaultValue) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\Calculations\\DBRequestCalculations.cs:line 17\r\n   at CazamioProject.DBHelpers.DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDeposit(String buildingAddress, String unitNumber) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\Calculations\\DBRequestCalculations.cs:line 158",
+    "trace": "   at CazamioProject.DBHelpers.DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDeposit(String buildingAddress, String unitNumber) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\Calculations\\DBRequestCalculations.cs:line 164\r\n   at DBTests.BaseTestsDB.PaymentsTestsDB.PaymentForApartmentWithTenantPayAndHoldingDeposit() in C:\\Automation\\Cazamio\\DBTests\\BaseTestsDB\\PaymentsTestsDB.cs:line 114"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "PaymentForApartmentWithTenantPayAndHoldingDeposit",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "System.ArgumentException : Error: Index was outside the bounds of the array.\r\n   at Microsoft.Data.SqlClient.SqlDataReader.CheckHeaderIsReady(Int32 columnIndex, Boolean permitAsync, String methodName)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.IsDBNull(Int32 i)\r\n   at CazamioProject.DBHelpers.DBCalculationsCheckings.GetValueOrDefault[T](SqlDataReader reader, Int32 index, T defaultValue) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\Calculations\\DBRequestCalculations.cs:line 17\r\n   at CazamioProject.DBHelpers.DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDeposit(String buildingAddress, String unitNumber) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\Calculations\\DBRequestCalculations.cs:line 158",
+        "trace": "   at CazamioProject.DBHelpers.DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDeposit(String buildingAddress, String unitNumber) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\Calculations\\DBRequestCalculations.cs:line 164\r\n   at DBTests.BaseTestsDB.PaymentsTestsDB.PaymentForApartmentWithTenantPayAndHoldingDeposit() in C:\\Automation\\Cazamio\\DBTests\\BaseTestsDB\\PaymentsTestsDB.cs:line 114"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "be00656ef7a54ae882507258397400b9-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1692181522223,
+      "stop": 1692181523969
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1692181522222,
+  "stop": 1692181523978
+}
