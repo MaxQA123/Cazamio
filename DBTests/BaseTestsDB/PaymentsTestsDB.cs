@@ -112,7 +112,7 @@ namespace DBTests.BaseTestsDB
             #endregion
 
             var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDeposit(buildingAddress, unitNumber);
-            Console.WriteLine($"For Landlord Payment of apartment: {payment.FullPaymentOfApartment}");
+            Console.WriteLine($"Full Payment for tenant: {payment.FullPaymentOfApartment}");
             Console.WriteLine($"Lease Price: {payment.LeasePrice}");
             Console.WriteLine($"Paid Months (Month's rent): {payment.PaidMonths}");
             Console.WriteLine($"Deposit Price (Security deposit): {payment.DepositPrice}");
@@ -120,6 +120,47 @@ namespace DBTests.BaseTestsDB
             Console.WriteLine($"Pay Type: {payment.PayType}");
             Console.WriteLine($"Tenant Number Of Months: {payment.TenantNumberOfMonths}");
             Console.WriteLine($"Take Off: {payment.TakeOff}");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBPayment")]
+        [AllureSubSuite("TenantPaySignLeaseOnlyTenantApplicantWithoutCommissions")]
+
+        #region Preconditions
+
+        // For Tenant (Lease Price * PaidMonyhs) + DepositPrice + (TenantNumberOfMonths * LeasePrice) - holding deposit)
+        // For Landlord (Lease Price * PaidMonyhs) + DepositPrice + (TenantNumberOfMonths * LeasePrice * TakeOff) - holding deposit)
+        // Displayed at a tenant-applicant (without adding a tenant-occupant) in the modal window "Payment details" when payment for signing a lease.
+        // Can testing when had been set "TenantPay".
+
+        #endregion
+
+        public void TenantPaySignLeaseOnlyTenantApplicantWithoutCommissions()
+        {
+            #region Preconditions
+
+            string buildingAddress = "101 Franklin Avenue";
+            string unitNumber = "125";
+
+            #endregion
+
+            var paymentA = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit(buildingAddress, unitNumber);
+            Console.WriteLine($"Move-in price: {paymentA.PaymentOfApartment}");
+            Console.WriteLine($"Lease Price: {paymentA.LeasePrice}");
+            Console.WriteLine($"Paid Months (Month's rent): {paymentA.PaidMonths}");
+            Console.WriteLine($"Deposit Price (Security deposit): {paymentA.DepositPrice}");
+            Console.WriteLine($"Amount (Holding deposit): {paymentA.Amount}");
+
+            var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDeposit(buildingAddress, unitNumber);
+            Console.WriteLine($"Applicant subtotal: {payment.FullPaymentOfApartment}");
+            Console.WriteLine($"Pay Type: {payment.PayType}");
+            Console.WriteLine($"Tenant Number Of Months: {payment.TenantNumberOfMonths}");
+            Console.WriteLine($"Take Off: {payment.TakeOff}");
+            Console.WriteLine($"Broker Fee: {payment.BrokerFee}");
         }
 
         [Test]

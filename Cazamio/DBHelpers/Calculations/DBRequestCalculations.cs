@@ -127,7 +127,8 @@ namespace CazamioProject.DBHelpers
                 // SQL запрос для выборки данных
                 string query = "SELECT Prices.LeasePrice, Prices.DepositPrice, Prices.PaidMonths, PaymentOptions.Amount," +
                        " AP.PayType, AP.TenantNumberOfMonths, AP.TakeOff," +
-                       " ((LeasePrice * PaidMonths) + DepositPrice + ((AP.TenantNumberOfMonths * Prices.LeasePrice) * ((100 - AP.TakeOff) / 100)) - PaymentOptions.Amount) AS FullPaymentOfApartment" +
+                       " ((LeasePrice * PaidMonths) + DepositPrice + ((AP.TenantNumberOfMonths * Prices.LeasePrice) - PaymentOptions.Amount)) AS FullPaymentOfApartment," +
+                       " (AP.TenantNumberOfMonths * Prices.LeasePrice) AS BrokerFee" +
                        " FROM Prices" +
                        " LEFT JOIN PaymentOptions ON Prices.ApartmentId = PaymentOptions.ApartmentId" +
                        " JOIN Apartments AP ON Prices.ApartmentId = AP.Id" +
@@ -155,6 +156,7 @@ namespace CazamioProject.DBHelpers
                         row.TenantNumberOfMonths = GetValueOrDefault<decimal>(reader, 5);
                         row.TakeOff = GetValueOrDefault<decimal>(reader, 6);
                         row.FullPaymentOfApartment = GetValueOrDefault<decimal>(reader, 7);
+                        row.BrokerFee = GetValueOrDefault<decimal>(reader, 8);
                     }
 
                 }

@@ -43,5 +43,6 @@ namespace CazamioProject.DBHelpers.Calculations
         public object? OwnerNumberOfMonths { get; set; }
         public object? TakeOff { get; set; }
         public object? FullPaymentOfApartment { get; set; }
+        public object? BrokerFee { get; set; }
     }
 }
