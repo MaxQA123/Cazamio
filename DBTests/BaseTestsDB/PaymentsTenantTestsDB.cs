@@ -17,7 +17,7 @@ namespace DBTests.BaseTestsDB
     [TestFixture]
     [AllureNUnit]
 
-    public class PaymentsTestsDB : Base
+    public class PaymentsTenantTestsDB : Base
     {
         [Test]
         [AllureTag("Regression")]
