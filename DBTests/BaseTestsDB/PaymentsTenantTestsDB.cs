@@ -36,10 +36,34 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
-            var payment = DBCalculationsCheckings.Calculations.GetPaymentCreditScreeningFeeForBuildingWithCommission(buildingAddress, marketplaceId);
-            Console.WriteLine($"Payment of apartment: {payment.CreditScreeningFeeBuilding}");
-            Console.WriteLine($"Lease Price: {payment.CommissionScreeningFeeBuilding}");
-            Console.WriteLine($"Paid Months (Month's rent): {payment.AScreeningFeeOf}");
+            var payment = DBRequestCalculationsTenants.Calculations.GetPaymentCreditScreeningFeeForBuildingWithCommission(buildingAddress, marketplaceId);
+            Console.WriteLine($"Credit Screening Fee Building: {payment.CreditScreeningFeeBuilding}");
+            Console.WriteLine($"Commission Fee Building: {payment.CommissionScreeningFeeBuilding}");
+            Console.WriteLine($"Total: {payment.Total}");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBPaymentTenant")]
+        [AllureSubSuite("PaymentHoldingDepositForApartmentWithCommission")]
+
+        public void PaymentHoldingDepositForApartmentWithCommission()
+        {
+            #region Preconditions
+
+            string buildingAddress = "101 Franklin Avenue";
+            string unitNumber = "129";
+            string marketplaceId = "15";
+
+            #endregion
+
+            var payment = DBRequestCalculationsTenants.Calculations.GetPaymentHoldingDepositForApartmentWithCommission(buildingAddress, unitNumber, marketplaceId);
+            Console.WriteLine($"Application Deposit: {payment.HoldingDepositWithoutCommission}");
+            Console.WriteLine($"Commission Fee: {payment.CommissionForHoldingDeposit}");
+            Console.WriteLine($"Total: {payment.HoldingDepositWithCommission}");
         }
 
         [Test]
@@ -67,7 +91,7 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
-            var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit(buildingAddress, unitNumber);
+            var payment = DBRequestCalculationsTenants.Calculations.GetPaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit(buildingAddress, unitNumber);
             Console.WriteLine($"Payment of apartment: {payment.PaymentOfApartment}");
             Console.WriteLine($"Lease Price: {payment.LeasePrice}");
             Console.WriteLine($"Paid Months (Month's rent): {payment.PaidMonths}");
@@ -99,7 +123,7 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
-            var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit(buildingAddress, unitNumber);
+            var payment = DBRequestCalculationsTenants.Calculations.GetPaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit(buildingAddress, unitNumber);
             Console.WriteLine($"Payment of apartment: {payment.PaymentOfApartment}");
             Console.WriteLine($"Lease Price: {payment.LeasePrice}");
             Console.WriteLine($"Paid Months (Month's rent): {payment.PaidMonths}");
@@ -134,7 +158,7 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
-            var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDeposit(buildingAddress, unitNumber);
+            var payment = DBRequestCalculationsTenants.Calculations.GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDeposit(buildingAddress, unitNumber);
             Console.WriteLine($"Full Payment for tenant: {payment.FullPaymentOfApartment}");
             Console.WriteLine($"Lease Price: {payment.LeasePrice}");
             Console.WriteLine($"Paid Months (Month's rent): {payment.PaidMonths}");
@@ -171,14 +195,14 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
-            var paymentA = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit(buildingAddress, unitNumber);
+            var paymentA = DBRequestCalculationsTenants.Calculations.GetPaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit(buildingAddress, unitNumber);
             Console.WriteLine($"Move-in price: {paymentA.PaymentOfApartment}");
             Console.WriteLine($"Lease Price: {paymentA.LeasePrice}");
             Console.WriteLine($"Paid Months (Month's rent): {paymentA.PaidMonths}");
             Console.WriteLine($"Deposit Price (Security deposit): {paymentA.DepositPrice}");
             Console.WriteLine($"Amount (Holding deposit): {paymentA.Amount}");
 
-            var payment = DBCalculationsCheckings.Calculations.GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDeposit(buildingAddress, unitNumber);
+            var payment = DBRequestCalculationsTenants.Calculations.GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDeposit(buildingAddress, unitNumber);
             Console.WriteLine($"Applicant subtotal: {payment.FullPaymentOfApartment}");
             Console.WriteLine($"Pay Type: {payment.PayType}");
             Console.WriteLine($"Tenant Number Of Months: {payment.TenantNumberOfMonths}");

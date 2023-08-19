@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CazamioProject.DBHelpers.Calculations
 {
-    public class DBModelCalculations
+    public class DBModelCalculationsTenants
     {
         public object? Id { get; set; } // this might be another data type
         public object? ApartmentId { get; set; }
@@ -50,6 +50,9 @@ namespace CazamioProject.DBHelpers.Calculations
     {
         public object? CreditScreeningFeeBuilding { get; set; } // this might be another data type
         public object? CommissionScreeningFeeBuilding { get; set; }
-        public object? AScreeningFeeOf { get; set; }
+        public object? Total { get; set; }
+        public object? HoldingDepositWithoutCommission { get; set; }
+        public object? CommissionForHoldingDeposit { get; set; }
+        public object? HoldingDepositWithCommission { get; set; }
     }
 }
