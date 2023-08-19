@@ -45,4 +45,11 @@ namespace CazamioProject.DBHelpers.Calculations
         public object? FullPaymentOfApartment { get; set; }
         public object? BrokerFee { get; set; }
     }
+
+    public class DBModelCalculationCombinedComissions
+    {
+        public object? CreditScreeningFeeBuilding { get; set; } // this might be another data type
+        public object? CommissionScreeningFeeBuilding { get; set; }
+        public object? AScreeningFeeOf { get; set; }
+    }
 }

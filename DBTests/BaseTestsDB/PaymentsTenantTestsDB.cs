@@ -24,7 +24,30 @@ namespace DBTests.BaseTestsDB
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingDBPayment")]
+        [AllureSuite("TestingDBPaymentTenant")]
+        [AllureSubSuite("PaymentCreditScreeningFeeForBuildingWithCommission")]
+
+        public void PaymentCreditScreeningFeeForBuildingWithCommission()
+        {
+            #region Preconditions
+
+            string buildingAddress = "101 Franklin Avenue";
+            string marketplaceId = "15";
+
+            #endregion
+
+            var payment = DBCalculationsCheckings.Calculations.GetPaymentCreditScreeningFeeForBuildingWithCommission(buildingAddress, marketplaceId);
+            Console.WriteLine($"Payment of apartment: {payment.CreditScreeningFeeBuilding}");
+            Console.WriteLine($"Lease Price: {payment.CommissionScreeningFeeBuilding}");
+            Console.WriteLine($"Paid Months (Month's rent): {payment.AScreeningFeeOf}");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBPaymentTenant")]
         [AllureSubSuite("PaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit")]
 
         #region Preconditions
@@ -56,7 +79,7 @@ namespace DBTests.BaseTestsDB
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingDBPayment")]
+        [AllureSuite("TestingDBPaymentTenant")]
         [AllureSubSuite("PaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit")]
 
         #region Preconditions
@@ -90,7 +113,7 @@ namespace DBTests.BaseTestsDB
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingDBPayment")]
+        [AllureSuite("TestingDBPaymentTenant")]
         [AllureSubSuite("PaymentForApartmentWithOwnerPayAndHoldingDeposit")]
 
         #region Preconditions
@@ -127,7 +150,7 @@ namespace DBTests.BaseTestsDB
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingDBPayment")]
+        [AllureSuite("TestingDBPaymentTenant")]
         [AllureSubSuite("TenantPaySignLeaseOnlyTenantApplicantWithoutCommissions")]
 
         #region Preconditions
