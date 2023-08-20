@@ -140,7 +140,7 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBPaymentTenant")]
-        [AllureSubSuite("PaymentForApartmentWithOwnerPayAndHoldingDeposit")]
+        [AllureSubSuite("PaymentSignLeaseForApartmentWithTenantPayAndHoldingDepositWithCommission")]
 
         #region Preconditions
 
@@ -151,7 +151,7 @@ namespace DBTests.BaseTestsDB
 
         #endregion
 
-        public void PaymentSignLeaseForApartmentWithTenantPayAndHoldingDeposit()
+        public void PaymentSignLeaseForApartmentWithTenantPayAndHoldingDepositWithCommission()
         {
             #region Preconditions
 
@@ -168,7 +168,7 @@ namespace DBTests.BaseTestsDB
             Console.WriteLine($"Deposit Price (Security deposit): $ {paymentA.DepositPrice}");
             Console.WriteLine($"Holding deposit: $ {paymentA.Amount}");
 
-            var payment = DBRequestCalculationsTenants.Calculations.GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDeposit(buildingAddress, unitNumber, marketplaceId);
+            var payment = DBRequestCalculationsTenants.Calculations.GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDepositWithoutCommission(buildingAddress, unitNumber, marketplaceId);
             Console.WriteLine($"Applicant subtotal: $ {payment.FullPaymentOfApartment}");
             Console.WriteLine($"Lease Price: $ {payment.LeasePrice}");
             Console.WriteLine($"Paid Months (Month's rent): {payment.PaidMonths}");
@@ -177,6 +177,9 @@ namespace DBTests.BaseTestsDB
             Console.WriteLine($"Pay Type: {payment.PayType}");
             Console.WriteLine($"Tenant Number Of Months: {payment.TenantNumberOfMonths}");
             Console.WriteLine($"Take Off: {payment.TakeOff}");
+
+            var paymentB = DBRequestCalculationsTenants.Calculations.GetSignLeaseWithCommission(buildingAddress, unitNumber, marketplaceId);
+            Console.WriteLine($"Total: $ {paymentB.Total}");
         }
 
         [Test]
@@ -213,7 +216,7 @@ namespace DBTests.BaseTestsDB
             Console.WriteLine($"Deposit Price (Security deposit): {paymentA.DepositPrice}");
             Console.WriteLine($"Amount (Holding deposit): {paymentA.Amount}");
 
-            var payment = DBRequestCalculationsTenants.Calculations.GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDeposit(buildingAddress, unitNumber, marketplaceId);
+            var payment = DBRequestCalculationsTenants.Calculations.GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDepositWithoutCommission(buildingAddress, unitNumber, marketplaceId);
             Console.WriteLine($"Applicant subtotal: {payment.FullPaymentOfApartment}");
             Console.WriteLine($"Pay Type: {payment.PayType}");
             Console.WriteLine($"Tenant Number Of Months: {payment.TenantNumberOfMonths}");

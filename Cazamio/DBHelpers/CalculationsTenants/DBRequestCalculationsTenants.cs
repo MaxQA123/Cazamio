@@ -122,7 +122,7 @@ namespace CazamioProject.DBHelpers
                 return row;
             }
 
-            public static DBModelCalculationCombinedPays GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDeposit(string buildingAddress, string unitNumber, string marketplaceId)
+            public static DBModelCalculationCombinedPays GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDepositWithoutCommission(string buildingAddress, string unitNumber, string marketplaceId)
             {
                 var row = new DBModelCalculationCombinedPays();
 
@@ -255,6 +255,51 @@ namespace CazamioProject.DBHelpers
                         row.HoldingDepositWithoutCommission = GetValueOrDefault<decimal>(reader, 0);
                         row.CommissionForHoldingDeposit = GetValueOrDefault<decimal>(reader, 1);
                         row.HoldingDepositWithCommission = GetValueOrDefault<decimal>(reader, 2);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw new ArgumentException($"Error: {ex.Message}\r\n{ex.StackTrace}");
+                }
+                finally
+                {
+
+                    // Обеспечиваем освобождение ресурсов
+                    SqlConnection.ClearAllPools();
+                }
+
+                return row;
+            }
+
+            public static DBModelCalculationCombinedComissions GetSignLeaseWithCommission(string buildingAddress, string unitNumber, string marketplaceId)
+            {
+                var row = new DBModelCalculationCombinedComissions();
+
+                // SQL запрос для выборки данных
+                string query = "SELECT ((LeasePrice * PaidMonths) + DepositPrice + ((AP.TenantNumberOfMonths * Prices.LeasePrice) - PaymentOptions.Amount))*(100 + CF.SigningLease)/100 AS Total" +
+                       " FROM Prices" +
+                       " CROSS JOIN CommissionFees CF" +
+                       " LEFT JOIN PaymentOptions ON Prices.ApartmentId = PaymentOptions.ApartmentId" +
+                       " JOIN Apartments AP ON Prices.ApartmentId = AP.Id" +
+                       " JOIN Buildings B ON AP.BuildingId = B.Id" +
+                       " JOIN Addresses A ON B.AddressId = A.Id" +
+                       " WHERE AP.Unit = @unitNumber AND A.Street = @buildingAddress AND B.MarketplaceId = @marketplaceId AND CF.MarketplaceId = @marketplaceId";
+                try
+                {
+                    using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
+                    using SqlCommand command = new(query, connection);
+                    connection.Open();
+
+                    // Параметризованный запрос с двумя параметрами
+                    command.Parameters.AddWithValue("@buildingAddress", DbType.String).Value = buildingAddress;
+                    command.Parameters.AddWithValue("@unitNumber", DbType.String).Value = unitNumber;
+                    command.Parameters.AddWithValue("@marketplaceId", DbType.String).Value = marketplaceId;
+
+                    using SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        row.Total = GetValueOrDefault<decimal>(reader, 0);
                     }
 
                 }

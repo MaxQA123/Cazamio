@@ -54,5 +54,6 @@ namespace CazamioProject.DBHelpers.Calculations
         public object? HoldingDepositWithoutCommission { get; set; }
         public object? CommissionForHoldingDeposit { get; set; }
         public object? HoldingDepositWithCommission { get; set; }
+        //public object? Total { get; set; }
     }
 }
