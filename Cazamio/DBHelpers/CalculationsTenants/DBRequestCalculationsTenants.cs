@@ -26,17 +26,17 @@ namespace CazamioProject.DBHelpers
 
         public class Calculations
         {
-            public static DBModelCalculationsTenants GetPaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit(string buildingAddress, string unitNumber)
+            public static DBModelCalculationsTenants GetPaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit(string buildingAddress, string unitNumber, string marketplaceId)
             {
                 var row = new DBModelCalculationsTenants();
 
                 // SQL запрос для выборки данных
                 string query = "SELECT LeasePrice, DepositPrice, PaidMonths, ((LeasePrice*PaidMonths)+DepositPrice) AS PaymentOfApartment" +
-                   " FROM [dbo].[Prices]" +
+                   " FROM Prices" +
                    " WHERE ApartmentId" +
-                   " IN(SELECT Id FROM [dbo].[Apartments] WHERE Unit = @unitNumber AND BuildingId" +
-                   " IN(SELECT Id FROM [dbo].[Buildings] Where AddressId" +
-                   " IN(SELECT Id FROM [dbo].[Addresses] WHERE Street = @buildingAddress)))";
+                   " IN(SELECT Id FROM Apartments WHERE Unit = @unitNumber AND MarketplaceId = @marketplaceId AND BuildingId" +
+                   " IN(SELECT Id FROM Buildings Where AddressId" +
+                   " IN(SELECT Id FROM Addresses WHERE Street = @buildingAddress)))";
                 try
                 {
                     using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
@@ -46,6 +46,7 @@ namespace CazamioProject.DBHelpers
                     // Параметризованный запрос с двумя параметрами
                     command.Parameters.AddWithValue("@buildingAddress", DbType.String).Value = buildingAddress;
                     command.Parameters.AddWithValue("@unitNumber", DbType.String).Value = unitNumber;
+                    command.Parameters.AddWithValue("@marketplaceId", DbType.String).Value = marketplaceId;
 
                     using SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
@@ -71,7 +72,7 @@ namespace CazamioProject.DBHelpers
                 return row;
             }
 
-            public static DBModelCalculationsTenants GetPaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit(string buildingAddress, string unitNumber)
+            public static DBModelCalculationsTenants GetPaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit(string buildingAddress, string unitNumber, string marketplaceId)
             {
                 var row = new DBModelCalculationsTenants();
 
@@ -84,7 +85,7 @@ namespace CazamioProject.DBHelpers
                                " ON B.Id = BuildingId" +
                                " LEFT JOIN Addresses A" +
                                " ON A.Id = AddressId" +
-                               " WHERE Ap.Unit = @unitNumber AND A.Street = @buildingAddress)";
+                               " WHERE Ap.Unit = @unitNumber AND A.Street = @buildingAddress AND B.MarketplaceId = @marketplaceId)";
                 try
                 {
                     using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
@@ -94,6 +95,7 @@ namespace CazamioProject.DBHelpers
                     // Параметризованный запрос с двумя параметрами
                     command.Parameters.AddWithValue("@buildingAddress", DbType.String).Value = buildingAddress;
                     command.Parameters.AddWithValue("@unitNumber", DbType.String).Value = unitNumber;
+                    command.Parameters.AddWithValue("@marketplaceId", DbType.String).Value = marketplaceId;
 
                     using SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
@@ -120,7 +122,7 @@ namespace CazamioProject.DBHelpers
                 return row;
             }
 
-            public static DBModelCalculationCombinedPays GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDeposit(string buildingAddress, string unitNumber)
+            public static DBModelCalculationCombinedPays GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDeposit(string buildingAddress, string unitNumber, string marketplaceId)
             {
                 var row = new DBModelCalculationCombinedPays();
 
@@ -134,7 +136,7 @@ namespace CazamioProject.DBHelpers
                        " JOIN Apartments AP ON Prices.ApartmentId = AP.Id" +
                        " JOIN Buildings B ON AP.BuildingId = B.Id" +
                        " JOIN Addresses A ON B.AddressId = A.Id" +
-                       " WHERE AP.Unit = @unitNumber AND A.Street = @buildingAddress";
+                       " WHERE AP.Unit = @unitNumber AND A.Street = @buildingAddress AND B.MarketplaceId = @marketplaceId";
                 try
                 {
                     using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
@@ -144,6 +146,7 @@ namespace CazamioProject.DBHelpers
                     // Параметризованный запрос с двумя параметрами
                     command.Parameters.AddWithValue("@buildingAddress", DbType.String).Value = buildingAddress;
                     command.Parameters.AddWithValue("@unitNumber", DbType.String).Value = unitNumber;
+                    command.Parameters.AddWithValue("@marketplaceId", DbType.String).Value = marketplaceId;
 
                     using SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
