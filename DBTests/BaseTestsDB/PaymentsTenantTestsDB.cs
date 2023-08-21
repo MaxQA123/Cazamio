@@ -87,16 +87,16 @@ namespace DBTests.BaseTestsDB
             #region Preconditions
 
             string buildingAddress = "101 Franklin Avenue";
-            string unitNumber = "121";
+            string unitNumber = "131";
             string marketplaceId = "15";
 
             #endregion
 
             var payment = DBRequestCalculationsTenants.Calculations.GetPaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit(buildingAddress, unitNumber, marketplaceId);
-            Console.WriteLine($"Payment of apartment: {payment.PaymentOfApartment}");
-            Console.WriteLine($"Lease Price: {payment.LeasePrice}");
+            Console.WriteLine($"Payment of apartment: $ {payment.PaymentOfApartment}");
+            Console.WriteLine($"Lease Price: $ {payment.LeasePrice}");
             Console.WriteLine($"Paid Months (Month's rent): {payment.PaidMonths}");
-            Console.WriteLine($"Deposit Price (Security deposit): {payment.DepositPrice}");
+            Console.WriteLine($"Deposit Price (Security deposit): $ {payment.DepositPrice}");
         }
 
         [Test]
