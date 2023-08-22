@@ -24,7 +24,7 @@ namespace CazamioProject.DBHelpers
             }
         }
 
-        public class Calculations
+        public class CalculationsTenant
         {
             public static DBModelCalculationsTenants GetPaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit(string buildingAddress, string unitNumber, string marketplaceId)
             {
