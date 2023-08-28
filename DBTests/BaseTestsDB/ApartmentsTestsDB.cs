@@ -117,17 +117,19 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApartments")]
-        [AllureSubSuite("Empty")]
+        [AllureSubSuite("DisplayingOwnerNameCompanyNameForApartment")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: 
-        //Path to cheking's: 
-
-        public void Empty()
+        public void DisplayingOwnerNameCompanyNameForApartment()
         {
+            #region Preconditions
+
+            string buildingAddress = "101 Franklin Avenue";
+            string unitNumber = "126";
+            string marketplaceId = "15";
+
+            #endregion
+
+
 
         }
     }

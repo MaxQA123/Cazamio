@@ -6,85 +6,71 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CazamioProject.DBHelpers.TableApartments;
 
 namespace CazamioProject.DBHelpers
 {
     //Вариант где мы учитываем возможность отображения значения NULL в ячейке.
     public class DBRequestApartments
     {
-        //public class DBCalculations
-        //{
-        //    private static T GetValueOrDefault<T>(SqlDataReader reader, int index, T defaultValue = default(T))
-        //    {
-        //        if (!reader.IsDBNull(index))
-        //        {
-        //            return (T)reader.GetValue(index);
-        //        }
-        //        else
-        //        {
-        //            return defaultValue;
-        //        }
-        //    }
-        //}
+        private static T GetValueOrDefault<T>(SqlDataReader reader, int index, T defaultValue = default(T))
+        {
+            if (!reader.IsDBNull(index))
+            {
+                return (T)reader.GetValue(index);
+            }
+            else
+            {
+                return defaultValue;
+            }
+        }
 
-        //public class Apartments
-        //{
-        //    public static List<TableApartments> GetUserExercisesList(string userEmail, string membershipName)
-        //    {
-        //        var list = new List<TableApartments>();
+        public class Apartments
+        {
+            public static DBModelApartmentsCombinedOwners GetPaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit(string buildingAddress, string unitNumber, string marketplaceId)
+            {
+                var row = new DBModelApartmentsCombinedOwners();
 
-        //        // SQL запит для вибірки даних
-        //        string query = "SELECT *" +
-        //                       "FROM [JsonUserExercises] WHERE UserId in " +
-        //                             "(SELECT id FROM[dbo].[AspNetUsers] WHERE email = @userEmail) and WorkoutExerciseId in" +
-        //                                "(SELECT Id FROM WorkoutExercises WHERE WorkoutId in " +
-        //                                    "(SELECT Id FROM Workouts WHERE ProgramId in " +
-        //                                        "(SELECT Id FROM Programs WHERE MembershipId in " +
-        //                                            "(SELECT Id FROM Memberships WHERE Name = @membershipName)" +
-        //                                        ")" +
-        //                                    ")" +
-        //                                ")";
-        //        try
-        //        {
-        //            using SqlConnection connection = new(DB.GET_CONNECTION_STRING);
-        //            using SqlCommand command = new(query, connection);
-        //            connection.Open();
+                // SQL запрос для выборки данных
+                string query = "SELECT LeasePrice, DepositPrice, PaidMonths, ((LeasePrice*PaidMonths)+DepositPrice) AS PaymentOfApartment" +
+                   " FROM Prices" +
+                   " WHERE ApartmentId" +
+                   " IN(SELECT Id FROM Apartments WHERE Unit = @unitNumber AND MarketplaceId = @marketplaceId AND BuildingId" +
+                   " IN(SELECT Id FROM Buildings Where AddressId" +
+                   " IN(SELECT Id FROM Addresses WHERE Street = @buildingAddress)))";
+                try
+                {
+                    using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
+                    using SqlCommand command = new(query, connection);
+                    connection.Open();
 
-        //            // Параметризований запит з одним параметром
-        //            command.Parameters.AddWithValue("@userEmail", DbType.String).Value = userEmail;
-        //            command.Parameters.AddWithValue("@membershipName", DbType.String).Value = membershipName;
+                    // Параметризованный запрос с двумя параметрами
+                    command.Parameters.AddWithValue("@buildingAddress", DbType.String).Value = buildingAddress;
+                    command.Parameters.AddWithValue("@unitNumber", DbType.String).Value = unitNumber;
+                    command.Parameters.AddWithValue("@marketplaceId", DbType.String).Value = marketplaceId;
 
-        //            using SqlDataReader reader = command.ExecuteReader();
-        //            while (reader.Read())
-        //            {
-        //                var row = new TableApartments();
-        //                row.Id = GetValueOrDefault<object>(reader, 0);
-        //                row.SetDescription = GetValueOrDefault<string>(reader, 1);
-        //                row.WorkoutExerciseId = GetValueOrDefault<long>(reader, 2);
-        //                row.UserId = GetValueOrDefault<string>(reader, 3);
-        //                row.IsDone = GetValueOrDefault<bool>(reader, 4);
-        //                row.CreationDate = GetValueOrDefault<DateTime>(reader, 5);
-        //                row.IsDeleted = GetValueOrDefault<bool>(reader, 6);
-        //                row.UpdatedDate = GetValueOrDefault<DateTime>(reader, 7);
+                    using SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        row.OwnerName = GetValueOrDefault<string>(reader, 0);
+                        row.CompanyName = GetValueOrDefault<string>(reader, 1);
+                    }
 
+                }
+                catch (Exception ex)
+                {
+                    throw new ArgumentException($"Error: {ex.Message}\r\n{ex.StackTrace}");
+                }
+                finally
+                {
 
-        //                list.Add(row);
-        //            }
+                    // Обеспечиваем освобождение ресурсов
+                    SqlConnection.ClearAllPools();
+                }
 
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            throw new ArgumentException($"Error: {ex.Message}\r\n{ex.StackTrace}");
-        //        }
-        //        finally
-        //        {
-
-        //            // Забезпечуємо вивільнення ресурсів
-        //            SqlConnection.ClearAllPools();
-        //        }
-        //        return list;
-        //    }
-        //}
+                return row;
+            }
+        }
 
         //Вариант где мы не учитываем возможность отображения значения NULL в ячейке.
         public static string GetLastApartmentId()
