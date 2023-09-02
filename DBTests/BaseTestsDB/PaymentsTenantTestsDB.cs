@@ -142,12 +142,57 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBPaymentTenant")]
+        [AllureSubSuite("PaymentSignLeaseForApartmentWithOwnerAndTenantPayAndHoldingDepositWithCommission")]
+
+        #region Preconditions
+
+        // For Tenant (Lease Price * PaidMonyhs) + DepositPrice + (TenantNumberOfMonths * LeasePrice) - holding deposit)
+        // For Landlord (Lease Price * PaidMonyhs) + DepositPrice + (TenantNumberOfMonths * LeasePrice * TenantPercentage) - holding deposit)
+        // Displayed at a tenant-applicant (without adding a tenant-occupant) in the modal window "Payment details" when payment for signing a lease.
+        // Can testing when had been set "TenantPay".
+
+        #endregion
+
+        public void PaymentSignLeaseForApartmentWithOwnerAndTenantPayAndHoldingDepositWithCommission()
+        {
+            #region Preconditions
+
+            string buildingAddress = "123 Linden Boulevard";
+            string unitNumber = "51";
+            string marketplaceId = "15";
+
+            #endregion
+
+            var paymentA = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit(buildingAddress, unitNumber, marketplaceId);
+            Console.WriteLine($"Move-in proce: $ {paymentA.PaymentOfApartment}");
+            Console.WriteLine($"Deposit Price (Security deposit): $ {paymentA.DepositPrice}");
+            Console.WriteLine($"Lease Price: $ {paymentA.LeasePrice}");
+            Console.WriteLine($"Paid Months (Month's rent): {paymentA.PaidMonths}");
+            Console.WriteLine($"Holding deposit: $ {paymentA.Amount}");
+
+            var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentForApartmentWithOwnerAndTenantPayTakeOffWithHoldingDepositWithoutCommission(buildingAddress, unitNumber, marketplaceId);
+            Console.WriteLine($"Applicant subtotal: $ {payment.FullPaymentOfApartment}");
+            Console.WriteLine($"Broker fee: $ {payment.BrokerFee}");
+            Console.WriteLine($"Pay Type: {payment.PayType}");
+            Console.WriteLine($"Tenant Number Of Months: {payment.TenantNumberOfMonths}");
+            Console.WriteLine($"Tenant percentage: {payment.TenantPercentage}");
+
+            var paymentB = DBRequestCalculationsTenants.CalculationsTenant.GetSignLeaseWithCommission(buildingAddress, unitNumber, marketplaceId);
+            Console.WriteLine($"Total: $ {paymentB.Total}");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBPaymentTenant")]
         [AllureSubSuite("PaymentSignLeaseForApartmentWithTenantPayAndHoldingDepositWithCommission")]
 
         #region Preconditions
 
         // For Tenant (Lease Price * PaidMonyhs) + DepositPrice + (TenantNumberOfMonths * LeasePrice) - holding deposit)
-        // For Landlord (Lease Price * PaidMonyhs) + DepositPrice + (TenantNumberOfMonths * LeasePrice * TakeOff) - holding deposit)
+        // For Landlord (Lease Price * PaidMonyhs) + DepositPrice + (TenantNumberOfMonths * LeasePrice) - holding deposit)
         // Displayed at a tenant-applicant (without adding a tenant-occupant) in the modal window "Payment details" when payment for signing a lease.
         // Can testing when had been set "TenantPay".
 
@@ -158,7 +203,7 @@ namespace DBTests.BaseTestsDB
             #region Preconditions
 
             string buildingAddress = "123 Linden Boulevard";
-            string unitNumber = "50";
+            string unitNumber = "53";
             string marketplaceId = "15";
 
             #endregion
@@ -175,7 +220,6 @@ namespace DBTests.BaseTestsDB
             Console.WriteLine($"Broker fee: $ {payment.BrokerFee}");
             Console.WriteLine($"Pay Type: {payment.PayType}");
             Console.WriteLine($"Tenant Number Of Months: {payment.TenantNumberOfMonths}");
-            Console.WriteLine($"Tenant percentage: {payment.TenantPercentage}");
 
             var paymentB = DBRequestCalculationsTenants.CalculationsTenant.GetSignLeaseWithCommission(buildingAddress, unitNumber, marketplaceId);
             Console.WriteLine($"Total: $ {paymentB.Total}");
@@ -215,7 +259,7 @@ namespace DBTests.BaseTestsDB
             Console.WriteLine($"Deposit Price (Security deposit): {paymentA.DepositPrice}");
             Console.WriteLine($"Amount (Holding deposit): {paymentA.Amount}");
 
-            var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDepositWithoutCommission(buildingAddress, unitNumber, marketplaceId);
+            var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentForApartmentWithOwnerAndTenantPayTakeOffWithHoldingDepositWithoutCommission(buildingAddress, unitNumber, marketplaceId);
             Console.WriteLine($"Applicant subtotal: {payment.FullPaymentOfApartment}");
             Console.WriteLine($"Pay Type: {payment.PayType}");
             Console.WriteLine($"Tenant Number Of Months: {payment.TenantNumberOfMonths}");

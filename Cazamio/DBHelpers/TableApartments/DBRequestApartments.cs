@@ -27,17 +27,20 @@ namespace CazamioProject.DBHelpers
 
         public class Apartments
         {
-            public static DBModelApartmentsCombinedOwners GetPaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit(string buildingAddress, string unitNumber, string marketplaceId)
+            public static DBModelApartmentsCombinedOwners GetOwnerNameCompanyNameForApartment(string buildingAddress, string unitNumber, string marketplaceId)
             {
                 var row = new DBModelApartmentsCombinedOwners();
 
                 // SQL запрос для выборки данных
-                string query = "SELECT LeasePrice, DepositPrice, PaidMonths, ((LeasePrice*PaidMonths)+DepositPrice) AS PaymentOfApartment" +
-                   " FROM Prices" +
-                   " WHERE ApartmentId" +
-                   " IN(SELECT Id FROM Apartments WHERE Unit = @unitNumber AND MarketplaceId = @marketplaceId AND BuildingId" +
-                   " IN(SELECT Id FROM Buildings Where AddressId" +
-                   " IN(SELECT Id FROM Addresses WHERE Street = @buildingAddress)))";
+                string query = "SELECT OW.OwnerName, OW.CompanyName" + 
+                       " FROM Apartments AP" +
+                       " LEFT JOIN Owners OW" +
+                       " ON OW.Id = AP.OwnerId" +
+                       " LEFT JOIN Buildings B" +
+                       " ON B.Id = BuildingId" +
+                       " LEFT JOIN Addresses A" +
+                       " ON A.Id = AddressId" +
+                       " WHERE AP.Unit = @unitNumber AND A.Street = @buildingAddress AND AP.MarketplaceId = @marketplaceId";
                 try
                 {
                     using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
@@ -54,6 +57,57 @@ namespace CazamioProject.DBHelpers
                     {
                         row.OwnerName = GetValueOrDefault<string>(reader, 0);
                         row.CompanyName = GetValueOrDefault<string>(reader, 1);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw new ArgumentException($"Error: {ex.Message}\r\n{ex.StackTrace}");
+                }
+                finally
+                {
+
+                    // Обеспечиваем освобождение ресурсов
+                    SqlConnection.ClearAllPools();
+                }
+
+                return row;
+            }
+
+            public static DBModelApartmentsCombinedPrices GetPayTypeTenantNumberOfMonhsTakeOffAvailableCommission(string buildingAddress, string unitNumber, string marketplaceId)
+            {
+                var row = new DBModelApartmentsCombinedPrices();
+
+                // SQL запрос для выборки данных
+                string query = "SELECT AP.PayType, AP.TenantNumberOfMonths," +
+                       " (AP.TenantNumberOfMonths * PR.LeasePrice) * (AP.TakeOff / 100) AS TakeOff," +
+                       " (AP.TenantNumberOfMonths * PR.LeasePrice) *((100 - AP.TakeOff) / 100) AS AvailableForCommission" +
+                       " FROM Apartments AP" +
+                       " LEFT JOIN Prices PR" +
+                       " ON PR.ApartmentId = AP.Id" +
+                       " LEFT JOIN Buildings B" +
+                       " ON B.Id = BuildingId" +
+                       " LEFT JOIN Addresses A" +
+                       " ON A.Id = AddressId" +
+                       " WHERE AP.Unit = @unitNumber AND A.Street = @buildingAddress AND AP.MarketplaceId = @marketplaceId";
+                try
+                {
+                    using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
+                    using SqlCommand command = new(query, connection);
+                    connection.Open();
+
+                    // Параметризованный запрос с двумя параметрами
+                    command.Parameters.AddWithValue("@buildingAddress", DbType.String).Value = buildingAddress;
+                    command.Parameters.AddWithValue("@unitNumber", DbType.String).Value = unitNumber;
+                    command.Parameters.AddWithValue("@marketplaceId", DbType.String).Value = marketplaceId;
+
+                    using SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        row.PayType = GetValueOrDefault<string>(reader, 0);
+                        row.TenantNumberOfMonths = GetValueOrDefault<decimal>(reader, 1);
+                        row.TakeOff = GetValueOrDefault<decimal>(reader, 2);
+                        row.AvailableForCommission = GetValueOrDefault<decimal>(reader, 3);
                     }
 
                 }

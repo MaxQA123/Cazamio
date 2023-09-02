@@ -23,21 +23,53 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBPaymentAdmins")]
-        [AllureSubSuite("PaymentCreditScreeningFeeForBuildingWithCommission")]
+        [AllureSubSuite("DisplayingOwnerNameCompanyNameForApartment")]
 
-        public void PaymentCreditScreeningFeeForBuildingWithCommission()
+        public void DisplayingOwnerNameCompanyNameForApartment()
         {
             #region Preconditions
 
-            string buildingAddress = "101 Franklin Avenue";
+            string buildingAddress = "123 Linden Boulevard";
+            string unitNumber = "53";
             string marketplaceId = "15";
 
             #endregion
 
-            var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentCreditScreeningFeeForBuildingWithCommission(buildingAddress, marketplaceId);
-            Console.WriteLine($"Credit Screening Fee Building: {payment.CreditScreeningFeeBuilding} $");
-            Console.WriteLine($"Commission Fee Building: {payment.CommissionScreeningFeeBuilding} %");
-            Console.WriteLine($"Total: {payment.Total} $");
+            var name = DBRequestApartments.Apartments.GetOwnerNameCompanyNameForApartment(buildingAddress, unitNumber, marketplaceId);
+            Console.WriteLine($"Owner name for apartment: {name.OwnerName}");
+            Console.WriteLine($"Company name for apartment: {name.CompanyName}");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBPaymentAdmins")]
+        [AllureSubSuite("ForApartmentTenantPayCommissionStructure")]
+
+        #region Preconditions
+
+        // Available Commission = (TenantNumberOfMonths * LeasePrice) - TakeOff
+        // Take off = (TenantNumberOfMonths * LeasePrice) - Available Commission
+
+        #endregion
+
+        public void ForApartmentTenantPayCommissionStructure()
+        {
+            #region Preconditions
+
+            string buildingAddress = "123 Linden Boulevard";
+            string unitNumber = "36";
+            string marketplaceId = "15";
+
+            #endregion
+
+            var payment = DBRequestApartments.Apartments.GetPayTypeTenantNumberOfMonhsTakeOffAvailableCommission(buildingAddress, unitNumber, marketplaceId);
+            Console.WriteLine($"Pay Type: {payment.PayType}");
+            Console.WriteLine($"Tenant number of months: {payment.TenantNumberOfMonths}");
+            Console.WriteLine($"Take off: $ {payment.TakeOff}");
+            Console.WriteLine($"Available for Commission: $ {payment.AvailableForCommission}");
         }
     }
 }

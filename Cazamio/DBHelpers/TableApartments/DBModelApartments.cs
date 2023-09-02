@@ -41,5 +41,13 @@ namespace CazamioProject.DBHelpers
             public object? OwnerName { get; set; }
             public object? CompanyName { get; set; }
         }
+
+        public class DBModelApartmentsCombinedPrices
+        {
+            public object? PayType { get; set; } // this might be another data type
+            public object? TenantNumberOfMonths { get; set; }
+            public object? TakeOff { get; set; }
+            public object? AvailableForCommission { get; set; }
+        }
     }
 }
