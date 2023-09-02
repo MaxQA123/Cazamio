@@ -128,9 +128,9 @@ namespace CazamioProject.DBHelpers
 
                 // SQL запрос для выборки данных
                 string query = "SELECT Prices.LeasePrice, Prices.DepositPrice, Prices.PaidMonths, PaymentOptions.Amount," +
-                       " AP.PayType, AP.TenantNumberOfMonths, AP.TakeOff," +
-                       " ((LeasePrice * PaidMonths) + DepositPrice + ((AP.TenantNumberOfMonths * Prices.LeasePrice) - PaymentOptions.Amount)) AS FullPaymentOfApartment," +
-                       " (AP.TenantNumberOfMonths * Prices.LeasePrice) AS BrokerFee" +
+                       " AP.PayType, AP.TenantNumberOfMonths, AP.TenantPercentage," +
+                       " ((LeasePrice * PaidMonths) + DepositPrice + ((AP.TenantNumberOfMonths * Prices.LeasePrice) * (AP.TenantPercentage/100) - PaymentOptions.Amount)) AS FullPaymentOfApartment," +
+                       " (AP.TenantNumberOfMonths * Prices.LeasePrice) * (AP.TenantPercentage/100) AS BrokerFee" +
                        " FROM Prices" +
                        " LEFT JOIN PaymentOptions ON Prices.ApartmentId = PaymentOptions.ApartmentId" +
                        " JOIN Apartments AP ON Prices.ApartmentId = AP.Id" +
@@ -157,7 +157,7 @@ namespace CazamioProject.DBHelpers
                         row.Amount = GetValueOrDefault<decimal>(reader, 3);
                         row.PayType = GetValueOrDefault<string>(reader, 4);
                         row.TenantNumberOfMonths = GetValueOrDefault<decimal>(reader, 5);
-                        row.TakeOff = GetValueOrDefault<decimal>(reader, 6);
+                        row.TenantPercentage = GetValueOrDefault<decimal>(reader, 6);
                         row.FullPaymentOfApartment = GetValueOrDefault<decimal>(reader, 7);
                         row.BrokerFee = GetValueOrDefault<decimal>(reader, 8);
                     }
@@ -236,8 +236,8 @@ namespace CazamioProject.DBHelpers
                        " (SELECT AP.Id FROM Apartments AP" +
                        " LEFT JOIN Buildings B ON AP.BuildingId = B.Id" +
                        " LEFT JOIN Addresses A ON B.AddressId = A.Id" +
-                       " WHERE AP.Unit = @unitNumber AND A.Street = '101 Franklin Avenue' AND B.MarketplaceId = '15')" +
-                       " AND CF.MarketplaceId = '15'";
+                       " WHERE AP.Unit = @unitNumber AND A.Street = @buildingAddress AND B.MarketplaceId = @marketplaceId)" +
+                       " AND CF.MarketplaceId = @marketplaceId";
                 try
                 {
                     using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
@@ -277,7 +277,7 @@ namespace CazamioProject.DBHelpers
                 var row = new DBModelCalculationCombinedComissions();
 
                 // SQL запрос для выборки данных
-                string query = "SELECT ((LeasePrice * PaidMonths) + DepositPrice + ((AP.TenantNumberOfMonths * Prices.LeasePrice) - PaymentOptions.Amount))*(100 + CF.SigningLease)/100 AS Total" +
+                string query = "SELECT ((LeasePrice * PaidMonths) + DepositPrice + ((AP.TenantNumberOfMonths * Prices.LeasePrice) * (AP.TenantPercentage/100) - PaymentOptions.Amount))*(100 + CF.SigningLease)/100 AS Total" +
                        " FROM Prices" +
                        " CROSS JOIN CommissionFees CF" +
                        " LEFT JOIN PaymentOptions ON Prices.ApartmentId = PaymentOptions.ApartmentId" +

@@ -31,11 +31,12 @@ namespace DBTests.BaseTestsDB
         {
             #region Preconditions
 
-            string buildingAddress = "101 Franklin Avenue";
+            string buildingAddress = "123 Linden Boulevard";
             string marketplaceId = "15";
 
             #endregion
 
+            //Step 8 Pay Application fee
             var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentCreditScreeningFeeForBuildingWithCommission(buildingAddress, marketplaceId);
             Console.WriteLine($"Credit Screening Fee Building: {payment.CreditScreeningFeeBuilding} $");
             Console.WriteLine($"Commission Fee Building: {payment.CommissionScreeningFeeBuilding} %");
@@ -54,12 +55,13 @@ namespace DBTests.BaseTestsDB
         {
             #region Preconditions
 
-            string buildingAddress = "101 Franklin Avenue";
-            string unitNumber = "130S";
+            string buildingAddress = "123 Linden Boulevard";
+            string unitNumber = "49";
             string marketplaceId = "15";
 
             #endregion
 
+            //Step 9 Rental option payment
             var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentHoldingDepositForApartmentWithCommission(buildingAddress, unitNumber, marketplaceId);
             Console.WriteLine($"Application Deposit: $ {payment.HoldingDepositWithoutCommission}");
             Console.WriteLine($"Commission Fee: % {payment.CommissionForHoldingDeposit}");
@@ -155,28 +157,25 @@ namespace DBTests.BaseTestsDB
         {
             #region Preconditions
 
-            string buildingAddress = "101 Franklin Avenue";
-            string unitNumber = "131";
+            string buildingAddress = "123 Linden Boulevard";
+            string unitNumber = "50";
             string marketplaceId = "15";
 
             #endregion
 
             var paymentA = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit(buildingAddress, unitNumber, marketplaceId);
             Console.WriteLine($"Move-in proce: $ {paymentA.PaymentOfApartment}");
+            Console.WriteLine($"Deposit Price (Security deposit): $ {paymentA.DepositPrice}");
             Console.WriteLine($"Lease Price: $ {paymentA.LeasePrice}");
             Console.WriteLine($"Paid Months (Month's rent): {paymentA.PaidMonths}");
-            Console.WriteLine($"Deposit Price (Security deposit): $ {paymentA.DepositPrice}");
             Console.WriteLine($"Holding deposit: $ {paymentA.Amount}");
 
             var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDepositWithoutCommission(buildingAddress, unitNumber, marketplaceId);
             Console.WriteLine($"Applicant subtotal: $ {payment.FullPaymentOfApartment}");
-            Console.WriteLine($"Lease Price: $ {payment.LeasePrice}");
-            Console.WriteLine($"Paid Months (Month's rent): {payment.PaidMonths}");
-            Console.WriteLine($"Deposit Price (Security deposit): $ {payment.DepositPrice}");
-            Console.WriteLine($"Holding deposit: $ {payment.Amount}");
+            Console.WriteLine($"Broker fee: $ {payment.BrokerFee}");
             Console.WriteLine($"Pay Type: {payment.PayType}");
             Console.WriteLine($"Tenant Number Of Months: {payment.TenantNumberOfMonths}");
-            Console.WriteLine($"Take Off: {payment.TakeOff}");
+            Console.WriteLine($"Tenant percentage: {payment.TenantPercentage}");
 
             var paymentB = DBRequestCalculationsTenants.CalculationsTenant.GetSignLeaseWithCommission(buildingAddress, unitNumber, marketplaceId);
             Console.WriteLine($"Total: $ {paymentB.Total}");
