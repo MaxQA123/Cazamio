@@ -1,0 +1,91 @@
+{
+  "uuid": "b13df557-593e-4de2-8881-45c364c5dca1-tr-0-1044",
+  "historyId": "DBTests.BaseTestsDB.PaymentsAdminTestsDB.ForApartmentOwnerAndTenantPayCommissionStructure",
+  "fullName": "DBTests.BaseTestsDB.PaymentsAdminTestsDB.ForApartmentOwnerAndTenantPayCommissionStructure",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "DBTests.BaseTestsDB"
+    },
+    {
+      "name": "testMethod",
+      "value": "ForApartmentOwnerAndTenantPayCommissionStructure"
+    },
+    {
+      "name": "testClass",
+      "value": "PaymentsAdminTestsDB"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "TestingDBPaymentAdmins"
+    },
+    {
+      "name": "subSuite",
+      "value": "ForApartmentOwnerPayCommissionStructure"
+    }
+  ],
+  "links": [],
+  "name": "ForApartmentOwnerAndTenantPayCommissionStructure",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "System.ArgumentException : Error: Cannot find either column \"AP\" or the user-defined function or aggregate \"AP.TenantPercentage\", or the name is ambiguous.\r\n   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader()\r\n   at CazamioProject.DBHelpers.CalculationsAdmins.DBRequestCalculationsAdmins.CalculationsAdmins.GetPayTypeOwnerAndTenantNumberOfMonhsTakeOffAvailableCommission(String buildingAddress, String unitNumber, String marketplaceId) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\CalculationsAdmins\\DBRequestCalculationsAdmins.cs:line 203",
+    "trace": "   at CazamioProject.DBHelpers.CalculationsAdmins.DBRequestCalculationsAdmins.CalculationsAdmins.GetPayTypeOwnerAndTenantNumberOfMonhsTakeOffAvailableCommission(String buildingAddress, String unitNumber, String marketplaceId) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\CalculationsAdmins\\DBRequestCalculationsAdmins.cs:line 218\r\n   at DBTests.BaseTestsDB.PaymentsAdminTestsDB.ForApartmentOwnerAndTenantPayCommissionStructure() in C:\\Automation\\Cazamio\\DBTests\\BaseTestsDB\\PaymentsAdminTestsDB.cs:line 145"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "ForApartmentOwnerAndTenantPayCommissionStructure",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "System.ArgumentException : Error: Cannot find either column \"AP\" or the user-defined function or aggregate \"AP.TenantPercentage\", or the name is ambiguous.\r\n   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader()\r\n   at CazamioProject.DBHelpers.CalculationsAdmins.DBRequestCalculationsAdmins.CalculationsAdmins.GetPayTypeOwnerAndTenantNumberOfMonhsTakeOffAvailableCommission(String buildingAddress, String unitNumber, String marketplaceId) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\CalculationsAdmins\\DBRequestCalculationsAdmins.cs:line 203",
+        "trace": "   at CazamioProject.DBHelpers.CalculationsAdmins.DBRequestCalculationsAdmins.CalculationsAdmins.GetPayTypeOwnerAndTenantNumberOfMonhsTakeOffAvailableCommission(String buildingAddress, String unitNumber, String marketplaceId) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\CalculationsAdmins\\DBRequestCalculationsAdmins.cs:line 218\r\n   at DBTests.BaseTestsDB.PaymentsAdminTestsDB.ForApartmentOwnerAndTenantPayCommissionStructure() in C:\\Automation\\Cazamio\\DBTests\\BaseTestsDB\\PaymentsAdminTestsDB.cs:line 145"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "eedce16e39944aa2b9e93a0ac165259e-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1693724567214,
+      "stop": 1693724569160
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1693724567212,
+  "stop": 1693724569166
+}

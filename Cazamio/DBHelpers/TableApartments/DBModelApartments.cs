@@ -46,6 +46,7 @@ namespace CazamioProject.DBHelpers
         {
             public object? PayType { get; set; } // this might be another data type
             public object? TenantNumberOfMonths { get; set; }
+            public object? OwnerNumberOfMonths { get; set; }
             public object? TakeOff { get; set; }
             public object? AvailableForCommission { get; set; }
         }
