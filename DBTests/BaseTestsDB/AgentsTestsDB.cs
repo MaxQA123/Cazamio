@@ -36,7 +36,7 @@ namespace DBTests.BaseTestsDB
 
         public void DispalyingIdAgentFromAspNetUsers()
         {
-            string IdAgent = DBTableAspNetUsers.GetIdByEmail(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
+            string IdAgent = DBRequestAspNetUsersOld.GetIdByEmail(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
             Console.WriteLine($"{IdAgent} :Id for agent from table AspNetUsers");
         }
 
@@ -100,7 +100,7 @@ namespace DBTests.BaseTestsDB
         {
             string firstLastNameAgent = DBTestDataDBForAdmins.NEW_AGENT_FIRST_LAST_NAME;
 
-            string IdAgent = DBTableAspNetUsers.GetIdByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
+            string IdAgent = DBRequestAspNetUsersOld.GetIdByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
             Console.WriteLine($"{IdAgent} :Id for broker from table AspNetUsers");
 
             string lastIdAgent = DBRequestBrokers.GetLastIdNewAgent();
@@ -109,7 +109,7 @@ namespace DBTests.BaseTestsDB
             string IdAgentByUserId = DBRequestBrokers.GetIdByUserId(IdAgent);
             Console.WriteLine($"{IdAgentByUserId} :BrokerId for new agent {firstLastNameAgent} from table Brokers");
 
-            string marketplaceIdAgentAspNetUsers = DBTableAspNetUsers.GetMarketplaceIdAgentByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
+            string marketplaceIdAgentAspNetUsers = DBRequestAspNetUsersOld.GetMarketplaceIdAgentByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
             Console.WriteLine($"{marketplaceIdAgentAspNetUsers} :MarketplaceId for agent {firstLastNameAgent} from table AspNetUsers");
 
             string marketplaceIdAgentBrokers = DBRequestBrokers.GetLastMarketplaceIdNewAgentByUserId();
@@ -121,7 +121,7 @@ namespace DBTests.BaseTestsDB
             string roleNameNewAgentAspNetRoles = DBTableAspNetUserRoles.GetRoleNameAgentByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
             Console.WriteLine($"{roleNameNewAgentAspNetRoles} :Name role for new agent {firstLastNameAgent} from table AspNetRoles");
 
-            string firstNameNewAgentAspNetUsers = DBTableAspNetUsers.GetFirstNameAgentByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
+            string firstNameNewAgentAspNetUsers = DBRequestAspNetUsersOld.GetFirstNameAgentByEmail(DBTestDataDBForAdmins.NEW_AGENT_EMAIL);
             Console.WriteLine($"{firstNameNewAgentAspNetUsers} :First Name for new agent {firstLastNameAgent} from table AspNetUsers");
 
             Assert.Multiple(() =>

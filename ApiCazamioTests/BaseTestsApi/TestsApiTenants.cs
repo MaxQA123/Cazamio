@@ -31,7 +31,7 @@ namespace ApiCazamioTests.BaseTestsApi
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("ApiPenant")]
+        [AllureSuite("ApiTenant")]
         [AllureSubSuite("SignUpAsTenant")]
 
         //Date of publication:
@@ -55,7 +55,7 @@ namespace ApiCazamioTests.BaseTestsApi
 
             var responseSignUpTenant = SignUpTenant.ExecuteSignUp(email, passwordGeneral, firstName, lastName, returnUrl, isNeedToVisit, role, toHowToVisit);
 
-            string lastIdtenant = DBTableAspNetUsers.GetIdByEmailMarketplaceId(email, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+            string lastIdtenant = DBRequestAspNetUsersOld.GetIdByEmailMarketplaceId(email, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{lastIdtenant} :Id for tenant from table AspNetUsers");
 
             //string link = Putsbox.GetLinkFromEmailWithValue(email, "Confirm Email");

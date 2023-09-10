@@ -38,13 +38,13 @@ namespace DBTests.BaseTestsDB
         {
             string newTenant = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_LAST_NAME;
 
-            string tenantIdByEmail = DBTableAspNetUsers.GetIdByEmailMarketplaceIdNewTenant(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+            string tenantIdByEmail = DBRequestAspNetUsersOld.GetIdByEmailMarketplaceIdNewTenant(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{tenantIdByEmail} :TenantId for new tenant {newTenant} from table AspNetUsers");
 
-            string marketplaceIdTwo = DBTableAspNetUsers.GetMarketplaceIdTwoByEmailMaxMarketplaceId(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND);
+            string marketplaceIdTwo = DBRequestAspNetUsersOld.GetMarketplaceIdTwoByEmailMaxMarketplaceId(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND);
             Console.WriteLine($"{marketplaceIdTwo} :MarketplaceId for new tenant {newTenant} from table AspNetUsers");
 
-            string marketplaceIdOne = DBTableAspNetUsers.GetMarketplaceIdOneByEmailMinMarketplaceId(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND);
+            string marketplaceIdOne = DBRequestAspNetUsersOld.GetMarketplaceIdOneByEmailMinMarketplaceId(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND);
             Console.WriteLine($"{marketplaceIdOne} :MarketplaceId for new tenant {newTenant} from table AspNetUsers");
 
             string idLast = DBTableTenants.GetLastIdNewTenant();
@@ -78,25 +78,25 @@ namespace DBTests.BaseTestsDB
             string marketplaceIdByEmailTenantTenants = DBTableTenants.GetMarketplaceIdByEmailUserId(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL);
             Console.WriteLine($"{marketplaceIdByEmailTenantTenants} :MarketplaceId for new tenant {newTenant} from table Tenants");
 
-            string marketplaceIdLastTenantAspNetUsers = DBTableAspNetUsers.GetLastMarketplaceIdNewTenant();
+            string marketplaceIdLastTenantAspNetUsers = DBRequestAspNetUsersOld.GetLastMarketplaceIdNewTenant();
             Console.WriteLine($"{marketplaceIdByEmailTenantTenants} :MarketplaceId for new tenant {newTenant} from table AspNetUsers");
 
-            string emailConfirmedTenantAspNetUsers = DBTableAspNetUsers.GetEmailComfirmedByEmail(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL);
+            string emailConfirmedTenantAspNetUsers = DBRequestAspNetUsersOld.GetEmailComfirmedByEmail(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL);
             Console.WriteLine($"{emailConfirmedTenantAspNetUsers} :EmailConfirmed for new tenant {newTenant} from table AspNetUsers");
 
             string userIdTenantTenants = DBTableTenants.GetLastUserIdNewTenant();
             Console.WriteLine($"{userIdTenantTenants} :UserId for new tenant {newTenant} from table Tenants");
             
-            string userIdTenantAspNetUsers = DBTableAspNetUsers.GetIdByEmailMarketplaceIdNewTenant(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+            string userIdTenantAspNetUsers = DBRequestAspNetUsersOld.GetIdByEmailMarketplaceIdNewTenant(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{userIdTenantAspNetUsers} :Id for new tenant {newTenant} from table AspNetUsers");
 
             string idTenantAspNetUserRoles = DBTableAspNetUserRoles.GetLastRoleIdNewTenantByUserId();
             Console.WriteLine($"{idTenantAspNetUserRoles} :RoleId for new tenant {newTenant} from table AspNetUserRoles");
 
-            string emailTenantAspNetUsers = DBTableAspNetUsers.GetEmailByUserName(DBTestDataForTenantMarketplaceOne.NEW_TENANT_USER_NAME);
+            string emailTenantAspNetUsers = DBRequestAspNetUsersOld.GetEmailByUserName(DBTestDataForTenantMarketplaceOne.NEW_TENANT_USER_NAME);
             Console.WriteLine($"{emailTenantAspNetUsers} :Email for new tenant {newTenant} from table AspNetUsers");
 
-            string firstNameTenantAspNetUsers = DBTableAspNetUsers.GetFirstNameByUserName(DBTestDataForTenantMarketplaceOne.NEW_TENANT_USER_NAME);
+            string firstNameTenantAspNetUsers = DBRequestAspNetUsersOld.GetFirstNameByUserName(DBTestDataForTenantMarketplaceOne.NEW_TENANT_USER_NAME);
             Console.WriteLine($"{firstNameTenantAspNetUsers} :FirstName for new tenant {newTenant} from table AspNetUsers");
 
             Assert.Multiple(() =>
@@ -151,7 +151,7 @@ namespace DBTests.BaseTestsDB
             string lastIdCreditScreening = DBTableTenantBackgroundChecks.GetLastIdCreditScreeningByBackgroundCheckTypeTenantId(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO, DBTestDataGeneral.CREDIT_SCREENING);
             Console.WriteLine($"{lastIdCreditScreening} :Last Id by BackgroundCheckType TenantId for BackgroundCheck {tenant} from table TenantBackgroundChecks");
 
-            string tenantIdByEmail = DBTableAspNetUsers.GetIdByEmailMarketplaceIdNewTenant(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+            string tenantIdByEmail = DBRequestAspNetUsersOld.GetIdByEmailMarketplaceIdNewTenant(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{tenantIdByEmail} :TenantId for new tenant {tenant} from table AspNetUsers");
 
             string lastIdByEmailBackgroundCheck = DBTableTenantBackgroundChecks.GetLastIdBackgroundCheckByTenantIdBackgroundCheckType(tenantIdByEmail, DBTestDataGeneral.BACKGROUND_CHECK);

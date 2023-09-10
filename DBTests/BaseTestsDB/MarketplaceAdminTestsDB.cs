@@ -23,35 +23,28 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBMarketplaceAdmin")]
-        [AllureSubSuite("RelatedBuidingBroker")]
+        [AllureSubSuite("CheckAlreadyCreatedMarketplaceAdmin")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The table "MarketplaceAdmins", "AspNetRoles".
-        //Path to cheking's:
-
-        public void CreateMarketplaceAdmin()
+        public void CheckAlreadyCreatedMarketplaceAdmin()
         {
             string newMarketplaceAdmin = DBTestDataDBForAdmins.NEW_MARKETPLACE_ADMIN_FIRST_NAME;
 
-            string userIdMAByEmail = DBTableAspNetUsers.GetIdByEmailMarketplaceId(DBTestDataDBForAdmins.NEW_MARKETPLACE_ADMIN_EMAIL, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
+            string userIdMAByEmail = DBRequestAspNetUsersOld.GetIdByEmailMarketplaceId(DBTestDataDBForAdmins.NEW_MARKETPLACE_ADMIN_EMAIL, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{userIdMAByEmail} :UserId MA by Email from table AspNetUsers");
 
-            string lastUserIdMA = DBTableMarketplaceAdmins.GetLastUserIdNewMarketplaceAd();
+            string lastUserIdMA = DBRequestMarketplaceAdminsOld.GetLastUserIdNewMarketplaceAd();
             Console.WriteLine($"{lastUserIdMA} :UserId last MA from table MarketplaceAdmins");
 
-            string lastMarketplaceIdMA = DBTableMarketplaceAdmins.GetLastMarketplaceIdNewMarketplaceAd();
+            string lastMarketplaceIdMA = DBRequestMarketplaceAdminsOld.GetLastMarketplaceIdNewMarketplaceAd();
             Console.WriteLine($"{lastMarketplaceIdMA} :MarketplsaceId last MA from table MarketplaceAdmins");
 
-            string lastMarketplaceIdByUserIdMA = DBTableMarketplaceAdmins.GetLastMarketplaceIdByUserIdNewMarketplaceAd(userIdMAByEmail);
+            string lastMarketplaceIdByUserIdMA = DBRequestMarketplaceAdminsOld.GetLastMarketplaceIdByUserIdNewMarketplaceAd(userIdMAByEmail);
             Console.WriteLine($"{lastMarketplaceIdByUserIdMA} :MarketplsaceId last by UserId MA from table MarketplaceAdmins");
 
-            string lastIdMA = DBTableMarketplaceAdmins.GetLastIdNewMarketplaceAd();
+            string lastIdMA = DBRequestMarketplaceAdminsOld.GetLastIdNewMarketplaceAd();
             Console.WriteLine($"{lastIdMA} :Id last by UserId MA from table MarketplaceAdmins");
 
-            string lastIByUserIddMA = DBTableMarketplaceAdmins.GetLastIdByUserIdNewMarketplaceAd(lastUserIdMA);
+            string lastIByUserIddMA = DBRequestMarketplaceAdminsOld.GetLastIdByUserIdNewMarketplaceAd(lastUserIdMA);
             Console.WriteLine($"{lastIByUserIddMA} :Id last by UserId MA from table MarketplaceAdmins");
 
             string nameRoleByEmailMA = DBTableAspNetRoles.GetRoleNameByEmail(DBTestDataDBForAdmins.NEW_MARKETPLACE_ADMIN_EMAIL);
@@ -60,7 +53,7 @@ namespace DBTests.BaseTestsDB
             string roleIdByUserIdMA = DBTableAspNetUserRoles.GetRoleIdNewByUserId(userIdMAByEmail);
             Console.WriteLine($"{roleIdByUserIdMA} :Name role by email MA from table AspNetRoles");
 
-            string emailMA = DBTableAspNetUsers.GetEmailByIdNew(userIdMAByEmail);
+            string emailMA = DBRequestAspNetUsersOld.GetEmailByIdNew(userIdMAByEmail);
             Console.WriteLine($"{emailMA} :Email by id MA from table AspNetUsers");
 
             Assert.Multiple(() =>
@@ -83,6 +76,25 @@ namespace DBTests.BaseTestsDB
                 Assert.AreEqual(emailMA, DBTestDataDBForAdmins.NEW_MARKETPLACE_ADMIN_EMAIL);
                 Console.WriteLine($"Email by Id for MA from table AspNetUsers: {emailMA} = {DBTestDataDBForAdmins.NEW_MARKETPLACE_ADMIN_EMAIL} Email for MA ER");
             });
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBMarketplaceAdmin")]
+        [AllureSubSuite("DeleteNewlyCreatedMarketplaceAdmin")]
+
+        public void DeleteNewlyCreatedMarketplaceAdmin()
+        {
+            string email = "lo7lo6lo@xitroo.com";
+            string marketplaceId = "15";
+
+            DBRequestMarketplaceAdmins.MarketplaceAdmins.DeleteCreatedUserMarketplaceAdmin(email, marketplaceId);
+
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(email, marketplaceId);
+
         }
     }
 }

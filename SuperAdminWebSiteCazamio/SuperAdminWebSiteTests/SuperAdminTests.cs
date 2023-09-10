@@ -1,6 +1,7 @@
 ﻿using Allure.Commons;
 using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
+using CazamioProject.DBHelpers;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
@@ -26,12 +27,6 @@ namespace SuperAdminTests
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("SuperAdmin")]
         [AllureSubSuite("LogIn")]
-
-        //Date of publication: 
-        //Version\Build:
-        //Willingness for testing: Done
-        //This test case is doing checking: The successfully LogIn as super admin.
-        //Comment: 
 
         public void LogIn()
         {
@@ -106,14 +101,10 @@ namespace SuperAdminTests
         [AllureSuite("SuperAdmin")]
         [AllureSubSuite("CreateMarketplaceAdmin")]
 
-        //Date of publication: 
-        //Version\Build:
-        //Willingness for testing: DONE
-        //This test case is doing checking: The successfully created a new Marketplace Admin.
-        //Comment: 
-
         public void CreateMarketplaceAdmin()
         {
+            string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID;
+
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsSuperAdmin()
                 .ClickIconShowLogInPg()
@@ -168,6 +159,12 @@ namespace SuperAdminTests
 
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserNameRole(getUserNameRoleCompareBroker);
+
+            DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestMarketplaceAdmins.MarketplaceAdmins.DeleteCreatedUserMarketplaceAdmin(fullEmailPutsBox, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(fullEmailPutsBox, marketplaceId);
 
             WaitUntil.WaitSomeInterval(2000);
         }

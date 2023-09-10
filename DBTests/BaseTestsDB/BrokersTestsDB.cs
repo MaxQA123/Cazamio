@@ -34,7 +34,7 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
-            string userIdByEmailBroker = DBTableAspNetUsers.GetIdForBrokerFromAspNetUsers(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
+            string userIdByEmailBroker = DBRequestAspNetUsersOld.GetIdForBrokerFromAspNetUsers(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
             Console.WriteLine($"{userIdByEmailBroker}: Id for new broker {newBroker} from table AspNetUsers");
 
             string userIdBroker = DBTableLandlords.GetUserIdNewBroker();
@@ -46,7 +46,7 @@ namespace DBTests.BaseTestsDB
             string lastLandlordIdBrokerByUserId = DBTableLandlords.GetlastLandlordIdByUserIdForBroker(userIdByEmailBroker);
             Console.WriteLine($"{lastLandlordIdBroker} :LandlordId by UserId for new broker {newBroker} from table Landlords");
 
-            string marketplaceIdNewBroker = DBTableAspNetUsers.GetMarketplaceIdForBrokerByEmail(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
+            string marketplaceIdNewBroker = DBRequestAspNetUsersOld.GetMarketplaceIdForBrokerByEmail(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
             Console.WriteLine($"{marketplaceIdNewBroker}: MarketplaceId for new broker {newBroker} from table AspNetUsers");
 
             string roleIdBroker = DBTableAspNetUserRoles.GetRoleIdNewBrokerByUserId();
@@ -55,10 +55,10 @@ namespace DBTests.BaseTestsDB
             string roleNameBroker = DBTableAspNetRoles.GetRoleNameByEmail(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
             Console.WriteLine($"{roleNameBroker} :Name role for broker {newBroker} from table AspNetRoles");
 
-            string firstNameBroker = DBTableAspNetUsers.GetFirstNameBrokerByEmail(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
+            string firstNameBroker = DBRequestAspNetUsersOld.GetFirstNameBrokerByEmail(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
             Console.WriteLine($"{firstNameBroker} :First Name for broker {newBroker} from table AspNetRoles");
 
-            string emailNewBroker = DBTableAspNetUsers.GetEmailByIdNew(userIdByEmailBroker);
+            string emailNewBroker = DBRequestAspNetUsersOld.GetEmailByIdNew(userIdByEmailBroker);
             Console.WriteLine($"{emailNewBroker} :Email for broker {newBroker} from table AspNetUsers");
 
             #region Assertions
@@ -112,7 +112,7 @@ namespace DBTests.BaseTestsDB
             string marketplaceIdByBrokerEmail = DBTableLandlords.GetMarketplaceIdBroker(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
             Console.WriteLine($"{marketplaceIdByBrokerEmail} :MarketplaceId for broker {brokerName} from table Landlords");
 
-            string IdBroker = DBTableAspNetUsers.GetIdForBrokerFromAspNetUsers(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
+            string IdBroker = DBRequestAspNetUsersOld.GetIdForBrokerFromAspNetUsers(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
             Console.WriteLine($"{IdBroker}: Id for new broker {brokerName} from table AspNetUsers");
 
             #region Assertions
