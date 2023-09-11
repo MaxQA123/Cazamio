@@ -1,0 +1,573 @@
+{
+  "uuid": "90ce891a-81b2-4b01-982b-c67b7399664d-tr-0-1003",
+  "historyId": "SuperAdminTests.SuperAdminTests.CreateMarketplaceAdmin",
+  "fullName": "SuperAdminTests.SuperAdminTests.CreateMarketplaceAdmin",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "SuperAdminTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "CreateMarketplaceAdmin"
+    },
+    {
+      "name": "testClass",
+      "value": "SuperAdminTests"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "SuperAdmin"
+    },
+    {
+      "name": "subSuite",
+      "value": "CreateMarketplaceAdmin"
+    }
+  ],
+  "links": [],
+  "name": "CreateMarketplaceAdmin",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "  Expected: True\r\n  But was:  False\r\n",
+    "trace": "   at CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage.MdlWndwCreateANewMarketplaceAdmin.__a$_around_VerifyNameHostMarketplaceSubdomain_100663914_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\ModalWndwCreateANewMarketplaceAdminPage\\MdlWndwCreateANewMarketplaceAdminAssertions.cs:line 25\r\n   at CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage.MdlWndwCreateANewMarketplaceAdmin.__a$_around_VerifyNameHostMarketplaceSubdomain_100663914_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage.MdlWndwCreateANewMarketplaceAdmin.__a$_around_VerifyNameHostMarketplaceSubdomain_100663914_w_0(Object[] )\r\n   at CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage.MdlWndwCreateANewMarketplaceAdmin.VerifyNameHostMarketplaceSubdomain()\r\n   at SuperAdminTests.SuperAdminTests.CreateMarketplaceAdmin() in C:\\Automation\\Cazamio\\SuperAdminWebSiteCazamio\\SuperAdminWebSiteTests\\SuperAdminTests.cs:line 122\r\n"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "CreateMarketplaceAdmin",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "  Expected: True\r\n  But was:  False\r\n",
+        "trace": "   at CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage.MdlWndwCreateANewMarketplaceAdmin.__a$_around_VerifyNameHostMarketplaceSubdomain_100663914_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\ModalWndwCreateANewMarketplaceAdminPage\\MdlWndwCreateANewMarketplaceAdminAssertions.cs:line 25\r\n   at CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage.MdlWndwCreateANewMarketplaceAdmin.__a$_around_VerifyNameHostMarketplaceSubdomain_100663914_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage.MdlWndwCreateANewMarketplaceAdmin.__a$_around_VerifyNameHostMarketplaceSubdomain_100663914_w_0(Object[] )\r\n   at CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage.MdlWndwCreateANewMarketplaceAdmin.VerifyNameHostMarketplaceSubdomain()\r\n   at SuperAdminTests.SuperAdminTests.CreateMarketplaceAdmin() in C:\\Automation\\Cazamio\\SuperAdminWebSiteCazamio\\SuperAdminWebSiteTests\\SuperAdminTests.cs:line 122\r\n"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "EnterEmailPasswordLogInPgAsSuperAdmin",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "superadmin123@putsbox.com"
+                }
+              ],
+              "start": 1694427343297,
+              "stop": 1694427343937
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1694427344441,
+              "stop": 1694427344963
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1694427343297,
+          "stop": 1694427344963
+        },
+        {
+          "name": "ClickIconShowLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1694427344963,
+              "stop": 1694427345606
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1694427344963,
+          "stop": 1694427345606
+        },
+        {
+          "name": "ClickButtonLetsGoLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1694427345606,
+              "stop": 1694427346449
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1694427345606,
+          "stop": 1694427347457
+        },
+        {
+          "name": "GetUserNameFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1694427347458,
+          "stop": 1694427348597
+        },
+        {
+          "name": "GetUserNameRoleFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1694427348598,
+          "stop": 1694427348653
+        },
+        {
+          "name": "VerifySuperAdminUserName",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Super User"
+            },
+            {
+              "name": "String",
+              "value": "Super Admin"
+            }
+          ],
+          "start": 1694427348654,
+          "stop": 1694427350173
+        },
+        {
+          "name": "ClickButtonMarketplaceAdminsSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1694427351187,
+              "stop": 1694427351902
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1694427350173,
+          "stop": 1694427352909
+        },
+        {
+          "name": "VerifyTitleListOfMarketplaceAdmins",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1694427352910,
+          "stop": 1694427354016
+        },
+        {
+          "name": "ClickButtonCreateMarketplaceAdmin",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1694427354016,
+              "stop": 1694427354753
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1694427354016,
+          "stop": 1694427354753
+        },
+        {
+          "name": "VerifyTitleCreateANewMarketplaceadmin",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1694427354753,
+          "stop": 1694427355833
+        },
+        {
+          "name": "FillInMandatoryFields",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Derek"
+                }
+              ],
+              "start": 1694427355869,
+              "stop": 1694427356352
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Mertz"
+                }
+              ],
+              "start": 1694427356468,
+              "stop": 1694427357026
+            },
+            {
+              "name": "RandomEmail",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "5"
+                }
+              ],
+              "start": 1694427357134,
+              "stop": 1694427357134
+            },
+            {
+              "name": "RandomNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "3"
+                }
+              ],
+              "start": 1694427357134,
+              "stop": 1694427357134
+            },
+            {
+              "name": "RandomEmail",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "2"
+                }
+              ],
+              "start": 1694427357134,
+              "stop": 1694427357134
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "xoioa471kf@putsbox.com"
+                }
+              ],
+              "start": 1694427357134,
+              "stop": 1694427357776
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "testlandlord-demo15"
+                }
+              ],
+              "start": 1694427357896,
+              "stop": 1694427358533
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1694427355833,
+          "stop": 1694427358533
+        },
+        {
+          "name": "VerifyNameHostMarketplaceSubdomain",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "  Expected: True\r\n  But was:  False\r\n",
+            "trace": "   at NUnit.Framework.Assert.ReportFailure(String message)\r\n   at NUnit.Framework.Assert.ReportFailure(ConstraintResult result, String message, Object[] args)\r\n   at NUnit.Framework.Assert.That[TActual](TActual actual, IResolveConstraint expression, String message, Object[] args)\r\n   at NUnit.Framework.Assert.IsTrue(Boolean condition)\r\n   at CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage.MdlWndwCreateANewMarketplaceAdmin.__a$_around_VerifyNameHostMarketplaceSubdomain_100663914_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\ModalWndwCreateANewMarketplaceAdminPage\\MdlWndwCreateANewMarketplaceAdminAssertions.cs:line 25\r\n   at CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage.MdlWndwCreateANewMarketplaceAdmin.__a$_around_VerifyNameHostMarketplaceSubdomain_100663914_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1694427358533,
+          "stop": 1694427359603
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "641b19705a9040eeb1f190b073b31b60-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1694427335356,
+      "stop": 1694427362343
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1694427335356,
+  "stop": 1694427362344
+}

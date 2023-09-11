@@ -8,8 +8,8 @@ namespace CazamioProgect.Helpers
 {
     public class EndPoints
     {
-        public const string URL_HOME_PAGE_TENANT_WEBSITE_CAZAMIO = "https://testlandlord-demo.cazamiodemo.com/";
-        public const string URL_LOGIN_ADMIN_WEBSITE = "https://landlord-demo.cazamiodemo.com/account/signin";
+        public const string URL_HOME_PAGE_TENANT_WEBSITE_CAZAMIO = "https://testlandlord15-demo.casamio-test.lol/";
+        public const string URL_LOGIN_ADMIN_WEBSITE = "https://landlord-demo.casamio-test.lol/account/signin";
 
         public const string URL_XITROO_EMAIL_RANDOM = "https://xitroo.com/";
         public const string URL_XITROO_STATIC_SUPER_ADMIN = "https://xitroo.com/#testadmin@xitroo.com";
@@ -91,7 +91,7 @@ namespace CazamioProgect.Helpers
 
     public class TestDataForWebSiteAdmin
     {
-        public const string MARKETPLACE_SUBDOMAIN = "testlandlord-demo";
+        public const string MARKETPLACE_SUBDOMAIN = "testlandlord-demo15";
 
         public const string USER_NAME_ROLE_OWNER = "Owner";
 

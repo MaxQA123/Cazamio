@@ -219,8 +219,6 @@ namespace CazamioProgect.Helpers
                 }
 
                 return false;
-
-
             }
             catch (NoSuchElementException) { return false; }
 

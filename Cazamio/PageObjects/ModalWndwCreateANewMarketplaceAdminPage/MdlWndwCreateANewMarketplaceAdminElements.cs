@@ -28,7 +28,7 @@ namespace CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage
         [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Create']")]
         public IWebElement ButtonCreate;
 
-        [FindsBy(How = How.XPath, Using = ("//label[text() = 'Host : https://testlandlord-demo.cazamiodemo.com/']"))]
+        [FindsBy(How = How.XPath, Using = ("//label[text() = 'Host : https://testlandlord15-demo.casamio-test.lol/']"))]
         public IWebElement NameHostMarketplaceSubdomain;
 
        

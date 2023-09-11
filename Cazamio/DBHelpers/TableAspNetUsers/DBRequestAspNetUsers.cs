@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.DBHelpers.TableAspNetUsers;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,45 @@ namespace CazamioProject.DBHelpers
         }
         public class AspNetUsers
         {
+            public static DBModelsAspNetUsers GetMarketplaceIdByEmailAndMarketplaceId(string email, string marketplaceId)
+            {
+                var row = new DBModelsAspNetUsers();
+
+                // SQL запрос для выборки данных
+                string query = "SELECT MarketplaceId" +
+                               " FROM AspNetUsers" +
+                               " WHERE Email = @Email AND MarketplaceId = @MarketplaceId";
+                try
+                {
+                    using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
+                    using SqlCommand command = new(query, connection);
+                    connection.Open();
+
+                    // Параметризованный запрос с двумя параметрами
+                    command.Parameters.AddWithValue("@email", DbType.String).Value = email;
+                    command.Parameters.AddWithValue("@marketplaceId", DbType.String).Value = marketplaceId;
+
+                    using SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        row.MarketplaceId = GetValueOrDefault<string>(reader, 0);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw new ArgumentException($"Error: {ex.Message}\r\n{ex.StackTrace}");
+                }
+                finally
+                {
+
+                    // Обеспечиваем освобождение ресурсов
+                    SqlConnection.ClearAllPools();
+                }
+
+                return row;
+            }
+
             public static string DeleteCreatedUser(string email, string marketplaceId)
             {
                 string data = null;
