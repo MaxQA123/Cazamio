@@ -46,7 +46,7 @@ namespace CazamioProject.DBHelpers
                     using SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        row.MarketplaceId = GetValueOrDefault<string>(reader, 0);
+                        row.MarketplaceId = GetValueOrDefault<decimal>(reader, 0);
                     }
 
                 }
@@ -111,6 +111,30 @@ namespace CazamioProject.DBHelpers
                 }
                 return data;
             }
+
+            //public static string GetMarketplaceId(string email, string marketplaceId)
+            //{
+            //    string data = null;
+            //    using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+            //    {
+            //        SqlCommand command = new("SELECT Email" +
+            //                   " FROM AspNetUsers" +
+            //                   " WHERE Email = @Email AND MarketplaceId = @MarketplaceId", db);
+            //        command.Parameters.AddWithValue("@Email", DbType.String).Value = email;
+            //        command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
+            //        db.Open();
+
+            //        SqlDataReader reader = command.ExecuteReader();
+            //        if (reader.HasRows)
+            //        {
+            //            while (reader.Read())
+            //            {
+            //                data = reader.GetValue(0).ToString();
+            //            }
+            //        }
+            //    }
+            //    return data;
+            //}
         }
     }
 

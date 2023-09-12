@@ -1,0 +1,114 @@
+{
+  "uuid": "50db2775-d59d-48f6-b221-a2ca589bf08c-tr-0-1003",
+  "historyId": "ApiCazamioTests.BaseTestsApi.TestsApiBroker.LogInAsBroker",
+  "fullName": "ApiCazamioTests.BaseTestsApi.TestsApiBroker.LogInAsBroker",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "ApiCazamioTests.BaseTestsApi"
+    },
+    {
+      "name": "testMethod",
+      "value": "LogInAsBroker"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsApiBroker"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "ApiBroker"
+    },
+    {
+      "name": "subSuite",
+      "value": "LogInAsBroker"
+    }
+  ],
+  "links": [],
+  "name": "LogInAsBroker",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "  String lengths are both 14. Strings differ at index 10.\r\n  Expected: \"Beautiful Life\"\r\n  But was:  \"Beautiful life\"\r\n  ---------------------^\r\n",
+    "trace": "   at ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins.LogInAdmins.__a$_around_VerifyingBrandUserNameEmailBroker_100664432_o(ResponseLogInAdmins response) in C:\\Automation\\Cazamio\\Cazamio\\ApiHelpers\\ApiPagesObjects\\ApiCommonPages\\LogInApiAdmins\\LogInApiAdminsAssertions.cs:line 51\r\n   at ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins.LogInAdmins.__a$_around_VerifyingBrandUserNameEmailBroker_100664432_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins.LogInAdmins.__a$_around_VerifyingBrandUserNameEmailBroker_100664432_w_0(Object[] )\r\n   at ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins.LogInAdmins.VerifyingBrandUserNameEmailBroker(ResponseLogInAdmins response)\r\n   at ApiCazamioTests.BaseTestsApi.TestsApiBroker.LogInAsBroker() in C:\\Automation\\Cazamio\\ApiCazamioTests\\BaseTestsApi\\TestsApiBroker.cs:line 50\r\n"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "LogInAsBroker",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "  String lengths are both 14. Strings differ at index 10.\r\n  Expected: \"Beautiful Life\"\r\n  But was:  \"Beautiful life\"\r\n  ---------------------^\r\n",
+        "trace": "   at ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins.LogInAdmins.__a$_around_VerifyingBrandUserNameEmailBroker_100664432_o(ResponseLogInAdmins response) in C:\\Automation\\Cazamio\\Cazamio\\ApiHelpers\\ApiPagesObjects\\ApiCommonPages\\LogInApiAdmins\\LogInApiAdminsAssertions.cs:line 51\r\n   at ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins.LogInAdmins.__a$_around_VerifyingBrandUserNameEmailBroker_100664432_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins.LogInAdmins.__a$_around_VerifyingBrandUserNameEmailBroker_100664432_w_0(Object[] )\r\n   at ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins.LogInAdmins.VerifyingBrandUserNameEmailBroker(ResponseLogInAdmins response)\r\n   at ApiCazamioTests.BaseTestsApi.TestsApiBroker.LogInAsBroker() in C:\\Automation\\Cazamio\\ApiCazamioTests\\BaseTestsApi\\TestsApiBroker.cs:line 50\r\n"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "VerifyingBrandUserNameEmailBroker",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "  String lengths are both 14. Strings differ at index 10.\r\n  Expected: \"Beautiful Life\"\r\n  But was:  \"Beautiful life\"\r\n  ---------------------^\r\n",
+            "trace": "   at NUnit.Framework.Assert.Multiple(TestDelegate testDelegate)\r\n   at ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins.LogInAdmins.__a$_around_VerifyingBrandUserNameEmailBroker_100664432_o(ResponseLogInAdmins response) in C:\\Automation\\Cazamio\\Cazamio\\ApiHelpers\\ApiPagesObjects\\ApiCommonPages\\LogInApiAdmins\\LogInApiAdminsAssertions.cs:line 51\r\n   at ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins.LogInAdmins.__a$_around_VerifyingBrandUserNameEmailBroker_100664432_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "ResponseLogInAdmins",
+              "value": "ApiTests.ApiPagesObjects.ApiCommonPages.LogInApiAdmins.ResponseLogInAdmins"
+            }
+          ],
+          "start": 1694510750016,
+          "stop": 1694510750020
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "dce2f4d3d5cc45a1b858d0e3cac0d5de-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1694510749382,
+      "stop": 1694510750023
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1694510749382,
+  "stop": 1694510750023
+}

@@ -1,0 +1,78 @@
+{
+  "uuid": "a9e8151c-15e8-45a8-b074-c4d12cb01c30-tc-0-1000",
+  "name": "SuperAdminTests.SuperAdminTests.CreateMarketplaceAdmin",
+  "children": [
+    "04fbe3de-35db-4db5-a5c7-057dd02e012a-tr-0-1003"
+  ],
+  "befores": [
+    {
+      "name": "DobeforeAllTheTests",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1694510702178,
+      "stop": 1694510702178
+    },
+    {
+      "name": "SetUp",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1694510702178,
+      "stop": 1694510702178
+    }
+  ],
+  "afters": [
+    {
+      "name": "DoAfterEach",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.WebDriverTimeoutException : Timed out after 10 seconds\r\nTearDown : OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=116.0.5845.182)",
+        "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.JScriptExecutorHelper.OpenPutsBox(IWebElement element, String partEmailPutsBox) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\JScriptExecutorHelper.cs:line 39\r\n   at SuperAdminTests.SuperAdminTests.CreateMarketplaceAdmin() in C:\\Automation\\Cazamio\\SuperAdminWebSiteCazamio\\SuperAdminWebSiteTests\\SuperAdminTests.cs:line 141\r\n--TearDown\r\n   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.GetScreenshot()\r\n   at CazamioProject.Helpers.ScreenShotHelper.MakeScreenShot() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\ScreenShotHelper.cs:line 16\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 32"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1694510702178,
+      "stop": 1694510702178
+    },
+    {
+      "name": "DoAfterAllTheTests",
+      "status": "none",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "It's not possible to get status of OneTimeTearDown",
+        "trace": "See Allure.NUnit wiki"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1694510702179,
+      "stop": 1694510702179
+    }
+  ],
+  "links": [],
+  "start": 1694510610205,
+  "stop": 1694510702227
+}

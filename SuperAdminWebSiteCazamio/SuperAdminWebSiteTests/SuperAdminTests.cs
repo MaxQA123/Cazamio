@@ -133,7 +133,6 @@ namespace SuperAdminTests
 
             var marketplaceIdFromDb = DBRequestAspNetUsers.AspNetUsers.GetMarketplaceIdByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
             Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb.MarketplaceId}");
-            //Add verifying of the record about email in the list of users
 
             Pages.SideBarLandlord
                 .ClickButtonLogOutSidebar();
@@ -161,7 +160,7 @@ namespace SuperAdminTests
                 .VerifyMarketplaceAdminUserNameRole(getUserNameRoleCompareBroker);
 
             DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
-            Console.WriteLine($"{ fullEmailPutsBox}");
+            Console.WriteLine($"{fullEmailPutsBox}");
             WaitUntil.WaitSomeInterval(100);
             DBRequestMarketplaceAdmins.MarketplaceAdmins.DeleteCreatedUserMarketplaceAdmin(fullEmailPutsBox, marketplaceId);
             WaitUntil.WaitSomeInterval(100);

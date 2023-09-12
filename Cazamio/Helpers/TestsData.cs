@@ -91,7 +91,7 @@ namespace CazamioProgect.Helpers
 
     public class TestDataForWebSiteAdmin
     {
-        public const string MARKETPLACE_SUBDOMAIN = "testlandlord-demo15";
+        public const string MARKETPLACE_SUBDOMAIN = "testlandlord15-demo";
 
         public const string USER_NAME_ROLE_OWNER = "Owner";
 
