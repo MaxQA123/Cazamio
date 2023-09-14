@@ -131,8 +131,12 @@ namespace SuperAdminTests
             Pages.ListOfMarketplaceAdmins
                 .VerifyMessageMarketplaceAdminHasBeenSuccessfullyCreated();
 
+            WaitUntil.WaitSomeInterval(500);
             var marketplaceIdFromDb = DBRequestAspNetUsers.AspNetUsers.GetMarketplaceIdByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
             Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb.MarketplaceId}");
+
+            //var marketplaceIdFromDb = DBRequestAspNetUsers.AspNetUsers.GetMarketplaceId(fullEmailPutsBox, marketplaceId);
+            //Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb}");
 
             Pages.SideBarLandlord
                 .ClickButtonLogOutSidebar();
@@ -158,6 +162,9 @@ namespace SuperAdminTests
 
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserNameRole(getUserNameRoleCompareBroker);
+
+            //var marketplaceIdFromDb = DBRequestAspNetUsers.AspNetUsers.GetMarketplaceIdByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
+            //Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb.MarketplaceId}");
 
             DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
             Console.WriteLine($"{fullEmailPutsBox}");

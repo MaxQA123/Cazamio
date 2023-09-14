@@ -112,29 +112,29 @@ namespace CazamioProject.DBHelpers
                 return data;
             }
 
-            //public static string GetMarketplaceId(string email, string marketplaceId)
-            //{
-            //    string data = null;
-            //    using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
-            //    {
-            //        SqlCommand command = new("SELECT Email" +
-            //                   " FROM AspNetUsers" +
-            //                   " WHERE Email = @Email AND MarketplaceId = @MarketplaceId", db);
-            //        command.Parameters.AddWithValue("@Email", DbType.String).Value = email;
-            //        command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
-            //        db.Open();
+            public static string GetMarketplaceId(string email, string marketplaceId)
+            {
+                string data = null;
+                using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+                {
+                    SqlCommand command = new("SELECT MarketplaceId" +
+                               " FROM AspNetUsers" +
+                               " WHERE Email = @Email AND MarketplaceId = @MarketplaceId", db);
+                    command.Parameters.AddWithValue("@Email", DbType.String).Value = email;
+                    command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
+                    db.Open();
 
-            //        SqlDataReader reader = command.ExecuteReader();
-            //        if (reader.HasRows)
-            //        {
-            //            while (reader.Read())
-            //            {
-            //                data = reader.GetValue(0).ToString();
-            //            }
-            //        }
-            //    }
-            //    return data;
-            //}
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            data = reader.GetValue(0).ToString();
+                        }
+                    }
+                }
+                return data;
+            }
         }
     }
 
