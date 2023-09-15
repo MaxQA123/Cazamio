@@ -21,6 +21,8 @@ namespace CazamioProgect.Helpers
         public void DoAfterAllTheTests()
         {
             Browser.Quit();
+
+            ForceCloseDriver.ForceClose();
         }
 
         [TearDown]

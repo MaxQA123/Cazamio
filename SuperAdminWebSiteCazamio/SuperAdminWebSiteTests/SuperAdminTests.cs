@@ -135,9 +135,6 @@ namespace SuperAdminTests
             var marketplaceIdFromDb = DBRequestAspNetUsers.AspNetUsers.GetMarketplaceIdByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
             Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb.MarketplaceId}");
 
-            //var marketplaceIdFromDb = DBRequestAspNetUsers.AspNetUsers.GetMarketplaceId(fullEmailPutsBox, marketplaceId);
-            //Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb}");
-
             Pages.SideBarLandlord
                 .ClickButtonLogOutSidebar();
             Pages.JScriptExecutorHelper

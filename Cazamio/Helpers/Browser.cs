@@ -45,6 +45,9 @@ namespace CazamioProgect.Helpers
             string mainpath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\"));
             return mainpath;
         }
+
+        public static string RootPathReport() => Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\"));
+
         public static ISearchContext Driver { get { return _webDriver; } }
         public static IWebDriver _Driver { get { return _webDriver; } }
         public static string Title

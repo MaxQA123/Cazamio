@@ -46,7 +46,7 @@ namespace CazamioProject.DBHelpers
                     using SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        row.MarketplaceId = GetValueOrDefault<decimal>(reader, 0);
+                        row.MarketplaceId = GetValueOrDefault<long>(reader, 0);
                     }
 
                 }
