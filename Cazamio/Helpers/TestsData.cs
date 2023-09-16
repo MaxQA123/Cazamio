@@ -95,9 +95,21 @@ namespace CazamioProgect.Helpers
 
         public const string USER_NAME_ROLE_OWNER = "Owner";
 
+        #region CommonMarketplace
+
         public const string EMAIL_MARKETPLACE_ADMIN_CHUI_CHUBAKA = "marketplace1chui@putsbox.com";
         public const string USER_NAME_MARKETPLACE_ADMIN_CHUI_CHUBAKA = "Chui Chubaka";
+
+        #endregion
+
         public const string USER_NAME_ROLE_MARKETPLACE_ADMIN = "Marketplace Admin";
+
+        #region MySpaceMarketplace
+
+        public const string EMAIL_MARKETPLACE_ADMIN_MARK_ADM = "marketplaceadmin15@putsbox.com";
+        public const string USER_NAME_MARKETPLACE_ADMIN_MARK_ADM = "Mark Adm";
+
+        #endregion
 
         public const string EMAIL_BROKER_MARTIN_MACFLY = "admin123@putsbox.com";
         public const string USER_NAME_BROKER_MARTIN_MACFLY = "Martin Macfly";

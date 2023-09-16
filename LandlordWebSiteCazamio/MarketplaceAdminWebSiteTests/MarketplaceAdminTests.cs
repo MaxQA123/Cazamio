@@ -1,10 +1,12 @@
 using Allure.Commons;
 using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
+using CazamioProject.DBHelpers;
 using MarketplaceAdminTests;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
+using System;
 using System.Threading;
 
 namespace MarketplaceAdminTests
@@ -22,12 +24,6 @@ namespace MarketplaceAdminTests
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
         [AllureSubSuite("LogIn")]
-
-        //Date of publication: 
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully LogIn as marketplace admin.
-        //Comment: 
 
         public void LogIn()
         {
@@ -53,12 +49,6 @@ namespace MarketplaceAdminTests
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
         [AllureSubSuite("VerifySidebar")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: That the images uploaded and switching between the pages successfully via the sidebar.
-        //Comment: 
 
         public void VerifySidebar()
         {
@@ -155,13 +145,7 @@ namespace MarketplaceAdminTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
-        [AllureSubSuite("LogIn")]
-
-        //Date of publication: 
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully LogIn as marketplace admin.
-        //Comment: 
+        [AllureSubSuite("ChangePassword")]
 
         public void ChangePassword()
         {
@@ -205,14 +189,10 @@ namespace MarketplaceAdminTests
         [AllureSuite("MarketplaceAdmin")]
         [AllureSubSuite("CreateBroker")]
 
-        //Date of publication: 
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully created a "Broker" as "Marketplace Admin".
-        //Comment: 
-
         public void CreateBroker()
         {
+            string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID;
+
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
                 .ClickIconShowLogInPg()
@@ -239,8 +219,8 @@ namespace MarketplaceAdminTests
                 .ClickButtonCreateMdlWndwCrtNwBrkr();
             Pages.ListOfBrokers
                 .VerifyMessageBrokerHasBeenSuccessfullyCreated();
-            Pages.PaginationPicker
-                .ClickButtonNextOnce();
+            //Pages.PaginationPicker
+            //    .ClickButtonNextOnce();
 
             string getEmailFromListOfBrokers = Pages.ListOfBrokers.CopyEmailLastRecordEmailForLastBrokerInList();
 
@@ -271,6 +251,13 @@ namespace MarketplaceAdminTests
             Pages.SideBarLandlord
                 .VerifyOnlyBrokerUserNameRole(getUserNameRoleCompareBroker);
 
+            DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(getFullEmail, marketplaceId);
+            Console.WriteLine($"{getFullEmail}");
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestLandlords.Landlords.DeleteCreatedUserBroker(getFullEmail, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(getFullEmail, marketplaceId);
+
             WaitUntil.WaitSomeInterval(2000);
         }
 
@@ -282,12 +269,6 @@ namespace MarketplaceAdminTests
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
         [AllureSubSuite("CreateAgent")]
-
-        //Date of publication: 
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully created an "Agent" as "Marketplace Admin".
-        //Comment: 
 
         public void CreateAgent()
         {
@@ -352,12 +333,6 @@ namespace MarketplaceAdminTests
         [AllureSuite("MarketplaceAdmin")]
         [AllureSubSuite("CreateOwner")]
 
-        //Date of publication: 
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully created "Owner" as "Marketplace Admin".
-        //Comment: 
-
         public void CreateOwner()
         {
             Pages.LogInLandlord
@@ -419,12 +394,6 @@ namespace MarketplaceAdminTests
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
         [AllureSubSuite("AddBuilding")]
-
-        //Date of publication: 
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully created "Building" as "Marketplace Admin".
-        //Comment: 
 
         public void AddBuilding()
         {
@@ -522,12 +491,6 @@ namespace MarketplaceAdminTests
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
         [AllureSubSuite("AddApartment")]
-
-        //Date of publication: 
-        //Version\Build:
-        //Willingness for testing: In Progress.
-        //This test case is doing checking: The successfully created "Building" as "Marketplace Admin".
-        //Comment: 
 
         public void AddApartment()
         {
