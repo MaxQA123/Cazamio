@@ -143,15 +143,6 @@ namespace CazamioProgect.Helpers
                 .Perform();
         }
 
-        //[AllureStep("EnterData")]
-        //public static void EnterData()
-        //{
-        //    new Actions(Browser._Driver)
-        //        .SendKeys()
-        //        .Build()
-        //        .Perform();
-        //}
-
         [AllureStep("ClickBackspace")]
         public static void ClickBackspace()
         {

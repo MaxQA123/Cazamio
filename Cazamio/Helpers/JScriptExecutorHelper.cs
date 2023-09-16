@@ -91,16 +91,6 @@ namespace CazamioProgect.Helpers
 
     public class ButtonJScriptExecutorHelper
     {
-        //public JScriptExecutorHelper ClickOnHiddenElement()
-        //{
-        //    IJavaScriptExecutor js = (IJavaScriptExecutor)Browser._Driver;
-        //    js.ExecuteScript("arguments[0].scrollIntoView();", element);
-
-        //    WebElement hiddenElement = Browser._Driver.FindElement(By.Id("ID_OF_ELEMENT")); 
-        //    jscriptExecutor.executeScript("аргументы[0].click();", hiddenElement);
-
-        //}
-
         public static IWebElement ClickOnHiddenElement(IWebElement hiddenElement)
         {
             IJavaScriptExecutor js = (IJavaScriptExecutor)Browser._Driver.FindElement(By.Id("ID_OF_ELEMENT"));

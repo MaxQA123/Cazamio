@@ -31,13 +31,6 @@ namespace ApiCazamioTests.BaseTestsApi
         [AllureSuite("ApiAgent")]
         [AllureSubSuite("LogInAsAgent")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully LogIn.
-        //Comment: 
-        //Path to cheking's: 
-
         public void LogInAsAgent()
         {
             var email = TestDataForWebSiteAdmin.EMAIL_AGENT_TEST;

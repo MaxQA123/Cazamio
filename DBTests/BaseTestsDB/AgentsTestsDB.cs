@@ -27,12 +27,6 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBAgent")]
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The table "AspNetUsers".
-        //Path to cheking's: 
 
         public void DispalyingIdAgentFromAspNetUsers()
         {
@@ -48,13 +42,6 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBAgent")]
         [AllureSubSuite("DispalyingBrokerIdAgentFromBrokers")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The table "Brokers".
-        //Path to cheking's: 
-
         public void DispalyingBrokerIdAgentFromBrokers()
         {
             string brokerId = DBRequestBrokers.GetBrokerIdAgentByEmail(TestDataForWebSiteAdmin.EMAIL_AGENT_TEST);
@@ -69,13 +56,6 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBAgent")]
         [AllureSubSuite("RelatedAgentWithBrokerFromLandlordBrokers")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The table "LandlordBrokers".
-        //Path to cheking's: 
-
         public void Empty()
         {
 
@@ -88,13 +68,6 @@ namespace DBTests.BaseTestsDB
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBAgent")]
         [AllureSubSuite("RecordsDBAboutNewAgent")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The tables "AspNetUsers", "Brokers", "AspNetUserRoles", "LandlordBrokers".
-        //Path to cheking's: 
 
         public void RecordsDBAboutNewAgent()
         {
@@ -154,13 +127,6 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBAgent")]
         [AllureSubSuite("Empty")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: 
-        //Path to cheking's: 
-
         public void EmptyTwo()
         {
             
@@ -173,13 +139,6 @@ namespace DBTests.BaseTestsDB
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBAgent")]
         [AllureSubSuite("DeletedRecordsInTableBrokersLandlordBrokersDBAboutAgent")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The table "Brokers", "LandlordBrokers".
-        //Path to cheking's: 
 
         public void DeletedRecordsInTableBrokersLandlordBrokersDBAboutAgent()
         {

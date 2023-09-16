@@ -24,12 +24,6 @@ namespace AgentTests
         [AllureSuite("Agent")]
         [AllureSubSuite("ChangePassword")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: in progress.
-        //This test case is doing checking: The broker successfully had been changed the password.
-        //Comment: 
-
         public void ChangePassword()
         {
             Pages.LogInLandlord
@@ -73,12 +67,6 @@ namespace AgentTests
         [AllureSuite("Agent")]
         [AllureSubSuite("LogIn")]
 
-        //Date of publication: 25.08.2022.
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully LogIn as lanlord.
-        //Comment: 
-
         public void LogIn()
         {
             Pages.LogInLandlord
@@ -103,12 +91,6 @@ namespace AgentTests
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Agent")]
         [AllureSubSuite("VerifySidebar")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: in progress.
-        //This test case is doing checking: That the images uploaded and switching between the pages successfully via the sidebar.
-        //Comment: 
 
         public void VerifySidebar()
         {
