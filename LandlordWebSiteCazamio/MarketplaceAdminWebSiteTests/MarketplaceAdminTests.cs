@@ -222,6 +222,7 @@ namespace MarketplaceAdminTests
             //Pages.PaginationPicker
             //    .ClickButtonNextOnce();
 
+            // Переделать получение Email user's
             string getEmailFromListOfBrokers = Pages.ListOfBrokers.CopyEmailLastRecordEmailForLastBrokerInList();
 
             Pages.ListOfBrokers

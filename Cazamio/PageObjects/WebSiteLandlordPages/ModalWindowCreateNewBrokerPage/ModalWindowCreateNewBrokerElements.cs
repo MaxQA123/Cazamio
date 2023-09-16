@@ -10,7 +10,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBr
 {
     public partial class ModalWindowCreateNewBroker
     {
-        [FindsBy(How = How.XPath, Using = "//h2[text() = 'Create a new Broker']")]
+        [FindsBy(How = How.XPath, Using = "//h3[text() = 'Create a new Broker']")]
         public IWebElement TitleCreateNewBroker;
 
         [FindsBy(How = How.XPath, Using = "//input[@id = 'first-name']")]
