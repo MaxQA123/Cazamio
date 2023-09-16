@@ -84,7 +84,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage
         [AllureStep("ClickButtonBackToLogInPageRstPsswrdPg")]
         public ResetYourPassword ClickButtonBackToLogInPageRstPsswrdPg()
         {
-            Button.Click(ButtonBackToLogInPageRstPsswrdPg);
+            Button.Click(ButtonBackToLoginPageRstPsswrdPg);
 
             return this;
         }

@@ -34,7 +34,10 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage
         [FindsBy(How = How.XPath, Using = "//button[@class= 'btn btn-warning btn-link btn-lg card-footer-btn']")]
         public IWebElement ButtonResetPasswordlRstPsswrdPg;
 
-        [FindsBy(How = How.XPath, Using = "//button[@class= 'btn btn-warning btn-link btn-lg card-footer-btn']//a")]
-        public IWebElement ButtonBackToLogInPageRstPsswrdPg;
+        [FindsBy(How = How.XPath, Using = "//a[@href = '/account/signin']")]
+        public IWebElement ButtonSiginPageRstPsswrdPg;
+
+        [FindsBy(How = How.XPath, Using = "//button//a[@href = '/account/signin']")]
+        public IWebElement ButtonBackToLoginPageRstPsswrdPg;
     }
 }

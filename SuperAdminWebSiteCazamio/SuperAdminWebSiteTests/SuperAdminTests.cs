@@ -50,14 +50,8 @@ namespace SuperAdminTests
         [AllureSeverity(SeverityLevel.critical)]
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("MarketplaceAdmin")]
-        [AllureSubSuite("LogIn")]
-
-        //Date of publication: 
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully LogIn as marketplace admin.
-        //Comment: 
+        [AllureSuite("SuperAdmin")]
+        [AllureSubSuite("ChangePassword")]
 
         public void ChangePassword()
         {
@@ -79,7 +73,7 @@ namespace SuperAdminTests
                 .ClickButtonResetPasswordlRstPsswrdPg()
                 .ClickButtonBackToLogInPageRstPsswrdPg();
             Pages.LogInLandlord
-                .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
+                .EnterEmailPasswordLogInPgAsSuperAdmin()
                 .ClickIconShowLogInPg()
                 .ClickButtonLetsGoLogInPg();
 
@@ -87,7 +81,7 @@ namespace SuperAdminTests
             string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+                .VerifySuperAdminUserName(getUserNameCompare, getUserNameRoleCompare);
 
             WaitUntil.WaitSomeInterval(2000);
         }
@@ -159,9 +153,6 @@ namespace SuperAdminTests
 
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserNameRole(getUserNameRoleCompareBroker);
-
-            //var marketplaceIdFromDb = DBRequestAspNetUsers.AspNetUsers.GetMarketplaceIdByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
-            //Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb.MarketplaceId}");
 
             DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
             Console.WriteLine($"{fullEmailPutsBox}");
