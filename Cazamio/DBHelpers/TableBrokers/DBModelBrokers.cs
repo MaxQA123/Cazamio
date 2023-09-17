@@ -9,7 +9,8 @@ namespace CazamioProject.DBHelpers.TableBrokers
     public class DBModelBrokers
     {
         // Brokers table = role "Agent"
-        public object? UserId { get; set; } // this might be another data type
+        public object? Id { get; set; } // this might be another data type
+        public object? UserId { get; set; }
         public object? CreationDate { get; set; }
         public object? ModifyDate { get; set; }
         public object? IsDeleted { get; set; }

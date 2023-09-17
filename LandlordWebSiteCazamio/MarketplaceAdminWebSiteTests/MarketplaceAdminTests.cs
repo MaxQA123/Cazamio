@@ -2,6 +2,9 @@ using Allure.Commons;
 using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
 using CazamioProject.DBHelpers;
+using CazamioProject.DBHelpers.TableOwnerCommissionsStructure;
+using CazamioProject.DBHelpers.TableOwnerManagements;
+using CazamioProject.DBHelpers.TableOwnerPhoneNumbers;
 using MarketplaceAdminTests;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
@@ -191,7 +194,13 @@ namespace MarketplaceAdminTests
 
         public void CreateBroker()
         {
-            string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID;
+            #region Preconditions
+
+            string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+
+            #endregion
+
+            #region Test
 
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
@@ -224,7 +233,6 @@ namespace MarketplaceAdminTests
             var marketplaceIdFromDb = DBRequestAspNetUsers.AspNetUsers.GetMarketplaceIdByEmailAndMarketplaceId(getFullEmail, marketplaceId);
             Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb.MarketplaceId}");
 
-            // Переделать получение Email user's
             string getEmailFromListOfBrokers = Pages.ListOfBrokers.CopyEmailFirstRecordEmailForFirstBrokerInList();
 
             Pages.ListOfBrokers
@@ -254,12 +262,18 @@ namespace MarketplaceAdminTests
             Pages.SideBarLandlord
                 .VerifyOnlyBrokerUserNameRole(getUserNameRoleCompareBroker);
 
+            #endregion
+
+            #region Preconditions
+
             DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(getFullEmail, marketplaceId);
             Console.WriteLine($"{getFullEmail}");
             WaitUntil.WaitSomeInterval(100);
             DBRequestLandlords.Landlords.DeleteCreatedUserBroker(getFullEmail, marketplaceId);
             WaitUntil.WaitSomeInterval(100);
             DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(getFullEmail, marketplaceId);
+
+            #endregion
 
             WaitUntil.WaitSomeInterval(2000);
         }
@@ -275,6 +289,14 @@ namespace MarketplaceAdminTests
 
         public void CreateAgent()
         {
+            #region Preconditions
+
+            string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+
+            #endregion
+
+            #region Test
+
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
                 .ClickIconShowLogInPg()
@@ -324,6 +346,24 @@ namespace MarketplaceAdminTests
             Pages.SideBarLandlord
                 .VerifyOnlyAgentUserNameRole(getUserNameRoleCompareAgent);
 
+            WaitUntil.WaitSomeInterval(100);
+            var marketplaceIdFromDb = DBRequestAspNetUsers.AspNetUsers.GetMarketplaceIdByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
+            Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb.MarketplaceId}");
+
+            #endregion
+
+            #region Preconditions
+
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
+            Console.WriteLine($"{fullEmailPutsBox}");
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestBrokers.DBBrokers.DeleteCreatedUserAgent(fullEmailPutsBox, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(fullEmailPutsBox, marketplaceId);
+
+            #endregion
+
             WaitUntil.WaitSomeInterval(2000);
         }
 
@@ -338,6 +378,12 @@ namespace MarketplaceAdminTests
 
         public void CreateOwner()
         {
+            #region Preconditions
+
+            string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+
+            #endregion
+
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
                 .ClickIconShowLogInPg()
@@ -377,14 +423,23 @@ namespace MarketplaceAdminTests
                 .ClickButtonCreate();
             Pages.ListOfOwners
                 .VerifyMessageSuccessCreatedOwner();
-            Pages.PaginationPicker
-                .SctollToButtonNext()
-                .ClickButtonLastNumberPage();
+            //Pages.PaginationPicker
+            //    .SctollToButtonNext()
+            //    .ClickButtonLastNumberPage();
 
             string getLastEmailFromPage = Pages.ListOfOwners.GetLastEmailFromTable();
 
             Pages.ListOfOwners
                 .VerifyEmailForNewOwner(getOwnerEmailFromModalWndw, getLastEmailFromPage);
+
+            #region Preconditions
+
+            DBRequestOwnerCommissionsStructure.OwnerCommissionsStructure.DeleteRecordAboutOwnerCommissionsStructure(getOwnerEmailFromModalWndw, marketplaceId);
+            DBRequestOwnerPhoneNumbers.OwnerPhoneNumbers.DeleteRecordAboutOwnerPhoneNumber(getOwnerEmailFromModalWndw, marketplaceId);
+            DBRequestOwnerManagements.OwnerManagements.DeleteRecordAboutOwnerManagements(getOwnerEmailFromModalWndw, marketplaceId);
+            DbRequestOwners.DBOwners.DeleteCreatedUserOwner(getOwnerEmailFromModalWndw, marketplaceId);
+
+            #endregion
 
             WaitUntil.WaitSomeInterval(2000);
         }

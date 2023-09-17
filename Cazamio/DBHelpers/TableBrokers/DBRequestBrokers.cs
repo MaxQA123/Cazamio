@@ -68,6 +68,31 @@ namespace CazamioProject.DBHelpers
 
                 return row;
             }
+
+            public static string DeleteCreatedUserAgent(string email, string marketplaceId)
+            {
+                string data = null;
+                using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+                {
+                    SqlCommand command = new("DELETE" +
+                               " FROM Brokers" +
+                               " WHERE UserId IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @Email AND MarketplaceId = @MarketplaceId)", db);
+                    command.Parameters.AddWithValue("@Email", DbType.String).Value = email;
+                    command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
+                    db.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            data = reader.GetValue(0).ToString();
+                        }
+                    }
+                }
+                return data;
+            }
         }
 
         public static string GetBrokerIdAgentByEmail(string idBroker)

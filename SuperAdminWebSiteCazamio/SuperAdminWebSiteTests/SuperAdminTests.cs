@@ -97,7 +97,13 @@ namespace SuperAdminTests
 
         public void CreateMarketplaceAdmin()
         {
-            string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID;
+            #region Preconditions
+
+            string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+
+            #endregion
+
+            #region Test
 
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsSuperAdmin()
@@ -154,12 +160,18 @@ namespace SuperAdminTests
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserNameRole(getUserNameRoleCompareBroker);
 
+            #endregion
+
+            #region Postconditions
+
             DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
             Console.WriteLine($"{fullEmailPutsBox}");
             WaitUntil.WaitSomeInterval(100);
             DBRequestMarketplaceAdmins.MarketplaceAdmins.DeleteCreatedUserMarketplaceAdmin(fullEmailPutsBox, marketplaceId);
             WaitUntil.WaitSomeInterval(100);
             DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(fullEmailPutsBox, marketplaceId);
+
+            #endregion
 
             WaitUntil.WaitSomeInterval(2000);
         }

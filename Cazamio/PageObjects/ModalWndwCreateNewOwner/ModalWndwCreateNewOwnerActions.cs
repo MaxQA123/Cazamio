@@ -195,7 +195,7 @@ namespace CazamioProject.PageObjects.ModalWndwCreateNewOwner
         [AllureStep("ClickButtonCreate")]
         public ModalWndwCreateNewOwner ClickButtonCreate()
         {
-            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.WaitSomeInterval(500);
             Button.Click(ButtonCreate);
 
             return this;

@@ -45,34 +45,34 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
-            string createdByUserIdViaEmail = DBTableOwners.GetCreatedByUserIdOwnerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
+            string createdByUserIdViaEmail = DBRequestOwners.GetCreatedByUserIdOwnerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
             Console.WriteLine($"{createdByUserIdViaEmail} :CreatedByUserId wner via email for owner {nameOwner} from table Owners");
 
-            string createdByUserIdViaId = DBTableOwners.GetLasCreatedByUserIdById();
+            string createdByUserIdViaId = DBRequestOwners.GetLasCreatedByUserIdById();
             Console.WriteLine($"{createdByUserIdViaId} :CreatedByUserId owner via id for owner {nameOwner} from table Owners");
 
-            string ownerIdViaEmail = DBTableOwners.GetIdOwnerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
+            string ownerIdViaEmail = DBRequestOwners.GetIdOwnerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
             Console.WriteLine($"{ownerIdViaEmail} :OwnerId wner via email for owner {nameOwner} from table Owners");
 
-            string lastIdOwner = DBTableOwners.GetLastIdNewOwner();
+            string lastIdOwner = DBRequestOwners.GetLastIdNewOwner();
             Console.WriteLine($"{lastIdOwner} :OwnerId owner via id for owner {nameOwner} from table Owners");
 
-            string emailOwnerViaId = DBTableOwners.GetLastOwnerEmailNewOwnerByIdOwners();
+            string emailOwnerViaId = DBRequestOwners.GetLastOwnerEmailNewOwnerByIdOwners();
             Console.WriteLine($"{emailOwnerViaId} :Email owner via id for owner {nameOwner} from table Owners");
 
-            string ownerNameOwnerViaId = DBTableOwners.GetOwnerNameNewOwnerByIdOwners();
+            string ownerNameOwnerViaId = DBRequestOwners.GetOwnerNameNewOwnerByIdOwners();
             Console.WriteLine($"{ownerNameOwnerViaId} :Owner Name owner via id for owner {nameOwner} from table Owners");
 
-            string companyNameOwnerViaId = DBTableOwners.GetLastCompanyNameNewOwnerByIdOwners();
+            string companyNameOwnerViaId = DBRequestOwners.GetLastCompanyNameNewOwnerByIdOwners();
             Console.WriteLine($"{companyNameOwnerViaId} :Company Name owner via id for owner {nameOwner} from table Owners");
 
-            string marketplaceIdByEmail = DBTableOwners.GetMarketplaceIdOwnerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
+            string marketplaceIdByEmail = DBRequestOwners.GetMarketplaceIdOwnerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
             Console.WriteLine($"{marketplaceIdByEmail} :MarketplaceId by email owner via id for owner {nameOwner} from table Owners");
 
-            string lastMarketplaceId = DBTableOwners.GetLastMarketplaceIdOwner();
+            string lastMarketplaceId = DBRequestOwners.GetLastMarketplaceIdOwner();
             Console.WriteLine($"{lastMarketplaceId} :Last MarketplaceId for owner {nameOwner} from table Owners");
 
-            string brokerIdByEmail = DBTableOwners.GetIdBrokerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
+            string brokerIdByEmail = DBRequestOwners.GetIdBrokerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
             Console.WriteLine($"{brokerIdByEmail} :BrokerId by email owner for owner {nameOwner} from table Owners");
 
             string brokerIdFromTestData = DBTableLandlords.GetIdForBroker(DBTestDataDBForAdmins.BROKER_EMAIL);
@@ -134,34 +134,34 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
-            string createdByUserIdViaEmail = DBTableOwners.GetCreatedByUserIdOwnerByOwnerEmail(DBTestDataDBForAdminsMySpace.NEW_OWNER_EMAIL);
+            string createdByUserIdViaEmail = DBRequestOwners.GetCreatedByUserIdOwnerByOwnerEmail(DBTestDataDBForAdminsMySpace.NEW_OWNER_EMAIL);
             Console.WriteLine($"{createdByUserIdViaEmail} :CreatedByUserId wner via email for owner {nameOwner} from table Owners");
 
-            string createdByUserIdViaId = DBTableOwners.GetLasCreatedByUserIdById();
+            string createdByUserIdViaId = DBRequestOwners.GetLasCreatedByUserIdById();
             Console.WriteLine($"{createdByUserIdViaId} :CreatedByUserId owner via id for owner {nameOwner} from table Owners");
 
-            string ownerIdViaEmail = DBTableOwners.GetIdOwnerByOwnerEmail(DBTestDataDBForAdminsMySpace.NEW_OWNER_EMAIL);
+            string ownerIdViaEmail = DBRequestOwners.GetIdOwnerByOwnerEmail(DBTestDataDBForAdminsMySpace.NEW_OWNER_EMAIL);
             Console.WriteLine($"{ownerIdViaEmail} :OwnerId wner via email for owner {nameOwner} from table Owners");
 
-            string lastIdOwner = DBTableOwners.GetLastIdNewOwner();
+            string lastIdOwner = DBRequestOwners.GetLastIdNewOwner();
             Console.WriteLine($"{lastIdOwner} :OwnerId owner via id for owner {nameOwner} from table Owners");
 
-            string emailOwnerViaId = DBTableOwners.GetLastOwnerEmailNewOwnerByIdOwners();
+            string emailOwnerViaId = DBRequestOwners.GetLastOwnerEmailNewOwnerByIdOwners();
             Console.WriteLine($"{emailOwnerViaId} :Email owner via id for owner {nameOwner} from table Owners");
 
-            string ownerNameOwnerViaId = DBTableOwners.GetOwnerNameNewOwnerByIdOwners();
+            string ownerNameOwnerViaId = DBRequestOwners.GetOwnerNameNewOwnerByIdOwners();
             Console.WriteLine($"{ownerNameOwnerViaId} :Owner Name owner via id for owner {nameOwner} from table Owners");
 
-            string companyNameOwnerViaId = DBTableOwners.GetLastCompanyNameNewOwnerByIdOwners();
+            string companyNameOwnerViaId = DBRequestOwners.GetLastCompanyNameNewOwnerByIdOwners();
             Console.WriteLine($"{companyNameOwnerViaId} :Company Name owner via id for owner {nameOwner} from table Owners");
 
-            string marketplaceIdByEmail = DBTableOwners.GetMarketplaceIdOwnerByOwnerEmail(DBTestDataDBForAdminsMySpace.NEW_OWNER_EMAIL);
+            string marketplaceIdByEmail = DBRequestOwners.GetMarketplaceIdOwnerByOwnerEmail(DBTestDataDBForAdminsMySpace.NEW_OWNER_EMAIL);
             Console.WriteLine($"{marketplaceIdByEmail} :MarketplaceId by email owner via id for owner {nameOwner} from table Owners");
 
-            string lastMarketplaceId = DBTableOwners.GetLastMarketplaceIdOwner();
+            string lastMarketplaceId = DBRequestOwners.GetLastMarketplaceIdOwner();
             Console.WriteLine($"{lastMarketplaceId} :Last MarketplaceId for owner {nameOwner} from table Owners");
 
-            string brokerIdByEmail = DBTableOwners.GetIdBrokerByOwnerEmail(DBTestDataDBForAdminsMySpace.NEW_OWNER_EMAIL);
+            string brokerIdByEmail = DBRequestOwners.GetIdBrokerByOwnerEmail(DBTestDataDBForAdminsMySpace.NEW_OWNER_EMAIL);
             Console.WriteLine($"{brokerIdByEmail} :BrokerId by email owner for owner {nameOwner} from table Owners");
 
             string brokerIdFromTestData = DBTableLandlords.GetIdForBroker(DBTestDataDBForAdminsMySpace.BROKER_EMAIL);
