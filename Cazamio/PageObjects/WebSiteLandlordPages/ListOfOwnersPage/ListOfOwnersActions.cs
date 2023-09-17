@@ -19,11 +19,11 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage
             return this;
         }
 
-        [AllureStep("GetLastEmailFromTable")]
-        public string GetLastEmailFromTable()
+        [AllureStep("GetFirstEmailFromTable")]
+        public string GetFirstEmailFromTable()
         {
-            WaitUntil.CustomElementIsVisible(LastOwnerEmailOnPage);
-            string getEmail = LastOwnerEmailOnPage.Text;
+            WaitUntil.CustomElementIsVisible(FirstOwnerEmailOnPage);
+            string getEmail = FirstOwnerEmailOnPage.Text;
             string getEmailActual = getEmail.ToString();
 
             return getEmailActual;

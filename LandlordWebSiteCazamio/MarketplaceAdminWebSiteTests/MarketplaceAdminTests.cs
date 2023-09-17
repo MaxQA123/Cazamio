@@ -403,6 +403,7 @@ namespace MarketplaceAdminTests
                 .EnterOwnerName()
                 .EnterOwnerEmaiL()
                 .EnterOfficeLocation()
+                .SelectBroker()
                 .EnterInternalNotes()
                 .ClickButtonAddPhoneNumber()
                 .EnterPhoneExtensionNumbers()
@@ -423,11 +424,8 @@ namespace MarketplaceAdminTests
                 .ClickButtonCreate();
             Pages.ListOfOwners
                 .VerifyMessageSuccessCreatedOwner();
-            //Pages.PaginationPicker
-            //    .SctollToButtonNext()
-            //    .ClickButtonLastNumberPage();
 
-            string getLastEmailFromPage = Pages.ListOfOwners.GetLastEmailFromTable();
+            string getLastEmailFromPage = Pages.ListOfOwners.GetFirstEmailFromTable();
 
             Pages.ListOfOwners
                 .VerifyEmailForNewOwner(getOwnerEmailFromModalWndw, getLastEmailFromPage);

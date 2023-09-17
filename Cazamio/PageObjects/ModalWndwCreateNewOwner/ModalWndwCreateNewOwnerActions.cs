@@ -47,6 +47,17 @@ namespace CazamioProject.PageObjects.ModalWndwCreateNewOwner
             return this;
         }
 
+        [AllureStep("SelectBroker")]
+        public ModalWndwCreateNewOwner SelectBroker()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonSelectBroker);
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickEnterButton();
+
+            return this;
+        }
+
         [AllureStep("EnterInternalNotes")]
         public ModalWndwCreateNewOwner EnterInternalNotes()
         {
