@@ -19,11 +19,11 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ListOfBrokersPage
             return this;
         }
 
-        [AllureStep("CopyEmailFromModalWindowCreateNewBroker")]
-        public string CopyEmailLastRecordEmailForLastBrokerInList()
+        [AllureStep("CopyEmailFirstRecordEmailForFirstBrokerInList")]
+        public string CopyEmailFirstRecordEmailForFirstBrokerInList()
         {
             WaitUntil.WaitSomeInterval(500);
-            string copyEmail = LastRecordEmailForLastBrokerInList.Text;
+            string copyEmail = FirstRecordEmailForFirstBrokerInList.Text;
             string copyEmailActual = copyEmail.ToString();
 
             return copyEmailActual;

@@ -219,11 +219,13 @@ namespace MarketplaceAdminTests
                 .ClickButtonCreateMdlWndwCrtNwBrkr();
             Pages.ListOfBrokers
                 .VerifyMessageBrokerHasBeenSuccessfullyCreated();
-            //Pages.PaginationPicker
-            //    .ClickButtonNextOnce();
+
+            WaitUntil.WaitSomeInterval(500);
+            var marketplaceIdFromDb = DBRequestAspNetUsers.AspNetUsers.GetMarketplaceIdByEmailAndMarketplaceId(getFullEmail, marketplaceId);
+            Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb.MarketplaceId}");
 
             // Переделать получение Email user's
-            string getEmailFromListOfBrokers = Pages.ListOfBrokers.CopyEmailLastRecordEmailForLastBrokerInList();
+            string getEmailFromListOfBrokers = Pages.ListOfBrokers.CopyEmailFirstRecordEmailForFirstBrokerInList();
 
             Pages.ListOfBrokers
                 .VerifyEmailInListOfBrokers(getFullEmail, getEmailFromListOfBrokers);

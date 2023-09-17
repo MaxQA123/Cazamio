@@ -19,7 +19,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ListOfBrokersPage
         [FindsBy(How = How.XPath, Using = "//span[text() = 'Broker has been successfully created']")]
         public IWebElement MessageBrokerHasBeenSuccessfullyCreated;
 
-        [FindsBy(How = How.XPath, Using = "//app-landlords-list//table//tbody//tr[last()]//td[4]")]
-        public IWebElement LastRecordEmailForLastBrokerInList;
+        [FindsBy(How = How.XPath, Using = "//app-landlords-list//table//tbody//tr//td[4]")]
+        public IWebElement FirstRecordEmailForFirstBrokerInList;
     }
 }
