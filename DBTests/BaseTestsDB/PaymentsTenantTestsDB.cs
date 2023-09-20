@@ -31,7 +31,7 @@ namespace DBTests.BaseTestsDB
         {
             #region Preconditions
 
-            string buildingAddress = "123 Linden Boulevard";
+            string buildingAddress = "11 Avenue A";
             string marketplaceId = "15";
 
             #endregion
@@ -55,8 +55,8 @@ namespace DBTests.BaseTestsDB
         {
             #region Preconditions
 
-            string buildingAddress = "123 Linden Boulevard";
-            string unitNumber = "49";
+            string buildingAddress = "45 avenue A";
+            string unitNumber = "2";
             string marketplaceId = "15";
 
             #endregion
@@ -157,8 +157,8 @@ namespace DBTests.BaseTestsDB
         {
             #region Preconditions
 
-            string buildingAddress = "123 Linden Boulevard";
-            string unitNumber = "51";
+            string buildingAddress = "45 Avenue A";
+            string unitNumber = "2";
             string marketplaceId = "15";
 
             #endregion
@@ -177,6 +177,7 @@ namespace DBTests.BaseTestsDB
             Console.WriteLine($"Tenant Number Of Months: {payment.TenantNumberOfMonths}");
             Console.WriteLine($"Tenant percentage: {payment.TenantPercentage}");
 
+            // Перепроверить расчёт
             var paymentB = DBRequestCalculationsTenants.CalculationsTenant.GetSignLeaseWithCommission(buildingAddress, unitNumber, marketplaceId);
             Console.WriteLine($"Total: $ {paymentB.Total}");
         }
@@ -202,8 +203,8 @@ namespace DBTests.BaseTestsDB
         {
             #region Preconditions
 
-            string buildingAddress = "123 Linden Boulevard";
-            string unitNumber = "53";
+            string buildingAddress = "45 Avenue A";
+            string unitNumber = "2";
             string marketplaceId = "15";
 
             #endregion

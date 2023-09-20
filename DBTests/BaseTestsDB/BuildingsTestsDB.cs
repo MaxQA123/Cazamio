@@ -54,7 +54,7 @@ namespace DBTests.BaseTestsDB
             string newMarketplaceIdBuildingsTable = DBTableBuildings.GetMarketplaceIdByBuildingNameNewBuilding(buildingName);
             Console.WriteLine($"{newMarketplaceIdBuildingsTable} :MarketplaceId building for {buildingName} from table Buildings");
 
-            string landlordIdLandlordsTable = DBTableLandlords.GetIdLastForBroker();
+            string landlordIdLandlordsTable = DBRequestLandlordsOld.GetIdLastForBroker();
             Console.WriteLine($"{landlordIdLandlordsTable} :LandlordId building for {buildingName} from table Buildings");
 
             string landlordIdBuildingsTable = DBTableBuildings.GetLastLandlordByBuildingNameNewBuilding(buildingName);
@@ -202,7 +202,7 @@ namespace DBTests.BaseTestsDB
             string landlordIdForBuilding = DBTableBuildings.GetLandlordIdByBuildingName(DBTestDataDBForAdmins.BUILDING_NAME);
             Console.WriteLine($"{landlordIdForBuilding} :LandlordId for building {buildingLlcName} in the table Buildings");
 
-            string idBroker = DBTableLandlords.GetLandlordIdForBroker(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
+            string idBroker = DBRequestLandlordsOld.GetLandlordIdForBroker(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
             Console.WriteLine($"{idBroker} :Id for admin from table {TestDataDBNamesTables.TABLE_NAME_LANDLORDS}");
 
             string marketplaceIdForBuildingByAddress = DBTableBuildings.GetMarketplaceIdByBuildingByAddress(DBTestDataDBForAdmins.BUILDING_ADDRESS);

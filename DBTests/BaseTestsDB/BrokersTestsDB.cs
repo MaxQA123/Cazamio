@@ -37,13 +37,13 @@ namespace DBTests.BaseTestsDB
             string userIdByEmailBroker = DBRequestAspNetUsersOld.GetIdForBrokerFromAspNetUsers(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
             Console.WriteLine($"{userIdByEmailBroker}: Id for new broker {newBroker} from table AspNetUsers");
 
-            string userIdBroker = DBTableLandlords.GetUserIdNewBroker();
+            string userIdBroker = DBRequestLandlordsOld.GetUserIdNewBroker();
             Console.WriteLine($"{userIdBroker} :UserId for new broker {newBroker} from table Landlords");
 
-            string lastLandlordIdBroker = DBTableLandlords.GetlastLandlordIdForBroker();
+            string lastLandlordIdBroker = DBRequestLandlordsOld.GetlastLandlordIdForBroker();
             Console.WriteLine($"{lastLandlordIdBroker} :LandlordId last for new broker {newBroker} from table Landlords");
 
-            string lastLandlordIdBrokerByUserId = DBTableLandlords.GetlastLandlordIdByUserIdForBroker(userIdByEmailBroker);
+            string lastLandlordIdBrokerByUserId = DBRequestLandlordsOld.GetlastLandlordIdByUserIdForBroker(userIdByEmailBroker);
             Console.WriteLine($"{lastLandlordIdBroker} :LandlordId by UserId for new broker {newBroker} from table Landlords");
 
             string marketplaceIdNewBroker = DBRequestAspNetUsersOld.GetMarketplaceIdForBrokerByEmail(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
@@ -106,10 +106,10 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
-            string landlordIddBroker = DBTableLandlords.GetIdForBroker(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
+            string landlordIddBroker = DBRequestLandlordsOld.GetIdForBroker(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
             Console.WriteLine($"{landlordIddBroker} :Id for broker {brokerName} from table Landlords");
 
-            string marketplaceIdByBrokerEmail = DBTableLandlords.GetMarketplaceIdBroker(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
+            string marketplaceIdByBrokerEmail = DBRequestLandlordsOld.GetMarketplaceIdBroker(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
             Console.WriteLine($"{marketplaceIdByBrokerEmail} :MarketplaceId for broker {brokerName} from table Landlords");
 
             string IdBroker = DBRequestAspNetUsersOld.GetIdForBrokerFromAspNetUsers(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);

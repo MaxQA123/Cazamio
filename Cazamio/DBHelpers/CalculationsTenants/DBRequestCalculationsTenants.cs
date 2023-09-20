@@ -434,7 +434,7 @@ namespace CazamioProject.DBHelpers
                 var row = new DBModelCalculationCombinedComissions();
 
                 // SQL запрос для выборки данных
-                string query = "SELECT ((LeasePrice * PaidMonths) + DepositPrice + ((AP.TenantNumberOfMonths * Prices.LeasePrice) - PaymentOptions.Amount))*(100 + CF.SigningLease)/100 AS Total" +
+                string query = "SELECT ((LeasePrice * PaidMonths) + DepositPrice + ((AP.TenantNumberOfMonths * Prices.LeasePrice) - PaymentOptions.Amount)) * ((100 + CF.SigningLease)/100) AS Total" +
                        " FROM Prices" +
                        " CROSS JOIN CommissionFees CF" +
                        " LEFT JOIN PaymentOptions ON Prices.ApartmentId = PaymentOptions.ApartmentId" +
