@@ -158,7 +158,7 @@ namespace DBTests.BaseTestsDB
             #region Preconditions
 
             string buildingAddress = "45 Avenue A";
-            string unitNumber = "2";
+            string unitNumber = "3";
             string marketplaceId = "15";
 
             #endregion
@@ -178,7 +178,7 @@ namespace DBTests.BaseTestsDB
             Console.WriteLine($"Tenant percentage: {payment.TenantPercentage}");
 
             // Перепроверить расчёт
-            var paymentB = DBRequestCalculationsTenants.CalculationsTenant.GetSignLeaseWithCommission(buildingAddress, unitNumber, marketplaceId);
+            var paymentB = DBRequestCalculationsTenants.CalculationsTenant.GetSignLeaseWithOwnerTenantPaysAndCommission(buildingAddress, unitNumber, marketplaceId);
             Console.WriteLine($"Total: $ {paymentB.Total}");
         }
 
@@ -222,7 +222,7 @@ namespace DBTests.BaseTestsDB
             Console.WriteLine($"Pay Type: {payment.PayType}");
             Console.WriteLine($"Tenant Number Of Months: {payment.TenantNumberOfMonths}");
 
-            var paymentB = DBRequestCalculationsTenants.CalculationsTenant.GetSignLeaseWithCommission(buildingAddress, unitNumber, marketplaceId);
+            var paymentB = DBRequestCalculationsTenants.CalculationsTenant.GetSignLeaseWithTenantPayCommission(buildingAddress, unitNumber, marketplaceId);
             Console.WriteLine($"Total: $ {paymentB.Total}");
         }
 
@@ -268,48 +268,6 @@ namespace DBTests.BaseTestsDB
 
             var paymentB = DBRequestCalculationsTenants.CalculationsTenant.GetSignLeaseWithCommissionWithoutHoldingDeposit(buildingAddress, unitNumber, marketplaceId);
             Console.WriteLine($"Total payment: $ {paymentB.Total}");
-        }
-
-        [Test]
-        [AllureTag("Regression")]
-        [AllureOwner("Maksim Perevalov")]
-        [AllureSeverity(SeverityLevel.critical)]
-        [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingDBPaymentTenant")]
-        [AllureSubSuite("TenantPaySignLeaseOnlyTenantApplicantWithoutCommissions")]
-
-        #region Preconditions
-
-        // For Tenant (Lease Price * PaidMonyhs) + DepositPrice + (TenantNumberOfMonths * LeasePrice) - holding deposit)
-        // For Landlord (Lease Price * PaidMonyhs) + DepositPrice + (TenantNumberOfMonths * LeasePrice * TakeOff) - holding deposit)
-        // Displayed at a tenant-applicant (without adding a tenant-occupant) in the modal window "Payment details" when payment for signing a lease.
-        // Can testing when had been set "TenantPay".
-
-        #endregion
-
-        public void TenantPaySignLeaseOnlyTenantApplicantWithoutCommissions()
-        {
-            #region Preconditions
-
-            string buildingAddress = "101 Franklin Avenue";
-            string unitNumber = "26";
-            string marketplaceId = "15";
-
-            #endregion
-
-            var paymentA = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit(buildingAddress, unitNumber, marketplaceId);
-            Console.WriteLine($"Move-in price: {paymentA.PaymentOfApartment}");
-            Console.WriteLine($"Lease Price: {paymentA.LeasePrice}");
-            Console.WriteLine($"Paid Months (Month's rent): {paymentA.PaidMonths}");
-            Console.WriteLine($"Deposit Price (Security deposit): {paymentA.DepositPrice}");
-            Console.WriteLine($"Amount (Holding deposit): {paymentA.Amount}");
-
-            var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentForApartmentWithOwnerAndTenantPayTakeOffWithHoldingDepositWithoutCommission(buildingAddress, unitNumber, marketplaceId);
-            Console.WriteLine($"Applicant subtotal: {payment.FullPaymentOfApartment}");
-            Console.WriteLine($"Pay Type: {payment.PayType}");
-            Console.WriteLine($"Tenant Number Of Months: {payment.TenantNumberOfMonths}");
-            Console.WriteLine($"Take Off: {payment.TakeOff}");
-            Console.WriteLine($"Broker Fee: {payment.BrokerFee}");
         }
 
         [Test]
