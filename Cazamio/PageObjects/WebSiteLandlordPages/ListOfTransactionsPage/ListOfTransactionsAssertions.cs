@@ -11,10 +11,10 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfTransactionsPage
 {
     public partial class ListOfTransactions
     {
-        [AllureStep("VerifyTitleListOfTransactionsPg")]
-        public ListOfTransactions VerifyTitleListOfTransactionsPg()
+        [AllureStep("VerifyTitleTransactionsPg")]
+        public ListOfTransactions VerifyTitleTransactionsPg()
         {
-            Assert.IsTrue(Successfully.IsVisible(TitleListOfTransactionsPage));
+            Assert.IsTrue(Successfully.IsVisible(TitleTransactionsPage));
 
             return this;
         }

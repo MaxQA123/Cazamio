@@ -49,6 +49,29 @@ namespace CazamioProject.DBHelpers
                 }
                 return data;
             }
+
+            public static string GetMarketplaceIdByEmailUserOwner(string email)
+            {
+                string data = null;
+                using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+                {
+                    SqlCommand command = new("SELECT MarketplaceId" +
+                               " FROM Owners" +
+                               " WHERE OwnerEmail = @Email", db);
+                    command.Parameters.AddWithValue("@Email", DbType.String).Value = email;
+                    db.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            data = reader.GetValue(0).ToString();
+                        }
+                    }
+                }
+                return data;
+            }
         }
     }
 

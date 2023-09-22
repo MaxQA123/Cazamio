@@ -13,7 +13,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage
         [AllureStep("ClickButtonCreateOwner")]
         public ListOfOwners ClickButtonCreateOwner()
         {
-            WaitUntil.WaitSomeInterval(1000);
+            WaitUntil.CustomElementIsVisible(ButtonCreateOwner);
             Button.Click(ButtonCreateOwner);
 
             return this;

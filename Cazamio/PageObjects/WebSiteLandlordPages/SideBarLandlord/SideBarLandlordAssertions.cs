@@ -36,7 +36,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public SideBarLandlord VerifyBrokerUserName(string getUserNameActual, string getUserNameRoleActual)
         {
             WaitUntil.WaitSomeInterval(1500);
-            string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_BROKER_MARTIN_MACFLY;
+            string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_BROKER_ALA_DIN;
             string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_BROKER;
 
             Assert.Multiple(() =>
@@ -133,7 +133,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public SideBarLandlord VerifyAgentUserName(string getUserNameActual, string getUserNameRoleActual)
         {
             WaitUntil.WaitSomeInterval(3000);
-            string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_AGENT;
+            string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_MARIE_URMSTRONG;
             string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_AGENT;
 
             Assert.Multiple(() =>

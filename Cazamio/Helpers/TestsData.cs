@@ -18,12 +18,17 @@ namespace CazamioProgect.Helpers
         public const string URL_XITROO_STATIC_TENANT = "https://xitroo.com/#tenantoccupantliza@xitroo.com";
 
         public const string URL_PUTSBOX_EMAIL_STATIC_SUPER_ADMIN = "https://putsbox.com/superadmin123/inspect";
-        public const string URL_PUTSBOX_EMAIL_STATIC_AGENT = "https://putsbox.com/agent123test/inspect";
-        public const string URL_PUTSBOX_EMAIL_STATIC_BROKER = "https://putsbox.com/admin123/inspect";
-        public const string URL_PUTSBOX_EMAIL_STATIC_MARKETPLACE_ADMIN = "https://putsbox.com/marketplace1chui/inspect";
+        
+        #region MySpaceMarketplace
+
+        public const string URL_PUTSBOX_EMAIL_STATIC_AGENT = "https://putsbox.com/agent175marie5urm/inspect";
+        public const string URL_PUTSBOX_EMAIL_STATIC_BROKER = "https://putsbox.com/broker1aladin/inspect";
+        public const string URL_PUTSBOX_EMAIL_STATIC_MARKETPLACE_ADMIN = "https://putsbox.com/marketplaceadmin15/inspect";
         public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_APPLICANT = "https://putsbox.com/tenantapp123ray/inspect";
         public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_OCCUPANT = "https://putsbox.com/tenantocc123liza/inspect";
         public const string URL_PUTSBOX_EMAIL_STATIC_TENANT_GUARANTOR = "https://putsbox.com/tenantgua123jim/inspect";
+
+        #endregion
     }
 
     public class ConnectionDb
@@ -93,6 +98,13 @@ namespace CazamioProgect.Helpers
     {
         public const string MARKETPLACE_SUBDOMAIN = "testlandlord15-demo";
 
+        public const string EMAIL_SUPER_ADMIN = "superadmin123@putsbox.com";
+        public const string USER_NAME_SUPER_ADMIN = "Super User";
+
+        public const string USER_NAME_ROLE_SUPER_ADMIN = "Super Admin";
+        public const string USER_NAME_ROLE_MARKETPLACE_ADMIN = "Marketplace Admin";
+        public const string USER_NAME_ROLE_BROKER = "Broker";
+        public const string USER_NAME_ROLE_AGENT = "Agent";
         public const string USER_NAME_ROLE_OWNER = "Owner";
 
         #region CommonMarketplace
@@ -100,28 +112,26 @@ namespace CazamioProgect.Helpers
         public const string EMAIL_MARKETPLACE_ADMIN_CHUI_CHUBAKA = "marketplace1chui@putsbox.com";
         public const string USER_NAME_MARKETPLACE_ADMIN_CHUI_CHUBAKA = "Chui Chubaka";
 
-        #endregion
+        public const string EMAIL_BROKER_MARTIN_MACFLY = "admin123@putsbox.com";
+        public const string USER_NAME_BROKER_MARTIN_MACFLY = "Martin Macfly";
 
-        public const string USER_NAME_ROLE_MARKETPLACE_ADMIN = "Marketplace Admin";
+        public const string EMAIL_AGENT_TEST = "agent123test@putsbox.com";
+        public const string USER_NAME_AGENT = "Test Agent";
+        
+        #endregion
 
         #region MySpaceMarketplace
 
         public const string EMAIL_MARKETPLACE_ADMIN_MARK_ADM = "marketplaceadmin15@putsbox.com";
         public const string USER_NAME_MARKETPLACE_ADMIN_MARK_ADM = "Mark Adm";
 
+        public const string EMAIL_BROKER_ALA_DIN = "broker1aladin@putsbox.com";
+        public const string USER_NAME_BROKER_ALA_DIN = "Ala Din";
+
+        public const string EMAIL_AGENT_MARIE_URMSTRONG = "agent175marie5urm@putsbox.com";
+        public const string USER_NAME_MARIE_URMSTRONG = "Marie Urmstrong";
+
         #endregion
-
-        public const string EMAIL_BROKER_MARTIN_MACFLY = "admin123@putsbox.com";
-        public const string USER_NAME_BROKER_MARTIN_MACFLY = "Martin Macfly";
-        public const string USER_NAME_ROLE_BROKER = "Broker";
-
-        public const string EMAIL_SUPER_ADMIN = "superadmin123@putsbox.com";
-        public const string USER_NAME_SUPER_ADMIN = "Super User";
-        public const string USER_NAME_ROLE_SUPER_ADMIN = "Super Admin";
-
-        public const string EMAIL_AGENT_TEST = "agent123test@putsbox.com";
-        public const string USER_NAME_AGENT = "Test Agent";
-        public const string USER_NAME_ROLE_AGENT = "Agent";
 
         public const string ADDRESS_BUILDING = "4 Times Square";
         public const string CITY_BUILDING = "New York";

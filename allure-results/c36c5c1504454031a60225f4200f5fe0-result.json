@@ -1,0 +1,358 @@
+{
+  "uuid": "d9f6bf39-357a-4639-abac-b9e97417ea53-tr-0-1005",
+  "historyId": "BrokerTests.TestsBaseWeb.CreateOwner",
+  "fullName": "BrokerTests.TestsBaseWeb.CreateOwner",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "BrokerTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "CreateOwner"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "Broker"
+    },
+    {
+      "name": "subSuite",
+      "value": "CreateOwner"
+    }
+  ],
+  "links": [],
+  "name": "CreateOwner",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.ElementClickInterceptedException : element click intercepted: Element <span _ngcontent-c9=\"\" class=\"cazamio-button-txt\">...</span> is not clickable at point (666, 197). Other element would receive the click: <div _ngcontent-c4=\"\" class=\"loader-overlay\">...</div>\n  (Session info: chrome=117.0.5938.92)",
+    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Click()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.Click()\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 41\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage.ListOfOwners.__a$_around_ClickButtonCreateOwner_100663535_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ListOfOwnersPage\\ListOfOwnersActions.cs:line 17\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage.ListOfOwners.__a$_around_ClickButtonCreateOwner_100663535_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage.ListOfOwners.__a$_around_ClickButtonCreateOwner_100663535_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage.ListOfOwners.ClickButtonCreateOwner()\r\n   at BrokerTests.TestsBaseWeb.CreateOwner() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 292"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "CreateOwner",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.ElementClickInterceptedException : element click intercepted: Element <span _ngcontent-c9=\"\" class=\"cazamio-button-txt\">...</span> is not clickable at point (666, 197). Other element would receive the click: <div _ngcontent-c4=\"\" class=\"loader-overlay\">...</div>\n  (Session info: chrome=117.0.5938.92)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Click()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.Click()\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 41\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage.ListOfOwners.__a$_around_ClickButtonCreateOwner_100663535_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ListOfOwnersPage\\ListOfOwnersActions.cs:line 17\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage.ListOfOwners.__a$_around_ClickButtonCreateOwner_100663535_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage.ListOfOwners.__a$_around_ClickButtonCreateOwner_100663535_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage.ListOfOwners.ClickButtonCreateOwner()\r\n   at BrokerTests.TestsBaseWeb.CreateOwner() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 292"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "EnterEmailPasswordLogInPgAsBroker",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "broker1aladin@putsbox.com"
+                }
+              ],
+              "start": 1695391221642,
+              "stop": 1695391222269
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1695391222770,
+              "stop": 1695391223329
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1695391221641,
+          "stop": 1695391223329
+        },
+        {
+          "name": "ClickIconShowLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1695391223331,
+              "stop": 1695391223991
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1695391223330,
+          "stop": 1695391223991
+        },
+        {
+          "name": "ClickButtonLetsGoLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1695391223992,
+              "stop": 1695391224822
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1695391223992,
+          "stop": 1695391225838
+        },
+        {
+          "name": "GetUserNameFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1695391225841,
+          "stop": 1695391227962
+        },
+        {
+          "name": "GetUserNameRoleFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1695391227964,
+          "stop": 1695391228101
+        },
+        {
+          "name": "VerifyBrokerUserName",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Ala Din"
+            },
+            {
+              "name": "String",
+              "value": "Broker"
+            }
+          ],
+          "start": 1695391228102,
+          "stop": 1695391229818
+        },
+        {
+          "name": "ClickButtonOwnersSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1695391231667,
+              "stop": 1695391232315
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1695391229820,
+          "stop": 1695391233324
+        },
+        {
+          "name": "ClickButtonCreateOwner",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "element click intercepted: Element <span _ngcontent-c9=\"\" class=\"cazamio-button-txt\">...</span> is not clickable at point (666, 197). Other element would receive the click: <div _ngcontent-c4=\"\" class=\"loader-overlay\">...</div>\n  (Session info: chrome=117.0.5938.92)",
+            "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Click()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.Click()\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 41\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage.ListOfOwners.__a$_around_ClickButtonCreateOwner_100663535_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ListOfOwnersPage\\ListOfOwnersActions.cs:line 17\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage.ListOfOwners.__a$_around_ClickButtonCreateOwner_100663535_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "failed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false,
+                "message": "element click intercepted: Element <span _ngcontent-c9=\"\" class=\"cazamio-button-txt\">...</span> is not clickable at point (666, 197). Other element would receive the click: <div _ngcontent-c4=\"\" class=\"loader-overlay\">...</div>\n  (Session info: chrome=117.0.5938.92)",
+                "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Click()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.Click()\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 41\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1695391234335,
+              "stop": 1695391236189
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1695391233329,
+          "stop": 1695391236190
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "5a215912e64c405fa3727eedb97f7883-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1695391213825,
+      "stop": 1695391239973
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1695391213823,
+  "stop": 1695391239984
+}

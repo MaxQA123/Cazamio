@@ -112,7 +112,7 @@ namespace MarketplaceAdminTests
             Pages.SideBarLandlord
                 .ClickButtonTransactionsSidebar();
             Pages.ListOfTransactions
-                .VerifyTitleListOfTransactionsPg();
+                .VerifyTitleTransactionsPg();
             Pages.SideBarLandlord
                 .ClickButtonCommissionsSidebar();
             Pages.ListOfCommissions
@@ -264,7 +264,7 @@ namespace MarketplaceAdminTests
 
             #endregion
 
-            #region Preconditions
+            #region Postconditions
 
             DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(getFullEmail, marketplaceId);
             Console.WriteLine($"{getFullEmail}");
@@ -352,7 +352,7 @@ namespace MarketplaceAdminTests
 
             #endregion
 
-            #region Preconditions
+            #region Postconditions
 
             WaitUntil.WaitSomeInterval(100);
             DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
@@ -430,7 +430,10 @@ namespace MarketplaceAdminTests
             Pages.ListOfOwners
                 .VerifyEmailForNewOwner(getOwnerEmailFromModalWndw, getLastEmailFromPage);
 
-            #region Preconditions
+            var marketplaceIdFromDb = DbRequestOwners.DBOwners.GetMarketplaceIdByEmailUserOwner(getOwnerEmailFromModalWndw);
+            Console.WriteLine($"MarketplaceId of owner: {marketplaceIdFromDb}");
+
+            #region Postconditions
 
             DBRequestOwnerCommissionsStructure.OwnerCommissionsStructure.DeleteRecordAboutOwnerCommissionsStructure(getOwnerEmailFromModalWndw, marketplaceId);
             DBRequestOwnerPhoneNumbers.OwnerPhoneNumbers.DeleteRecordAboutOwnerPhoneNumber(getOwnerEmailFromModalWndw, marketplaceId);

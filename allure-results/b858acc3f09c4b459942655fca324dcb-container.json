@@ -1,0 +1,78 @@
+{
+  "uuid": "2afa72e8-34e0-491a-91d0-1e841d73b5a0-tc-0-1000",
+  "name": "AgentTests.TestsBaseWeb.ChangePassword",
+  "children": [
+    "e6c3d840-6949-497b-94ff-73cd77999be8-tr-0-1001"
+  ],
+  "befores": [
+    {
+      "name": "DobeforeAllTheTests",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1695392986097,
+      "stop": 1695392986097
+    },
+    {
+      "name": "SetUp",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1695392986099,
+      "stop": 1695392986099
+    }
+  ],
+  "afters": [
+    {
+      "name": "DoAfterEach",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.WebDriverTimeoutException : Timed out after 10 seconds\r\nTearDown : OpenQA.Selenium.WebDriverException : disconnected: not connected to DevTools\n  (failed to check if window was closed: disconnected: not connected to DevTools)\n  (Session info: chrome=117.0.5938.92)",
+        "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.CustomElementIsVisible(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 46\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 39\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProgect.PageObjects.EmailPutsBox.PutsBox.__a$_around_ClickButtonBodyHtml_100663643_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\EmailPutsBoxPage\\EmailPutsBoxActions.cs:line 21\r\n   at CazamioProgect.PageObjects.EmailPutsBox.PutsBox.__a$_around_ClickButtonBodyHtml_100663643_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.EmailPutsBox.PutsBox.__a$_around_ClickButtonBodyHtml_100663643_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.EmailPutsBox.PutsBox.ClickButtonBodyHtml()\r\n   at AgentTests.TestsBaseWeb.ChangePassword() in C:\\Automation\\Cazamio\\BrokerWebSiteCazamio\\AgentWebSiteTests\\AgentTests.cs:line 38\r\n--TearDown\r\n   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.Close()\r\n   at CazamioProgect.Helpers.Browser.Close() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\Browser.cs:line 65\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 35"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1695392986099,
+      "stop": 1695392986099
+    },
+    {
+      "name": "DoAfterAllTheTests",
+      "status": "none",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "It's not possible to get status of OneTimeTearDown",
+        "trace": "See Allure.NUnit wiki"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1695392986100,
+      "stop": 1695392986100
+    }
+  ],
+  "links": [],
+  "start": 1695392957505,
+  "stop": 1695392986176
+}

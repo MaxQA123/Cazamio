@@ -7,6 +7,10 @@ using NUnit.Allure.Core;
 using PutsboxWrapper;
 using NUnit.Framework;
 using System;
+using CazamioProject.DBHelpers;
+using CazamioProject.DBHelpers.TableOwnerCommissionsStructure;
+using CazamioProject.DBHelpers.TableOwnerPhoneNumbers;
+using CazamioProject.DBHelpers.TableOwnerManagements;
 
 namespace BrokerTests
 {
@@ -23,12 +27,6 @@ namespace BrokerTests
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Broker")]
         [AllureSubSuite("LogIn")]
-
-        //Date of publication: 
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully LogIn as broker.
-        //Comment: 
 
         public void LogIn()
         {
@@ -55,12 +53,6 @@ namespace BrokerTests
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Broker")]
         [AllureSubSuite("ChangePassword")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The broker successfully had been changed the password.
-        //Comment: 
 
         public void ChangePassword()
         {
@@ -104,12 +96,6 @@ namespace BrokerTests
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Broker")]
         [AllureSubSuite("VerifySidebar")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: That the images uploaded and switching between the pages successfully via the sidebar.
-        //Comment: 
 
         public void VerifySidebar()
         {
@@ -197,16 +183,16 @@ namespace BrokerTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Broker")]
-        [AllureSubSuite("CreateNewAgent")]
+        [AllureSubSuite("CreateAgent")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully creaated a new agent.
-        //Comment: 
-
-        public void CreateNewAgent()
+        public void CreateAgent()
         {
+            #region Preconditions
+
+            string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+
+            #endregion
+
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsBroker()
                 .ClickIconShowLogInPg()
@@ -256,6 +242,22 @@ namespace BrokerTests
             Pages.SideBarLandlord
                 .VerifyOnlyAgentUserNameRole(getUserNameRoleCompareAgent);
 
+            WaitUntil.WaitSomeInterval(100);
+            var marketplaceIdFromDb = DBRequestAspNetUsers.AspNetUsers.GetMarketplaceIdByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
+            Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb.MarketplaceId}");
+
+            #region Postconditions
+
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
+            Console.WriteLine($"{fullEmailPutsBox}");
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestBrokers.DBBrokers.DeleteCreatedUserAgent(fullEmailPutsBox, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(fullEmailPutsBox, marketplaceId);
+
+            #endregion
+
             WaitUntil.WaitSomeInterval(2000);
         }
 
@@ -266,16 +268,16 @@ namespace BrokerTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Broker")]
-        [AllureSubSuite("CreateNewOwner")]
+        [AllureSubSuite("CreateOwner")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: In progress.
-        //This test case is doing checking: The successfully creaated a new owner.
-        //Comment: 
-
-        public void CreateNewOwner()
+        public void CreateOwner()
         {
+            #region Preconditions
+
+            string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+
+            #endregion
+
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsBroker()
                 .ClickIconShowLogInPg()
@@ -315,14 +317,23 @@ namespace BrokerTests
                 .ClickButtonCreate();
             Pages.ListOfOwners
                 .VerifyMessageSuccessCreatedOwner();
-            Pages.PaginationPicker
-                .SctollToButtonNext()
-                .ClickButtonLastNumberPage();
 
-            string getLastEmailFromPage = Pages.ListOfOwners.GetLastEmailFromTable();
+            string getLastEmailFromPage = Pages.ListOfOwners.GetFirstEmailFromTable();
 
             Pages.ListOfOwners
                 .VerifyEmailForNewOwner(getOwnerEmailFromModalWndw, getLastEmailFromPage);
+
+            var marketplaceIdFromDb = DbRequestOwners.DBOwners.GetMarketplaceIdByEmailUserOwner(getOwnerEmailFromModalWndw);
+            Console.WriteLine($"MarketplaceId of owner: {marketplaceIdFromDb}");
+
+            #region Postconditions
+
+            DBRequestOwnerCommissionsStructure.OwnerCommissionsStructure.DeleteRecordAboutOwnerCommissionsStructure(getOwnerEmailFromModalWndw, marketplaceId);
+            DBRequestOwnerPhoneNumbers.OwnerPhoneNumbers.DeleteRecordAboutOwnerPhoneNumber(getOwnerEmailFromModalWndw, marketplaceId);
+            DBRequestOwnerManagements.OwnerManagements.DeleteRecordAboutOwnerManagements(getOwnerEmailFromModalWndw, marketplaceId);
+            DbRequestOwners.DBOwners.DeleteCreatedUserOwner(getOwnerEmailFromModalWndw, marketplaceId);
+
+            #endregion
 
             WaitUntil.WaitSomeInterval(5000);
         }
@@ -335,12 +346,6 @@ namespace BrokerTests
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Broker")]
         [AllureSubSuite("AddBuilding")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: in progress.
-        //This test case is doing checking: That the images uploaded and switching between the pages successfully via the sidebar.
-        //Comment: 
 
         public void AddBuilding()
         {
@@ -367,12 +372,6 @@ namespace BrokerTests
         [AllureSuite("Broker")]
         [AllureSubSuite("DemoPutsBox")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing:
-        //This test case is doing checking:
-        //Comment: 
-
         public void DemoPagination()
         {
             Pages.LogInLandlord
@@ -389,7 +388,7 @@ namespace BrokerTests
             Pages.PaginationPicker
                 .SctollToButtonNext();
 
-            string getLastEmailFromPage = Pages.ListOfOwners.GetLastEmailFromTable();
+            string getLastEmailFromPage = Pages.ListOfOwners.GetFirstEmailFromTable();
 
             Console.WriteLine(getLastEmailFromPage);
 
