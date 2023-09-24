@@ -28,11 +28,13 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTena
             return this;
         }
 
-        [AllureStep("ClickButtonMyPreApprovedApartmentsHdrCzmTnnt")]
-        public HeaderCazamioTenant ClickButtonMyPreApprovedApartmentsHdrCzmTnnt()
+        [AllureStep("SelectItemMyAccountViaButtonInFormAvatarHdrCzmTnnt")]
+        public HeaderCazamioTenant SelectItemMyAccountViaButtonInFormAvatarHdrCzmTnnt()
         {
-            WaitUntil.WaitSomeInterval(1000);
-            ButtonMyPreApprovedApartmentsHdrCzmTnnt.Click();
+            WaitUntil.CustomElementIsVisible(ButtonInFormAvatarHdrCzmTnnt);
+            ButtonInFormAvatarHdrCzmTnnt.Click();
+            WaitUntil.WaitSomeInterval(100);
+            ButtonMyAccountHdrCzmTnnt.Click();
 
             return this;
         }

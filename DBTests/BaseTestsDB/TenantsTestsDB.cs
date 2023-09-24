@@ -47,7 +47,7 @@ namespace DBTests.BaseTestsDB
             string marketplaceIdOne = DBRequestAspNetUsersOld.GetMarketplaceIdOneByEmailMinMarketplaceId(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND);
             Console.WriteLine($"{marketplaceIdOne} :MarketplaceId for new tenant {newTenant} from table AspNetUsers");
 
-            string idLast = DBTableTenants.GetLastIdNewTenant();
+            string idLast = DBRequestTenants.GetLastIdNewTenant();
             Console.WriteLine($"{idLast} :Id for new tenant {newTenant} from table Tenants");
         }
 
@@ -69,13 +69,13 @@ namespace DBTests.BaseTestsDB
         {
             string newTenant = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_LAST_NAME;
 
-            string idLastTenantTenants = DBTableTenants.GetLastIdNewTenant();
+            string idLastTenantTenants = DBRequestTenants.GetLastIdNewTenant();
             Console.WriteLine($"{idLastTenantTenants} :Id for new tenant {newTenant} from table Tenants");
 
-            string idByEmailTenantTenants = DBTableTenants.GetIdByEmail(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL);
+            string idByEmailTenantTenants = DBRequestTenants.GetIdByEmail(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL);
             Console.WriteLine($"{idByEmailTenantTenants} :Id by email for new tenant {newTenant} from table Tenants");
 
-            string marketplaceIdByEmailTenantTenants = DBTableTenants.GetMarketplaceIdByEmailUserId(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL);
+            string marketplaceIdByEmailTenantTenants = DBRequestTenants.GetMarketplaceIdByEmailUserId(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL);
             Console.WriteLine($"{marketplaceIdByEmailTenantTenants} :MarketplaceId for new tenant {newTenant} from table Tenants");
 
             string marketplaceIdLastTenantAspNetUsers = DBRequestAspNetUsersOld.GetLastMarketplaceIdNewTenant();
@@ -84,7 +84,7 @@ namespace DBTests.BaseTestsDB
             string emailConfirmedTenantAspNetUsers = DBRequestAspNetUsersOld.GetEmailComfirmedByEmail(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL);
             Console.WriteLine($"{emailConfirmedTenantAspNetUsers} :EmailConfirmed for new tenant {newTenant} from table AspNetUsers");
 
-            string userIdTenantTenants = DBTableTenants.GetLastUserIdNewTenant();
+            string userIdTenantTenants = DBRequestTenants.GetLastUserIdNewTenant();
             Console.WriteLine($"{userIdTenantTenants} :UserId for new tenant {newTenant} from table Tenants");
             
             string userIdTenantAspNetUsers = DBRequestAspNetUsersOld.GetIdByEmailMarketplaceIdNewTenant(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);

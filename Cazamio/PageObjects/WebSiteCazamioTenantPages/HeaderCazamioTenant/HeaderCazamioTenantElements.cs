@@ -17,10 +17,13 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTena
         public IWebElement ButtonLogInHdrCzmTnnt => Browser._Driver.FindElement(_ButtonLogInHdrCzmTnnt);
         public static readonly By _ButtonLogInHdrCzmTnnt = By.XPath("//a[@href = '/account/signin']");
 
-        public IWebElement ButtonMyPreApprovedApartmentsHdrCzmTnnt => Browser._Driver.FindElement(_ButtonMyPreApprovedApartmentsHdrCzmTnnt);
-        public static readonly By _ButtonMyPreApprovedApartmentsHdrCzmTnnt = By.XPath("//a[@href= '/my-pre-approved-apartments']");
-
         public IWebElement ButtonMyApplicationsHdrCzmTnnt => Browser._Driver.FindElement(_ButtonMyApplicationsHdrCzmTnnt);
         public static readonly By _ButtonMyApplicationsHdrCzmTnnt = By.XPath("//a[@href= '/my-info/applications']");
+
+        [FindsBy(How = How.XPath, Using = "//logged-in-header//header//div[@class = 'user-panel']//ul//li[@class = 'avatar']")]
+        public IWebElement ButtonInFormAvatarHdrCzmTnnt;
+
+        [FindsBy(How = How.XPath, Using = "//button[@aria-label= 'My account']")]
+        public IWebElement ButtonMyAccountHdrCzmTnnt;
     }
 }

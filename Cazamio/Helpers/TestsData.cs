@@ -52,6 +52,7 @@ namespace CazamioProgect.Helpers
 
     public class TestDataForWebSiteTenant
     {
+        public const string EMAIL_TENANT = "miza33h@putsbox.com";
         public const string EMAIL_TENANT_APPLICANT = "tenantapp123ray@putsbox.com";
         public const string FIRST_LAST_NAME_TENANT_APPLICANT = "Ray Anredson";
         public const string FIRST_NAME_TENANT_APPLICANT = "Ray";

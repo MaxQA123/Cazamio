@@ -31,13 +31,6 @@ namespace TenantCazamioTests
         [AllureSuite("WebSiteTenant")]
         [AllureSubSuite("ApiGuiSignUp")]
 
-        //Date of publication:
-        //Version\Build:
-        //The date last publication on which been testing:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully SignUp as tenant.
-        //Comment:
-
         public void ApiGuiSignUp()
         {
 
@@ -67,15 +60,14 @@ namespace TenantCazamioTests
         [AllureSuite("WebSiteTenant")]
         [AllureSubSuite("SignUpAsTenant")]
 
-        //Date of publication:
-        //Version\Build:
-        //The date last publication on which been testing:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully SignUp as tenant.
-        //Comment:
-
         public void SignUpAsTenant()
         {
+            #region Preconditions
+
+            string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+
+            #endregion
+
             Pages.HeaderCazamioTenant
                 .ClickButtonSignUpHdrCzmTnnt();
             Pages.SignUpCazamioTenant
@@ -99,6 +91,17 @@ namespace TenantCazamioTests
                 .ClickTabAccountOnMyAccntPg()
                 .ClickButtonEditMyAccntPgTabAccnt()
                 .VerifyEmailNewTenant(emailPutsBox);
+            Console.WriteLine($"Email a new tenant: {emailPutsBox}");
+
+            var marketplaceIdFromDb = DBRequestTeants.DBTenants.GetMarketplaceIdByEmailUserTenant(emailPutsBox, marketplaceId);
+            Console.WriteLine($"MarketplaceId of tenant: {marketplaceIdFromDb}");
+
+            #region Postconditions
+
+            DBRequestTeants.DBTenants.DeleteCreatedUserTenant(emailPutsBox, marketplaceId);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailPutsBox, marketplaceId);
+
+            #endregion
 
             WaitUntil.WaitSomeInterval(2000);
         }
@@ -111,13 +114,6 @@ namespace TenantCazamioTests
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("WebSiteTenant")]
         [AllureSubSuite("LogInAsTenant")]
-
-        //Date of publication:
-        //Version\Build:
-        //The date last publication on which been testing:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully LogIn as tenant.
-        //Comment: 
 
         public void LogInAsTenant()
         {
@@ -149,16 +145,9 @@ namespace TenantCazamioTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("WebSiteTenant")]
-        [AllureSubSuite("ForgotPasswordAsTenant")]
+        [AllureSubSuite("ChangePassword")]
 
-        //Date of publication:
-        //Version\Build:
-        //The date last publication on which been testing:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The tenant had changed the password successfully.
-        //Comment:
-
-        public void ForgotPasswordAsTenant()
+        public void ChangePassword()
         {
             Pages.HeaderCazamioTenant
                 .ClickButtonLogInHdrCzmTnnt();
@@ -205,13 +194,6 @@ namespace TenantCazamioTests
         [AllureSuite("WebSiteTenant")]
         [AllureSubSuite("SearchApartmentViaHomePage")]
 
-        //Date of publication:
-        //Version\Build:
-        //The date last publication on which been testing: 
-        //Willingness for testing: Done.
-        //This test case is doing checking: An apartment had found via the field search on the home page.
-        //Comment:
-
         public void SearchApartmentViaHomePage()
         {
             Pages.HeaderCazamioTenant
@@ -238,17 +220,19 @@ namespace TenantCazamioTests
         [AllureSuite("WebSiteTenant")]
         [AllureSubSuite("EditPageMyAccountTabSectionAccount")]
 
-        //Date of publication:
-        //Version\Build:
-        //The date last publication on which been testing:
-        //Willingness for testing: Done.
-        //This test case is doing checking: The successfully had edited page "My Account" in the tad\section "Account".
-        //Comment: BUG 
-
         public void EditPageMyAccountTabSectionAccount()
         {
             Pages.HeaderCazamioTenant
-                .ClickButtonLogInHdrCzmTnnt();
+               .ClickButtonLogInHdrCzmTnnt();
+            Pages.LogInCazamioTenant
+                .EnterEmailPasswordOnLgInAsTenantApplicant()
+                .ClickIconShowLgInCazmTnnt()
+                .SetCheckBoxRememberMeLgInCazmTnnt()
+                .ClickButtonLogInLgInCazmTnnt();   
+            Pages.HeaderCazamioTenant
+                .SelectItemMyAccountViaButtonInFormAvatarHdrCzmTnnt();
+
+            //Тест падает нужно обновить
             Pages.LogInCazamioTenant
                 .EnterEmailPasswordOnLgInAsOccupantLiza()
                 .ClickIconShowLgInCazmTnnt()
@@ -303,13 +287,6 @@ namespace TenantCazamioTests
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("DemoTenant")]
         [AllureSubSuite("DemoSignUp")]
-
-        //Date of publication:
-        //Version\Build:
-        //The date last publication on which been testing:
-        //Willingness for testing: in progress.
-        //This test case is doing checking: 
-        //Comment:
 
         public void DemoPaymentHoldDeposit()
         {

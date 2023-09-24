@@ -9,7 +9,7 @@ namespace CazamioProject.ApiHelpers
     public class EndPointsApi
     {
         public const string API_HOST_WEBSITE_ADMIN = "https://api-cazamio-staging.azurewebsites.net";
-        public const string API_HOST_WEBSITE_ADMIN_CONFIRM_EMAIL = "https://testlandlord-demo.cazamiodemo.com/account/email-confirm";
+        public const string API_HOST_WEBSITE_ADMIN_CONFIRM_EMAIL = "https://testlandlord15-demo.casamio-test.lol//account/email-confirm";
     }
 
     public class ApiRequestData

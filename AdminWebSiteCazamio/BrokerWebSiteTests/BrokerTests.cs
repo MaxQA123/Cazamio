@@ -151,7 +151,7 @@ namespace BrokerTests
             Pages.SideBarLandlord
                 .ClickButtonTransactionsSidebar();
             Pages.ListOfTransactions
-                .VerifyTitleListOfTransactionsPg();
+                .VerifyTitleTransactionsPg();
             Pages.SideBarLandlord
                 .ClickButtonCommissionsSidebar();
             Pages.ListOfCommissions
