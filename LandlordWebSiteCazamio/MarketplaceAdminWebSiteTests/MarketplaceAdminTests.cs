@@ -80,15 +80,14 @@ namespace MarketplaceAdminTests
             //    .ClickButtonDashboardSidebar();
             //Pages.Dashboard
             //    .VerifyTitleOfDashboardPg();
-
-            Pages.SideBarLandlord
-                .ClickButtonApartmentsSidebar();
-            Pages.ListOfApartments
-                .VerifyTitleListOfApartmentsPg();
             Pages.SideBarLandlord
                 .ClickButtonBuildingsSidebar();
             Pages.ListOfBuildings
                 .VerifyTitleListOfBuildingsPg();
+            Pages.SideBarLandlord
+                .ClickButtonApartmentsSidebar();
+            Pages.ListOfApartments
+                .VerifyTitleListOfApartmentsPg();
             Pages.SideBarLandlord
                 .ClickButtonApplicationsSidebar();
             Pages.ListOfApplications
@@ -97,10 +96,6 @@ namespace MarketplaceAdminTests
                 .ClickButtonBrokersSidebar();
             Pages.ListOfBrokers
                 .VerifyTitleListOfBrokersPg();
-            //Pages.SideBarLandlord
-            //    .ClickButtonPreApprovalsSidebar();
-            //Pages.PreApprovals
-            //    .VerifyTitlePreApprovalsPagePg();
             Pages.SideBarLandlord
                 .ClickButtonLeaseSignDocumentsSidebar();
             Pages.Templates

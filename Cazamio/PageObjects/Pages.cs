@@ -37,7 +37,6 @@ using System.Threading.Tasks;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HomePageCazamioTenant;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.ListOfApartmentsTenantPage;
 using CazamioProgect.PageObjects.WebSiteCazamioTenantPages.ApartmentDetailsTenantPage;
-using CazamioProject.PageObjects.ModalWndwCreateNewLandlordPage;
 using CazamioProject.PageObjects.ModalWndwCreateNewOwner;
 using CazamioProject.PageObjects.PaginationPickerPage;
 using CazamioProject.PageObjects.WebSiteLandlordPages.ListOfMarketplaceAdmins;
@@ -100,7 +99,6 @@ namespace CazamioProgect.PageObjects
         public static Marketplace Marketplace => GetPage<Marketplace>();
         public static ModalWindowAreYouSureLogOutLandlordBroker ModalWindowAreYouSureLogOutLandlordBroker => GetPage<ModalWindowAreYouSureLogOutLandlordBroker>();
         public static ModalWindowCreateNewAgent ModalWindowCreateNewAgent => GetPage<ModalWindowCreateNewAgent>();
-        public static ModalWndwCreateNewLandlord ModalWndwCreateNewLandlord => GetPage<ModalWndwCreateNewLandlord>();
         public static ResetYourPassword ResetYourPassword => GetPage<ResetYourPassword>();
         public static NewBuilding NewBuilding => GetPage<NewBuilding>();
         public static ModalWindowPaymentOptions ModalWindowPaymentOptions => GetPage<ModalWindowPaymentOptions>();

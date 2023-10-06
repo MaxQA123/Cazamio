@@ -116,13 +116,13 @@ namespace AgentTests
             //Pages.Dashboard
             //    .VerifyTitleOfDashboardPg();
             Pages.SideBarLandlord
-                .ClickButtonApartmentsSidebar();
-            Pages.ListOfApartments
-                .VerifyTitleListOfApartmentsPg();
-            Pages.SideBarLandlord
                 .ClickButtonBuildingsSidebar();
             Pages.ListOfBuildings
                 .VerifyTitleListOfBuildingsPg();
+            Pages.SideBarLandlord
+                .ClickButtonApartmentsSidebar();
+            Pages.ListOfApartments
+                .VerifyTitleListOfApartmentsPg();
             Pages.SideBarLandlord
                 .ClickButtonApplicationsSidebar();
             Pages.ListOfApplications

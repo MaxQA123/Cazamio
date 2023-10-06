@@ -136,10 +136,6 @@ namespace BrokerTests
                 .ClickButtonApplicationsSidebar();
             Pages.ListOfApplications
                 .VerifyTitleListOfApplicationsPg();
-            //Pages.SideBarLandlord
-            //    .ClickButtonPreApprovalsSidebar();
-            //Pages.PreApprovals
-            //    .VerifyTitlePreApprovalsPagePg();
             Pages.SideBarLandlord
                 .ClickButtonLeaseSignDocumentsSidebar();
             Pages.Templates
