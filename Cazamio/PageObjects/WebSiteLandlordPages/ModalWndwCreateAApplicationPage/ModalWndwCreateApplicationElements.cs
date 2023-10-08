@@ -1,0 +1,39 @@
+﻿using OpenQA.Selenium;
+using SeleniumExtras.PageObjects;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplicationPage
+{
+    public partial class ModalWndwCreateAApplication
+    {
+        [FindsBy(How = How.XPath, Using = "//app-prepare-application//h2[text() = 'Create application']")]
+        public IWebElement TitleCreateApplicationModalWndw;
+
+        [FindsBy(How = How.XPath, Using = "//cazamio-mobile-button[@ng-reflect-text = 'Next']")]
+        public IWebElement ButtonNextModalWndw;
+
+        #region Create application step 1
+
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder = 'Look up existing lead or create new']")]
+        public IWebElement FieldInputMainApplicantEmailAddressModalWndw;
+
+        [FindsBy(How = How.XPath, Using = "//div[text() = 'tenantapp123ray@putsbox.com']")]
+        public IWebElement ItemEmailAddressModalWndw;
+
+        [FindsBy(How = How.XPath, Using = "//cazamio-mobile-button[@ng-reflect-text = 'Cancel']")]
+        public IWebElement ButtonCancelModalWndw;
+
+        #endregion
+
+        #region Create application step 2
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'address-input']")]
+        public IWebElement FieldInputUnitAddressModalWndw;
+
+        #endregion
+    }
+}

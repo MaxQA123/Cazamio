@@ -1,6 +1,7 @@
 using Allure.Commons;
 using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
+using CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfApplicationsPage;
 using CazamioProject.DBHelpers;
 using CazamioProject.DBHelpers.TableOwnerCommissionsStructure;
 using CazamioProject.DBHelpers.TableOwnerManagements;
@@ -627,6 +628,41 @@ namespace MarketplaceAdminTests
                 .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
                 .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
                 .ClickButtonGeneralNextAddAprtmntsgPg();
+
+            WaitUntil.WaitSomeInterval(5000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("MarketplaceAdmin")]
+        [AllureSubSuite("CreateApplicationWhenTenantAddedToSystem")]
+        public void CreateApplicationWhenTenantAddedToSystem()
+        {
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+            Pages.SideBarLandlord
+                .ClickButtonApplicationsSidebar();
+            Pages.ListOfApplications
+                .ClickButtonPlusApplication();
+            Pages.ModalWndwCreateAApplication
+                .VerifyTitleCreateApplicationModalWndw()
+                .EnterEmailInFieldMainApplicantEmailAddressModalWndw()
+                .ClickButtonNextModalWndw();
+
+            string getUnitAddressActual = Pages.ModalWndwCreateAApplication.GetUnitAddress();
+            
 
             WaitUntil.WaitSomeInterval(5000);
         }

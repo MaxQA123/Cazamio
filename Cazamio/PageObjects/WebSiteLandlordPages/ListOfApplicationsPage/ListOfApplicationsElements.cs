@@ -12,5 +12,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfApplicationsPage
     {
         [FindsBy(How = How.XPath, Using = "//div[text()= 'List of applications']")]
         public IWebElement TitleListOfApplicationsPage;
+
+        [FindsBy(How = How.XPath, Using = "//button//span[text() = '+Application']")]
+        public IWebElement ButtonPlusApplication;
     }
 }
