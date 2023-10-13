@@ -9,7 +9,48 @@ using System.Threading.Tasks;
 
 namespace CazamioProject.Helpers
 {
-    public class DBTableApartmentApplications
+    public class DBRequestApartmentApplications
+    {
+        private static T GetValueOrDefault<T>(SqlDataReader reader, int index, T defaultValue = default(T))
+        {
+            if (!reader.IsDBNull(index))
+            {
+                return (T)reader.GetValue(index);
+            }
+            else
+            {
+                return defaultValue;
+            }
+        }
+        public class ApartmentApplications
+        {
+            public static string DeleteRecordByEmailMarketplaceId(string email, string marketplaceId)
+            {
+                string data = null;
+                using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+                {
+                    SqlCommand command = new("DELETE FROM ApartmentApplications WHERE TenantId" + 
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @Email AND MarketplaceId = @MarketplaceId)", db);
+                    command.Parameters.AddWithValue("@Email", DbType.String).Value = email;
+                    command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
+                    db.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            data = reader.GetValue(0).ToString();
+                        }
+                    }
+                }
+                return data;
+            }
+        }
+    }
+
+    public class DBRequestApartmentApplicationsOLD
     {
         public static string GetLastApartmentApplicationId()
         {

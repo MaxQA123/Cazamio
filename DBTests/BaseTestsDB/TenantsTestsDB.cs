@@ -47,7 +47,7 @@ namespace DBTests.BaseTestsDB
             string marketplaceIdOne = DBRequestAspNetUsersOld.GetMarketplaceIdOneByEmailMinMarketplaceId(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND);
             Console.WriteLine($"{marketplaceIdOne} :MarketplaceId for new tenant {newTenant} from table AspNetUsers");
 
-            string idLast = DBRequestTenants.GetLastIdNewTenant();
+            string idLast = DBRequestTenantsOld.GetLastIdNewTenant();
             Console.WriteLine($"{idLast} :Id for new tenant {newTenant} from table Tenants");
         }
 
@@ -69,13 +69,13 @@ namespace DBTests.BaseTestsDB
         {
             string newTenant = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_LAST_NAME;
 
-            string idLastTenantTenants = DBRequestTenants.GetLastIdNewTenant();
+            string idLastTenantTenants = DBRequestTenantsOld.GetLastIdNewTenant();
             Console.WriteLine($"{idLastTenantTenants} :Id for new tenant {newTenant} from table Tenants");
 
-            string idByEmailTenantTenants = DBRequestTenants.GetIdByEmail(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL);
+            string idByEmailTenantTenants = DBRequestTenantsOld.GetIdByEmail(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL);
             Console.WriteLine($"{idByEmailTenantTenants} :Id by email for new tenant {newTenant} from table Tenants");
 
-            string marketplaceIdByEmailTenantTenants = DBRequestTenants.GetMarketplaceIdByEmailUserId(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL);
+            string marketplaceIdByEmailTenantTenants = DBRequestTenantsOld.GetMarketplaceIdByEmailUserId(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL);
             Console.WriteLine($"{marketplaceIdByEmailTenantTenants} :MarketplaceId for new tenant {newTenant} from table Tenants");
 
             string marketplaceIdLastTenantAspNetUsers = DBRequestAspNetUsersOld.GetLastMarketplaceIdNewTenant();
@@ -84,7 +84,7 @@ namespace DBTests.BaseTestsDB
             string emailConfirmedTenantAspNetUsers = DBRequestAspNetUsersOld.GetEmailComfirmedByEmail(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL);
             Console.WriteLine($"{emailConfirmedTenantAspNetUsers} :EmailConfirmed for new tenant {newTenant} from table AspNetUsers");
 
-            string userIdTenantTenants = DBRequestTenants.GetLastUserIdNewTenant();
+            string userIdTenantTenants = DBRequestTenantsOld.GetLastUserIdNewTenant();
             Console.WriteLine($"{userIdTenantTenants} :UserId for new tenant {newTenant} from table Tenants");
             
             string userIdTenantAspNetUsers = DBRequestAspNetUsersOld.GetIdByEmailMarketplaceIdNewTenant(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
@@ -256,25 +256,25 @@ namespace DBTests.BaseTestsDB
             string tenantLiza = TestDataForWebSiteTenant.FIRST_NAME_OCCUPANT_ONE;
             string tenantJimmy = TestDataForWebSiteTenant.FIRST_NAME_GUARANTOR;
 
-            string lastApartmentApplicationId = DBTableTenantLeases.GetLastApartmentApplicationId();
+            string lastApartmentApplicationId = DBRequestTenantLeasesOLD.GetLastApartmentApplicationId();
             Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId from table TenantLeases");
 
-            string apartmentApplicationIdForApplicant = DBTableTenantLeases.GetApartmentApplicationIdByIdTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_TENANT_ID);
+            string apartmentApplicationIdForApplicant = DBRequestTenantLeasesOLD.GetApartmentApplicationIdByIdTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_TENANT_ID);
             Console.WriteLine($"{apartmentApplicationIdForApplicant} :ApartmentApplicationId for tenant {tenantRay} {tenantApplicant} from table TenantLeases");
 
-            string apartmentApplicationIdForOccupant = DBTableTenantLeases.GetApartmentApplicationIdByIdTenantId(DBTestDataForTenantMarketplaceOne.TENANT_OCCUPANT_LIZA_TENANT_ID);
+            string apartmentApplicationIdForOccupant = DBRequestTenantLeasesOLD.GetApartmentApplicationIdByIdTenantId(DBTestDataForTenantMarketplaceOne.TENANT_OCCUPANT_LIZA_TENANT_ID);
             Console.WriteLine($"{apartmentApplicationIdForOccupant} :ApartmentApplicationId for tenant {tenantOccupant} {tenantLiza} from table TenantLeases");
 
-            string apartmentApplicationIdForGuarantor = DBTableTenantLeases.GetApartmentApplicationIdByIdTenantId(DBTestDataForTenantMarketplaceOne.TENANT_GUARANTOR_JIMMY_TENANT_ID);
+            string apartmentApplicationIdForGuarantor = DBRequestTenantLeasesOLD.GetApartmentApplicationIdByIdTenantId(DBTestDataForTenantMarketplaceOne.TENANT_GUARANTOR_JIMMY_TENANT_ID);
             Console.WriteLine($"{apartmentApplicationIdForGuarantor} :ApartmentApplicationId for tenant {tenantGuarantor} {tenantJimmy} from table TenantLeases");
 
-            string isLeaseSignedForApplicant = DBTableTenantLeases.GetIsLeaseSignedByTenantIdApartmentApplicationId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_TENANT_ID, lastApartmentApplicationId);
+            string isLeaseSignedForApplicant = DBRequestTenantLeasesOLD.GetIsLeaseSignedByTenantIdApartmentApplicationId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_TENANT_ID, lastApartmentApplicationId);
             Console.WriteLine($"{isLeaseSignedForApplicant} :IsLeaseSigned for tenant {tenantRay} {tenantApplicant} from table TenantLeases");
 
-            string isLeaseSignedForOccupant = DBTableTenantLeases.GetIsLeaseSignedByTenantIdApartmentApplicationId(DBTestDataForTenantMarketplaceOne.TENANT_OCCUPANT_LIZA_TENANT_ID, lastApartmentApplicationId);
+            string isLeaseSignedForOccupant = DBRequestTenantLeasesOLD.GetIsLeaseSignedByTenantIdApartmentApplicationId(DBTestDataForTenantMarketplaceOne.TENANT_OCCUPANT_LIZA_TENANT_ID, lastApartmentApplicationId);
             Console.WriteLine($"{isLeaseSignedForOccupant} :IsLeaseSigned for tenant {tenantOccupant} {tenantLiza} from table TenantLeases");
 
-            string isLeaseSignedForGuarantor = DBTableTenantLeases.GetIsLeaseSignedByTenantIdApartmentApplicationId(DBTestDataForTenantMarketplaceOne.TENANT_GUARANTOR_JIMMY_TENANT_ID, lastApartmentApplicationId);
+            string isLeaseSignedForGuarantor = DBRequestTenantLeasesOLD.GetIsLeaseSignedByTenantIdApartmentApplicationId(DBTestDataForTenantMarketplaceOne.TENANT_GUARANTOR_JIMMY_TENANT_ID, lastApartmentApplicationId);
             Console.WriteLine($"{isLeaseSignedForGuarantor} :IsLeaseSigned for tenant {tenantGuarantor} {tenantJimmy} from table TenantLeases");
 
             Assert.Multiple(() =>

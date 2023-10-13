@@ -40,7 +40,7 @@ namespace DBTests.BaseTestsDB
             string buildingId = DBTestDataDBForAdmins.BUILDING_ID;
             string unitNumber = DBTestDataDBForAdmins.UNIT_NUMBER;
 
-            string ApartmentApplicationId = DBTableApartmentApplications.GetApartmentApplicationIdByTenantIdApartmentid(userIdTenant, buildingId, unitNumber);
+            string ApartmentApplicationId = DBRequestApartmentApplicationsOLD.GetApartmentApplicationIdByTenantIdApartmentid(userIdTenant, buildingId, unitNumber);
             Console.WriteLine($"{ApartmentApplicationId} :ApartmentApplicationId by TenantId BuildingId UnitNumber for application from table ApartmentApplications");
         }
 
@@ -66,7 +66,7 @@ namespace DBTests.BaseTestsDB
             string tenantOccupant = DBTestDataGeneral.NAME_ROLE_OCCUPANT;
             string tenantLiza = TestDataForWebSiteTenant.FIRST_NAME_OCCUPANT_ONE;
             
-            string lastApartmentApplicationId = DBTableApartmentApplications.GetLastApartmentApplicationId();
+            string lastApartmentApplicationId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationId();
             Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId for application for {buildingAddress} from table ApartmentApplications");
 
             string occupantId = DBTableOccupants.GetLastOccupantIdByApartmentApplicationId(lastApartmentApplicationId);
@@ -95,7 +95,7 @@ namespace DBTests.BaseTestsDB
             string tenantGuarantor = DBTestDataGeneral.NAME_ROLE_GUARANTOR;
             string tenantJimmy = TestDataForWebSiteTenant.FIRST_NAME_GUARANTOR;
 
-            string lastApartmentApplicationId = DBTableApartmentApplications.GetLastApartmentApplicationId();
+            string lastApartmentApplicationId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationId();
             Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId for application for {buildingAddress} from table ApartmentApplications");
 
             string guarantorId = DBTableGuarantors.GetLastGuarantorIdByApartmentApplicationId($"{lastApartmentApplicationId}");
@@ -121,16 +121,16 @@ namespace DBTests.BaseTestsDB
         {
             string buildingAddress = DBTestDataDBForAdmins.BUILDING_ADDRESS;
 
-            string lastId = DBTableApartmentApplications.GetLastApartmentApplicationId();
+            string lastId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationId();
             Console.WriteLine($"{lastId} :Last Id for application for {buildingAddress} from table ApartmentApplications");
 
             string idApartmentByBuildingId = DBRequestApartments.GetApartmentIdByBuildingIdUnit(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
             Console.WriteLine($"{idApartmentByBuildingId} :ApartmentId by BuildingId from Apartments");
 
-            string lastApplicationIdByBuildingId = DBTableApartmentApplications.GetLastApartmentApplicationIdByApartmentId($"{idApartmentByBuildingId}");
+            string lastApplicationIdByBuildingId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationIdByApartmentId($"{idApartmentByBuildingId}");
             Console.WriteLine($"{lastApplicationIdByBuildingId} :Last Id by BuildingId for application for {buildingAddress} from table ApartmentApplications");
 
-            string lastApplicationIdByTenantId = DBTableApartmentApplications.GetLastApartmentApplicationIdByTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
+            string lastApplicationIdByTenantId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationIdByTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
             Console.WriteLine($"{lastApplicationIdByTenantId} :Last Id by tenantId for application for {buildingAddress} from table ApartmentApplications");
 
             Assert.Multiple(() =>
@@ -170,16 +170,16 @@ namespace DBTests.BaseTestsDB
             string tenantLiza = TestDataForWebSiteTenant.FIRST_NAME_OCCUPANT_ONE;
             string tenantJimmy = TestDataForWebSiteTenant.FIRST_NAME_GUARANTOR;
 
-            string lastApartmentApplicationId = DBTableApartmentApplications.GetLastApartmentApplicationId();
+            string lastApartmentApplicationId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationId();
             Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId for application for {buildingAddress} from table ApartmentApplications");
 
             string idApartmentByBuildingId = DBRequestApartments.GetApartmentIdByBuildingIdUnit(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
             Console.WriteLine($"{idApartmentByBuildingId} :ApartmentId by BuildingId from Apartments");
 
-            string lastApplicationIdByBuildingId = DBTableApartmentApplications.GetLastApartmentApplicationIdByApartmentId(idApartmentByBuildingId);
+            string lastApplicationIdByBuildingId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationIdByApartmentId(idApartmentByBuildingId);
             Console.WriteLine($"{lastApplicationIdByBuildingId} :Last ApartmentApplicationId Id by BuildingId for application for {buildingAddress} from table ApartmentApplications");
 
-            string lastApplicationIdByTenantId = DBTableApartmentApplications.GetLastApartmentApplicationIdByTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
+            string lastApplicationIdByTenantId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationIdByTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
             Console.WriteLine($"{lastApplicationIdByTenantId} :Last ApartmentApplicationId by TenantId for application for {buildingAddress} from table ApartmentApplications");
 
             string guarantorId = DBTableGuarantors.GetLastGuarantorIdByApartmentApplicationId($"{lastApartmentApplicationId}");
@@ -238,7 +238,7 @@ namespace DBTests.BaseTestsDB
             string lastId = DBTableApartmentApplicationProgress.GetLastId();
             Console.WriteLine($"{lastId} :Last Id for application for {buildingAddress} from table ApartmentApplicationProgress");
 
-            string lastApartmentApplicationId = DBTableApartmentApplications.GetLastApartmentApplicationId();
+            string lastApartmentApplicationId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationId();
             Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId for application for {buildingAddress} from table ApartmentApplications");
 
             string lastIdByTenantIdApartmentApplicationId = DBTableApartmentApplicationProgress.GetLastIdByTenantIdApartmentApplicationId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_TENANT_ID, lastApartmentApplicationId);
@@ -285,7 +285,7 @@ namespace DBTests.BaseTestsDB
             string lastIdGuarantor = DBTableApartmentApplicationProgress.GetLastIdByTenantId(DBTestDataForTenantMarketplaceOne.TENANT_GUARANTOR_JIMMY_TENANT_ID);
             Console.WriteLine($"{lastIdGuarantor} :Last Id tenant-guarantor for application for {buildingAddress} from table ApartmentApplicationProgress");
 
-            string lastApartmentApplicationId = DBTableApartmentApplications.GetLastApartmentApplicationId();
+            string lastApartmentApplicationId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationId();
             Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId for application for {buildingAddress} from table ApartmentApplications");
 
             string lastIdApplicantByApartmentApplicationId = DBTableApartmentApplicationProgress.GetLastIdApplicantByApartmentApplicationId(lastApartmentApplicationId);
