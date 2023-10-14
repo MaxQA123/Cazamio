@@ -34,7 +34,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         [AllureStep("GetUnitAddressStepSecond")]
         public string GetUnitAddressStepSecond()
         {
-            WaitUntil.WaitSomeInterval(3000);
+            WaitUntil.WaitSomeInterval(1000);
             WaitUntil.CustomElementIsVisible(FieldInputUnitAddressModalWndw);
             string getUnitAddress = FieldInputUnitAddressModalWndw.Text;
             string getUnitAddressActual = getUnitAddress.ToString();
@@ -46,7 +46,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         [AllureStep("GetEmailStepFirst")]
         public string GetEmailStepFirst()
         {
-            WaitUntil.WaitSomeInterval(3000);
+            WaitUntil.WaitSomeInterval(1000);
             WaitUntil.CustomElementIsVisible(FieldInputMainApplicantEmailAddressModalWndw);
             string getEmail = FieldInputMainApplicantEmailAddressModalWndw.GetAttribute("value");
             string getEmailActual = getEmail.ToString();
@@ -58,7 +58,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         [AllureStep("GetEmailStepThird")]
         public string GetEmailStepThird()
         {
-            WaitUntil.WaitSomeInterval(3000);
+            WaitUntil.WaitSomeInterval(1000);
             WaitUntil.CustomElementIsVisible(ValueFromStringLeadEmailModalWndw);
             string getEmailStepThird = ValueFromStringLeadEmailModalWndw.Text;
             string getEmailStepThirdActual = getEmailStepThird.ToString();
@@ -70,7 +70,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         [AllureStep("GetUnitAddressStepThird")]
         public string GetUnitAddressStepThird()
         {
-            WaitUntil.WaitSomeInterval(3000);
+            WaitUntil.WaitSomeInterval(1000);
             WaitUntil.CustomElementIsVisible(ValueFromStringUnitAddressModalWndw);
             string getUnitAddress = ValueFromStringUnitAddressModalWndw.Text;
             Regex regexPartUnitAddress = new Regex(@"^......................");
@@ -79,6 +79,32 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             //Console.WriteLine($"Unit Address step third: {regexPartUnitAddressActual}");
 
             return regexPartUnitAddressActual;
+        }
+
+        [AllureStep("GetUnitAddressStepSecond")]
+        public string GetShortUnitAddressStepSecond()
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            WaitUntil.CustomElementIsVisible(FieldInputUnitAddressModalWndw);
+            string getUnitAddress = FieldInputUnitAddressModalWndw.Text;
+            Regex regexPartUnitAddress = new Regex(@"^...................");
+            string regexPartUnitAddressActual = regexPartUnitAddress.Match(getUnitAddress).ToString();
+            Console.WriteLine($"Unit Address step second: {regexPartUnitAddressActual}");
+
+            return regexPartUnitAddressActual;
+        }
+
+        [AllureStep("GetUnitNumberStepSecond")]
+        public string GetUnitNumberStepSecond()
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            WaitUntil.CustomElementIsVisible(FieldInputUnitAddressModalWndw);
+            string getUnitAddress = FieldInputUnitAddressModalWndw.Text;
+            Regex regexUnitNumber = new Regex(@"[0-9]{1}$");
+            string regexUnitNumberActual = regexUnitNumber.Match(getUnitAddress).ToString();
+            Console.WriteLine($"Unit Address step second: {regexUnitNumberActual}");
+
+            return regexUnitNumberActual;
         }
     }
 }

@@ -6,6 +6,7 @@ using CazamioProject.DBHelpers;
 using CazamioProject.DBHelpers.TableOwnerCommissionsStructure;
 using CazamioProject.DBHelpers.TableOwnerManagements;
 using CazamioProject.DBHelpers.TableOwnerPhoneNumbers;
+using CazamioProject.DBHelpers.TablePrices;
 using MarketplaceAdminTests;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
@@ -640,8 +641,21 @@ namespace MarketplaceAdminTests
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
         [AllureSubSuite("CreateApplicationWhenTenantAddedToSystem")]
+
+        #region Preconditions
+
+        //Нужно учесть количество символов для Regex в коротком адресе дома и номер юнита, например, "1 Washington Square #4".
+        
+        #endregion
+
         public void CreateApplicationWhenTenantAddedToSystem()
         {
+            #region Preconditions
+
+            string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+
+            #endregion
+
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
                 .ClickIconShowLogInPg()
@@ -666,6 +680,8 @@ namespace MarketplaceAdminTests
                 .ClickButtonNextModalWndw();
 
             string getUnitAddressStepSecondActual = Pages.ModalWndwCreateAApplication.GetUnitAddressStepSecond();
+            string getShortAddress = Pages.ModalWndwCreateAApplication.GetShortUnitAddressStepSecond();
+            string getUnitNumberActuaL = Pages.ModalWndwCreateAApplication.GetUnitNumberStepSecond();
 
             Pages.ModalWndwCreateAApplication
                 .ClickButtonNextModalWndw();
@@ -676,7 +692,10 @@ namespace MarketplaceAdminTests
             Pages.ModalWndwCreateAApplication
                 .VerifyEmailAndUnitAddress(getEmailStepFirstActual, getUnitAddressStepSecondActual, getEmailStepThirdActual, getUnitAddressStepThirdActual);
 
-            WaitUntil.WaitSomeInterval(5000);
+            var getLeasePrice = DBRequestPrices.Prices.GetLeasePrice(getShortAddress, getUnitNumberActuaL, marketplaceId);
+            //Получить Security Deposit
+
+            WaitUntil.WaitSomeInterval(3000);
         }
     }
 }

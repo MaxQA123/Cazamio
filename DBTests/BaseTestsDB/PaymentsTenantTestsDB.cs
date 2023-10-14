@@ -349,7 +349,7 @@ namespace DBTests.BaseTestsDB
             string buildingId = DBTestDataDBForAdmins.BUILDING_ID;
             string unitNumber = DBTestDataDBForAdmins.UNIT_NUMBER;
 
-            string apartmentApplicationId = DBRequestApartmentApplications.GetApartmentApplicationIdByTenantIdApartmentid(userIdTenant, buildingId, unitNumber);
+            string apartmentApplicationId = DBRequestApartmentApplicationsOLD.GetApartmentApplicationIdByTenantIdApartmentid(userIdTenant, buildingId, unitNumber);
             Console.WriteLine($"{apartmentApplicationId} :ApartmentApplicationId by TenantId BuildingId UnitNumber for application from table ApartmentApplications");
 
             string lastId = DBTableTransactions.GetLastId();
@@ -421,7 +421,7 @@ namespace DBTests.BaseTestsDB
             string buildingId = DBTestDataDBForAdmins.BUILDING_ID;
             string unitNumber = DBTestDataDBForAdmins.UNIT_NUMBER;
 
-            string apartmentApplicationId = DBRequestApartmentApplications.GetApartmentApplicationIdByTenantIdApartmentid(userIdTenant, buildingId, unitNumber);
+            string apartmentApplicationId = DBRequestApartmentApplicationsOLD.GetApartmentApplicationIdByTenantIdApartmentid(userIdTenant, buildingId, unitNumber);
             Console.WriteLine($"{apartmentApplicationId} :ApartmentApplicationId by TenantId BuildingId UnitNumber for application from table ApartmentApplications");
 
             string lastId = DBTableTransactions.GetLastId();

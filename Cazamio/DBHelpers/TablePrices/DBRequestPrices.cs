@@ -71,48 +71,49 @@ namespace CazamioProject.DBHelpers.TablePrices
            
                 return row;
             }
-        }
 
-        // Если в селекте одно значение
-        public static DBModelPrices GetLeasePrice(string buildingAddress, string unitNumber)
-        {
-            var row = new DBModelPrices();
-
-            // SQL запрос для выборки данных
-            string query = "SELECT LeasePrice" +
-               " FROM [dbo].[Prices]" +
-               " WHERE ApartmentId" +
-               " IN(SELECT Id FROM [dbo].[Apartments] WHERE Unit = @unitNumber AND BuildingId" +
-               " IN(SELECT Id FROM [dbo].[Buildings] Where AddressId" +
-               " IN(SELECT Id FROM [dbo].[Addresses] WHERE Street = @buildingAddress)))";
-            try
+            public static DBModelPricesCombined GetLeasePrice(string buildingAddress, string unitNumber, string marketplaceId)
             {
-                using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
-                using SqlCommand command = new(query, connection);
-                connection.Open();
+                var row = new DBModelPricesCombined();
 
-                // Параметризованный запрос с двумя параметрами
-                command.Parameters.AddWithValue("@buildingAddress", DbType.String).Value = buildingAddress;
-                command.Parameters.AddWithValue("@unitNumber", DbType.String).Value = unitNumber;
-
-                using SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+                // SQL запрос для выборки данных
+                string query = "SELECT LeasePrice" +
+                       " FROM Prices" +
+                       " WHERE ApartmentId" +
+                       " IN(SELECT Id FROM Apartments WHERE Unit = @unitNumber AND BuildingId" +
+                       " IN(SELECT Id FROM Buildings Where AddressId" +
+                       " IN(SELECT Id FROM Addresses WHERE Street = @buildingAddress AND MarketplaceId = marketplaceId)))";
+                try
                 {
-                    row.LeasePrice = GetValueOrDefault<decimal>(reader, 0);
+                    using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
+                    using SqlCommand command = new(query, connection);
+                    connection.Open();
+
+                    // Параметризованный запрос с двумя параметрами
+                    command.Parameters.AddWithValue("@buildingAddress", DbType.String).Value = buildingAddress;
+                    command.Parameters.AddWithValue("@unitNumber", DbType.String).Value = unitNumber;
+                    command.Parameters.AddWithValue("@marketplaceId", DbType.String).Value = marketplaceId;
+
+                    using SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        row.LeasePrice = GetValueOrDefault<decimal>(reader, 0);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw new ArgumentException($"Error: {ex.Message}\r\n{ex.StackTrace}");
+                }
+                finally
+                {
+
+                    // Обеспечиваем освобождение ресурсов
+                    SqlConnection.ClearAllPools();
                 }
 
+                return row;
             }
-            catch (Exception ex)
-            {
-                throw new ArgumentException($"Error: {ex.Message}\r\n{ex.StackTrace}");
-            }
-            finally
-            {
-
-                // Обеспечиваем освобождение ресурсов
-                SqlConnection.ClearAllPools();
-            }
-            return row;
         }
     }
 }
