@@ -658,11 +658,23 @@ namespace MarketplaceAdminTests
                 .ClickButtonPlusApplication();
             Pages.ModalWndwCreateAApplication
                 .VerifyTitleCreateApplicationModalWndw()
-                .EnterEmailInFieldMainApplicantEmailAddressModalWndw()
+                .EnterEmailInFieldMainApplicantEmailAddressModalWndw();
+
+            string getEmailStepFirstActual = Pages.ModalWndwCreateAApplication.GetEmailStepFirst();
+
+            Pages.ModalWndwCreateAApplication
                 .ClickButtonNextModalWndw();
 
-            string getUnitAddressActual = Pages.ModalWndwCreateAApplication.GetUnitAddress();
-            
+            string getUnitAddressStepSecondActual = Pages.ModalWndwCreateAApplication.GetUnitAddressStepSecond();
+
+            Pages.ModalWndwCreateAApplication
+                .ClickButtonNextModalWndw();
+
+            string getEmailStepThirdActual = Pages.ModalWndwCreateAApplication.GetEmailStepThird();
+            string getUnitAddressStepThirdActual = Pages.ModalWndwCreateAApplication.GetUnitAddressStepThird();
+
+            Pages.ModalWndwCreateAApplication
+                .VerifyEmailAndUnitAddress(getEmailStepFirstActual, getUnitAddressStepSecondActual, getEmailStepThirdActual, getUnitAddressStepThirdActual);
 
             WaitUntil.WaitSomeInterval(5000);
         }

@@ -35,5 +35,18 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         public IWebElement FieldInputUnitAddressModalWndw;
 
         #endregion
+
+        #region Create application step 3
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'main-info']//div[@class = 'info-field-container']//div[last()]")]
+        public IWebElement ValueFromStringLeadEmailModalWndw;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'main-info']//div[@class = 'info-field-container'][2]//div[last()]")]
+        public IWebElement ValueFromStringUnitAddressModalWndw;
+
+        [FindsBy(How = How.XPath, Using = "//cazamio-mobile-button[@ng-reflect-text = 'Next']")]
+        public IWebElement ButtonCreateModalWndw;
+
+        #endregion
     }
 }

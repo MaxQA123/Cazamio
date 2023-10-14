@@ -19,5 +19,21 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
 
             return this;
         }
+
+        [AllureStep("VerifyEmailAndUnitAddress")]
+        public ModalWndwCreateAApplication VerifyEmailAndUnitAddress( string getEmailStepFirstActual, string getUnitAddressStepSecondActual, string getEmailStepThirdActual, string getUnitAddressStepThirdActual)
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(getEmailStepFirstActual, getEmailStepThirdActual);
+                Assert.AreEqual(getUnitAddressStepSecondActual, getUnitAddressStepThirdActual);
+
+                Console.WriteLine($"Email: {getEmailStepThirdActual}");
+                Console.WriteLine($"Unit Address: {getUnitAddressStepThirdActual}");
+            });
+
+            return this;
+
+        }
     }
 }
