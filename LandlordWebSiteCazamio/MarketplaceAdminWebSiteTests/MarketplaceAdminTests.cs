@@ -694,6 +694,7 @@ namespace MarketplaceAdminTests
 
             var getLeasePrice = DBRequestPrices.Prices.GetLeasePrice(getShortAddress, getUnitNumberActuaL, marketplaceId);
             //Получить Security Deposit
+            //олрлпор
 
             WaitUntil.WaitSomeInterval(3000);
         }
