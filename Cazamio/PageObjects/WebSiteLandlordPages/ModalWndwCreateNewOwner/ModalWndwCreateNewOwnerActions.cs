@@ -33,7 +33,7 @@ namespace CazamioProject.PageObjects.ModalWndwCreateNewOwner
         public ModalWndwCreateNewOwner EnterOwnerEmaiL()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputOwnerEmail, GenerateRandomDataHelper.RandomEmail(5) + GenerateRandomDataHelper.RandomNumber(3) + GenerateRandomDataHelper.RandomEmail(2) + NameDomen.PUTS_BOX);
+            InputGeneral.InputFunctionWithClear(FieldInputOwnerEmail, GenerateRandomDataHelper.RandomEmail(5) + GenerateRandomDataHelper.RandomNumberWithoutZero(3) + GenerateRandomDataHelper.RandomEmail(2) + NameDomen.PUTS_BOX);
 
             return this;
         }
@@ -155,15 +155,15 @@ namespace CazamioProject.PageObjects.ModalWndwCreateNewOwner
         public ModalWndwCreateNewOwner EnterDataOwnerAndTenantPays()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputOwnerNumberOfMonths, GenerateRandomDataHelper.RandomNumber(1));
+            InputGeneral.InputFunctionWithClear(FieldInputOwnerNumberOfMonths, GenerateRandomDataHelper.RandomNumberWithoutZero(1));
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputTenantNumberOfMonths, GenerateRandomDataHelper.RandomNumber(1));
+            InputGeneral.InputFunctionWithClear(FieldInputTenantNumberOfMonths, GenerateRandomDataHelper.RandomNumberWithoutZero(1));
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputOwnerPercentage, GenerateRandomDataHelper.RandomNumber(2));
+            InputGeneral.InputFunctionWithClear(FieldInputOwnerPercentage, GenerateRandomDataHelper.RandomNumberWithoutZero(2));
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputTenantPercentage, GenerateRandomDataHelper.RandomNumber(2));
+            InputGeneral.InputFunctionWithClear(FieldInputTenantPercentage, GenerateRandomDataHelper.RandomNumberWithoutZero(2));
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputTakeOff, GenerateRandomDataHelper.RandomNumber(2));
+            InputGeneral.InputFunctionWithClear(FieldInputTakeOff, GenerateRandomDataHelper.RandomNumberWithoutZero(2));
 
             return this;
         }
@@ -192,7 +192,7 @@ namespace CazamioProject.PageObjects.ModalWndwCreateNewOwner
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputMgmtName, Name.FirstName() + Name.LastName());
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputMgmtEmail, GenerateRandomDataHelper.RandomEmail(5) + GenerateRandomDataHelper.RandomNumber(3) + GenerateRandomDataHelper.RandomEmail(2) + NameDomen.XITROO);
+            InputGeneral.InputFunctionWithClear(FieldInputMgmtEmail, GenerateRandomDataHelper.RandomEmail(5) + GenerateRandomDataHelper.RandomNumberWithoutZero(3) + GenerateRandomDataHelper.RandomEmail(2) + NameDomen.XITROO);
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputPhoneNumberMgmt, GeneralTestDataForAllUsers.CODE_PHONE_NUMBER_ONE + GenerateRandomDataHelper.RandomPhoneNumber(7));
             WaitUntil.WaitSomeInterval(100);

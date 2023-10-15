@@ -17,7 +17,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBr
         {
             InputGeneral.InputFunctionWithClear(FieldInputFirstName, Name.FirstName());
             InputGeneral.InputFunctionWithClear(FieldInputLastName, Name.LastName());
-            InputGeneral.InputFunctionWithClear(FieldInputEmail, GenerateRandomDataHelper.RandomEmail(5) + GenerateRandomDataHelper.RandomNumber(3) + GenerateRandomDataHelper.RandomEmail(2) + NameDomen.PUTS_BOX);
+            InputGeneral.InputFunctionWithClear(FieldInputEmail, GenerateRandomDataHelper.RandomEmail(5) + GenerateRandomDataHelper.RandomNumberWithoutZero(3) + GenerateRandomDataHelper.RandomEmail(2) + NameDomen.PUTS_BOX);
 
             return this;
         }

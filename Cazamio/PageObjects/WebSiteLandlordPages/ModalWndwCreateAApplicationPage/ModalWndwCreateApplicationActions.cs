@@ -106,5 +106,13 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
 
             return regexUnitNumberActual;
         }
+
+        [AllureStep("ClickFieldInputRequestedOfferPriceModalWndw")]
+        public ModalWndwCreateAApplication ClickFieldInputRequestedOfferPriceModalWndw()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputRequestedOfferPriceModalWndw);
+            InputGeneral.InputFunctionWithClear(FieldInputRequestedOfferPriceModalWndw, GenerateRandomDataHelper.RandomNumberWithoutZero(3));
+            return this;
+        }
     }
 }

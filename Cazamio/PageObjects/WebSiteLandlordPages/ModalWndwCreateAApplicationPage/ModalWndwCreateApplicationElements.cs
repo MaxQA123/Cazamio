@@ -44,6 +44,9 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         [FindsBy(How = How.XPath, Using = "//div[@class = 'main-info']//div[@class = 'info-field-container'][2]//div[last()]")]
         public IWebElement ValueFromStringUnitAddressModalWndw;
 
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'requested-offer-price']")]
+        public IWebElement FieldInputRequestedOfferPriceModalWndw;
+
         [FindsBy(How = How.XPath, Using = "//cazamio-mobile-button[@ng-reflect-text = 'Next']")]
         public IWebElement ButtonCreateModalWndw;
 

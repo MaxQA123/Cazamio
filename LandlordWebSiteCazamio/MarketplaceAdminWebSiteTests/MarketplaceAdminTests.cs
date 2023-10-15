@@ -645,7 +645,8 @@ namespace MarketplaceAdminTests
         #region Preconditions
 
         //Нужно учесть количество символов для Regex в коротком адресе дома и номер юнита, например, "1 Washington Square #4".
-        
+        //У апартамента должно быть только одно заначение в поле "Rental terms".
+
         #endregion
 
         public void CreateApplicationWhenTenantAddedToSystem()
@@ -692,9 +693,10 @@ namespace MarketplaceAdminTests
             Pages.ModalWndwCreateAApplication
                 .VerifyEmailAndUnitAddress(getEmailStepFirstActual, getUnitAddressStepSecondActual, getEmailStepThirdActual, getUnitAddressStepThirdActual);
 
-            var getLeasePrice = DBRequestPrices.Prices.GetLeasePrice(getShortAddress, getUnitNumberActuaL, marketplaceId);
-            //Получить Security Deposit
-            //олрлпор
+            var getLeasePriceFromDb = DBRequestPrices.Prices.GetLeasePrice(getShortAddress, getUnitNumberActuaL, marketplaceId);
+            var getSecurityDepositFromDb = DBRequestPrices.Prices.GetSecurityDeposit(getShortAddress, getUnitNumberActuaL, marketplaceId);
+            var getMonthlyRentsPrePaymentFromDb = DBRequestPrices.Prices.GetMonthlyRentsPrePayment(getShortAddress, getUnitNumberActuaL, marketplaceId);
+            var getRentalTermsFromDb = DBRequestApartments.Apartments.GetLeaseDurationForApartment(getShortAddress, getUnitNumberActuaL, marketplaceId);
 
             WaitUntil.WaitSomeInterval(3000);
         }

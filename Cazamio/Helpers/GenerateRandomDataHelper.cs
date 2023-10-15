@@ -19,7 +19,7 @@ namespace CazamioProgect.Helpers
         }
 
         [AllureStep("RandomNumber")]
-        public static string RandomNumber(int size)
+        public static string RandomNumberWithoutZero(int size)
         {
             Random random = new Random();
             const string chars = "123456789";

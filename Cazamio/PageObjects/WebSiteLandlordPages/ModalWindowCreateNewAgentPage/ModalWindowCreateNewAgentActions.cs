@@ -28,8 +28,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewAg
         [AllureStep("EnterBrokerAgentCommissionMdlWndw")]
         public ModalWindowCreateNewAgent EnterBrokerAgentCommissionMdlWndw()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputBrokerCommissionMdlwndw, GenerateRandomDataHelper.RandomNumber(12));
-            InputGeneral.InputFunctionWithClear(FieldInputAgentCommissionMdlwndw, GenerateRandomDataHelper.RandomNumber(12));
+            InputGeneral.InputFunctionWithClear(FieldInputBrokerCommissionMdlwndw, GenerateRandomDataHelper.RandomNumberWithoutZero(12));
+            InputGeneral.InputFunctionWithClear(FieldInputAgentCommissionMdlwndw, GenerateRandomDataHelper.RandomNumberWithoutZero(12));
 
             return this;
         }
