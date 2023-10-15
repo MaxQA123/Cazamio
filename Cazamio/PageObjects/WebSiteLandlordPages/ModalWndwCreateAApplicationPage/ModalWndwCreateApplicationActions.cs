@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProgect.PageObjects;
 using NUnit.Allure.Attributes;
 using System;
 using System.Collections.Generic;
@@ -112,6 +113,18 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         {
             WaitUntil.CustomElementIsVisible(FieldInputRequestedOfferPriceModalWndw);
             InputGeneral.InputFunctionWithClear(FieldInputRequestedOfferPriceModalWndw, GenerateRandomDataHelper.RandomNumberWithoutZero(3));
+            return this;
+        }
+
+        [AllureStep("SelectDateAvailableForAprtmntsModalWndw")]
+        public ModalWndwCreateAApplication SelectDateAvailableForAprtmntsModalWndw()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputMoveInDateModalWndw, 10);
+            Button.Click(FieldInputMoveInDateModalWndw);
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .SelectDayOnDatePickerFourthLine(DaysFourthLineForDatePiker.FOURTH_LINE_THIRD_NUMBER, " ");
+
             return this;
         }
     }

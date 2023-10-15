@@ -646,6 +646,7 @@ namespace MarketplaceAdminTests
 
         //Нужно учесть количество символов для Regex в коротком адресе дома и номер юнита, например, "1 Washington Square #4".
         //У апартамента должно быть только одно заначение в поле "Rental terms".
+        //Выставить дату для Date Picker больше чем текущая дата.
 
         #endregion
 
@@ -697,6 +698,11 @@ namespace MarketplaceAdminTests
             var getSecurityDepositFromDb = DBRequestPrices.Prices.GetSecurityDeposit(getShortAddress, getUnitNumberActuaL, marketplaceId);
             var getMonthlyRentsPrePaymentFromDb = DBRequestPrices.Prices.GetMonthlyRentsPrePayment(getShortAddress, getUnitNumberActuaL, marketplaceId);
             var getRentalTermsFromDb = DBRequestApartments.Apartments.GetLeaseDurationForApartment(getShortAddress, getUnitNumberActuaL, marketplaceId);
+
+            Pages.ModalWndwCreateAApplication
+                .ClickFieldInputRequestedOfferPriceModalWndw()
+                .SelectDateAvailableForAprtmntsModalWndw();
+            //Добавить сравнение  значений из БД со значениями с фронта
 
             WaitUntil.WaitSomeInterval(3000);
         }

@@ -33,7 +33,6 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             });
 
             return this;
-
         }
     }
 }
