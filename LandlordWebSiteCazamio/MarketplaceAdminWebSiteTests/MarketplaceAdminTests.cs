@@ -702,6 +702,14 @@ namespace MarketplaceAdminTests
             Pages.ModalWndwCreateAApplication
                 .ClickFieldInputRequestedOfferPriceModalWndw()
                 .SelectDateAvailableForAprtmntsModalWndw();
+
+            string getLeasePriceActual = Pages.ModalWndwCreateAApplication.GetLeasePriceStepThirdFromUi();
+            string getSecurityDepositActual = Pages.ModalWndwCreateAApplication.GetSecurityDepositStepThirdFromUi();
+            string getMonthlyRentsPrePaymentActual = Pages.ModalWndwCreateAApplication.GetMonthlyRentsPrePaymentStepThirdFromUi();
+            string getRentalTermsActual = Pages.ModalWndwCreateAApplication.GetRentalTermsStepThirdFromUi();
+
+            Pages.ModalWndwCreateAApplication
+                .VerifyFieldsAutocompleteInStepThird(getLeasePriceFromDb, getSecurityDepositFromDb, getMonthlyRentsPrePaymentFromDb, getRentalTermsFromDb, getLeasePriceActual, getSecurityDepositActual, getMonthlyRentsPrePaymentActual, getRentalTermsActual);
             //Добавить сравнение  значений из БД со значениями с фронта
 
             WaitUntil.WaitSomeInterval(3000);

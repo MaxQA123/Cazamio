@@ -34,5 +34,24 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
 
             return this;
         }
+
+        [AllureStep("VerifyFieldsAutocompleteInStepThird")]
+        public ModalWndwCreateAApplication VerifyFieldsAutocompleteInStepThird(string getLeasePriceFromDb, string getSecurityDepositFromDb, string getMonthlyRentsPrePaymentFromDb, string getRentalTermsFromDb, string getLeasePriceActual, string getSecurityDepositActual, string getMonthlyRentsPrePaymentActual, string getRentalTermsActual)
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(getLeasePriceFromDb, getLeasePriceActual);
+                Assert.AreEqual(getSecurityDepositFromDb, getSecurityDepositActual);
+                Assert.AreEqual(getMonthlyRentsPrePaymentFromDb, getMonthlyRentsPrePaymentActual);
+                Assert.AreEqual(getRentalTermsFromDb, getRentalTermsActual);
+
+                Console.WriteLine($"Lease Price: {getLeasePriceActual}");
+                Console.WriteLine($"Security Deposit: {getSecurityDepositActual}");
+                Console.WriteLine($"Monthly Rents Pre Payment: {getMonthlyRentsPrePaymentActual}");
+                Console.WriteLine($"Rental Terms: {getRentalTermsActual}");
+            });
+
+            return this;
+        }
     }
 }

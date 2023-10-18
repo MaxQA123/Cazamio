@@ -127,5 +127,53 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
 
             return this;
         }
+
+        [AllureStep("GetLeasePriceStepThirdFromUi")]
+        public string GetLeasePriceStepThirdFromUi()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.CustomElementIsVisible(FieldInputLeasePriceModalWndw);
+            string getLeasePrice = FieldInputLeasePriceModalWndw.GetAttribute("value");
+            string getLeasePriceActual = getLeasePrice.ToString();
+            //Console.WriteLine($"Email step first: {getEmailActual}");
+
+            return getLeasePriceActual;
+        }
+
+        [AllureStep("GetSecurityDepositStepThirdFromUi")]
+        public string GetSecurityDepositStepThirdFromUi()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.CustomElementIsVisible(FieldInputSecurityDepositModalWndw);
+            string getSecurityDeposit = FieldInputSecurityDepositModalWndw.GetAttribute("value");
+            string getSecurityDepositActual = getSecurityDeposit.ToString();
+            //Console.WriteLine($"Email step first: {getEmailActual}");
+
+            return getSecurityDepositActual;
+        }
+
+        [AllureStep("GetMonthlyRentsPrePaymentStepThirdFromUi")]
+        public string GetMonthlyRentsPrePaymentStepThirdFromUi()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.CustomElementIsVisible(FieldInputMonthlyRentsPrePaymentModalWndw);
+            string getMonthlyRentsPrePayment = FieldInputMonthlyRentsPrePaymentModalWndw.GetAttribute("value");
+            string getMonthlyRentsPrePaymentActual = getMonthlyRentsPrePayment.ToString();
+            //Console.WriteLine($"Email step first: {getEmailActual}");
+
+            return getMonthlyRentsPrePaymentActual;
+        }
+
+        [AllureStep("GetRentalTermsStepThirdFromUi")]
+        public string GetRentalTermsStepThirdFromUi()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.CustomElementIsVisible(FieldInputRentalTermsModalWndw);
+            string getRentalTerms = FieldInputRentalTermsModalWndw.GetAttribute("value");
+            string getRentalTermsActual = getRentalTerms.ToString();
+            //Console.WriteLine($"Email step first: {getEmailActual}");
+
+            return getRentalTermsActual;
+        }
     }
 }
