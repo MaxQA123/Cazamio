@@ -64,7 +64,7 @@ namespace CazamioProject.DBHelpers
                 return row;
             }
 
-            public static string DeleteCreatedUser(string email, string marketplaceId)
+            public static string DeleteCreatedUser(int marketplaceId, string email)
             {
                 string data = null;
                 using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))

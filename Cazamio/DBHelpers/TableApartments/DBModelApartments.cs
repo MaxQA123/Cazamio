@@ -27,7 +27,7 @@ namespace CazamioProject.DBHelpers
             public object? IsDeleted { get; set; }
             public object? Status { get; set; }
             public object? TemplateId { get; set; }
-            public object? LeaseDuration { get; set; }
+            public string? LeaseDuration { get; set; }
             public object? ClosedDateToNotify { get; set; }
             public object? Floor { get; set; }
             public object? MarketplaceId { get; set; }

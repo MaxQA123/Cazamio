@@ -24,7 +24,7 @@ namespace CazamioProject.DBHelpers.TableChatCursors
         }
         public class ChatCursors
         {
-            public static string DeleteRecordByEmailMarketplaceId(string email, string marketplaceId)
+            public static string DeleteRecordByEmailMarketplaceId(int marketplaceId, string email)
             {
                 string data = null;
                 using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))

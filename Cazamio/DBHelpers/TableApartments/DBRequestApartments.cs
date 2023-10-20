@@ -100,7 +100,7 @@ namespace CazamioProject.DBHelpers
                     using SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        row.LeaseDuration = GetValueOrDefault<string>(reader, 0);
+                        row.LeaseDuration = GetValueOrDefault<string?>(reader, 0);
                     }
 
                 }

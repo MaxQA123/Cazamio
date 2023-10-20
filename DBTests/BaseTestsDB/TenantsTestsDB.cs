@@ -2,6 +2,10 @@
 using ApiTests.Base;
 using CazamioProgect.Helpers;
 using CazamioProject.DBHelpers;
+using CazamioProject.DBHelpers.TableApartmentApplicationProgress;
+using CazamioProject.DBHelpers.TableApartmentHistories;
+using CazamioProject.DBHelpers.TableApplicationPrices;
+using CazamioProject.DBHelpers.TableChatCursors;
 using CazamioProject.Helpers;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
@@ -26,13 +30,6 @@ namespace DBTests.BaseTestsDB
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBTenant")]
         [AllureSubSuite("RecordsAboutNewTenant")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment:  new records about that the an apartemnt added in the favorities in the table "dbo.TenantApartmentFavorities".
-        //Path to cheking's: 
 
         public void NewTenantIdAndId()
         {
@@ -59,12 +56,6 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBTenant")]
         [AllureSubSuite("RecordsAboutNewTenant")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The tables "Tenants", "AspNetUsers" and "AspNetUserRoles".
-        //Path to cheking's: 
         public void RecordsAboutNewTenant()
         {
             string newTenant = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_LAST_NAME;
@@ -132,12 +123,6 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBTenant")]
         [AllureSubSuite("RecordsAboutNewTenant")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment:  new records about background check and credit screening in the table "dbo.BackgroundChecks".
-        //Path to cheking's: 
         public void NewRecordsAboutBackgroundCheckCreditScreening()
         {
             string tenant = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_LAST_NAME;
@@ -205,12 +190,6 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBTenant")]
         [AllureSubSuite("RecordsInTableTenantExtractedIdentities")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: new records about a new tenant (First Name and Last Name) in the table "dbo.TenantExtractedIdentities".
-        //Path to cheking's: 
         public void RecordsInTableTenantExtractedIdentities()
         {
             string newTenant = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_LAST_NAME;
@@ -238,13 +217,6 @@ namespace DBTests.BaseTestsDB
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBTenant")]
         [AllureSubSuite("NewLeaseSignedThreeTenantsIntableTenantLeases")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The table "TenantLeases"
-        //Path to cheking's: 
 
         public void NewLeaseSignedThreeTenantsIntableTenantLeases()
         {
@@ -307,12 +279,6 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBTenant")]
         [AllureSubSuite("RecordsAboutNewTenant")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment:  new records about that the an apartemnt added in the favorities in the table "dbo.TenantApartmentFavorities".
-        //Path to cheking's: 
         public void NewRecordInTableTenantApartmentFavorities()
         {
             string tenantApplicant = TestDataForWebSiteTenant.FIRST_NAME_TENANT_APPLICANT;
@@ -351,14 +317,34 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBTenant")]
-        [AllureSubSuite("RecordsAboutNewTenant")]
+        [AllureSubSuite("DeleteNewTenantCreatedViaCreateApplication")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment:  new records about that the an apartemnt added in the favorities in the table "dbo.TenantApartmentFavorities".
-        //Path to cheking's: 
+        public void DeleteNewTenantCreatedViaCreateApplication()
+        {
+            #region Preconditions
+
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            string email = "task1569n1t@putsbox.com";
+
+            #endregion
+
+            DBRequestChatCursors.ChatCursors.DeleteRecordByEmailMarketplaceId(marketplaceId, email);
+            DBRequestApartmentHistories.ApartmentHistories.DeleteRecordByEmailMarketplaceId(marketplaceId, email);
+            DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByEmailMarketplaceId(marketplaceId, email);
+            DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByEmailMarketplaceId(marketplaceId, email);
+            DBRequestTenantLeases.TenantLeases.DeleteRecordByEmailMarketplaceId(marketplaceId, email);
+            DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByEmailMarketplaceId(marketplaceId, email);
+            DBRequestTeants.Tenants.DeleteCreatedUserTenant(marketplaceId, email);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(marketplaceId, email);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBTenant")]
+        [AllureSubSuite("RecordsAboutNewTenant")]
 
         public void Demo()
         {

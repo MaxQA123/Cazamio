@@ -88,13 +88,12 @@ namespace DBTests.BaseTestsDB
 
         public void DeleteNewlyCreatedMarketplaceAdmin()
         {
-            string email = "lo7lo6lo@xitroo.com";
-            string marketplaceId = "15";
+            //string email = "lo7lo6lo@xitroo.com";
+            //string marketplaceId = "15";
 
-            DBRequestMarketplaceAdmins.MarketplaceAdmins.DeleteCreatedUserMarketplaceAdmin(email, marketplaceId);
+            //DBRequestMarketplaceAdmins.MarketplaceAdmins.DeleteCreatedUserMarketplaceAdmin(email, marketplaceId);
 
-            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(email, marketplaceId);
-
+            //DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(email, marketplaceId);
         }
     }
 }

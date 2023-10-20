@@ -97,7 +97,7 @@ namespace CazamioProject.DBHelpers.TablePrices
                     using SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        row.LeasePrice = GetValueOrDefault<decimal>(reader, 0);
+                        row.LeasePrice = GetValueOrDefault<decimal?>(reader, 0);
                     }
 
                 }

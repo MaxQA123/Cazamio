@@ -36,7 +36,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         }
 
         [AllureStep("VerifyFieldsAutocompleteInStepThird")]
-        public ModalWndwCreateAApplication VerifyFieldsAutocompleteInStepThird(string getLeasePriceFromDb, string getSecurityDepositFromDb, string getMonthlyRentsPrePaymentFromDb, string getRentalTermsFromDb, string getLeasePriceActual, string getSecurityDepositActual, string getMonthlyRentsPrePaymentActual, string getRentalTermsActual)
+        public ModalWndwCreateAApplication VerifyFieldsAutocompleteInStepThird(decimal? getLeasePriceFromDb, decimal? getSecurityDepositFromDb, int? getMonthlyRentsPrePaymentFromDb, string getRentalTermsFromDb, string getLeasePriceActual, string getSecurityDepositActual, string getMonthlyRentsPrePaymentActual, string getRentalTermsActual)
         {
             Assert.Multiple(() =>
             {

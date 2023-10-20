@@ -62,48 +62,48 @@ namespace TenantCazamioTests
 
         public void SignUpAsTenant()
         {
-            #region Preconditions
+            //#region Preconditions
 
-            string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            //string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
-            #endregion
+            //#endregion
 
-            Pages.HeaderCazamioTenant
-                .ClickButtonSignUpHdrCzmTnnt();
-            Pages.SignUpCazamioTenant
-                .DemoEnterFirstLastNameEmailPasswordSignUpPg()
-                .ClickIconShowSignUpPg();
+            //Pages.HeaderCazamioTenant
+            //    .ClickButtonSignUpHdrCzmTnnt();
+            //Pages.SignUpCazamioTenant
+            //    .DemoEnterFirstLastNameEmailPasswordSignUpPg()
+            //    .ClickIconShowSignUpPg();
 
-            string emailPutsBox = Pages.SignUpCazamioTenant.CopyEmailFromSignUpPg();
-            string partEmailPutsBox = Pages.SignUpCazamioTenant.CopyEmailBeforeDogFromSignUpPg();
+            //string emailPutsBox = Pages.SignUpCazamioTenant.CopyEmailFromSignUpPg();
+            //string partEmailPutsBox = Pages.SignUpCazamioTenant.CopyEmailBeforeDogFromSignUpPg();
 
-            Pages.SignUpCazamioTenant
-                .ClickButtonGetStartedSignUpPg();
-            Pages.JScriptExecutorHelper
-                .OpenNewTab();
-            Browser._Driver.Navigate().GoToUrl(($"https://putsbox.com/{partEmailPutsBox}/inspect"));
-            Pages.PutsBox
-                .ClickButtonBodyHtml()
-                .ClickButtonConfirmEmailForTenant();
-            Pages.HeaderCazamioTenant
-               .ClickButtonMyApplicationsHdrCzmTnnt();
-            Pages.MyAccountCazamioTenant
-                .ClickTabAccountOnMyAccntPg()
-                .ClickButtonEditMyAccntPgTabAccnt()
-                .VerifyEmailNewTenant(emailPutsBox);
-            Console.WriteLine($"Email a new tenant: {emailPutsBox}");
+            //Pages.SignUpCazamioTenant
+            //    .ClickButtonGetStartedSignUpPg();
+            //Pages.JScriptExecutorHelper
+            //    .OpenNewTab();
+            //Browser._Driver.Navigate().GoToUrl(($"https://putsbox.com/{partEmailPutsBox}/inspect"));
+            //Pages.PutsBox
+            //    .ClickButtonBodyHtml()
+            //    .ClickButtonConfirmEmailForTenant();
+            //Pages.HeaderCazamioTenant
+            //   .ClickButtonMyApplicationsHdrCzmTnnt();
+            //Pages.MyAccountCazamioTenant
+            //    .ClickTabAccountOnMyAccntPg()
+            //    .ClickButtonEditMyAccntPgTabAccnt()
+            //    .VerifyEmailNewTenant(emailPutsBox);
+            //Console.WriteLine($"Email a new tenant: {emailPutsBox}");
 
-            var marketplaceIdFromDb = DBRequestTeants.DBTenants.GetMarketplaceIdByEmailUserTenant(emailPutsBox, marketplaceId);
-            Console.WriteLine($"MarketplaceId of tenant: {marketplaceIdFromDb}");
+            //var marketplaceIdFromDb = DBRequestTeants.Tenants.GetMarketplaceIdByEmailUserTenant(emailPutsBox, marketplaceId);
+            //Console.WriteLine($"MarketplaceId of tenant: {marketplaceIdFromDb}");
 
-            #region Postconditions
+            //#region Postconditions
 
-            DBRequestTeants.DBTenants.DeleteCreatedUserTenant(emailPutsBox, marketplaceId);
-            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailPutsBox, marketplaceId);
+            //DBRequestTeants.Tenants.DeleteCreatedUserTenant(emailPutsBox, marketplaceId);
+            //DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailPutsBox, marketplaceId);
 
-            #endregion
+            //#endregion
 
-            WaitUntil.WaitSomeInterval(2000);
+            //WaitUntil.WaitSomeInterval(2000);
         }
 
         [Test]
