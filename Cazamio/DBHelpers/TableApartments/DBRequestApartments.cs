@@ -74,7 +74,7 @@ namespace CazamioProject.DBHelpers
                 return row;
             }
 
-            public static DBModelApartments GetLeaseDurationForApartment(string buildingAddress, string unitNumber, string marketplaceId)
+            public static DBModelApartments GetLeaseDurationForApartment(string buildingAddress, string unitNumber, int marketplaceId)
             {
                 var row = new DBModelApartments();
 

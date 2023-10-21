@@ -22,7 +22,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewAg
         [AllureStep("VerifyMessageNewAgentCreatedSuccessfullyCrtNwAgntOnMdlwndw")]
         public ModalWindowCreateNewAgent VerifyMessageNewAgentCreatedSuccessfullyCrtNwAgntOnMdlwndw()
         {
-            WaitUntil.WaitSomeInterval(1000);
+            WaitUntil.CustomElementIsVisible(MessageNewAgentCreatedSuccessfullyCrtNwAgntOnMdlwndw);
             Assert.IsTrue(Successfully.IsVisible(MessageNewAgentCreatedSuccessfullyCrtNwAgntOnMdlwndw));
             
 

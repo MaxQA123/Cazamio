@@ -72,7 +72,7 @@ namespace CazamioProject.DBHelpers.TablePrices
                 return row;
             }
 
-            public static DBModelPricesCombined GetLeasePrice(string buildingAddress, string unitNumber, string marketplaceId)
+            public static DBModelPricesCombined GetLeasePrice(string buildingAddress, string unitNumber, int marketplaceId)
             {
                 var row = new DBModelPricesCombined();
 
@@ -115,7 +115,7 @@ namespace CazamioProject.DBHelpers.TablePrices
                 return row;
             }
 
-            public static DBModelPricesCombined GetSecurityDeposit(string buildingAddress, string unitNumber, string marketplaceId)
+            public static DBModelPricesCombined GetSecurityDeposit(string buildingAddress, string unitNumber, int marketplaceId)
             {
                 var row = new DBModelPricesCombined();
 
@@ -158,7 +158,7 @@ namespace CazamioProject.DBHelpers.TablePrices
                 return row;
             }
 
-            public static DBModelPricesCombined GetMonthlyRentsPrePayment(string buildingAddress, string unitNumber, string marketplaceId)
+            public static DBModelPricesCombined GetMonthlyRentsPrePayment(string buildingAddress, string unitNumber, int marketplaceId)
             {
                 var row = new DBModelPricesCombined();
 
