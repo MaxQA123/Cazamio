@@ -191,88 +191,88 @@ namespace MarketplaceAdminTests
 
         public void CreateBroker()
         {
-            //#region Preconditions
+            #region Preconditions
 
-            //string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
-            //#endregion
+            #endregion
 
-            //#region Test
+            #region Test
 
-            //Pages.LogInLandlord
-            //    .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
-            //    .ClickIconShowLogInPg()
-            //    .ClickButtonLetsGoLogInPg();
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
 
-            //string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
-            //string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
-            //Pages.SideBarLandlord
-            //    .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
-            //Pages.SideBarLandlord
-            //    .ClickButtonBrokersSidebar();
-            //Pages.ListOfBrokers
-            //    .VerifyTitleListOfBrokersPg()
-            //    .ClickButtonCreateBroker();
-            //Pages.ModalWindowCreateNewBroker
-            //    .VerifyTitleCreateNewBroker()
-            //    .EnterFirstLastNamesEmail();
+            Pages.SideBarLandlord
+                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+            Pages.SideBarLandlord
+                .ClickButtonBrokersSidebar();
+            Pages.ListOfBrokers
+                .VerifyTitleListOfBrokersPg()
+                .ClickButtonCreateBroker();
+            Pages.ModalWindowCreateNewBroker
+                .VerifyTitleCreateNewBroker()
+                .EnterFirstLastNamesEmail();
 
-            //string getFullEmail = Pages.ModalWindowCreateNewBroker.CopyEmailFromModalWindowCreateNewBroker();
-            //string getEmailBeforeDog = Pages.ModalWindowCreateNewBroker.CopyEmailBeforeDogFromModalWindowCreateNewBroker();
+            string getFullEmail = Pages.ModalWindowCreateNewBroker.CopyEmailFromModalWindowCreateNewBroker();
+            string getEmailBeforeDog = Pages.ModalWindowCreateNewBroker.CopyEmailBeforeDogFromModalWindowCreateNewBroker();
 
-            //Pages.ModalWindowCreateNewBroker
-            //    .ClickButtonCreateMdlWndwCrtNwBrkr();
-            //Pages.ListOfBrokers
-            //    .VerifyMessageBrokerHasBeenSuccessfullyCreated();
+            Pages.ModalWindowCreateNewBroker
+                .ClickButtonCreateMdlWndwCrtNwBrkr();
+            Pages.ListOfBrokers
+                .VerifyMessageBrokerHasBeenSuccessfullyCreated();
 
-            //WaitUntil.WaitSomeInterval(500);
-            //var marketplaceIdFromDb = DBRequestAspNetUsers.AspNetUsers.GetMarketplaceIdByEmailAndMarketplaceId(getFullEmail, marketplaceId);
-            //Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb.MarketplaceId}");
+            WaitUntil.WaitSomeInterval(500);
+            var marketplaceIdFromDb = DBRequestAspNetUsers.AspNetUsers.GetMarketplaceIdByEmailAndMarketplaceId(getFullEmail, marketplaceId);
+            Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb.MarketplaceId}");
 
-            //string getEmailFromListOfBrokers = Pages.ListOfBrokers.CopyEmailFirstRecordEmailForFirstBrokerInList();
+            string getEmailFromListOfBrokers = Pages.ListOfBrokers.CopyEmailFirstRecordEmailForFirstBrokerInList();
 
-            //Pages.ListOfBrokers
-            //    .VerifyEmailInListOfBrokers(getFullEmail, getEmailFromListOfBrokers);
-            //Pages.SideBarLandlord
-            //    .ClickButtonLogOutSidebar();
-            //Pages.JScriptExecutorHelper
-            //   .OpenNewTab()
-            //   .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, getEmailBeforeDog);
-            //Pages.PutsBox
-            //    .VerifyTitleLetterCreateBroker()
-            //    .ClickButtonBodyHtml();
+            Pages.ListOfBrokers
+                .VerifyEmailInListOfBrokers(getFullEmail, getEmailFromListOfBrokers);
+            Pages.SideBarLandlord
+                .ClickButtonLogOutSidebar();
+            Pages.JScriptExecutorHelper
+               .OpenNewTab()
+               .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, getEmailBeforeDog);
+            Pages.PutsBox
+                .VerifyTitleLetterCreateBroker()
+                .ClickButtonBodyHtml();
 
-            //string getTextPasswordActual = Pages.PutsBox.CopyPasswordFromEmailForCreateAdmin();
+            string getTextPasswordActual = Pages.PutsBox.CopyPasswordFromEmailForCreateAdmin();
 
-            //Pages.PutsBox
-            //    .ClickButtonConfirmEmailForAdmin();
+            Pages.PutsBox
+                .ClickButtonConfirmEmailForAdmin();
 
-            //Pages.LogInLandlord
-            //    .PasteForEnterEmailFromEmailCreateBroker(getFullEmail)
-            //    .PasteForEnterPsswrdFromEmailCreateBroker(getTextPasswordActual)
-            //    .ClickIconShowLogInPg()
-            //    .ClickButtonLetsGoLogInPg();
+            Pages.LogInLandlord
+                .PasteForEnterEmailFromEmailCreateBroker(getFullEmail)
+                .PasteForEnterPsswrdFromEmailCreateBroker(getTextPasswordActual)
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
 
-            //string getUserNameRoleCompareBroker = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+            string getUserNameRoleCompareBroker = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
-            //Pages.SideBarLandlord
-            //    .VerifyOnlyBrokerUserNameRole(getUserNameRoleCompareBroker);
+            Pages.SideBarLandlord
+                .VerifyOnlyBrokerUserNameRole(getUserNameRoleCompareBroker);
 
-            //#endregion
+            #endregion
 
-            //#region Postconditions
+            #region Postconditions
 
-            //DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(getFullEmail, marketplaceId);
-            //Console.WriteLine($"{getFullEmail}");
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestLandlords.Landlords.DeleteCreatedUserBroker(getFullEmail, marketplaceId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(getFullEmail, marketplaceId);
+            DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(getFullEmail, marketplaceId);
+            Console.WriteLine($"{getFullEmail}");
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestLandlords.Landlords.DeleteCreatedUserBroker(getFullEmail, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(getFullEmail, marketplaceId);
 
-            //#endregion
+            #endregion
 
-            //WaitUntil.WaitSomeInterval(2000);
+            WaitUntil.WaitSomeInterval(2000);
         }
 
         [Test]
@@ -286,82 +286,82 @@ namespace MarketplaceAdminTests
 
         public void CreateAgent()
         {
-            //#region Preconditions
+            #region Preconditions
 
-            //string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
-            //#endregion
+            #endregion
 
-            //#region Test
+            #region Test
 
-            //Pages.LogInLandlord
-            //    .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
-            //    .ClickIconShowLogInPg()
-            //    .ClickButtonLetsGoLogInPg();
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
 
-            //string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
-            //string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
-            //Pages.SideBarLandlord
-            //    .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare)
-            //    .ClickButtonAgentsSidebar();
-            //Pages.Agents
-            //    .ClickButtonCreateAgentAgentsPage();
-            //Pages.ModalWindowCreateNewAgent
-            //    .EnterFirstLastNameEmailPhnNmbrCellMdlWndw()
-            //    .EnterBrokerAgentCommissionMdlWndw();
+            Pages.SideBarLandlord
+                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare)
+                .ClickButtonAgentsSidebar();
+            Pages.Agents
+                .ClickButtonCreateAgentAgentsPage();
+            Pages.ModalWindowCreateNewAgent
+                .EnterFirstLastNameEmailPhnNmbrCellMdlWndw()
+                .EnterBrokerAgentCommissionMdlWndw();
 
-            //string fullEmailPutsBox = Pages.ModalWindowCreateNewAgent.CopyEmailFromMdlWndwCreateAgent();
-            //string partEmailPutsBox = Pages.ModalWindowCreateNewAgent.CopyEmailBeforeDogFromModalWindowCreateNewAgent();
+            string fullEmailPutsBox = Pages.ModalWindowCreateNewAgent.CopyEmailFromMdlWndwCreateAgent();
+            string partEmailPutsBox = Pages.ModalWindowCreateNewAgent.CopyEmailBeforeDogFromModalWindowCreateNewAgent();
 
-            //Pages.ModalWindowCreateNewAgent
-            //    .ClickButtonSaveCrtNwAgntOnMdlwndw()
-            //    .VerifyMessageNewAgentCreatedSuccessfullyCrtNwAgntOnMdlwndw();
-            //KeyBoardActions.ClickEscapeButton();
-            //Pages.SideBarLandlord
-            //    .ClickButtonLogOutSidebar();
-            //Pages.JScriptExecutorHelper
-            //    .OpenNewTab()
-            //    .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, partEmailPutsBox);
-            //Pages.PutsBox
-            //    .VerifyTitleLetterCreateBroker()
-            //    .ClickButtonBodyHtml();
+            Pages.ModalWindowCreateNewAgent
+                .ClickButtonSaveCrtNwAgntOnMdlwndw()
+                .VerifyMessageNewAgentCreatedSuccessfullyCrtNwAgntOnMdlwndw();
+            KeyBoardActions.ClickEscapeButton();
+            Pages.SideBarLandlord
+                .ClickButtonLogOutSidebar();
+            Pages.JScriptExecutorHelper
+                .OpenNewTab()
+                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, partEmailPutsBox);
+            Pages.PutsBox
+                .VerifyTitleLetterCreateBroker()
+                .ClickButtonBodyHtml();
 
-            //string getTextPasswordActual = Pages.PutsBox.CopyPasswordFromEmailForCreateAdmin();
+            string getTextPasswordActual = Pages.PutsBox.CopyPasswordFromEmailForCreateAdmin();
 
-            //Pages.PutsBox
-            //    .ClickButtonConfirmEmailForAdmin();
+            Pages.PutsBox
+                .ClickButtonConfirmEmailForAdmin();
 
-            //Pages.LogInLandlord
-            //    .PasteForEnterEmailFromEmailCreateAgent(fullEmailPutsBox)
-            //    .PasteForEnterPsswrdFromEmailCreateAgent(getTextPasswordActual)
-            //    .ClickIconShowLogInPg()
-            //    .ClickButtonLetsGoLogInPg();
+            Pages.LogInLandlord
+                .PasteForEnterEmailFromEmailCreateAgent(fullEmailPutsBox)
+                .PasteForEnterPsswrdFromEmailCreateAgent(getTextPasswordActual)
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
 
-            //string getUserNameRoleCompareAgent = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+            string getUserNameRoleCompareAgent = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
-            //Pages.SideBarLandlord
-            //    .VerifyOnlyAgentUserNameRole(getUserNameRoleCompareAgent);
+            Pages.SideBarLandlord
+                .VerifyOnlyAgentUserNameRole(getUserNameRoleCompareAgent);
 
-            //WaitUntil.WaitSomeInterval(100);
-            //var marketplaceIdFromDb = DBRequestAspNetUsers.AspNetUsers.GetMarketplaceIdByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
-            //Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb.MarketplaceId}");
+            WaitUntil.WaitSomeInterval(100);
+            var marketplaceIdFromDb = DBRequestAspNetUsers.AspNetUsers.GetMarketplaceIdByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
+            Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb.MarketplaceId}");
 
-            //#endregion
+            #endregion
 
-            //#region Postconditions
+            #region Postconditions
 
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
-            //Console.WriteLine($"{fullEmailPutsBox}");
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestBrokers.DBBrokers.DeleteCreatedUserAgent(fullEmailPutsBox, marketplaceId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(fullEmailPutsBox, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
+            Console.WriteLine($"{fullEmailPutsBox}");
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestBrokers.DBBrokers.DeleteCreatedUserAgent(fullEmailPutsBox, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(fullEmailPutsBox, marketplaceId);
 
-            //#endregion
+            #endregion
 
-            //WaitUntil.WaitSomeInterval(2000);
+            WaitUntil.WaitSomeInterval(2000);
         }
 
         [Test]
@@ -375,71 +375,71 @@ namespace MarketplaceAdminTests
 
         public void CreateOwner()
         {
-            //#region Preconditions
+            #region Preconditions
 
-            //string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
-            //#endregion
+            #endregion
 
-            //Pages.LogInLandlord
-            //    .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
-            //    .ClickIconShowLogInPg()
-            //    .ClickButtonLetsGoLogInPg();
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
 
-            //string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
-            //string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
-            //Pages.SideBarLandlord
-            //    .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare)
-            //    .ClickButtonOwnersSidebar();
-            //Pages.ListOfOwners
-            //    .ClickButtonCreateOwner();
-            //Pages.ModalWndwCreateNewOwner
-            //    .VerifyTitleCreateANewOwner()
-            //    .EnterCompanyName()
-            //    .EnterOwnerName()
-            //    .EnterOwnerEmaiL()
-            //    .EnterOfficeLocation()
-            //    .SelectBroker()
-            //    .EnterInternalNotes()
-            //    .ClickButtonAddPhoneNumber()
-            //    .EnterPhoneExtensionNumbers()
-            //    .ClickButtonAddCommissionStructure();
-            //KeyBoardActions.ScrollToDown();
-            //Pages.ModalWndwCreateNewOwner
-            //    .SwitchingItemsPays()
-            //    .ClickButtonAddMgmt()
-            //    .ClickButtonPayType()
-            //    .SelectItemOwnerAndTenantPays()
-            //    .EnterDataOwnerAndTenantPays()
-            //    .ScrollDown()
-            //    .EnterDataMgmt();
+            Pages.SideBarLandlord
+                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare)
+                .ClickButtonOwnersSidebar();
+            Pages.ListOfOwners
+                .ClickButtonCreateOwner();
+            Pages.ModalWndwCreateNewOwner
+                .VerifyTitleCreateANewOwner()
+                .EnterCompanyName()
+                .EnterOwnerName()
+                .EnterOwnerEmaiL()
+                .EnterOfficeLocation()
+                .SelectBroker()
+                .EnterInternalNotes()
+                .ClickButtonAddPhoneNumber()
+                .EnterPhoneExtensionNumbers()
+                .ClickButtonAddCommissionStructure();
+            KeyBoardActions.ScrollToDown();
+            Pages.ModalWndwCreateNewOwner
+                .SwitchingItemsPays()
+                .ClickButtonAddMgmt()
+                .ClickButtonPayType()
+                .SelectItemOwnerAndTenantPays()
+                .EnterDataOwnerAndTenantPays()
+                .ScrollDown()
+                .EnterDataMgmt();
 
-            //string getOwnerEmailFromModalWndw = Pages.ModalWndwCreateNewOwner.GetEmailFromFieldOwnerEmail();
+            string getOwnerEmailFromModalWndw = Pages.ModalWndwCreateNewOwner.GetEmailFromFieldOwnerEmail();
 
-            //Pages.ModalWndwCreateNewOwner
-            //    .ClickButtonCreate();
-            //Pages.ListOfOwners
-            //    .VerifyMessageSuccessCreatedOwner();
+            Pages.ModalWndwCreateNewOwner
+                .ClickButtonCreate();
+            Pages.ListOfOwners
+                .VerifyMessageSuccessCreatedOwner();
 
-            //string getLastEmailFromPage = Pages.ListOfOwners.GetFirstEmailFromTable();
+            string getLastEmailFromPage = Pages.ListOfOwners.GetFirstEmailFromTable();
 
-            //Pages.ListOfOwners
-            //    .VerifyEmailForNewOwner(getOwnerEmailFromModalWndw, getLastEmailFromPage);
+            Pages.ListOfOwners
+                .VerifyEmailForNewOwner(getOwnerEmailFromModalWndw, getLastEmailFromPage);
 
-            //var marketplaceIdFromDb = DbRequestOwners.DBOwners.GetMarketplaceIdByEmailUserOwner(getOwnerEmailFromModalWndw);
-            //Console.WriteLine($"MarketplaceId of owner: {marketplaceIdFromDb}");
+            var marketplaceIdFromDb = DbRequestOwners.DBOwners.GetMarketplaceIdByEmailUserOwner(getOwnerEmailFromModalWndw);
+            Console.WriteLine($"MarketplaceId of owner: {marketplaceIdFromDb}");
 
-            //#region Postconditions
+            #region Postconditions
 
-            //DBRequestOwnerCommissionsStructure.OwnerCommissionsStructure.DeleteRecordAboutOwnerCommissionsStructure(getOwnerEmailFromModalWndw, marketplaceId);
-            //DBRequestOwnerPhoneNumbers.OwnerPhoneNumbers.DeleteRecordAboutOwnerPhoneNumber(getOwnerEmailFromModalWndw, marketplaceId);
-            //DBRequestOwnerManagements.OwnerManagements.DeleteRecordAboutOwnerManagements(getOwnerEmailFromModalWndw, marketplaceId);
-            //DbRequestOwners.DBOwners.DeleteCreatedUserOwner(getOwnerEmailFromModalWndw, marketplaceId);
+            DBRequestOwnerCommissionsStructure.OwnerCommissionsStructure.DeleteRecordAboutOwnerCommissionsStructure(getOwnerEmailFromModalWndw, marketplaceId);
+            DBRequestOwnerPhoneNumbers.OwnerPhoneNumbers.DeleteRecordAboutOwnerPhoneNumber(getOwnerEmailFromModalWndw, marketplaceId);
+            DBRequestOwnerManagements.OwnerManagements.DeleteRecordAboutOwnerManagements(getOwnerEmailFromModalWndw, marketplaceId);
+            DbRequestOwners.DBOwners.DeleteCreatedUserOwner(getOwnerEmailFromModalWndw, marketplaceId);
 
-            //#endregion
+            #endregion
 
-            //WaitUntil.WaitSomeInterval(2000);
+            WaitUntil.WaitSomeInterval(2000);
         }
 
         [Test]

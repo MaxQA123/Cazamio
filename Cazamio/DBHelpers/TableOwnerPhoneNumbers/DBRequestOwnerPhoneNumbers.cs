@@ -24,7 +24,7 @@ namespace CazamioProject.DBHelpers.TableOwnerPhoneNumbers
         }
         public class OwnerPhoneNumbers
         {
-            public static string DeleteRecordAboutOwnerPhoneNumber(string email, string marketplaceId)
+            public static string DeleteRecordAboutOwnerPhoneNumber(string email, int marketplaceId)
             {
                 string data = null;
                 using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))

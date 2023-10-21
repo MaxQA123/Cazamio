@@ -25,7 +25,7 @@ namespace CazamioProject.DBHelpers
         }
         public class AspNetUsers
         {
-            public static DBModelsAspNetUsers GetMarketplaceIdByEmailAndMarketplaceId(string email, string marketplaceId)
+            public static DBModelsAspNetUsers GetMarketplaceIdByEmailAndMarketplaceId(string email, int marketplaceId)
             {
                 var row = new DBModelsAspNetUsers();
 
@@ -64,7 +64,7 @@ namespace CazamioProject.DBHelpers
                 return row;
             }
 
-            public static string DeleteCreatedUser(int marketplaceId, string email)
+            public static string DeleteCreatedUser(string email, int marketplaceId)
             {
                 string data = null;
                 using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -88,7 +88,7 @@ namespace CazamioProject.DBHelpers
                 return data;
             }
 
-            public static string GetEmailByEmailAndMarketplaceId(string email, string marketplaceId)
+            public static string GetEmailByEmailAndMarketplaceId(string email, int marketplaceId)
             {
                 string data = null;
                 using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))

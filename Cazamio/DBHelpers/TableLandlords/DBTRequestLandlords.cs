@@ -24,7 +24,7 @@ namespace CazamioProject.DBHelpers
         }
         public class Landlords
         {
-            public static string DeleteCreatedUserBroker(string email, string marketplaceId)
+            public static string DeleteCreatedUserBroker(string email, int marketplaceId)
             {
                 string data = null;
                 using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))

@@ -99,7 +99,7 @@ namespace SuperAdminTests
         {
             #region Preconditions
 
-            string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
             #endregion
 

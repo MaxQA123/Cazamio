@@ -335,7 +335,7 @@ namespace DBTests.BaseTestsDB
             DBRequestTenantLeases.TenantLeases.DeleteRecordByEmailMarketplaceId(marketplaceId, email);
             DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByEmailMarketplaceId(marketplaceId, email);
             DBRequestTeants.Tenants.DeleteCreatedUserTenant(marketplaceId, email);
-            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(marketplaceId, email);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(email, marketplaceId);
         }
 
         [Test]

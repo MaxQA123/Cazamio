@@ -26,7 +26,7 @@ namespace CazamioProject.DBHelpers
 
         public class DBOwners
         {
-            public static string DeleteCreatedUserOwner(string email, string marketplaceId)
+            public static string DeleteCreatedUserOwner(string email, int marketplaceId)
             {
                 string data = null;
                 using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))

@@ -24,7 +24,7 @@ namespace CazamioProject.DBHelpers.TableOwnerManagements
         }
         public class OwnerManagements
         {
-            public static string DeleteRecordAboutOwnerManagements(string email, string marketplaceId)
+            public static string DeleteRecordAboutOwnerManagements(string email, int marketplaceId)
             {
                 string data = null;
                 using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))

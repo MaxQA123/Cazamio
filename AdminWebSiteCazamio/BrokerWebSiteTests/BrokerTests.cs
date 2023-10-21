@@ -185,7 +185,7 @@ namespace BrokerTests
         {
             #region Preconditions
 
-            string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
             #endregion
 
@@ -270,7 +270,7 @@ namespace BrokerTests
         {
             #region Preconditions
 
-            string marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
             #endregion
 
