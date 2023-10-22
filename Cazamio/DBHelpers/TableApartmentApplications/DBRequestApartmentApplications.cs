@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.DBHelpers.TableApartmentApplications;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,49 @@ namespace CazamioProject.Helpers
                     }
                 }
                 return data;
+            }
+
+            public static DBModelsApartmentApplications GetApartmentApplicationIdByApartmentIdTenantEmail(long? apartmentId, string tenantEmail)
+            {
+                var row = new DBModelsApartmentApplications();
+
+                // SQL запрос для выборки данных
+                string query = "SELECT AA.Id" +
+                       " FROM ApartmentApplications AA" +
+                       " LEFT JOIN AspNetUsers ANU" +
+                       " ON ANU.Id = TenantId" +
+                       " WHERE ApartmentId = @apartmentId AND ANU.Id" +
+                       " IN" +
+                       " (SELECT Id FROM AspNetUsers WHERE Email = @tenantEmail)";
+                try
+                {
+                    using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
+                    using SqlCommand command = new(query, connection);
+                    connection.Open();
+
+                    // Параметризованный запрос с двумя параметрами
+                    command.Parameters.AddWithValue("@apartmentId", DbType.String).Value = apartmentId;
+                    command.Parameters.AddWithValue("@tenantEmail", DbType.String).Value = tenantEmail;
+
+                    using SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        row.Id = GetValueOrDefault<long?>(reader, 0);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw new ArgumentException($"Error: {ex.Message}\r\n{ex.StackTrace}");
+                }
+                finally
+                {
+
+                    // Обеспечиваем освобождение ресурсов
+                    SqlConnection.ClearAllPools();
+                }
+
+                return row;
             }
         }
     }

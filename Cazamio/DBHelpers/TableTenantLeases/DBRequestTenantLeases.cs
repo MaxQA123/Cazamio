@@ -49,6 +49,29 @@ namespace CazamioProject.DBHelpers
                 }
                 return data;
             }
+
+            public static string DeleteRecordByApartmentApplicationId(long? apartmentApplicationId)
+            {
+                string data = null;
+                using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+                {
+                    SqlCommand command = new("DELETE FROM TenantLeases WHERE ApartmentApplicationId = @apartmentApplicationId", db);
+
+                    command.Parameters.AddWithValue("@apartmentApplicationId", DbType.String).Value = apartmentApplicationId;
+      
+                    db.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            data = reader.GetValue(0).ToString();
+                        }
+                    }
+                }
+                return data;
+            }
         }
     }
 

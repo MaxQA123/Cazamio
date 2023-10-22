@@ -2,6 +2,9 @@
 using ApiTests.Base;
 using CazamioProgect.Helpers;
 using CazamioProject.DBHelpers;
+using CazamioProject.DBHelpers.TableApplicationBasicInformation;
+using CazamioProject.DBHelpers.TableApplicationGeneralQuestions;
+using CazamioProject.DBHelpers.TableApplicationRequiredDocuments;
 using CazamioProject.Helpers;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
@@ -27,13 +30,6 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBApplication")]
         [AllureSubSuite("RecordNewOccupantId")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The table "Occupants".
-        //Path to cheking's: 
-
         public void DisplayingApartmentApplicationId()
         {
             string userIdTenant = DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID;
@@ -51,13 +47,6 @@ namespace DBTests.BaseTestsDB
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
         [AllureSubSuite("RecordNewOccupantId")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The table "Occupants".
-        //Path to cheking's: 
 
         public void RecordNewOccupantId()
         {
@@ -81,13 +70,6 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBApplication")]
         [AllureSubSuite("RecordNewOccupantId")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The table "Guarantors".
-        //Path to cheking's: 
-
         public void RecordNewGuarantorId()
         {
             string buildingAddress = DBTestDataDBForAdmins.BUILDING_ADDRESS;
@@ -109,13 +91,6 @@ namespace DBTests.BaseTestsDB
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
         [AllureSubSuite("NewApplication")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The table "ApartmentApplications", "Apartments". Application in the statuses "Draft", "Submitted application".
-        //Path to cheking's: 
 
         public void NewApplicationTenantApplicant()
         {
@@ -150,13 +125,6 @@ namespace DBTests.BaseTestsDB
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
         [AllureSubSuite("NewApplicationTenantApplicantOccupantJointGuarantor")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The table "ApartmentApplications", "Apartments", "Occupants", "Guarantors".
-        //Path to cheking's: 
 
         public void NewApplicationTenantApplicantOccupantJointGuarantor()
         {
@@ -224,13 +192,6 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBApplication")]
         [AllureSubSuite("NewRecordApplicationProgressApplicant")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The table "ApartmentApplicationProgress", "ApartmentApplications".
-        //Path to cheking's: 
-
         public void NewRecordApplicationProgressApplicant()
         {
             string buildingAddress = DBTestDataDBForAdmins.BUILDING_ADDRESS;
@@ -264,13 +225,6 @@ namespace DBTests.BaseTestsDB
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
         [AllureSubSuite("NewRecordApplicationProgressApplicantOccupantJointGuarantor")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: The table "ApartmentApplicationProgress", "ApartmentApplications".
-        //Path to cheking's: 
 
         public void NewRecordApplicationProgressApplicantOccupantJointGuarantor()
         {
@@ -318,18 +272,32 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
-        [AllureSubSuite("EmptyTwo")]
+        [AllureSubSuite("DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithTenantApplicant")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: new record by table dbo.ApartmentApplicationProgress
-        //Path to cheking's: 
-
-        public void EmptyTwo()
+        public void DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithTenantApplicant()
         {
-            
+            #region Preconditions
+
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            string buildingAddress = "2 Linden Street";
+            string unitNumber = "33";
+            string tenantId = "miza33h@putsbox.com";
+
+            #endregion
+
+            var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
+            Console.WriteLine($"ApartmentId: {apartmentId}");
+            var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, tenantId).Id;
+            Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
+            DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationGeneralQuestions.ApplicationGeneralQuestions.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationBasicInformation.ApplicationBasicInformation.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationRequiredDocuments.ApplicationRequiredDocuments.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+
         }
 
         [Test]
@@ -339,13 +307,6 @@ namespace DBTests.BaseTestsDB
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
         [AllureSubSuite("EmptyThree")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: by table dbo.ApartmentApplications
-        //Path to cheking's: 
 
         public void EmptyThree()
         {
@@ -360,13 +321,6 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBApplication")]
         [AllureSubSuite("EmptyFour")]
 
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: new record by table dbo.ApartmentApplicationApplicants when at the tenant-applicant with set check the box "Joint applicant"
-        //Path to cheking's: 
-
         public void EmptyFour()
         {
             
@@ -379,13 +333,6 @@ namespace DBTests.BaseTestsDB
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
         [AllureSubSuite("EmptyFive")]
-
-        //Date of publication:
-        //Version\Build:
-        //Willingness for testing: Done.
-        //This test case is doing checking: 
-        //Comment: new record by table dbo.ApartmentApplicationApplicants when at the tenant-applicant with set check the box "Joint applicant"
-        //Path to cheking's: 
 
         public void EmptyFive()
         {

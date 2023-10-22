@@ -117,6 +117,50 @@ namespace CazamioProject.DBHelpers
 
                 return row;
             }
+
+            public static DBModelApartments GetIdByUnitNumberAndBuildingAddressForApartment(string buildingAddress, string unitNumber, int marketplaceId)
+            {
+                var row = new DBModelApartments();
+
+                // SQL запрос для выборки данных
+                string query = "SELECT AP.Id" +
+                       " FROM Apartments AP" +
+                       " LEFT JOIN Buildings B" +
+                       " ON B.Id = BuildingId" +
+                       " LEFT JOIN Addresses A" +
+                       " ON A.Id = AddressId" +
+                       " WHERE AP.Unit = @unitNumber AND A.Street = @buildingAddress AND AP.MarketplaceId = @marketplaceId";
+                try
+                {
+                    using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
+                    using SqlCommand command = new(query, connection);
+                    connection.Open();
+
+                    // Параметризованный запрос с двумя параметрами
+                    command.Parameters.AddWithValue("@buildingAddress", DbType.String).Value = buildingAddress;
+                    command.Parameters.AddWithValue("@unitNumber", DbType.String).Value = unitNumber;
+                    command.Parameters.AddWithValue("@marketplaceId", DbType.String).Value = marketplaceId;
+
+                    using SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        row.Id = GetValueOrDefault<long?>(reader, 0);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw new ArgumentException($"Error: {ex.Message}\r\n{ex.StackTrace}");
+                }
+                finally
+                {
+
+                    // Обеспечиваем освобождение ресурсов
+                    SqlConnection.ClearAllPools();
+                }
+
+                return row;
+            }
         }
 
         //Вариант где мы не учитываем возможность отображения значения NULL в ячейке.

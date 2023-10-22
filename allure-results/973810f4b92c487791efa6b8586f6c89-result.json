@@ -1,0 +1,91 @@
+{
+  "uuid": "fd871641-562f-44e3-bcc7-b510e3949742-tr-0-1019",
+  "historyId": "DBTests.BaseTestsDB.ApplicationsTestsDB.DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithTenantApplicant",
+  "fullName": "DBTests.BaseTestsDB.ApplicationsTestsDB.DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithTenantApplicant",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "DBTests.BaseTestsDB"
+    },
+    {
+      "name": "testMethod",
+      "value": "DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithTenantApplicant"
+    },
+    {
+      "name": "testClass",
+      "value": "ApplicationsTestsDB"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "TestingDBApplication"
+    },
+    {
+      "name": "subSuite",
+      "value": "DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithTenantApplicant"
+    }
+  ],
+  "links": [],
+  "name": "DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithTenantApplicant",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "System.ArgumentException : Error: Ambiguous column name 'Id'.\r\n   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader()\r\n   at CazamioProject.DBHelpers.DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(String buildingAddress, String unitNumber, Int32 marketplaceId) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TableApartments\\DBRequestApartments.cs:line 144",
+    "trace": "   at CazamioProject.DBHelpers.DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(String buildingAddress, String unitNumber, Int32 marketplaceId) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TableApartments\\DBRequestApartments.cs:line 153\r\n   at DBTests.BaseTestsDB.ApplicationsTestsDB.DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithTenantApplicant() in C:\\Automation\\Cazamio\\DBTests\\BaseTestsDB\\ApplicationsTestsDB.cs:line 284"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithTenantApplicant",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "System.ArgumentException : Error: Ambiguous column name 'Id'.\r\n   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader()\r\n   at CazamioProject.DBHelpers.DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(String buildingAddress, String unitNumber, Int32 marketplaceId) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TableApartments\\DBRequestApartments.cs:line 144",
+        "trace": "   at CazamioProject.DBHelpers.DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(String buildingAddress, String unitNumber, Int32 marketplaceId) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TableApartments\\DBRequestApartments.cs:line 153\r\n   at DBTests.BaseTestsDB.ApplicationsTestsDB.DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithTenantApplicant() in C:\\Automation\\Cazamio\\DBTests\\BaseTestsDB\\ApplicationsTestsDB.cs:line 284"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "9e1f2d5fb2a54a2ba720b9ead0daadd3-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1697976199020,
+      "stop": 1697976200552
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1697976199019,
+  "stop": 1697976200564
+}

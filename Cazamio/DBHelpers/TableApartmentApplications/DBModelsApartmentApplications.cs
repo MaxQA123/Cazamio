@@ -8,5 +8,6 @@ namespace CazamioProject.DBHelpers.TableApartmentApplications
 {
     public class DBModelsApartmentApplications
     {
+        public long? Id { get; set; } // this might be another data type
     }
 }

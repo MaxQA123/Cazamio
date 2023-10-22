@@ -10,7 +10,8 @@ namespace CazamioProject.DBHelpers
     {
         public class DBModelApartments
         {
-            public object? LandlordId { get; set; } // this might be another data type
+            public long? Id { get; set; } // this might be another data type
+            public object? LandlordId { get; set; }
             public object? BuildingId { get; set; }
             public object? Unit { get; set; }
             public object? BrokerFeeRequired { get; set; }
