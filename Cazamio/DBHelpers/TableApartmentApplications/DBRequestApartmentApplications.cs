@@ -58,9 +58,9 @@ namespace CazamioProject.Helpers
                        " FROM ApartmentApplications AA" +
                        " LEFT JOIN AspNetUsers ANU" +
                        " ON ANU.Id = TenantId" +
-                       " WHERE ApartmentId = @apartmentId AND ANU.Id" +
+                       " WHERE ApartmentId = @ApartmentId AND ANU.Id" +
                        " IN" +
-                       " (SELECT Id FROM AspNetUsers WHERE Email = @tenantEmail)";
+                       " (SELECT Id FROM AspNetUsers WHERE Email = @TenantEmail)";
                 try
                 {
                     using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
@@ -68,8 +68,8 @@ namespace CazamioProject.Helpers
                     connection.Open();
 
                     // Параметризованный запрос с двумя параметрами
-                    command.Parameters.AddWithValue("@apartmentId", DbType.String).Value = apartmentId;
-                    command.Parameters.AddWithValue("@tenantEmail", DbType.String).Value = tenantEmail;
+                    command.Parameters.AddWithValue("@ApartmentId", DbType.String).Value = apartmentId;
+                    command.Parameters.AddWithValue("@TenantEmail", DbType.String).Value = tenantEmail;
 
                     using SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
@@ -90,6 +90,29 @@ namespace CazamioProject.Helpers
                 }
 
                 return row;
+            }
+
+            public static string DeleteRecordByApartmentId(long? apartmentId)
+            {
+                string data = null;
+                using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+                {
+                    SqlCommand command = new("DELETE FROM ApartmentApplications WHERE ApartmentId = @ApartmentId", db);
+
+                    command.Parameters.AddWithValue("@ApartmentId", DbType.String).Value = apartmentId;
+
+                    db.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            data = reader.GetValue(0).ToString();
+                        }
+                    }
+                }
+                return data;
             }
         }
     }
