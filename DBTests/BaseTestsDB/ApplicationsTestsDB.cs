@@ -285,13 +285,13 @@ namespace DBTests.BaseTestsDB
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
             string buildingAddress = "2 Linden Street";
             string unitNumber = "41";
-            string tenantId = "miza33h@putsbox.com";
+            string emailTenant = "miza33h@putsbox.com";
 
             #endregion
 
             var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
             Console.WriteLine($"ApartmentId: {apartmentId}");
-            var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, tenantId).Id;
+            var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
             DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
             WaitUntil.WaitSomeInterval(100);
@@ -309,7 +309,7 @@ namespace DBTests.BaseTestsDB
             WaitUntil.WaitSomeInterval(100);
             DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
             WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(apartmentId);
+            DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(apartmentId, emailTenant);
 
 
         }

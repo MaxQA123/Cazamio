@@ -1,0 +1,91 @@
+{
+  "uuid": "f56e00c6-b907-4c69-9f9b-02a1ea20b768-tr-0-1064",
+  "historyId": "DBTests.BaseTestsDB.TenantsTestsDB.DeleteNewApplicationWithTenantCreatedViaCreateApplication",
+  "fullName": "DBTests.BaseTestsDB.TenantsTestsDB.DeleteNewApplicationWithTenantCreatedViaCreateApplication",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "DBTests.BaseTestsDB"
+    },
+    {
+      "name": "testMethod",
+      "value": "DeleteNewApplicationWithTenantCreatedViaCreateApplication"
+    },
+    {
+      "name": "testClass",
+      "value": "TenantsTestsDB"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "TestingDBTenant"
+    },
+    {
+      "name": "subSuite",
+      "value": "DeleteNewApplicationWithTenantCreatedViaCreateApplication"
+    }
+  ],
+  "links": [],
+  "name": "DeleteNewApplicationWithTenantCreatedViaCreateApplication",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "Microsoft.Data.SqlClient.SqlException : The parameterized query '(@ApartmentApplicationId nvarchar(4000))DELETE FROM TenantLeases' expects the parameter '@ApartmentApplicationId', which was not supplied.\r\nData:\r\n  HelpLink.ProdName: Microsoft SQL Server\r\n  HelpLink.ProdVer: 14.00.1000\r\n  HelpLink.EvtSrc: MSSQLServer\r\n  HelpLink.EvtID: 8178\r\n  HelpLink.BaseHelpUrl: https://go.microsoft.com/fwlink\r\n  HelpLink.LinkId: 20476",
+    "trace": "   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader()\r\n   at CazamioProject.DBHelpers.DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationId(Nullable`1 apartmentApplicationId) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TableTenantLeases\\DBRequestTenantLeases.cs:line 64\r\n   at DBTests.BaseTestsDB.TenantsTestsDB.DeleteNewApplicationWithTenantCreatedViaCreateApplication() in C:\\Automation\\Cazamio\\DBTests\\BaseTestsDB\\TenantsTestsDB.cs:line 344"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "DeleteNewApplicationWithTenantCreatedViaCreateApplication",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "Microsoft.Data.SqlClient.SqlException : The parameterized query '(@ApartmentApplicationId nvarchar(4000))DELETE FROM TenantLeases' expects the parameter '@ApartmentApplicationId', which was not supplied.\r\nData:\r\n  HelpLink.ProdName: Microsoft SQL Server\r\n  HelpLink.ProdVer: 14.00.1000\r\n  HelpLink.EvtSrc: MSSQLServer\r\n  HelpLink.EvtID: 8178\r\n  HelpLink.BaseHelpUrl: https://go.microsoft.com/fwlink\r\n  HelpLink.LinkId: 20476",
+        "trace": "   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader()\r\n   at CazamioProject.DBHelpers.DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationId(Nullable`1 apartmentApplicationId) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TableTenantLeases\\DBRequestTenantLeases.cs:line 64\r\n   at DBTests.BaseTestsDB.TenantsTestsDB.DeleteNewApplicationWithTenantCreatedViaCreateApplication() in C:\\Automation\\Cazamio\\DBTests\\BaseTestsDB\\TenantsTestsDB.cs:line 344"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "750b7022ab8f467482cb610d5be4ddb6-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1698143450298,
+      "stop": 1698143453018
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1698143450296,
+  "stop": 1698143453028
+}

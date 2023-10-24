@@ -1,0 +1,91 @@
+{
+  "uuid": "03a19a39-19b2-4417-9f27-ff6e7efff1cd-tr-0-1064",
+  "historyId": "DBTests.BaseTestsDB.TenantsTestsDB.DeleteNewApplicationWithTenantCreatedViaCreateApplication",
+  "fullName": "DBTests.BaseTestsDB.TenantsTestsDB.DeleteNewApplicationWithTenantCreatedViaCreateApplication",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "DBTests.BaseTestsDB"
+    },
+    {
+      "name": "testMethod",
+      "value": "DeleteNewApplicationWithTenantCreatedViaCreateApplication"
+    },
+    {
+      "name": "testClass",
+      "value": "TenantsTestsDB"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "TestingDBTenant"
+    },
+    {
+      "name": "subSuite",
+      "value": "DeleteNewApplicationWithTenantCreatedViaCreateApplication"
+    }
+  ],
+  "links": [],
+  "name": "DeleteNewApplicationWithTenantCreatedViaCreateApplication",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "Microsoft.Data.SqlClient.SqlException : Error converting data type nvarchar to bigint.\r\nData:\r\n  HelpLink.ProdName: Microsoft SQL Server\r\n  HelpLink.ProdVer: 14.00.1000\r\n  HelpLink.EvtSrc: MSSQLServer\r\n  HelpLink.EvtID: 8114\r\n  HelpLink.BaseHelpUrl: https://go.microsoft.com/fwlink\r\n  HelpLink.LinkId: 20476",
+    "trace": "   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader()\r\n   at CazamioProject.Helpers.DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(Nullable`1 apartmentId, String emailTenant) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TableApartmentApplications\\DBRequestApartmentApplications.cs:line 110\r\n   at DBTests.BaseTestsDB.TenantsTestsDB.DeleteNewApplicationWithTenantCreatedViaCreateApplication() in C:\\Automation\\Cazamio\\DBTests\\BaseTestsDB\\TenantsTestsDB.cs:line 360"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "DeleteNewApplicationWithTenantCreatedViaCreateApplication",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "Microsoft.Data.SqlClient.SqlException : Error converting data type nvarchar to bigint.\r\nData:\r\n  HelpLink.ProdName: Microsoft SQL Server\r\n  HelpLink.ProdVer: 14.00.1000\r\n  HelpLink.EvtSrc: MSSQLServer\r\n  HelpLink.EvtID: 8114\r\n  HelpLink.BaseHelpUrl: https://go.microsoft.com/fwlink\r\n  HelpLink.LinkId: 20476",
+        "trace": "   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader()\r\n   at CazamioProject.Helpers.DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(Nullable`1 apartmentId, String emailTenant) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TableApartmentApplications\\DBRequestApartmentApplications.cs:line 110\r\n   at DBTests.BaseTestsDB.TenantsTestsDB.DeleteNewApplicationWithTenantCreatedViaCreateApplication() in C:\\Automation\\Cazamio\\DBTests\\BaseTestsDB\\TenantsTestsDB.cs:line 360"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "0717bb87ffb94eefa20aeeaa97516538-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1698143957175,
+      "stop": 1698143961812
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1698143957172,
+  "stop": 1698143961830
+}
