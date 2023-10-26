@@ -157,8 +157,8 @@ namespace DBTests.BaseTestsDB
         {
             #region Preconditions
 
-            string buildingAddress = "45 Avenue A";
-            string unitNumber = "3";
+            string buildingAddress = "2 Linden Street";
+            string unitNumber = "59";
             string marketplaceId = "15";
 
             #endregion

@@ -329,10 +329,10 @@ namespace DBTests.BaseTestsDB
             #region Preconditions
 
             string buildingAddress = "2 Linden Street";
-            string unitNumber = "46";
+            string unitNumber = "53";
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string emailTenant = "task1567n21t@putsbox.com";
+            string emailTenant = "task1567n30t@putsbox.com";
 
             #endregion
 
