@@ -1,0 +1,137 @@
+{
+  "uuid": "1c322faf-a363-419d-9352-7a4c9cd3c9e1-tr-0-1009",
+  "historyId": "MarketplaceAdminTests.TestsBaseWeb.CreateApplicationWhenTenantAddedToSystem",
+  "fullName": "MarketplaceAdminTests.TestsBaseWeb.CreateApplicationWhenTenantAddedToSystem",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "MarketplaceAdminTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "CreateApplicationWhenTenantAddedToSystem"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "MarketplaceAdmin"
+    },
+    {
+      "name": "subSuite",
+      "value": "CreateApplicationWhenTenantAddedToSystem"
+    }
+  ],
+  "links": [],
+  "name": "CreateApplicationWhenTenantAddedToSystem",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "System.NullReferenceException : Object reference not set to an instance of an object.\r\nTearDown : OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=118.0.5993.117)",
+    "trace": "   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()\r\n   at SeleniumExtras.WaitHelpers.ExpectedConditions.<>c__DisplayClass7_0.<ElementToBeClickable>b__0(IWebDriver driver)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.ElementIsClickable(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 21\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663738_o(IWebElement element, String text) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 21\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663738_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663738_w_0(Object[] )\r\n   at CazamioProgect.Helpers.InputGeneral.InputFunctionWithClear(IWebElement element, String text)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_EnterEmailPasswordLogInPgAsMarketplaceAdmin_100663516_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\LogInPage\\LogInActions.cs:line 26\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_EnterEmailPasswordLogInPgAsMarketplaceAdmin_100663516_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_EnterEmailPasswordLogInPgAsMarketplaceAdmin_100663516_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.EnterEmailPasswordLogInPgAsMarketplaceAdmin() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\LogInPage\\LogInActions.cs:line 15\r\n   at MarketplaceAdminTests.TestsBaseWeb.CreateApplicationWhenTenantAddedToSystem() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\MarketplaceAdminWebSiteTests\\MarketplaceAdminTests.cs:line 674\r\n--TearDown\r\n   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.GetScreenshot()\r\n   at CazamioProject.Helpers.ScreenShotHelper.MakeScreenShot() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\ScreenShotHelper.cs:line 20\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 34"
+  },
+  "stage": "finished",
+  "description": "\nDoAfterEach TearDown method failed\n",
+  "steps": [
+    {
+      "name": "CreateApplicationWhenTenantAddedToSystem",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "System.NullReferenceException : Object reference not set to an instance of an object.\r\nTearDown : OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=118.0.5993.117)",
+        "trace": "   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()\r\n   at SeleniumExtras.WaitHelpers.ExpectedConditions.<>c__DisplayClass7_0.<ElementToBeClickable>b__0(IWebDriver driver)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.ElementIsClickable(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 21\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663738_o(IWebElement element, String text) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 21\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663738_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663738_w_0(Object[] )\r\n   at CazamioProgect.Helpers.InputGeneral.InputFunctionWithClear(IWebElement element, String text)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_EnterEmailPasswordLogInPgAsMarketplaceAdmin_100663516_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\LogInPage\\LogInActions.cs:line 26\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_EnterEmailPasswordLogInPgAsMarketplaceAdmin_100663516_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_EnterEmailPasswordLogInPgAsMarketplaceAdmin_100663516_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.EnterEmailPasswordLogInPgAsMarketplaceAdmin() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\LogInPage\\LogInActions.cs:line 15\r\n   at MarketplaceAdminTests.TestsBaseWeb.CreateApplicationWhenTenantAddedToSystem() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\MarketplaceAdminWebSiteTests\\MarketplaceAdminTests.cs:line 674\r\n--TearDown\r\n   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.GetScreenshot()\r\n   at CazamioProject.Helpers.ScreenShotHelper.MakeScreenShot() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\ScreenShotHelper.cs:line 20\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 34"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "EnterEmailPasswordLogInPgAsMarketplaceAdmin",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "Object reference not set to an instance of an object.",
+            "trace": "   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()\r\n   at SeleniumExtras.WaitHelpers.ExpectedConditions.<>c__DisplayClass7_0.<ElementToBeClickable>b__0(IWebDriver driver)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.ElementIsClickable(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 21\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663738_o(IWebElement element, String text) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 21\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663738_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663738_w_0(Object[] )\r\n   at CazamioProgect.Helpers.InputGeneral.InputFunctionWithClear(IWebElement element, String text)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_EnterEmailPasswordLogInPgAsMarketplaceAdmin_100663516_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\LogInPage\\LogInActions.cs:line 26\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_EnterEmailPasswordLogInPgAsMarketplaceAdmin_100663516_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "failed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false,
+                "message": "Object reference not set to an instance of an object.",
+                "trace": "   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()\r\n   at SeleniumExtras.WaitHelpers.ExpectedConditions.<>c__DisplayClass7_0.<ElementToBeClickable>b__0(IWebDriver driver)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.ElementIsClickable(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 21\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663738_o(IWebElement element, String text) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 21\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663738_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "marketplaceadmin15@putsbox.com"
+                }
+              ],
+              "start": 1698416429038,
+              "stop": 1698416429876
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1698416429034,
+          "stop": 1698416429877
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "070e53a863964a79a61315b1d9424f4e-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1698416425115,
+      "stop": 1698416430024
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1698416425113,
+  "stop": 1698416430041
+}

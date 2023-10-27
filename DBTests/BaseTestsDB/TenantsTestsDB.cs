@@ -329,48 +329,39 @@ namespace DBTests.BaseTestsDB
             #region Preconditions
 
             string buildingAddress = "2 Linden Street";
-            string unitNumber = "53";
+            string unitNumber = "62";
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string emailTenant = "task1567n30t@putsbox.com";
+            string emailTenant = "task1567n40t@putsbox.com";
 
             #endregion
 
             //First Delete Application
-            //var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
-            //Console.WriteLine($"ApartmentId: {apartmentId}");
-            //var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant).Id;
-            //Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            //DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationGeneralQuestions.ApplicationGeneralQuestions.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationBasicInformation.ApplicationBasicInformation.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationRequiredDocuments.ApplicationRequiredDocuments.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationRentalHistories.ApplicationRentalHistories.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationOccupations.ApplicationOccupations.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(apartmentId, emailTenant);
-
+            var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
+            Console.WriteLine($"ApartmentId: {apartmentId}");
+            var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant).Id;
+            Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
+            DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationGeneralQuestions.ApplicationGeneralQuestions.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationBasicInformation.ApplicationBasicInformation.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationRequiredDocuments.ApplicationRequiredDocuments.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationRentalHistories.ApplicationRentalHistories.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationOccupations.ApplicationOccupations.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(apartmentId, emailTenant);
             //Second Delete Tenant
             DBRequestChatCursors.ChatCursors.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
             WaitUntil.WaitSomeInterval(100);
             DBRequestApartmentHistories.ApartmentHistories.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestTenantLeases.TenantLeases.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
             WaitUntil.WaitSomeInterval(100);
             DBRequestTeants.Tenants.DeleteCreatedUserTenant(marketplaceId, emailTenant);
             WaitUntil.WaitSomeInterval(100);
@@ -390,10 +381,10 @@ namespace DBTests.BaseTestsDB
             #region Preconditions
 
             string buildingAddress = "2 Linden Street";
-            string unitNumber = "38";
+            string unitNumber = "62";
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string emailTenant = "task1567n6t@putsbox.com";
+            string emailTenant = "task1567n40t@putsbox.com";
 
             #endregion
 
@@ -404,16 +395,18 @@ namespace DBTests.BaseTestsDB
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
             DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
             WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationGeneralQuestions.ApplicationGeneralQuestions.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationBasicInformation.ApplicationBasicInformation.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationRequiredDocuments.ApplicationRequiredDocuments.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationRentalHistories.ApplicationRentalHistories.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationOccupations.ApplicationOccupations.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            //WaitUntil.WaitSomeInterval(100);
+
+            DBRequestApplicationGeneralQuestions.ApplicationGeneralQuestions.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationBasicInformation.ApplicationBasicInformation.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationRequiredDocuments.ApplicationRequiredDocuments.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationRentalHistories.ApplicationRentalHistories.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationOccupations.ApplicationOccupations.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+
             DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
             WaitUntil.WaitSomeInterval(100);
             DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
@@ -425,6 +418,7 @@ namespace DBTests.BaseTestsDB
             WaitUntil.WaitSomeInterval(100);
             DBRequestApartmentHistories.ApartmentHistories.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
             WaitUntil.WaitSomeInterval(100);
+
             //DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
             //WaitUntil.WaitSomeInterval(100);
             //DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
@@ -433,6 +427,7 @@ namespace DBTests.BaseTestsDB
             //WaitUntil.WaitSomeInterval(100);
             //DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
             //WaitUntil.WaitSomeInterval(100);
+
             DBRequestTeants.Tenants.DeleteCreatedUserTenant(marketplaceId, emailTenant);
             WaitUntil.WaitSomeInterval(100);
             DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailTenant, marketplaceId);

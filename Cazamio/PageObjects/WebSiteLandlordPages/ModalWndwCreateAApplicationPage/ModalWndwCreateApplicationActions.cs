@@ -108,8 +108,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             return regexUnitNumberActual;
         }
 
-        [AllureStep("ClickFieldInputRequestedOfferPriceModalWndw")]
-        public ModalWndwCreateAApplication ClickFieldInputRequestedOfferPriceModalWndw()
+        [AllureStep("EnterPriceFieldInputRequestedOfferPriceModalWndw")]
+        public ModalWndwCreateAApplication EnterPriceFieldInputRequestedOfferPriceModalWndw()
         {
             WaitUntil.CustomElementIsVisible(FieldInputRequestedOfferPriceModalWndw);
             InputGeneral.InputFunctionWithClear(FieldInputRequestedOfferPriceModalWndw, GenerateRandomDataHelper.RandomNumberWithoutZero(3));
@@ -123,7 +123,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             Button.Click(FieldInputMoveInDateModalWndw);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFourthLine(DaysFourthLineForDatePiker.FOURTH_LINE_THIRD_NUMBER, " ");
+                .SelectDayOnDatePickerFivethLine(DaysFivethLineForDatePiker.FIVETH_LINE_SEVENTH_NUMBER, " ");
 
             return this;
         }
@@ -175,5 +175,13 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
 
             return getRentalTermsActual;
         }
+
+        //[AllureStep("ClickFieldInputRequestedOfferPriceModalWndw")]
+        //public ModalWndwCreateAApplication ClickFieldInputRequestedOfferPriceModalWndw()
+        //{
+        //    WaitUntil.CustomElementIsVisible(FieldInputRequestedOfferPriceModalWndw);
+        //    InputGeneral.InputFunctionWithClear(FieldInputRequestedOfferPriceModalWndw, GenerateRandomDataHelper.RandomNumberWithoutZero(3));
+        //    return this;
+        //}
     }
 }

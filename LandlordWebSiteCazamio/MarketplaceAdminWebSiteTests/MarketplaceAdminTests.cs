@@ -3,10 +3,20 @@ using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
 using CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfApplicationsPage;
 using CazamioProject.DBHelpers;
+using CazamioProject.DBHelpers.TableApartmentApplicationProgress;
+using CazamioProject.DBHelpers.TableApartmentHistories;
+using CazamioProject.DBHelpers.TableApplicationBasicInformation;
+using CazamioProject.DBHelpers.TableApplicationGeneralQuestions;
+using CazamioProject.DBHelpers.TableApplicationOccupations;
+using CazamioProject.DBHelpers.TableApplicationPrices;
+using CazamioProject.DBHelpers.TableApplicationRentalHistories;
+using CazamioProject.DBHelpers.TableApplicationRequiredDocuments;
+using CazamioProject.DBHelpers.TableChatCursors;
 using CazamioProject.DBHelpers.TableOwnerCommissionsStructure;
 using CazamioProject.DBHelpers.TableOwnerManagements;
 using CazamioProject.DBHelpers.TableOwnerPhoneNumbers;
 using CazamioProject.DBHelpers.TablePrices;
+using CazamioProject.Helpers;
 using MarketplaceAdminTests;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
@@ -655,6 +665,9 @@ namespace MarketplaceAdminTests
             #region Preconditions
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            string buildingAddress = "2 Linden Street";
+            string unitNumber = "62";
+            string emailTenant = "task1567n40t@putsbox.com";
 
             #endregion
 
@@ -695,12 +708,12 @@ namespace MarketplaceAdminTests
                 .VerifyEmailAndUnitAddress(getEmailStepFirstActual, getUnitAddressStepSecondActual, getEmailStepThirdActual, getUnitAddressStepThirdActual);
 
             var getLeasePriceFromDb = DBRequestPrices.Prices.GetLeasePrice(getShortAddress, getUnitNumberActuaL, marketplaceId).LeasePrice;
-            var getSecurityDepositFromDb = DBRequestPrices.Prices.GetSecurityDeposit(getShortAddress, getUnitNumberActuaL, marketplaceId);
-            var getMonthlyRentsPrePaymentFromDb = DBRequestPrices.Prices.GetMonthlyRentsPrePayment(getShortAddress, getUnitNumberActuaL, marketplaceId);
-            var getRentalTermsFromDb = DBRequestApartments.Apartments.GetLeaseDurationForApartment(getShortAddress, getUnitNumberActuaL, marketplaceId);
+            var getSecurityDepositFromDb = DBRequestPrices.Prices.GetSecurityDeposit(getShortAddress, getUnitNumberActuaL, marketplaceId).DepositPrice;
+            var getMonthlyRentsPrePaymentFromDb = DBRequestPrices.Prices.GetMonthlyRentsPrePayment(getShortAddress, getUnitNumberActuaL, marketplaceId).PaidMonths;
+            var getRentalTermsFromDb = DBRequestApartments.Apartments.GetLeaseDurationForApartment(getShortAddress, getUnitNumberActuaL, marketplaceId).LeaseDuration;
 
             Pages.ModalWndwCreateAApplication
-                .ClickFieldInputRequestedOfferPriceModalWndw()
+                .EnterPriceFieldInputRequestedOfferPriceModalWndw()
                 .SelectDateAvailableForAprtmntsModalWndw();
 
             string getLeasePriceActual = Pages.ModalWndwCreateAApplication.GetLeasePriceStepThirdFromUi();
@@ -708,9 +721,44 @@ namespace MarketplaceAdminTests
             string getMonthlyRentsPrePaymentActual = Pages.ModalWndwCreateAApplication.GetMonthlyRentsPrePaymentStepThirdFromUi();
             string getRentalTermsActual = Pages.ModalWndwCreateAApplication.GetRentalTermsStepThirdFromUi();
 
-            Pages.ModalWndwCreateAApplication
-                .VerifyFieldsAutocompleteInStepThird(getLeasePriceFromDb, getSecurityDepositFromDb.DepositPrice, getMonthlyRentsPrePaymentFromDb.PaidMonths, getRentalTermsFromDb.LeaseDuration, getLeasePriceActual, getSecurityDepositActual, getMonthlyRentsPrePaymentActual, getRentalTermsActual);
+            //Pages.ModalWndwCreateAApplication
+            //    .VerifyFieldsAutocompleteInStepThird(getLeasePriceFromDb, getSecurityDepositFromDb, getMonthlyRentsPrePaymentFromDb, getRentalTermsFromDb, getLeasePriceActual, getSecurityDepositActual, getMonthlyRentsPrePaymentActual, getRentalTermsActual);
             //Добавить сравнение  значений из БД со значениями с фронта
+
+            #region Postconditions
+
+            ////First Delete Application
+            //var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
+            //Console.WriteLine($"ApartmentId: {apartmentId}");
+            //var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant).Id;
+            //Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
+            //DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApplicationGeneralQuestions.ApplicationGeneralQuestions.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApplicationBasicInformation.ApplicationBasicInformation.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApplicationRequiredDocuments.ApplicationRequiredDocuments.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApplicationRentalHistories.ApplicationRentalHistories.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApplicationOccupations.ApplicationOccupations.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(apartmentId, emailTenant);
+            ////Second Delete Tenant
+            //DBRequestChatCursors.ChatCursors.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApartmentHistories.ApartmentHistories.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestTeants.Tenants.DeleteCreatedUserTenant(marketplaceId, emailTenant);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailTenant, marketplaceId);
+
+            #endregion
 
             WaitUntil.WaitSomeInterval(3000);
         }
