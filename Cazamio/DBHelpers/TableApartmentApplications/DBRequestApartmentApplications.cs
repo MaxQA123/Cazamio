@@ -49,7 +49,7 @@ namespace CazamioProject.Helpers
                 return data;
             }
 
-            public static DBModelsApartmentApplications GetApartmentApplicationIdByApartmentIdTenantEmail(long? apartmentId, string tenantEmail)
+            public static DBModelsApartmentApplications GetApartmentApplicationIdByApartmentIdTenantEmail(long? apartmentId, string tenantEmail, int marketplaceId)
             {
                 var row = new DBModelsApartmentApplications();
 
@@ -60,7 +60,7 @@ namespace CazamioProject.Helpers
                        " ON ANU.Id = TenantId" +
                        " WHERE ApartmentId = @ApartmentId AND ANU.Id" +
                        " IN" +
-                       " (SELECT Id FROM AspNetUsers WHERE Email = @TenantEmail)";
+                       " (SELECT Id FROM AspNetUsers WHERE Email = @TenantEmail AND MarketplaceId = @MarketplaceId)";
                 try
                 {
                     using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
@@ -70,6 +70,7 @@ namespace CazamioProject.Helpers
                     // Параметризованный запрос с двумя параметрами
                     command.Parameters.AddWithValue("@ApartmentId", DbType.String).Value = apartmentId;
                     command.Parameters.AddWithValue("@TenantEmail", DbType.String).Value = tenantEmail;
+                    command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
 
                     using SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
