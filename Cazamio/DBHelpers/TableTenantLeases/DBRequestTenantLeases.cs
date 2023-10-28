@@ -60,7 +60,7 @@ namespace CazamioProject.DBHelpers
                                " IN" +
                                " (SELECT Id FROM Tenants WHERE UserId" +
                                " IN" +
-                               " (SELECT Id FROM AspNetUsers WHERE Email = 'tenantapp123ray@putsbox.com' AND MarketplaceId = '15'))", db);
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenant AND MarketplaceId = @MarketplaceId))", db);
 
                     command.Parameters.AddWithValue("@ApartmentApplicationId", DbType.String).Value = apartmentApplicationId;
                     command.Parameters.AddWithValue("@EmailTenant", DbType.String).Value = emailTenant;

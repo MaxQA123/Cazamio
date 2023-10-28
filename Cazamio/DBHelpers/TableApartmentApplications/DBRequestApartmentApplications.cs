@@ -101,10 +101,10 @@ namespace CazamioProject.Helpers
                     SqlCommand command = new("DELETE FROM ApartmentApplications WHERE ApartmentId = @ApartmentId" +
                                " AND TenantId" +
                                " IN" +
-                               " (SELECT Id FROM AspNetUsers WHERE Email = @Email AND MarketplaceId = @MarketplaceId)", db);
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenant AND MarketplaceId = @MarketplaceId)", db);
 
                     command.Parameters.AddWithValue("@ApartmentId", DbType.String).Value = apartmentId;
-                    command.Parameters.AddWithValue("@Email", DbType.String).Value = emailTenant;
+                    command.Parameters.AddWithValue("@EmailTenant", DbType.String).Value = emailTenant;
                     command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
 
                     db.Open();

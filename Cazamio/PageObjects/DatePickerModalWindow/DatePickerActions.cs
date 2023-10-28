@@ -96,6 +96,15 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
             return _element.FindElements(By.XPath($".//td[contains(@aria-label, '{_locationDay}')]"));
         }
 
+        [AllureStep("SelectorDaysPickerDaysSixthLine")]
+        public static IList<IWebElement> SelectorDaysPickerDaysSixthLine(string _locationDay)
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            var str = "//table//tbody[@class = 'mat-calendar-body']//tr[6]";
+            _element = Browser._Driver.FindElement(By.XPath(str));
+            return _element.FindElements(By.XPath($".//td[contains(@aria-label, '{_locationDay}')]"));
+        }
+
         [AllureStep("SelectDayOnDatePickerFirstLine")]
         public DatePicker SelectDayOnDatePickerFirstLine(int day, string locationDay)
         {
@@ -145,6 +154,17 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
         {
             WaitUntil.WaitSomeInterval(500);
             IList<IWebElement> _day = SelectorDaysPickerDaysFivethLine(locationDay);
+
+            _day[day].Click();
+
+            return this;
+        }
+
+        [AllureStep("SelectDayOnDatePickerSixthLine")]
+        public DatePicker SelectDayOnDatePickerSixthLine(int day, string locationDay)
+        {
+            WaitUntil.WaitSomeInterval(500);
+            IList<IWebElement> _day = SelectorDaysPickerDaysSixthLine(locationDay);
 
             _day[day].Click();
 

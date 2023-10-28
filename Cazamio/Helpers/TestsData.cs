@@ -191,15 +191,15 @@ namespace CazamioProgect.Helpers
 
     #region TestsDataDaysForDatePickerAdmins
 
-    public class DaysFirstLineForDatePiker
+    public class DaysForDatePiker
     {
-        public const int FIRST_LINE_FIRST_NUMBER = 0;
-        public const int FIRST_LINE_SECOND_NUMBER = 1;
-        public const int FIRST_LINE_THIRD_NUMBER = 2;
-        public const int FIRST_LINE_FOURTH_NUMBER = 3;
-        public const int FIRST_LINE_FIVETH_NUMBER = 4;
-        public const int FIRST_LINE_SIXTH_NUMBER = 5;
-        public const int FIRST_LINE_SEVENTH_NUMBER = 6;
+        public const int FIRST_NUMBER = 0;
+        public const int SECOND_NUMBER = 1;
+        public const int THIRD_NUMBER = 2;
+        public const int FOURTH_NUMBER = 3;
+        public const int FIVETH_NUMBER = 4;
+        public const int SIXTH_NUMBER = 5;
+        public const int SEVENTH_NUMBER = 6;
 
     }
 
