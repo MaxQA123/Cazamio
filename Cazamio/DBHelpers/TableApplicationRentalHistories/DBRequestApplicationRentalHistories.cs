@@ -24,14 +24,18 @@ namespace CazamioProject.DBHelpers.TableApplicationRentalHistories
         }
         public class ApplicationRentalHistories
         {
-            public static string DeleteRecordByApartmentApplicationId(long? apartmentApplicationId)
+            public static string DeleteRecordByApartmentApplicationId(long? apartmentApplicationId, string emailTenant, int marketplaceId)
             {
                 string data = null;
                 using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
                 {
-                    SqlCommand command = new("DELETE FROM ApplicationRentalHistories WHERE ApartmentApplicationId = @apartmentApplicationId", db);
+                    SqlCommand command = new("DELETE FROM ApplicationRentalHistories WHERE ApartmentApplicationId = @ApartmentApplicationId AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenant AND MarketplaceId = @MarketplaceId)", db);
 
-                    command.Parameters.AddWithValue("@apartmentApplicationId", DbType.String).Value = apartmentApplicationId;
+                    command.Parameters.AddWithValue("@ApartmentApplicationId", DbType.String).Value = apartmentApplicationId;
+                    command.Parameters.AddWithValue("@EmailTenant", DbType.String).Value = emailTenant;
+                    command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
 
                     db.Open();
 

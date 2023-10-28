@@ -93,7 +93,7 @@ namespace CazamioProject.Helpers
                 return row;
             }
 
-            public static string DeleteRecordByApartmentId(long? apartmentId, string emailTenant)
+            public static string DeleteRecordByApartmentId(long? apartmentId, string emailTenant, int marketplaceId)
             {
                 string data = null;
                 using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -101,10 +101,11 @@ namespace CazamioProject.Helpers
                     SqlCommand command = new("DELETE FROM ApartmentApplications WHERE ApartmentId = @ApartmentId" +
                                " AND TenantId" +
                                " IN" +
-                               " (SELECT Id FROM AspNetUsers WHERE Email = @Email)", db);
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @Email AND MarketplaceId = @MarketplaceId)", db);
 
                     command.Parameters.AddWithValue("@ApartmentId", DbType.String).Value = apartmentId;
                     command.Parameters.AddWithValue("@Email", DbType.String).Value = emailTenant;
+                    command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
 
                     db.Open();
 

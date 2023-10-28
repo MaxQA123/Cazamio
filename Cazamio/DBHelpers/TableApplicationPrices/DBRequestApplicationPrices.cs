@@ -54,9 +54,9 @@ namespace CazamioProject.DBHelpers.TableApplicationPrices
                 string data = null;
                 using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
                 {
-                    SqlCommand command = new("DELETE FROM ApplicationPrices WHERE ApartmentApplicationId = @apartmentApplicationId", db);
+                    SqlCommand command = new("DELETE FROM ApplicationPrices WHERE ApartmentApplicationId = @ApartmentApplicationId", db);
 
-                    command.Parameters.AddWithValue("@apartmentApplicationId", DbType.String).Value = apartmentApplicationId;
+                    command.Parameters.AddWithValue("@ApartmentApplicationId", DbType.String).Value = apartmentApplicationId;
 
                     db.Open();
 
