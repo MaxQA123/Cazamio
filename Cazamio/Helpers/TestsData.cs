@@ -53,6 +53,7 @@ namespace CazamioProgect.Helpers
     public class TestDataForWebSiteTenant
     {
         public const string EMAIL_TENANT = "miza33h@putsbox.com";
+        public const string EMAIL_TENANT_NOT_CREATED = "task1567n51t@putsbox.com";
         public const string EMAIL_TENANT_APPLICANT = "tenantapp123ray@putsbox.com";
         public const string FIRST_LAST_NAME_TENANT_APPLICANT = "Ray Anredson";
         public const string FIRST_NAME_TENANT_APPLICANT = "Ray";
@@ -97,7 +98,7 @@ namespace CazamioProgect.Helpers
 
     public class TestDataForWebSiteAdmin
     {
-        public const string MARKETPLACE_SUBDOMAIN = "testlandlord15-demo";
+        public const string MARKETPLACE_SUBDOMAIN_FIFTEEN = "testlandlord15-demo";
 
         public const string EMAIL_SUPER_ADMIN = "superadmin123@putsbox.com";
         public const string USER_NAME_SUPER_ADMIN = "Super User";
@@ -131,6 +132,8 @@ namespace CazamioProgect.Helpers
 
         public const string EMAIL_AGENT_MARIE_URMSTRONG = "agent175marie5urm@putsbox.com";
         public const string USER_NAME_MARIE_URMSTRONG = "Marie Urmstrong";
+
+        public const string ADDRESS_BUILDING_FIFTEEN_MP = "1 Washington Square";
 
         #endregion
 
@@ -187,6 +190,11 @@ namespace CazamioProgect.Helpers
         public const string IMAGE_POOL_FOR_BUILDING = $"\\UploadImages\\Pool.jpg";
         public const string IMAGE_PARKING_FOR_BUILDING = $"\\UploadImages\\Parking.jpg";
         public const string IMAGE_YARD_FOR_BUILDING = $"\\UploadImages\\Yard.jpg";
+    }
+
+    public class UnitsForListOfUnitsOnPageBuildingView
+    {
+        public const int FIRST_UNIT = 0;
     }
 
     #region TestsDataDaysForDatePickerAdmins

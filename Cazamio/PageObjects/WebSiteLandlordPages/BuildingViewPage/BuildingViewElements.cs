@@ -25,6 +25,12 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage
         [FindsBy(How = How.XPath, Using = ("//app-building-apartments//cazamio-button[@ng-reflect-text = 'Add']"))]
         public IWebElement ButtonAddInTabApartmentsBldngVwPg;
 
+        [FindsBy(How = How.XPath, Using = (""))]
+        public IWebElement ButtonUnitSortingInTabApartmentsBldngVwPg;
+
+        [FindsBy(How = How.XPath, Using = ("//table//tbody//tr[@ng-reflect-router-link = '/apartments/apartment-view/537']"))]
+        public IWebElement UnitFourInTabApartmentsBldngVwPg;
+
         #endregion
     }
 }

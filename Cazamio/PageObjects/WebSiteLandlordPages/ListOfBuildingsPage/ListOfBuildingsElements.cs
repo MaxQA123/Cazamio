@@ -18,5 +18,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
 
         [FindsBy(How = How.XPath, Using = "//building-list//table//tbody//tr")]
         public IWebElement ItemFirstBuildingOnPage;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'field-search']")]
+        public IWebElement FieldInputSearchOnListOfBuildingsPg;
     }
 }

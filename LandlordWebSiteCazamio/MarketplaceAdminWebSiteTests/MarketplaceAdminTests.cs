@@ -67,6 +67,9 @@ namespace MarketplaceAdminTests
 
         public void VerifySidebar()
         {
+
+            #region Preconditions Test
+
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
                 .ClickIconShowLogInPg()
@@ -77,6 +80,10 @@ namespace MarketplaceAdminTests
 
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+
+            #endregion
+
+            #region Test
 
             Pages.SideBarLandlord
                 .UploadImageLogoLandlordFirst()
@@ -144,8 +151,9 @@ namespace MarketplaceAdminTests
                 .ClickButtonLogOutSidebar();
             Pages.LogInLandlord
                 .VerifyTitleLogInPg();
-
             WaitUntil.WaitSomeInterval(2000);
+
+            #endregion
         }
 
         [Test]
@@ -159,6 +167,8 @@ namespace MarketplaceAdminTests
 
         public void ChangePassword()
         {
+            #region Test
+
             Pages.LogInLandlord
                 .ClickLinkForgotPassword();
             Pages.ResetYourPassword
@@ -188,6 +198,8 @@ namespace MarketplaceAdminTests
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
 
             WaitUntil.WaitSomeInterval(2000);
+
+            #endregion
         }
 
         [Test]
@@ -201,7 +213,7 @@ namespace MarketplaceAdminTests
 
         public void CreateBroker()
         {
-            #region Preconditions
+            #region Preconditions Test Data
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
@@ -296,7 +308,7 @@ namespace MarketplaceAdminTests
 
         public void CreateAgent()
         {
-            #region Preconditions
+            #region Preconditions Test Data
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
@@ -385,11 +397,13 @@ namespace MarketplaceAdminTests
 
         public void CreateOwner()
         {
-            #region Preconditions
+            #region Preconditions Test Data
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
             #endregion
+
+            #region Preconditions Test
 
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
@@ -402,6 +416,11 @@ namespace MarketplaceAdminTests
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare)
                 .ClickButtonOwnersSidebar();
+
+            #endregion
+
+            #region Test
+
             Pages.ListOfOwners
                 .ClickButtonCreateOwner();
             Pages.ModalWndwCreateNewOwner
@@ -440,6 +459,8 @@ namespace MarketplaceAdminTests
             var marketplaceIdFromDb = DbRequestOwners.DBOwners.GetMarketplaceIdByEmailUserOwner(getOwnerEmailFromModalWndw);
             Console.WriteLine($"MarketplaceId of owner: {marketplaceIdFromDb}");
 
+            #endregion
+
             #region Postconditions
 
             DBRequestOwnerCommissionsStructure.OwnerCommissionsStructure.DeleteRecordAboutOwnerCommissionsStructure(getOwnerEmailFromModalWndw, marketplaceId);
@@ -463,6 +484,8 @@ namespace MarketplaceAdminTests
 
         public void AddBuilding()
         {
+            #region Preconditions Test
+
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
                 .ClickIconShowLogInPg()
@@ -473,6 +496,11 @@ namespace MarketplaceAdminTests
 
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+
+            #endregion
+
+            #region Test
+
             Pages.ListOfBuildings
                 .ClickButtonAddBuilding();
             Pages.NewBuilding
@@ -547,6 +575,8 @@ namespace MarketplaceAdminTests
                 .VerifyMessageSavedSuccessfullyBuildingNwBldngPg();
 
             WaitUntil.WaitSomeInterval(5000);
+
+            #endregion
         }
 
         [Test]
@@ -560,6 +590,8 @@ namespace MarketplaceAdminTests
 
         public void AddApartment()
         {
+            #region Preconditions Test
+
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
                 .ClickIconShowLogInPg()
@@ -570,6 +602,11 @@ namespace MarketplaceAdminTests
 
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+
+            #endregion
+
+            #region Test
+
             Pages.ListOfBuildings
                 .SelectItemFirstBuildingOnPage();
             Pages.BuildingView
@@ -641,6 +678,8 @@ namespace MarketplaceAdminTests
                 .ClickButtonGeneralNextAddAprtmntsgPg();
 
             WaitUntil.WaitSomeInterval(5000);
+
+            #endregion
         }
 
         [Test]
@@ -650,7 +689,7 @@ namespace MarketplaceAdminTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
-        [AllureSubSuite("CreateApplicationWhenTenantAddedToSystem")]
+        [AllureSubSuite("CreateApplicationWithTenantWhenTenantAddedToSystem")]
 
         #region Preconditions
 
@@ -660,16 +699,18 @@ namespace MarketplaceAdminTests
 
         #endregion
 
-        public void CreateApplicationWhenTenantAddedToSystem()
+        public void CreateApplicationWithTenantWhenTenantAddedToSystem()
         {
-            #region Preconditions
+            #region Preconditions Test Data
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string buildingAddress = "2 Linden Street";
-            string unitNumber = "62";
+            string buildingAddress = "1 Washington Square";
+            string unitNumber = "4";
             string emailTenant = TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT;
 
             #endregion
+
+            #region Preconditions Test
 
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
@@ -683,6 +724,11 @@ namespace MarketplaceAdminTests
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
             Pages.SideBarLandlord
                 .ClickButtonApplicationsSidebar();
+
+            #endregion
+
+            #region Test
+
             Pages.ListOfApplications
                 .ClickButtonPlusApplication();
             Pages.ModalWndwCreateAApplication
@@ -714,7 +760,9 @@ namespace MarketplaceAdminTests
 
             Pages.ModalWndwCreateAApplication
                 .EnterPriceFieldInputRequestedOfferPriceModalWndw()
-                .SelectDateAvailableForAprtmntsModalWndw();
+                .SelectDateAvailableForAprtmntsModalWndw()
+                .ClickButtonCreateStepThreeModalWndw()
+                .VerifyMessageStepFourModalWndw();
 
             //string getLeasePriceActual = Pages.ModalWndwCreateAApplication.GetLeasePriceStepThirdFromUi();
             //string getSecurityDepositActual = Pages.ModalWndwCreateAApplication.GetSecurityDepositStepThirdFromUi();
@@ -723,31 +771,86 @@ namespace MarketplaceAdminTests
 
             //Pages.ModalWndwCreateAApplication
             //    .VerifyFieldsAutocompleteInStepThird(getLeasePriceFromDb, getSecurityDepositFromDb, getMonthlyRentsPrePaymentFromDb, getRentalTermsFromDb, getLeasePriceActual, getSecurityDepositActual, getMonthlyRentsPrePaymentActual, getRentalTermsActual);
-            //Добавить сравнение  значений из БД со значениями с фронта
+
+            #endregion
 
             #region Postconditions
 
-            //var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
-            //Console.WriteLine($"ApartmentId: {apartmentId}");
-            //var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
-            //Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            //DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationGeneralQuestions.ApplicationGeneralQuestions.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationBasicInformation.ApplicationBasicInformation.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationRequiredDocuments.ApplicationRequiredDocuments.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationRentalHistories.ApplicationRentalHistories.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationOccupations.ApplicationOccupations.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(apartmentId, emailTenant, marketplaceId);
+            var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
+            Console.WriteLine($"ApartmentId: {apartmentId}");
+            var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
+            Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
+            DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationGeneralQuestions.ApplicationGeneralQuestions.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationBasicInformation.ApplicationBasicInformation.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationRequiredDocuments.ApplicationRequiredDocuments.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationRentalHistories.ApplicationRentalHistories.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationOccupations.ApplicationOccupations.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(apartmentId, emailTenant, marketplaceId);
+
+            #endregion
+
+            WaitUntil.WaitSomeInterval(3000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("MarketplaceAdmin")]
+        [AllureSubSuite("CreateApplicationWithTenantWhenTenantAddedToSystem")]
+
+        #region Preconditions
+
+        //Нужно учесть количество символов для Regex в коротком адресе дома и номер юнита, например, "1 Washington Square #4".
+        //У апартамента должно быть только одно заначение в поле "Rental terms".
+        //Выставить дату для Date Picker больше чем текущая дата.
+
+        #endregion
+
+        public void CreateApplicationWithTenantWhenTenantNotAddedToSystem()
+        {
+            #region Preconditions Test Data
+
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            string buildingAddress = "1 Washington Square";
+            string unitNumber = "4";
+            string emailTenant = TestDataForWebSiteTenant.EMAIL_TENANT_NOT_CREATED;
+
+            #endregion
+
+            #region Preconditions Test
+
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+            Pages.ListOfBuildings
+                .OpenPageApartmentView();
+
+            #endregion
+
+            #region Test
+
+
 
             #endregion
 

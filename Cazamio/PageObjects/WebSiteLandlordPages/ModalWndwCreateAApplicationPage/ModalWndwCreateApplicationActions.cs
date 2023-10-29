@@ -123,7 +123,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             Button.Click(FieldInputMoveInDateModalWndw);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerSixthLine(DaysForDatePiker.FIRST_NUMBER, " ");
+                .SelectDayOnDatePickerSixthLine(DaysForDatePiker.SECOND_NUMBER, " ");
 
             return this;
         }
@@ -174,6 +174,15 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             //Console.WriteLine($"Email step first: {getEmailActual}");
 
             return getRentalTermsActual;
+        }
+
+        [AllureStep("ClickButtonCreateStepThreeModalWndw")]
+        public ModalWndwCreateAApplication ClickButtonCreateStepThreeModalWndw()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonCreateStepThreeModalWndw);
+            Button.Click(ButtonCreateStepThreeModalWndw);
+
+            return this;
         }
 
         //[AllureStep("ClickFieldInputRequestedOfferPriceModalWndw")]

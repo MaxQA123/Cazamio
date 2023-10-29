@@ -62,8 +62,15 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         [FindsBy(How = How.XPath, Using = "//input[@id = 'mat-input-3']")]
         public IWebElement FieldInputRentalTermsModalWndw;
 
-        [FindsBy(How = How.XPath, Using = "//cazamio-mobile-button[@ng-reflect-text = 'Next']")]
-        public IWebElement ButtonCreateModalWndw;
+        [FindsBy(How = How.XPath, Using = "//cazamio-mobile-button[@ng-reflect-text = 'Create']")]
+        public IWebElement ButtonCreateStepThreeModalWndw;
+
+        #endregion
+
+        #region Create application step 4
+
+        [FindsBy(How = How.XPath, Using = "//div[text() = 'Application successfully created']")]
+        public IWebElement MessageStepFourModalWndw;
 
         #endregion
     }

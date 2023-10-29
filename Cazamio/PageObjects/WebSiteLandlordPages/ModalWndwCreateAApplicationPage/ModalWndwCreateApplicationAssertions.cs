@@ -53,5 +53,14 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
 
             return this;
         }
+
+        [AllureStep("VerifyMessageStepFourModalWndw")]
+        public ModalWndwCreateAApplication VerifyMessageStepFourModalWndw()
+        {
+            WaitUntil.CustomElementIsVisible(MessageStepFourModalWndw);
+            Assert.IsTrue(Successfully.IsVisible(MessageStepFourModalWndw));
+
+            return this;
+        }
     }
 }
