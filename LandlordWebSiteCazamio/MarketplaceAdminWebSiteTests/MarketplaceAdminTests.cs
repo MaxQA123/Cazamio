@@ -733,7 +733,7 @@ namespace MarketplaceAdminTests
                 .ClickButtonPlusApplication();
             Pages.ModalWndwCreateAApplication
                 .VerifyTitleCreateApplicationModalWndw()
-                .EnterEmailInFieldMainApplicantEmailAddressModalWndw();
+                .EnterExistEmailInFieldMainApplicantEmailAddressModalWndw();
 
             string getEmailStepFirstActual = Pages.ModalWndwCreateAApplication.GetEmailStepFirst();
 
@@ -850,7 +850,12 @@ namespace MarketplaceAdminTests
 
             #region Test
 
-
+            Pages.ApartmentView
+                .VerifyTitleApartmentViewPg()
+                .ClickButtonPlusApplication();
+            Pages.ModalWndwCreateAApplication
+                .VerifyTitleCreateApplicationModalWndw()
+                .EnterNewEmailInFieldMainApplicantEmailAddressModalWndw();
 
             #endregion
 

@@ -39,7 +39,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
             InputGeneral.InputFunctionWithClear(FieldInputSearchOnListOfBuildingsPg, buildingAddress);
             WaitUntil.CustomElementIsVisible(ItemFirstBuildingOnPage);
             Button.Click(ItemFirstBuildingOnPage);
-            WaitUntil.WaitSomeInterval(1000);
+            WaitUntil.WaitSomeInterval(3000);
             Pages.BuildingView
                 .ClickTabApartmentsBldngVwPg();
             KeyBoardActions.ScrollToDown();

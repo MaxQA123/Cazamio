@@ -12,13 +12,24 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
 {
     public partial class ModalWndwCreateAApplication
     {
-        [AllureStep("EnterEmailInFieldMainApplicantEmailAddressModalWndw")]
-        public ModalWndwCreateAApplication EnterEmailInFieldMainApplicantEmailAddressModalWndw()
+        string emailTenant = TestDataForWebSiteTenant.EMAIL_TENANT_NOT_CREATED;
+
+        [AllureStep("EnterExistEmailInFieldMainApplicantEmailAddressModalWndw")]
+        public ModalWndwCreateAApplication EnterExistEmailInFieldMainApplicantEmailAddressModalWndw()
         {
             WaitUntil.CustomElementIsVisible(FieldInputMainApplicantEmailAddressModalWndw);
             InputGeneral.InputFunctionWithClear(FieldInputMainApplicantEmailAddressModalWndw, TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT);
             WaitUntil.CustomElementIsVisible(ItemEmailAddressModalWndw);
             Button.Click(ItemEmailAddressModalWndw);
+
+            return this;
+        }
+
+        [AllureStep("EnterNewEmailInFieldMainApplicantEmailAddressModalWndw")]
+        public ModalWndwCreateAApplication EnterNewEmailInFieldMainApplicantEmailAddressModalWndw()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputMainApplicantEmailAddressModalWndw);
+            InputGeneral.InputFunctionWithClear(FieldInputMainApplicantEmailAddressModalWndw, emailTenant);
 
             return this;
         }
