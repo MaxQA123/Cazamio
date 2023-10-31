@@ -127,14 +127,26 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             return this;
         }
 
-        [AllureStep("SelectDateAvailableForAprtmntsModalWndw")]
-        public ModalWndwCreateAApplication SelectDateAvailableForAprtmntsModalWndw()
+        [AllureStep("SelectDateAvailableForCreateApplicationModalWndwViaListOfApplication")]
+        public ModalWndwCreateAApplication SelectDateAvailableForCreateApplicationModalWndwViaListOfApplication()
         {
-            WaitUntil.CustomElementIsVisible(FieldInputMoveInDateModalWndw, 10);
-            Button.Click(FieldInputMoveInDateModalWndw);
+            WaitUntil.CustomElementIsVisible(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaListOfApplication, 10);
+            Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaListOfApplication);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerSixthLine(DaysForDatePiker.SECOND_NUMBER, " ");
+                .SelectDayOnDatePickerFirstLine(DaysForDatePiker.SECOND_NUMBER, " ");
+
+            return this;
+        }
+
+        [AllureStep("SelectDateAvailableForCreateApplicationModalWndwViaApartmentView")]
+        public ModalWndwCreateAApplication SelectDateAvailableForCreateApplicationModalWndwViaApartmentView()
+        {
+            //WaitUntil.CustomElementIsVisible(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView, 10);
+            Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView);
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .SelectDayOnDatePickerFirstLine(DaysForDatePiker.SECOND_NUMBER, " ");
 
             return this;
         }

@@ -35,6 +35,19 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             return this;
         }
 
+        [AllureStep("VerifyEmail")]
+        public ModalWndwCreateAApplication VerifyEmail(string getEmailStepFirstActual, string getEmailStepThirdActual)
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(getEmailStepFirstActual, getEmailStepThirdActual);
+
+                Console.WriteLine($"Email: {getEmailStepThirdActual}");
+            });
+
+            return this;
+        }
+
         [AllureStep("VerifyFieldsAutocompleteInStepThird")]
         public ModalWndwCreateAApplication VerifyFieldsAutocompleteInStepThird(decimal? getLeasePriceFromDb, decimal? getSecurityDepositFromDb, int? getMonthlyRentsPrePaymentFromDb, string getRentalTermsFromDb, string getLeasePriceActual, string getSecurityDepositActual, string getMonthlyRentsPrePaymentActual, string getRentalTermsActual)
         {

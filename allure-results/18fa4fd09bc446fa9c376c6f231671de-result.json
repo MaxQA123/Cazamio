@@ -1,0 +1,823 @@
+{
+  "uuid": "8f6eba63-1d6c-4a88-90dd-c5632b99a56a-tr-0-1010",
+  "historyId": "MarketplaceAdminTests.TestsBaseWeb.CreateApplicationWithTenantWhenTenantNotAddedToSystem",
+  "fullName": "MarketplaceAdminTests.TestsBaseWeb.CreateApplicationWithTenantWhenTenantNotAddedToSystem",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "MarketplaceAdminTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "CreateApplicationWithTenantWhenTenantNotAddedToSystem"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "MarketplaceAdmin"
+    },
+    {
+      "name": "subSuite",
+      "value": "CreateApplicationWithTenantWhenTenantAddedToSystem"
+    }
+  ],
+  "links": [],
+  "name": "CreateApplicationWithTenantWhenTenantNotAddedToSystem",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//table//tbody[@class = 'mat-calendar-body']//tr[1]\"}\n  (Session info: chrome=118.0.5993.118)",
+    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstLine_100663660_o(String _locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 59\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstLine_100663660_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstLine_100663660_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.SelectorDaysPickerDaysFirstLine(String _locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 16\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstLine_100663666_o(Int32 day, String locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 112\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstLine_100663666_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstLine_100663666_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.SelectDayOnDatePickerFirstLine(Int32 day, String locationDay)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplicationPage.ModalWndwCreateAApplication.__a$_around_SelectDateAvailableForAprtmntsModalWndw_100663855_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ModalWndwCreateAApplicationPage\\ModalWndwCreateApplicationActions.cs:line 136\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplicationPage.ModalWndwCreateAApplication.__a$_around_SelectDateAvailableForAprtmntsModalWndw_100663855_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplicationPage.ModalWndwCreateAApplication.__a$_around_SelectDateAvailableForAprtmntsModalWndw_100663855_w_0(Object[] )\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplicationPage.ModalWndwCreateAApplication.SelectDateAvailableForAprtmntsModalWndw() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ModalWndwCreateAApplicationPage\\ModalWndwCreateApplicationActions.cs:line 15\r\n   at MarketplaceAdminTests.TestsBaseWeb.CreateApplicationWithTenantWhenTenantNotAddedToSystem() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\MarketplaceAdminWebSiteTests\\MarketplaceAdminTests.cs:line 875"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "CreateApplicationWithTenantWhenTenantNotAddedToSystem",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//table//tbody[@class = 'mat-calendar-body']//tr[1]\"}\n  (Session info: chrome=118.0.5993.118)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstLine_100663660_o(String _locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 59\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstLine_100663660_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstLine_100663660_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.SelectorDaysPickerDaysFirstLine(String _locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 16\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstLine_100663666_o(Int32 day, String locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 112\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstLine_100663666_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstLine_100663666_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.SelectDayOnDatePickerFirstLine(Int32 day, String locationDay)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplicationPage.ModalWndwCreateAApplication.__a$_around_SelectDateAvailableForAprtmntsModalWndw_100663855_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ModalWndwCreateAApplicationPage\\ModalWndwCreateApplicationActions.cs:line 136\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplicationPage.ModalWndwCreateAApplication.__a$_around_SelectDateAvailableForAprtmntsModalWndw_100663855_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplicationPage.ModalWndwCreateAApplication.__a$_around_SelectDateAvailableForAprtmntsModalWndw_100663855_w_0(Object[] )\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplicationPage.ModalWndwCreateAApplication.SelectDateAvailableForAprtmntsModalWndw() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ModalWndwCreateAApplicationPage\\ModalWndwCreateApplicationActions.cs:line 15\r\n   at MarketplaceAdminTests.TestsBaseWeb.CreateApplicationWithTenantWhenTenantNotAddedToSystem() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\MarketplaceAdminWebSiteTests\\MarketplaceAdminTests.cs:line 875"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "EnterEmailPasswordLogInPgAsMarketplaceAdmin",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "marketplaceadmin15@putsbox.com"
+                }
+              ],
+              "start": 1698750484112,
+              "stop": 1698750484829
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1698750485338,
+              "stop": 1698750485882
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1698750484109,
+          "stop": 1698750485882
+        },
+        {
+          "name": "ClickIconShowLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1698750485884,
+              "stop": 1698750486518
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1698750485883,
+          "stop": 1698750486518
+        },
+        {
+          "name": "ClickButtonLetsGoLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1698750486519,
+              "stop": 1698750487416
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1698750486519,
+          "stop": 1698750488420
+        },
+        {
+          "name": "GetUserNameFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1698750488425,
+          "stop": 1698750490914
+        },
+        {
+          "name": "GetUserNameRoleFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1698750490916,
+          "stop": 1698750491053
+        },
+        {
+          "name": "VerifyMarketplaceAdminUserName",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Mark Adm"
+            },
+            {
+              "name": "String",
+              "value": "Marketplace Admin"
+            }
+          ],
+          "start": 1698750491054,
+          "stop": 1698750492587
+        },
+        {
+          "name": "OpenPageApartmentView",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "ClickButtonBuildingsSidebar",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [
+                {
+                  "name": "Click",
+                  "status": "passed",
+                  "statusDetails": {
+                    "known": false,
+                    "muted": false,
+                    "flaky": false
+                  },
+                  "stage": "finished",
+                  "steps": [],
+                  "attachments": [],
+                  "parameters": [
+                    {
+                      "name": "WebElementProxy",
+                      "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                    }
+                  ],
+                  "start": 1698750493668,
+                  "stop": 1698750494985
+                }
+              ],
+              "attachments": [],
+              "parameters": [],
+              "start": 1698750492591,
+              "stop": 1698750494985
+            },
+            {
+              "name": "VerifyTitleListOfBuildingsPg",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [],
+              "start": 1698750494986,
+              "stop": 1698750496080
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "1 Washington Square"
+                }
+              ],
+              "start": 1698750499150,
+              "stop": 1698750500037
+            },
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1698750500077,
+              "stop": 1698750500969
+            },
+            {
+              "name": "ClickTabApartmentsBldngVwPg",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [
+                {
+                  "name": "Click",
+                  "status": "passed",
+                  "statusDetails": {
+                    "known": false,
+                    "muted": false,
+                    "flaky": false
+                  },
+                  "stage": "finished",
+                  "steps": [],
+                  "attachments": [],
+                  "parameters": [
+                    {
+                      "name": "WebElementProxy",
+                      "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                    }
+                  ],
+                  "start": 1698750504081,
+                  "stop": 1698750504768
+                }
+              ],
+              "attachments": [],
+              "parameters": [],
+              "start": 1698750503999,
+              "stop": 1698750504768
+            },
+            {
+              "name": "ScrollToDown",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [],
+              "start": 1698750504768,
+              "stop": 1698750504800
+            },
+            {
+              "name": "SelectUnitFourInTabApartmentsBldngVwPg",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [
+                {
+                  "name": "Click",
+                  "status": "passed",
+                  "statusDetails": {
+                    "known": false,
+                    "muted": false,
+                    "flaky": false
+                  },
+                  "stage": "finished",
+                  "steps": [],
+                  "attachments": [],
+                  "parameters": [
+                    {
+                      "name": "WebElementProxy",
+                      "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                    }
+                  ],
+                  "start": 1698750504845,
+                  "stop": 1698750505727
+                }
+              ],
+              "attachments": [],
+              "parameters": [],
+              "start": 1698750504801,
+              "stop": 1698750505727
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1698750492589,
+          "stop": 1698750505727
+        },
+        {
+          "name": "VerifyTitleApartmentViewPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1698750505733,
+          "stop": 1698750509957
+        },
+        {
+          "name": "ClickButtonPlusApplication",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1698750510019,
+              "stop": 1698750510862
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1698750509958,
+          "stop": 1698750510862
+        },
+        {
+          "name": "VerifyTitleCreateApplicationModalWndw",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1698750510866,
+          "stop": 1698750511995
+        },
+        {
+          "name": "EnterNewEmailInFieldMainApplicantEmailAddressModalWndw",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "task1567n51t@putsbox.com"
+                }
+              ],
+              "start": 1698750512026,
+              "stop": 1698750513525
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1698750511995,
+          "stop": 1698750513525
+        },
+        {
+          "name": "GetEmailStepFirst",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1698750513526,
+          "stop": 1698750514660
+        },
+        {
+          "name": "ClickButtonNextModalWndw",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1698750514693,
+              "stop": 1698750515371
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1698750514660,
+          "stop": 1698750515371
+        },
+        {
+          "name": "GetEmailStepThird",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1698750515372,
+          "stop": 1698750516441
+        },
+        {
+          "name": "VerifyEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "task1567n51t@putsbox.com"
+            },
+            {
+              "name": "String",
+              "value": "task1567n51t@putsbox.com"
+            }
+          ],
+          "start": 1698750516442,
+          "stop": 1698750516442
+        },
+        {
+          "name": "EnterPriceFieldInputRequestedOfferPriceModalWndw",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "RandomNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "3"
+                }
+              ],
+              "start": 1698750516473,
+              "stop": 1698750516480
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "118"
+                }
+              ],
+              "start": 1698750516480,
+              "stop": 1698750517049
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1698750516443,
+          "stop": 1698750517049
+        },
+        {
+          "name": "SelectDateAvailableForAprtmntsModalWndw",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//table//tbody[@class = 'mat-calendar-body']//tr[1]\"}\n  (Session info: chrome=118.0.5993.118)",
+            "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstLine_100663660_o(String _locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 59\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstLine_100663660_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstLine_100663660_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.SelectorDaysPickerDaysFirstLine(String _locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 16\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstLine_100663666_o(Int32 day, String locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 112\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstLine_100663666_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstLine_100663666_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.SelectDayOnDatePickerFirstLine(Int32 day, String locationDay)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplicationPage.ModalWndwCreateAApplication.__a$_around_SelectDateAvailableForAprtmntsModalWndw_100663855_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ModalWndwCreateAApplicationPage\\ModalWndwCreateApplicationActions.cs:line 136\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplicationPage.ModalWndwCreateAApplication.__a$_around_SelectDateAvailableForAprtmntsModalWndw_100663855_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1698750517078,
+              "stop": 1698750517775
+            },
+            {
+              "name": "SelectDayOnDatePickerFirstLine",
+              "status": "failed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false,
+                "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//table//tbody[@class = 'mat-calendar-body']//tr[1]\"}\n  (Session info: chrome=118.0.5993.118)",
+                "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstLine_100663660_o(String _locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 59\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstLine_100663660_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstLine_100663660_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.SelectorDaysPickerDaysFirstLine(String _locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 16\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstLine_100663666_o(Int32 day, String locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 112\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectDayOnDatePickerFirstLine_100663666_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+              },
+              "stage": "finished",
+              "steps": [
+                {
+                  "name": "SelectorDaysPickerDaysFirstLine",
+                  "status": "failed",
+                  "statusDetails": {
+                    "known": false,
+                    "muted": false,
+                    "flaky": false,
+                    "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//table//tbody[@class = 'mat-calendar-body']//tr[1]\"}\n  (Session info: chrome=118.0.5993.118)",
+                    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstLine_100663660_o(String _locationDay) in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\DatePickerModalWindow\\DatePickerActions.cs:line 59\r\n   at CazamioProgect.PageObjects.DatePickerModalWindow.DatePicker.__a$_around_SelectorDaysPickerDaysFirstLine_100663660_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+                  },
+                  "stage": "finished",
+                  "steps": [],
+                  "attachments": [],
+                  "parameters": [
+                    {
+                      "name": "String",
+                      "value": " "
+                    }
+                  ],
+                  "start": 1698750518401,
+                  "stop": 1698750519520
+                }
+              ],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "0"
+                },
+                {
+                  "name": "String",
+                  "value": " "
+                }
+              ],
+              "start": 1698750517891,
+              "stop": 1698750519567
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1698750517049,
+          "stop": 1698750519569
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "a4a59966ff1e41f7b23d8fc3de235d22-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1698750475361,
+      "stop": 1698750522577
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1698750475359,
+  "stop": 1698750522591
+}

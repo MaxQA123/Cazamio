@@ -760,7 +760,7 @@ namespace MarketplaceAdminTests
 
             Pages.ModalWndwCreateAApplication
                 .EnterPriceFieldInputRequestedOfferPriceModalWndw()
-                .SelectDateAvailableForAprtmntsModalWndw()
+                .SelectDateAvailableForCreateApplicationModalWndwViaListOfApplication()
                 .ClickButtonCreateStepThreeModalWndw()
                 .VerifyMessageStepFourModalWndw();
 
@@ -857,6 +857,34 @@ namespace MarketplaceAdminTests
                 .VerifyTitleCreateApplicationModalWndw()
                 .EnterNewEmailInFieldMainApplicantEmailAddressModalWndw();
 
+            string getEmailStepFirstActual = Pages.ModalWndwCreateAApplication.GetEmailStepFirst();
+
+            Pages.ModalWndwCreateAApplication
+                .ClickButtonNextModalWndw();
+
+            string getEmailStepThirdActual = Pages.ModalWndwCreateAApplication.GetEmailStepThird();
+
+            Pages.ModalWndwCreateAApplication
+                .VerifyEmail(getEmailStepFirstActual, getEmailStepThirdActual);
+
+            //var getLeasePriceFromDb = DBRequestPrices.Prices.GetLeasePrice(getShortAddress, getUnitNumberActuaL, marketplaceId).LeasePrice;
+            //var getSecurityDepositFromDb = DBRequestPrices.Prices.GetSecurityDeposit(getShortAddress, getUnitNumberActuaL, marketplaceId).DepositPrice;
+            //var getMonthlyRentsPrePaymentFromDb = DBRequestPrices.Prices.GetMonthlyRentsPrePayment(getShortAddress, getUnitNumberActuaL, marketplaceId).PaidMonths;
+            //var getRentalTermsFromDb = DBRequestApartments.Apartments.GetLeaseDurationForApartment(getShortAddress, getUnitNumberActuaL, marketplaceId).LeaseDuration;
+
+            Pages.ModalWndwCreateAApplication
+                .EnterPriceFieldInputRequestedOfferPriceModalWndw()
+                .SelectDateAvailableForCreateApplicationModalWndwViaApartmentView();
+                //.ClickButtonCreateStepThreeModalWndw()
+                //.VerifyMessageStepFourModalWndw();
+
+            //string getLeasePriceActual = Pages.ModalWndwCreateAApplication.GetLeasePriceStepThirdFromUi();
+            //string getSecurityDepositActual = Pages.ModalWndwCreateAApplication.GetSecurityDepositStepThirdFromUi();
+            //string getMonthlyRentsPrePaymentActual = Pages.ModalWndwCreateAApplication.GetMonthlyRentsPrePaymentStepThirdFromUi();
+            //string getRentalTermsActual = Pages.ModalWndwCreateAApplication.GetRentalTermsStepThirdFromUi();
+
+            //Pages.ModalWndwCreateAApplication
+            //    .VerifyFieldsAutocompleteInStepThird(getLeasePriceFromDb, getSecurityDepositFromDb, getMonthlyRentsPrePaymentFromDb, getRentalTermsFromDb, getLeasePriceActual, getSecurityDepositActual, getMonthlyRentsPrePaymentActual, getRentalTermsActual);
             #endregion
 
             WaitUntil.WaitSomeInterval(3000);
