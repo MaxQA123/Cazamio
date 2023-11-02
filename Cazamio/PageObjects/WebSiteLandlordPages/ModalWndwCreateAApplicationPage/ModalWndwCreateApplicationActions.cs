@@ -134,7 +134,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaListOfApplication);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFirstLine(DaysForDatePiker.SECOND_NUMBER, " ");
+                .SelectDayOnDatePickerFirstLine(DaysForDatePiker.THIRD_NUMBER, " ");
 
             return this;
         }
@@ -146,7 +146,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFirstLine(DaysForDatePiker.SECOND_NUMBER, " ");
+                .SelectDayOnDatePickerFirstLine(DaysForDatePiker.THIRD_NUMBER, " ");
 
             return this;
         }

@@ -21,7 +21,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         [FindsBy(How = How.XPath, Using = "//input[@placeholder = 'Look up existing lead or create new']")]
         public IWebElement FieldInputMainApplicantEmailAddressModalWndw;
 
-        [FindsBy(How = How.XPath, Using = "//div[text() = 'tenantapp123ray@putsbox.com']")]
+        [FindsBy(How = How.XPath, Using = "//div[text() = 'tenantapp123ray@putsbox.com ']")]
         public IWebElement ItemEmailAddressModalWndw;
 
         [FindsBy(How = How.XPath, Using = "//cazamio-mobile-button[@ng-reflect-text = 'Cancel']")]
@@ -74,6 +74,9 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
 
         [FindsBy(How = How.XPath, Using = "//div[text() = 'Application successfully created']")]
         public IWebElement MessageStepFourModalWndw;
+
+        [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Add Applicant']")]
+        public IWebElement ButtonAddApplicant;
 
         #endregion
     }
