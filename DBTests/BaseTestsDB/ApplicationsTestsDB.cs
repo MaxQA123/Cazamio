@@ -283,9 +283,9 @@ namespace DBTests.BaseTestsDB
             #region Preconditions
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string buildingAddress = "1 Washington Square";
-            string unitNumber = "4";
-            string emailTenant = TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT;
+            string buildingAddress = "18 Linden Street";
+            string unitNumber = "27";
+            string emailTenant = "tenantswife@gmail.com";
 
             #endregion
 
@@ -318,11 +318,42 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
-        [AllureSubSuite("EmptyThree")]
+        [AllureSubSuite("DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithTenantAppOccGuar")]
 
-        public void EmptyThree()
+        public void DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithNewTenantAppOccGuar()
         {
-            
+            #region Preconditions
+
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            string buildingAddress = "18 Linden Street";
+            string unitNumber = "29";
+            string emailTenantCreator = "task1588t4creator7t@putsbox.com";
+            string emailTenantOccupant = "task1588t4occupant7t@putsbox.com";
+            string emailTenantGuarantor = "task1588t4guarantor7t@putsbox.com";
+
+            #endregion
+
+            //var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
+            //Console.WriteLine($"ApartmentId: {apartmentId}");
+            //var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
+            //Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
+            //DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApplicationGeneralQuestions.ApplicationGeneralQuestions.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApplicationBasicInformation.ApplicationBasicInformation.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApplicationRequiredDocuments.ApplicationRequiredDocuments.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApplicationRentalHistories.ApplicationRentalHistories.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApplicationOccupations.ApplicationOccupations.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(apartmentId, emailTenant, marketplaceId);
         }
 
         [Test]

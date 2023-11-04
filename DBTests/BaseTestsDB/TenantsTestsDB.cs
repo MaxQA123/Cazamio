@@ -365,14 +365,14 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBTenant")]
-        [AllureSubSuite("Demo")]
+        [AllureSubSuite("DeleteNewTenantCreatedViaButtonPlusApplication")]
 
         public void DeleteNewTenantCreatedViaButtonPlusApplication()
         {
             #region Preconditions
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string emailTenant = "task1567n40t@putsbox.com";
+            string emailTenant = "task1588t3creator7t@putsbox.com";
 
             #endregion
 
