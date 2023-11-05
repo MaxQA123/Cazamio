@@ -24,7 +24,7 @@ namespace CazamioProject.DBHelpers
         }
         public class TenantLeases
         {
-            public static string DeleteRecordByEmailMarketplaceId(int marketplaceId, string email)
+            public static string DeleteRecordByEmailMarketplaceIdOnlyTenantApplicant(int marketplaceId, string email)
             {
                 string data = null;
                 using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -50,7 +50,7 @@ namespace CazamioProject.DBHelpers
                 return data;
             }
 
-            public static string DeleteRecordByApartmentApplicationId(long? apartmentApplicationId, string emailTenant, int marketplaceId)
+            public static string DeleteRecordByApartmentApplicationIdOnlyTenantApplicant(long? apartmentApplicationId, string emailTenant, int marketplaceId)
             {
                 string data = null;
                 using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
@@ -65,6 +65,39 @@ namespace CazamioProject.DBHelpers
                     command.Parameters.AddWithValue("@ApartmentApplicationId", DbType.String).Value = apartmentApplicationId;
                     command.Parameters.AddWithValue("@EmailTenant", DbType.String).Value = emailTenant;
                     command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
+
+                    db.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            data = reader.GetValue(0).ToString();
+                        }
+                    }
+                }
+                return data;
+            }
+
+            public static string DeleteRecordByApartmentApplicationIdTenantAppOccGuar(long? apartmentApplicationId, string emailTenantCreator, int marketplaceId, string emailTenantOccupant, string emailTenantGuarantor)
+            {
+                string data = null;
+                using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+                {
+                    SqlCommand command = new("DELETE FROM TenantLeases" +
+                               " WHERE ApartmentApplicationId = @ApartmentApplicationId" +
+                               " AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM Tenants WHERE UserId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantCreator OR Email = @EmailTenantOccupant OR Email = @EmailTenantGuarantor AND MarketplaceId = @MarketplaceId))", db);
+
+                    command.Parameters.AddWithValue("@ApartmentApplicationId", DbType.String).Value = apartmentApplicationId;
+                    command.Parameters.AddWithValue("@EmailTenantCreator", DbType.String).Value = emailTenantCreator;
+                    command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
+                    command.Parameters.AddWithValue("@EmailTenantOccupant", DbType.String).Value = emailTenantOccupant;
+                    command.Parameters.AddWithValue("@EmailTenantGuarantor", DbType.String).Value = emailTenantGuarantor;
 
                     db.Open();
 

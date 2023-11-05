@@ -9,7 +9,75 @@ using System.Threading.Tasks;
 
 namespace CazamioProject.DBHelpers
 {
-    public class DBTableApartmentApplicationApplicants
+    public class DBRequestApartmentApplicationApplicants
+    {
+        private static T GetValueOrDefault<T>(SqlDataReader reader, int index, T defaultValue = default(T))
+        {
+            if (!reader.IsDBNull(index))
+            {
+                return (T)reader.GetValue(index);
+            }
+            else
+            {
+                return defaultValue;
+            }
+        }
+        public class ApartmentApplicationApplicants
+        {
+            public static string DeleteRecordByEmailMarketplaceIdForTenantOcc(long? apartmentApplicationId, string emailTenantOccupant, int marketplaceId)
+            {
+                string data = null;
+                using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+                {
+                    SqlCommand command = new("DELETE FROM ApartmentApplicationApplicants WHERE ApartmentApplicationId = @ApartmentApplicationId" +
+                               " AND UserId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantOccupant AND MarketplaceId = @MarketplaceId)", db);
+                    command.Parameters.AddWithValue("@ApartmentApplicationId", DbType.String).Value = apartmentApplicationId;
+                    command.Parameters.AddWithValue("@EmailTenantOccupant", DbType.String).Value = emailTenantOccupant;
+                    command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
+                    db.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            data = reader.GetValue(0).ToString();
+                        }
+                    }
+                }
+                return data;
+            }
+
+            public static string DeleteRecordByEmailMarketplaceIdForTenantGuar(long? apartmentApplicationId, string emailTenantGuarantor, int marketplaceId)
+            {
+                string data = null;
+                using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+                {
+                    SqlCommand command = new("DELETE FROM ApartmentApplicationApplicants WHERE ApartmentApplicationId = @ApartmentApplicationId" +
+                               " AND UserId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantOccupant AND MarketplaceId = @MarketplaceId)", db);
+                    command.Parameters.AddWithValue("@ApartmentApplicationId", DbType.String).Value = apartmentApplicationId;
+                    command.Parameters.AddWithValue("@EmailTenantGuarantor", DbType.String).Value = emailTenantGuarantor;
+                    command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
+                    db.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            data = reader.GetValue(0).ToString();
+                        }
+                    }
+                }
+                return data;
+            }
+        }
+    }
+    public class DBRequestApartmentApplicationApplicantsOLD
     {
         public static string GetIdByGuarantorIdApartmentApplicationId(string apartmentApplicationId, string guarantorId)
         {
