@@ -62,7 +62,7 @@ namespace DBTests.BaseTestsDB
             string lastApartmentApplicationId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationId();
             Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId for application for {buildingAddress} from table ApartmentApplications");
 
-            string occupantId = DBTableOccupants.GetLastOccupantIdByApartmentApplicationId(lastApartmentApplicationId);
+            string occupantId = DBRequestOccupantsOLD.GetLastOccupantIdByApartmentApplicationId(lastApartmentApplicationId);
             Console.WriteLine($"{occupantId} :Last by UserId for application for {tenantLiza} {tenantOccupant} for {buildingAddress} from table Occupants");
         }
 
@@ -84,7 +84,7 @@ namespace DBTests.BaseTestsDB
             string lastApartmentApplicationId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationId();
             Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId for application for {buildingAddress} from table ApartmentApplications");
 
-            string guarantorId = DBTableGuarantors.GetLastGuarantorIdByApartmentApplicationId($"{lastApartmentApplicationId}");
+            string guarantorId = DBRequestGuarantorsOLD.GetLastGuarantorIdByApartmentApplicationId($"{lastApartmentApplicationId}");
             Console.WriteLine($"{guarantorId} :Last Id by GuarantorId for application for {tenantJimmy} {tenantGuarantor} for {buildingAddress} from table Guarantors");
         }
 
@@ -154,13 +154,13 @@ namespace DBTests.BaseTestsDB
             string lastApplicationIdByTenantId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationIdByTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
             Console.WriteLine($"{lastApplicationIdByTenantId} :Last ApartmentApplicationId by TenantId for application for {buildingAddress} from table ApartmentApplications");
 
-            string guarantorId = DBTableGuarantors.GetLastGuarantorIdByApartmentApplicationId($"{lastApartmentApplicationId}");
+            string guarantorId = DBRequestGuarantorsOLD.GetLastGuarantorIdByApartmentApplicationId($"{lastApartmentApplicationId}");
             Console.WriteLine($"{guarantorId} :Last Id by GuarantorId for application for {tenantJimmy} {tenantGuarantor} for {buildingAddress} from table Guarantors");
 
             string lastIdGuarantorIdApartmentApplicationId = DBRequestApartmentApplicationApplicantsOLD.GetIdByGuarantorIdApartmentApplicationId(lastApartmentApplicationId, guarantorId);
             Console.WriteLine($"{lastIdGuarantorIdApartmentApplicationId} :Last Id for application for {buildingAddress} from table ApartmentApplicationApplicants");
 
-            string occupantId = DBTableOccupants.GetLastOccupantIdByApartmentApplicationId(lastApartmentApplicationId);
+            string occupantId = DBRequestOccupantsOLD.GetLastOccupantIdByApartmentApplicationId(lastApartmentApplicationId);
             Console.WriteLine($"{occupantId} :Last by UserId for application for {tenantLiza} {tenantOccupant} for {buildingAddress} from table Occupants");
 
             string lastIdByOccupantIdApartmentApplicationId = DBRequestApartmentApplicationApplicantsOLD.GetIdByOccupantIdApartmentApplicationId(lastApartmentApplicationId, occupantId);
@@ -343,17 +343,15 @@ namespace DBTests.BaseTestsDB
             WaitUntil.WaitSomeInterval(100);
             DBRequestApartmentApplicationApplicants.ApartmentApplicationApplicants.DeleteRecordByEmailMarketplaceIdForTenantGuar(apartmentApplicationId, emailTenantGuarantor, marketplaceId);
             WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationRequiredDocuments.ApplicationRequiredDocuments.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationRentalHistories.ApplicationRentalHistories.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationOccupations.ApplicationOccupations.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            //WaitUntil.WaitSomeInterval(100);
-            //DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(apartmentId, emailTenant, marketplaceId);
+            DBRequestGuarantors.Guarantors.DeleteRecordByEmailMarketplaceIdForTenantGuar(apartmentApplicationId, emailTenantGuarantor);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestOccupants.Occupants.DeleteRecordByEmailMarketplaceIdForTenantOcc(apartmentApplicationId, emailTenantOccupant);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenantCreator, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(apartmentId, emailTenantCreator, marketplaceId);
         }
 
         [Test]

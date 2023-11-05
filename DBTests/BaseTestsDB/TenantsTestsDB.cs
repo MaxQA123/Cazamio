@@ -38,7 +38,13 @@ namespace DBTests.BaseTestsDB
 
         public void NewTenantIdAndId()
         {
+            #region Preconditions
+
             string newTenant = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_LAST_NAME;
+
+            #endregion
+
+            #region Test
 
             string tenantIdByEmail = DBRequestAspNetUsersOld.GetIdByEmailMarketplaceIdNewTenant(TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_SECOND, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{tenantIdByEmail} :TenantId for new tenant {newTenant} from table AspNetUsers");
@@ -51,6 +57,8 @@ namespace DBTests.BaseTestsDB
 
             string idLast = DBRequestTenantsOld.GetLastIdNewTenant();
             Console.WriteLine($"{idLast} :Id for new tenant {newTenant} from table Tenants");
+
+            #endregion
         }
 
         [Test]
@@ -63,7 +71,13 @@ namespace DBTests.BaseTestsDB
 
         public void RecordsAboutNewTenant()
         {
+            #region Preconditions
+
             string newTenant = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_LAST_NAME;
+
+            #endregion
+
+            #region Test
 
             string idLastTenantTenants = DBRequestTenantsOld.GetLastIdNewTenant();
             Console.WriteLine($"{idLastTenantTenants} :Id for new tenant {newTenant} from table Tenants");
@@ -118,6 +132,8 @@ namespace DBTests.BaseTestsDB
                 Assert.AreEqual(firstNameTenantAspNetUsers, DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_NAME);
                 Console.WriteLine($"FirstName a new tenant AspNetUsers: {firstNameTenantAspNetUsers} = {DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_NAME} FirstName a new tenant ER");
             });
+
+            #endregion
         }
 
         [Test]
@@ -130,7 +146,13 @@ namespace DBTests.BaseTestsDB
 
         public void NewRecordsAboutBackgroundCheckCreditScreening()
         {
+            #region Preconditions
+
             string tenant = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_LAST_NAME;
+
+            #endregion
+
+            #region Test
 
             string lastIdByEmail = DBTableTenantBackgroundChecks.GetLastIdByEmailMarketplaceId(DBTestDataForTenantMarketplaceOne.NEW_TENANT_EMAIL, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
             Console.WriteLine($"{lastIdByEmail} :Last Id CreditScreening by email {tenant} from table TenantBackgroundChecks");
@@ -185,6 +207,8 @@ namespace DBTests.BaseTestsDB
                 Assert.AreEqual(passedCreditScreening, DBTestDataGeneral.PASSED);
                 Console.WriteLine($"Passed CreditScreening from table BackgroundChecks: {passedCreditScreening} = {DBTestDataGeneral.PASSED} Passed CreditScreening ER");
             });
+
+            #endregion
         }
 
         [Test]
@@ -197,7 +221,13 @@ namespace DBTests.BaseTestsDB
 
         public void RecordsInTableTenantExtractedIdentities()
         {
+            #region Preconditions
+
             string newTenant = DBTestDataForTenantMarketplaceOne.NEW_TENANT_FIRST_LAST_NAME;
+
+            #endregion
+
+            #region Test
 
             string firstNameNewTenant = DBTableTenantExtractedIdentities.GetFirstNameTenantByTenantId();
             Console.WriteLine($"{firstNameNewTenant} :First name a new tenant {newTenant} from table TenantExtractedIdentities");
@@ -213,6 +243,8 @@ namespace DBTests.BaseTestsDB
                 Assert.AreEqual(lastNameNewTenant, DBTestDataForTenantMarketplaceOne.NEW_TENANT_LAST_NAME);
                 Console.WriteLine($"Last Name for a new tenant from table TenantExtractedIdentities AR: {lastNameNewTenant} = {DBTestDataForTenantMarketplaceOne.NEW_TENANT_LAST_NAME} Last Name for a new tenant from table TenantExtractedIdentities ER");
             });
+
+            #endregion
         }
 
         [Test]
@@ -225,6 +257,8 @@ namespace DBTests.BaseTestsDB
 
         public void NewLeaseSignedThreeTenantsIntableTenantLeases()
         {
+            #region Preconditions
+
             string tenantApplicant = DBTestDataGeneral.NAME_ROLE_APPLICANT;
             string tenantOccupant = DBTestDataGeneral.NAME_ROLE_OCCUPANT;
             string tenantGuarantor = DBTestDataGeneral.NAME_ROLE_GUARANTOR;
@@ -232,6 +266,10 @@ namespace DBTests.BaseTestsDB
             string tenantRay = TestDataForWebSiteTenant.FIRST_NAME_TENANT_APPLICANT;
             string tenantLiza = TestDataForWebSiteTenant.FIRST_NAME_OCCUPANT_ONE;
             string tenantJimmy = TestDataForWebSiteTenant.FIRST_NAME_GUARANTOR;
+
+            #endregion
+
+            #region Test
 
             string lastApartmentApplicationId = DBRequestTenantLeasesOLD.GetLastApartmentApplicationId();
             Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId from table TenantLeases");
@@ -274,6 +312,8 @@ namespace DBTests.BaseTestsDB
                 Assert.AreEqual(isLeaseSignedForGuarantor, DBTestDataGeneral.TRUE);
                 Console.WriteLine($"True IsLeaseSigned for tenant {tenantGuarantor} from table TenantLeases {isLeaseSignedForGuarantor} = {DBTestDataGeneral.TRUE} :ApartmentApplicationId for {tenantGuarantor} {tenantJimmy} ER");
             });
+
+            #endregion
         }
 
         [Test]
@@ -286,7 +326,13 @@ namespace DBTests.BaseTestsDB
 
         public void NewRecordInTableTenantApartmentFavorities()
         {
+            #region Preconditions
+
             string tenantApplicant = TestDataForWebSiteTenant.FIRST_NAME_TENANT_APPLICANT;
+
+            #endregion
+
+            #region Test
 
             string idLastFavorites = DBTableTenantApartmentFavorites.GetLastId();
             Console.WriteLine($"{idLastFavorites} :Id last {tenantApplicant} from table TenantApartmentFavorites");
@@ -314,6 +360,8 @@ namespace DBTests.BaseTestsDB
                 Assert.AreEqual(apartmentIdFromTableApartments, apartmentIdFromTableTenantApartmentFavorites);
                 Console.WriteLine($"TenantId for a new apartment favorities from table TenantApartmentFavorites AR: {apartmentIdFromTableApartments} = {apartmentIdFromTableTenantApartmentFavorites} TenantId for a new apartment favorities from table TenantApartmentFavorites ER");
             });
+
+            #endregion
         }
 
         [Test]
@@ -336,6 +384,8 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
+            #region Test
+
             var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
             Console.WriteLine($"ApartmentId: {apartmentId}");
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
@@ -357,6 +407,61 @@ namespace DBTests.BaseTestsDB
             DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
             WaitUntil.WaitSomeInterval(100);
             DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(apartmentId, emailTenant, marketplaceId);
+
+            #endregion
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBTenant")]
+        [AllureSubSuite("DeleteNewApplicationWithTenantsAppOccGuarViaButtonPlusApplication")]
+
+        public void DeleteNewlyCreatedTenantsAppOccGuarViaButtonPlusApplication()
+        {
+            #region Preconditions
+
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            string emailTenantCreator = "task1588n11creator@putsbox.com";
+            string emailTenantOccupant = "task1588n11occupant@putsbox.com";
+            string emailTenantGuarantor = "task1588n11guarantor@putsbox.com";
+
+            #endregion
+
+            #region Test
+
+            DBRequestChatCursors.ChatCursors.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenantCreator);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApartmentHistories.ApartmentHistories.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenantCreator);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestTeants.Tenants.DeleteCreatedUserTenant(marketplaceId, emailTenantCreator);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailTenantCreator, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+
+            DBRequestChatCursors.ChatCursors.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenantOccupant);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApartmentHistories.ApartmentHistories.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenantOccupant);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestTeants.Tenants.DeleteCreatedUserTenant(marketplaceId, emailTenantOccupant);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailTenantOccupant, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+
+            DBRequestChatCursors.ChatCursors.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenantGuarantor);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestApartmentHistories.ApartmentHistories.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenantGuarantor);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestTeants.Tenants.DeleteCreatedUserTenant(marketplaceId, emailTenantGuarantor);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailTenantGuarantor, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+
+            #endregion
+
+
         }
 
         [Test]
@@ -376,6 +481,8 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
+            #region Test
+
             DBRequestChatCursors.ChatCursors.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
             WaitUntil.WaitSomeInterval(100);
             DBRequestApartmentHistories.ApartmentHistories.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
@@ -391,6 +498,8 @@ namespace DBTests.BaseTestsDB
             DBRequestTeants.Tenants.DeleteCreatedUserTenant(marketplaceId, emailTenant);
             WaitUntil.WaitSomeInterval(100);
             DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailTenant, marketplaceId);
+
+            #endregion
         }
 
         [Test]

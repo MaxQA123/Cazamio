@@ -780,7 +780,7 @@ namespace MarketplaceAdminTests
             Console.WriteLine($"ApartmentId: {apartmentId}");
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationIdOnlyTenantApplicant(apartmentApplicationId, emailTenant, marketplaceId);
             WaitUntil.WaitSomeInterval(100);
             DBRequestApplicationGeneralQuestions.ApplicationGeneralQuestions.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
             WaitUntil.WaitSomeInterval(100);
@@ -901,7 +901,7 @@ namespace MarketplaceAdminTests
             Console.WriteLine($"ApartmentId: {apartmentId}");
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationIdOnlyTenantApplicant(apartmentApplicationId, emailTenant, marketplaceId);
             WaitUntil.WaitSomeInterval(100);
             DBRequestApplicationGeneralQuestions.ApplicationGeneralQuestions.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
             WaitUntil.WaitSomeInterval(100);
@@ -1015,7 +1015,7 @@ namespace MarketplaceAdminTests
             Console.WriteLine($"ApartmentId: {apartmentId}");
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationIdOnlyTenantApplicant(apartmentApplicationId, emailTenant, marketplaceId);
             WaitUntil.WaitSomeInterval(100);
             DBRequestApplicationGeneralQuestions.ApplicationGeneralQuestions.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
             WaitUntil.WaitSomeInterval(100);
