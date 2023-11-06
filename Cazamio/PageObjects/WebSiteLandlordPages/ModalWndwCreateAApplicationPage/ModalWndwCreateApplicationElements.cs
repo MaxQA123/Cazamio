@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplicationPage
 {
-    public partial class ModalWndwCreateAApplication
+    public partial class ModalWndwCreateApplication
     {
         [FindsBy(How = How.XPath, Using = "//app-prepare-application//h2[text() = 'Create application']")]
         public IWebElement TitleCreateApplicationModalWndw;

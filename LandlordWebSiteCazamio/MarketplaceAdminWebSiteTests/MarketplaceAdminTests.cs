@@ -731,26 +731,26 @@ namespace MarketplaceAdminTests
 
             Pages.ListOfApplications
                 .ClickButtonPlusApplication();
-            Pages.ModalWndwCreateAApplication
+            Pages.ModalWndwCreateApplication
                 .VerifyTitleCreateApplicationModalWndw()
                 .EnterExistEmailInFieldMainApplicantEmailAddressModalWndw();
 
-            string getEmailStepFirstActual = Pages.ModalWndwCreateAApplication.GetEmailStepFirst();
+            string getEmailStepFirstActual = Pages.ModalWndwCreateApplication.GetEmailStepFirst();
 
-            Pages.ModalWndwCreateAApplication
+            Pages.ModalWndwCreateApplication
                 .ClickButtonNextModalWndw();
 
-            string getUnitAddressStepSecondActual = Pages.ModalWndwCreateAApplication.GetUnitAddressStepSecond();
-            string getShortAddress = Pages.ModalWndwCreateAApplication.GetShortUnitAddressStepSecond();
-            string getUnitNumberActuaL = Pages.ModalWndwCreateAApplication.GetUnitNumberStepSecond();
+            string getUnitAddressStepSecondActual = Pages.ModalWndwCreateApplication.GetUnitAddressStepSecond();
+            string getShortAddress = Pages.ModalWndwCreateApplication.GetShortUnitAddressStepSecond();
+            string getUnitNumberActuaL = Pages.ModalWndwCreateApplication.GetUnitNumberStepSecond();
 
-            Pages.ModalWndwCreateAApplication
+            Pages.ModalWndwCreateApplication
                 .ClickButtonNextModalWndw();
 
-            string getEmailStepThirdActual = Pages.ModalWndwCreateAApplication.GetEmailStepThird();
-            string getUnitAddressStepThirdActual = Pages.ModalWndwCreateAApplication.GetUnitAddressStepThird();
+            string getEmailStepThirdActual = Pages.ModalWndwCreateApplication.GetEmailStepThird();
+            string getUnitAddressStepThirdActual = Pages.ModalWndwCreateApplication.GetUnitAddressStepThird();
 
-            Pages.ModalWndwCreateAApplication
+            Pages.ModalWndwCreateApplication
                 .VerifyEmailAndUnitAddress(getEmailStepFirstActual, getUnitAddressStepSecondActual, getEmailStepThirdActual, getUnitAddressStepThirdActual);
 
             //var getLeasePriceFromDb = DBRequestPrices.Prices.GetLeasePrice(getShortAddress, getUnitNumberActuaL, marketplaceId).LeasePrice;
@@ -758,7 +758,7 @@ namespace MarketplaceAdminTests
             //var getMonthlyRentsPrePaymentFromDb = DBRequestPrices.Prices.GetMonthlyRentsPrePayment(getShortAddress, getUnitNumberActuaL, marketplaceId).PaidMonths;
             //var getRentalTermsFromDb = DBRequestApartments.Apartments.GetLeaseDurationForApartment(getShortAddress, getUnitNumberActuaL, marketplaceId).LeaseDuration;
 
-            Pages.ModalWndwCreateAApplication
+            Pages.ModalWndwCreateApplication
                 .EnterPriceFieldInputRequestedOfferPriceModalWndw()
                 .SelectDateAvailableForCreateApplicationModalWndwViaListOfApplication()
                 .ClickButtonCreateStepThreeModalWndw()
@@ -852,26 +852,26 @@ namespace MarketplaceAdminTests
 
             Pages.ListOfApplications
                 .ClickButtonPlusApplication();
-            Pages.ModalWndwCreateAApplication
+            Pages.ModalWndwCreateApplication
                 .VerifyTitleCreateApplicationModalWndw()
                 .EnterExistEmailInFieldMainApplicantEmailAddressModalWndw();
 
-            string getEmailStepFirstActual = Pages.ModalWndwCreateAApplication.GetEmailStepFirst();
+            string getEmailStepFirstActual = Pages.ModalWndwCreateApplication.GetEmailStepFirst();
 
-            Pages.ModalWndwCreateAApplication
+            Pages.ModalWndwCreateApplication
                 .ClickButtonNextModalWndw();
 
-            string getUnitAddressStepSecondActual = Pages.ModalWndwCreateAApplication.GetUnitAddressStepSecond();
-            string getShortAddress = Pages.ModalWndwCreateAApplication.GetShortUnitAddressStepSecond();
-            string getUnitNumberActuaL = Pages.ModalWndwCreateAApplication.GetUnitNumberStepSecond();
+            string getUnitAddressStepSecondActual = Pages.ModalWndwCreateApplication.GetUnitAddressStepSecond();
+            string getShortAddress = Pages.ModalWndwCreateApplication.GetShortUnitAddressStepSecond();
+            string getUnitNumberActuaL = Pages.ModalWndwCreateApplication.GetUnitNumberStepSecond();
 
-            Pages.ModalWndwCreateAApplication
+            Pages.ModalWndwCreateApplication
                 .ClickButtonNextModalWndw();
 
-            string getEmailStepThirdActual = Pages.ModalWndwCreateAApplication.GetEmailStepThird();
-            string getUnitAddressStepThirdActual = Pages.ModalWndwCreateAApplication.GetUnitAddressStepThird();
+            string getEmailStepThirdActual = Pages.ModalWndwCreateApplication.GetEmailStepThird();
+            string getUnitAddressStepThirdActual = Pages.ModalWndwCreateApplication.GetUnitAddressStepThird();
 
-            Pages.ModalWndwCreateAApplication
+            Pages.ModalWndwCreateApplication
                 .VerifyEmailAndUnitAddress(getEmailStepFirstActual, getUnitAddressStepSecondActual, getEmailStepThirdActual, getUnitAddressStepThirdActual);
 
             //var getLeasePriceFromDb = DBRequestPrices.Prices.GetLeasePrice(getShortAddress, getUnitNumberActuaL, marketplaceId).LeasePrice;
@@ -879,7 +879,7 @@ namespace MarketplaceAdminTests
             //var getMonthlyRentsPrePaymentFromDb = DBRequestPrices.Prices.GetMonthlyRentsPrePayment(getShortAddress, getUnitNumberActuaL, marketplaceId).PaidMonths;
             //var getRentalTermsFromDb = DBRequestApartments.Apartments.GetLeaseDurationForApartment(getShortAddress, getUnitNumberActuaL, marketplaceId).LeaseDuration;
 
-            Pages.ModalWndwCreateAApplication
+            Pages.ModalWndwCreateApplication
                 .EnterPriceFieldInputRequestedOfferPriceModalWndw()
                 .SelectDateAvailableForCreateApplicationModalWndwViaListOfApplication();
                 //.ClickButtonCreateStepThreeModalWndw()
@@ -974,18 +974,19 @@ namespace MarketplaceAdminTests
             Pages.ApartmentView
                 .VerifyTitleApartmentViewPg()
                 .ClickButtonPlusApplication();
-            Pages.ModalWndwCreateAApplication
+            Pages.ModalWndwCreateApplication
                 .VerifyTitleCreateApplicationModalWndw()
                 .EnterNewEmailInFieldMainApplicantEmailAddressModalWndw();
 
-            string getEmailStepFirstActual = Pages.ModalWndwCreateAApplication.GetEmailStepFirst();
+            string getEmailStepFirstActual = Pages.ModalWndwCreateApplication.GetEmailStepFirst();
+            string partEmailPutsBox = Pages.ModalWndwCreateApplication.CopyEmailBeforeDogFromMdlWndwCreateApplicationStepFirst();
 
-            Pages.ModalWndwCreateAApplication
+            Pages.ModalWndwCreateApplication
                 .ClickButtonNextModalWndw();
 
-            string getEmailStepThirdActual = Pages.ModalWndwCreateAApplication.GetEmailStepThird();
+            string getEmailStepThirdActual = Pages.ModalWndwCreateApplication .GetEmailStepThird();
 
-            Pages.ModalWndwCreateAApplication
+            Pages.ModalWndwCreateApplication
                 .VerifyEmail(getEmailStepFirstActual, getEmailStepThirdActual);
 
             //var getLeasePriceFromDb = DBRequestPrices.Prices.GetLeasePrice(getShortAddress, getUnitNumberActuaL, marketplaceId).LeasePrice;
@@ -993,7 +994,7 @@ namespace MarketplaceAdminTests
             //var getMonthlyRentsPrePaymentFromDb = DBRequestPrices.Prices.GetMonthlyRentsPrePayment(getShortAddress, getUnitNumberActuaL, marketplaceId).PaidMonths;
             //var getRentalTermsFromDb = DBRequestApartments.Apartments.GetLeaseDurationForApartment(getShortAddress, getUnitNumberActuaL, marketplaceId).LeaseDuration;
 
-            Pages.ModalWndwCreateAApplication
+            Pages.ModalWndwCreateApplication
                 .EnterPriceFieldInputRequestedOfferPriceModalWndw()
                 .SelectDateAvailableForCreateApplicationModalWndwViaApartmentView()
                 .ClickButtonCreateStepThreeModalWndw()
@@ -1007,31 +1008,30 @@ namespace MarketplaceAdminTests
             //Pages.ModalWndwCreateAApplication
             //    .VerifyFieldsAutocompleteInStepThird(getLeasePriceFromDb, getSecurityDepositFromDb, getMonthlyRentsPrePaymentFromDb, getRentalTermsFromDb, getLeasePriceActual, getSecurityDepositActual, getMonthlyRentsPrePaymentActual, getRentalTermsActual);
 
+            Pages.JScriptExecutorHelper
+                .OpenNewTab()
+                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, partEmailPutsBox);
+
+            //Продолжить написание теста
             #endregion
 
             #region Postconditions
 
-            var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
-            Console.WriteLine($"ApartmentId: {apartmentId}");
-            var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
-            Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationIdOnlyTenantApplicant(apartmentApplicationId, emailTenant, marketplaceId);
+            DBRequestChatCursors.ChatCursors.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
             WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationGeneralQuestions.ApplicationGeneralQuestions.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            DBRequestApartmentHistories.ApartmentHistories.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
             WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationBasicInformation.ApplicationBasicInformation.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
             WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationRequiredDocuments.ApplicationRequiredDocuments.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
             WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationRentalHistories.ApplicationRentalHistories.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            DBRequestTenantLeases.TenantLeases.DeleteRecordByEmailMarketplaceIdOnlyTenantApplicant(marketplaceId, emailTenant);
             WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationOccupations.ApplicationOccupations.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
+            DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
             WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
+            DBRequestTeants.Tenants.DeleteCreatedUserTenant(marketplaceId, emailTenant);
             WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(apartmentId, emailTenant, marketplaceId);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailTenant, marketplaceId);
 
             #endregion
 

@@ -115,7 +115,7 @@ namespace CazamioProgect.PageObjects
         public static BuildingView BuildingView => GetPage<BuildingView>();
         public static AddApartments AddApartments => GetPage<AddApartments>();
         public static Reports Reports => GetPage<Reports>();
-        public static ModalWndwCreateAApplication ModalWndwCreateAApplication => GetPage<ModalWndwCreateAApplication>();
+        public static ModalWndwCreateApplication ModalWndwCreateApplication => GetPage<ModalWndwCreateApplication>();
         public static ApartmentView ApartmentView => GetPage<ApartmentView>();
         #endregion
     }

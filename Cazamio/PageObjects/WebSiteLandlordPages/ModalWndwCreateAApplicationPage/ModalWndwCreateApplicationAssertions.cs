@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplicationPage
 {
-    public partial class ModalWndwCreateAApplication
+    public partial class ModalWndwCreateApplication
     {
         [AllureStep("VerifyTitleCreateApplicationModalWndw")]
-        public ModalWndwCreateAApplication VerifyTitleCreateApplicationModalWndw()
+        public ModalWndwCreateApplication VerifyTitleCreateApplicationModalWndw()
         {
             WaitUntil.CustomElementIsVisible(TitleCreateApplicationModalWndw);
             Assert.IsTrue(Successfully.IsVisible(TitleCreateApplicationModalWndw));
@@ -21,7 +21,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         }
 
         [AllureStep("VerifyEmailAndUnitAddress")]
-        public ModalWndwCreateAApplication VerifyEmailAndUnitAddress( string getEmailStepFirstActual, string getUnitAddressStepSecondActual, string getEmailStepThirdActual, string getUnitAddressStepThirdActual)
+        public ModalWndwCreateApplication VerifyEmailAndUnitAddress( string getEmailStepFirstActual, string getUnitAddressStepSecondActual, string getEmailStepThirdActual, string getUnitAddressStepThirdActual)
         {
             Assert.Multiple(() =>
             {
@@ -36,7 +36,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         }
 
         [AllureStep("VerifyEmail")]
-        public ModalWndwCreateAApplication VerifyEmail(string getEmailStepFirstActual, string getEmailStepThirdActual)
+        public ModalWndwCreateApplication VerifyEmail(string getEmailStepFirstActual, string getEmailStepThirdActual)
         {
             Assert.Multiple(() =>
             {
@@ -49,7 +49,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         }
 
         [AllureStep("VerifyFieldsAutocompleteInStepThird")]
-        public ModalWndwCreateAApplication VerifyFieldsAutocompleteInStepThird(decimal? getLeasePriceFromDb, decimal? getSecurityDepositFromDb, int? getMonthlyRentsPrePaymentFromDb, string getRentalTermsFromDb, string getLeasePriceActual, string getSecurityDepositActual, string getMonthlyRentsPrePaymentActual, string getRentalTermsActual)
+        public ModalWndwCreateApplication VerifyFieldsAutocompleteInStepThird(decimal? getLeasePriceFromDb, decimal? getSecurityDepositFromDb, int? getMonthlyRentsPrePaymentFromDb, string getRentalTermsFromDb, string getLeasePriceActual, string getSecurityDepositActual, string getMonthlyRentsPrePaymentActual, string getRentalTermsActual)
         {
             Assert.Multiple(() =>
             {
@@ -68,7 +68,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         }
 
         [AllureStep("VerifyMessageStepFourModalWndw")]
-        public ModalWndwCreateAApplication VerifyMessageStepFourModalWndw()
+        public ModalWndwCreateApplication VerifyMessageStepFourModalWndw()
         {
             WaitUntil.CustomElementIsVisible(MessageStepFourModalWndw);
             Assert.IsTrue(Successfully.IsVisible(MessageStepFourModalWndw));
