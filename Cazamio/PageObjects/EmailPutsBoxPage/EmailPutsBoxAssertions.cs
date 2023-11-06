@@ -30,5 +30,15 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
 
             return this;
         }
+
+        [AllureStep("VerifyTitleLetterCreateTenant")]
+        public PutsBox VerifyTitleLetterCreateTenant()
+        {
+            WaitUntil.CustomElementIsVisible(TitleLetterCreateTenant);
+            Assert.IsTrue(TitleLetterCreateTenant.Displayed);
+            Console.WriteLine(TitleLetterCreateTenant.Text);
+
+            return this;
+        }
     }
 }

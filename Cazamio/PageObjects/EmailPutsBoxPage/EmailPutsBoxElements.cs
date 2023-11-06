@@ -19,6 +19,9 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
 
         #region BodyLetterOfTenant
 
+        [FindsBy(How = How.XPath, Using = "//td[text() = 'You’re (Almost) In!']")]
+        public IWebElement TitleLetterCreateTenant;
+
         [FindsBy(How = How.XPath, Using = "//a[contains(@href, 'https://u28342774.ct.sendgrid.net/ls/click')]")]
         public IWebElement ButtonConfirmEmailForTenant;
 

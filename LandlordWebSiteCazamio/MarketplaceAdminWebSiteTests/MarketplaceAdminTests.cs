@@ -1011,6 +1011,10 @@ namespace MarketplaceAdminTests
             Pages.JScriptExecutorHelper
                 .OpenNewTab()
                 .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, partEmailPutsBox);
+            Pages.PutsBox
+                .VerifyTitleLetterCreateTenant()
+                .ClickButtonBodyHtml()
+                .ClickButtonConfirmEmailForTenant();
 
             //Продолжить написание теста
             #endregion
