@@ -283,9 +283,9 @@ namespace DBTests.BaseTestsDB
             #region Preconditions
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string buildingAddress = "18 Linden Street";
-            string unitNumber = "27";
-            string emailTenant = "tenantswife@gmail.com";
+            string buildingAddress = "2 Linden Street";
+            string unitNumber = "81";
+            string emailTenant = "test321jessicatenant@gmail.com";
 
             #endregion
 
@@ -326,7 +326,7 @@ namespace DBTests.BaseTestsDB
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
             string buildingAddress = "18 Linden Street";
-            string unitNumber = "31";
+            string unitNumber = "42";
             string emailTenantCreator = "task1588n11creator@putsbox.com";
             string emailTenantOccupant = "task1588n11occupant@putsbox.com";
             string emailTenantGuarantor = "task1588n11guarantor@putsbox.com";
