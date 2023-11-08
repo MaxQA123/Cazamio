@@ -76,7 +76,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         public IWebElement MessageStepFourModalWndw;
 
         [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Add Applicant']")]
-        public IWebElement ButtonAddApplicant;
+        public IWebElement ButtonAddApplicantStepFourModalWndw;
 
         #endregion
     }

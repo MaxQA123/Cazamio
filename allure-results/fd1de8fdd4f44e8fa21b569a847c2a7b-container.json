@@ -1,0 +1,78 @@
+{
+  "uuid": "8c357135-04e0-4b63-b4cf-83342759a2c1-tc-0-1000",
+  "name": "MarketplaceAdminTests.TestsBaseWeb.CreateApplicationWithTenantsAppOccGuarWhenTenantsAddedToSystem",
+  "children": [
+    "ddb1158a-79ce-4ac4-ae06-97d33f954d4f-tr-0-1010"
+  ],
+  "befores": [
+    {
+      "name": "DobeforeAllTheTests",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1699457877016,
+      "stop": 1699457877016
+    },
+    {
+      "name": "SetUp",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.WebDriverException : unknown error: result.webdriverValue.value list is missing or empty in Runtime.callFunctionOn response\n  (Session info: chrome=119.0.6045.106)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.CookieJar.DeleteAllCookies()\r\n   at CazamioProgect.Helpers.Browser.Initialize() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\Browser.cs:line 36\r\n   at MarketplaceAdminTests.BaseMarketplaceAdmin.SetUp() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\BaseMarketplaceAdminWebSite\\BaseMarketplaceAdmin.cs:line 16"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1699457877017,
+      "stop": 1699457877017
+    }
+  ],
+  "afters": [
+    {
+      "name": "DoAfterEach",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1699457877018,
+      "stop": 1699457877018
+    },
+    {
+      "name": "DoAfterAllTheTests",
+      "status": "none",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "It's not possible to get status of OneTimeTearDown",
+        "trace": "See Allure.NUnit wiki"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1699457877018,
+      "stop": 1699457877018
+    }
+  ],
+  "links": [],
+  "start": 1699457871124,
+  "stop": 1699457877095
+}

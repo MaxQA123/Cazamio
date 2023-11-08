@@ -50,6 +50,7 @@ using CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage;
 using CazamioProject.PageObjects.WebSiteLandlordPages.ReportsPage;
 using CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplicationPage;
 using CazamioProject.PageObjects.WebSiteLandlordPages.ApartmentViewPage;
+using CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwAddAApplicantPage;
 
 namespace CazamioProgect.PageObjects
 {
@@ -117,6 +118,7 @@ namespace CazamioProgect.PageObjects
         public static Reports Reports => GetPage<Reports>();
         public static ModalWndwCreateApplication ModalWndwCreateApplication => GetPage<ModalWndwCreateApplication>();
         public static ApartmentView ApartmentView => GetPage<ApartmentView>();
+        public static ModalWndwAddAApplicant ModalWndwAddAApplicant => GetPage<ModalWndwAddAApplicant>();
         #endregion
     }
 }
