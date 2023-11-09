@@ -16,8 +16,25 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwAddAApplicant
         [AllureStep("EnterEmailTenantOccupant")]
         public ModalWndwAddAApplicant EnterEmailTenantOccupant()
         {
-            WaitUntil.CustomElementIsVisible(FieldInputEmailAddressMdlWndw);
-            InputGeneral.InputFunctionWithClear(FieldInputEmailAddressMdlWndw, emailTenantOccupant);
+            WaitUntil.CustomElementIsVisible(FirstFieldInputEmailAddressMdlWndw);
+            InputGeneral.InputFunctionWithClear(FirstFieldInputEmailAddressMdlWndw, emailTenantOccupant);
+            return this;
+        }
+
+        [AllureStep("ClickButtonPlusAnotherApplicantMdlWndw")]
+        public ModalWndwAddAApplicant ClickButtonPlusAnotherApplicantMdlWndw()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonPlusAnotherApplicantMdlWndw);
+            Button.Click(ButtonPlusAnotherApplicantMdlWndw);
+
+            return this;
+        }
+
+        [AllureStep("EnterEmailTenantGuarantor")]
+        public ModalWndwAddAApplicant EnterEmailTenantGuarantor()
+        {
+            WaitUntil.CustomElementIsVisible(SecondFieldInputEmailAddressMdlWndw);
+            InputGeneral.InputFunctionWithClear(SecondFieldInputEmailAddressMdlWndw, emailTenantGuarantor);
             return this;
         }
     }

@@ -14,6 +14,15 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwAddAApplicant
         public IWebElement TitleAddApplicantMdlWndw;
 
         [FindsBy(How = How.XPath, Using = "//input[@placeholder = 'Look up existing lead or create new']")]
-        public IWebElement FieldInputEmailAddressMdlWndw;
+        public IWebElement FirstFieldInputEmailAddressMdlWndw;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'step applicants ng-star-inserted']//div[@class = 'email-input no-margin ng-star-inserted'][2]//input[@placeholder = 'Look up existing lead or create new']")]
+        public IWebElement SecondFieldInputEmailAddressMdlWndw;
+
+        [FindsBy(How = How.XPath, Using = "//div[text() = ' + Add another applicant ']")]
+        public IWebElement ButtonPlusAnotherApplicantMdlWndw;
+
+        [FindsBy(How = How.XPath, Using = "")]
+        public IWebElement CheckTheBoxThisIGuarantorMdlWndw;
     }
 }
