@@ -16,16 +16,16 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwAddAApplicant
         [AllureStep("EnterEmailTenantOccupant")]
         public ModalWndwAddAApplicant EnterEmailTenantOccupant()
         {
-            WaitUntil.CustomElementIsVisible(FirstFieldInputEmailAddressMdlWndw);
-            InputGeneral.InputFunctionWithClear(FirstFieldInputEmailAddressMdlWndw, emailTenantOccupant);
+            WaitUntil.CustomElementIsVisible(FirstFieldInputEmailAddressMdlWndwAddAApplicant);
+            InputGeneral.InputFunctionWithClear(FirstFieldInputEmailAddressMdlWndwAddAApplicant, emailTenantOccupant);
             return this;
         }
 
-        [AllureStep("ClickButtonPlusAnotherApplicantMdlWndw")]
-        public ModalWndwAddAApplicant ClickButtonPlusAnotherApplicantMdlWndw()
+        [AllureStep("ClickButtonPlusAnotherApplicant")]
+        public ModalWndwAddAApplicant ClickButtonPlusAnotherApplicant()
         {
-            WaitUntil.CustomElementIsVisible(ButtonPlusAnotherApplicantMdlWndw);
-            Button.Click(ButtonPlusAnotherApplicantMdlWndw);
+            WaitUntil.CustomElementIsVisible(ButtonPlusAnotherApplicantMdlWndwAddAApplicant);
+            Button.Click(ButtonPlusAnotherApplicantMdlWndwAddAApplicant);
 
             return this;
         }
@@ -33,8 +33,26 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwAddAApplicant
         [AllureStep("EnterEmailTenantGuarantor")]
         public ModalWndwAddAApplicant EnterEmailTenantGuarantor()
         {
-            WaitUntil.CustomElementIsVisible(SecondFieldInputEmailAddressMdlWndw);
-            InputGeneral.InputFunctionWithClear(SecondFieldInputEmailAddressMdlWndw, emailTenantGuarantor);
+            WaitUntil.CustomElementIsVisible(SecondFieldInputEmailAddressMdlWndwAddAApplicant);
+            InputGeneral.InputFunctionWithClear(SecondFieldInputEmailAddressMdlWndwAddAApplicant, emailTenantGuarantor);
+            return this;
+        }
+
+        [AllureStep("ClickSecondCheckTheBoxThisIGuarantor")]
+        public ModalWndwAddAApplicant ClickSecondCheckTheBoxThisIGuarantor()
+        {
+            WaitUntil.CustomElementIsVisible(SecondCheckTheBoxThisIGuarantorMdlWndwAddAApplicant);
+            Button.Click(SecondCheckTheBoxThisIGuarantorMdlWndwAddAApplicant);
+
+            return this;
+        }
+
+        [AllureStep("ClickButtonAdd")]
+        public ModalWndwAddAApplicant ClickButtonAdd()
+        {
+            WaitUntil.CustomElementIsVisible(SecondCheckTheBoxThisIGuarantorMdlWndwAddAApplicant);
+            Button.Click(SecondCheckTheBoxThisIGuarantorMdlWndwAddAApplicant);
+
             return this;
         }
     }

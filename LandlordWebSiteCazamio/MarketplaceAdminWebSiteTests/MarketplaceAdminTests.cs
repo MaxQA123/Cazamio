@@ -890,8 +890,10 @@ namespace MarketplaceAdminTests
             Pages.ModalWndwAddAApplicant
                 .VerifyTitleCreateApplicationModalWndw()
                 .EnterEmailTenantOccupant()
-                .ClickButtonPlusAnotherApplicantMdlWndw()
-                .EnterEmailTenantGuarantor();
+                .ClickButtonPlusAnotherApplicant()
+                .EnterEmailTenantGuarantor()
+                .ClickSecondCheckTheBoxThisIGuarantor()
+                .ClickButtonAdd();
 
             //string getLeasePriceActual = Pages.ModalWndwCreateAApplication.GetLeasePriceStepThirdFromUi();
             //string getSecurityDepositActual = Pages.ModalWndwCreateAApplication.GetSecurityDepositStepThirdFromUi();

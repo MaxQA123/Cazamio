@@ -318,7 +318,7 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
-        [AllureSubSuite("DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithTenantAppOccGuar")]
+        [AllureSubSuite("DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithNewTenantAppOccGuar")]
 
         public void DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithNewTenantAppOccGuar()
         {

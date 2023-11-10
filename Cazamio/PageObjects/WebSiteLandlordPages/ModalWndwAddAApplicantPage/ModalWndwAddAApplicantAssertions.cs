@@ -14,8 +14,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwAddAApplicant
         [AllureStep("VerifyTitleCreateApplicationModalWndw")]
         public ModalWndwAddAApplicant VerifyTitleCreateApplicationModalWndw()
         {
-            WaitUntil.CustomElementIsVisible(TitleAddApplicantMdlWndw);
-            Assert.IsTrue(Successfully.IsVisible(TitleAddApplicantMdlWndw));
+            WaitUntil.CustomElementIsVisible(TitleAddApplicantMdlWndwAddAApplicant);
+            Assert.IsTrue(Successfully.IsVisible(TitleAddApplicantMdlWndwAddAApplicant));
 
             return this;
         }

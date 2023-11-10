@@ -134,7 +134,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaListOfApplication);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerSecondLine(DaysForDatePiker.SIXTH_NUMBER, " ");
+                .SelectDayOnDatePickerSecondLine(DaysForDatePiker.SEVENTH_NUMBER, " ");
 
             return this;
         }

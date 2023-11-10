@@ -67,11 +67,11 @@ namespace CazamioProgect.Helpers
         public const string NEW_LAST_NAME_OCCUPANT_ONE = "Taylor";
         public const string NEW_PHONE_NUMBER_OCCUPANT_ONE = "5151234321";
 
-        public const string EMAIL_CURRENT_OCCUPANT_SECOND = "tenantocc123liza@putsbox.com";
+        public const string EMAIL_CURRENT_OCCUPANT_SECOND = "tenantocc333alfred@putsbox.com";
         public const string FIRST_NAME_OCCUPANT_SECOND = "Alfred";
         public const string LAST_NAME_OCCUPANT_SECOND = "Dickins";
 
-        public const string EMAIL_GUARANTOR = "tenantguarantor333jimmy@xitroo.com";
+        public const string EMAIL_GUARANTOR = "tenantgua123jim@putsbox.com";
         public const string FIRST_NAME_GUARANTOR = "Jimmy";
 
         public const string YOUR_CURRENT_ADDRESS_STREET_SECOND = "Frank";
