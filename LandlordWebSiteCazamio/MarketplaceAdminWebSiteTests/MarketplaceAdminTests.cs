@@ -1023,7 +1023,18 @@ namespace MarketplaceAdminTests
                 .VerifyTitleLetterCreateTenant()
                 .ClickButtonBodyHtml()
                 .ClickButtonConfirmEmailForTenant();
+            //Всё что ниже нужно проверить как работает:
+            Pages.ModalWindowHowShallWeCallYou
+                .VerifyTitleHowShallWeCallYouMdlWndw()
+                .EnterFirstName()
+                .EnterLastName();
 
+            string firstNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowHowShallWeCallYou.GetFirstNameFromModalWindowHowShallWeCallYou();
+            string lastNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowHowShallWeCallYou.GetLastNameFromModalWindowHowShallWeCallYou();
+
+            Pages.ModalWindowHowShallWeCallYou
+                .ClickButtonSaveMdlWndw();
+            
             //Продолжить написание теста
             #endregion
 
