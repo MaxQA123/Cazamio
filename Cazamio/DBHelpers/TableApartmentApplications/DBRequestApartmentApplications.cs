@@ -120,6 +120,117 @@ namespace CazamioProject.Helpers
                 }
                 return data;
             }
+
+            public static string DeleteApartmentApplicationWithTenantsAppOccGuarAlreadyCreated(long? apartmentId, long? apartmentApplicationId, string emailTenantCreator, string emailTenantOccupant, string emailTenantGuarantor, int marketplaceId)
+            {
+                string data = null;
+                using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+                {
+                    SqlCommand command = new("DELETE FROM ApplicationGeneralQuestions WHERE ApartmentApplicationId = @ApartmentApplicationId AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantCreator AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM ApplicationGeneralQuestions WHERE ApartmentApplicationId = @ApartmentApplicationId AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantOccupant AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM ApplicationGeneralQuestions WHERE ApartmentApplicationId = @ApartmentApplicationId AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantGuarantor AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM ApplicationBasicInformation WHERE ApartmentApplicationId = @ApartmentApplicationId AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantCreator AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM ApplicationBasicInformation WHERE ApartmentApplicationId = @ApartmentApplicationId AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantOccupant AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM ApplicationBasicInformation WHERE ApartmentApplicationId = @ApartmentApplicationId AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantGuarantor AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM ApplicationRequiredDocuments WHERE ApartmentApplicationId = @ApartmentApplicationId AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantCreator AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM ApplicationRequiredDocuments WHERE ApartmentApplicationId = @ApartmentApplicationId AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantOccupant AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM ApplicationRequiredDocuments WHERE ApartmentApplicationId = @ApartmentApplicationId AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantGuarantor AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM ApplicationRentalHistories WHERE ApartmentApplicationId = @ApartmentApplicationId AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantCreator AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM ApplicationRentalHistories WHERE ApartmentApplicationId = @ApartmentApplicationId AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantOccupant AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM ApplicationRentalHistories WHERE ApartmentApplicationId = @ApartmentApplicationId AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantGuarantor AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM ApplicationOccupations WHERE ApartmentApplicationId = @ApartmentApplicationId AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantCreator AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM ApplicationOccupations WHERE ApartmentApplicationId = @ApartmentApplicationId AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantOccupant AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM ApplicationOccupations WHERE ApartmentApplicationId = @ApartmentApplicationId AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantGuarantor AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM ApartmentApplicationApplicants WHERE ApartmentApplicationId = @ApartmentApplicationId" +
+                               " AND UserId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantOccupant AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM ApartmentApplicationApplicants WHERE ApartmentApplicationId = @ApartmentApplicationId" +
+                               " AND UserId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = 'tenantgua123jim@putsbox.com' AND MarketplaceId = @MarketplaceId)" +
+                               " DELETE FROM Guarantors WHERE ApartmentApplicationId = @ApartmentApplicationId AND Email = @EmailTenantGuarantor" +
+                               " DELETE FROM Occupants WHERE ApartmentApplicationId = @ApartmentApplicationId AND Contacts = @EmailTenantOccupant" +
+                               " DELETE FROM ApplicationPrices WHERE ApartmentApplicationId = @ApartmentApplicationId" +
+                               " DELETE FROM ApartmentApplicationProgress WHERE ApartmentApplicationId = @ApartmentApplicationId" +
+                               " AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM Tenants WHERE UserId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantCreator AND MarketplaceId = @MarketplaceId))" +
+                               " DELETE FROM TenantLeases WHERE ApartmentApplicationId = @ApartmentApplicationId" +
+                               " AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM Tenants WHERE UserId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantCreator AND MarketplaceId = @MarketplaceId))" +
+                               " DELETE FROM TenantLeases WHERE ApartmentApplicationId = @ApartmentApplicationId" +
+                               " AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM Tenants WHERE UserId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantOccupant AND MarketplaceId = @MarketplaceId))" +
+                               " DELETE FROM TenantLeases WHERE ApartmentApplicationId = @ApartmentApplicationId" +
+                               " AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM Tenants WHERE UserId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantGuarantor AND MarketplaceId = @MarketplaceId))" +
+                               " DELETE FROM ApartmentApplications WHERE ApartmentId = @ApartmentId" +
+                               " AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @EmailTenantCreator AND MarketplaceId = @MarketplaceId)", db);
+
+                    command.Parameters.AddWithValue("@ApartmentId", DbType.String).Value = apartmentId;
+                    command.Parameters.AddWithValue("@ApartmentApplicationId", DbType.String).Value = apartmentApplicationId;
+                    command.Parameters.AddWithValue("@EmailTenantCreator", DbType.String).Value = emailTenantCreator;
+                    command.Parameters.AddWithValue("@EmailTenantOccupant", DbType.String).Value = emailTenantOccupant;
+                    command.Parameters.AddWithValue("@EmailTenantGuarantor", DbType.String).Value = emailTenantGuarantor;
+                    command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
+
+                    db.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            data = reader.GetValue(0).ToString();
+                        }
+                    }
+                }
+                return data;
+            }
         }
     }
 

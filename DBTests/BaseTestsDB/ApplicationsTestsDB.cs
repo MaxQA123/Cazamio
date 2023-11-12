@@ -283,9 +283,9 @@ namespace DBTests.BaseTestsDB
             #region Preconditions
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string buildingAddress = "2 Linden Street";
-            string unitNumber = "81";
-            string emailTenant = "test321jessicatenant@gmail.com";
+            string buildingAddress = "1 Washington Square";
+            string unitNumber = "4";
+            string emailTenant = "task1567n51t@putsbox.com";
 
             #endregion
 
@@ -375,9 +375,24 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBApplication")]
         [AllureSubSuite("EmptyFive")]
 
-        public void EmptyFive()
+        public void Demo()
         {
-            
+            #region Preconditions
+
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            string buildingAddress = "1 Washington Square";
+            string unitNumber = "4";
+            string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT;
+            string emailTenantOccupant = TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_ONE;
+            string emailTenantGuarantor = TestDataForWebSiteTenant.EMAIL_GUARANTOR;
+
+            #endregion
+
+            var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
+            Console.WriteLine($"ApartmentId: {apartmentId}");
+            var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
+            Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
+            DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithTenantsAppOccGuarAlreadyCreated(apartmentId, apartmentApplicationId, emailTenantCreator, emailTenantOccupant, emailTenantGuarantor, marketplaceId);
         }
     }
 }

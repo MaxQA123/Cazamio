@@ -112,6 +112,41 @@ namespace CazamioProject.DBHelpers
                 }
                 return data;
             }
+
+            public static string Demo(long? apartmentApplicationId, string emailTenant, int marketplaceId)
+            {
+                string data = null;
+                using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+                {
+                    SqlCommand command = new("DELETE FROM ApplicationGeneralQuestions WHERE ApartmentApplicationId = '1588' AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = 'tenantapp123ray@putsbox.com' AND MarketplaceId = '15')" +
+                               " " +
+                               " DELETE FROM ApplicationGeneralQuestions WHERE ApartmentApplicationId = '1588' AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = 'tenantocc123liza@putsbox.com' AND MarketplaceId = '15')" +
+                               " " +
+                               " DELETE FROM ApplicationGeneralQuestions WHERE ApartmentApplicationId = '1588' AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = 'tenantgua123jim@putsbox.com' AND MarketplaceId = '15')", db);
+
+                    command.Parameters.AddWithValue("@ApartmentApplicationId", DbType.String).Value = apartmentApplicationId;
+                    command.Parameters.AddWithValue("@EmailTenant", DbType.String).Value = emailTenant;
+                    command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
+
+                    db.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            data = reader.GetValue(0).ToString();
+                        }
+                    }
+                }
+                return data;
+            }
         }
     }
 

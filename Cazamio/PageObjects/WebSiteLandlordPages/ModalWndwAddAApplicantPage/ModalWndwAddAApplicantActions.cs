@@ -50,8 +50,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwAddAApplicant
         [AllureStep("ClickButtonAdd")]
         public ModalWndwAddAApplicant ClickButtonAdd()
         {
-            WaitUntil.CustomElementIsVisible(SecondCheckTheBoxThisIGuarantorMdlWndwAddAApplicant);
-            Button.Click(SecondCheckTheBoxThisIGuarantorMdlWndwAddAApplicant);
+            WaitUntil.CustomElementIsVisible(ButtonAddMdlWndwAddAApplicant);
+            Button.Click(ButtonAddMdlWndwAddAApplicant);
 
             return this;
         }

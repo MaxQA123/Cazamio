@@ -893,7 +893,8 @@ namespace MarketplaceAdminTests
                 .ClickButtonPlusAnotherApplicant()
                 .EnterEmailTenantGuarantor()
                 .ClickSecondCheckTheBoxThisIGuarantor()
-                .ClickButtonAdd();
+                .ClickButtonAdd()
+                .VerifyMessageAddedApplicantsToApplicationMdlWndwAddAApplicant();
 
             //string getLeasePriceActual = Pages.ModalWndwCreateAApplication.GetLeasePriceStepThirdFromUi();
             //string getSecurityDepositActual = Pages.ModalWndwCreateAApplication.GetSecurityDepositStepThirdFromUi();
@@ -911,23 +912,7 @@ namespace MarketplaceAdminTests
             Console.WriteLine($"ApartmentId: {apartmentId}");
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationIdOnlyTenantApplicant(apartmentApplicationId, emailTenantCreator, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationGeneralQuestions.ApplicationGeneralQuestions.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenantCreator, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationBasicInformation.ApplicationBasicInformation.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenantCreator, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationRequiredDocuments.ApplicationRequiredDocuments.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenantCreator, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationRentalHistories.ApplicationRentalHistories.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenantCreator, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationOccupations.ApplicationOccupations.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenantCreator, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenantCreator, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(apartmentId, emailTenantCreator, marketplaceId);
+            DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithTenantsAppOccGuarAlreadyCreated(apartmentId, apartmentApplicationId, emailTenantCreator, emailTenantOccupant, emailTenantGuarantor, marketplaceId);
 
             #endregion
 
@@ -1036,7 +1021,14 @@ namespace MarketplaceAdminTests
 
             Pages.ModalWindowHowShallWeCallYou
                 .ClickButtonSaveMdlWndw();
-            
+            Pages.HeaderCazamioTenant
+               .ClickButtonMyApplicationsHdrCzmTnnt();
+            Pages.MyAccountCazamioTenant
+                .ClickTabAccountOnMyAccntPg()
+                .ClickButtonEditMyAccntPgTabAccnt()
+                .VerifyEmailNewTenant(getEmailStepFirstActual);
+            Console.WriteLine($"Email a new tenant: {getEmailStepFirstActual}");
+
             //Продолжить написание теста
             #endregion
 

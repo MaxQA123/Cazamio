@@ -19,5 +19,14 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwAddAApplicant
 
             return this;
         }
+
+        [AllureStep("VerifyMessageAddedApplicantsToApplicationMdlWndwAddAApplicant")]
+        public ModalWndwAddAApplicant VerifyMessageAddedApplicantsToApplicationMdlWndwAddAApplicant()
+        {
+            WaitUntil.CustomElementIsVisible(MessageAddedApplicantsToApplicationMdlWndwAddAApplicant);
+            Assert.IsTrue(Successfully.IsVisible(MessageAddedApplicantsToApplicationMdlWndwAddAApplicant));
+
+            return this;
+        }
     }
 }

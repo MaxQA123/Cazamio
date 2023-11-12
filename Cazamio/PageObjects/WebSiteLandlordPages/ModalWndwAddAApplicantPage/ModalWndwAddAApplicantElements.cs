@@ -25,7 +25,10 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwAddAApplicant
         [FindsBy(How = How.XPath, Using = "//div[text() = ' + Add another applicant ']")]
         public IWebElement ButtonPlusAnotherApplicantMdlWndwAddAApplicant;
 
-        [FindsBy(How = How.XPath, Using = "//div[text() = ' + Add another applicant ']")]
+        [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Add']")]
         public IWebElement ButtonAddMdlWndwAddAApplicant;
+
+        [FindsBy(How = How.XPath, Using = "//span[text() = 'Added applicants to application']")]
+        public IWebElement MessageAddedApplicantsToApplicationMdlWndwAddAApplicant;
     }
 }
