@@ -22,8 +22,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.HowShallWeCallYouPage
         [AllureStep("EnterLastName")]
         public ModalWindowHowShallWeCallYou EnterLastName()
         {
-            WaitUntil.CustomElementIsVisible(FieldInputFirstNameMdlWndw);
-            InputGeneral.InputFunctionWithClear(FieldInputFirstNameMdlWndw, Name.LastName());
+            WaitUntil.CustomElementIsVisible(FieldInputLastNameMdlWndw);
+            InputGeneral.InputFunctionWithClear(FieldInputLastNameMdlWndw, Name.LastName());
             return this;
         }
 
