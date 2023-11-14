@@ -1,0 +1,91 @@
+{
+  "uuid": "f3802a25-cd1c-4cef-8906-3de8dd586d25-tr-0-1064",
+  "historyId": "DBTests.BaseTestsDB.TenantsTestsDB.DeleteNewApplicationAndTenantNotAddedToSystemCreatedViaButtonPlusApplication",
+  "fullName": "DBTests.BaseTestsDB.TenantsTestsDB.DeleteNewApplicationAndTenantNotAddedToSystemCreatedViaButtonPlusApplication",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "DBTests.BaseTestsDB"
+    },
+    {
+      "name": "testMethod",
+      "value": "DeleteNewApplicationAndTenantNotAddedToSystemCreatedViaButtonPlusApplication"
+    },
+    {
+      "name": "testClass",
+      "value": "TenantsTestsDB"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "TestingDBTenant"
+    },
+    {
+      "name": "subSuite",
+      "value": "DeleteNewApplicationAndTenantNotAddedToSystemCreatedViaButtonPlusApplication"
+    }
+  ],
+  "links": [],
+  "name": "DeleteNewApplicationAndTenantNotAddedToSystemCreatedViaButtonPlusApplication",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "Microsoft.Data.SqlClient.SqlException : Must declare the scalar variable \"@apartmentApplicationId\".\r\nMust declare the scalar variable \"@apartmentApplicationId\".\r\nMust declare the scalar variable \"@apartmentApplicationId\".\r\nMust declare the scalar variable \"@apartmentId\".\r\nData:\r\n  HelpLink.ProdName: Microsoft SQL Server\r\n  HelpLink.ProdVer: 14.00.1000\r\n  HelpLink.EvtSrc: MSSQLServer\r\n  HelpLink.EvtID: 137\r\n  HelpLink.BaseHelpUrl: https://go.microsoft.com/fwlink\r\n  HelpLink.LinkId: 20476",
+    "trace": "   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader()\r\n   at CazamioProject.DBHelpers.DBRequestAspNetUsers.AspNetUsers.DeleteNewlyCreatedTenantNotAddedToSystemAndApplication(Nullable`1 apartmentId, Nullable`1 apartmentApplicationId, String emailTenant, Int32 marketplaceId) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TableAspNetUsers\\DBRequestAspNetUsers.cs:line 129\r\n   at DBTests.BaseTestsDB.TenantsTestsDB.DeleteNewApplicationAndTenantNotAddedToSystemCreatedViaButtonPlusApplication() in C:\\Automation\\Cazamio\\DBTests\\BaseTestsDB\\TenantsTestsDB.cs:line 392"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "DeleteNewApplicationAndTenantNotAddedToSystemCreatedViaButtonPlusApplication",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "Microsoft.Data.SqlClient.SqlException : Must declare the scalar variable \"@apartmentApplicationId\".\r\nMust declare the scalar variable \"@apartmentApplicationId\".\r\nMust declare the scalar variable \"@apartmentApplicationId\".\r\nMust declare the scalar variable \"@apartmentId\".\r\nData:\r\n  HelpLink.ProdName: Microsoft SQL Server\r\n  HelpLink.ProdVer: 14.00.1000\r\n  HelpLink.EvtSrc: MSSQLServer\r\n  HelpLink.EvtID: 137\r\n  HelpLink.BaseHelpUrl: https://go.microsoft.com/fwlink\r\n  HelpLink.LinkId: 20476",
+        "trace": "   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader()\r\n   at CazamioProject.DBHelpers.DBRequestAspNetUsers.AspNetUsers.DeleteNewlyCreatedTenantNotAddedToSystemAndApplication(Nullable`1 apartmentId, Nullable`1 apartmentApplicationId, String emailTenant, Int32 marketplaceId) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TableAspNetUsers\\DBRequestAspNetUsers.cs:line 129\r\n   at DBTests.BaseTestsDB.TenantsTestsDB.DeleteNewApplicationAndTenantNotAddedToSystemCreatedViaButtonPlusApplication() in C:\\Automation\\Cazamio\\DBTests\\BaseTestsDB\\TenantsTestsDB.cs:line 392"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "db27fa30aa2542ae86433dbe0f52c2e1-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1699950596622,
+      "stop": 1699950599732
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1699950596617,
+  "stop": 1699950599749
+}

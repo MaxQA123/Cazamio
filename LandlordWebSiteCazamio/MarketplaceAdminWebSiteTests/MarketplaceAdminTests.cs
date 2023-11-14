@@ -689,7 +689,7 @@ namespace MarketplaceAdminTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
-        [AllureSubSuite("CreateApplicationWithTenantWhenTenantAddedToSystem")]
+        [AllureSubSuite("CreateApplicationWithTenantAppAddedToSystemViaButtonPlusApplication")]
 
         #region Preconditions
 
@@ -699,7 +699,7 @@ namespace MarketplaceAdminTests
 
         #endregion
 
-        public void CreateApplicationWithTenantApplicantWhenTenantAddedToSystem()
+        public void CreateApplicationWithTenantAppAddedToSystemViaButtonPlusApplication()
         {
             #region Preconditions Test Data
 
@@ -795,7 +795,7 @@ namespace MarketplaceAdminTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
-        [AllureSubSuite("CreateApplicationWithTenantsAppOccGuarWhenTenantsAddedToSystem")]
+        [AllureSubSuite("CreateApplicationWithTenantsAppOccGuarTenantsAddedToSystem")]
 
         #region Preconditions
 
@@ -805,7 +805,7 @@ namespace MarketplaceAdminTests
 
         #endregion
 
-        public void CreateApplicationWithTenantsAppOccGuarWhenTenantsAddedToSystem()
+        public void CreateApplicationWithTenantsAppOccGuarTenantsAddedToSystem()
         {
             #region Preconditions Test Data
 
@@ -911,7 +911,7 @@ namespace MarketplaceAdminTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
-        [AllureSubSuite("CreateApplicationWithTenantWhenTenantAddedToSystem")]
+        [AllureSubSuite("CreateApplicationWithTenantAppNotAddedToSystemViaButtonPlusApplication")]
 
         #region Preconditions
 
@@ -921,7 +921,7 @@ namespace MarketplaceAdminTests
 
         #endregion
 
-        public void CreateApplicationWithTenantWhenTenantNotAddedToSystem()
+        public void CreateApplicationWithTenantAppNotAddedToSystemViaButtonPlusApplication()
         {
             #region Preconditions Test Data
 
@@ -1016,21 +1016,11 @@ namespace MarketplaceAdminTests
 
             #region Postconditions
 
-            DBRequestChatCursors.ChatCursors.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentHistories.ApartmentHistories.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestTenantLeases.TenantLeases.DeleteRecordByEmailMarketplaceIdOnlyTenantApplicant(marketplaceId, emailTenant);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestTeants.Tenants.DeleteCreatedUserTenant(marketplaceId, emailTenant);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailTenant, marketplaceId);
+            var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
+            Console.WriteLine($"ApartmentId: {apartmentId}");
+            var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
+            Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
+            DBRequestAspNetUsers.AspNetUsers.DeleteNewlyCreatedTenantNotAddedToSystemAndApplication(apartmentId, apartmentApplicationId, emailTenant, marketplaceId);
 
             #endregion
 
