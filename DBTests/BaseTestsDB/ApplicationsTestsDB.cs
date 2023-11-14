@@ -284,7 +284,7 @@ namespace DBTests.BaseTestsDB
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
             string buildingAddress = "18 Linden Street";
-            string unitNumber = "68";
+            string unitNumber = "70";
             string emailTenant = "tenantswife@gmail.com";
 
             #endregion
