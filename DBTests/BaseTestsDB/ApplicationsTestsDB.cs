@@ -276,40 +276,28 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
-        [AllureSubSuite("DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithTenantApplicant")]
+        [AllureSubSuite("DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithAlreadyCrtdTenantApplicant")]
 
-        public void DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithTenantApplicant()
+        public void DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithAlreadyCrtdTenantApplicant()
         {
-            #region Preconditions
+            #region Preconditions test data
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string buildingAddress = "1 Washington Square";
-            string unitNumber = "4";
-            string emailTenant = "task1567n51t@putsbox.com";
+            string buildingAddress = "18 Linden Street";
+            string unitNumber = "68";
+            string emailTenant = "tenantswife@gmail.com";
 
             #endregion
+
+            #region Test
 
             var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
             Console.WriteLine($"ApartmentId: {apartmentId}");
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationIdOnlyTenantApplicant(apartmentApplicationId, emailTenant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationGeneralQuestions.ApplicationGeneralQuestions.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationBasicInformation.ApplicationBasicInformation.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationRequiredDocuments.ApplicationRequiredDocuments.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationRentalHistories.ApplicationRentalHistories.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationOccupations.ApplicationOccupations.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(apartmentId, emailTenant, marketplaceId);
+            DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithAlreadyCrtdTenantApplicant(apartmentId, apartmentApplicationId, emailTenant, marketplaceId);
+
+            #endregion
         }
 
         [Test]
@@ -373,26 +361,30 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
-        [AllureSubSuite("EmptyFive")]
+        [AllureSubSuite("DeleteApplicationCreatedViaButtonPlusApplicationWithTenantsAppOccGuarAlreadyCreated")]
 
-        public void Demo()
+        public void DeleteApplicationCreatedViaButtonPlusApplicationWithTenantsAppOccGuarAlreadyCreated()
         {
-            #region Preconditions
+            #region Preconditions test data
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string buildingAddress = "1 Washington Square";
-            string unitNumber = "4";
+            string buildingAddress = "18 Linden Street";
+            string unitNumber = "67";
             string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT;
             string emailTenantOccupant = TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_ONE;
             string emailTenantGuarantor = TestDataForWebSiteTenant.EMAIL_GUARANTOR;
 
             #endregion
 
+            #region Test
+
             var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
             Console.WriteLine($"ApartmentId: {apartmentId}");
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
             DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithTenantsAppOccGuarAlreadyCreated(apartmentId, apartmentApplicationId, emailTenantCreator, emailTenantOccupant, emailTenantGuarantor, marketplaceId);
+
+            #endregion
         }
     }
 }

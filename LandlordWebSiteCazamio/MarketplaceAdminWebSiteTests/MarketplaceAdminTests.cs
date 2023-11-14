@@ -780,23 +780,8 @@ namespace MarketplaceAdminTests
             Console.WriteLine($"ApartmentId: {apartmentId}");
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationIdOnlyTenantApplicant(apartmentApplicationId, emailTenant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationGeneralQuestions.ApplicationGeneralQuestions.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationBasicInformation.ApplicationBasicInformation.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationRequiredDocuments.ApplicationRequiredDocuments.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationRentalHistories.ApplicationRentalHistories.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationOccupations.ApplicationOccupations.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(apartmentId, emailTenant, marketplaceId);
+            DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithAlreadyCrtdTenantApplicant(apartmentId, apartmentApplicationId, emailTenant, marketplaceId);
+
 
             #endregion
 
@@ -1010,7 +995,6 @@ namespace MarketplaceAdminTests
                 .VerifyTitleLetterCreateTenant()
                 .ClickButtonBodyHtml()
                 .ClickButtonConfirmEmailForTenant();
-            //Всё что ниже нужно проверить как работает:
             Pages.ModalWindowHowShallWeCallYou
                 .VerifyTitleHowShallWeCallYouMdlWndw()
                 .EnterFirstName()
@@ -1027,9 +1011,7 @@ namespace MarketplaceAdminTests
                 .ClickTabAccountOnMyAccntPg()
                 .ClickButtonEditMyAccntPgTabAccnt()
                 .VerifyEmailNewTenant(getEmailStepFirstActual);
-            Console.WriteLine($"Email a new tenant: {getEmailStepFirstActual}");
 
-            //Продолжить написание теста
             #endregion
 
             #region Postconditions
