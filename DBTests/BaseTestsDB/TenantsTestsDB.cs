@@ -407,9 +407,9 @@ namespace DBTests.BaseTestsDB
             #region Preconditions
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string emailTenantCreator = "task1588n11creator@putsbox.com";
-            string emailTenantOccupant = "task1588n11occupant@putsbox.com";
-            string emailTenantGuarantor = "task1588n11guarantor@putsbox.com";
+            string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_CREATOR_NOT_CREATED;
+            string emailTenantOccupant = TestDataForWebSiteTenant.EMAIL_TENANT_OCCUPANT_NOT_CREATED;
+            string emailTenantGuarantor = TestDataForWebSiteTenant.EMAIL_TENANT_GUARANTOR_NOT_CREATED;
 
             #endregion
 

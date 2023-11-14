@@ -54,6 +54,9 @@ namespace CazamioProgect.Helpers
     {
         public const string EMAIL_TENANT = "miza33h@putsbox.com";
         public const string EMAIL_TENANT_NOT_CREATED = "task1567n51t@putsbox.com";
+        public const string EMAIL_TENANT_CREATOR_NOT_CREATED = "task1587ncreator@putsbox.com";
+        public const string EMAIL_TENANT_OCCUPANT_NOT_CREATED = "task1587noccupant@putsbox.com";
+        public const string EMAIL_TENANT_GUARANTOR_NOT_CREATED = "task1587nguarantor@putsbox.com";
         public const string EMAIL_TENANT_APPLICANT = "tenantapp123ray@putsbox.com";
         public const string FIRST_LAST_NAME_TENANT_APPLICANT = "Ray Anredson";
         public const string FIRST_NAME_TENANT_APPLICANT = "Ray";

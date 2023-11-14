@@ -232,6 +232,60 @@ namespace CazamioProject.Helpers
                 return data;
             }
 
+            public static string DeleteApartmentApplicationWithTenantsAppOccGuarNotAddedToSystem(long? apartmentId, long? apartmentApplicationId, string emailTenantCreator, string emailTenantOccupant, string emailTenantGuarantor, int marketplaceId)
+            {
+                string data = null;
+                using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+                {
+                    SqlCommand command = new("DELETE FROM TenantLeases WHERE ApartmentApplicationId = @apartmentApplicationId" +
+                               " AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM Tenants WHERE UserId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @emailTenantCreator OR Email = @emailTenantOccupant OR Email = @emailTenantGuarantor AND MarketplaceId = @marketplaceId))" +
+                               " DELETE FROM ApartmentApplicationApplicants WHERE ApartmentApplicationId = @apartmentApplicationId" +
+                               " AND UserId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @emailTenantOccupant AND MarketplaceId = @marketplaceId)" +
+                               " DELETE FROM ApartmentApplicationApplicants WHERE ApartmentApplicationId = @apartmentApplicationId" +
+                               " AND UserId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @emailTenantGuarantor AND MarketplaceId = @marketplaceId)" +
+                               " DELETE FROM Guarantors WHERE ApartmentApplicationId = @apartmentApplicationId AND Email = @emailTenantGuarantor" +
+                               " DELETE FROM Occupants WHERE ApartmentApplicationId = @apartmentApplicationId AND Contacts = @emailTenantOccupant" +
+                               " DELETE FROM ApartmentApplicationProgress WHERE ApartmentApplicationId = @apartmentApplicationId" +
+                               " AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM Tenants WHERE UserId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @emailTenantCreator AND MarketplaceId = @marketplaceId))" +
+                               " DELETE FROM ApplicationPrices WHERE ApartmentApplicationId = @apartmentApplicationId" +
+                               " DELETE FROM ApartmentApplications WHERE ApartmentId = @apartmentId" +
+                               " AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @emailTenantCreator AND MarketplaceId = @marketplaceId)", db);
+
+                    command.Parameters.AddWithValue("@apartmentId", DbType.String).Value = apartmentId;
+                    command.Parameters.AddWithValue("@apartmentApplicationId", DbType.String).Value = apartmentApplicationId;
+                    command.Parameters.AddWithValue("@emailTenantCreator", DbType.String).Value = emailTenantCreator;
+                    command.Parameters.AddWithValue("@emailTenantOccupant", DbType.String).Value = emailTenantOccupant;
+                    command.Parameters.AddWithValue("@emailTenantGuarantor", DbType.String).Value = emailTenantGuarantor;
+                    command.Parameters.AddWithValue("@marketplaceId", DbType.String).Value = marketplaceId;
+
+                    db.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            data = reader.GetValue(0).ToString();
+                        }
+                    }
+                }
+                return data;
+            }
+
             public static string DeleteApartmentApplicationWithAlreadyCrtdTenantApplicant(long? apartmentId, long? apartmentApplicationId, string emailTenant, int marketplaceId)
             {
                 string data = null;

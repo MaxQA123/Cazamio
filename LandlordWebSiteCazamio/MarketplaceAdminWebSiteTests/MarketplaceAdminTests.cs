@@ -795,7 +795,7 @@ namespace MarketplaceAdminTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
-        [AllureSubSuite("CreateApplicationWithTenantsAppOccGuarTenantsAddedToSystem")]
+        [AllureSubSuite("CreateApplicationWithTenantsAppOccGuarTenantsAddedToSystemViiaButtonPlusApplication")]
 
         #region Preconditions
 
@@ -805,7 +805,7 @@ namespace MarketplaceAdminTests
 
         #endregion
 
-        public void CreateApplicationWithTenantsAppOccGuarTenantsAddedToSystem()
+        public void CreateApplicationWithTenantsAppOccGuarTenantsAddedToSystemViiaButtonPlusApplication()
         {
             #region Preconditions Test Data
 
@@ -898,6 +898,122 @@ namespace MarketplaceAdminTests
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
             DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithTenantsAppOccGuarAlreadyCreated(apartmentId, apartmentApplicationId, emailTenantCreator, emailTenantOccupant, emailTenantGuarantor, marketplaceId);
+
+            #endregion
+
+            WaitUntil.WaitSomeInterval(3000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("MarketplaceAdmin")]
+        [AllureSubSuite("CreateApplicationWithTenantsAppOccGuarTenantsNotAddedToSystemViaButtonPlusApplication")]
+
+        #region Preconditions
+
+        //Ќужно учесть количество символов дл€ Regex в коротком адресе дома и номер юнита, например, "1 Washington Square #4".
+        //” апартамента должно быть только одно заначение в поле "Rental terms".
+        //¬ыставить дату дл€ Date Picker больше чем текуща€ дата.
+
+        #endregion
+
+        public void CreateApplicationWithTenantsAppOccGuarTenantsNotAddedToSystemViaButtonPlusApplication()
+        {
+            #region Preconditions Test Data
+
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            string buildingAddress = "1 Washington Square";
+            string unitNumber = "4";
+            string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_CREATOR_NOT_CREATED;
+            string emailTenantOccupant = TestDataForWebSiteTenant.EMAIL_TENANT_OCCUPANT_NOT_CREATED;
+            string emailTenantGuarantor = TestDataForWebSiteTenant.EMAIL_TENANT_GUARANTOR_NOT_CREATED;
+
+            #endregion
+
+            #region Preconditions Test
+
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+            Pages.SideBarLandlord
+                .ClickButtonApplicationsSidebar();
+
+            #endregion
+
+            #region Test
+
+            Pages.ListOfApplications
+                .ClickButtonPlusApplication();
+            Pages.ModalWndwCreateApplication
+                .VerifyTitleCreateApplicationModalWndw()
+                .EnterExistEmailInFieldMainApplicantEmailAddressModalWndw();
+
+            string getEmailStepFirstActual = Pages.ModalWndwCreateApplication.GetEmailStepFirst();
+
+            Pages.ModalWndwCreateApplication
+                .ClickButtonNextModalWndw();
+
+            string getUnitAddressStepSecondActual = Pages.ModalWndwCreateApplication.GetUnitAddressStepSecond();
+            string getShortAddress = Pages.ModalWndwCreateApplication.GetShortUnitAddressStepSecond();
+            string getUnitNumberActuaL = Pages.ModalWndwCreateApplication.GetUnitNumberStepSecond();
+
+            Pages.ModalWndwCreateApplication
+                .ClickButtonNextModalWndw();
+
+            string getEmailStepThirdActual = Pages.ModalWndwCreateApplication.GetEmailStepThird();
+            string getUnitAddressStepThirdActual = Pages.ModalWndwCreateApplication.GetUnitAddressStepThird();
+
+            Pages.ModalWndwCreateApplication
+                .VerifyEmailAndUnitAddress(getEmailStepFirstActual, getUnitAddressStepSecondActual, getEmailStepThirdActual, getUnitAddressStepThirdActual);
+
+            //var getLeasePriceFromDb = DBRequestPrices.Prices.GetLeasePrice(getShortAddress, getUnitNumberActuaL, marketplaceId).LeasePrice;
+            //var getSecurityDepositFromDb = DBRequestPrices.Prices.GetSecurityDeposit(getShortAddress, getUnitNumberActuaL, marketplaceId).DepositPrice;
+            //var getMonthlyRentsPrePaymentFromDb = DBRequestPrices.Prices.GetMonthlyRentsPrePayment(getShortAddress, getUnitNumberActuaL, marketplaceId).PaidMonths;
+            //var getRentalTermsFromDb = DBRequestApartments.Apartments.GetLeaseDurationForApartment(getShortAddress, getUnitNumberActuaL, marketplaceId).LeaseDuration;
+
+            Pages.ModalWndwCreateApplication
+                .EnterPriceFieldInputRequestedOfferPriceModalWndw()
+                .SelectDateAvailableForCreateApplicationModalWndwViaListOfApplication()
+                .ClickButtonCreateStepThreeModalWndw()
+                .VerifyMessageStepFourModalWndw()
+                .ClickButtonAddApplicantStepFourModalWndw();
+            Pages.ModalWndwAddAApplicant
+                .VerifyTitleCreateApplicationModalWndw()
+                .EnterEmailTenantOccupant()
+                .ClickButtonPlusAnotherApplicant()
+                .EnterEmailTenantGuarantor()
+                .ClickSecondCheckTheBoxThisIGuarantor()
+                .ClickButtonAdd()
+                .VerifyMessageAddedApplicantsToApplicationMdlWndwAddAApplicant();
+
+            //string getLeasePriceActual = Pages.ModalWndwCreateAApplication.GetLeasePriceStepThirdFromUi();
+            //string getSecurityDepositActual = Pages.ModalWndwCreateAApplication.GetSecurityDepositStepThirdFromUi();
+            //string getMonthlyRentsPrePaymentActual = Pages.ModalWndwCreateAApplication.GetMonthlyRentsPrePaymentStepThirdFromUi();
+            //string getRentalTermsActual = Pages.ModalWndwCreateAApplication.GetRentalTermsStepThirdFromUi();
+
+            //Pages.ModalWndwCreateAApplication
+            //    .VerifyFieldsAutocompleteInStepThird(getLeasePriceFromDb, getSecurityDepositFromDb, getMonthlyRentsPrePaymentFromDb, getRentalTermsFromDb, getLeasePriceActual, getSecurityDepositActual, getMonthlyRentsPrePaymentActual, getRentalTermsActual);
+
+            #endregion
+
+            #region Postconditions
+
+            var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
+            Console.WriteLine($"ApartmentId: {apartmentId}");
+            var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
+            //Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
+            //DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithTenantsAppOccGuarAlreadyCreated(apartmentId, apartmentApplicationId, emailTenantCreator, emailTenantOccupant, emailTenantGuarantor, marketplaceId);
 
             #endregion
 
