@@ -370,9 +370,9 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBTenant")]
-        [AllureSubSuite("DeleteNewApplicationAndTenantNotAddedToSystemCreatedViaButtonPlusApplication")]
+        [AllureSubSuite("DeleteNewlyTenantApplicantCreatedViaButtonPlusApplication")]
 
-        public void DeleteNewApplicationAndTenantNotAddedToSystemCreatedViaButtonPlusApplication()
+        public void DeleteNewlyTenantApplicantCreatedViaButtonPlusApplication()
         {
             #region Preconditions
 
@@ -389,7 +389,7 @@ namespace DBTests.BaseTestsDB
             Console.WriteLine($"ApartmentId: {apartmentId}");
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            DBRequestAspNetUsers.AspNetUsers.DeleteNewlyCreatedTenantNotAddedToSystemAndApplication(apartmentId, apartmentApplicationId, emailTenant, marketplaceId);
+            DBRequestAspNetUsers.AspNetUsers.DeleteFromAspNetUsersNewlyCreatedTenantApplicant(apartmentId, apartmentApplicationId, emailTenant, marketplaceId);
 
             #endregion
         }
@@ -415,32 +415,7 @@ namespace DBTests.BaseTestsDB
 
             #region Test
 
-            DBRequestChatCursors.ChatCursors.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenantCreator);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentHistories.ApartmentHistories.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenantCreator);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestTeants.Tenants.DeleteCreatedUserTenant(marketplaceId, emailTenantCreator);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailTenantCreator, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-
-            DBRequestChatCursors.ChatCursors.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenantOccupant);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentHistories.ApartmentHistories.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenantOccupant);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestTeants.Tenants.DeleteCreatedUserTenant(marketplaceId, emailTenantOccupant);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailTenantOccupant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-
-            DBRequestChatCursors.ChatCursors.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenantGuarantor);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentHistories.ApartmentHistories.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenantGuarantor);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestTeants.Tenants.DeleteCreatedUserTenant(marketplaceId, emailTenantGuarantor);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailTenantGuarantor, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
+            DBRequestAspNetUsers.AspNetUsers.DeleteFromAspNetUsersNewlyCreatedTenantsAppOccGuarNotAddedToSystem(emailTenantCreator, emailTenantOccupant, emailTenantGuarantor, marketplaceId);
 
             #endregion
 
@@ -455,7 +430,7 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBTenant")]
         [AllureSubSuite("DeleteNewTenantNotAddedToSystemCreatedViaButtonPlusApplication")]
 
-        public void DeleteNewTenantNotAddedToSystemCreatedViaButtonPlusApplication()
+        public void DemoSecond()
         {
             #region Preconditions
 

@@ -306,15 +306,15 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBApplication")]
-        [AllureSubSuite("DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithNewTenantAppOccGuar")]
+        [AllureSubSuite("DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithTenantApplicantNotAddedToSystem")]
 
-        public void DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithNewTenantAppOccGuar()
+        public void DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithTenantApplicantNotAddedToSystem()
         {
             #region Preconditions
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
             string buildingAddress = "18 Linden Street";
-            string unitNumber = "42";
+            string unitNumber = "79";
             string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_CREATOR_NOT_CREATED;
             string emailTenantOccupant = TestDataForWebSiteTenant.EMAIL_TENANT_OCCUPANT_NOT_CREATED;
             string emailTenantGuarantor = TestDataForWebSiteTenant.EMAIL_TENANT_GUARANTOR_NOT_CREATED;
@@ -324,22 +324,7 @@ namespace DBTests.BaseTestsDB
             var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
             Console.WriteLine($"ApartmentId: {apartmentId}");
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
-            Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            DBRequestTenantLeases.TenantLeases.DeleteRecordByApartmentApplicationIdTenantAppOccGuar(apartmentApplicationId, emailTenantCreator, marketplaceId, emailTenantOccupant, emailTenantGuarantor);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplicationApplicants.ApartmentApplicationApplicants.DeleteRecordByEmailMarketplaceIdForTenantOcc(apartmentApplicationId, emailTenantOccupant, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplicationApplicants.ApartmentApplicationApplicants.DeleteRecordByEmailMarketplaceIdForTenantGuar(apartmentApplicationId, emailTenantGuarantor, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestGuarantors.Guarantors.DeleteRecordByEmailMarketplaceIdForTenantGuar(apartmentApplicationId, emailTenantGuarantor);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestOccupants.Occupants.DeleteRecordByEmailMarketplaceIdForTenantOcc(apartmentApplicationId, emailTenantOccupant);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplicationProgress.ApartmentApplicationProgress.DeleteRecordByApartmentApplicationId(apartmentApplicationId, emailTenantCreator, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApplicationPrices.ApplicationPrices.DeleteRecordByApartmentApplicationId(apartmentApplicationId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByApartmentId(apartmentId, emailTenantCreator, marketplaceId);
+            
         }
 
         [Test]
@@ -397,26 +382,22 @@ namespace DBTests.BaseTestsDB
 
         public void DeleteApplicationCreatedViaButtonPlusApplicationWithTenantsAppOccGuarNotAddedToSystem()
         {
-            #region Preconditions test data
+            #region Preconditions
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
             string buildingAddress = "18 Linden Street";
-            string unitNumber = "67";
+            string unitNumber = "79";
             string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_CREATOR_NOT_CREATED;
             string emailTenantOccupant = TestDataForWebSiteTenant.EMAIL_TENANT_OCCUPANT_NOT_CREATED;
             string emailTenantGuarantor = TestDataForWebSiteTenant.EMAIL_TENANT_GUARANTOR_NOT_CREATED;
 
             #endregion
 
-            #region Test
-
             var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
             Console.WriteLine($"ApartmentId: {apartmentId}");
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
             DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithTenantsAppOccGuarNotAddedToSystem(apartmentId, apartmentApplicationId, emailTenantCreator, emailTenantOccupant, emailTenantGuarantor, marketplaceId);
-
-            #endregion
         }
     }
 }
