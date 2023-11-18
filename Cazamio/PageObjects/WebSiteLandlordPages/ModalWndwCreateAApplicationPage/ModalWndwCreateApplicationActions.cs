@@ -12,7 +12,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
 {
     public partial class ModalWndwCreateApplication
     {
-        string emailTenant = TestDataForWebSiteTenant.EMAIL_TENANT_NOT_CREATED;
+        string emailTenantNotCreated = TestDataForWebSiteTenant.EMAIL_TENANT_NOT_CREATED;
 
         [AllureStep("EnterExistEmailInFieldMainApplicantEmailAddressModalWndw")]
         public ModalWndwCreateApplication EnterExistEmailInFieldMainApplicantEmailAddressModalWndw()
@@ -29,7 +29,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         public ModalWndwCreateApplication EnterNewEmailInFieldMainApplicantEmailAddressModalWndw()
         {
             WaitUntil.CustomElementIsVisible(FieldInputMainApplicantEmailAddressModalWndw);
-            InputGeneral.InputFunctionWithClear(FieldInputMainApplicantEmailAddressModalWndw, emailTenant);
+            InputGeneral.InputFunctionWithClear(FieldInputMainApplicantEmailAddressModalWndw, emailTenantNotCreated);
 
             return this;
         }
@@ -134,7 +134,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaListOfApplication);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerThirdLine(DaysForDatePiker.FOURTH_NUMBER, " ");
+                .SelectDayOnDatePickerFourthLine(DaysForDatePiker.FIRST_NUMBER, " ");
 
             return this;
         }
@@ -146,7 +146,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerThirdLine(DaysForDatePiker.FOURTH_NUMBER, " ");
+                .SelectDayOnDatePickerFourthLine(DaysForDatePiker.FIRST_NUMBER, " ");
 
             return this;
         }

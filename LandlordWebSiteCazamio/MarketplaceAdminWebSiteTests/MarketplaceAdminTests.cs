@@ -957,7 +957,7 @@ namespace MarketplaceAdminTests
                 .ClickButtonPlusApplication();
             Pages.ModalWndwCreateApplication
                 .VerifyTitleCreateApplicationModalWndw()
-                .EnterExistEmailInFieldMainApplicantEmailAddressModalWndw();
+                .EnterNewEmailInFieldMainApplicantEmailAddressModalWndw();
 
             string getEmailStepFirstActual = Pages.ModalWndwCreateApplication.GetEmailStepFirst();
 
