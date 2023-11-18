@@ -284,8 +284,8 @@ namespace DBTests.BaseTestsDB
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
             string buildingAddress = "18 Linden Street";
-            string unitNumber = "70";
-            string emailTenant = "tenantswife@gmail.com";
+            string unitNumber = "80";
+            string emailTenant = "tenantapp123ray@putsbox.com";
 
             #endregion
 
@@ -314,17 +314,15 @@ namespace DBTests.BaseTestsDB
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
             string buildingAddress = "18 Linden Street";
-            string unitNumber = "79";
+            string unitNumber = "80";
             string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_CREATOR_NOT_CREATED;
-            string emailTenantOccupant = TestDataForWebSiteTenant.EMAIL_TENANT_OCCUPANT_NOT_CREATED;
-            string emailTenantGuarantor = TestDataForWebSiteTenant.EMAIL_TENANT_GUARANTOR_NOT_CREATED;
 
             #endregion
 
             var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
             Console.WriteLine($"ApartmentId: {apartmentId}");
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
-            
+            DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithNewlyCreatedTenantApplicant(apartmentId, apartmentApplicationId, emailTenantCreator, marketplaceId);
         }
 
         [Test]
@@ -354,7 +352,7 @@ namespace DBTests.BaseTestsDB
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
             string buildingAddress = "18 Linden Street";
-            string unitNumber = "67";
+            string unitNumber = "80";
             string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT;
             string emailTenantOccupant = TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_ONE;
             string emailTenantGuarantor = TestDataForWebSiteTenant.EMAIL_GUARANTOR;
@@ -382,11 +380,11 @@ namespace DBTests.BaseTestsDB
 
         public void DeleteApplicationCreatedViaButtonPlusApplicationWithTenantsAppOccGuarNotAddedToSystem()
         {
-            #region Preconditions
+            #region Preconditions Test Data
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
             string buildingAddress = "18 Linden Street";
-            string unitNumber = "79";
+            string unitNumber = "80";
             string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_CREATOR_NOT_CREATED;
             string emailTenantOccupant = TestDataForWebSiteTenant.EMAIL_TENANT_OCCUPANT_NOT_CREATED;
             string emailTenantGuarantor = TestDataForWebSiteTenant.EMAIL_TENANT_GUARANTOR_NOT_CREATED;
@@ -398,6 +396,7 @@ namespace DBTests.BaseTestsDB
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
             DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithTenantsAppOccGuarNotAddedToSystem(apartmentId, apartmentApplicationId, emailTenantCreator, emailTenantOccupant, emailTenantGuarantor, marketplaceId);
+            DBRequestAspNetUsers.AspNetUsers.DeleteFromAspNetUsersNewlyCreatedTenantsAppOccGuarNotAddedToSystem(emailTenantCreator, emailTenantOccupant, emailTenantGuarantor, marketplaceId);
         }
     }
 }

@@ -1014,6 +1014,7 @@ namespace MarketplaceAdminTests
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
             DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithTenantsAppOccGuarNotAddedToSystem(apartmentId, apartmentApplicationId, emailTenantCreator, emailTenantOccupant, emailTenantGuarantor, marketplaceId);
+            DBRequestAspNetUsers.AspNetUsers.DeleteFromAspNetUsersNewlyCreatedTenantsAppOccGuarNotAddedToSystem(emailTenantCreator, emailTenantOccupant, emailTenantGuarantor, marketplaceId);
 
             #endregion
 
@@ -1132,11 +1133,11 @@ namespace MarketplaceAdminTests
 
             #region Postconditions
 
-            var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
-            Console.WriteLine($"ApartmentId: {apartmentId}");
-            var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
-            Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            DBRequestAspNetUsers.AspNetUsers.DeleteNewlyCreatedTenantNotAddedToSystemAndApplication(apartmentId, apartmentApplicationId, emailTenant, marketplaceId);
+            //var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
+            //Console.WriteLine($"ApartmentId: {apartmentId}");
+            //var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
+            //Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
+            //DBRequestAspNetUsers.AspNetUsers.DeleteNewlyCreatedTenantNotAddedToSystemAndApplication(apartmentId, apartmentApplicationId, emailTenant, marketplaceId);
 
             #endregion
 
