@@ -13,6 +13,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
     public partial class ModalWndwCreateApplication
     {
         string emailTenantNotCreated = TestDataForWebSiteTenant.EMAIL_TENANT_NOT_CREATED;
+        string unitShortAddress = "1 Washington Square #4";
 
         [AllureStep("EnterExistEmailInFieldMainApplicantEmailAddressModalWndw")]
         public ModalWndwCreateApplication EnterExistEmailInFieldMainApplicantEmailAddressModalWndw()
@@ -21,6 +22,18 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             InputGeneral.InputFunctionWithClear(FieldInputMainApplicantEmailAddressModalWndw, TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT);
             WaitUntil.CustomElementIsVisible(ItemEmailAddressModalWndw);
             Button.Click(ItemEmailAddressModalWndw);
+
+            return this;
+        }
+
+        [AllureStep("EnterUnitShortAddressInFieldUnitAddressModalWndw")]
+        public ModalWndwCreateApplication EnterUnitShortAddressInFieldUnitAddressModalWndw()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputUnitAddressModalWndw);
+            Button.Click(FieldInputUnitAddressModalWndw);
+            //InputGeneral.InputFunctionWithClear(FieldInputUnitAddressModalWndw, unitShortAddress);
+            WaitUntil.CustomElementIsVisible(ItemUnitAddressModalWndw);
+            Button.Click(ItemUnitAddressModalWndw);
 
             return this;
         }
@@ -34,11 +47,12 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             return this;
         }
 
-        [AllureStep("ClickButtonNextModalWndw")]
-        public ModalWndwCreateApplication ClickButtonNextModalWndw()
+        [AllureStep("ClickButtonNextInFirstStepModalWndw")]
+        public ModalWndwCreateApplication ClickButtonNextInFirstStepModalWndw()
         {
-            WaitUntil.CustomElementIsVisible(ButtonNextModalWndw);
-            Button.Click(ButtonNextModalWndw);
+            WaitUntil.WaitSomeInterval(3000);
+            WaitUntil.CustomElementIsVisible(ButtonNextInFirstStepModalWndw);
+            Button.Click(ButtonNextInFirstStepModalWndw);
 
             return this;
         }
@@ -134,7 +148,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaListOfApplication);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFourthLine(DaysForDatePiker.FIRST_NUMBER, " ");
+                .SelectDayOnDatePickerFourthLine(DaysForDatePiker.SECOND_NUMBER, " ");
 
             return this;
         }
@@ -146,7 +160,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFourthLine(DaysForDatePiker.FIRST_NUMBER, " ");
+                .SelectDayOnDatePickerFourthLine(DaysForDatePiker.SECOND_NUMBER, " ");
 
             return this;
         }

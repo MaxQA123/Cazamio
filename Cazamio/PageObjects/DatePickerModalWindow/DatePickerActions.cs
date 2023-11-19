@@ -57,7 +57,7 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
             WaitUntil.WaitSomeInterval(1000);
             var str = "//table//tbody[@class = 'mat-calendar-body']//tr[1]";
             _element = Browser._Driver.FindElement(By.XPath(str));
-            return _element.FindElements(By.XPath($".//td[contains(@aria-label, '{_locationDay}')]"));
+            return _element.FindElements(By.XPath($".//td[contains(@class, 'mat-calendar-body-cell-container ng-star-inserted')]//button//span[contains(text(), '{_locationDay}')]"));
         }
 
         [AllureStep("SelectorDaysPickerDaysSecondLine")]
@@ -66,7 +66,7 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
             WaitUntil.WaitSomeInterval(1000);
             var str = "//table//tbody[@class = 'mat-calendar-body']//tr[2]";
             _element = Browser._Driver.FindElement(By.XPath(str));
-            return _element.FindElements(By.XPath($".//td[contains(@aria-label, '{_locationDay}')]"));
+            return _element.FindElements(By.XPath($".//td[contains(@class, 'mat-calendar-body-cell-container ng-star-inserted')]//button//span[contains(text(), '{_locationDay}')]"));
         }
 
         [AllureStep("SelectorDaysPickerDaysThirdLine")]
@@ -75,7 +75,7 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
             WaitUntil.WaitSomeInterval(1000);
             var str = "//table//tbody[@class = 'mat-calendar-body']//tr[3]";
             _element = Browser._Driver.FindElement(By.XPath(str));
-            return _element.FindElements(By.XPath($".//td[contains(@aria-label, '{_locationDay}')]"));
+            return _element.FindElements(By.XPath($".//td[contains(@class, 'mat-calendar-body-cell-container ng-star-inserted')]//button//span[contains(text(), '{_locationDay}')]"));
         }
 
         [AllureStep("SelectorDaysPickerDaysFourthLine")]
@@ -84,7 +84,7 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
             WaitUntil.WaitSomeInterval(1000);
             var str = "//table//tbody[@class = 'mat-calendar-body']//tr[4]";
             _element = Browser._Driver.FindElement(By.XPath(str));
-            return _element.FindElements(By.XPath($".//td[contains(@aria-label, '{_locationDay}')]"));
+            return _element.FindElements(By.XPath($".//td[contains(@class, 'mat-calendar-body-cell-container ng-star-inserted')]//button//span[contains(text(), '{_locationDay}')]"));
         }
 
         [AllureStep("SelectorDaysPickerDaysFivethLine")]
@@ -93,7 +93,7 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
             WaitUntil.WaitSomeInterval(1000);
             var str = "//table//tbody[@class = 'mat-calendar-body']//tr[5]";
             _element = Browser._Driver.FindElement(By.XPath(str));
-            return _element.FindElements(By.XPath($".//td[contains(@aria-label, '{_locationDay}')]"));
+            return _element.FindElements(By.XPath($".//td[contains(@class, 'mat-calendar-body-cell-container ng-star-inserted')]//button//span[contains(text(), '{_locationDay}')]"));
         }
 
         [AllureStep("SelectorDaysPickerDaysSixthLine")]

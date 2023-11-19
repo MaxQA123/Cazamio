@@ -13,8 +13,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         [FindsBy(How = How.XPath, Using = "//app-prepare-application//h2[text() = 'Create application']")]
         public IWebElement TitleCreateApplicationModalWndw;
 
-        [FindsBy(How = How.XPath, Using = "//cazamio-mobile-button[@ng-reflect-text = 'Next']")]
-        public IWebElement ButtonNextModalWndw;
+        [FindsBy(How = How.XPath, Using = "//cazamio-mobile-button//span[text() = 'Next']")]
+        public IWebElement ButtonNextInFirstStepModalWndw;
 
         #region Create application step 1
 
@@ -33,6 +33,9 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
 
         [FindsBy(How = How.XPath, Using = "//div[@class = 'address-input']")]
         public IWebElement FieldInputUnitAddressModalWndw;
+
+        [FindsBy(How = How.XPath, Using = "//span[text() = '1 Washington Square #4']")]
+        public IWebElement ItemUnitAddressModalWndw;
 
         #endregion
 
@@ -65,7 +68,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         [FindsBy(How = How.XPath, Using = "//input[@id = 'mat-input-3']")]
         public IWebElement FieldInputRentalTermsModalWndw;
 
-        [FindsBy(How = How.XPath, Using = "//cazamio-mobile-button[@ng-reflect-text = 'Create']")]
+        [FindsBy(How = How.XPath, Using = "//cazamio-mobile-button//span[text() = 'Create']")]
         public IWebElement ButtonCreateStepThreeModalWndw;
 
         #endregion

@@ -738,14 +738,14 @@ namespace MarketplaceAdminTests
             string getEmailStepFirstActual = Pages.ModalWndwCreateApplication.GetEmailStepFirst();
 
             Pages.ModalWndwCreateApplication
-                .ClickButtonNextModalWndw();
+                .ClickButtonNextInFirstStepModalWndw();
 
             string getUnitAddressStepSecondActual = Pages.ModalWndwCreateApplication.GetUnitAddressStepSecond();
             string getShortAddress = Pages.ModalWndwCreateApplication.GetShortUnitAddressStepSecond();
             string getUnitNumberActuaL = Pages.ModalWndwCreateApplication.GetUnitNumberStepSecond();
 
             Pages.ModalWndwCreateApplication
-                .ClickButtonNextModalWndw();
+                .ClickButtonNextInFirstStepModalWndw();
 
             string getEmailStepThirdActual = Pages.ModalWndwCreateApplication.GetEmailStepThird();
             string getUnitAddressStepThirdActual = Pages.ModalWndwCreateApplication.GetUnitAddressStepThird();
@@ -846,14 +846,14 @@ namespace MarketplaceAdminTests
             string getEmailStepFirstActual = Pages.ModalWndwCreateApplication.GetEmailStepFirst();
 
             Pages.ModalWndwCreateApplication
-                .ClickButtonNextModalWndw();
+                .ClickButtonNextInFirstStepModalWndw();
 
             string getUnitAddressStepSecondActual = Pages.ModalWndwCreateApplication.GetUnitAddressStepSecond();
             string getShortAddress = Pages.ModalWndwCreateApplication.GetShortUnitAddressStepSecond();
             string getUnitNumberActuaL = Pages.ModalWndwCreateApplication.GetUnitNumberStepSecond();
 
             Pages.ModalWndwCreateApplication
-                .ClickButtonNextModalWndw();
+                .ClickButtonNextInFirstStepModalWndw();
 
             string getEmailStepThirdActual = Pages.ModalWndwCreateApplication.GetEmailStepThird();
             string getUnitAddressStepThirdActual = Pages.ModalWndwCreateApplication.GetUnitAddressStepThird();
@@ -960,16 +960,18 @@ namespace MarketplaceAdminTests
                 .EnterNewEmailInFieldMainApplicantEmailAddressModalWndw();
 
             string getEmailStepFirstActual = Pages.ModalWndwCreateApplication.GetEmailStepFirst();
+            string partEmailPutsBox = Pages.ModalWndwCreateApplication.CopyEmailBeforeDogFromMdlWndwCreateApplicationStepFirst();
 
             Pages.ModalWndwCreateApplication
-                .ClickButtonNextModalWndw();
+                .ClickButtonNextInFirstStepModalWndw()
+                .EnterUnitShortAddressInFieldUnitAddressModalWndw();
 
             string getUnitAddressStepSecondActual = Pages.ModalWndwCreateApplication.GetUnitAddressStepSecond();
             string getShortAddress = Pages.ModalWndwCreateApplication.GetShortUnitAddressStepSecond();
             string getUnitNumberActuaL = Pages.ModalWndwCreateApplication.GetUnitNumberStepSecond();
 
             Pages.ModalWndwCreateApplication
-                .ClickButtonNextModalWndw();
+                .ClickButtonNextInFirstStepModalWndw();
 
             string getEmailStepThirdActual = Pages.ModalWndwCreateApplication.GetEmailStepThird();
             string getUnitAddressStepThirdActual = Pages.ModalWndwCreateApplication.GetUnitAddressStepThird();
@@ -1004,6 +1006,30 @@ namespace MarketplaceAdminTests
 
             //Pages.ModalWndwCreateAApplication
             //    .VerifyFieldsAutocompleteInStepThird(getLeasePriceFromDb, getSecurityDepositFromDb, getMonthlyRentsPrePaymentFromDb, getRentalTermsFromDb, getLeasePriceActual, getSecurityDepositActual, getMonthlyRentsPrePaymentActual, getRentalTermsActual);
+
+            Pages.JScriptExecutorHelper
+                .OpenNewTab()
+                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, partEmailPutsBox);
+            Pages.PutsBox
+                .VerifyTitleLetterCreateTenant()
+                .ClickButtonBodyHtml()
+                .ClickButtonConfirmEmailForTenant();
+            Pages.ModalWindowHowShallWeCallYou
+                .VerifyTitleHowShallWeCallYouMdlWndw()
+                .EnterFirstName()
+                .EnterLastName();
+
+            string firstNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowHowShallWeCallYou.GetFirstNameFromModalWindowHowShallWeCallYou();
+            string lastNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowHowShallWeCallYou.GetLastNameFromModalWindowHowShallWeCallYou();
+
+            Pages.ModalWindowHowShallWeCallYou
+                .ClickButtonSaveMdlWndw();
+            Pages.HeaderCazamioTenant
+               .ClickButtonMyApplicationsHdrCzmTnnt();
+            Pages.MyAccountCazamioTenant
+                .ClickTabAccountOnMyAccntPg()
+                .ClickButtonEditMyAccntPgTabAccnt()
+                .VerifyEmailNewTenant(getEmailStepFirstActual);
 
             #endregion
 
@@ -1045,7 +1071,7 @@ namespace MarketplaceAdminTests
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
             string buildingAddress = "1 Washington Square";
             string unitNumber = "4";
-            string emailTenant = TestDataForWebSiteTenant.EMAIL_TENANT_NOT_CREATED;
+            string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_NOT_CREATED;
 
             #endregion
 
@@ -1079,7 +1105,7 @@ namespace MarketplaceAdminTests
             string partEmailPutsBox = Pages.ModalWndwCreateApplication.CopyEmailBeforeDogFromMdlWndwCreateApplicationStepFirst();
 
             Pages.ModalWndwCreateApplication
-                .ClickButtonNextModalWndw();
+                .ClickButtonNextInFirstStepModalWndw();
 
             string getEmailStepThirdActual = Pages.ModalWndwCreateApplication .GetEmailStepThird();
 
@@ -1133,11 +1159,12 @@ namespace MarketplaceAdminTests
 
             #region Postconditions
 
-            //var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
-            //Console.WriteLine($"ApartmentId: {apartmentId}");
-            //var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
-            //Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            //DBRequestAspNetUsers.AspNetUsers.DeleteNewlyCreatedTenantNotAddedToSystemAndApplication(apartmentId, apartmentApplicationId, emailTenant, marketplaceId);
+            var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
+            Console.WriteLine($"ApartmentId: {apartmentId}");
+            var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
+            Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
+            DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithNewlyCreatedTenantApplicant(apartmentId, apartmentApplicationId, emailTenantCreator, marketplaceId);
+            DBRequestAspNetUsers.AspNetUsers.DeleteFromAspNetUsersNewlyCreatedTenantApplicant(apartmentId, apartmentApplicationId, emailTenantCreator, marketplaceId);
 
             #endregion
 
