@@ -12,7 +12,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
 {
     public partial class ModalWndwCreateApplication
     {
-        string emailTenantNotCreated = TestDataForWebSiteTenant.EMAIL_TENANT_NOT_CREATED;
+        string emailTenantNotCreated = TestDataForWebSiteTenant.EMAIL_TENANT_CREATOR_NOT_CREATED;
         string unitShortAddress = "1 Washington Square #4";
 
         [AllureStep("EnterExistEmailInFieldMainApplicantEmailAddressModalWndw")]
@@ -148,7 +148,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaListOfApplication);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFourthLine(DaysForDatePiker.SECOND_NUMBER, " ");
+                .SelectDayOnDatePickerFourthLine(DaysForDatePiker.THIRD_NUMBER, " ");
 
             return this;
         }
@@ -160,7 +160,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFourthLine(DaysForDatePiker.SECOND_NUMBER, " ");
+                .SelectDayOnDatePickerFourthLine(DaysForDatePiker.THIRD_NUMBER, " ");
 
             return this;
         }

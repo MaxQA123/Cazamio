@@ -992,9 +992,9 @@ namespace MarketplaceAdminTests
                 .ClickButtonAddApplicantStepFourModalWndw();
             Pages.ModalWndwAddAApplicant
                 .VerifyTitleCreateApplicationModalWndw()
-                .EnterEmailTenantOccupant()
+                .EnterEmailTenantOccupantNotCreated()
                 .ClickButtonPlusAnotherApplicant()
-                .EnterEmailTenantGuarantor()
+                .EnterEmailTenantGuarantorNotCreated()
                 .ClickSecondCheckTheBoxThisIGuarantor()
                 .ClickButtonAdd()
                 .VerifyMessageAddedApplicantsToApplicationMdlWndwAddAApplicant();
