@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProject.PageObjects.WebSiteLandlordPages.HowShallWeCallYouPage
+namespace CazamioProject.PageObjects.WebSiteCazamioTenantPages.ModalWindowPleaseTellUsYourName
 {
-    public partial class ModalWindowHowShallWeCallYou
+    public partial class ModalWindowPleaseTellUsYourName
     {
-        [FindsBy(How = How.XPath, Using = "//h2[text() = 'How shall we call you?']")]
+        [FindsBy(How = How.XPath, Using = "//h2[text() = 'Please tell us your name']")]
         public IWebElement TitleHowShallWeCallYouMdlWndw;
 
         [FindsBy(How = How.XPath, Using = "//input[@id = 'first-name']")]

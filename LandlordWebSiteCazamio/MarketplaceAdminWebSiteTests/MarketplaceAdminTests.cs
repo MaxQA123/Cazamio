@@ -23,6 +23,7 @@ using NUnit.Allure.Core;
 using NUnit.Framework;
 using System;
 using System.Threading;
+using CazamioProject.PageObjects.WebSiteCazamioTenantPages.ModalWindowPleaseTellUsYourName;
 
 namespace MarketplaceAdminTests
 {
@@ -1017,15 +1018,15 @@ namespace MarketplaceAdminTests
                 .VerifyTitleLetterCreateTenant()
                 .ClickButtonBodyHtml()
                 .ClickButtonConfirmEmailForTenant();
-            Pages.ModalWindowHowShallWeCallYou
+            Pages.ModalWindowPleaseTellUsYourName
                 .VerifyTitleHowShallWeCallYouMdlWndw()
                 .EnterFirstName()
                 .EnterLastName();
 
-            string firstNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowHowShallWeCallYou.GetFirstNameFromModalWindowHowShallWeCallYou();
-            string lastNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowHowShallWeCallYou.GetLastNameFromModalWindowHowShallWeCallYou();
+            string firstNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowPleaseTellUsYourName.GetFirstNameFromModalWindowHowShallWeCallYou();
+            string lastNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowPleaseTellUsYourName.GetLastNameFromModalWindowHowShallWeCallYou();
 
-            Pages.ModalWindowHowShallWeCallYou
+            Pages.ModalWindowPleaseTellUsYourName
                 .ClickButtonSaveMdlWndw();
             Pages.HeaderCazamioTenant
                .ClickButtonMyApplicationsHdrCzmTnnt();
@@ -1142,15 +1143,15 @@ namespace MarketplaceAdminTests
                 .VerifyTitleLetterCreateTenant()
                 .ClickButtonBodyHtml()
                 .ClickButtonConfirmEmailForTenant();
-            Pages.ModalWindowHowShallWeCallYou
+            Pages.ModalWindowPleaseTellUsYourName
                 .VerifyTitleHowShallWeCallYouMdlWndw()
                 .EnterFirstName()
                 .EnterLastName();
 
-            string firstNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowHowShallWeCallYou.GetFirstNameFromModalWindowHowShallWeCallYou();
-            string lastNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowHowShallWeCallYou.GetLastNameFromModalWindowHowShallWeCallYou();
+            string firstNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowPleaseTellUsYourName.GetFirstNameFromModalWindowHowShallWeCallYou();
+            string lastNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowPleaseTellUsYourName.GetLastNameFromModalWindowHowShallWeCallYou();
 
-            Pages.ModalWindowHowShallWeCallYou
+            Pages.ModalWindowPleaseTellUsYourName
                 .ClickButtonSaveMdlWndw();
             Pages.HeaderCazamioTenant
                .ClickButtonMyApplicationsHdrCzmTnnt();

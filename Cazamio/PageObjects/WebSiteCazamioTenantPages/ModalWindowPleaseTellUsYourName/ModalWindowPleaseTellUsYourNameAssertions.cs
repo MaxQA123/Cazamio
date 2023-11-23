@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProject.PageObjects.WebSiteLandlordPages.HowShallWeCallYouPage
+namespace CazamioProject.PageObjects.WebSiteCazamioTenantPages.ModalWindowPleaseTellUsYourName
 {
-    public partial class ModalWindowHowShallWeCallYou
+    public partial class ModalWindowPleaseTellUsYourName
     {
         [AllureStep("VerifyTitleCreateApplicationModalWndw")]
-        public ModalWindowHowShallWeCallYou VerifyTitleHowShallWeCallYouMdlWndw()
+        public ModalWindowPleaseTellUsYourName VerifyTitleHowShallWeCallYouMdlWndw()
         {
             WaitUntil.CustomElementIsVisible(TitleHowShallWeCallYouMdlWndw);
             Assert.IsTrue(Successfully.IsVisible(TitleHowShallWeCallYouMdlWndw));

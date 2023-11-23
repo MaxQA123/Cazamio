@@ -25,7 +25,7 @@ namespace CazamioProject.DBHelpers
 
         public class Tenants
         {
-            public static string DeleteCreatedUserTenant(int marketplaceId, string email)
+            public static string DeleteCreatedUserTenant(string email, int marketplaceId)
             {
                 string data = null;
                 using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))

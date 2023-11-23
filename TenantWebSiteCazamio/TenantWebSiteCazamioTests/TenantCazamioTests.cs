@@ -62,7 +62,7 @@ namespace TenantCazamioTests
 
         public void SignUpAsTenant()
         {
-            #region Preconditions
+            #region Preconditions Test Data
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
@@ -93,13 +93,10 @@ namespace TenantCazamioTests
                 .VerifyEmailNewTenant(emailPutsBox);
             Console.WriteLine($"Email a new tenant: {emailPutsBox}");
 
-            var marketplaceIdFromDb = DBRequestTeants.Tenants.GetMarketplaceIdByEmailUserTenant(emailPutsBox, marketplaceId);
-            Console.WriteLine($"MarketplaceId of tenant: {marketplaceIdFromDb}");
-
             #region Postconditions
 
-            //DBRequestTeants.Tenants.DeleteCreatedUserTenant(emailPutsBox, marketplaceId);
-            //DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailPutsBox, marketplaceId);
+            DBRequestTeants.Tenants.DeleteCreatedUserTenant(emailPutsBox, marketplaceId);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailPutsBox, marketplaceId);
 
             #endregion
 

@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CazamioProject.PageObjects.WebSiteLandlordPages.HowShallWeCallYouPage
+namespace CazamioProject.PageObjects.WebSiteCazamioTenantPages.ModalWindowPleaseTellUsYourName
 {
-    public partial class ModalWindowHowShallWeCallYou
+    public partial class ModalWindowPleaseTellUsYourName
     {
         [AllureStep("EnterFirstName")]
-        public ModalWindowHowShallWeCallYou EnterFirstName()
+        public ModalWindowPleaseTellUsYourName EnterFirstName()
         {
             WaitUntil.CustomElementIsVisible(FieldInputFirstNameMdlWndw);
             InputGeneral.InputFunctionWithClear(FieldInputFirstNameMdlWndw, Name.FirstName());
@@ -20,7 +20,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.HowShallWeCallYouPage
         }
 
         [AllureStep("EnterLastName")]
-        public ModalWindowHowShallWeCallYou EnterLastName()
+        public ModalWindowPleaseTellUsYourName EnterLastName()
         {
             WaitUntil.CustomElementIsVisible(FieldInputLastNameMdlWndw);
             InputGeneral.InputFunctionWithClear(FieldInputLastNameMdlWndw, Name.LastName());
@@ -28,7 +28,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.HowShallWeCallYouPage
         }
 
         [AllureStep("ClickButtonSaveMdlWndw")]
-        public ModalWindowHowShallWeCallYou ClickButtonSaveMdlWndw()
+        public ModalWindowPleaseTellUsYourName ClickButtonSaveMdlWndw()
         {
             WaitUntil.CustomElementIsVisible(ButtonSaveMdlWndw);
             Button.Click(ButtonSaveMdlWndw);

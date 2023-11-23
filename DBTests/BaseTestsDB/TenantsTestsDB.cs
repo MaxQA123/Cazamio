@@ -515,7 +515,7 @@ namespace DBTests.BaseTestsDB
             WaitUntil.WaitSomeInterval(100);
             DBRequestApartmentApplications.ApartmentApplications.DeleteRecordByEmailMarketplaceId(marketplaceId, emailTenant);
             WaitUntil.WaitSomeInterval(100);
-            DBRequestTeants.Tenants.DeleteCreatedUserTenant(marketplaceId, emailTenant);
+            DBRequestTeants.Tenants.DeleteCreatedUserTenant(emailTenant, marketplaceId);
             WaitUntil.WaitSomeInterval(100);
             DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailTenant, marketplaceId);
         }
