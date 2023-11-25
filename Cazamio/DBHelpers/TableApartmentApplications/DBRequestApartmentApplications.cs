@@ -58,9 +58,9 @@ namespace CazamioProject.Helpers
                        " FROM ApartmentApplications AA" +
                        " LEFT JOIN AspNetUsers ANU" +
                        " ON ANU.Id = TenantId" +
-                       " WHERE ApartmentId = @ApartmentId AND ANU.Id" +
+                       " WHERE ApartmentId = @apartmentId AND ANU.Id" +
                        " IN" +
-                       " (SELECT Id FROM AspNetUsers WHERE Email = @TenantEmail AND MarketplaceId = @MarketplaceId)";
+                       " (SELECT Id FROM AspNetUsers WHERE Email = @tenantEmail AND MarketplaceId = @marketplaceId)";
                 try
                 {
                     using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
@@ -68,9 +68,9 @@ namespace CazamioProject.Helpers
                     connection.Open();
 
                     // Параметризованный запрос с двумя параметрами
-                    command.Parameters.AddWithValue("@ApartmentId", DbType.String).Value = apartmentId;
-                    command.Parameters.AddWithValue("@TenantEmail", DbType.String).Value = tenantEmail;
-                    command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
+                    command.Parameters.AddWithValue("@apartmentId", DbType.String).Value = apartmentId;
+                    command.Parameters.AddWithValue("@tenantEmail", DbType.String).Value = tenantEmail;
+                    command.Parameters.AddWithValue("@marketplaceId", DbType.String).Value = marketplaceId;
 
                     using SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())

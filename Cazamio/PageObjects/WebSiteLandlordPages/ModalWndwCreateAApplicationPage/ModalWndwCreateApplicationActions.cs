@@ -136,6 +136,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         [AllureStep("EnterPriceFieldInputRequestedOfferPriceModalWndw")]
         public ModalWndwCreateApplication EnterPriceFieldInputRequestedOfferPriceModalWndw()
         {
+            WaitUntil.WaitSomeInterval(3000);
             WaitUntil.CustomElementIsVisible(FieldInputRequestedOfferPriceModalWndw);
             InputGeneral.InputFunctionWithClear(FieldInputRequestedOfferPriceModalWndw, GenerateRandomDataHelper.RandomNumberWithoutZero(3));
             return this;
@@ -148,7 +149,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaListOfApplication);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFourthLine(DaysForDatePiker.SIXTH_NUMBER, " ");
+                .SelectDayOnDatePickerFivethLine(DaysForDatePiker.FIRST_NUMBER, " ");
 
             return this;
         }
@@ -160,7 +161,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFourthLine(DaysForDatePiker.SIXTH_NUMBER, " ");
+                .SelectDayOnDatePickerFivethLine(DaysForDatePiker.FIRST_NUMBER, " ");
 
             return this;
         }

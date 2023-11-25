@@ -1075,7 +1075,7 @@ namespace MarketplaceAdminTests
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
             string buildingAddress = "1 Washington Square";
-            string unitNumber = "4";
+            string unitNumber = "5";
             string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_NOT_CREATED;
 
             #endregion
@@ -1169,7 +1169,7 @@ namespace MarketplaceAdminTests
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
             DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithNewlyCreatedTenantApplicant(apartmentId, apartmentApplicationId, emailTenantCreator, marketplaceId);
-            DBRequestAspNetUsers.AspNetUsers.DeleteFromAspNetUsersNewlyCreatedTenantApplicant(apartmentId, apartmentApplicationId, emailTenantCreator, marketplaceId);
+            DBRequestAspNetUsers.AspNetUsers.DeleteFromAspNetUsersNewlyCreatedTenantApplicantWithoutApplication(emailTenantCreator, marketplaceId);
 
             #endregion
 

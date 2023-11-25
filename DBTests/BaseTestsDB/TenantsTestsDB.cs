@@ -372,14 +372,15 @@ namespace DBTests.BaseTestsDB
         [AllureSuite("TestingDBTenant")]
         [AllureSubSuite("DeleteNewlyTenantApplicantCreatedViaButtonPlusApplication")]
 
-        public void DeleteNewlyTenantApplicantCreatedViaButtonPlusApplication()
+        public void DeleteNewlyTenantApplicantCreatedViaButtonPlusApplicationWithApplication()
         {
             #region Preconditions
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string buildingAddress = "1 Washington Square";
-            string unitNumber = "4";
-            string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_CREATOR_NOT_CREATED;
+            string buildingAddress = "18 Linden Street";
+            string unitNumber = "95";
+            string emailTenantCreator = "asdtest@putsbox.com";
+            //string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_CREATOR_NOT_CREATED;
 
             #endregion
 
@@ -389,7 +390,31 @@ namespace DBTests.BaseTestsDB
             Console.WriteLine($"ApartmentId: {apartmentId}");
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            DBRequestAspNetUsers.AspNetUsers.DeleteFromAspNetUsersNewlyCreatedTenantApplicant(apartmentId, apartmentApplicationId, emailTenantCreator, marketplaceId);
+            DBRequestAspNetUsers.AspNetUsers.DeleteFromAspNetUsersNewlyCreatedTenantApplicantWithApplication(apartmentId, apartmentApplicationId, emailTenantCreator, marketplaceId);
+
+            #endregion
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBTenant")]
+        [AllureSubSuite("DeleteNewlyTenantApplicantCreatedViaButtonPlusApplicationWithoutApplication")]
+
+        public void DeleteNewlyTenantApplicantCreatedViaButtonPlusApplicationWithoutApplication()
+        {
+            #region Preconditions
+
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            string emailTenantCreator = "asdtest@putsbox.com";
+
+            #endregion
+
+            #region Test
+
+            DBRequestAspNetUsers.AspNetUsers.DeleteFromAspNetUsersNewlyCreatedTenantApplicantWithoutApplication(emailTenantCreator, marketplaceId);
 
             #endregion
         }
@@ -469,8 +494,9 @@ namespace DBTests.BaseTestsDB
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
             string buildingAddress = "18 Linden Street";
-            string unitNumber = "80";
-            string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_CREATOR_NOT_CREATED;
+            string unitNumber = "95";
+            string emailTenantCreator = "asdtest@putsbox.com";
+            //string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_CREATOR_NOT_CREATED;
 
             #endregion
 
@@ -481,7 +507,7 @@ namespace DBTests.BaseTestsDB
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
             DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithNewlyCreatedTenantApplicant(apartmentId, apartmentApplicationId, emailTenantCreator, marketplaceId);
-            DBRequestAspNetUsers.AspNetUsers.DeleteFromAspNetUsersNewlyCreatedTenantApplicant(apartmentId, apartmentApplicationId, emailTenantCreator, marketplaceId);
+            DBRequestAspNetUsers.AspNetUsers.DeleteFromAspNetUsersNewlyCreatedTenantApplicantWithoutApplication(emailTenantCreator, marketplaceId);
 
             #endregion
         }
