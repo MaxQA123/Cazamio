@@ -56,5 +56,18 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTena
 
             return this;
         }
+
+        [AllureStep("LogOutFromAccountViaHeader")]
+        public HeaderCazamioTenant LogOutFromAccountViaHeader()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonInFormAvatarHdrCzmTnnt);
+            Button.Click(ButtonInFormAvatarHdrCzmTnnt);
+            WaitUntil.CustomElementIsVisible(ButtonSignOutHdrCzmTnnt);
+            Button.Click(ButtonSignOutHdrCzmTnnt);
+            Pages.MdlWndwAreYouSureLogOut
+                .ClickButtonYesIamSure();
+
+            return this;
+        }
     }
 }

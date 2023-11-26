@@ -285,7 +285,7 @@ namespace TenantCazamioTests
         [AllureSuite("DemoTenant")]
         [AllureSubSuite("DemoSignUp")]
 
-        public void DemoPaymentHoldDeposit()
+        public void DemoLogOut()
         {
             Pages.HeaderCazamioTenant
                 .ClickButtonLogInHdrCzmTnnt();
@@ -294,12 +294,8 @@ namespace TenantCazamioTests
                 .ClickIconShowLgInCazmTnnt()
                 .SetCheckBoxRememberMeLgInCazmTnnt()
                 .ClickButtonLogInLgInCazmTnnt();
-            Pages.HomeCazamioTenant
-                .SearchNumberBuildingHomePg();
-            Pages.ListOfApartmentsTenant
-                .SelectApartmentCard(CardApartmentOnListOfApartments.apartmentCardOne, "");
-            Pages.ApartmentDetailsTenant
-                .ClickButtonSubmitApplicationTn();
+            Pages.HeaderCazamioTenant
+                .LogOutFromAccountViaHeader();
 
             WaitUntil.WaitSomeInterval(5000);
         }

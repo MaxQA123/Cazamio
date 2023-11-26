@@ -930,14 +930,14 @@ namespace MarketplaceAdminTests
             #region Preconditions Test Data
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string buildingAddress = "1 Washington Square";
-            string unitNumber = "3";
-            string emailTenantCreator = "task1587acre@putsbox.com";
-            string emailTenantOccupant = "task1587acre@putsbox.com";
-            string emailTenantGuarantor = "task1587acre@putsbox.com";
-            //string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_CREATOR_NOT_CREATED;
-            //string emailTenantOccupant = TestDataForWebSiteTenant.EMAIL_TENANT_OCCUPANT_NOT_CREATED;
-            //string emailTenantGuarantor = TestDataForWebSiteTenant.EMAIL_TENANT_GUARANTOR_NOT_CREATED;
+            string buildingAddress = "2 Washington Square";
+            string unitNumber = "1";
+            //string emailTenantCreator = "task1587acre@putsbox.com";
+            //string emailTenantOccupant = "task1587acre@putsbox.com";
+            //string emailTenantGuarantor = "task1587acre@putsbox.com";
+            string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_CREATOR_NOT_CREATED;
+            string emailTenantOccupant = TestDataForWebSiteTenant.EMAIL_TENANT_OCCUPANT_NOT_CREATED;
+            string emailTenantGuarantor = TestDataForWebSiteTenant.EMAIL_TENANT_GUARANTOR_NOT_CREATED;
 
             #endregion
 
@@ -1031,13 +1031,13 @@ namespace MarketplaceAdminTests
 
             Pages.ModalWindowPleaseTellUsYourName
                 .ClickButtonSaveMdlWndw();
-            Pages.HeaderCazamioTenant
-               .ClickButtonMyApplicationsHdrCzmTnnt();
             Pages.MyAccountCazamioTenant
                 .ClickTabAccountOnMyAccntPg()
                 .ClickButtonEditMyAccntPgTabAccnt()
                 .VerifyEmailNewTenant(getEmailStepFirstActual);
-            //Вылогинится
+            Pages.HeaderCazamioTenant
+                .LogOutFromAccountViaHeader();
+            //Подтвердить тенанта окупанта
 
             #endregion
 

@@ -25,5 +25,8 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTena
 
         [FindsBy(How = How.XPath, Using = "//button[@aria-label= 'My account']")]
         public IWebElement ButtonMyAccountHdrCzmTnnt;
+
+        [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Sign Out']")]
+        public IWebElement ButtonSignOutHdrCzmTnnt;
     }
 }
