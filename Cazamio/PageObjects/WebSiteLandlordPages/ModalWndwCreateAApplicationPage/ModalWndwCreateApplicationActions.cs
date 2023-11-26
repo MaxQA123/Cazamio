@@ -12,8 +12,9 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
 {
     public partial class ModalWndwCreateApplication
     {
-        string emailTenantNotCreated = TestDataForWebSiteTenant.EMAIL_TENANT_CREATOR_NOT_CREATED;
-        string unitShortAddress = "1 Washington Square #4";
+        string emailTenantAppOccGuarNotCreated = TestDataForWebSiteTenant.EMAIL_TENANT_CREATOR_NOT_CREATED;
+        string emailOnlyTenantAppNotCreated = TestDataForWebSiteTenant.EMAIL_TENANT_NOT_CREATED;
+        string unitShortAddress = "2 Washington Square #1";
 
         [AllureStep("EnterExistEmailInFieldMainApplicantEmailAddressModalWndw")]
         public ModalWndwCreateApplication EnterExistEmailInFieldMainApplicantEmailAddressModalWndw()
@@ -38,11 +39,20 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             return this;
         }
 
-        [AllureStep("EnterNewEmailInFieldMainApplicantEmailAddressModalWndw")]
-        public ModalWndwCreateApplication EnterNewEmailInFieldMainApplicantEmailAddressModalWndw()
+        [AllureStep("EnterNewEmailTenantAppOccGuarInFieldMainApplicantEmailAddressModalWndw")]
+        public ModalWndwCreateApplication EnterNewEmailTenantAppOccGuarInFieldMainApplicantEmailAddressModalWndw()
         {
             WaitUntil.CustomElementIsVisible(FieldInputMainApplicantEmailAddressModalWndw);
-            InputGeneral.InputFunctionWithClear(FieldInputMainApplicantEmailAddressModalWndw, emailTenantNotCreated);
+            InputGeneral.InputFunctionWithClear(FieldInputMainApplicantEmailAddressModalWndw, emailTenantAppOccGuarNotCreated);
+
+            return this;
+        }
+
+        [AllureStep("EnterNewEmailOnlyTenantAppInFieldMainApplicantEmailAddressModalWndw")]
+        public ModalWndwCreateApplication EnterNewEmailOnlyTenantAppInFieldMainApplicantEmailAddressModalWndw()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputMainApplicantEmailAddressModalWndw);
+            InputGeneral.InputFunctionWithClear(FieldInputMainApplicantEmailAddressModalWndw, emailOnlyTenantAppNotCreated);
 
             return this;
         }
@@ -149,7 +159,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaListOfApplication);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFivethLine(DaysForDatePiker.FIRST_NUMBER, " ");
+                .SelectDayOnDatePickerFivethLine(DaysForDatePiker.SECOND_NUMBER, " ");
 
             return this;
         }
@@ -161,7 +171,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFivethLine(DaysForDatePiker.FIRST_NUMBER, " ");
+                .SelectDayOnDatePickerFivethLine(DaysForDatePiker.SECOND_NUMBER, " ");
 
             return this;
         }

@@ -1,0 +1,435 @@
+{
+  "uuid": "023d191d-eda0-40b4-8934-11378970ce89-tr-0-1012",
+  "historyId": "MarketplaceAdminTests.TestsBaseWeb.CreateApplicationWithTenantAppNotAddedToSystemViaButtonPlusApplication",
+  "fullName": "MarketplaceAdminTests.TestsBaseWeb.CreateApplicationWithTenantAppNotAddedToSystemViaButtonPlusApplication",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "MarketplaceAdminTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "CreateApplicationWithTenantAppNotAddedToSystemViaButtonPlusApplication"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "MarketplaceAdmin"
+    },
+    {
+      "name": "subSuite",
+      "value": "CreateApplicationWithTenantAppNotAddedToSystemViaButtonPlusApplication"
+    }
+  ],
+  "links": [],
+  "name": "CreateApplicationWithTenantAppNotAddedToSystemViaButtonPlusApplication",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.ElementClickInterceptedException : element click intercepted: Element <a _ngcontent-ng-c3511413345=\"\" data-toggle=\"tab\" role=\"tab\" class=\"nav-link\">...</a> is not clickable at point (1449, 799). Other element would receive the click: <textarea _ngcontent-ng-c3511413345=\"\" type=\"text\" id=\"internalNotes\" rows=\"3\" readonly=\"\" class=\"caz-input ng-untouched ng-pristine ng-valid\"></textarea>\n  (Session info: chrome=119.0.6045.160)",
+    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Click()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.Click()\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663748_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 41\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663748_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663748_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage.BuildingView.__a$_around_ClickTabApartmentsBldngVwPg_100663909_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\BuildingViewPage\\BuildingViewActions.cs:line 20\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage.BuildingView.__a$_around_ClickTabApartmentsBldngVwPg_100663909_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage.BuildingView.__a$_around_ClickTabApartmentsBldngVwPg_100663909_w_0(Object[] )\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage.BuildingView.ClickTabApartmentsBldngVwPg() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\BuildingViewPage\\BuildingViewActions.cs:line 18\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.__a$_around_OpenPageApartmentView_100663546_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ListOfBuildingsPage\\ListOfBuildingsActions.cs:line 45\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.__a$_around_OpenPageApartmentView_100663546_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.__a$_around_OpenPageApartmentView_100663546_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.OpenPageApartmentView() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ListOfBuildingsPage\\ListOfBuildingsActions.cs:line 28\r\n   at MarketplaceAdminTests.TestsBaseWeb.CreateApplicationWithTenantAppNotAddedToSystemViaButtonPlusApplication() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\MarketplaceAdminWebSiteTests\\MarketplaceAdminTests.cs:line 1097"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "CreateApplicationWithTenantAppNotAddedToSystemViaButtonPlusApplication",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.ElementClickInterceptedException : element click intercepted: Element <a _ngcontent-ng-c3511413345=\"\" data-toggle=\"tab\" role=\"tab\" class=\"nav-link\">...</a> is not clickable at point (1449, 799). Other element would receive the click: <textarea _ngcontent-ng-c3511413345=\"\" type=\"text\" id=\"internalNotes\" rows=\"3\" readonly=\"\" class=\"caz-input ng-untouched ng-pristine ng-valid\"></textarea>\n  (Session info: chrome=119.0.6045.160)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Click()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.Click()\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663748_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 41\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663748_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663748_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage.BuildingView.__a$_around_ClickTabApartmentsBldngVwPg_100663909_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\BuildingViewPage\\BuildingViewActions.cs:line 20\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage.BuildingView.__a$_around_ClickTabApartmentsBldngVwPg_100663909_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage.BuildingView.__a$_around_ClickTabApartmentsBldngVwPg_100663909_w_0(Object[] )\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage.BuildingView.ClickTabApartmentsBldngVwPg() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\BuildingViewPage\\BuildingViewActions.cs:line 18\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.__a$_around_OpenPageApartmentView_100663546_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ListOfBuildingsPage\\ListOfBuildingsActions.cs:line 45\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.__a$_around_OpenPageApartmentView_100663546_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.__a$_around_OpenPageApartmentView_100663546_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.OpenPageApartmentView() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ListOfBuildingsPage\\ListOfBuildingsActions.cs:line 28\r\n   at MarketplaceAdminTests.TestsBaseWeb.CreateApplicationWithTenantAppNotAddedToSystemViaButtonPlusApplication() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\MarketplaceAdminWebSiteTests\\MarketplaceAdminTests.cs:line 1097"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "EnterEmailPasswordLogInPgAsMarketplaceAdmin",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "marketplaceadmin15@putsbox.com"
+                }
+              ],
+              "start": 1700986430636,
+              "stop": 1700986431293
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1700986431795,
+              "stop": 1700986432338
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1700986430634,
+          "stop": 1700986432338
+        },
+        {
+          "name": "ClickIconShowLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1700986432339,
+              "stop": 1700986432990
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1700986432339,
+          "stop": 1700986432990
+        },
+        {
+          "name": "ClickButtonLetsGoLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1700986432991,
+              "stop": 1700986433839
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1700986432991,
+          "stop": 1700986434852
+        },
+        {
+          "name": "GetUserNameFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1700986434854,
+          "stop": 1700986434940
+        },
+        {
+          "name": "GetUserNameRoleFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1700986434941,
+          "stop": 1700986435288
+        },
+        {
+          "name": "VerifyMarketplaceAdminUserName",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Mark Adm"
+            },
+            {
+              "name": "String",
+              "value": "Marketplace Admin"
+            }
+          ],
+          "start": 1700986435289,
+          "stop": 1700986436814
+        },
+        {
+          "name": "OpenPageApartmentView",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "element click intercepted: Element <a _ngcontent-ng-c3511413345=\"\" data-toggle=\"tab\" role=\"tab\" class=\"nav-link\">...</a> is not clickable at point (1449, 799). Other element would receive the click: <textarea _ngcontent-ng-c3511413345=\"\" type=\"text\" id=\"internalNotes\" rows=\"3\" readonly=\"\" class=\"caz-input ng-untouched ng-pristine ng-valid\"></textarea>\n  (Session info: chrome=119.0.6045.160)",
+            "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Click()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.Click()\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663748_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 41\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663748_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663748_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage.BuildingView.__a$_around_ClickTabApartmentsBldngVwPg_100663909_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\BuildingViewPage\\BuildingViewActions.cs:line 20\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage.BuildingView.__a$_around_ClickTabApartmentsBldngVwPg_100663909_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage.BuildingView.__a$_around_ClickTabApartmentsBldngVwPg_100663909_w_0(Object[] )\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage.BuildingView.ClickTabApartmentsBldngVwPg() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\BuildingViewPage\\BuildingViewActions.cs:line 18\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.__a$_around_OpenPageApartmentView_100663546_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ListOfBuildingsPage\\ListOfBuildingsActions.cs:line 45\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.__a$_around_OpenPageApartmentView_100663546_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "ClickButtonBuildingsSidebar",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [
+                {
+                  "name": "Click",
+                  "status": "passed",
+                  "statusDetails": {
+                    "known": false,
+                    "muted": false,
+                    "flaky": false
+                  },
+                  "stage": "finished",
+                  "steps": [],
+                  "attachments": [],
+                  "parameters": [
+                    {
+                      "name": "WebElementProxy",
+                      "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                    }
+                  ],
+                  "start": 1700986437823,
+                  "stop": 1700986438562
+                }
+              ],
+              "attachments": [],
+              "parameters": [],
+              "start": 1700986436818,
+              "stop": 1700986438562
+            },
+            {
+              "name": "VerifyTitleListOfBuildingsPg",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [],
+              "start": 1700986438562,
+              "stop": 1700986439665
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "2 Washington Square"
+                }
+              ],
+              "start": 1700986442720,
+              "stop": 1700986443518
+            },
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1700986443544,
+              "stop": 1700986444385
+            },
+            {
+              "name": "ClickTabApartmentsBldngVwPg",
+              "status": "failed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false,
+                "message": "element click intercepted: Element <a _ngcontent-ng-c3511413345=\"\" data-toggle=\"tab\" role=\"tab\" class=\"nav-link\">...</a> is not clickable at point (1449, 799). Other element would receive the click: <textarea _ngcontent-ng-c3511413345=\"\" type=\"text\" id=\"internalNotes\" rows=\"3\" readonly=\"\" class=\"caz-input ng-untouched ng-pristine ng-valid\"></textarea>\n  (Session info: chrome=119.0.6045.160)",
+                "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Click()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.Click()\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663748_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 41\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663748_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663748_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage.BuildingView.__a$_around_ClickTabApartmentsBldngVwPg_100663909_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\BuildingViewPage\\BuildingViewActions.cs:line 20\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage.BuildingView.__a$_around_ClickTabApartmentsBldngVwPg_100663909_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+              },
+              "stage": "finished",
+              "steps": [
+                {
+                  "name": "Click",
+                  "status": "failed",
+                  "statusDetails": {
+                    "known": false,
+                    "muted": false,
+                    "flaky": false,
+                    "message": "element click intercepted: Element <a _ngcontent-ng-c3511413345=\"\" data-toggle=\"tab\" role=\"tab\" class=\"nav-link\">...</a> is not clickable at point (1449, 799). Other element would receive the click: <textarea _ngcontent-ng-c3511413345=\"\" type=\"text\" id=\"internalNotes\" rows=\"3\" readonly=\"\" class=\"caz-input ng-untouched ng-pristine ng-valid\"></textarea>\n  (Session info: chrome=119.0.6045.160)",
+                    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Execute(String commandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Click()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.Click()\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663748_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 41\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663748_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+                  },
+                  "stage": "finished",
+                  "steps": [],
+                  "attachments": [],
+                  "parameters": [
+                    {
+                      "name": "WebElementProxy",
+                      "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                    }
+                  ],
+                  "start": 1700986447449,
+                  "stop": 1700986449285
+                }
+              ],
+              "attachments": [],
+              "parameters": [],
+              "start": 1700986447407,
+              "stop": 1700986449285
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1700986436815,
+          "stop": 1700986449318
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "65b4d989e3b9416b860afe42f31db505-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1700986422531,
+      "stop": 1700986452223
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1700986422529,
+  "stop": 1700986452236
+}

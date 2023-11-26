@@ -34,7 +34,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         [FindsBy(How = How.XPath, Using = "//div[@class = 'address-input']")]
         public IWebElement FieldInputUnitAddressModalWndw;
 
-        [FindsBy(How = How.XPath, Using = "//span[text() = '1 Washington Square #4']")]
+        [FindsBy(How = How.XPath, Using = "//span[text() = '2 Washington Square #1']")]
         public IWebElement ItemUnitAddressModalWndw;
 
         #endregion

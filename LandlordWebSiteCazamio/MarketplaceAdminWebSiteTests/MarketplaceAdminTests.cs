@@ -705,8 +705,8 @@ namespace MarketplaceAdminTests
             #region Preconditions Test Data
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string buildingAddress = "1 Washington Square";
-            string unitNumber = "4";
+            string buildingAddress = "2 Washington Square";
+            string unitNumber = "1";
             string emailTenant = TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT;
 
             #endregion
@@ -739,14 +739,16 @@ namespace MarketplaceAdminTests
             string getEmailStepFirstActual = Pages.ModalWndwCreateApplication.GetEmailStepFirst();
 
             Pages.ModalWndwCreateApplication
-                .ClickButtonNextInFirstStepModalWndw();
+                .ClickButtonNextInFirstStepModalWndw()
+                .EnterUnitShortAddressInFieldUnitAddressModalWndw();
 
             string getUnitAddressStepSecondActual = Pages.ModalWndwCreateApplication.GetUnitAddressStepSecond();
             string getShortAddress = Pages.ModalWndwCreateApplication.GetShortUnitAddressStepSecond();
             string getUnitNumberActuaL = Pages.ModalWndwCreateApplication.GetUnitNumberStepSecond();
 
             Pages.ModalWndwCreateApplication
-                .ClickButtonNextInFirstStepModalWndw();
+                .ClickButtonNextInFirstStepModalWndw()
+                .EnterUnitShortAddressInFieldUnitAddressModalWndw();
 
             string getEmailStepThirdActual = Pages.ModalWndwCreateApplication.GetEmailStepThird();
             string getUnitAddressStepThirdActual = Pages.ModalWndwCreateApplication.GetUnitAddressStepThird();
@@ -811,8 +813,8 @@ namespace MarketplaceAdminTests
             #region Preconditions Test Data
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string buildingAddress = "1 Washington Square";
-            string unitNumber = "4";
+            string buildingAddress = "2 Washington Square";
+            string unitNumber = "1";
             string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT;
             string emailTenantOccupant = TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_ONE;
             string emailTenantGuarantor = TestDataForWebSiteTenant.EMAIL_GUARANTOR;
@@ -847,7 +849,8 @@ namespace MarketplaceAdminTests
             string getEmailStepFirstActual = Pages.ModalWndwCreateApplication.GetEmailStepFirst();
 
             Pages.ModalWndwCreateApplication
-                .ClickButtonNextInFirstStepModalWndw();
+                .ClickButtonNextInFirstStepModalWndw()
+                .EnterUnitShortAddressInFieldUnitAddressModalWndw();
 
             string getUnitAddressStepSecondActual = Pages.ModalWndwCreateApplication.GetUnitAddressStepSecond();
             string getShortAddress = Pages.ModalWndwCreateApplication.GetShortUnitAddressStepSecond();
@@ -961,7 +964,7 @@ namespace MarketplaceAdminTests
                 .ClickButtonPlusApplication();
             Pages.ModalWndwCreateApplication
                 .VerifyTitleCreateApplicationModalWndw()
-                .EnterNewEmailInFieldMainApplicantEmailAddressModalWndw();
+                .EnterNewEmailTenantAppOccGuarInFieldMainApplicantEmailAddressModalWndw();
 
             string getEmailStepFirstActual = Pages.ModalWndwCreateApplication.GetEmailStepFirst();
             string partEmailPutsBoxTenantCreator = Pages.ModalWndwCreateApplication.CopyEmailBeforeDogFromMdlWndwCreateApplicationStepFirst();
@@ -1074,8 +1077,8 @@ namespace MarketplaceAdminTests
             #region Preconditions Test Data
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string buildingAddress = "1 Washington Square";
-            string unitNumber = "5";
+            string buildingAddress = "2 Washington Square";
+            string unitNumber = "1";
             string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_NOT_CREATED;
 
             #endregion
@@ -1104,7 +1107,7 @@ namespace MarketplaceAdminTests
                 .ClickButtonPlusApplication();
             Pages.ModalWndwCreateApplication
                 .VerifyTitleCreateApplicationModalWndw()
-                .EnterNewEmailInFieldMainApplicantEmailAddressModalWndw();
+                .EnterNewEmailOnlyTenantAppInFieldMainApplicantEmailAddressModalWndw();
 
             string getEmailStepFirstActual = Pages.ModalWndwCreateApplication.GetEmailStepFirst();
             string partEmailPutsBox = Pages.ModalWndwCreateApplication.CopyEmailBeforeDogFromMdlWndwCreateApplicationStepFirst();
@@ -1153,12 +1156,12 @@ namespace MarketplaceAdminTests
 
             Pages.ModalWindowPleaseTellUsYourName
                 .ClickButtonSaveMdlWndw();
-            Pages.HeaderCazamioTenant
-               .ClickButtonMyApplicationsHdrCzmTnnt();
             Pages.MyAccountCazamioTenant
                 .ClickTabAccountOnMyAccntPg()
                 .ClickButtonEditMyAccntPgTabAccnt()
                 .VerifyEmailNewTenant(getEmailStepFirstActual);
+
+            WaitUntil.WaitSomeInterval(1000);
 
             #endregion
 

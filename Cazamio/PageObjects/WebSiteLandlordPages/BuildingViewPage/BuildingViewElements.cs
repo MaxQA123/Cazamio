@@ -28,7 +28,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage
         [FindsBy(How = How.XPath, Using = (""))]
         public IWebElement ButtonUnitSortingInTabApartmentsBldngVwPg;
 
-        [FindsBy(How = How.XPath, Using = ("//table//tbody//tr//td[text() = '4']"))]
+        [FindsBy(How = How.XPath, Using = ("//table//tbody//tr//td[text() = '1']"))]
         public IWebElement UnitFourInTabApartmentsBldngVwPg;
 
         #endregion
