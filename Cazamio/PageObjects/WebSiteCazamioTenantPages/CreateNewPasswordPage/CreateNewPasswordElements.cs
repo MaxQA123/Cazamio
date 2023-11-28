@@ -16,7 +16,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.CreateNewPassword
         [FindsBy(How = How.XPath, Using = "//div[@class= 'show-password-container']//div")]
         public IWebElement IconShowCreateNewPsswrdPg;
 
-        [FindsBy(How = How.XPath, Using = "//button[@class= 'large primary-action absolute-loader']")]
+        [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Save my password']")]
         public IWebElement ButtonSaveMyPasswordCreateNewPsswrdPg;
     }
 }
