@@ -136,7 +136,9 @@ namespace CazamioProgect.Helpers
         public const string EMAIL_AGENT_MARIE_URMSTRONG = "agent175marie5urm@putsbox.com";
         public const string USER_NAME_MARIE_URMSTRONG = "Marie Urmstrong";
 
-        public const string ADDRESS_BUILDING_FIFTEEN_MP = "2 Washington Square";
+        public const string SHORT_ADDRESS_BUILDING_FIFTEEN_MP = "2 Washington Square";
+        public const string FULL_ADDRESS_UNIT_FIFTEEN_MP = "2 Washington Square, New York, NY, 10012 #2 ";
+        public const string SHORT_ADDRESS_UNIT_FIFTEEN_MP = "2 Washington Square #2";
 
         #endregion
 

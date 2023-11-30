@@ -1213,6 +1213,9 @@ namespace MarketplaceAdminTests
 
             Pages.ApplicationDetail
                 .ClickButtonEditApplication();
+            Pages.ModalWindowEditApplication
+                .VerifyTitleEditApplicationMdlWndwEdtApplctn()
+                .ClickButtonInFormEditApplication();
 
             #endregion
 

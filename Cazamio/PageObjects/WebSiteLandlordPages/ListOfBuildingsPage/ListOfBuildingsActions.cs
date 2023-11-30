@@ -10,7 +10,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
 {
     public partial class ListOfBuildings
     {
-        string buildingAddress = TestDataForWebSiteAdmin.ADDRESS_BUILDING_FIFTEEN_MP;
+        string buildingAddress = TestDataForWebSiteAdmin.SHORT_ADDRESS_BUILDING_FIFTEEN_MP;
 
         [AllureStep("ClickButtonAddBuilding")]
         public ListOfBuildings ClickButtonAddBuilding()

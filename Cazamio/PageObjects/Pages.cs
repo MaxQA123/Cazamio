@@ -54,6 +54,7 @@ using CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwAddAApplicantPage
 using CazamioProject.PageObjects.WebSiteCazamioTenantPages.ModalWindowPleaseTellUsYourName;
 using CazamioProject.PageObjects.WebSiteCazamioTenantPages.MdlWndwAreYouSureLogOut;
 using CazamioProject.PageObjects.WebSiteLandlordPages.ApplicationDetailPage;
+using CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowEditApplication;
 
 namespace CazamioProgect.PageObjects
 {
@@ -125,6 +126,7 @@ namespace CazamioProgect.PageObjects
         public static ModalWindowPleaseTellUsYourName ModalWindowPleaseTellUsYourName => GetPage<ModalWindowPleaseTellUsYourName>();
         public static MdlWndwAreYouSureLogOut MdlWndwAreYouSureLogOut => GetPage<MdlWndwAreYouSureLogOut>();
         public static ApplicationDetail ApplicationDetail => GetPage<ApplicationDetail>();
+        public static ModalWindowEditApplication ModalWindowEditApplication => GetPage<ModalWindowEditApplication>();
 
         #endregion
     }
