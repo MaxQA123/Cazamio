@@ -10,12 +10,27 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfApplicationsPage
 {
     public partial class ListOfApplications
     {
+        string unitAddressTwoWashingtonSquareUnitTwo = "2 Washington Square #2";
+
         [AllureStep("ClickButtonPlusApplication")]
         public ListOfApplications ClickButtonPlusApplication()
         {
             WaitUntil.WaitSomeInterval(4000);
             WaitUntil.CustomElementIsVisible(ButtonPlusApplication);
             Button.Click(ButtonPlusApplication);
+
+            return this;
+        }
+
+        [AllureStep("SelectItemTwoWashingtonSquareUnitTwo")]
+        public ListOfApplications SelectItemTwoWashingtonSquareUnitTwo()
+        {
+            WaitUntil.WaitSomeInterval(3000);
+            WaitUntil.CustomElementIsVisible(FieldInputSearchLstOfApplctn);
+            Button.Click(FieldInputSearchLstOfApplctn);
+            InputGeneral.InputFunctionWithClear(FieldInputSearchLstOfApplctn, unitAddressTwoWashingtonSquareUnitTwo);
+            WaitUntil.CustomElementIsVisible(ItemTwoWashingtonSquareUnitTwo);
+            Button.Click(ItemTwoWashingtonSquareUnitTwo);
 
             return this;
         }

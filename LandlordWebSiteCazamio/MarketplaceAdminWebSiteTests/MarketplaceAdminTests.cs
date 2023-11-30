@@ -1204,14 +1204,19 @@ namespace MarketplaceAdminTests
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
             Pages.SideBarLandlord
                 .ClickButtonApplicationsSidebar();
+            Pages.ListOfApplications
+                .SelectItemTwoWashingtonSquareUnitTwo();
 
             #endregion
 
             #region Test
 
-
+            Pages.ApplicationDetail
+                .ClickButtonEditApplication();
 
             #endregion
+
+            WaitUntil.WaitSomeInterval(3000);
         }
     }
 }

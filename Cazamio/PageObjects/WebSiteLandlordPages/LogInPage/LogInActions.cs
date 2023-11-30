@@ -73,6 +73,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         [AllureStep("ClickButtonLetsGoLogInPg")]
         public LogInLandlord ClickButtonLetsGoLogInPg()
         {
+            WaitUntil.WaitSomeInterval(2000);
             Button.Click(ButtonLetsGoLogInPg);
             WaitUntil.WaitSomeInterval(1000);
 

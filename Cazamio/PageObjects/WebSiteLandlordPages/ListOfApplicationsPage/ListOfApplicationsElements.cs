@@ -15,5 +15,11 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfApplicationsPage
 
         [FindsBy(How = How.XPath, Using = "//button//span[text() = '+Application']")]
         public IWebElement ButtonPlusApplication;
+
+        [FindsBy(How = How.XPath, Using = "//application-list//tbody//tr//td[text() = '2 Washington Square #2']")]
+        public IWebElement ItemTwoWashingtonSquareUnitTwo;
+
+        [FindsBy(How = How.XPath, Using = "//application-list//input[@id = 'field-search']")]
+        public IWebElement FieldInputSearchLstOfApplctn;
     }
 }
