@@ -61,12 +61,11 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
         }
 
         [AllureStep("SelectorDaysPickerDaysSecondLine")]
-        public static IList<IWebElement> SelectorDaysPickerDaysSecondLine(string _locationDay)
+        public IWebElement SelectorDaysPickerDaysSecondLine()
         {
             WaitUntil.WaitSomeInterval(1000);
-            var str = "//table//tbody[@class = 'mat-calendar-body']//tr[2]";
-            _element = Browser._Driver.FindElement(By.XPath(str));
-            return _element.FindElements(By.XPath($".//td[contains(@class, 'mat-calendar-body-cell-container ng-star-inserted')]//button//span[contains(text(), '{_locationDay}')]"));
+            var str = Browser._Driver.FindElement(By.XPath($"//table//tbody[@class = 'mat-calendar-body']//button/span[contains(text(), '{DateTime.Now.AddDays(1).Day}')]"));
+            return str;
         }
 
         [AllureStep("SelectorDaysPickerDaysThirdLine")]
@@ -116,16 +115,16 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
             return this;
         }
 
-        [AllureStep("SelectDayOnDatePickerSecondLine")]
-        public DatePicker SelectDayOnDatePickerSecondLine(int day, string locationDay)
-        {
-            WaitUntil.WaitSomeInterval(500);
-            IList<IWebElement> _day = SelectorDaysPickerDaysSecondLine(locationDay);
+        //[AllureStep("SelectDayOnDatePickerSecondLine")]
+        //public DatePicker SelectDayOnDatePickerSecondLine(int day, string locationDay)
+        //{
+        //    WaitUntil.WaitSomeInterval(500);
+        //    IList<IWebElement> _day = SelectorDaysPickerDaysSecondLine(locationDay);
 
-            _day[day].Click();
+        //    _day[day].Click();
 
-            return this;
-        }
+        //    return this;
+        //}
 
         [AllureStep("SelectDayOnDatePickerThirdLine")]
         public DatePicker SelectDayOnDatePickerThirdLine(int day, string locationDay)

@@ -158,23 +158,23 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             WaitUntil.CustomElementIsVisible(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaListOfApplication, 10);
             Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaListOfApplication);
             WaitUntil.WaitSomeInterval(100);
-            Pages.DatePicker
-                .SelectDayOnDatePickerFivethLine(DaysForDatePiker.SECOND_NUMBER, " ");
+            Button.Click(Pages.DatePicker
+                .SelectorDaysPickerDaysSecondLine());
 
             return this;
         }
 
-        [AllureStep("SelectDateAvailableForCreateApplicationModalWndwViaApartmentView")]
-        public ModalWndwCreateApplication SelectDateAvailableForCreateApplicationModalWndwViaApartmentView()
-        {
-            //WaitUntil.CustomElementIsVisible(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView, 10);
-            Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView);
-            WaitUntil.WaitSomeInterval(100);
-            Pages.DatePicker
-                .SelectDayOnDatePickerFivethLine(DaysForDatePiker.SECOND_NUMBER, " ");
+        //[AllureStep("SelectDateAvailableForCreateApplicationModalWndwViaApartmentView")]
+        //public ModalWndwCreateApplication SelectDateAvailableForCreateApplicationModalWndwViaApartmentView()
+        //{
+        //    //WaitUntil.CustomElementIsVisible(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView, 10);
+        //    Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView);
+        //    WaitUntil.WaitSomeInterval(100);
+        //    Pages.DatePicker
+        //        .SelectDayOnDatePickerSecondLine(DaysForDatePiker.FIRST_NUMBER, " ");
 
-            return this;
-        }
+        //    return this;
+        //}
 
         [AllureStep("GetLeasePriceStepThirdFromUi")]
         public string GetLeasePriceStepThirdFromUi()

@@ -13,6 +13,9 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowEditApplica
         [FindsBy(How = How.XPath, Using = ("//h3[text() = 'Edit application']"))]
         public IWebElement TitleEditApplication;
 
+        //[FindsBy(How = How.XPath, Using = ("//h3[text() = 'Edit application']"))]
+        //public IWebElement TitleEditApplication;
+
         [FindsBy(How = How.XPath, Using = ("//div[@class = 'edit-address-icon ng-star-inserted']"))]
         public IWebElement ButtonInFormEditApplication;
     }

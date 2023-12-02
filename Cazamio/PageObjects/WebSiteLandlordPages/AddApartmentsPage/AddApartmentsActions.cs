@@ -80,17 +80,17 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             return this;
         }
 
-        [AllureStep("SelectDateAvailableFromAprtmntsUnitsPage")]
-        public AddApartments SelectDateAvailableFromAprtmntsUnitsPage()
-        {
-            WaitUntil.CustomElementIsVisible(FieldInputAvailableFromAddAprtmntsUnitsPage, 10);
-            Button.Click(FieldInputAvailableFromAddAprtmntsUnitsPage);
-            WaitUntil.WaitSomeInterval(100);
-            Pages.DatePicker
-                .SelectDayOnDatePickerSecondLine(DaysThirdLineForDatePiker.THIRD_LINE_FIRST_NUMBER, " ");
+        //[AllureStep("SelectDateAvailableFromAprtmntsUnitsPage")]
+        //public AddApartments SelectDateAvailableFromAprtmntsUnitsPage()
+        //{
+        //    WaitUntil.CustomElementIsVisible(FieldInputAvailableFromAddAprtmntsUnitsPage, 10);
+        //    Button.Click(FieldInputAvailableFromAddAprtmntsUnitsPage);
+        //    WaitUntil.WaitSomeInterval(100);
+        //    Pages.DatePicker
+        //        .SelectDayOnDatePickerSecondLine(DaysThirdLineForDatePiker.THIRD_LINE_FIRST_NUMBER, " ");
 
-            return this;
-        }
+        //    return this;
+        //}
 
         [AllureStep("ClickButtonPaymentMethodsAddAprtmntsUnitsPage")]
         public AddApartments ClickButtonPaymentMethodsAddAprtmntsUnitsPage()

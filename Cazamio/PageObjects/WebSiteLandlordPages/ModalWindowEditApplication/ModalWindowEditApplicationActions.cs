@@ -19,5 +19,17 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowEditApplica
 
             return this;
         }
+
+        //[AllureStep("GetFullAddrressUnit")]
+        //public string GetFullAddrressUnit()
+        //{
+        //    WaitUntil.WaitSomeInterval(1000);
+        //    WaitUntil.CustomElementIsVisible(ValueFromStringLeadEmailModalWndw);
+        //    string getEmailStepThird = ValueFromStringLeadEmailModalWndw.Text;
+        //    string getEmailStepThirdActual = getEmailStepThird.ToString();
+        //    //Console.WriteLine($"Email step third: {getEmailStepThirdActual}");
+
+        //    return getEmailStepThirdActual;
+        //}
     }
 }
