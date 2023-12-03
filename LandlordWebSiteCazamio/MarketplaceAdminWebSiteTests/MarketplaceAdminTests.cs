@@ -696,7 +696,6 @@ namespace MarketplaceAdminTests
 
         //Ќужно учесть количество символов дл€ Regex в коротком адресе дома и номер юнита, например, "1 Washington Square #4".
         //” апартамента должно быть только одно заначение в поле "Rental terms".
-        //¬ыставить дату дл€ Date Picker больше чем текуща€ дата.
 
         #endregion
 
@@ -762,17 +761,19 @@ namespace MarketplaceAdminTests
 
             Pages.ModalWndwCreateApplication
                 .EnterPriceFieldInputRequestedOfferPriceModalWndw()
-                .SelectDateAvailableForCreateApplicationModalWndwViaListOfApplication()
-                .ClickButtonCreateStepThreeModalWndw()
-                .VerifyMessageStepFourModalWndw();
+                .SelectDateAvailableForCreateApplicationModalWndwViaListOfApplication();
 
             string getLeasePriceActual = Pages.ModalWndwCreateApplication.GetLeasePriceStepThirdFromUi();
             string getSecurityDepositActual = Pages.ModalWndwCreateApplication.GetSecurityDepositStepThirdFromUi();
             string getMonthlyRentsPrePaymentActual = Pages.ModalWndwCreateApplication.GetMonthlyRentsPrePaymentStepThirdFromUi();
             string getRentalTermsActual = Pages.ModalWndwCreateApplication.GetRentalTermsStepThirdFromUi();
 
-            //Pages.ModalWndwCreateAApplication
-            //    .VerifyFieldsAutocompleteInStepThird(getLeasePriceFromDb, getSecurityDepositFromDb, getMonthlyRentsPrePaymentFromDb, getRentalTermsFromDb, getLeasePriceActual, getSecurityDepositActual, getMonthlyRentsPrePaymentActual, getRentalTermsActual);
+            Pages.ModalWndwCreateApplication
+                .ClickButtonCreateStepThreeModalWndw()
+                .VerifyMessageStepFourModalWndw();
+
+            Pages.ModalWndwCreateApplication
+                .VerifyFieldsAutocompleteInStepThird((int) getLeasePriceFromDb, getSecurityDepositFromDb, getMonthlyRentsPrePaymentFromDb, getRentalTermsFromDb, getLeasePriceActual, getSecurityDepositActual, getMonthlyRentsPrePaymentActual, getRentalTermsActual);
 
             #endregion
 
@@ -803,7 +804,6 @@ namespace MarketplaceAdminTests
 
         //Ќужно учесть количество символов дл€ Regex в коротком адресе дома и номер юнита, например, "1 Washington Square #4".
         //” апартамента должно быть только одно заначение в поле "Rental terms".
-        //¬ыставить дату дл€ Date Picker больше чем текуща€ дата.
 
         #endregion
 
@@ -920,7 +920,6 @@ namespace MarketplaceAdminTests
 
         //Ќужно учесть количество символов дл€ Regex в коротком адресе дома и номер юнита, например, "1 Washington Square #4".
         //” апартамента должно быть только одно заначение в поле "Rental terms".
-        //¬ыставить дату дл€ Date Picker больше чем текуща€ дата.
 
         #endregion
 
@@ -1126,7 +1125,7 @@ namespace MarketplaceAdminTests
 
             Pages.ModalWndwCreateApplication
                 .EnterPriceFieldInputRequestedOfferPriceModalWndw()
-                //.SelectDateAvailableForCreateApplicationModalWndwViaApartmentView()
+                .SelectDateAvailableForCreateApplicationModalWndwViaApartmentView()
                 .ClickButtonCreateStepThreeModalWndw()
                 .VerifyMessageStepFourModalWndw();
 

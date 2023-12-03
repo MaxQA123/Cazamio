@@ -315,7 +315,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             Button.Click(FieldInputDateFromSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFivethLine(DaysSecondLineForDatePiker.SECOND_LINE_FIRST_NUMBER, " ");
+                .SelectorDaysPickerDaysSecondLine();
             WaitUntil.WaitSomeInterval(100);
             Button.Click(FieldInputDateToSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
@@ -323,7 +323,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
                 .ClickButtonArrowNextMonth();
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerThirdLine(DaysThirdLineForDatePiker.THIRD_LINE_SECOND_NUMBER, " ");
+                .SelectorDaysPickerDaysSecondLine();
             WaitUntil.WaitSomeInterval(100);
             Button.Click(ButtonSaveSpecialsNwBldngPg);
 
@@ -347,7 +347,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             Button.Click(FieldInputDateFromSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerFivethLine(DaysSecondLineForDatePiker.SECOND_LINE_FIRST_NUMBER, " ");
+                .SelectorDaysPickerDaysSecondLine();
             WaitUntil.WaitSomeInterval(100);
             Button.Click(FieldInputDateToSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
@@ -355,7 +355,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
                 .ClickButtonArrowNextMonth();
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectDayOnDatePickerThirdLine(DaysThirdLineForDatePiker.THIRD_LINE_SECOND_NUMBER, " ");
+                .SelectorDaysPickerDaysSecondLine();
             WaitUntil.WaitSomeInterval(100);
             Button.Click(ButtonSaveSpecialsNwBldngPg);
 

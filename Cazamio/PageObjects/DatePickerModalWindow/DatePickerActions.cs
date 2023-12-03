@@ -51,123 +51,12 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
 
         private static IWebElement _element;
 
-        [AllureStep("SelectorDaysPickerDaysFirstLine")]
-        public static IList<IWebElement> SelectorDaysPickerDaysFirstLine(string _locationDay)
-        {
-            WaitUntil.WaitSomeInterval(1000);
-            var str = "//table//tbody[@class = 'mat-calendar-body']//tr[1]";
-            _element = Browser._Driver.FindElement(By.XPath(str));
-            return _element.FindElements(By.XPath($".//td[contains(@class, 'mat-calendar-body-cell-container ng-star-inserted')]//button//span[contains(text(), '{_locationDay}')]"));
-        }
-
         [AllureStep("SelectorDaysPickerDaysSecondLine")]
         public IWebElement SelectorDaysPickerDaysSecondLine()
         {
             WaitUntil.WaitSomeInterval(1000);
             var str = Browser._Driver.FindElement(By.XPath($"//table//tbody[@class = 'mat-calendar-body']//button/span[contains(text(), '{DateTime.Now.AddDays(1).Day}')]"));
             return str;
-        }
-
-        [AllureStep("SelectorDaysPickerDaysThirdLine")]
-        public static IList<IWebElement> SelectorDaysPickerDaysThirdLine(string _locationDay)
-        {
-            WaitUntil.WaitSomeInterval(1000);
-            var str = "//table//tbody[@class = 'mat-calendar-body']//tr[3]";
-            _element = Browser._Driver.FindElement(By.XPath(str));
-            return _element.FindElements(By.XPath($".//td[contains(@class, 'mat-calendar-body-cell-container ng-star-inserted')]//button//span[contains(text(), '{_locationDay}')]"));
-        }
-
-        [AllureStep("SelectorDaysPickerDaysFourthLine")]
-        public static IList<IWebElement> SelectorDaysPickerDaysFourthLine(string _locationDay)
-        {
-            WaitUntil.WaitSomeInterval(1000);
-            var str = "//table//tbody[@class = 'mat-calendar-body']//tr[4]";
-            _element = Browser._Driver.FindElement(By.XPath(str));
-            return _element.FindElements(By.XPath($".//td[contains(@class, 'mat-calendar-body-cell-container ng-star-inserted')]//button//span[contains(text(), '{_locationDay}')]"));
-        }
-
-        [AllureStep("SelectorDaysPickerDaysFivethLine")]
-        public static IList<IWebElement> SelectorDaysPickerDaysFivethLine(string _locationDay)
-        {
-            WaitUntil.WaitSomeInterval(1000);
-            var str = "//table//tbody[@class = 'mat-calendar-body']//tr[5]";
-            _element = Browser._Driver.FindElement(By.XPath(str));
-            return _element.FindElements(By.XPath($".//td[contains(@class, 'mat-calendar-body-cell-container ng-star-inserted')]//button//span[contains(text(), '{_locationDay}')]"));
-        }
-
-        [AllureStep("SelectorDaysPickerDaysSixthLine")]
-        public static IList<IWebElement> SelectorDaysPickerDaysSixthLine(string _locationDay)
-        {
-            WaitUntil.WaitSomeInterval(1000);
-            var str = "//table//tbody[@class = 'mat-calendar-body']//tr[6]";
-            _element = Browser._Driver.FindElement(By.XPath(str));
-            return _element.FindElements(By.XPath($".//td[contains(@aria-label, '{_locationDay}')]"));
-        }
-
-        [AllureStep("SelectDayOnDatePickerFirstLine")]
-        public DatePicker SelectDayOnDatePickerFirstLine(int day, string locationDay)
-        {
-            WaitUntil.WaitSomeInterval(500);
-            IList<IWebElement> _day = SelectorDaysPickerDaysFirstLine(locationDay);
-
-            _day[day].Click();
-
-            return this;
-        }
-
-        //[AllureStep("SelectDayOnDatePickerSecondLine")]
-        //public DatePicker SelectDayOnDatePickerSecondLine(int day, string locationDay)
-        //{
-        //    WaitUntil.WaitSomeInterval(500);
-        //    IList<IWebElement> _day = SelectorDaysPickerDaysSecondLine(locationDay);
-
-        //    _day[day].Click();
-
-        //    return this;
-        //}
-
-        [AllureStep("SelectDayOnDatePickerThirdLine")]
-        public DatePicker SelectDayOnDatePickerThirdLine(int day, string locationDay)
-        {
-            WaitUntil.WaitSomeInterval(500);
-            IList<IWebElement> _day = SelectorDaysPickerDaysThirdLine(locationDay);
-
-            _day[day].Click();
-
-            return this;
-        }
-
-        [AllureStep("SelectDayOnDatePickerFourthLine")]
-        public DatePicker SelectDayOnDatePickerFourthLine(int day, string locationDay)
-        {
-            WaitUntil.WaitSomeInterval(500);
-            IList<IWebElement> _day = SelectorDaysPickerDaysFourthLine(locationDay);
-
-            _day[day].Click();
-
-            return this;
-        }
-
-        [AllureStep("SelectDayOnDatePickerFivethLine")]
-        public DatePicker SelectDayOnDatePickerFivethLine(int day, string locationDay)
-        {
-            WaitUntil.WaitSomeInterval(500);
-            IList<IWebElement> _day = SelectorDaysPickerDaysFivethLine(locationDay);
-
-            _day[day].Click();
-
-            return this;
-        }
-
-        [AllureStep("SelectDayOnDatePickerSixthLine")]
-        public DatePicker SelectDayOnDatePickerSixthLine(int day, string locationDay)
-        {
-            WaitUntil.WaitSomeInterval(500);
-            IList<IWebElement> _day = SelectorDaysPickerDaysSixthLine(locationDay);
-
-            _day[day].Click();
-
-            return this;
         }
 
         #endregion

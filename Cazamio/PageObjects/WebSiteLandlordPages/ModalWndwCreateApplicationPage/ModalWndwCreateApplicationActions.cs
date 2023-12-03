@@ -164,17 +164,17 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             return this;
         }
 
-        //[AllureStep("SelectDateAvailableForCreateApplicationModalWndwViaApartmentView")]
-        //public ModalWndwCreateApplication SelectDateAvailableForCreateApplicationModalWndwViaApartmentView()
-        //{
-        //    //WaitUntil.CustomElementIsVisible(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView, 10);
-        //    Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView);
-        //    WaitUntil.WaitSomeInterval(100);
-        //    Pages.DatePicker
-        //        .SelectDayOnDatePickerSecondLine(DaysForDatePiker.FIRST_NUMBER, " ");
+        [AllureStep("SelectDateAvailableForCreateApplicationModalWndwViaApartmentView")]
+        public ModalWndwCreateApplication SelectDateAvailableForCreateApplicationModalWndwViaApartmentView()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView, 10);
+            Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(Pages.DatePicker
+                .SelectorDaysPickerDaysSecondLine());
 
-        //    return this;
-        //}
+            return this;
+        }
 
         [AllureStep("GetLeasePriceStepThirdFromUi")]
         public string GetLeasePriceStepThirdFromUi()
