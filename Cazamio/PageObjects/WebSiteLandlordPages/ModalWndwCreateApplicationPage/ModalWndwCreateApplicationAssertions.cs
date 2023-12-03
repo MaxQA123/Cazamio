@@ -49,7 +49,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         }
 
         [AllureStep("VerifyFieldsAutocompleteInStepThird")]
-        public ModalWndwCreateApplication VerifyFieldsAutocompleteInStepThird(int getLeasePriceFromDb, decimal? getSecurityDepositFromDb, int? getMonthlyRentsPrePaymentFromDb, string getRentalTermsFromDb, string getLeasePriceActual, string getSecurityDepositActual, string getMonthlyRentsPrePaymentActual, string getRentalTermsActual)
+        public ModalWndwCreateApplication VerifyFieldsAutocompleteInStepThird(int getLeasePriceFromDb, int getSecurityDepositFromDb, int? getMonthlyRentsPrePaymentFromDb, string getRentalTermsFromDb, int getLeasePriceActual, int getSecurityDepositActual, int? getMonthlyRentsPrePaymentActual, string getRentalTermsActual)
         {
             Assert.Multiple(() =>
             {
@@ -58,10 +58,10 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
                 Assert.AreEqual(getMonthlyRentsPrePaymentFromDb, getMonthlyRentsPrePaymentActual);
                 Assert.AreEqual(getRentalTermsFromDb, getRentalTermsActual);
 
-                Console.WriteLine($"Lease Price: {getLeasePriceActual}");
-                Console.WriteLine($"Security Deposit: {getSecurityDepositActual}");
-                Console.WriteLine($"Monthly Rents Pre Payment: {getMonthlyRentsPrePaymentActual}");
-                Console.WriteLine($"Rental Terms: {getRentalTermsActual}");
+                Console.WriteLine($"{getLeasePriceActual}");
+                Console.WriteLine($"{getSecurityDepositActual}");
+                Console.WriteLine($"{getMonthlyRentsPrePaymentActual}");
+                Console.WriteLine($"{getRentalTermsActual}");
             });
 
             return this;

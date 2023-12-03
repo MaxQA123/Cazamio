@@ -65,7 +65,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         [FindsBy(How = How.XPath, Using = "//form//mat-form-field//input")]
         public IWebElement FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView;
 
-        [FindsBy(How = How.XPath, Using = "//input[@id = 'mat-input-3']")]
+        [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'rentalTerms']")]
         public IWebElement FieldInputRentalTermsModalWndw;
 
         [FindsBy(How = How.XPath, Using = "//cazamio-mobile-button//span[text() = 'Create']")]

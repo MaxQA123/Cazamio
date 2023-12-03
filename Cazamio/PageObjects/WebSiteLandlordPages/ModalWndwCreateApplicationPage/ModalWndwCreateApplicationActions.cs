@@ -177,39 +177,36 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         }
 
         [AllureStep("GetLeasePriceStepThirdFromUi")]
-        public string GetLeasePriceStepThirdFromUi()
+        public int GetLeasePriceStepThirdFromUi()
         {
             WaitUntil.WaitSomeInterval(100);
             WaitUntil.CustomElementIsVisible(FieldInputLeasePriceModalWndw);
-            string getLeasePrice = FieldInputLeasePriceModalWndw.GetAttribute("value");
-            string getLeasePriceActual = getLeasePrice.ToString();
+            int getLeasePrice = int.Parse(FieldInputLeasePriceModalWndw.GetAttribute("value"));
             //Console.WriteLine($"Email step first: {getEmailActual}");
 
-            return getLeasePriceActual;
+            return getLeasePrice;
         }
 
         [AllureStep("GetSecurityDepositStepThirdFromUi")]
-        public string GetSecurityDepositStepThirdFromUi()
+        public int GetSecurityDepositStepThirdFromUi()
         {
             WaitUntil.WaitSomeInterval(100);
             WaitUntil.CustomElementIsVisible(FieldInputSecurityDepositModalWndw);
-            string getSecurityDeposit = FieldInputSecurityDepositModalWndw.GetAttribute("value");
-            string getSecurityDepositActual = getSecurityDeposit.ToString();
+            int getSecurityDeposit = int.Parse(FieldInputSecurityDepositModalWndw.GetAttribute("value"));
             //Console.WriteLine($"Email step first: {getEmailActual}");
 
-            return getSecurityDepositActual;
+            return getSecurityDeposit;
         }
 
         [AllureStep("GetMonthlyRentsPrePaymentStepThirdFromUi")]
-        public string GetMonthlyRentsPrePaymentStepThirdFromUi()
+        public int GetMonthlyRentsPrePaymentStepThirdFromUi()
         {
             WaitUntil.WaitSomeInterval(100);
             WaitUntil.CustomElementIsVisible(FieldInputMonthlyRentsPrePaymentModalWndw);
-            string getMonthlyRentsPrePayment = FieldInputMonthlyRentsPrePaymentModalWndw.GetAttribute("value");
-            string getMonthlyRentsPrePaymentActual = getMonthlyRentsPrePayment.ToString();
+            int getMonthlyRentsPrePayment = int.Parse(FieldInputMonthlyRentsPrePaymentModalWndw.GetAttribute("value"));
             //Console.WriteLine($"Email step first: {getEmailActual}");
 
-            return getMonthlyRentsPrePaymentActual;
+            return getMonthlyRentsPrePayment;
         }
 
         [AllureStep("GetRentalTermsStepThirdFromUi")]
