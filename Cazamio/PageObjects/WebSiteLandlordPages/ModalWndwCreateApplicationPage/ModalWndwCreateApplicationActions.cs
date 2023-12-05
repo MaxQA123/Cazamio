@@ -117,7 +117,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             return regexPartUnitAddressActual;
         }
 
-        [AllureStep("GetUnitAddressStepSecond")]
+        [AllureStep("GetShortUnitAddressStepSecond")]
         public string GetShortUnitAddressStepSecond()
         {
             WaitUntil.WaitSomeInterval(1000);

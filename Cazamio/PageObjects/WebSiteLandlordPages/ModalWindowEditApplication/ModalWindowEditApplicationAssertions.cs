@@ -18,5 +18,22 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowEditApplica
 
             return this;
         }
+
+        [AllureStep("VerifyEmailAndUnitAddress")]
+        public ModalWindowEditApplication VerifyBuildingAddress(string actual, string expected)
+        {
+            Assert.Multiple(() =>
+            {
+                Console.WriteLine($"Email: {actual.ToString()}");
+                Console.WriteLine($"Unit Address: {expected}");
+                //Assert.AreEqual(getUnitAddressStepSecondActual, getUnitAddressStepThirdActual);
+                //Assert.AreEqual(getUnitAddressStepSecondActual, getUnitAddressStepThirdActual);
+
+                //Console.WriteLine($"Email: {getEmailStepThirdActual}");
+                //Console.WriteLine($"Unit Address: {getUnitAddressStepThirdActual}");
+            });
+
+            return this;
+        }
     }
 }

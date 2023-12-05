@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwAddAApplicantPage
@@ -72,6 +73,19 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwAddAApplicant
             Button.Click(ButtonAddMdlWndwAddAApplicant);
 
             return this;
+        }
+
+        [AllureStep("GetPartEmailAddressOccupant")]
+        public string GetPartEmailAddressOccupant()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.CustomElementIsVisible(FirstFieldInputEmailAddressMdlWndwAddAApplicant);
+            string getEmailOccupant = FirstFieldInputEmailAddressMdlWndwAddAApplicant.GetAttribute("value");
+            Regex regexEmailOccupant = new Regex(@"^............");
+            string partEmail = regexEmailOccupant.Match(getEmailOccupant).ToString();
+            //Console.WriteLine($"Email step first: {getEmailActual}");
+
+            return partEmail;
         }
     }
 }
