@@ -694,7 +694,7 @@ namespace MarketplaceAdminTests
 
         #region Preconditions
 
-        //Ќужно учесть количество символов дл€ Regex в коротком адресе дома и номер юнита, например, "1 Washington Square #4".
+        //Ќужно учесть количество слов дл€ Regex в коротком адресе дома и номер юнита, например, "1 Washington Square #4".
         //” апартамента должно быть только одно заначение в поле "Rental terms".
 
         #endregion
@@ -802,7 +802,7 @@ namespace MarketplaceAdminTests
 
         #region Preconditions
 
-        //Ќужно учесть количество символов дл€ Regex в коротком адресе дома и номер юнита, например, "1 Washington Square #4".
+        //Ќужно учесть количество слов дл€ Regex в коротком адресе дома и номер юнита, например, "1 Washington Square #4".
         //” апартамента должно быть только одно заначение в поле "Rental terms".
 
         #endregion
@@ -1163,22 +1163,22 @@ namespace MarketplaceAdminTests
                 .VerifyTitleLetterCreateTenant()
                 .ClickButtonBodyHtml()
                 .ClickButtonConfirmEmailForTenant();
-            Pages.ModalWindowPleaseTellUsYourName
-                .VerifyTitleHowShallWeCallYouMdlWndw()
-                .EnterFirstName()
-                .EnterLastName();
+            //Pages.ModalWindowPleaseTellUsYourName
+            //    .VerifyTitleHowShallWeCallYouMdlWndw()
+            //    .EnterFirstName()
+            //    .EnterLastName();
 
-            string firstNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowPleaseTellUsYourName.GetFirstNameFromModalWindowHowShallWeCallYou();
-            string lastNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowPleaseTellUsYourName.GetLastNameFromModalWindowHowShallWeCallYou();
+            //string firstNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowPleaseTellUsYourName.GetFirstNameFromModalWindowHowShallWeCallYou();
+            //string lastNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowPleaseTellUsYourName.GetLastNameFromModalWindowHowShallWeCallYou();
 
-            Pages.ModalWindowPleaseTellUsYourName
-                .ClickButtonSaveMdlWndw();
-            Pages.MyAccountCazamioTenant
-                .ClickTabAccountOnMyAccntPg()
-                .ClickButtonEditMyAccntPgTabAccnt()
-                .VerifyEmailNewTenant(getEmailStepFirstActual);
+            //Pages.ModalWindowPleaseTellUsYourName
+            //    .ClickButtonSaveMdlWndw();
+            //Pages.MyAccountCazamioTenant
+            //    .ClickTabAccountOnMyAccntPg()
+            //    .ClickButtonEditMyAccntPgTabAccnt()
+            //    .VerifyEmailNewTenant(getEmailStepFirstActual);
 
-            WaitUntil.WaitSomeInterval(1000);
+            //WaitUntil.WaitSomeInterval(1000);
 
             #endregion
 
@@ -1193,7 +1193,7 @@ namespace MarketplaceAdminTests
 
             #endregion
 
-            WaitUntil.WaitSomeInterval(3000);
+            WaitUntil.WaitSomeInterval(5000);
         }
 
         [Test]

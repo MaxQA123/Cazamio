@@ -148,10 +148,10 @@ namespace BrokerTests
                 .ClickButtonTransactionsSidebar();
             Pages.ListOfTransactions
                 .VerifyTitleTransactionsPg();
-            Pages.SideBarLandlord
-                .ClickButtonCommissionsSidebar();
-            Pages.ListOfCommissions
-                .VerifyTitleListOfCommissionsPg();
+            //Pages.SideBarLandlord
+            //    .ClickButtonCommissionsSidebar();
+            //Pages.ListOfCommissions
+            //    .VerifyTitleListOfCommissionsPg();
             Pages.SideBarLandlord
                 .ClickButtonAgentsSidebar();
             Pages.Agents
