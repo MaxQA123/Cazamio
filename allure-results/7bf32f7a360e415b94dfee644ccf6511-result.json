@@ -1,0 +1,417 @@
+{
+  "uuid": "a3104910-eefc-4716-964e-5022aeeb3237-tr-0-1002",
+  "historyId": "TenantCazamioTests.TestsBaseWeb.SignUpAsTenant",
+  "fullName": "TenantCazamioTests.TestsBaseWeb.SignUpAsTenant",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "TenantCazamioTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "SignUpAsTenant"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "WebSiteTenant"
+    },
+    {
+      "name": "subSuite",
+      "value": "SignUpAsTenant"
+    }
+  ],
+  "links": [],
+  "name": "SignUpAsTenant",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.WebDriverTimeoutException : Timed out after 10 seconds",
+    "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.CustomElementIsVisible(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 46\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 39\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProgect.PageObjects.EmailPutsBox.PutsBox.__a$_around_ClickButtonBodyHtml_100663651_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\EmailPutsBoxPage\\EmailPutsBoxActions.cs:line 21\r\n   at CazamioProgect.PageObjects.EmailPutsBox.PutsBox.__a$_around_ClickButtonBodyHtml_100663651_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.EmailPutsBox.PutsBox.__a$_around_ClickButtonBodyHtml_100663651_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.EmailPutsBox.PutsBox.ClickButtonBodyHtml()\r\n   at TenantCazamioTests.TestsBaseWeb.SignUpAsTenant() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 86"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "SignUpAsTenant",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.WebDriverTimeoutException : Timed out after 10 seconds",
+        "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.CustomElementIsVisible(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 46\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 39\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProgect.PageObjects.EmailPutsBox.PutsBox.__a$_around_ClickButtonBodyHtml_100663651_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\EmailPutsBoxPage\\EmailPutsBoxActions.cs:line 21\r\n   at CazamioProgect.PageObjects.EmailPutsBox.PutsBox.__a$_around_ClickButtonBodyHtml_100663651_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.EmailPutsBox.PutsBox.__a$_around_ClickButtonBodyHtml_100663651_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.EmailPutsBox.PutsBox.ClickButtonBodyHtml()\r\n   at TenantCazamioTests.TestsBaseWeb.SignUpAsTenant() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 86"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "ClickButtonSignUpHdrCzmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1702214449330,
+              "stop": 1702214451018
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1702214448823,
+          "stop": 1702214451019
+        },
+        {
+          "name": "EnterFirstLastNameEmailPasswordSignUpPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Hilario"
+                }
+              ],
+              "start": 1702214451818,
+              "stop": 1702214452340
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Kuhic"
+                }
+              ],
+              "start": 1702214452854,
+              "stop": 1702214453349
+            },
+            {
+              "name": "RandomEmail",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "5"
+                }
+              ],
+              "start": 1702214453868,
+              "stop": 1702214453880
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "zheib@putsbox.com"
+                }
+              ],
+              "start": 1702214453880,
+              "stop": 1702214454488
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1702214455003,
+              "stop": 1702214455490
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1702214451020,
+          "stop": 1702214455490
+        },
+        {
+          "name": "ClickIconShowSignUpPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1702214455491,
+              "stop": 1702214456339
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1702214455491,
+          "stop": 1702214456339
+        },
+        {
+          "name": "CopyEmailFromSignUpPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1702214456341,
+          "stop": 1702214456890
+        },
+        {
+          "name": "CopyEmailBeforeDogFromSignUpPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1702214456891,
+          "stop": 1702214457436
+        },
+        {
+          "name": "ClickButtonGetStartedSignUpPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1702214457437,
+              "stop": 1702214458069
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1702214457437,
+          "stop": 1702214458069
+        },
+        {
+          "name": "OpenNewTab",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1702214458070,
+          "stop": 1702214458159
+        },
+        {
+          "name": "ClickButtonBodyHtml",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "Timed out after 10 seconds",
+            "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.CustomElementIsVisible(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 46\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 39\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProgect.PageObjects.EmailPutsBox.PutsBox.__a$_around_ClickButtonBodyHtml_100663651_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\EmailPutsBoxPage\\EmailPutsBoxActions.cs:line 21\r\n   at CazamioProgect.PageObjects.EmailPutsBox.PutsBox.__a$_around_ClickButtonBodyHtml_100663651_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "failed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false,
+                "message": "Timed out after 10 seconds",
+                "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.CustomElementIsVisible(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 46\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 39\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663741_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1702214460208,
+              "stop": 1702214470326
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1702214459697,
+          "stop": 1702214470327
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "7e94f89ba1694905ae9f1e725e1b971d-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1702214442398,
+      "stop": 1702214472786
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1702214442397,
+  "stop": 1702214472800
+}

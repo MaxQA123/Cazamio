@@ -22,7 +22,7 @@ namespace CazamioProgect.PageObjects.GeneralPages.SignUpCazamioTenantPage
         [FindsBy(How = How.XPath, Using = "//input[@id = 'password']")]
         public IWebElement FieldInputPasswordSignUpPg;
 
-        [FindsBy(How = How.XPath, Using = "//span[text() = 'Show']")]
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'show-password-container']//span[text() = 'Show']")]
         public IWebElement IconShowSignUpPg;
 
         [FindsBy(How = How.XPath, Using = "//cazamio-button[@class = 'large primary-action absolute-loader']")]

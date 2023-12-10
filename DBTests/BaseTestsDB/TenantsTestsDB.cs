@@ -519,6 +519,31 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBTenant")]
+        [AllureSubSuite("DeleteNewlyCreatedTenantViaSigUp")]
+
+        public void DeleteNewlyCreatedTenantViaSigUp()
+        {
+            #region Preconditions
+
+            #region Preconditions Test Data
+
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            string emailPutsBox = "lk67at@putsbox.com";
+
+            #endregion
+
+            #endregion
+
+            DBRequestTeants.Tenants.DeleteCreatedUserTenant(emailPutsBox, marketplaceId);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailPutsBox, marketplaceId);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBTenant")]
         [AllureSubSuite("Demo")]
 
         public void Demo()

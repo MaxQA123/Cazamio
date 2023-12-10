@@ -71,8 +71,7 @@ namespace TenantCazamioTests
             Pages.HeaderCazamioTenant
                 .ClickButtonSignUpHdrCzmTnnt();
             Pages.SignUpCazamioTenant
-                .DemoEnterFirstLastNameEmailPasswordSignUpPg()
-                .ClickIconShowSignUpPg();
+                .EnterFirstLastNameEmailPasswordSignUpPg();
 
             string emailPutsBox = Pages.SignUpCazamioTenant.CopyEmailFromSignUpPg();
             string partEmailPutsBox = Pages.SignUpCazamioTenant.CopyEmailBeforeDogFromSignUpPg();

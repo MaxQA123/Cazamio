@@ -1163,22 +1163,22 @@ namespace MarketplaceAdminTests
                 .VerifyTitleLetterCreateTenant()
                 .ClickButtonBodyHtml()
                 .ClickButtonConfirmEmailForTenant();
-            //Pages.ModalWindowPleaseTellUsYourName
-            //    .VerifyTitleHowShallWeCallYouMdlWndw()
-            //    .EnterFirstName()
-            //    .EnterLastName();
+            Pages.ModalWindowPleaseTellUsYourName
+                .VerifyTitleHowShallWeCallYouMdlWndw()
+                .EnterFirstName()
+                .EnterLastName();
 
-            //string firstNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowPleaseTellUsYourName.GetFirstNameFromModalWindowHowShallWeCallYou();
-            //string lastNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowPleaseTellUsYourName.GetLastNameFromModalWindowHowShallWeCallYou();
+            string firstNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowPleaseTellUsYourName.GetFirstNameFromModalWindowHowShallWeCallYou();
+            string lastNameFromModalWindowHowShallWeCallYou = Pages.ModalWindowPleaseTellUsYourName.GetLastNameFromModalWindowHowShallWeCallYou();
 
-            //Pages.ModalWindowPleaseTellUsYourName
-            //    .ClickButtonSaveMdlWndw();
-            //Pages.MyAccountCazamioTenant
-            //    .ClickTabAccountOnMyAccntPg()
-            //    .ClickButtonEditMyAccntPgTabAccnt()
-            //    .VerifyEmailNewTenant(getEmailStepFirstActual);
+            Pages.ModalWindowPleaseTellUsYourName
+                .ClickButtonSaveMdlWndw();
+            Pages.MyAccountCazamioTenant
+                .ClickTabAccountOnMyAccntPg()
+                .ClickButtonEditMyAccntPgTabAccnt()
+                .VerifyEmailNewTenant(getEmailStepFirstActual);
 
-            //WaitUntil.WaitSomeInterval(1000);
+            WaitUntil.WaitSomeInterval(1000);
 
             #endregion
 

@@ -13,17 +13,20 @@ namespace CazamioProgect.PageObjects.GeneralPages.SignUpCazamioTenantPage
 {
     public partial class SignUpCazamioTenant
     {
+        //string 
         [AllureStep("EnterFirstLastNameEmailPasswordSignUpPg")]
         public SignUpCazamioTenant EnterFirstLastNameEmailPasswordSignUpPg()
         {
-            WaitUntil.WaitSomeInterval(500);
+            WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputFirstNameSignUpPg, Name.FirstName());
-            WaitUntil.WaitSomeInterval(500);
+            WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputLastNameSignUpPg, Name.LastName());
-            WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputEmailSignUpPg, GenerateRandomDataHelper.RandomEmail(5) + NameDomen.XITROO);
-            WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputPasswordSignUpPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailSignUpPg, GenerateRandomDataHelper.RandomEmail(5) + NameDomen.PUTS_BOX);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputPasswordSignUpPg, "Qwerty123!");
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(IconShowSignUpPg);
 
             return this;
         }
@@ -65,18 +68,18 @@ namespace CazamioProgect.PageObjects.GeneralPages.SignUpCazamioTenantPage
             return partEmail;
         }
 
-        public SignUpCazamioTenant DemoEnterFirstLastNameEmailPasswordSignUpPg()
-        {
-            WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputFirstNameSignUpPg, Name.FirstName());
-            WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputLastNameSignUpPg, Name.LastName());
-            WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputEmailSignUpPg, GenerateRandomDataHelper.RandomEmail(5) + NameDomen.PUTS_BOX);
-            WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputPasswordSignUpPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
+        //public SignUpCazamioTenant EnterFirstLastNameEmailPasswordSignUpPg()
+        //{
+        //    WaitUntil.WaitSomeInterval(500);
+        //    InputGeneral.InputFunctionWithClear(FieldInputFirstNameSignUpPg, Name.FirstName());
+        //    WaitUntil.WaitSomeInterval(500);
+        //    InputGeneral.InputFunctionWithClear(FieldInputLastNameSignUpPg, Name.LastName());
+        //    WaitUntil.WaitSomeInterval(500);
+        //    InputGeneral.InputFunctionWithClear(FieldInputEmailSignUpPg, GenerateRandomDataHelper.RandomEmail(5) + NameDomen.PUTS_BOX);
+        //    WaitUntil.WaitSomeInterval(500);
+        //    InputGeneral.InputFunctionWithClear(FieldInputPasswordSignUpPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
 
-            return this;
-        }
+        //    return this;
+        //}
     }
 }
