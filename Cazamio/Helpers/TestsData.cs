@@ -53,7 +53,7 @@ namespace CazamioProgect.Helpers
     public class TestDataForWebSiteTenant
     {
         public const string EMAIL_TENANT = "miza33h@putsbox.com";
-        public const string EMAIL_TENANT_NOT_CREATED = "task1517acre@putsbox.com";
+        public const string EMAIL_TENANT_NOT_CREATED = "task1517ccre@putsbox.com";
         public const string EMAIL_TENANT_CREATOR_NOT_CREATED = "task1587bcre@putsbox.com";
         public const string EMAIL_TENANT_OCCUPANT_NOT_CREATED = "task1587bocc@putsbox.com";
         public const string EMAIL_TENANT_GUARANTOR_NOT_CREATED = "task1587bgua@putsbox.com";
