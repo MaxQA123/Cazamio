@@ -383,6 +383,59 @@ namespace CazamioProject.Helpers
                 }
                 return data;
             }
+
+            public static string DeleteApplicationAndNewlyCreatedTenantApplicantCreatedViaButtonPlusApplication(long? apartmentId, long? apartmentApplicationId, string emailTenantCreator, int marketplaceId)
+            {
+                string data = null;
+                using (SqlConnection db = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB))
+                {
+                    SqlCommand command = new("DELETE FROM ChatCursors WHERE UserId" +
+                               " IN" +
+                               " (SELECT UserId FROM Tenants WHERE UserId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @emailTenantCreator AND MarketplaceId = @marketplaceId))" +
+                               " DELETE FROM ApartmentHistories WHERE TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @emailTenantCreator AND MarketplaceId = @marketplaceId)" +
+                               " DELETE FROM ApplicationPrices WHERE ApartmentApplicationId = @apartmentApplicationId" +
+                               " DELETE FROM ApartmentApplicationProgress WHERE ApartmentApplicationId = @apartmentApplicationId" +
+                               " AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM Tenants WHERE UserId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @emailTenantCreator AND MarketplaceId = @marketplaceId))" +
+                               " DELETE FROM TenantLeases WHERE ApartmentApplicationId = @apartmentApplicationId" +
+                               " AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM Tenants WHERE UserId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @emailTenantCreator AND MarketplaceId = @marketplaceId))" +
+                               " DELETE FROM ApartmentApplications WHERE ApartmentId = @apartmentId" +
+                               " AND TenantId" +
+                               " IN" +
+                               " (SELECT Id FROM AspNetUsers WHERE Email = @emailTenantCreator AND MarketplaceId = @marketplaceId)" +
+                               " DELETE FROM Tenants" +
+                               " WHERE UserId IN(SELECT Id FROM AspNetUsers WHERE Email = @emailTenantCreator AND MarketplaceId = @marketplaceId)" +
+                               " DELETE FROM AspNetUsers" +
+                               " WHERE Email = @emailTenantCreator AND MarketplaceId = @marketplaceId", db);
+                    command.Parameters.AddWithValue("@apartmentId", DbType.String).Value = apartmentId;
+                    command.Parameters.AddWithValue("@apartmentApplicationId", DbType.String).Value = apartmentApplicationId;
+                    command.Parameters.AddWithValue("@emailTenantCreator", DbType.String).Value = emailTenantCreator;
+                    command.Parameters.AddWithValue("@marketplaceId", DbType.String).Value = marketplaceId;
+
+                    db.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            data = reader.GetValue(0).ToString();
+                        }
+                    }
+                }
+                return data;
+            }
         }
     }
 

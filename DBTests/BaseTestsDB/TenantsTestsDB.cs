@@ -507,9 +507,8 @@ namespace DBTests.BaseTestsDB
             Console.WriteLine($"ApartmentId: {apartmentId}");
             var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
             Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithNewlyCreatedTenantApplicant(apartmentId, apartmentApplicationId, emailTenantCreator, marketplaceId);
-            DBRequestAspNetUsers.AspNetUsers.DeleteFromAspNetUsersNewlyCreatedTenantApplicantWithoutApplication(emailTenantCreator, marketplaceId);
-
+            DBRequestApartmentApplications.ApartmentApplications.DeleteApplicationAndNewlyCreatedTenantApplicantCreatedViaButtonPlusApplication(apartmentId, apartmentApplicationId, emailTenantCreator, marketplaceId);
+            
             #endregion
         }
 
