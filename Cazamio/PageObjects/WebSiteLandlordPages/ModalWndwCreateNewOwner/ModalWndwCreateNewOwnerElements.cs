@@ -26,7 +26,10 @@ namespace CazamioProject.PageObjects.ModalWndwCreateNewOwner
         public IWebElement FieldInputOfficeLocation;
 
         [FindsBy(How = How.XPath, Using = ("//div//ng-select[@id = 'broker']"))]
-        public IWebElement ButtonSelectBroker;
+        public IWebElement ButtonSelectUser;
+
+        [FindsBy(How = How.XPath, Using = ("//ng-dropdown-panel//span[text() = 'Marie Urmstrong']"))]
+        public IWebElement ItemAgentUser;
 
         [FindsBy(How = How.XPath, Using = ("//textarea[@id = 'note']"))]
         public IWebElement FieldInputInternalNotes;

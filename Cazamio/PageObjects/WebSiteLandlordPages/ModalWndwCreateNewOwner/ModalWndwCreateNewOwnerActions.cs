@@ -51,9 +51,20 @@ namespace CazamioProject.PageObjects.ModalWndwCreateNewOwner
         public ModalWndwCreateNewOwner SelectBroker()
         {
             WaitUntil.WaitSomeInterval(100);
-            Button.Click(ButtonSelectBroker);
+            Button.Click(ButtonSelectUser);
             WaitUntil.WaitSomeInterval(100);
             KeyBoardActions.ClickEnterButton();
+
+            return this;
+        }
+
+        [AllureStep("SelectAgent")]
+        public ModalWndwCreateNewOwner SelectAgent()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonSelectUser);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ItemAgentUser);
 
             return this;
         }

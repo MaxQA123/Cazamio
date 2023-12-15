@@ -394,9 +394,9 @@ namespace MarketplaceAdminTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
-        [AllureSubSuite("CreateOwner")]
+        [AllureSubSuite("CreateOwnerWithAssignedBroker")]
 
-        public void CreateOwner()
+        public void CreateOwnerWithAssignedBroker()
         {
             #region Preconditions Test Data
 
@@ -431,6 +431,93 @@ namespace MarketplaceAdminTests
                 .EnterOwnerEmaiL()
                 .EnterOfficeLocation()
                 .SelectBroker()
+                .EnterInternalNotes()
+                .ClickButtonAddPhoneNumber()
+                .EnterPhoneExtensionNumbers()
+                .ClickButtonAddCommissionStructure();
+            KeyBoardActions.ScrollToDown();
+            Pages.ModalWndwCreateNewOwner
+                .SwitchingItemsPays()
+                .ClickButtonAddMgmt()
+                .ClickButtonPayType()
+                .SelectItemOwnerAndTenantPays()
+                .EnterDataOwnerAndTenantPays()
+                .ScrollDown()
+                .EnterDataMgmt();
+
+            string getOwnerEmailFromModalWndw = Pages.ModalWndwCreateNewOwner.GetEmailFromFieldOwnerEmail();
+
+            Pages.ModalWndwCreateNewOwner
+                .ClickButtonCreate();
+            Pages.ListOfOwners
+                .VerifyMessageSuccessCreatedOwner();
+
+            string getLastEmailFromPage = Pages.ListOfOwners.GetFirstEmailFromTable();
+
+            Pages.ListOfOwners
+                .VerifyEmailForNewOwner(getOwnerEmailFromModalWndw, getLastEmailFromPage);
+
+            var marketplaceIdFromDb = DbRequestOwners.DBOwners.GetMarketplaceIdByEmailUserOwner(getOwnerEmailFromModalWndw);
+            Console.WriteLine($"MarketplaceId of owner: {marketplaceIdFromDb}");
+
+            #endregion
+
+            #region Postconditions
+
+            DBRequestOwnerCommissionsStructure.OwnerCommissionsStructure.DeleteRecordAboutOwnerCommissionsStructure(getOwnerEmailFromModalWndw, marketplaceId);
+            DBRequestOwnerPhoneNumbers.OwnerPhoneNumbers.DeleteRecordAboutOwnerPhoneNumber(getOwnerEmailFromModalWndw, marketplaceId);
+            DBRequestOwnerManagements.OwnerManagements.DeleteRecordAboutOwnerManagements(getOwnerEmailFromModalWndw, marketplaceId);
+            DbRequestOwners.DBOwners.DeleteCreatedUserOwner(getOwnerEmailFromModalWndw, marketplaceId);
+
+            #endregion
+
+            WaitUntil.WaitSomeInterval(2000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("MarketplaceAdmin")]
+        [AllureSubSuite("CreateOwnerWithAssignedAgent")]
+
+        public void CreateOwnerWithAssignedAgent()
+        {
+            #region Preconditions Test Data
+
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+
+            #endregion
+
+            #region Preconditions Test
+
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare)
+                .ClickButtonOwnersSidebar();
+
+            #endregion
+
+            #region Test
+
+            Pages.ListOfOwners
+                .ClickButtonCreateOwner();
+            Pages.ModalWndwCreateNewOwner
+                .VerifyTitleCreateANewOwner()
+                .EnterCompanyName()
+                .EnterOwnerName()
+                .EnterOwnerEmaiL()
+                .EnterOfficeLocation()
+                .SelectAgent()
                 .EnterInternalNotes()
                 .ClickButtonAddPhoneNumber()
                 .EnterPhoneExtensionNumbers()

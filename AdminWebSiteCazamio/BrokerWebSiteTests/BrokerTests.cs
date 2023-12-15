@@ -264,15 +264,17 @@ namespace BrokerTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Broker")]
-        [AllureSubSuite("CreateOwner")]
+        [AllureSubSuite("CreateOwnerWithAssignedBroker")]
 
-        public void CreateOwner()
+        public void CreateOwnerWithAssignedBroker()
         {
             #region Preconditions
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
             #endregion
+
+            #region Preconditions Test
 
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsBroker()
@@ -285,6 +287,11 @@ namespace BrokerTests
             Pages.SideBarLandlord
                 .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare)
                 .ClickButtonOwnersSidebar();
+
+            #endregion
+
+            #region Test
+
             Pages.ListOfOwners
                 .ClickButtonCreateOwner();
             Pages.ModalWndwCreateNewOwner
@@ -321,6 +328,8 @@ namespace BrokerTests
 
             var marketplaceIdFromDb = DbRequestOwners.DBOwners.GetMarketplaceIdByEmailUserOwner(getOwnerEmailFromModalWndw);
             Console.WriteLine($"MarketplaceId of owner: {marketplaceIdFromDb}");
+
+            #endregion
 
             #region Postconditions
 
