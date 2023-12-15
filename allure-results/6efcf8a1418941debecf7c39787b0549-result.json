@@ -1,0 +1,91 @@
+{
+  "uuid": "8044e5c0-2878-454e-bda1-1bdc38c3d3d7-tr-0-1069",
+  "historyId": "DBTests.BaseTestsDB.TenantsTestsDB.DeleteNewlyCreatedTenantAppAndApplicationViaButtonPlusApplication",
+  "fullName": "DBTests.BaseTestsDB.TenantsTestsDB.DeleteNewlyCreatedTenantAppAndApplicationViaButtonPlusApplication",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "DBTests.BaseTestsDB"
+    },
+    {
+      "name": "testMethod",
+      "value": "DeleteNewlyCreatedTenantAppAndApplicationViaButtonPlusApplication"
+    },
+    {
+      "name": "testClass",
+      "value": "TenantsTestsDB"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "TestingDBTenant"
+    },
+    {
+      "name": "subSuite",
+      "value": "DeleteNewlyCreatedTenantAppAndApplicationViaButtonPlusApplication"
+    }
+  ],
+  "links": [],
+  "name": "DeleteNewlyCreatedTenantAppAndApplicationViaButtonPlusApplication",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "System.ArgumentException : Error: The parameterized query '(@apartmentId nvarchar(4000),@tenantEmail nvarchar(24),@marketpl' expects the parameter '@apartmentId', which was not supplied.\r\n   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader()\r\n   at CazamioProject.Helpers.DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(Nullable`1 apartmentId, String tenantEmail, Int32 marketplaceId) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TableApartmentApplications\\DBRequestApartmentApplications.cs:line 75",
+    "trace": "   at CazamioProject.Helpers.DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(Nullable`1 apartmentId, String tenantEmail, Int32 marketplaceId) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TableApartmentApplications\\DBRequestApartmentApplications.cs:line 84\r\n   at DBTests.BaseTestsDB.TenantsTestsDB.DeleteNewlyCreatedTenantAppAndApplicationViaButtonPlusApplication() in C:\\Automation\\Cazamio\\DBTests\\BaseTestsDB\\TenantsTestsDB.cs:line 508"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "DeleteNewlyCreatedTenantAppAndApplicationViaButtonPlusApplication",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "System.ArgumentException : Error: The parameterized query '(@apartmentId nvarchar(4000),@tenantEmail nvarchar(24),@marketpl' expects the parameter '@apartmentId', which was not supplied.\r\n   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)\r\n   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader()\r\n   at CazamioProject.Helpers.DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(Nullable`1 apartmentId, String tenantEmail, Int32 marketplaceId) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TableApartmentApplications\\DBRequestApartmentApplications.cs:line 75",
+        "trace": "   at CazamioProject.Helpers.DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(Nullable`1 apartmentId, String tenantEmail, Int32 marketplaceId) in C:\\Automation\\Cazamio\\Cazamio\\DBHelpers\\TableApartmentApplications\\DBRequestApartmentApplications.cs:line 84\r\n   at DBTests.BaseTestsDB.TenantsTestsDB.DeleteNewlyCreatedTenantAppAndApplicationViaButtonPlusApplication() in C:\\Automation\\Cazamio\\DBTests\\BaseTestsDB\\TenantsTestsDB.cs:line 508"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "8dd30510c9664ff0960b585de33ace0d-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1702459494398,
+      "stop": 1702459496757
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1702459494397,
+  "stop": 1702459496768
+}

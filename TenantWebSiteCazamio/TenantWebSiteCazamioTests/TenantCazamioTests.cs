@@ -109,9 +109,9 @@ namespace TenantCazamioTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("WebSiteTenant")]
-        [AllureSubSuite("LogInAsTenant")]
+        [AllureSubSuite("LogInTenant")]
 
-        public void LogInAsTenant()
+        public void LogInTenant()
         {
             Pages.HeaderCazamioTenant
                 .ClickButtonLogInHdrCzmTnnt();
@@ -130,6 +130,8 @@ namespace TenantCazamioTests
 
             Pages.MyAccountCazamioTenant
                 .VerifyTenatFirstLastNameTW(getFirstNameForCompare, getLastNameForCompare);
+            Pages.HeaderCazamioTenant
+                .LogOutFromAccountViaHeader();
 
             WaitUntil.WaitSomeInterval(2000);
         }
