@@ -254,12 +254,23 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             return this;
         }
 
-        //[AllureStep("ClickFieldInputRequestedOfferPriceModalWndw")]
-        //public ModalWndwCreateAApplication ClickFieldInputRequestedOfferPriceModalWndw()
-        //{
-        //    WaitUntil.CustomElementIsVisible(FieldInputRequestedOfferPriceModalWndw);
-        //    InputGeneral.InputFunctionWithClear(FieldInputRequestedOfferPriceModalWndw, GenerateRandomDataHelper.RandomNumberWithoutZero(3));
-        //    return this;
-        //}
+        [AllureStep("AddConcessionForModalWndw")]
+        public ModalWndwCreateApplication AddConcessionForModalWndw()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonPlusAddConcessionModalWndw);
+            Button.Click(ButtonPlusAddConcessionModalWndw);
+            InputGeneral.InputFunctionWithClear(FieldInputMonthsFreeModalWndw, "0.75");
+
+            return this;
+        }
+
+        [AllureStep("GetNetEffectiveStepThirdFromUi")]
+        public string GetNetEffectiveStepThirdFromUi()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            string getNetEffective = FieldNetEffectiveRentModalWndw.GetAttribute("value");
+
+            return getNetEffective;
+        }
     }
 }

@@ -56,6 +56,15 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         [FindsBy(How = How.XPath, Using = "//input[@id = 'security-deposit']")]
         public IWebElement FieldInputSecurityDepositModalWndw;
 
+        [FindsBy(How = How.XPath, Using = "//form//div[@class = 'add-fields-container']//div[@class = 'add-fields-text']")]
+        public IWebElement ButtonPlusAddConcessionModalWndw;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'monthsFree']")]
+        public IWebElement FieldInputMonthsFreeModalWndw;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'netPrice']")]
+        public IWebElement FieldNetEffectiveRentModalWndw;
+
         [FindsBy(How = How.XPath, Using = "//input[@id = 'rent-pre-payment']")]
         public IWebElement FieldInputMonthlyRentsPrePaymentModalWndw;
 

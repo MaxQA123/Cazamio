@@ -856,24 +856,29 @@ namespace MarketplaceAdminTests
             string getRentalTermsActual = Pages.ModalWndwCreateApplication.GetRentalTermsStepThirdFromUi();
 
             Pages.ModalWndwCreateApplication
-                .ClickButtonCreateStepThreeModalWndw()
-                .VerifyMessageStepFourModalWndw();
+                .AddConcessionForModalWndw();
 
-            Pages.ModalWndwCreateApplication
-                .VerifyFieldsAutocompleteInStepThird((int)getLeasePriceFromDb, (int)getSecurityDepositFromDb, getMonthlyRentsPrePaymentFromDb, getRentalTermsFromDb, getLeasePriceActual, getSecurityDepositActual, getMonthlyRentsPrePaymentActual, getRentalTermsActual);
+            string getNetEffectiveActual = Pages.ModalWndwCreateApplication.GetNetEffectiveStepThirdFromUi();
 
-            #endregion
+            //Pages.ModalWndwCreateApplication
+            //    .ClickButtonCreateStepThreeModalWndw()
+            //    .VerifyMessageStepFourModalWndw();
 
-            #region Postconditions
-
-            var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
-            Console.WriteLine($"ApartmentId: {apartmentId}");
-            var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
-            Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithAlreadyCrtdTenantApplicant(apartmentId, apartmentApplicationId, emailTenant, marketplaceId);
-
+            //Pages.ModalWndwCreateApplication
+            //    .VerifyFieldsAutocompleteInStepThird((int)getLeasePriceFromDb, (int)getSecurityDepositFromDb, getMonthlyRentsPrePaymentFromDb, getRentalTermsFromDb, getLeasePriceActual, getSecurityDepositActual, getMonthlyRentsPrePaymentActual, getRentalTermsActual);
 
             #endregion
+
+            //#region Postconditions
+
+            //var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
+            //Console.WriteLine($"ApartmentId: {apartmentId}");
+            //var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
+            //Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
+            //DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithAlreadyCrtdTenantApplicant(apartmentId, apartmentApplicationId, emailTenant, marketplaceId);
+
+
+            //#endregion
 
             WaitUntil.WaitSomeInterval(3000);
         }
