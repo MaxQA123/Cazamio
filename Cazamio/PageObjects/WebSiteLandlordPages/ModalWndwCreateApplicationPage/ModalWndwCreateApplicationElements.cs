@@ -71,11 +71,23 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         [FindsBy(How = How.XPath, Using = "//form//mat-form-field//input")]
         public IWebElement FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaListOfApplication;
 
+        [FindsBy(How = How.XPath, Using = "//form//div[@class = 'add-fields-container'][2]//div[@class = 'add-fields-text']")]
+        public IWebElement ButtonPlusAddRequestedWorkModalWndw;
+
+        [FindsBy(How = How.XPath, Using = "//textarea[@id = 'requestedWork']")]
+        public IWebElement FieldInputRequestedWorkModalWndw;
+
         [FindsBy(How = How.XPath, Using = "//form//mat-form-field//input")]
         public IWebElement FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView;
 
         [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'rentalTerms']")]
         public IWebElement FieldInputRentalTermsModalWndw;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'is-referral']")]
+        public IWebElement CheckBoxIsThereAReferralAgentModalWndw;
+
+        [FindsBy(How = How.XPath, Using = "//textarea[@id = 'referral-details']")]
+        public IWebElement FieldInputRefferalDetailsModalWndw;
 
         [FindsBy(How = How.XPath, Using = "//cazamio-mobile-button//span[text() = 'Create']")]
         public IWebElement ButtonCreateStepThreeModalWndw;

@@ -272,5 +272,27 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
 
             return getNetEffective;
         }
+
+        [AllureStep("AddRequestedWorkForModalWndw")]
+        public ModalWndwCreateApplication AddRequestedWorkForModalWndw()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonPlusAddRequestedWorkModalWndw);
+            InputGeneral.InputFunctionWithClear(FieldInputRequestedWorkModalWndw, GeneralTestDataForAllUsers.TEXT_SHORT_LOREM);
+            KeyBoardActions.ClickTab();
+            KeyBoardActions.ClickTab();
+
+            return this;
+        }
+
+        [AllureStep("EnterTextInFieldRefferalDetailsModalWndw")]
+        public ModalWndwCreateApplication EnterTextInFieldRefferalDetailsModalWndw()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(CheckBoxIsThereAReferralAgentModalWndw);
+            InputGeneral.InputFunctionWithClear(FieldInputRefferalDetailsModalWndw, GeneralTestDataForAllUsers.TEXT_SHORT_LOREM);
+
+            return this;
+        }
     }
 }

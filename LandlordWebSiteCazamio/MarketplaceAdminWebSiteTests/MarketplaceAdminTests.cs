@@ -856,6 +856,8 @@ namespace MarketplaceAdminTests
             string getRentalTermsActual = Pages.ModalWndwCreateApplication.GetRentalTermsStepThirdFromUi();
 
             Pages.ModalWndwCreateApplication
+                .AddRequestedWorkForModalWndw()
+                .EnterTextInFieldRefferalDetailsModalWndw()
                 .AddConcessionForModalWndw();
 
             string getNetEffectiveActual = Pages.ModalWndwCreateApplication.GetNetEffectiveStepThirdFromUi();
