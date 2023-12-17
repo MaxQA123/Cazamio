@@ -860,27 +860,37 @@ namespace MarketplaceAdminTests
                 .EnterTextInFieldRefferalDetailsModalWndw()
                 .AddConcessionForModalWndw();
 
-            string getNetEffectiveActual = Pages.ModalWndwCreateApplication.GetNetEffectiveStepThirdFromUi();
+            decimal getNetEffectiveActualFromCrtApplctn = Pages.ModalWndwCreateApplication.GetNetEffectiveStepThirdFromUi();
 
-            //Pages.ModalWndwCreateApplication
-            //    .ClickButtonCreateStepThreeModalWndw()
-            //    .VerifyMessageStepFourModalWndw();
+            Pages.ModalWndwCreateApplication
+                .ClickButtonCreateStepThreeModalWndw()
+                .VerifyMessageStepFourModalWndw()
+                .ClickButtonCloseStepFourModalWndwModalWndw();
 
-            //Pages.ModalWndwCreateApplication
-            //    .VerifyFieldsAutocompleteInStepThird((int)getLeasePriceFromDb, (int)getSecurityDepositFromDb, getMonthlyRentsPrePaymentFromDb, getRentalTermsFromDb, getLeasePriceActual, getSecurityDepositActual, getMonthlyRentsPrePaymentActual, getRentalTermsActual);
+            Pages.ListOfApplications
+                .SelectFirstItemInLitsOFApplications();
+            Pages.ApplicationDetail
+                .VerifyTitleApplicationDetailPg();
+
+            decimal getNetRentActualApplctnDtlPg = Pages.ApplicationDetail.GetNetRentApplctnDtlPg();
+
+            Pages.ApplicationDetail
+                .VerifyNetRent(getNetEffectiveActualFromCrtApplctn, getNetRentActualApplctnDtlPg);
+            Pages.ModalWndwCreateApplication
+                .VerifyFieldsAutocompleteInStepThird((int)getLeasePriceFromDb, (int)getSecurityDepositFromDb, getMonthlyRentsPrePaymentFromDb, getRentalTermsFromDb, getLeasePriceActual, getSecurityDepositActual, getMonthlyRentsPrePaymentActual, getRentalTermsActual);
 
             #endregion
 
-            //#region Postconditions
+            #region Postconditions
 
-            //var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
-            //Console.WriteLine($"ApartmentId: {apartmentId}");
-            //var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
-            //Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            //DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithAlreadyCrtdTenantApplicant(apartmentId, apartmentApplicationId, emailTenant, marketplaceId);
+            var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
+            Console.WriteLine($"ApartmentId: {apartmentId}");
+            var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
+            Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
+            DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithAlreadyCrtdTenantApplicant(apartmentId, apartmentApplicationId, emailTenant, marketplaceId);
 
 
-            //#endregion
+            #endregion
 
             WaitUntil.WaitSomeInterval(3000);
         }

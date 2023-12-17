@@ -265,10 +265,10 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         }
 
         [AllureStep("GetNetEffectiveStepThirdFromUi")]
-        public string GetNetEffectiveStepThirdFromUi()
+        public decimal GetNetEffectiveStepThirdFromUi()
         {
             WaitUntil.WaitSomeInterval(100);
-            string getNetEffective = FieldNetEffectiveRentModalWndw.GetAttribute("value");
+            decimal getNetEffective = decimal.Parse(FieldNetEffectiveRentModalWndw.GetAttribute("value"));
 
             return getNetEffective;
         }
@@ -291,6 +291,16 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             WaitUntil.WaitSomeInterval(100);
             Button.Click(CheckBoxIsThereAReferralAgentModalWndw);
             InputGeneral.InputFunctionWithClear(FieldInputRefferalDetailsModalWndw, GeneralTestDataForAllUsers.TEXT_SHORT_LOREM);
+
+            return this;
+        }
+
+        [AllureStep("ClickButtonCloseStepFourModalWndwModalWndw")]
+        public ModalWndwCreateApplication ClickButtonCloseStepFourModalWndwModalWndw()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonCloseStepFourModalWndw);
+            WaitUntil.WaitSomeInterval(3000);
 
             return this;
         }

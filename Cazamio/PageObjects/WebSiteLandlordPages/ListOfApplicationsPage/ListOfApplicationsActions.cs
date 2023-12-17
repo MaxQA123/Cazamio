@@ -34,5 +34,14 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfApplicationsPage
 
             return this;
         }
+
+        [AllureStep("SelectFirstItemInLitsOFApplications")]
+        public ListOfApplications SelectFirstItemInLitsOFApplications()
+        {
+            WaitUntil.CustomElementIsVisible(FirstItemInLitsOFApplications);
+            Button.Click(FirstItemInLitsOFApplications);
+
+            return this;
+        }
     }
 }

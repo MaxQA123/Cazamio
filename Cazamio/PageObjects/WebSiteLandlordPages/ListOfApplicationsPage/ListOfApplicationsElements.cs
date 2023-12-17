@@ -21,5 +21,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfApplicationsPage
 
         [FindsBy(How = How.XPath, Using = "//application-list//input[@id = 'field-search']")]
         public IWebElement FieldInputSearchLstOfApplctn;
+
+        [FindsBy(How = How.XPath, Using = "//application-list//div[@class = 'custom-table-wrapper']//tbody//tr")]
+        public IWebElement FirstItemInLitsOFApplications;
     }
 }
