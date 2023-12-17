@@ -17,8 +17,8 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         [AllureStep("GetFirstNameFromMyAccount")]
         public string GetFirstNameFromMyAccount()
         {
-            WaitUntil.WaitSomeInterval(500);
-            string getFirstName = Browser._Driver.FindElement(By.XPath("//div[@class= 'info-title']")).Text;
+            WaitUntil.WaitSomeInterval(100);
+            string getFirstName = FieldInputFirsNameMyAccntPgTabAccnt.GetAttribute("value");
             string getFirstNameActual = getFirstName.ToString();
 
             return getFirstNameActual;
@@ -27,8 +27,8 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         [AllureStep("GetLastNameFromMyAccount")]
         public string GetLastNameFromMyAccount()
         {
-            WaitUntil.WaitSomeInterval(500);
-            string getLastName = Browser._Driver.FindElement(By.XPath("//div[@class = 'info-account ng-star-inserted']//div[2]//div[@class = 'info-title']")).Text;
+            WaitUntil.WaitSomeInterval(100);
+            string getLastName = FieldInputLastNameMyAccntPgTabAccnt.GetAttribute("value");
             string getLastNameActual = getLastName.ToString();
 
             return getLastNameActual;
@@ -82,15 +82,19 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
             return this;
         }
 
-        [AllureStep("VerifyEmailNewTenant")]
-        public MyAccountCazamioTenant VerifyEmailNewTenant(string emailExpected)
+        [AllureStep("VerifyEmailFirstLastNamesNewTenant")]
+        public MyAccountCazamioTenant VerifyEmailFirstLastNamesNewTenant(string emailExpected, string firstNameFromModalWindowHowShallWeCallYou, string lastNameFromModalWindowHowShallWeCallYou, string getFirstNameFromMyAccount, string getLastNameFromMyAccount)
         {
             WaitUntil.WaitSomeInterval(500);
             string getEmailActual = FieldInputEmailMyAccntPgTabAccnt.GetAttribute("value");
 
-            Assert.AreEqual(emailExpected, getEmailActual);
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(emailExpected, getEmailActual);
+                Assert.AreEqual(firstNameFromModalWindowHowShallWeCallYou, getFirstNameFromMyAccount);
+                Assert.AreEqual(lastNameFromModalWindowHowShallWeCallYou, getLastNameFromMyAccount);
 
-            Console.WriteLine($"Email EX: {emailExpected} Email AC:{getEmailActual}");
+            });
 
             return this;
         }

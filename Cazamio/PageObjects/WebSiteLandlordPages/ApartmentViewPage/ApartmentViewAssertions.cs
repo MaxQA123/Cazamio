@@ -14,6 +14,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ApartmentViewPage
         [AllureStep("VerifyTitleApartmentViewPg")]
         public ApartmentView VerifyTitleApartmentViewPg()
         {
+            WaitUntil.CustomElementIsVisible(TitleApartmentViewPg);
             Assert.IsTrue(Successfully.IsVisible(TitleApartmentViewPg));
 
             return this;

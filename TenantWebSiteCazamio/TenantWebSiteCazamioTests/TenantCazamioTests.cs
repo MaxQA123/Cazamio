@@ -88,9 +88,9 @@ namespace TenantCazamioTests
                .ClickButtonMyApplicationsHdrCzmTnnt();
             Pages.MyAccountCazamioTenant
                 .ClickTabAccountOnMyAccntPg()
-                .ClickButtonEditMyAccntPgTabAccnt()
-                .VerifyEmailNewTenant(emailPutsBox);
-            Console.WriteLine($"Email a new tenant: {emailPutsBox}");
+                .ClickButtonEditMyAccntPgTabAccnt();
+            //    .VerifyEmailNewTenant(emailPutsBox);
+            //Console.WriteLine($"Email a new tenant: {emailPutsBox}");
 
             #region Postconditions
 

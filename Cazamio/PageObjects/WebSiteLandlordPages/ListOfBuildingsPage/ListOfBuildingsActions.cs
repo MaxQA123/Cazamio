@@ -35,6 +35,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
         {
             Pages.SideBarLandlord
                .ClickButtonBuildingsSidebar();
+            WaitUntil.CustomElementIsVisible(TitleListOfBuildingsPage);
             VerifyTitleListOfBuildingsPg();
             WaitUntil.WaitSomeInterval(3000);
             WaitUntil.CustomElementIsVisible(FieldInputSearchOnListOfBuildingsPg);

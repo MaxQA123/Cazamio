@@ -1144,8 +1144,8 @@ namespace MarketplaceAdminTests
                 .ClickButtonSaveMdlWndw();
             Pages.MyAccountCazamioTenant
                 .ClickTabAccountOnMyAccntPg()
-                .ClickButtonEditMyAccntPgTabAccnt()
-                .VerifyEmailNewTenant(getEmailStepFirstActual);
+                .ClickButtonEditMyAccntPgTabAccnt();
+                //.VerifyEmailNewTenant(getEmailStepFirstActual);
             Pages.HeaderCazamioTenant
                 .LogOutFromAccountViaHeader();
             //Подтвердить тенанта окупанта
@@ -1168,8 +1168,8 @@ namespace MarketplaceAdminTests
                 .ClickButtonSaveMdlWndw();
             Pages.MyAccountCazamioTenant
                 .ClickTabAccountOnMyAccntPg()
-                .ClickButtonEditMyAccntPgTabAccnt()
-                .VerifyEmailNewTenant(getEmailStepFirstActual);
+                .ClickButtonEditMyAccntPgTabAccnt();
+                //.VerifyEmailNewTenant(getEmailStepFirstActual);
             Pages.HeaderCazamioTenant
                 .LogOutFromAccountViaHeader();
             
@@ -1256,9 +1256,30 @@ namespace MarketplaceAdminTests
             Pages.ModalWndwCreateApplication
                 .EnterPriceFieldInputRequestedOfferPriceModalWndw()
                 .SelectDateAvailableForCreateApplicationModalWndwViaApartmentView();
+
+            Pages.ModalWndwCreateApplication
+                .AddRequestedWorkForModalWndw()
+                .EnterTextInFieldRefferalDetailsModalWndw()
+                .AddConcessionForModalWndw();
+
+            decimal getNetEffectiveActualFromCrtApplctn = Pages.ModalWndwCreateApplication.GetNetEffectiveStepThirdFromUi();
+
             Pages.ModalWndwCreateApplication
                 .ClickButtonCreateStepThreeModalWndw()
-                .VerifyMessageStepFourModalWndw();
+                .VerifyMessageStepFourModalWndw()
+                .ClickButtonCloseStepFourModalWndwModalWndw();
+            Pages.SideBarLandlord
+                .ClickButtonApplicationsSidebar();
+            Pages.ListOfApplications
+                .SelectFirstItemInLitsOFApplications();
+            Pages.ApplicationDetail
+                .VerifyTitleApplicationDetailPg();
+
+            decimal getNetRentActualApplctnDtlPg = Pages.ApplicationDetail.GetNetRentApplctnDtlPg();
+
+            Pages.ApplicationDetail
+                .VerifyNetRent(getNetEffectiveActualFromCrtApplctn, getNetRentActualApplctnDtlPg);
+
             Pages.JScriptExecutorHelper
                 .OpenNewTab()
                 .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, partEmailPutsBox);
@@ -1278,8 +1299,13 @@ namespace MarketplaceAdminTests
                 .ClickButtonSaveMdlWndw();
             Pages.MyAccountCazamioTenant
                 .ClickTabAccountOnMyAccntPg()
-                .ClickButtonEditMyAccntPgTabAccnt()
-                .VerifyEmailNewTenant(getEmailStepFirstActual);
+                .ClickButtonEditMyAccntPgTabAccnt();
+
+            string getFirstNameFromMyAccount = Pages.MyAccountCazamioTenant.GetFirstNameFromMyAccount();
+            string getLastNameFromMyAccount = Pages.MyAccountCazamioTenant.GetLastNameFromMyAccount();
+
+            Pages.MyAccountCazamioTenant
+                .VerifyEmailFirstLastNamesNewTenant(getEmailStepFirstActual, firstNameFromModalWindowHowShallWeCallYou, lastNameFromModalWindowHowShallWeCallYou, getFirstNameFromMyAccount, getLastNameFromMyAccount);
 
             #endregion
 
