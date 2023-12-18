@@ -85,7 +85,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         [AllureStep("VerifyEmailFirstLastNamesNewTenant")]
         public MyAccountCazamioTenant VerifyEmailFirstLastNamesNewTenant(string emailExpected, string firstNameFromModalWindowHowShallWeCallYou, string lastNameFromModalWindowHowShallWeCallYou, string getFirstNameFromMyAccount, string getLastNameFromMyAccount)
         {
-            WaitUntil.WaitSomeInterval(500);
+            WaitUntil.CustomElementIsVisible(FieldInputEmailMyAccntPgTabAccnt);
             string getEmailActual = FieldInputEmailMyAccntPgTabAccnt.GetAttribute("value");
 
             Assert.Multiple(() =>
@@ -93,6 +93,21 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
                 Assert.AreEqual(emailExpected, getEmailActual);
                 Assert.AreEqual(firstNameFromModalWindowHowShallWeCallYou, getFirstNameFromMyAccount);
                 Assert.AreEqual(lastNameFromModalWindowHowShallWeCallYou, getLastNameFromMyAccount);
+
+            });
+
+            return this;
+        }
+
+        [AllureStep("VerifyEmailFirstLastNamesNewTenant")]
+        public MyAccountCazamioTenant VerifyEmailNewTenant(string emailExpected)
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputEmailMyAccntPgTabAccnt);
+            string getEmailActual = FieldInputEmailMyAccntPgTabAccnt.GetAttribute("value");
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(emailExpected, getEmailActual);
 
             });
 

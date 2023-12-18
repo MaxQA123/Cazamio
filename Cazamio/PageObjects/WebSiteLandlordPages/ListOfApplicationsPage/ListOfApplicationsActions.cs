@@ -15,7 +15,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfApplicationsPage
         [AllureStep("ClickButtonPlusApplication")]
         public ListOfApplications ClickButtonPlusApplication()
         {
-            WaitUntil.WaitSomeInterval(4000);
+            WaitUntil.WaitSomeInterval(5000);
             WaitUntil.CustomElementIsVisible(ButtonPlusApplication);
             Button.Click(ButtonPlusApplication);
 

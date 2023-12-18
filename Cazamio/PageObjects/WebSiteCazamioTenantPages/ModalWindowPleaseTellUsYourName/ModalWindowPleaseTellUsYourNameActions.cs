@@ -49,7 +49,7 @@ namespace CazamioProject.PageObjects.WebSiteCazamioTenantPages.ModalWindowPlease
         public string GetLastNameFromModalWindowHowShallWeCallYou()
         {
             WaitUntil.WaitSomeInterval(100);
-            string getLastName = FieldInputFirstNameMdlWndw.GetAttribute("value");
+            string getLastName = FieldInputLastNameMdlWndw.GetAttribute("value");
             string getLastNameActual = getLastName.ToString();
 
             return getLastNameActual;

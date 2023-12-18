@@ -983,6 +983,13 @@ namespace MarketplaceAdminTests
             string getRentalTermsActual = Pages.ModalWndwCreateApplication.GetRentalTermsStepThirdFromUi();
 
             Pages.ModalWndwCreateApplication
+                .AddRequestedWorkForModalWndw()
+                .EnterTextInFieldRefferalDetailsModalWndw()
+                .AddConcessionForModalWndw();
+
+            decimal getNetEffectiveActualFromCrtApplctn = Pages.ModalWndwCreateApplication.GetNetEffectiveStepThirdFromUi();
+
+            Pages.ModalWndwCreateApplication
                 .ClickButtonCreateStepThreeModalWndw()
                 .VerifyMessageStepFourModalWndw()
                 .ClickButtonAddApplicantStepFourModalWndw();
@@ -994,7 +1001,15 @@ namespace MarketplaceAdminTests
                 .ClickSecondCheckTheBoxThisIGuarantor()
                 .ClickButtonAdd()
                 .VerifyMessageAddedApplicantsToApplicationMdlWndwAddAApplicant();
+            Pages.ListOfApplications
+                .SelectFirstItemInLitsOFApplications();
+            Pages.ApplicationDetail
+                .VerifyTitleApplicationDetailPg();
 
+            decimal getNetRentActualApplctnDtlPg = Pages.ApplicationDetail.GetNetRentApplctnDtlPg();
+
+            Pages.ApplicationDetail
+                .VerifyNetRent(getNetEffectiveActualFromCrtApplctn, getNetRentActualApplctnDtlPg);
             Pages.ModalWndwCreateApplication
                 .VerifyFieldsAutocompleteInStepThird((int)getLeasePriceFromDb, (int)getSecurityDepositFromDb, getMonthlyRentsPrePaymentFromDb, getRentalTermsFromDb, getLeasePriceActual, getSecurityDepositActual, getMonthlyRentsPrePaymentActual, getRentalTermsActual);
 
@@ -1333,9 +1348,15 @@ namespace MarketplaceAdminTests
 
         public void EditAddressInMdlWndwEditApplication()
         {
+            #region
+
             string expexted = "2 Washington Square";
+
+            #endregion
+
             #region Preconditions Test
 
+            //Нужно 
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
                 .ClickIconShowLogInPg()
