@@ -53,6 +53,8 @@ namespace CazamioProgect.Helpers
 
     public class TestDataForWebSiteTenant
     {
+        #region MySpaceMarketplace
+
         public const string EMAIL_TENANT = "miza33h@putsbox.com";
         public const string EMAIL_TENANT_NOT_CREATED = "task1517ccre@putsbox.com";
         public const string EMAIL_TENANT_CREATOR_NOT_CREATED = "task1587bcre@putsbox.com";
@@ -93,6 +95,8 @@ namespace CazamioProgect.Helpers
         public const string SECTION_REFERENCE_NEW_NAME_SECOND = "Duglas";
         public const string SECTION_REFERENCE_NEW_PHONE_NUMBER_SECOND = "5854321333";
         public const string SECTION_REFERENCE_NEW_EXTENSION_NUMBER_SECOND = "585";
+
+        #endregion
     }
 
     public class TestDataHomePageTenant
