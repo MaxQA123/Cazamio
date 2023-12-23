@@ -131,15 +131,28 @@ namespace CazamioProgect.Helpers
         public const string EMAIL_MARKETPLACE_ADMIN_MARK_ADM = "marketplaceadmin15@putsbox.com";
         public const string USER_NAME_MARKETPLACE_ADMIN_MARK_ADM = "Mark Adm";
 
-        public const string EMAIL_BROKER_ALA_DIN = "broker1aladin@putsbox.com";
-        public const string USER_NAME_BROKER_ALA_DIN = "Ala Din";
+        public const string EMAIL_BROKER_ALA_DIN = "broker3autotest@putsbox.com";
+        public const string USER_NAME_BROKER_ALA_DIN = "Leoautotest Feabroker";
 
         public const string EMAIL_AGENT_MARIE_URMSTRONG = "agent175marie5urm@putsbox.com";
         public const string USER_NAME_MARIE_URMSTRONG = "Marie Urmstrong";
 
-        public const string SHORT_ADDRESS_BUILDING_FIFTEEN_MP = "2 Washington Square";
-        public const string FULL_ADDRESS_UNIT_FIFTEEN_MP = "2 Washington Square, New York, NY, 10012 #2 ";
-        public const string SHORT_ADDRESS_UNIT_FIFTEEN_MP = "2 Washington Square #2";
+        public const string EMAIL_AGENT_BROKER = "agent1broker1auto@putsbox.com";
+        public const string USER_NAME_AGENT_BROKER = "Agentus Brokerus";
+
+        public const string EMAIL_OWNER_FOR_AGENT_BROKER = "owner2forag5bro@putsbox.com";
+        public const string USER_NAME_OWNER_FOR_AGENT_BROKER = "Juliano Richardson";
+
+        public const string EMAIL_OWNER_FOR_BROKER = "owner2for5broker@putsbox.com";
+        public const string USER_NAME_OWNER_FOR_BROKER = "Arnoldoni Columbini";
+
+        public const string SHORT_ADDRESS_BUILDING_FIFTEEN_MP_FOR_BROKER = "2 Washington Square";
+        public const string FULL_ADDRESS_UNIT_FIFTEEN_MP_FOR_BROKER = "2 Washington Square, New York, NY, 10012 #2 ";
+        public const string SHORT_ADDRESS_UNIT_FIFTEEN_MP_FOR_BROKER = "2 Washington Square #2";
+
+        public const string SHORT_ADDRESS_BUILDING_FIFTEEN_MP_FOR_AG_BR = "3 Washington Square";
+        public const string FULL_ADDRESS_UNIT_FIFTEEN_MP_FOR_AG_BR = "3 Washington Square, New York, NY, 10014 #2 ";
+        public const string SHORT_ADDRESS_UNIT_FIFTEEN_MP_FOR_AG_BR = "3 Washington Square #2";
 
         #endregion
 
