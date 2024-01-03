@@ -54,11 +54,27 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBAgent")]
-        [AllureSubSuite("RelatedAgentWithBrokerFromLandlordBrokers")]
+        [AllureSubSuite("DeleteNewlyCreatedAgent")]
 
-        public void Empty()
+        public void DeleteNewlyCreatedAgent()
         {
+            #region Preconditions
 
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            string emailAgent = "Fabian59@gmail.com";
+
+            #endregion
+
+            #region Test
+
+            DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(emailAgent, marketplaceId);
+            Console.WriteLine($"{emailAgent}");
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestBrokers.DBBrokers.DeleteCreatedUserAgent(emailAgent, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailAgent, marketplaceId);
+
+            #endregion
         }
 
         [Test]

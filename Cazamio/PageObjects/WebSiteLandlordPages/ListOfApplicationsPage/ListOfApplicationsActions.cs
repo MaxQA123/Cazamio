@@ -10,7 +10,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfApplicationsPage
 {
     public partial class ListOfApplications
     {
-        string unitAddressTwoWashingtonSquareUnitTwo = TestDataForWebSiteAdmin.SHORT_ADDRESS_UNIT_FIFTEEN_MP;
+        string unitAddressTwoWashingtonSquareUnitTwo = TestDataForWebSiteAdmin.SHORT_ADDRESS_BUILDING_FIFTEEN_MP_FOR_BROKER;
 
         [AllureStep("ClickButtonPlusApplication")]
         public ListOfApplications ClickButtonPlusApplication()

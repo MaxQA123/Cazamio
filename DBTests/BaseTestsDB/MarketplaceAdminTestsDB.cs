@@ -1,5 +1,6 @@
 ﻿using Allure.Commons;
 using ApiTests.Base;
+using CazamioProgect.Helpers;
 using CazamioProject.DBHelpers;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
@@ -27,6 +28,8 @@ namespace DBTests.BaseTestsDB
 
         public void CheckAlreadyCreatedMarketplaceAdmin()
         {
+            #region Test
+
             string newMarketplaceAdmin = DBTestDataDBForAdmins.NEW_MARKETPLACE_ADMIN_FIRST_NAME;
 
             string userIdMAByEmail = DBRequestAspNetUsersOld.GetIdByEmailMarketplaceId(DBTestDataDBForAdmins.NEW_MARKETPLACE_ADMIN_EMAIL, DBTestDataGeneral.MARKETPLACE_ID_TESTLANDLORD_DEMO);
@@ -56,6 +59,10 @@ namespace DBTests.BaseTestsDB
             string emailMA = DBRequestAspNetUsersOld.GetEmailByIdNew(userIdMAByEmail);
             Console.WriteLine($"{emailMA} :Email by id MA from table AspNetUsers");
 
+            #endregion
+
+            #region Assertions
+
             Assert.Multiple(() =>
             {
                 Assert.AreEqual(userIdMAByEmail, lastUserIdMA);
@@ -76,6 +83,8 @@ namespace DBTests.BaseTestsDB
                 Assert.AreEqual(emailMA, DBTestDataDBForAdmins.NEW_MARKETPLACE_ADMIN_EMAIL);
                 Console.WriteLine($"Email by Id for MA from table AspNetUsers: {emailMA} = {DBTestDataDBForAdmins.NEW_MARKETPLACE_ADMIN_EMAIL} Email for MA ER");
             });
+
+            #endregion
         }
 
         [Test]
@@ -88,12 +97,23 @@ namespace DBTests.BaseTestsDB
 
         public void DeleteNewlyCreatedMarketplaceAdmin()
         {
-            //string email = "lo7lo6lo@xitroo.com";
-            //string marketplaceId = "15";
+            #region Preconditions
 
-            //DBRequestMarketplaceAdmins.MarketplaceAdmins.DeleteCreatedUserMarketplaceAdmin(email, marketplaceId);
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            string emailMarketplaceAdmin = "Jade.Waters@gmail.com";
 
-            //DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(email, marketplaceId);
+            #endregion
+
+            #region Test
+
+            DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(emailMarketplaceAdmin, marketplaceId);
+            Console.WriteLine($"{emailMarketplaceAdmin}");
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestMarketplaceAdmins.MarketplaceAdmins.DeleteCreatedUserMarketplaceAdmin(emailMarketplaceAdmin, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailMarketplaceAdmin, marketplaceId);
+
+            #endregion
         }
     }
 }

@@ -34,6 +34,8 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
+            #region Test
+
             string userIdByEmailBroker = DBRequestAspNetUsersOld.GetIdForBrokerFromAspNetUsers(DBTestDataDBForAdmins.NEW_BROKER_EMAIL);
             Console.WriteLine($"{userIdByEmailBroker}: Id for new broker {newBroker} from table AspNetUsers");
 
@@ -60,6 +62,8 @@ namespace DBTests.BaseTestsDB
 
             string emailNewBroker = DBRequestAspNetUsersOld.GetEmailByIdNew(userIdByEmailBroker);
             Console.WriteLine($"{emailNewBroker} :Email for broker {newBroker} from table AspNetUsers");
+
+            #endregion
 
             #region Assertions
 
@@ -106,6 +110,8 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
+            #region Test
+
             string landlordIddBroker = DBRequestLandlordsOld.GetIdForBroker(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
             Console.WriteLine($"{landlordIddBroker} :Id for broker {brokerName} from table Landlords");
 
@@ -114,6 +120,8 @@ namespace DBTests.BaseTestsDB
 
             string IdBroker = DBRequestAspNetUsersOld.GetIdForBrokerFromAspNetUsers(TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
             Console.WriteLine($"{IdBroker}: Id for new broker {brokerName} from table AspNetUsers");
+
+            #endregion
 
             #region Assertions
 
@@ -154,6 +162,35 @@ namespace DBTests.BaseTestsDB
             Console.WriteLine($"Email: {agentBasicData.Email}");
             Console.WriteLine($"Broker Commission: {agentBasicData.BrokerCommission}");
             Console.WriteLine($"Agent Commission: {agentBasicData.AgentCommission}");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBBrokers")]
+        [AllureSubSuite("DeleteNewlyCreatedBroker")]
+
+        public void DeleteNewlyCreatedBroker()
+        {
+            #region Preconditions
+
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            string emailBroker = "Tyler.Price@hotmail.com";
+
+            #endregion
+
+            #region Test
+
+            DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(emailBroker, marketplaceId);
+            Console.WriteLine($"{emailBroker}");
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestLandlords.Landlords.DeleteCreatedUserBroker(emailBroker, marketplaceId);
+            WaitUntil.WaitSomeInterval(100);
+            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(emailBroker, marketplaceId);
+
+            #endregion
         }
     }
 }
