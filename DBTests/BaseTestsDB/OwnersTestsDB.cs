@@ -1,7 +1,10 @@
 ﻿using Allure.Commons;
 using ApiTests.Base;
+using CazamioProgect.Helpers;
 using CazamioProject.DBHelpers;
 using CazamioProject.DBHelpers.TableOwnerCommissionsStructure;
+using CazamioProject.DBHelpers.TableOwnerManagements;
+using CazamioProject.DBHelpers.TableOwnerPhoneNumbers;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
@@ -45,6 +48,8 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
+            #region Test
+
             string createdByUserIdViaEmail = DBRequestOwnersOld.GetCreatedByUserIdOwnerByOwnerEmail(DBTestDataDBForAdmins.NEW_OWNER_EMAIL);
             Console.WriteLine($"{createdByUserIdViaEmail} :CreatedByUserId wner via email for owner {nameOwner} from table Owners");
 
@@ -77,6 +82,8 @@ namespace DBTests.BaseTestsDB
 
             //string brokerIdFromTestData = DBRequestOwnersOld.GetIdForBroker(DBTestDataDBForAdmins.BROKER_EMAIL);
             //Console.WriteLine($"{brokerIdFromTestData} :BrokerId for owner {nameOwner} from table AspNetUsers");
+
+            #endregion
 
             #region Assertions
 
@@ -134,6 +141,8 @@ namespace DBTests.BaseTestsDB
 
             #endregion
 
+            #region Test
+
             string createdByUserIdViaEmail = DBRequestOwnersOld.GetCreatedByUserIdOwnerByOwnerEmail(DBTestDataDBForAdminsMySpace.NEW_OWNER_EMAIL);
             Console.WriteLine($"{createdByUserIdViaEmail} :CreatedByUserId wner via email for owner {nameOwner} from table Owners");
 
@@ -166,6 +175,8 @@ namespace DBTests.BaseTestsDB
 
             string brokerIdFromTestData = DBRequestLandlordsOld.GetIdForBroker(DBTestDataDBForAdminsMySpace.BROKER_EMAIL);
             Console.WriteLine($"{brokerIdFromTestData} :BrokerId for owner {nameOwner} from table AspNetUsers");
+
+            #endregion
 
             #region Assertions
 
@@ -201,8 +212,8 @@ namespace DBTests.BaseTestsDB
         [AllureOwner("Maksim Perevalov")]
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
-        [AllureSuite("TestingDBOwnerCommissionsStructure")]
-        [AllureSubSuite("BasicDataOwnerCommissionStructure")]
+        [AllureSuite("TestingDBOwners")]
+        [AllureSubSuite("OwnerBasicDataCommissionStructure")]
 
         #region Basic info about test
 
@@ -230,6 +241,33 @@ namespace DBTests.BaseTestsDB
             Console.WriteLine($"Owner Number Of Months: {fromDbBasicDataOwnerCommissionStructure.OwnerNumberOfMonths}");
             Console.WriteLine($"Owner Percentage: {fromDbBasicDataOwnerCommissionStructure.OwnerPercentage}");
             Console.WriteLine($"Take Off: {fromDbBasicDataOwnerCommissionStructure.TakeOff}");
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("TestingDBOwners")]
+        [AllureSubSuite("DeleteNewlyCreatedOwnerWithBroker")]
+
+        public void DeleteNewlyCreatedOwnerWithBroker()
+        {
+            #region Preconditions
+
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            string ownerEmail = "Jovanny.Ziemann12@hotmail.com";
+
+            #endregion
+
+            #region Test
+
+            DBRequestOwnerCommissionsStructure.OwnerCommissionsStructure.DeleteRecordAboutOwnerCommissionsStructure(ownerEmail, marketplaceId);
+            DBRequestOwnerPhoneNumbers.OwnerPhoneNumbers.DeleteRecordAboutOwnerPhoneNumber(ownerEmail, marketplaceId);
+            DBRequestOwnerManagements.OwnerManagements.DeleteRecordAboutOwnerManagements(ownerEmail, marketplaceId);
+            DbRequestOwners.DBOwners.DeleteCreatedUserOwner(ownerEmail, marketplaceId);
+
+            #endregion
         }
     }
 }
