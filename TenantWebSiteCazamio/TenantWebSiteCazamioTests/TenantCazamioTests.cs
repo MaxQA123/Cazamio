@@ -123,7 +123,8 @@ namespace TenantCazamioTests
             Pages.HeaderCazamioTenant
                 .ClickButtonMyApplicationsHdrCzmTnnt();
             Pages.MyAccountCazamioTenant
-                .ClickTabAccountOnMyAccntPg();
+                .ClickTabAccountOnMyAccntPg()
+                .ClickButtonEditMyAccntPgTabAccnt();
 
             string getFirstNameForCompare = Pages.MyAccountCazamioTenant.GetFirstNameFromMyAccount();
             string getLastNameForCompare = Pages.MyAccountCazamioTenant.GetLastNameFromMyAccount();

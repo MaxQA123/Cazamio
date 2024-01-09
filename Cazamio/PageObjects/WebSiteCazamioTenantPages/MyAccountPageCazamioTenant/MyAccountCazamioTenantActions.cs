@@ -64,6 +64,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         [AllureStep("ClickButtonEditMyAccntPgTabAccnt")]
         public MyAccountCazamioTenant ClickButtonEditMyAccntPgTabAccnt()
         {
+            WaitUntil.CustomElementIsVisible(ButtonEditMyAccntPgTabAccnt);
             Button.Click(ButtonEditMyAccntPgTabAccnt);
 
             return this;
