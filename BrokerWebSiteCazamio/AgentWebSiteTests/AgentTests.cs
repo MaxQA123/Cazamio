@@ -94,6 +94,8 @@ namespace AgentTests
 
         public void VerifySidebar()
         {
+            #region Preconditions
+
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsAgent()
                 .ClickIconShowLogInPg()
@@ -104,6 +106,10 @@ namespace AgentTests
 
             Pages.SideBarLandlord
                 .VerifyAgentUserName(getUserNameCompare, getUserNameRoleCompare);
+
+            #endregion
+
+            #region Test
 
             Pages.SideBarLandlord
                 .UploadImageAvatarUserLandlordFirst()
@@ -141,6 +147,8 @@ namespace AgentTests
                 .VerifyTitleLogInPg();
 
             WaitUntil.WaitSomeInterval(2000);
+
+            #endregion
         }
     }
 }

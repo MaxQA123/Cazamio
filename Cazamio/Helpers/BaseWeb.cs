@@ -26,7 +26,6 @@ namespace CazamioProgect.Helpers
         }
 
         [TearDown]
-
         public void DoAfterEach()
         {
             if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)

@@ -141,6 +141,9 @@ namespace CazamioProgect.Helpers
         public const string EMAIL_AGENT_MARIE_URMSTRONG = "agent175marie5urm@putsbox.com";
         public const string USER_NAME_MARIE_URMSTRONG = "Marie Urmstrong";
 
+        public const string EMAIL_AGENT_BROKER_AGENTUS_BROKERUS = "agent1broker1auto@putsbox.com";
+        public const string USER_NAME_AGENTUS_BROKERUS = "Agentus Brokerus";
+
         public const string EMAIL_AGENT_BROKER = "agent1broker1auto@putsbox.com";
         public const string USER_NAME_AGENT_BROKER = "Agentus Brokerus";
 

@@ -99,13 +99,31 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         [AllureStep("VerifyOnlyAgentUserNameRole")]
         public SideBarLandlord VerifyOnlyAgentUserNameRole(string getUserNameRoleActual)
         {
-            WaitUntil.WaitSomeInterval(1500);
+            WaitUntil.WaitSomeInterval(500);
             string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_AGENT;
-
 
             Assert.AreEqual(getUserNameRoleExpected, getUserNameRoleActual);
 
             Console.WriteLine($"Name Role EX: {getUserNameRoleExpected} Name Role AC: {getUserNameRoleActual}");
+
+            return this;
+        }
+
+        [AllureStep("VerifyAgentBrokerUserNameRole")]
+        public SideBarLandlord VerifyAgentBrokerUserNameRole(string getUserNameActual, string getUserNameRoleActual)
+        {
+            WaitUntil.WaitSomeInterval(500);
+            string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_AGENTUS_BROKERUS;
+            string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_AGENT;
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(getUserNameExpected, getUserNameActual);
+                Assert.AreEqual(getUserNameRoleExpected, getUserNameRoleActual);
+
+                Console.WriteLine($"First Last name EX: {getUserNameExpected} AC: {getUserNameActual}");
+                Console.WriteLine($"Name Role EX: {getUserNameRoleExpected} AC: {getUserNameRoleActual}");
+            });
 
             return this;
         }
