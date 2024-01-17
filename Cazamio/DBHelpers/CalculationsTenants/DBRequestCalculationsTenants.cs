@@ -26,7 +26,7 @@ namespace CazamioProject.DBHelpers
 
         public class CalculationsTenant
         {
-            public static DBModelCalculationsTenants GetPaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit(string buildingAddress, string unitNumber, string marketplaceId)
+            public static DBModelCalculationsTenants GetPaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit(string buildingAddress, string unitNumber, int marketplaceId)
             {
                 var row = new DBModelCalculationsTenants();
 
@@ -334,18 +334,18 @@ namespace CazamioProject.DBHelpers
                 return row;
             }
 
-            public static DBModelCalculationCombinedComissions GetPaymentCreditScreeningFeeForBuildingWithCommission(string buildingAddress, string marketplaceId)
+            public static DBModelCalculationCombinedComissions GetPaymentCreditScreeningFeeForBuildingWithCommission(string buildingAddress, int marketplaceId, string tenantApplication)
             {
                 var row = new DBModelCalculationCombinedComissions();
 
                 // SQL запрос для выборки данных
                 string query = "SELECT PaymentOptions.Amount AS CreditScreeningFeeBuilding, CF.Screening AS CommissionScreeningFeeBuilding," +
-                       " (PaymentOptions.Amount * (100 + CF.Screening) / 100) AS AScreeningFeeOf" +
-                       " FROM PaymentOptions" +
-                       " CROSS JOIN CommissionFees CF" +
-                       " LEFT JOIN Buildings B ON PaymentOptions.BuildingId = B.Id" +
-                       " JOIN Addresses A ON B.AddressId = A.Id" +
-                       " WHERE A.Street = @buildingAddress AND CF.MarketplaceId = @marketplaceId AND B.MarketplaceId = @marketplaceId";
+                               " (PaymentOptions.Amount * (100 + CF.Screening) / 100) AS AScreeningFeeOf" +
+                               " FROM PaymentOptions" +
+                               " CROSS JOIN CommissionFees CF" +
+                               " LEFT JOIN Buildings B ON PaymentOptions.BuildingId = B.Id" +
+                               " JOIN Addresses A ON B.AddressId = A.Id" +
+                               " WHERE A.Street = @buildingAddress AND CF.MarketplaceId = @marketplaceId AND B.MarketplaceId = @marketplaceId AND PaymentOptions.TransactionType = @tenantApplication";
                 try
                 {
                     using SqlConnection connection = new(ConnectionDb.GET_CONNECTION_STRING_TO_DB);
@@ -355,6 +355,7 @@ namespace CazamioProject.DBHelpers
                     // Параметризованный запрос с двумя параметрами
                     command.Parameters.AddWithValue("@buildingAddress", DbType.String).Value = buildingAddress;
                     command.Parameters.AddWithValue("@marketplaceId", DbType.String).Value = marketplaceId;
+                    command.Parameters.AddWithValue("@tenantApplication", DbType.String).Value = tenantApplication;
 
                     using SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
@@ -379,7 +380,7 @@ namespace CazamioProject.DBHelpers
                 return row;
             }
 
-            public static DBModelCalculationCombinedComissions GetPaymentHoldingDepositForApartmentWithCommission(string buildingAddress, string unitNumber, string marketplaceId)
+            public static DBModelCalculationCombinedComissions GetPaymentHoldingDepositForApartmentWithCommission(string buildingAddress, string unitNumber, int marketplaceId)
             {
                 var row = new DBModelCalculationCombinedComissions();
 

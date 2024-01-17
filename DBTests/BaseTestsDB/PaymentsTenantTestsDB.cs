@@ -25,22 +25,22 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBPaymentTenant")]
-        [AllureSubSuite("PaymentCreditScreeningFeeForBuildingWithCommission")]
+        [AllureSubSuite("HoldingDepositForApartmentWithCommission")]
 
-        public void PaymentCreditScreeningFeeForBuildingWithCommission()
+        public void HoldingDepositForApartmentWithCommission()
         {
             #region Preconditions
 
-            string buildingAddress = "11 Avenue A";
-            string marketplaceId = "15";
+            string buildingAddress = TestDataForWebSiteAdmin.SHORT_ADDRESS_BUILDING_FIFTEEN_MP_FOR_BROKER;
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
             #endregion
 
-            //Step 8 Pay Application fee
-            var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentCreditScreeningFeeForBuildingWithCommission(buildingAddress, marketplaceId);
-            Console.WriteLine($"Credit Screening Fee Building: {payment.CreditScreeningFeeBuilding} $");
-            Console.WriteLine($"Commission Fee Building: {payment.CommissionScreeningFeeBuilding} %");
-            Console.WriteLine($"Total: {payment.Total} $");
+            //Step 9 Rental option payment
+            //var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentCreditScreeningFeeForBuildingWithCommission(buildingAddress, marketplaceId);
+            //Console.WriteLine($"Credit Screening Fee Building: {payment.CreditScreeningFeeBuilding} $");
+            //Console.WriteLine($"Commission Fee Building: {payment.CommissionScreeningFeeBuilding} %");
+            //Console.WriteLine($"Total: {payment.Total} $");
         }
 
         [Test]
@@ -49,23 +49,23 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBPaymentTenant")]
-        [AllureSubSuite("PaymentHoldingDepositForApartmentWithCommission")]
+        [AllureSubSuite("CreditScreeningFeeForBuildingWithCommission")]
 
-        public void PaymentHoldingDepositForApartmentWithCommission()
+        public void CreditScreeningFeeForBuildingWithCommission()
         {
             #region Preconditions
 
-            string buildingAddress = "45 avenue A";
-            string unitNumber = "2";
-            string marketplaceId = "15";
+            string buildingAddress = TestDataForWebSiteAdmin.SHORT_ADDRESS_BUILDING_FIFTEEN_MP_FOR_BROKER;
+            string tenantApplication = "TenantApplication";
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
             #endregion
 
-            //Step 9 Rental option payment
-            var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentHoldingDepositForApartmentWithCommission(buildingAddress, unitNumber, marketplaceId);
-            Console.WriteLine($"Application Deposit: $ {payment.HoldingDepositWithoutCommission}");
-            Console.WriteLine($"Commission Fee: % {payment.CommissionForHoldingDeposit}");
-            Console.WriteLine($"Total: $ {payment.HoldingDepositWithCommission}");
+            //Step 8 Pay Application fee
+            var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentCreditScreeningFeeForBuildingWithCommission(buildingAddress, marketplaceId, tenantApplication);
+            Console.WriteLine($"An Application fee: $ {payment.CreditScreeningFeeBuilding}");
+            Console.WriteLine($"Commission Fee: % {payment.CommissionScreeningFeeBuilding}");
+            Console.WriteLine($"Total: $ {payment.Total}");
         }
 
         [Test]
@@ -90,7 +90,7 @@ namespace DBTests.BaseTestsDB
 
             string buildingAddress = "101 Franklin Avenue";
             string unitNumber = "131";
-            string marketplaceId = "15";
+            int marketplaceId = 15;
 
             #endregion
 
