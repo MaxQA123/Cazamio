@@ -63,9 +63,9 @@ namespace DBTests.BaseTestsDB
 
             //Step 8 Pay Application fee
             var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentCreditScreeningFeeForBuildingWithCommission(buildingAddress, marketplaceId, tenantApplication);
-            Console.WriteLine($"An Application fee: $ {payment.CreditScreeningFeeBuilding}");
-            Console.WriteLine($"Commission Fee: % {payment.CommissionScreeningFeeBuilding}");
-            Console.WriteLine($"Total: $ {payment.Total}");
+            Console.WriteLine($"An Application fee:$ {payment.CreditScreeningFeeBuilding}");
+            Console.WriteLine($"Commission Fee:% {payment.CommissionScreeningFeeBuilding}");
+            Console.WriteLine($"Total:$ {payment.Total}");
         }
 
         [Test]
