@@ -72,7 +72,7 @@ namespace CazamioProject.DBHelpers
                 return row;
             }
 
-            public static DBModelCalculationsTenants GetPaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit(string buildingAddress, string unitNumber, string marketplaceId)
+            public static DBModelCalculationsTenants GetPaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit(string buildingAddress, string unitNumber, int marketplaceId)
             {
                 var row = new DBModelCalculationsTenants();
 
@@ -172,7 +172,7 @@ namespace CazamioProject.DBHelpers
                 return row;
             }
 
-            public static DBModelCalculationCombinedPays GetPaymentForApartmentWithOwnerAndTenantPayTakeOffWithHoldingDepositWithoutCommission(string buildingAddress, string unitNumber, string marketplaceId)
+            public static DBModelCalculationCombinedPays GetPaymentForApartmentWithOwnerAndTenantPayTakeOffWithHoldingDepositWithoutCommission(string buildingAddress, string unitNumber, int marketplaceId)
             {
                 var row = new DBModelCalculationCombinedPays();
 
@@ -227,7 +227,7 @@ namespace CazamioProject.DBHelpers
                 return row;
             }
 
-            public static DBModelCalculationCombinedPays GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDepositWithoutCommission(string buildingAddress, string unitNumber, string marketplaceId)
+            public static DBModelCalculationCombinedPays GetPaymentForApartmentWithTenantPayTakeOffWithHoldingDepositWithoutCommission(string buildingAddress, string unitNumber, int marketplaceId)
             {
                 var row = new DBModelCalculationCombinedPays();
 
@@ -430,7 +430,7 @@ namespace CazamioProject.DBHelpers
                 return row;
             }
 
-            public static DBModelCalculationCombinedComissions GetSignLeaseWithTenantPayCommission(string buildingAddress, string unitNumber, string marketplaceId)
+            public static DBModelCalculationCombinedComissions GetSignLeaseWithTenantPayCommission(string buildingAddress, string unitNumber, int marketplaceId)
             {
                 var row = new DBModelCalculationCombinedComissions();
 
@@ -475,7 +475,7 @@ namespace CazamioProject.DBHelpers
                 return row;
             }
 
-            public static DBModelCalculationCombinedComissions GetSignLeaseWithOwnerTenantPaysAndCommission(string buildingAddress, string unitNumber, string marketplaceId)
+            public static DBModelCalculationCombinedComissions GetSignLeaseWithOwnerTenantPaysAndCommission(string buildingAddress, string unitNumber, int marketplaceId)
             {
                 var row = new DBModelCalculationCombinedComissions();
 

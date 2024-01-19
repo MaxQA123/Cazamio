@@ -156,7 +156,7 @@ namespace CazamioProgect.Helpers
         public const string SHORT_ADDRESS_BUILDING_FIFTEEN_MP_FOR_BROKER = "1 Saratoga"; //2 Washington Square
         public const string FULL_ADDRESS_UNIT_FIFTEEN_MP_FOR_BROKER = "2 Washington Square, New York, NY, 10012 #2 ";
         public const string SHORT_ADDRESS_UNIT_FIFTEEN_MP_FOR_BROKER = "2 Washington Square #2";
-        public const string UNIT_NUMBER_FIFTEEN_MP = "26";
+        public const string UNIT_NUMBER_FIFTEEN_MP = "21W";
 
         public const string SHORT_ADDRESS_BUILDING_FIFTEEN_MP_FOR_AG_BR = "3 Washington Square";
         public const string FULL_ADDRESS_UNIT_FIFTEEN_MP_FOR_AG_BR = "3 Washington Square, New York, NY, 10014 #2 ";

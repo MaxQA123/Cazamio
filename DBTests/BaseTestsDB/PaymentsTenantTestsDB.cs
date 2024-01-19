@@ -32,15 +32,16 @@ namespace DBTests.BaseTestsDB
             #region Preconditions
 
             string buildingAddress = TestDataForWebSiteAdmin.SHORT_ADDRESS_BUILDING_FIFTEEN_MP_FOR_BROKER;
+            string unitNumber = TestDataForWebSiteAdmin.UNIT_NUMBER_FIFTEEN_MP;
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
             #endregion
 
             //Step 9 Rental option payment
-            //var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentCreditScreeningFeeForBuildingWithCommission(buildingAddress, marketplaceId);
-            //Console.WriteLine($"Credit Screening Fee Building: {payment.CreditScreeningFeeBuilding} $");
-            //Console.WriteLine($"Commission Fee Building: {payment.CommissionScreeningFeeBuilding} %");
-            //Console.WriteLine($"Total: {payment.Total} $");
+            var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentHoldingDepositForApartmentWithCommission(buildingAddress, unitNumber, marketplaceId);
+            Console.WriteLine($"Application Deposit: ${payment.HoldingDepositWithoutCommission} $");
+            Console.WriteLine($"Commission Fee: %{payment.CommissionForHoldingDeposit} %");
+            Console.WriteLine($"Total: ${payment.HoldingDepositWithCommission} $");
         }
 
         [Test]
@@ -63,9 +64,9 @@ namespace DBTests.BaseTestsDB
 
             //Step 8 Pay Application fee
             var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentCreditScreeningFeeForBuildingWithCommission(buildingAddress, marketplaceId, tenantApplication);
-            Console.WriteLine($"An Application fee:$ {payment.CreditScreeningFeeBuilding}");
-            Console.WriteLine($"Commission Fee:% {payment.CommissionScreeningFeeBuilding}");
-            Console.WriteLine($"Total:$ {payment.Total}");
+            Console.WriteLine($"An Application fee: ${payment.CreditScreeningFeeBuilding}");
+            Console.WriteLine($"Commission Fee: %{payment.CommissionScreeningFeeBuilding}");
+            Console.WriteLine($"Total: ${payment.Total}");
         }
 
         [Test]
@@ -74,9 +75,9 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBPaymentTenant")]
-        [AllureSubSuite("PaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit")]
+        [AllureSubSuite("SignLeaseApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit")]
 
-        #region Preconditions
+        #region Descriptions
 
         // For Tenant (Lease Price * PaidMonyhs) + DepositPrice)
         // Displayed at a tenant-applicant (without adding a tenant-occupant) in the modal window "Payment details" when payment for signing a lease.
@@ -84,21 +85,21 @@ namespace DBTests.BaseTestsDB
 
         #endregion
 
-        public void PaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit()
+        public void SignLeaseApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit()
         {
             #region Preconditions
 
-            string buildingAddress = "101 Franklin Avenue";
-            string unitNumber = "131";
-            int marketplaceId = 15;
+            string buildingAddress = TestDataForWebSiteAdmin.SHORT_ADDRESS_BUILDING_FIFTEEN_MP_FOR_BROKER;
+            string unitNumber = TestDataForWebSiteAdmin.UNIT_NUMBER_FIFTEEN_MP;
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
             #endregion
 
             var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentForApartmentWithoutOwnerTenantPayCommissionsAndHoldingDeposit(buildingAddress, unitNumber, marketplaceId);
-            Console.WriteLine($"Payment of apartment: $ {payment.PaymentOfApartment}");
-            Console.WriteLine($"Lease Price: $ {payment.LeasePrice}");
+            Console.WriteLine($"Move-in price(Total): ${payment.PaymentOfApartment}");
+            Console.WriteLine($"Lease Price: ${payment.LeasePrice}");
             Console.WriteLine($"Paid Months (Month's rent): {payment.PaidMonths}");
-            Console.WriteLine($"Deposit Price (Security deposit): $ {payment.DepositPrice}");
+            Console.WriteLine($"Deposit Price (Security deposit): ${payment.DepositPrice}");
         }
 
         [Test]
@@ -123,7 +124,7 @@ namespace DBTests.BaseTestsDB
 
             string buildingAddress = "101 Franklin Avenue";
             string unitNumber = "122";
-            string marketplaceId = "15";
+            int marketplaceId = 15;
 
             #endregion
 
@@ -142,7 +143,7 @@ namespace DBTests.BaseTestsDB
         [AllureSeverity(SeverityLevel.critical)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("TestingDBPaymentTenant")]
-        [AllureSubSuite("PaymentSignLeaseForApartmentWithOwnerAndTenantPayAndHoldingDepositWithCommission")]
+        [AllureSubSuite("SignLeaseForApartmentWithOwnerAndTenantPayAndHoldingDepositWithCommission")]
 
         #region Preconditions
 
@@ -153,33 +154,33 @@ namespace DBTests.BaseTestsDB
 
         #endregion
 
-        public void PaymentSignLeaseForApartmentWithOwnerAndTenantPayAndHoldingDepositWithCommission()
+        public void SignLeaseForApartmentWithOwnerAndTenantPayAndHoldingDepositWithCommission()
         {
             #region Preconditions
 
-            string buildingAddress = "2 Linden Street";
-            string unitNumber = "59";
-            string marketplaceId = "15";
+            string buildingAddress = TestDataForWebSiteAdmin.SHORT_ADDRESS_BUILDING_FIFTEEN_MP_FOR_BROKER;
+            string unitNumber = TestDataForWebSiteAdmin.UNIT_NUMBER_FIFTEEN_MP;
+            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
             #endregion
 
             var paymentA = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentForApartmentWithoutOwnerTenantPayCommissionsWithHoldingDeposit(buildingAddress, unitNumber, marketplaceId);
-            Console.WriteLine($"Move-in proce: $ {paymentA.PaymentOfApartment}");
-            Console.WriteLine($"Deposit Price (Security deposit): $ {paymentA.DepositPrice}");
-            Console.WriteLine($"Lease Price: $ {paymentA.LeasePrice}");
+            Console.WriteLine($"Move-in proce: ${paymentA.PaymentOfApartment}");
+            Console.WriteLine($"Deposit Price (Security deposit): ${paymentA.DepositPrice}");
+            Console.WriteLine($"Lease Price: ${paymentA.LeasePrice}");
             Console.WriteLine($"Paid Months (Month's rent): {paymentA.PaidMonths}");
-            Console.WriteLine($"Holding deposit: $ {paymentA.Amount}");
+            Console.WriteLine($"Holding deposit: ${paymentA.Amount}");
 
             var payment = DBRequestCalculationsTenants.CalculationsTenant.GetPaymentForApartmentWithOwnerAndTenantPayTakeOffWithHoldingDepositWithoutCommission(buildingAddress, unitNumber, marketplaceId);
-            Console.WriteLine($"Applicant subtotal: $ {payment.FullPaymentOfApartment}");
-            Console.WriteLine($"Broker fee: $ {payment.BrokerFee}");
+            Console.WriteLine($"Applicant subtotal: ${payment.FullPaymentOfApartment}");
+            Console.WriteLine($"Broker fee: ${payment.BrokerFee}");
             Console.WriteLine($"Pay Type: {payment.PayType}");
             Console.WriteLine($"Tenant Number Of Months: {payment.TenantNumberOfMonths}");
-            Console.WriteLine($"Tenant percentage: {payment.TenantPercentage}");
+            Console.WriteLine($"Tenant percentage: %{payment.TenantPercentage}");
 
             // Перепроверить расчёт
             var paymentB = DBRequestCalculationsTenants.CalculationsTenant.GetSignLeaseWithOwnerTenantPaysAndCommission(buildingAddress, unitNumber, marketplaceId);
-            Console.WriteLine($"Total: $ {paymentB.Total}");
+            Console.WriteLine($"Total: ${paymentB.Total}");
         }
 
         [Test]
@@ -205,7 +206,7 @@ namespace DBTests.BaseTestsDB
 
             string buildingAddress = "45 Avenue A";
             string unitNumber = "2";
-            string marketplaceId = "15";
+            int marketplaceId = 15;
 
             #endregion
 
