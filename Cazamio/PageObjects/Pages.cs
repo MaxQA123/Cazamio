@@ -55,6 +55,7 @@ using CazamioProject.PageObjects.WebSiteCazamioTenantPages.ModalWindowPleaseTell
 using CazamioProject.PageObjects.WebSiteCazamioTenantPages.MdlWndwAreYouSureLogOut;
 using CazamioProject.PageObjects.WebSiteLandlordPages.ApplicationDetailPage;
 using CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowEditApplication;
+using CazamioProject.Objects;
 
 namespace CazamioProgect.PageObjects
 {
@@ -90,6 +91,7 @@ namespace CazamioProgect.PageObjects
 
         #region LandlordWebSite
 
+        public static MarketplaceAdmin MarketplaceAdmin { get { return GetPage<MarketplaceAdmin>(); } }
         public static LogInLandlord LogInLandlord => GetPage<LogInLandlord>();
         public static SideBarLandlord SideBarLandlord => GetPage<SideBarLandlord>();
         public static Dashboard Dashboard => GetPage<Dashboard>();

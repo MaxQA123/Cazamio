@@ -41,7 +41,7 @@ namespace CazamioProject.DBHelpers
 
                     // Параметризованный запрос с двумя параметрами
                     command.Parameters.AddWithValue("@Email", DbType.String).Value = email;
-                    command.Parameters.AddWithValue("@MrketplaceId", DbType.String).Value = marketplaceId;
+                    command.Parameters.AddWithValue("@MarketplaceId", DbType.String).Value = marketplaceId;
 
                     using SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())

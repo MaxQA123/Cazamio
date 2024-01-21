@@ -1,0 +1,335 @@
+{
+  "uuid": "8429f8c5-a1dc-4704-820b-c4c8df4ffae2-tr-0-1003",
+  "historyId": "SuperAdminTests.SuperAdminTests.CreateMarketplaceAdmin",
+  "fullName": "SuperAdminTests.SuperAdminTests.CreateMarketplaceAdmin",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "SuperAdminTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "CreateMarketplaceAdmin"
+    },
+    {
+      "name": "testClass",
+      "value": "SuperAdminTests"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "SuperAdmin"
+    },
+    {
+      "name": "subSuite",
+      "value": "CreateMarketplaceAdmin"
+    }
+  ],
+  "links": [],
+  "name": "CreateMarketplaceAdmin",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "  Expected: True\r\n  But was:  False\r\n",
+    "trace": "   at CazamioProject.PageObjects.WebSiteLandlordPages.ListOfMarketplaceAdmins.ListOfMarketplaceAdmins.__a$_around_VerifyTitleListOfMarketplaceAdmins_100663909_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ListOfMarketplaceAdminsPage\\ListOfMarketplaceAdminsAssertions.cs:line 17\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ListOfMarketplaceAdmins.ListOfMarketplaceAdmins.__a$_around_VerifyTitleListOfMarketplaceAdmins_100663909_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ListOfMarketplaceAdmins.ListOfMarketplaceAdmins.__a$_around_VerifyTitleListOfMarketplaceAdmins_100663909_w_0(Object[] )\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ListOfMarketplaceAdmins.ListOfMarketplaceAdmins.VerifyTitleListOfMarketplaceAdmins()\r\n   at SuperAdminTests.SuperAdminTests.CreateMarketplaceAdmin() in C:\\Automation\\Cazamio\\SuperAdminWebSiteCazamio\\SuperAdminWebSiteTests\\SuperAdminTests.cs:line 120\r\n"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "CreateMarketplaceAdmin",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "  Expected: True\r\n  But was:  False\r\n",
+        "trace": "   at CazamioProject.PageObjects.WebSiteLandlordPages.ListOfMarketplaceAdmins.ListOfMarketplaceAdmins.__a$_around_VerifyTitleListOfMarketplaceAdmins_100663909_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ListOfMarketplaceAdminsPage\\ListOfMarketplaceAdminsAssertions.cs:line 17\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ListOfMarketplaceAdmins.ListOfMarketplaceAdmins.__a$_around_VerifyTitleListOfMarketplaceAdmins_100663909_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ListOfMarketplaceAdmins.ListOfMarketplaceAdmins.__a$_around_VerifyTitleListOfMarketplaceAdmins_100663909_w_0(Object[] )\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ListOfMarketplaceAdmins.ListOfMarketplaceAdmins.VerifyTitleListOfMarketplaceAdmins()\r\n   at SuperAdminTests.SuperAdminTests.CreateMarketplaceAdmin() in C:\\Automation\\Cazamio\\SuperAdminWebSiteCazamio\\SuperAdminWebSiteTests\\SuperAdminTests.cs:line 120\r\n"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "EnterEmailPasswordLogInPgAsSuperAdmin",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "superadmin123@putsbox.com"
+                }
+              ],
+              "start": 1705863626221,
+              "stop": 1705863626911
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1705863627028,
+              "stop": 1705863627648
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1705863626216,
+          "stop": 1705863627648
+        },
+        {
+          "name": "ClickIconShowLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1705863627650,
+              "stop": 1705863628297
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1705863627649,
+          "stop": 1705863628297
+        },
+        {
+          "name": "ClickButtonLetsGoLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1705863630313,
+              "stop": 1705863631174
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1705863628298,
+          "stop": 1705863632179
+        },
+        {
+          "name": "GetUserNameFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1705863632182,
+          "stop": 1705863639722
+        },
+        {
+          "name": "GetUserNameRoleFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1705863639723,
+          "stop": 1705863639788
+        },
+        {
+          "name": "VerifySuperAdminUserName",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Super User"
+            },
+            {
+              "name": "String",
+              "value": "Super Admin"
+            }
+          ],
+          "start": 1705863639790,
+          "stop": 1705863641310
+        },
+        {
+          "name": "ClickButtonMarketplaceAdminsSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1705863642323,
+              "stop": 1705863643091
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1705863641310,
+          "stop": 1705863644113
+        },
+        {
+          "name": "VerifyTitleListOfMarketplaceAdmins",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "  Expected: True\r\n  But was:  False\r\n",
+            "trace": "   at NUnit.Framework.Assert.ReportFailure(String message)\r\n   at NUnit.Framework.Assert.ReportFailure(ConstraintResult result, String message, Object[] args)\r\n   at NUnit.Framework.Assert.That[TActual](TActual actual, IResolveConstraint expression, String message, Object[] args)\r\n   at NUnit.Framework.Assert.IsTrue(Boolean condition)\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ListOfMarketplaceAdmins.ListOfMarketplaceAdmins.__a$_around_VerifyTitleListOfMarketplaceAdmins_100663909_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ListOfMarketplaceAdminsPage\\ListOfMarketplaceAdminsAssertions.cs:line 17\r\n   at CazamioProject.PageObjects.WebSiteLandlordPages.ListOfMarketplaceAdmins.ListOfMarketplaceAdmins.__a$_around_VerifyTitleListOfMarketplaceAdmins_100663909_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1705863644117,
+          "stop": 1705863645467
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "addd8e0bed36464ca8a295c0d06d3a09-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1705863612282,
+      "stop": 1705863649713
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1705863612281,
+  "stop": 1705863649726
+}

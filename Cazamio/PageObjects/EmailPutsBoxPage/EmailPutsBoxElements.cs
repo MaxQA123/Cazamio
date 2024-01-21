@@ -35,10 +35,10 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
         [FindsBy(How = How.XPath, Using = "//table[@class ='es-content']//tbody//tr[3]//table[@class = 'es-content-body']//a[contains(@href, 'https://u28342774.ct.sendgrid.net/ls/click')]")]
         public IWebElement ButtonResetPasswordForAdmin;
 
-        [FindsBy(How = How.XPath, Using = "//td[text() = 'You’re (Almost) In!']")]
-        public IWebElement TitleLetterCreateAdmin;
+        [FindsBy(How = How.XPath, Using = "//td[text() = 'Welcome Aboard as a Marketplace Admin at MySpace NYC LLC!']")]
+        public IWebElement TitleLetterCreateAdminMySpace;
 
-        [FindsBy(How = How.XPath, Using = "//td[@class = 'esd-block-text']//p[3]")]
+        [FindsBy(How = How.XPath, Using = "//td[@class = 'esd-block-text']//p[contains(text(), 'Password:')]")]
         public IWebElement TextPasswordForConfirmAdmin;
         
 

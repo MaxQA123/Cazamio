@@ -14,9 +14,9 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
         [AllureStep("VerifyTitleLetterCreateAdmin")]
         public PutsBox VerifyTitleLetterCreateAdmin()
         {
-            WaitUntil.CustomElementIsVisible(TitleLetterCreateAdmin);
-            Assert.IsTrue(TitleLetterCreateAdmin.Displayed);
-            Console.WriteLine(TitleLetterCreateAdmin.Text);
+            WaitUntil.CustomElementIsVisible(TitleLetterCreateAdminMySpace);
+            Assert.IsTrue(TitleLetterCreateAdminMySpace.Displayed);
+            Console.WriteLine(TitleLetterCreateAdminMySpace.Text);
 
             return this;
         }
@@ -24,9 +24,9 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
         [AllureStep("VerifyTitleLetterCreateBroker")]
         public PutsBox VerifyTitleLetterCreateBroker()
         {
-            WaitUntil.CustomElementIsVisible(TitleLetterCreateAdmin);
-            Assert.IsTrue(TitleLetterCreateAdmin.Displayed);
-            Console.WriteLine(TitleLetterCreateAdmin.Text);
+            WaitUntil.CustomElementIsVisible(TitleLetterCreateAdminMySpace);
+            Assert.IsTrue(TitleLetterCreateAdminMySpace.Displayed);
+            Console.WriteLine(TitleLetterCreateAdminMySpace.Text);
 
             return this;
         }

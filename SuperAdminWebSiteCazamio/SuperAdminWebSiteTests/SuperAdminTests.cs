@@ -2,6 +2,7 @@
 using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
 using CazamioProject.DBHelpers;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
 using NUnit.Framework;
@@ -139,7 +140,7 @@ namespace SuperAdminTests
                 .ClickButtonLogOutSidebar();
             Pages.JScriptExecutorHelper
                 .OpenNewTab()
-                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, partEmailPutsBox);
+                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdminMySpace, partEmailPutsBox);
             Pages.PutsBox
                 .VerifyTitleLetterCreateBroker()
                 .ClickButtonBodyHtml();

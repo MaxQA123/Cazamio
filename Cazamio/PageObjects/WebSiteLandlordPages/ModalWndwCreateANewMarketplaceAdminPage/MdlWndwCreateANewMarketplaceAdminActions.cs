@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using RimuTec.Faker;
 using System;
@@ -12,17 +13,19 @@ namespace CazamioProject.PageObjects.ModalWndwCreateANewMarketplaceAdminPage
 {
     public partial class MdlWndwCreateANewMarketplaceAdmin
     {
+        MarketplaceAdmin marketplaceAdmin = new MarketplaceAdmin().Generate();
+
         [AllureStep("FillInMandatoryFields")]
         public MdlWndwCreateANewMarketplaceAdmin FillInMandatoryFields()
         {
             WaitUntil.CustomElementIsVisible(FieldInputFirstName);
-            InputGeneral.InputFunctionWithClear(FieldInputFirstName, Name.FirstName());
+            InputGeneral.InputFunctionWithClear(FieldInputFirstName, marketplaceAdmin.FirstName);
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputLastName, Name.LastName());
+            InputGeneral.InputFunctionWithClear(FieldInputLastName, marketplaceAdmin.LastName);
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputEmail, GenerateRandomDataHelper.RandomEmail(5) + GenerateRandomDataHelper.RandomNumberWithoutZero(3) + GenerateRandomDataHelper.RandomEmail(2) + NameDomen.PUTS_BOX);
+            InputGeneral.InputFunctionWithClear(FieldInputEmail, marketplaceAdmin.EmailAddress);
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputMarketplaceSubdomain, TestDataForWebSiteAdmin.MARKETPLACE_SUBDOMAIN_FIFTEEN);
+            InputGeneral.InputFunctionWithClear(FieldInputMarketplaceSubdomain, marketplaceAdmin.SubdomainMySpace);
 
             return this;
         }

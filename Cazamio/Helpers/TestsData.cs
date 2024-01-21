@@ -106,8 +106,6 @@ namespace CazamioProgect.Helpers
 
     public class TestDataForWebSiteAdmin
     {
-        public const string MARKETPLACE_SUBDOMAIN_FIFTEEN = "testlandlord15-demo";
-
         public const string EMAIL_SUPER_ADMIN = "superadmin123@putsbox.com";
         public const string USER_NAME_SUPER_ADMIN = "Super User";
 

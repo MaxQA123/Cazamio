@@ -101,7 +101,7 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
             List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
             Browser._Driver.SwitchTo().Window(tabsList[2]);
             string getTextPassword = TextPasswordForConfirmAdmin.Text;
-            Regex regexgGetTextPassword = new Regex(@"[^\s]+$");
+            Regex regexgGetTextPassword = new Regex(".{11}\\s(.{8}");
             string textPasswordActual = regexgGetTextPassword.Match(getTextPassword).ToString();
 
             return textPasswordActual;

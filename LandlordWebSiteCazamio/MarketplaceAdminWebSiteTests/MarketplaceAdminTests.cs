@@ -261,7 +261,7 @@ namespace MarketplaceAdminTests
                 .ClickButtonLogOutSidebar();
             Pages.JScriptExecutorHelper
                .OpenNewTab()
-               .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, getEmailBeforeDog);
+               .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdminMySpace, getEmailBeforeDog);
             Pages.PutsBox
                 .VerifyTitleLetterCreateBroker()
                 .ClickButtonBodyHtml();
@@ -345,7 +345,7 @@ namespace MarketplaceAdminTests
                 .ClickButtonLogOutSidebar();
             Pages.JScriptExecutorHelper
                 .OpenNewTab()
-                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, partEmailPutsBox);
+                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdminMySpace, partEmailPutsBox);
             Pages.PutsBox
                 .VerifyTitleLetterCreateBroker()
                 .ClickButtonBodyHtml();
@@ -1142,7 +1142,7 @@ namespace MarketplaceAdminTests
 
             Pages.JScriptExecutorHelper
                 .OpenNewTab()
-                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, partEmailPutsBoxTenantCreator);
+                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdminMySpace, partEmailPutsBoxTenantCreator);
             Pages.PutsBox
                 .VerifyTitleLetterCreateTenant()
                 .ClickButtonBodyHtml()
@@ -1166,7 +1166,7 @@ namespace MarketplaceAdminTests
             //Подтвердить тенанта окупанта
             Pages.JScriptExecutorHelper
                 .OpenNewTab()
-                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, partEmailOccupant);
+                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdminMySpace, partEmailOccupant);
             Pages.PutsBox
                 .VerifyTitleLetterCreateTenant()
                 .ClickButtonBodyHtml()
@@ -1297,7 +1297,7 @@ namespace MarketplaceAdminTests
 
             Pages.JScriptExecutorHelper
                 .OpenNewTab()
-                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, partEmailPutsBox);
+                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdminMySpace, partEmailPutsBox);
             Pages.PutsBox
                 .VerifyTitleLetterCreateTenant()
                 .ClickButtonBodyHtml()
