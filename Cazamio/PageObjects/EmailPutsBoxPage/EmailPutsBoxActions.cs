@@ -86,7 +86,7 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
             List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
             Browser._Driver.SwitchTo().Window(tabsList[2]);
             WaitUntil.WaitSomeInterval(1000);
-            ButtonConfirmEmailForTenant.Click();
+            BtnCofirmEmailLandlord.Click();
             WaitUntil.WaitSomeInterval(3000);
             List<string> tabsListSecond = new List<string>(Browser._Driver.WindowHandles);
             Browser._Driver.SwitchTo().Window(tabsListSecond[3]);
@@ -101,7 +101,7 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
             List<string> tabsList = new List<string>(Browser._Driver.WindowHandles);
             Browser._Driver.SwitchTo().Window(tabsList[2]);
             string getTextPassword = TextPasswordForConfirmAdmin.Text;
-            Regex regexgGetTextPassword = new Regex(".{11}\\s(.{8}");
+            Regex regexgGetTextPassword = new Regex(@"[^\s]+$");
             string textPasswordActual = regexgGetTextPassword.Match(getTextPassword).ToString();
 
             return textPasswordActual;

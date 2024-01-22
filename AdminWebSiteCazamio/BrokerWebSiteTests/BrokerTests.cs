@@ -217,7 +217,7 @@ namespace BrokerTests
                 .ClickButtonLogOutSidebar();
             Pages.JScriptExecutorHelper
                 .OpenNewTab()
-                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdmin, partEmailPutsBox);
+                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdminMySpace, partEmailPutsBox);
             Pages.PutsBox
                 .VerifyTitleLetterCreateBroker()
                 .ClickButtonBodyHtml();

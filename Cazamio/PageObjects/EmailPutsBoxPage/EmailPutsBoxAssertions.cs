@@ -24,9 +24,9 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
         [AllureStep("VerifyTitleLetterCreateBroker")]
         public PutsBox VerifyTitleLetterCreateBroker()
         {
-            WaitUntil.CustomElementIsVisible(TitleLetterCreateAdminMySpace);
-            Assert.IsTrue(TitleLetterCreateAdminMySpace.Displayed);
-            Console.WriteLine(TitleLetterCreateAdminMySpace.Text);
+            WaitUntil.CustomElementIsVisible(TitleLetterCreateBrokerMySpace);
+            Assert.IsTrue(TitleLetterCreateBrokerMySpace.Displayed);
+            Console.WriteLine(TitleLetterCreateBrokerMySpace.Text);
 
             return this;
         }

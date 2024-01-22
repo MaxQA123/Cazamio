@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using RimuTec.Faker;
 using System;
@@ -12,12 +13,14 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewBr
 {
     public partial class ModalWindowCreateNewBroker
     {
-        [AllureStep("EnterFirstLastNamesEmail")]
+        Broker broker = new Broker().Generate();
+
+        [AllureStep("Enter first, last names, email broker's")]
         public ModalWindowCreateNewBroker EnterFirstLastNamesEmail()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputFirstName, Name.FirstName());
-            InputGeneral.InputFunctionWithClear(FieldInputLastName, Name.LastName());
-            InputGeneral.InputFunctionWithClear(FieldInputEmail, GenerateRandomDataHelper.RandomEmail(5) + GenerateRandomDataHelper.RandomNumberWithoutZero(3) + GenerateRandomDataHelper.RandomEmail(2) + NameDomen.PUTS_BOX);
+            InputGeneral.InputFunctionWithClear(FieldInputFirstName, broker.FirstName);
+            InputGeneral.InputFunctionWithClear(FieldInputLastName, broker.LastName);
+            InputGeneral.InputFunctionWithClear(FieldInputEmail, broker.EmailAddress);
 
             return this;
         }

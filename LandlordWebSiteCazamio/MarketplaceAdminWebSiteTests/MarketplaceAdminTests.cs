@@ -261,7 +261,7 @@ namespace MarketplaceAdminTests
                 .ClickButtonLogOutSidebar();
             Pages.JScriptExecutorHelper
                .OpenNewTab()
-               .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdminMySpace, getEmailBeforeDog);
+               .OpenPutsBox(Pages.PutsBox.TitleLetterCreateBrokerMySpace, getEmailBeforeDog);
             Pages.PutsBox
                 .VerifyTitleLetterCreateBroker()
                 .ClickButtonBodyHtml();
