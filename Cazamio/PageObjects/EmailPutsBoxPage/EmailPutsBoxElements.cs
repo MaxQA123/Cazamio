@@ -41,6 +41,9 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
         [FindsBy(How = How.XPath, Using = "//td[text() = 'Welcome Aboard as a Broker at MySpace NYC LLC!']")]
         public IWebElement TitleLetterCreateBrokerMySpace;
 
+        [FindsBy(How = How.XPath, Using = "//td[text() = 'Welcome Aboard as an Agent at MySpace NYC LLC!']")]
+        public IWebElement TitleLetterCreateAgentMySpace;
+
         [FindsBy(How = How.XPath, Using = "//td[@class = 'esd-block-text']//p[contains(text(), 'Password:')]")]
         public IWebElement TextPasswordForConfirmAdmin;
 

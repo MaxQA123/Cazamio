@@ -31,10 +31,10 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewAg
         [FindsBy(How = How.XPath, Using = "//input[@id = 'agent-commission']")]
         public IWebElement FieldInputAgentCommissionMdlwndw;
 
-        [FindsBy(How = How.XPath, Using = "//button[@class= 'middle primary-action absolute-loader ng-star-inserted']")]
-        public IWebElement ButtonSaveCrtNwBrkrOnMdlwndw;
+        [FindsBy(How = How.XPath, Using = "//cazamio-button//span[text() = 'Save']")]
+        public IWebElement ButtonSaveCrtNwAgntOnMdlwndw;
 
-        [FindsBy(How = How.XPath, Using = "//div[@class= 'success-container ng-star-inserted']//p[text() = 'New agent created successfully!']")]
+        [FindsBy(How = How.XPath, Using = "//p[text() = 'New agent created successfully!']")]
         public IWebElement MessageNewAgentCreatedSuccessfullyCrtNwAgntOnMdlwndw;
 
         [FindsBy(How = How.XPath, Using = "//div[@class= 'input-msgs-error']")]

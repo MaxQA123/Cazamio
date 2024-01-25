@@ -142,7 +142,7 @@ namespace SuperAdminTests
                 .OpenNewTab()
                 .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdminMySpace, partEmailPutsBox);
             Pages.PutsBox
-                .VerifyTitleLetterCreateBroker()
+                .VerifyTitleLetterCreateAdmin()
                 .ClickButtonBodyHtml();
 
             string getTextPasswordActual = Pages.PutsBox.CopyPasswordFromEmailForCreateAdmin();

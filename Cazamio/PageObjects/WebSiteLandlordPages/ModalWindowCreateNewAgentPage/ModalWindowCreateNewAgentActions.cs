@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
 using RimuTec.Faker;
@@ -13,14 +14,17 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewAg
 {
     public partial class ModalWindowCreateNewAgent
     {
+
+        Agent agent = new Agent().Generate();
+
         [AllureStep("EnterFirstLastNameEmailPhnNmbrCellMdlWndw")]
         public ModalWindowCreateNewAgent EnterFirstLastNameEmailPhnNmbrCellMdlWndw()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputFirstNameCrtNwBrkrOnMdlwndw, Name.FirstName());
-            InputGeneral.InputFunctionWithClear(FieldInputLastNameCrtNwBrkrOnMdlwndw, Name.LastName());
-            InputGeneral.InputFunctionWithClear(FieldInputEmailCrtNwBrkrOnMdlwndw, GenerateRandomDataHelper.RandomEmail(7) + NameDomen.PUTS_BOX);
-            InputGeneral.InputFunctionWithClear(FieldInputPhoneNumberCrtNwBrkrOnMdlwndw, GenerateRandomDataHelper.RandomPhoneNumber(10));
-            InputGeneral.InputFunctionWithClear(FieldInputCellCrtNwBrkrOnMdlwndw, GenerateRandomDataHelper.RandomPhoneNumber(10));
+            InputGeneral.InputFunctionWithClear(FieldInputFirstNameCrtNwBrkrOnMdlwndw, agent.FirstName);
+            InputGeneral.InputFunctionWithClear(FieldInputLastNameCrtNwBrkrOnMdlwndw, agent.LastName);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailCrtNwBrkrOnMdlwndw, agent.EmailAddress);
+            InputGeneral.InputFunctionWithClear(FieldInputPhoneNumberCrtNwBrkrOnMdlwndw, agent.PhoneNumber);
+            InputGeneral.InputFunctionWithClear(FieldInputCellCrtNwBrkrOnMdlwndw, agent.Cell);
 
             return this;
         }
@@ -28,8 +32,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewAg
         [AllureStep("EnterBrokerAgentCommissionMdlWndw")]
         public ModalWindowCreateNewAgent EnterBrokerAgentCommissionMdlWndw()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputBrokerCommissionMdlwndw, GenerateRandomDataHelper.RandomNumberWithoutZero(12));
-            InputGeneral.InputFunctionWithClear(FieldInputAgentCommissionMdlwndw, GenerateRandomDataHelper.RandomNumberWithoutZero(12));
+            InputGeneral.InputFunctionWithClear(FieldInputBrokerCommissionMdlwndw, agent.AgentCommission);
+            InputGeneral.InputFunctionWithClear(FieldInputAgentCommissionMdlwndw, agent.BrokerCommission);
 
             return this;
         }
@@ -49,7 +53,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewAg
         {
             WaitUntil.WaitSomeInterval(500);
             string copyPartEmail = FieldInputEmailCrtNwBrkrOnMdlwndw.GetAttribute("value");
-            Regex regexPartEmail = new Regex(@"^.......");
+            Regex regexPartEmail = new Regex(@"^..........");
             string partEmail = regexPartEmail.Match(copyPartEmail).ToString();
 
             return partEmail;
@@ -58,7 +62,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowCreateNewAg
         [AllureStep("ClickButtonSaveCrtNwAgntOnMdlwndw")]
         public ModalWindowCreateNewAgent ClickButtonSaveCrtNwAgntOnMdlwndw()
         {
-            Button.Click(ButtonSaveCrtNwBrkrOnMdlwndw);
+            Button.Click(ButtonSaveCrtNwAgntOnMdlwndw);
 
             return this;
         }

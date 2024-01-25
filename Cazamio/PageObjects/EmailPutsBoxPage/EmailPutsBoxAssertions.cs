@@ -31,6 +31,16 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
             return this;
         }
 
+        [AllureStep("VerifyTitleLetterCreateAgent")]
+        public PutsBox VerifyTitleLetterCreateAgent()
+        {
+            WaitUntil.CustomElementIsVisible(TitleLetterCreateAgentMySpace);
+            Assert.IsTrue(TitleLetterCreateAgentMySpace.Displayed);
+            Console.WriteLine(TitleLetterCreateAgentMySpace.Text);
+
+            return this;
+        }
+
         [AllureStep("VerifyTitleLetterCreateTenant")]
         public PutsBox VerifyTitleLetterCreateTenant()
         {

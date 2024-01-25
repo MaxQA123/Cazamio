@@ -345,9 +345,9 @@ namespace MarketplaceAdminTests
                 .ClickButtonLogOutSidebar();
             Pages.JScriptExecutorHelper
                 .OpenNewTab()
-                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdminMySpace, partEmailPutsBox);
+                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAgentMySpace, partEmailPutsBox);
             Pages.PutsBox
-                .VerifyTitleLetterCreateBroker()
+                .VerifyTitleLetterCreateAgent()
                 .ClickButtonBodyHtml();
 
             string getTextPasswordActual = Pages.PutsBox.CopyPasswordFromEmailForCreateAdmin();

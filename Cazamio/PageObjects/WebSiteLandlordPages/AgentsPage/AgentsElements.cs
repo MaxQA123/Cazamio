@@ -13,7 +13,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.AgentsPage
         [FindsBy(How = How.XPath, Using = ("//div[text()= 'Agents']"))]
         public IWebElement TitleAgentsPage;
 
-        [FindsBy(How = How.XPath, Using = ("//button[@class = 'middle primary-action absolute-loader']"))]
+        [FindsBy(How = How.XPath, Using = ("//cazamio-button[@text= 'Create Agent']"))]
         public IWebElement ButtonCreateAgentAgntsPage;
     }
 }
