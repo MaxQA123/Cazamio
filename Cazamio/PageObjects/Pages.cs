@@ -93,6 +93,8 @@ namespace CazamioProgect.PageObjects
 
         public static MarketplaceAdmin MarketplaceAdmin { get { return GetPage<MarketplaceAdmin>(); } }
         public static Broker Broker { get { return GetPage<Broker>(); } }
+        public static Agent Agent { get { return GetPage<Agent>(); } }
+        public static Owner Owner { get { return GetPage<Owner>(); } }
         public static LogInLandlord LogInLandlord => GetPage<LogInLandlord>();
         public static SideBarLandlord SideBarLandlord => GetPage<SideBarLandlord>();
         public static Dashboard Dashboard => GetPage<Dashboard>();
