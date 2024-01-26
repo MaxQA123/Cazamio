@@ -296,7 +296,7 @@ namespace BrokerTests
                 .ClickButtonCreateOwner();
             Pages.ModalWndwCreateNewOwner
                 .VerifyTitleCreateANewOwner()
-                .EnterCompanyName()
+                .EnterCompanyNameForBrokerRole()
                 .EnterOwnerName()
                 .EnterOwnerEmaiL()
                 .EnterOfficeLocation()

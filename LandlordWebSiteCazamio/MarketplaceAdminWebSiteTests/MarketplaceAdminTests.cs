@@ -426,7 +426,7 @@ namespace MarketplaceAdminTests
                 .ClickButtonCreateOwner();
             Pages.ModalWndwCreateNewOwner
                 .VerifyTitleCreateANewOwner()
-                .EnterCompanyName()
+                .EnterCompanyNameForBrokerRole()
                 .EnterOwnerName()
                 .EnterOwnerEmaiL()
                 .EnterOfficeLocation()
@@ -513,7 +513,7 @@ namespace MarketplaceAdminTests
                 .ClickButtonCreateOwner();
             Pages.ModalWndwCreateNewOwner
                 .VerifyTitleCreateANewOwner()
-                .EnterCompanyName()
+                .EnterCompanyNameForAgentRole()
                 .EnterOwnerName()
                 .EnterOwnerEmaiL()
                 .EnterOfficeLocation()
