@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -36,7 +37,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public SideBarLandlord VerifyBrokerUserName(string getUserNameActual, string getUserNameRoleActual)
         {
             WaitUntil.WaitSomeInterval(1500);
-            string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_BROKER_ALA_DIN;
+            string getUserNameExpected = broker.FullUserNameBroker;
             string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_BROKER;
 
             Assert.Multiple(() =>
@@ -151,7 +152,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         public SideBarLandlord VerifyAgentUserName(string getUserNameActual, string getUserNameRoleActual)
         {
             WaitUntil.WaitSomeInterval(3000);
-            string getUserNameExpected = TestDataForWebSiteAdmin.USER_NAME_MARIE_URMSTRONG;
+            string getUserNameExpected = agent.FullNameAgent;
             string getUserNameRoleExpected = TestDataForWebSiteAdmin.USER_NAME_ROLE_AGENT;
 
             Assert.Multiple(() =>

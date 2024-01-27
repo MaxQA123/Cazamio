@@ -130,14 +130,7 @@ namespace CazamioProgect.Helpers
 
         #region MySpaceMarketplace
 
-        public const string EMAIL_MARKETPLACE_ADMIN_MARK_ADM = "marketplaceadmin15@putsbox.com";
         public const string USER_NAME_MARKETPLACE_ADMIN_MARK_ADM = "Mark Adm";
-
-        public const string EMAIL_BROKER_ALA_DIN = "broker3autotest@putsbox.com";
-        public const string USER_NAME_BROKER_ALA_DIN = "Leoautotest Feabroker";
-
-        public const string EMAIL_AGENT_MARIE_URMSTRONG = "agent175marie5urm@putsbox.com";
-        public const string USER_NAME_MARIE_URMSTRONG = "Marie Urmstrong";
 
         public const string EMAIL_AGENT_BROKER_AGENTUS_BROKERUS = "agent1broker1auto@putsbox.com";
         public const string USER_NAME_AGENTUS_BROKERUS = "Agentus Brokerus";

@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
 using System;
@@ -12,6 +13,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
 {
     public partial class SideBarLandlord
     {
+        Broker broker = new Broker().Generate();
+        Agent agent = new Agent().Generate();
+
         #region UploadImage
 
         [AllureStep("UploadImageLogoLandlordFirst")]

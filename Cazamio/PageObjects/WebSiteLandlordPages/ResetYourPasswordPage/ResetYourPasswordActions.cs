@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,10 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage
 {
     public partial class ResetYourPassword
     {
+        MarketplaceAdmin marketplaceAdmin = new MarketplaceAdmin().Generate();
+        Broker broker = new Broker().Generate();
+        Agent agent = new Agent().Generate();
+
         [AllureStep("EnterEmailAgent")]
         public ResetYourPassword EnterEmailSuperAdmin()
         {
@@ -21,7 +26,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage
         [AllureStep("EnterEmailAgent")]
         public ResetYourPassword EnterEmailAgent()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, TestDataForWebSiteAdmin.EMAIL_AGENT_MARIE_URMSTRONG);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, agent.EmailAddressAgent);
 
             return this;
         }
@@ -29,7 +34,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ResetYourPasswordPage
         [AllureStep("EnterEmailBroker")]
         public ResetYourPassword EnterEmailBroker()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, TestDataForWebSiteAdmin.EMAIL_BROKER_ALA_DIN);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailRstPsswrdPg, broker.EmailAddressBroker);
 
             return this;
         }

@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,10 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
 {
     public partial class LogInLandlord
     {
+        MarketplaceAdmin marketplaceAdmin = new MarketplaceAdmin().Generate();
+        Broker broker = new Broker().Generate();
+        Agent agent = new Agent().Generate();
+
         [AllureStep("EnterEmailPasswordLogInPgAsSuperAdmin")]
         public LogInLandlord EnterEmailPasswordLogInPgAsSuperAdmin()
         {
@@ -23,7 +28,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         [AllureStep("EnterEmailPasswordLogInPgAsMarketplaceAdmin")]
         public LogInLandlord EnterEmailPasswordLogInPgAsMarketplaceAdmin()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_MARKETPLACE_ADMIN_MARK_ADM);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, marketplaceAdmin.EmailAddressMarketplaceAdmin);
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
 
@@ -33,7 +38,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         [AllureStep("EnterEmailPasswordLogInPgAsBroker")]
         public LogInLandlord EnterEmailPasswordLogInPgAsBroker()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_BROKER_ALA_DIN);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, broker.EmailAddressBroker);
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
 
@@ -43,7 +48,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         [AllureStep("EnterEmailPasswordLogInPgAsAgent")]
         public LogInLandlord EnterEmailPasswordLogInPgAsAgent()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_AGENT_MARIE_URMSTRONG);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, agent.EmailAddressAgent);
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
            

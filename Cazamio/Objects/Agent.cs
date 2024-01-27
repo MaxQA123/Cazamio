@@ -18,6 +18,8 @@ namespace CazamioProject.Objects
         public string Cell { get; set; }
         public string BrokerCommission { get; set; }
         public string AgentCommission { get; set; }
+        public string EmailAddressAgent { get; set; }
+        public string FullNameAgent { get; set; }
 
         public Agent Generate()
         {
@@ -28,6 +30,8 @@ namespace CazamioProject.Objects
             string cell = "518" + GenerateRandomDataHelper.RandomPhoneNumber(7);
             string brokerCommission = GenerateRandomDataHelper.RandomNumberWithoutZero(2);
             string agentCommission = GenerateRandomDataHelper.RandomNumberWithoutZero(2);
+            string emailAddressAgent = "agent5lula@putsbox.com";
+            string fullNameAgent = "Lula AgentQA";
 
             var agent = new Agent()
             {
@@ -39,7 +43,8 @@ namespace CazamioProject.Objects
                 Cell = cell,
                 BrokerCommission = brokerCommission,
                 AgentCommission = agentCommission,
-
+                EmailAddressAgent = emailAddressAgent,
+                FullNameAgent = fullNameAgent,
             };
             return agent;
         }
