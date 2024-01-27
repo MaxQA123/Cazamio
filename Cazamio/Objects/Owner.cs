@@ -27,6 +27,8 @@ namespace CazamioProject.Objects
         public string OwnerPercentage { get; set; }
         public string TenantPercentage { get; set; }
         public string TakeOff { get; set; }
+        public string EmailAddressOwnerForAgent { get; set; }
+        public string EmailAddressOwnerForBroker { get; set; }
 
         public Owner Generate()
         {
@@ -46,6 +48,8 @@ namespace CazamioProject.Objects
             string ownerPercentage = GenerateRandomDataHelper.RandomNumberWithoutZero(2);
             string tenantPercentage = GenerateRandomDataHelper.RandomNumberWithoutZero(2);
             string takeOff = GenerateRandomDataHelper.RandomNumberWithoutZero(2);
+            string emailAddressOwnerForAgent = "owner2forag5bro@putsbox.com";
+            string emailAddressOwnerForBroker = "owner2for5broker@putsbox.com";
 
             var owner = new Owner()
             {
@@ -66,6 +70,8 @@ namespace CazamioProject.Objects
                 OwnerPercentage = ownerPercentage,
                 TenantPercentage = tenantPercentage,
                 TakeOff = takeOff,
+                EmailAddressOwnerForAgent = emailAddressOwnerForAgent,
+                EmailAddressOwnerForBroker = emailAddressOwnerForBroker,
             };
             return owner;
         }

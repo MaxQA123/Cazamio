@@ -13,8 +13,10 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
 {
     public partial class SideBarLandlord
     {
+        MarketplaceAdmin marketplaceAdmin = new MarketplaceAdmin().Generate();
         Broker broker = new Broker().Generate();
         Agent agent = new Agent().Generate();
+        AgentBroker agentBroker = new AgentBroker().Generate();
 
         #region UploadImage
 

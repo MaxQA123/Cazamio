@@ -286,12 +286,12 @@ namespace MarketplaceAdminTests
 
             #region Postconditions
 
-            DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(getFullEmail, marketplaceId);
-            Console.WriteLine($"{getFullEmail}");
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestLandlords.Landlords.DeleteCreatedUserBroker(getFullEmail, marketplaceId);
-            WaitUntil.WaitSomeInterval(100);
-            DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(getFullEmail, marketplaceId);
+            //DBRequestAspNetUsers.AspNetUsers.GetEmailByEmailAndMarketplaceId(getFullEmail, marketplaceId);
+            //Console.WriteLine($"{getFullEmail}");
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestLandlords.Landlords.DeleteCreatedUserBroker(getFullEmail, marketplaceId);
+            //WaitUntil.WaitSomeInterval(100);
+            //DBRequestAspNetUsers.AspNetUsers.DeleteCreatedUser(getFullEmail, marketplaceId);
 
             #endregion
 

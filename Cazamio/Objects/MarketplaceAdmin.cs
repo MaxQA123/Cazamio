@@ -16,6 +16,7 @@ namespace CazamioProject.Objects
         public string ShortEmail { get; set; }
         public string SubdomainMySpace { get; set; }
         public string EmailAddressMarketplaceAdmin { get; set; }
+        public string FullNameMarketplaceAdmin { get; set; }
 
         public MarketplaceAdmin Generate()
         {
@@ -24,6 +25,7 @@ namespace CazamioProject.Objects
             string shortEmail = GenerateRandomDataHelper.RandomEmail(5) + GenerateRandomDataHelper.RandomNumberWithoutZero(3) + GenerateRandomDataHelper.RandomEmail(2);
             string subdomainMySpace = "testlandlord15-demo";
             string emailAddressMarketplaceAdmin = "marketplaceadmin15@putsbox.com";
+            string fullNameMarketplaceAdmin = "Mark Adm";
 
             var marketplaceAdmin = new MarketplaceAdmin()
             {
@@ -33,6 +35,7 @@ namespace CazamioProject.Objects
                 ShortEmail = shortEmail,
                 SubdomainMySpace = subdomainMySpace,
                 EmailAddressMarketplaceAdmin = emailAddressMarketplaceAdmin,
+                FullNameMarketplaceAdmin = fullNameMarketplaceAdmin,
             };
             return marketplaceAdmin;
         }

@@ -14,6 +14,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         MarketplaceAdmin marketplaceAdmin = new MarketplaceAdmin().Generate();
         Broker broker = new Broker().Generate();
         Agent agent = new Agent().Generate();
+        AgentBroker agentBroker = new AgentBroker().Generate();
 
         [AllureStep("EnterEmailPasswordLogInPgAsSuperAdmin")]
         public LogInLandlord EnterEmailPasswordLogInPgAsSuperAdmin()
@@ -58,7 +59,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
         [AllureStep("EnterEmailPasswordLogInPgAsAgentBroker")]
         public LogInLandlord EnterEmailPasswordLogInPgAsAgentBroker()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_AGENT_BROKER_AGENTUS_BROKERUS);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, agentBroker.EmailAddressAgentBroker);
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
 

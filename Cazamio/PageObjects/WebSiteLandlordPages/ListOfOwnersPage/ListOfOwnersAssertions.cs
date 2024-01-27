@@ -22,7 +22,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfOwnersPage
         [AllureStep("VerifyMessageSuccessCreatedOwner")]
         public ListOfOwners VerifyMessageSuccessCreatedOwner()
         {
-            //WaitUntil.CustomElementIsVisible(MessageOwnerHasBeenSuccessfullyCreated);
+            WaitUntil.CustomElementIsVisible(MessageOwnerHasBeenSuccessfullyCreated);
             Assert.IsTrue(Successfully.IsVisible(MessageOwnerHasBeenSuccessfullyCreated));
             WaitUntil.WaitSomeInterval(1000);
 

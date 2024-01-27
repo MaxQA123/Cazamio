@@ -256,7 +256,7 @@ namespace DBTests.BaseTestsDB
             #region Preconditions
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string ownerEmail = "Jovanny.Ziemann12@hotmail.com";
+            string ownerEmail = "dfsdfg67yh@xitroo.com";
 
             #endregion
 
