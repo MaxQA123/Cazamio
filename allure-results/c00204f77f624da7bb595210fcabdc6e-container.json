@@ -1,0 +1,78 @@
+{
+  "uuid": "61e8074a-7864-438c-bfb6-a7b2e1f364ac-tc-0-1000",
+  "name": "MarketplaceAdminTests.TestsBaseWeb.VerifySidebar",
+  "children": [
+    "64f4896c-5aaf-4d82-9fd6-d5c7bf60dcdf-tr-0-1002"
+  ],
+  "befores": [
+    {
+      "name": "DobeforeAllTheTests",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1706444293996,
+      "stop": 1706444293996
+    },
+    {
+      "name": "SetUp",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1706444293997,
+      "stop": 1706444293997
+    }
+  ],
+  "afters": [
+    {
+      "name": "DoAfterEach",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "System.NullReferenceException : Object reference not set to an instance of an object.\r\nTearDown : OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=121.0.6167.85)",
+        "trace": "   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()\r\n   at SeleniumExtras.WaitHelpers.ExpectedConditions.<>c__DisplayClass7_0.<ElementToBeClickable>b__0(IWebDriver driver)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.ElementIsClickable(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 21\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663748_o(IWebElement element, String text) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 21\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663748_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithClear_100663748_w_0(Object[] )\r\n   at CazamioProgect.Helpers.InputGeneral.InputFunctionWithClear(IWebElement element, String text)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_EnterEmailPasswordLogInPgAsMarketplaceAdmin_100663528_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\LogInPage\\LogInActions.cs:line 32\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_EnterEmailPasswordLogInPgAsMarketplaceAdmin_100663528_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.__a$_around_EnterEmailPasswordLogInPgAsMarketplaceAdmin_100663528_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage.LogInLandlord.EnterEmailPasswordLogInPgAsMarketplaceAdmin() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\LogInPage\\LogInActions.cs:line 14\r\n   at MarketplaceAdminTests.TestsBaseWeb.VerifySidebar() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\MarketplaceAdminWebSiteTests\\MarketplaceAdminTests.cs:line 74\r\n--TearDown\r\n   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.GetScreenshot()\r\n   at CazamioProject.Helpers.ScreenShotHelper.MakeScreenShot() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\ScreenShotHelper.cs:line 20\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 33"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1706444293997,
+      "stop": 1706444293997
+    },
+    {
+      "name": "DoAfterAllTheTests",
+      "status": "none",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "It's not possible to get status of OneTimeTearDown",
+        "trace": "See Allure.NUnit wiki"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1706444293997,
+      "stop": 1706444293997
+    }
+  ],
+  "links": [],
+  "start": 1706444242375,
+  "stop": 1706444294091
+}

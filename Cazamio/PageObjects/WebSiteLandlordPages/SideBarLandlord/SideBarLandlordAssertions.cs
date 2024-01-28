@@ -170,6 +170,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         [AllureStep("VerifyChangingLogoImageLandlord")]
         public SideBarLandlord VerifyChangingLogoImageLandlord()
         {
+            WaitUntil.CustomElementIsVisible(MessageChangeImageLogoLandlordSuccess);
             Assert.IsTrue(Successfully.IsVisible(MessageChangeImageLogoLandlordSuccess));
 
             return this;

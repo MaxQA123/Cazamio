@@ -183,11 +183,13 @@ namespace BrokerTests
 
         public void CreateAgent()
         {
-            #region Preconditions
+            #region Preconditions Data
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
 
             #endregion
+
+            #region Preconditions Test
 
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsBroker()
@@ -200,6 +202,11 @@ namespace BrokerTests
             Pages.SideBarLandlord
                 .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare)
                 .ClickButtonAgentsSidebar();
+
+            #endregion
+
+            #region Test
+
             Pages.Agents
                 .ClickButtonCreateAgentAgentsPage();
             Pages.ModalWindowCreateNewAgent
@@ -217,9 +224,9 @@ namespace BrokerTests
                 .ClickButtonLogOutSidebar();
             Pages.JScriptExecutorHelper
                 .OpenNewTab()
-                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdminMySpace, partEmailPutsBox);
+                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAgentMySpace, partEmailPutsBox);
             Pages.PutsBox
-                .VerifyTitleLetterCreateBroker()
+                .VerifyTitleLetterCreateAgent()
                 .ClickButtonBodyHtml();
 
             string getTextPasswordActual = Pages.PutsBox.CopyPasswordFromEmailForCreateAdmin();
@@ -241,6 +248,8 @@ namespace BrokerTests
             WaitUntil.WaitSomeInterval(100);
             var marketplaceIdFromDb = DBRequestAspNetUsers.AspNetUsers.GetMarketplaceIdByEmailAndMarketplaceId(fullEmailPutsBox, marketplaceId);
             Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb.MarketplaceId}");
+
+            #endregion
 
             #region Postconditions
 

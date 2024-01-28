@@ -315,7 +315,7 @@ namespace MarketplaceAdminTests
 
             #endregion
 
-            #region Test
+            #region Preconditions Test
 
             Pages.LogInLandlord
                 .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
@@ -328,6 +328,11 @@ namespace MarketplaceAdminTests
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare)
                 .ClickButtonAgentsSidebar();
+
+            #endregion
+
+            #region Test
+
             Pages.Agents
                 .ClickButtonCreateAgentAgentsPage();
             Pages.ModalWindowCreateNewAgent
