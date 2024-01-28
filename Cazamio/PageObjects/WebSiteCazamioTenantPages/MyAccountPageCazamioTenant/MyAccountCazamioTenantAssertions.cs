@@ -35,13 +35,13 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         }
 
         [AllureStep("VerifyTenatFirstLastName")]
-        public MyAccountCazamioTenant VerifyTenatFirstLastNameTW(string getFirstNameActual, string getLastNameActual)
+        public MyAccountCazamioTenant VerifyTenatFirstLastName(string getFirstNameActual, string getLastNameActual)
         {
             Assert.Multiple (() =>
             {
                 WaitUntil.WaitSomeInterval(500);
-                string getFirstNameExpected = TestDataForWebSiteTenant.FIRST_NAME_TENANT_APPLICANT;
-                string getLastNameExpected = TestDataForWebSiteTenant.LAST_NAME_TENANT_APPLICANT;
+                string getFirstNameExpected = tenantApplicant.FirstNameTenant;
+                string getLastNameExpected = tenantApplicant.LastNameTenant;
 
                 Assert.AreEqual(getFirstNameExpected, getFirstNameActual);
                 Assert.AreEqual(getLastNameExpected, getLastNameActual);

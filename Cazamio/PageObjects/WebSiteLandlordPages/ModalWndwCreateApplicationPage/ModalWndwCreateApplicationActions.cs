@@ -1,5 +1,6 @@
 ﻿using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,13 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
         string emailOnlyTenantAppNotCreated = TestDataForWebSiteTenant.EMAIL_TENANT_NOT_CREATED;
         string unitShortAddress = "2 Washington Square #1";
 
+        TenantApplicant tenantApplicant = new TenantApplicant().Generate();
+
         [AllureStep("EnterExistEmailInFieldMainApplicantEmailAddressModalWndw")]
         public ModalWndwCreateApplication EnterExistEmailInFieldMainApplicantEmailAddressModalWndw()
         {
             WaitUntil.CustomElementIsVisible(FieldInputMainApplicantEmailAddressModalWndw);
-            InputGeneral.InputFunctionWithClear(FieldInputMainApplicantEmailAddressModalWndw, TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT);
+            InputGeneral.InputFunctionWithClear(FieldInputMainApplicantEmailAddressModalWndw, tenantApplicant.EmailAddressTenant);
             WaitUntil.CustomElementIsVisible(ItemEmailAddressModalWndw);
             Button.Click(ItemEmailAddressModalWndw);
 

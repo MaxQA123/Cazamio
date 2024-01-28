@@ -130,7 +130,7 @@ namespace TenantCazamioTests
             string getLastNameForCompare = Pages.MyAccountCazamioTenant.GetLastNameFromMyAccount();
 
             Pages.MyAccountCazamioTenant
-                .VerifyTenatFirstLastNameTW(getFirstNameForCompare, getLastNameForCompare);
+                .VerifyTenatFirstLastName(getFirstNameForCompare, getLastNameForCompare);
             Pages.HeaderCazamioTenant
                 .LogOutFromAccountViaHeader();
 
@@ -179,7 +179,7 @@ namespace TenantCazamioTests
             string getLastNameForCompare = Pages.MyAccountCazamioTenant.GetLastNameFromMyAccount();
 
             Pages.MyAccountCazamioTenant
-                .VerifyTenatFirstLastNameTW(getFirstNameForCompare, getLastNameForCompare);
+                .VerifyTenatFirstLastName(getFirstNameForCompare, getLastNameForCompare);
 
             WaitUntil.WaitSomeInterval(2000);
         }
@@ -230,10 +230,8 @@ namespace TenantCazamioTests
                 .ClickButtonLogInLgInCazmTnnt();   
             Pages.HeaderCazamioTenant
                 .SelectItemMyAccountViaButtonInFormAvatarHdrCzmTnnt();
-
-            //Тест падает нужно обновить
             Pages.LogInCazamioTenant
-                .EnterEmailPasswordOnLgInAsOccupantLiza()
+                .EnterEmailPasswordOnLgInAsOccupant()
                 .ClickIconShowLgInCazmTnnt()
                 .SetCheckBoxRememberMeLgInCazmTnnt()
                 .ClickButtonLogInLgInCazmTnnt();
@@ -246,7 +244,7 @@ namespace TenantCazamioTests
             string getLastNameForCompare = Pages.MyAccountCazamioTenant.GetLastNameFromMyAccount();
 
             Pages.MyAccountCazamioTenant
-                .VerifyTenatFirstLastNameTW(getFirstNameForCompare, getLastNameForCompare);
+                .VerifyTenatFirstLastName(getFirstNameForCompare, getLastNameForCompare);
 
             Pages.MyAccountCazamioTenant
                 .ClickButtonEditMyAccntPgTabAccnt()

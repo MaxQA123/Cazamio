@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using System;
 using System.Collections.Generic;
@@ -11,8 +12,9 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwAddAApplicant
 {
     public partial class ModalWndwAddAApplicant
     {
-        string emailTenantOccupant = TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_ONE;
-        string emailTenantGuarantor = TestDataForWebSiteTenant.EMAIL_GUARANTOR;
+        TenantGuarantor tenantGuarantor = new TenantGuarantor().Generate();
+        TenantOccupant tenantOccupant = new TenantOccupant().Generate();
+
         string emailTenantOccupantNotCreated = TestDataForWebSiteTenant.EMAIL_TENANT_OCCUPANT_NOT_CREATED;
         string emailTenantGuarantorNotCreated = TestDataForWebSiteTenant.EMAIL_TENANT_GUARANTOR_NOT_CREATED;
 
@@ -36,7 +38,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwAddAApplicant
         public ModalWndwAddAApplicant EnterEmailTenantOccupant()
         {
             WaitUntil.CustomElementIsVisible(FirstFieldInputEmailAddressMdlWndwAddAApplicant);
-            InputGeneral.InputFunctionWithClear(FirstFieldInputEmailAddressMdlWndwAddAApplicant, emailTenantOccupant);
+            InputGeneral.InputFunctionWithClear(FirstFieldInputEmailAddressMdlWndwAddAApplicant, tenantOccupant.EmailAddressTenant);
             return this;
         }
 
@@ -53,7 +55,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwAddAApplicant
         public ModalWndwAddAApplicant EnterEmailTenantGuarantor()
         {
             WaitUntil.CustomElementIsVisible(SecondFieldInputEmailAddressMdlWndwAddAApplicant);
-            InputGeneral.InputFunctionWithClear(SecondFieldInputEmailAddressMdlWndwAddAApplicant, emailTenantGuarantor);
+            InputGeneral.InputFunctionWithClear(SecondFieldInputEmailAddressMdlWndwAddAApplicant, tenantGuarantor.EmailAddressTenant);
             return this;
         }
 

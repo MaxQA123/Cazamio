@@ -60,14 +60,7 @@ namespace CazamioProgect.Helpers
         public const string EMAIL_TENANT_CREATOR_NOT_CREATED = "task1587bcre@putsbox.com";
         public const string EMAIL_TENANT_OCCUPANT_NOT_CREATED = "task1587bocc@putsbox.com";
         public const string EMAIL_TENANT_GUARANTOR_NOT_CREATED = "task1587bgua@putsbox.com";
-        public const string EMAIL_TENANT_APPLICANT = "tenantapp123ray@putsbox.com";
-        public const string FIRST_LAST_NAME_TENANT_APPLICANT = "Ray Anredson";
-        public const string FIRST_NAME_TENANT_APPLICANT = "Ray";
-        public const string LAST_NAME_TENANT_APPLICANT = "Anderson";
 
-        public const string EMAIL_CURRENT_OCCUPANT_ONE = "tenantocc123liza@putsbox.com";
-        public const string FIRST_NAME_OCCUPANT_ONE = "Liza-Like";
-        public const string LAST_NAME_OCCUPANT_ONE = "Junior";
         public const string PHONE_NUMBER_OCCUPANT_ONE = "2128765556";
         public const string NEW_FIRST_NAME_OCCUPANT_ONE = "Elizabeth";
         public const string NEW_LAST_NAME_OCCUPANT_ONE = "Taylor";
@@ -76,9 +69,6 @@ namespace CazamioProgect.Helpers
         public const string EMAIL_CURRENT_OCCUPANT_SECOND = "tenantocc333alfred@putsbox.com";
         public const string FIRST_NAME_OCCUPANT_SECOND = "Alfred";
         public const string LAST_NAME_OCCUPANT_SECOND = "Dickins";
-
-        public const string EMAIL_GUARANTOR = "tenantgua123jim@putsbox.com";
-        public const string FIRST_NAME_GUARANTOR = "Jimmy";
 
         public const string YOUR_CURRENT_ADDRESS_STREET_SECOND = "Frank";
         public const string YOUR_CURRENT_ADDRESS_CITY_SECOND = "Saint-Germain-du-Corbéis";

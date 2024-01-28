@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProgect.PageObjects;
 using NUnit.Allure.Attributes;
 using NUnit.Framework;
 using System;
@@ -16,10 +17,10 @@ namespace ApiTests.ApiPagesObjects.ApiTenantPages.ApiLogInTenant
         {
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(TestDataForWebSiteTenant.FIRST_LAST_NAME_TENANT_APPLICANT, response.authData.user.userName);
+                Assert.AreEqual(Pages.TenantApplicant.FullNameTenant, response.authData.user.userName);
                 Console.WriteLine($"{response.authData.user.userName} :Userd Name");
 
-                Assert.AreEqual(TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT, response.authData.user.userEmail);
+                Assert.AreEqual(Pages.TenantApplicant.EmailAddressTenant, response.authData.user.userEmail);
                 Console.WriteLine($"{response.authData.user.userEmail} :Email");
             });
         }

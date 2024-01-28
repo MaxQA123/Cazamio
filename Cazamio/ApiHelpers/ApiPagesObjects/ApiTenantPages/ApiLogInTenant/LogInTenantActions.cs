@@ -1,4 +1,5 @@
 ﻿using CazamioProject.ApiHelpers;
+using CazamioProject.Objects;
 using Newtonsoft.Json;
 using RestSharp;
 using System;

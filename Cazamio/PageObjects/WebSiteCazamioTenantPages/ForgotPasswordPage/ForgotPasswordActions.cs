@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,12 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.ForgotPasswordPag
 {
     public partial class ForgotPassword
     {
+        TenantApplicant tenantApplicant = new TenantApplicant().Generate();
+
         [AllureStep("EnterEmailOnFrgtPsswrdPg")]
         public ForgotPassword EnterEmailOnFrgtPsswrdPg()
         {
-            InputGeneral.InputFunctionWithClear(InputFieldEmailFrgtPsswrdPg, TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT);
+            InputGeneral.InputFunctionWithClear(InputFieldEmailFrgtPsswrdPg, tenantApplicant.EmailAddressTenant);
 
             return this;
         }

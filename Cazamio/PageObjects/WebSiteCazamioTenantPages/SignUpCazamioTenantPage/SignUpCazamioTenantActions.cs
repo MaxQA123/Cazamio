@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
 using RimuTec.Faker;
@@ -13,18 +14,19 @@ namespace CazamioProgect.PageObjects.GeneralPages.SignUpCazamioTenantPage
 {
     public partial class SignUpCazamioTenant
     {
-        //string 
+        TenantApplicant tenantApplicant = new TenantApplicant().Generate();
+
         [AllureStep("EnterFirstLastNameEmailPasswordSignUpPg")]
         public SignUpCazamioTenant EnterFirstLastNameEmailPasswordSignUpPg()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputFirstNameSignUpPg, Name.FirstName());
+            InputGeneral.InputFunctionWithClear(FieldInputFirstNameSignUpPg, tenantApplicant.FirstName);
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputLastNameSignUpPg, Name.LastName());
+            InputGeneral.InputFunctionWithClear(FieldInputLastNameSignUpPg, tenantApplicant.LastName);
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputEmailSignUpPg, GenerateRandomDataHelper.RandomEmail(5) + NameDomen.PUTS_BOX);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailSignUpPg, tenantApplicant.EmailAddress);
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputPasswordSignUpPg, "Qwerty123!");
+            InputGeneral.InputFunctionWithClear(FieldInputPasswordSignUpPg, GeneralTestDataForAllUsers.PASSWORD_GENERAL);
             WaitUntil.WaitSomeInterval(100);
             Button.Click(IconShowSignUpPg);
 
@@ -62,7 +64,7 @@ namespace CazamioProgect.PageObjects.GeneralPages.SignUpCazamioTenantPage
         {
             WaitUntil.WaitSomeInterval(500);
             string copyPartEmail = FieldInputEmailSignUpPg.GetAttribute("value");
-            Regex regexPartEmail = new Regex(@"^.....");
+            Regex regexPartEmail = new Regex(@"^..........");
             string partEmail = regexPartEmail.Match(copyPartEmail).ToString();
 
             return partEmail;

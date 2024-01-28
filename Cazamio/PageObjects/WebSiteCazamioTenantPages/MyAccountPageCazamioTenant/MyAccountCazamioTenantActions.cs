@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -13,6 +14,8 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
 {
     public partial class MyAccountCazamioTenant
     {
+        TenantApplicant tenantApplicant = new TenantApplicant().Generate();
+        TenantOccupant tenantOccupant = new TenantOccupant().Generate();
 
         #region TabsOnMyAccountPage
 
@@ -73,13 +76,13 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.MyAccountPageCaza
         [AllureStep("EnterFirstLastNameEmailPhoneNumberMyAccntPgTabAccnt")]
         public MyAccountCazamioTenant EnterFirstLastNameEmailPhoneNumberMyAccntPgTabAccnt()
         {
-            WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputFirsNameMyAccntPgTabAccnt, TestDataForWebSiteTenant.FIRST_NAME_OCCUPANT_ONE);
-            WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputLastNameMyAccntPgTabAccnt, TestDataForWebSiteTenant.LAST_NAME_OCCUPANT_ONE);
-            WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputEmailMyAccntPgTabAccnt, TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_ONE);
-            WaitUntil.WaitSomeInterval(500);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputFirsNameMyAccntPgTabAccnt, tenantOccupant.FirstNameTenant);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputLastNameMyAccntPgTabAccnt, tenantOccupant.LastNameTenant);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputEmailMyAccntPgTabAccnt, tenantOccupant.EmailAddressTenant);
+            WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputPhoneNumberMyAccntPgTabAccnt, TestDataForWebSiteTenant.PHONE_NUMBER_OCCUPANT_ONE);
 
             return this;
