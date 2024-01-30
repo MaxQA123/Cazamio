@@ -798,7 +798,7 @@ namespace MarketplaceAdminTests
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
             string buildingAddress = "2 Washington Square";
             string unitNumber = "1";
-            string emailTenant = TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT;
+            string emailTenant = Pages.TenantApplicant.EmailAddressTenant;
 
             #endregion
 
@@ -923,9 +923,9 @@ namespace MarketplaceAdminTests
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
             string buildingAddress = "2 Washington Square";
             string unitNumber = "1";
-            string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT;
-            string emailTenantOccupant = TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_ONE;
-            string emailTenantGuarantor = TestDataForWebSiteTenant.EMAIL_GUARANTOR;
+            string emailTenantCreator = Pages.TenantApplicant.EmailAddressTenant;
+            string emailTenantOccupant = Pages.TenantOccupant.EmailAddressTenant;
+            string emailTenantGuarantor = Pages.TenantGuarantor.EmailAddressTenant;
 
             #endregion
 

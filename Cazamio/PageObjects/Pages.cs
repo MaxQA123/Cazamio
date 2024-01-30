@@ -78,6 +78,8 @@ namespace CazamioProgect.PageObjects
         #region TenantWebSiteCazamio
 
         public static TenantApplicant TenantApplicant { get { return GetPage<TenantApplicant>(); } }
+        public static TenantOccupant TenantOccupant { get { return GetPage<TenantOccupant>(); } }
+        public static TenantGuarantor TenantGuarantor { get { return GetPage<TenantGuarantor>(); } }
         public static HeaderCazamioTenant HeaderCazamioTenant => GetPage<HeaderCazamioTenant>();
         public static SignUpCazamioTenant SignUpCazamioTenant => GetPage<SignUpCazamioTenant>();
         public static LogInCazamioTenant LogInCazamioTenant => GetPage<LogInCazamioTenant>();
