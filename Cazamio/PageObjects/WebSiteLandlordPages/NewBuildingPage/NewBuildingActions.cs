@@ -40,58 +40,29 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         #region NewBuilding the tab Basic Details
 
+        [AllureStep("EnterBuildingName")]
+        public NewBuilding EnterBuildingName()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputBuildingNameNwBldngPg, building.BuildingName);
+            
+            return this;
+        }
+
+        [AllureStep("EnterLlcName")]
+        public NewBuilding EnterLlcName()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputLlcNameNwBldngPg, building.LlcName);
+
+            return this;
+        }
+
         [AllureStep("ClickDropDownMenuBrokerSelect")]
         public NewBuilding ClickDropDownMenuBrokerSelect()
         {
             Button.Click(DropDownMenuBrokerSelect);
             KeyBoardActions.ClickEnterButton();
-
-            return this;
-        }
-
-        [AllureStep("EnterMandatoryAddressNewBuilding")]
-        public NewBuilding EnterMandatoryAddressNewBuilding()
-        {
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputAddressNwBldngPg, building.Address.AssignedRoleAgntBrkr);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputCityNwBldngPg, TestDataForWebSiteAdmin.CITY_BUILDING);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputStateNwBldngPg, TestDataForWebSiteAdmin.STATE_BUILDING);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputZipNwBldngPg, TestDataForWebSiteAdmin.ZIP_BUILDING);
-
-            return this;
-        }
-
-        [AllureStep("EnterAddressNewBuilding")]
-        public NewBuilding EnterAddressNewBuilding()
-        {
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputAddressNwBldngPg, building.Address.AssignedRoleAgntBrkr);
-            //WaitUntil.WaitSomeInterval(100);
-            //InputGeneral.InputFunctionWithClear(FieldInputCityNwBldngPg, TestDataForWebSiteAdmin.CITY_BUILDING);
-            //WaitUntil.WaitSomeInterval(100);
-            //InputGeneral.InputFunctionWithClear(FieldInputStateNwBldngPg, TestDataForWebSiteAdmin.STATE_BUILDING);
-            //WaitUntil.WaitSomeInterval(100);
-            //InputGeneral.InputFunctionWithClear(FieldInputZipNwBldngPg, TestDataForWebSiteAdmin.ZIP_BUILDING);
-            //WaitUntil.WaitSomeInterval(100);
-            //InputGeneral.InputFunctionWithClear(FieldInputNeighborhoodNwBldngPg, TestDataForWebSiteAdmin.NEIGHBORHOOD_BUILDING);
-
-            return this;
-        }
-
-        [AllureStep("EnterBuildingLlcNamesDescription")]
-        public NewBuilding EnterBuildingLlcNamesDescription()
-        {
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputBuildingNameNwBldngPg, TestDataForWebSiteAdmin.BUILDING_NAME_NEW_BUILDING);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputLlcNameNwBldngPg, TestDataForWebSiteAdmin.BUILDING_LLC_NAME_NEW_BUILDING);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputDescroptionNwBldngPg, TestDataForWebSiteAdmin.DESCRIPTION_NEW_BUILDING + GeneralTestDataForAllUsers.TEXT_LOREM);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputInternalNotesNwBldngPg, TestDataForWebSiteAdmin.INTERNAL_NOTES_NEW_BUILDING + GeneralTestDataForAllUsers.TEXT_LOREM);
 
             return this;
         }

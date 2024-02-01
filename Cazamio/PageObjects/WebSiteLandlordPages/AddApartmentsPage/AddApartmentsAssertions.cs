@@ -34,7 +34,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         public AddApartments VerifyBuildingNameAddApartmentsPage(string getBuildingNameAddApartmentsPage)
         {
             WaitUntil.WaitSomeInterval(5000);
-            Assert.AreEqual(getBuildingNameAddApartmentsPage, TestDataForWebSiteAdmin.BUILDING_NAME_NEW_BUILDING);
+            Assert.AreEqual(getBuildingNameAddApartmentsPage, building.BuildingName);
 
             return this;
         }

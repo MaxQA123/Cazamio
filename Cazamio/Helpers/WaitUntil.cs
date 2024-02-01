@@ -21,10 +21,23 @@ namespace CazamioProgect.Helpers
             new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds)).Until(ExpectedConditions.ElementToBeClickable(element));
         }
 
-        public static void ElementVisibileAndClickable(By element, int seconds = 10)
+        public static void ElementVisibileAndClickable(IWebElement element, int seconds = 10)
         {
-            new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds)).Until(ExpectedConditions.ElementToBeClickable(element));
-            new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds)).Until(ExpectedConditions.ElementIsVisible(element));
+            WebDriverWait wait = new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds));
+            wait.PollingInterval = TimeSpan.FromMilliseconds(100);
+
+            try
+            {
+                wait.Until(ExpectedConditions.ElementToBeClickable(element));
+            }
+            catch (NoSuchElementException)
+            {
+                // Обработка исключения или прокидывание дальше
+            }
+            catch (StaleElementReferenceException)
+            {
+                // Обработка исключения или прокидывание дальше
+            }
         }
 
         public static void WaitSomeInterval(int milliSeconds)

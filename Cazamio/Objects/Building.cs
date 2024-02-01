@@ -15,11 +15,11 @@ namespace CazamioProject.Objects
         public CityInfo City { get; set; }
         public string State { get; set; }
         public ZipInfo Zip { get; set; }
-        public string Cell { get; set; }
-        public string BrokerCommission { get; set; }
-        public string AgentCommission { get; set; }
-        public string EmailAddressAgent { get; set; }
-        public string FullNameAgent { get; set; }
+        public NeighborhoodInfo Neighborhood { get; set; }
+        public string BuildingName { get; set; }
+        public string LlcName { get; set; }
+        public string Description { get; set; }
+        public string InternalNotes { get; set; }
 
         public class AddressInfo
         {
@@ -45,23 +45,30 @@ namespace CazamioProject.Objects
             public string ZipBuildingAssignedRoleBrkr { get; set; }
         }
 
+        public class NeighborhoodInfo
+        {
+            public string NeighborhoodBuildingAssignedRoleAgntBrkr { get; set; }
+            public string NeighborhoodBuildingAssignedRoleBrkr { get; set; }
+        }
+
 
         public Building Generate()
         {
             string buildingNumberAssignedRoleAgntBrkr = "9999";
-            string buildingNumberAssignedRoleBrkr = "8";
             string addressAssignedRoleAgntBrkr = "East 51st Street Pedestrian Crossing";
+            string zipBuildingAssignedRoleAgntBrkr = "11234";
+            string neighborhoodBuildingAssignedRoleAgntBrkr = "Manhattan";
+            string buildingNumberAssignedRoleBrkr = "8";
             string addressAssignedRoleBrkr = "Washington Square";
+            string zipBuildingAssignedRoleBrkr = "10012";
+            string neighborhoodBuildingAssignedRoleBrkr = "Manhattan";
             string cityNewYork ="New York";
             string cityBrooklyn = "Brooklyn";
             string state = "NY";
-            string zipBuildingAssignedRoleAgntBrkr = "11234";
-            string zipBuildingAssignedRoleBrkr = "54321";
-            string cell = "518" + GenerateRandomDataHelper.RandomPhoneNumber(7);
-            string brokerCommission = GenerateRandomDataHelper.RandomNumberWithoutZero(2);
-            string agentCommission = GenerateRandomDataHelper.RandomNumberWithoutZero(2);
-            string emailAddressAgent = "agent5lula@putsbox.com";
-            string fullNameAgent = "Lula AgentQA";
+            string buildingName = "QA-Building NAME (12345) (!@#$%)";
+            string LlcName = "LLC QA-HOME (12345) (!@#$%)";
+            string description = "DESCRIPTION for BUILDING (12345) (09876) (&%$#@!)";
+            string internalNotes = "INTERNAL NOTES for BUILDING (12345) (09876) (&%$#@!)";
 
             var building = new Building()
             {
@@ -86,11 +93,15 @@ namespace CazamioProject.Objects
                     ZipBuildingAssignedRoleAgntBrkr = zipBuildingAssignedRoleAgntBrkr,
                     ZipBuildingAssignedRoleBrkr= zipBuildingAssignedRoleBrkr
                 },
-                Cell = cell,
-                BrokerCommission = brokerCommission,
-                AgentCommission = agentCommission,
-                EmailAddressAgent = emailAddressAgent,
-                FullNameAgent = fullNameAgent,
+                Neighborhood = new NeighborhoodInfo
+                {
+                    NeighborhoodBuildingAssignedRoleAgntBrkr = neighborhoodBuildingAssignedRoleAgntBrkr,
+                    NeighborhoodBuildingAssignedRoleBrkr = neighborhoodBuildingAssignedRoleBrkr
+                },
+                BuildingName = buildingName,
+                LlcName = LlcName,
+                Description = description,
+                InternalNotes = internalNotes,
             };
             return building;
         }

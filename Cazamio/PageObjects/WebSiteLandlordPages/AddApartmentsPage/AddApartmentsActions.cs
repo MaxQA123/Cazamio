@@ -1,5 +1,6 @@
 ﻿using CazamioProgect.Helpers;
 using CazamioProgect.PageObjects;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
 using System;
@@ -12,6 +13,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
 {
     public partial class AddApartments
     {
+        Building building = new Building().Generate();
+
         #region TabUnits
 
         [AllureStep("EnterUnitNumberBedsBathsSqFoot")]
