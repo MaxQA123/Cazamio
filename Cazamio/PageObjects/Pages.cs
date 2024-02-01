@@ -99,6 +99,7 @@ namespace CazamioProgect.PageObjects
         public static Agent Agent { get { return GetPage<Agent>(); } }
         public static AgentBroker AgentBroker { get { return GetPage<AgentBroker>(); } }
         public static Owner Owner { get { return GetPage<Owner>(); } }
+        public static Building Building { get { return GetPage<Building>(); } }
         public static LogInLandlord LogInLandlord => GetPage<LogInLandlord>();
         public static SideBarLandlord SideBarLandlord => GetPage<SideBarLandlord>();
         public static Dashboard Dashboard => GetPage<Dashboard>();

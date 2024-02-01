@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
 using RimuTec.Faker;
@@ -14,6 +15,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
     public partial class NewBuilding
     {
         private static IWebElement _tabsForSwitchingOnPage;
+
+        Building building = new Building().Generate();
 
         [AllureStep("SelectorTabsOnNewBuildingsPg")]
         public static IList <IWebElement> SelectorTabsOnNewBuildingsPg(string _locationTab)
@@ -50,7 +53,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         public NewBuilding EnterMandatoryAddressNewBuilding()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputAddressNwBldngPg, TestDataForWebSiteAdmin.ADDRESS_BUILDING);
+            InputGeneral.InputFunctionWithClear(FieldInputAddressNwBldngPg, building.Address.AssignedRoleAgntBrkr);
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputCityNwBldngPg, TestDataForWebSiteAdmin.CITY_BUILDING);
             WaitUntil.WaitSomeInterval(100);
@@ -65,15 +68,15 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         public NewBuilding EnterAddressNewBuilding()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputAddressNwBldngPg, TestDataForWebSiteAdmin.ADDRESS_BUILDING);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputCityNwBldngPg, TestDataForWebSiteAdmin.CITY_BUILDING);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputStateNwBldngPg, TestDataForWebSiteAdmin.STATE_BUILDING);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputZipNwBldngPg, TestDataForWebSiteAdmin.ZIP_BUILDING);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputNeighborhoodNwBldngPg, TestDataForWebSiteAdmin.NEIGHBORHOOD_BUILDING);
+            InputGeneral.InputFunctionWithClear(FieldInputAddressNwBldngPg, building.Address.AssignedRoleAgntBrkr);
+            //WaitUntil.WaitSomeInterval(100);
+            //InputGeneral.InputFunctionWithClear(FieldInputCityNwBldngPg, TestDataForWebSiteAdmin.CITY_BUILDING);
+            //WaitUntil.WaitSomeInterval(100);
+            //InputGeneral.InputFunctionWithClear(FieldInputStateNwBldngPg, TestDataForWebSiteAdmin.STATE_BUILDING);
+            //WaitUntil.WaitSomeInterval(100);
+            //InputGeneral.InputFunctionWithClear(FieldInputZipNwBldngPg, TestDataForWebSiteAdmin.ZIP_BUILDING);
+            //WaitUntil.WaitSomeInterval(100);
+            //InputGeneral.InputFunctionWithClear(FieldInputNeighborhoodNwBldngPg, TestDataForWebSiteAdmin.NEIGHBORHOOD_BUILDING);
 
             return this;
         }

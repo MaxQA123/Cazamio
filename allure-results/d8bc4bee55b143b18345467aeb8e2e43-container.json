@@ -1,0 +1,78 @@
+{
+  "uuid": "5e50c1c3-ca91-4b11-99be-f2fafe19313b-tc-0-1000",
+  "name": "TenantCazamioTests.TestsBaseWeb.LogInTenant",
+  "children": [
+    "002a5c80-9877-4fa6-9b6e-4c4da144b7c9-tr-0-1003"
+  ],
+  "befores": [
+    {
+      "name": "DobeforeAllTheTests",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1706780466400,
+      "stop": 1706780466400
+    },
+    {
+      "name": "SetUp",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1706780466400,
+      "stop": 1706780466400
+    }
+  ],
+  "afters": [
+    {
+      "name": "DoAfterEach",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=121.0.6167.86)\r\nTearDown : OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=121.0.6167.86)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.get_ButtonLogInHdrCzmTnnt() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantElements.cs:line 17\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonLogInHdrCzmTnnt_100663631_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\HeaderCazamioTenant\\HeaderCazamioTenantActions.cs:line 26\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonLogInHdrCzmTnnt_100663631_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.__a$_around_ClickButtonLogInHdrCzmTnnt_100663631_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTenant.HeaderCazamioTenant.ClickButtonLogInHdrCzmTnnt()\r\n   at TenantCazamioTests.TestsBaseWeb.LogInTenant() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 116\r\n--TearDown\r\n   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.GetScreenshot()\r\n   at CazamioProject.Helpers.ScreenShotHelper.MakeScreenShot() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\ScreenShotHelper.cs:line 20\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 33"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1706780466400,
+      "stop": 1706780466400
+    },
+    {
+      "name": "DoAfterAllTheTests",
+      "status": "none",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "It's not possible to get status of OneTimeTearDown",
+        "trace": "See Allure.NUnit wiki"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1706780466401,
+      "stop": 1706780466401
+    }
+  ],
+  "links": [],
+  "start": 1706780415844,
+  "stop": 1706780466485
+}

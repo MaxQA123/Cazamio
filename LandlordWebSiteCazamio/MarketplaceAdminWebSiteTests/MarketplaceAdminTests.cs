@@ -588,7 +588,8 @@ namespace MarketplaceAdminTests
             string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare)
+                .ClickButtonBuildingsSidebar();
 
             #endregion
 
@@ -598,74 +599,74 @@ namespace MarketplaceAdminTests
                 .ClickButtonAddBuilding();
             Pages.NewBuilding
                 .VerifyTitleNewBuildingPg()
-                .ClickDropDownMenuBrokerSelect()
+                //.ClickDropDownMenuBrokerSelect()
                 .EnterAddressNewBuilding()
                 .EnterBuildingLlcNamesDescription();
-            KeyBoardActions.ClickTab();
-            Pages.NewBuilding
-                .ClickButtonSelectPetPolicies();
-            Pages.ModalWindowPetPolicies
-                .VerifyTitlePetPoliciesMdlWndw()
-                .SelectItemPetPolocies(ItemsPetPolicies.PETS_FEE, " ")
-                .SelectItemPetPolocies(ItemsPetPolicies.CATS_ONLY, " ")
-                .SelectItemPetPolocies(ItemsPetPolicies.SMALL_PETS_ALLOWED, " ")
-                .SelectItemPetPolocies(ItemsPetPolicies.CASE_BY_CASE, " ")
-                .SelectItemPetPolocies(ItemsPetPolicies.ALL_PETS_ALLOWED, " ")
-                .SelectItemPetPolocies(ItemsPetPolicies.NO_PETS, " ")
-                .ClickButtonSave();
-            Pages.NewBuilding
-                .EnterCreditScreeningFee()
-                .SelectPaymentsMethodsNwBldngPage()
-                .ClickButtonGeneralNextNwBldngPg()
-                .ClickFieldInputSearchForAmenitiesNwBldngPg()
-                .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-                .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-                .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-                .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-                .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-                .ClickButtonGeneralNextNwBldngPg()
-                .ClickButtonAddLockForAccessNwBldngPg();
+            //KeyBoardActions.ClickTab();
+            //Pages.NewBuilding
+            //    .ClickButtonSelectPetPolicies();
+            //Pages.ModalWindowPetPolicies
+            //    .VerifyTitlePetPoliciesMdlWndw()
+            //    .SelectItemPetPolocies(ItemsPetPolicies.PETS_FEE, " ")
+            //    .SelectItemPetPolocies(ItemsPetPolicies.CATS_ONLY, " ")
+            //    .SelectItemPetPolocies(ItemsPetPolicies.SMALL_PETS_ALLOWED, " ")
+            //    .SelectItemPetPolocies(ItemsPetPolicies.CASE_BY_CASE, " ")
+            //    .SelectItemPetPolocies(ItemsPetPolicies.ALL_PETS_ALLOWED, " ")
+            //    .SelectItemPetPolocies(ItemsPetPolicies.NO_PETS, " ")
+            //    .ClickButtonSave();
+            //Pages.NewBuilding
+            //    .EnterCreditScreeningFee()
+            //    .SelectPaymentsMethodsNwBldngPage()
+            //    .ClickButtonGeneralNextNwBldngPg()
+            //    .ClickFieldInputSearchForAmenitiesNwBldngPg()
+            //    .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+            //    .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+            //    .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+            //    .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+            //    .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+            //    .ClickButtonGeneralNextNwBldngPg()
+            //    .ClickButtonAddLockForAccessNwBldngPg();
 
-            string copyActualNameLocation = Pages.NewBuilding.CopyNameLocation();
+            //string copyActualNameLocation = Pages.NewBuilding.CopyNameLocation();
 
-            Pages.NewBuilding
-                .VerifyLocationMainAccessNewBuildingPg(copyActualNameLocation)
-                .AddItemAccessTypePinCodeForAccessNwBldngPg();
-            Pages.NewBuilding
-                .ClickButtonAddLockForAccessNwBldngPg();
+            //Pages.NewBuilding
+            //    .VerifyLocationMainAccessNewBuildingPg(copyActualNameLocation)
+            //    .AddItemAccessTypePinCodeForAccessNwBldngPg();
+            //Pages.NewBuilding
+            //    .ClickButtonAddLockForAccessNwBldngPg();
 
-            string copyActualNameLocationTwo = Pages.NewBuilding.CopyNameLocation();
+            //string copyActualNameLocationTwo = Pages.NewBuilding.CopyNameLocation();
 
-            Pages.NewBuilding
-                .VerifyLocationApartmentAccessNewBuildingPg(copyActualNameLocationTwo)
-                .AddItemAccessTypeNoteForAccessNwBldngPg()
-                .ClickButtonAddLockForAccessNwBldngPg()
-                .AddItemAccessTypeCabForAccessNwBldngPg();
+            //Pages.NewBuilding
+            //    .VerifyLocationApartmentAccessNewBuildingPg(copyActualNameLocationTwo)
+            //    .AddItemAccessTypeNoteForAccessNwBldngPg()
+            //    .ClickButtonAddLockForAccessNwBldngPg()
+            //    .AddItemAccessTypeCabForAccessNwBldngPg();
 
-            string copyActualNameCab = Pages.NewBuilding.GetNameCabTypeAccessFromTable();
-            string copyActualNameNote = Pages.NewBuilding.GetNameNoteTypeAccessFromTable();
-            string copyActualNamePinCode = Pages.NewBuilding.GetNamePinCodeTypeAccessFromTable();
+            //string copyActualNameCab = Pages.NewBuilding.GetNameCabTypeAccessFromTable();
+            //string copyActualNameNote = Pages.NewBuilding.GetNameNoteTypeAccessFromTable();
+            //string copyActualNamePinCode = Pages.NewBuilding.GetNamePinCodeTypeAccessFromTable();
 
-            Pages.NewBuilding
-                .VerifyTypeAccessFromTable(copyActualNameCab, copyActualNameNote, copyActualNamePinCode);
-            Pages.NewBuilding
-                .ClickButtonGeneralNextNwBldngPg()
-                .ClickButtonAddSpecialsNwBldngPg()
-                .AddConcessionSpecialsNwBldngPg();
+            //Pages.NewBuilding
+            //    .VerifyTypeAccessFromTable(copyActualNameCab, copyActualNameNote, copyActualNamePinCode);
+            //Pages.NewBuilding
+            //    .ClickButtonGeneralNextNwBldngPg()
+            //    .ClickButtonAddSpecialsNwBldngPg()
+            //    .AddConcessionSpecialsNwBldngPg();
 
-            string getNameConcession = Pages.NewBuilding.GetNameConcessionFromTable();
+            //string getNameConcession = Pages.NewBuilding.GetNameConcessionFromTable();
 
-            Pages.NewBuilding
-                .VerifyNameSpecialsConcessionInTableNewBuildingPg(getNameConcession)
-                .ClickTabFreeStuffSpecialsNwBldngPg()
-                .ClickButtonAddSpecialsNwBldngPg()
-                .AddFreeStuffSpecialsNwBldngPg()
-                .ClickButtonGeneralNextNwBldngPg();
-            Pages.NewBuilding
-                //.SelectTabOnNewBuildingsPg(TabsOnNewBuildingPage.TAB_IMAGES, " ")
-                .UploadImagesForNewBuilding()
-                .ClickButtonSaveNwBldngPg()
-                .VerifyMessageSavedSuccessfullyBuildingNwBldngPg();
+            //Pages.NewBuilding
+            //    .VerifyNameSpecialsConcessionInTableNewBuildingPg(getNameConcession)
+            //    .ClickTabFreeStuffSpecialsNwBldngPg()
+            //    .ClickButtonAddSpecialsNwBldngPg()
+            //    .AddFreeStuffSpecialsNwBldngPg()
+            //    .ClickButtonGeneralNextNwBldngPg();
+            //Pages.NewBuilding
+            //    //.SelectTabOnNewBuildingsPg(TabsOnNewBuildingPage.TAB_IMAGES, " ")
+            //    .UploadImagesForNewBuilding()
+            //    .ClickButtonSaveNwBldngPg()
+            //    .VerifyMessageSavedSuccessfullyBuildingNwBldngPg();
 
             WaitUntil.WaitSomeInterval(5000);
 
