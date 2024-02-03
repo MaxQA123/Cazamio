@@ -14,7 +14,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         public NewBuilding EnterFullAddressNewBuildingAssgndRlBrkr()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputAddressNwBldngPg, building.Address.AssignedRoleBrkr);
+            InputGeneral.InputFunctionWithClear(FieldInputAddressNwBldngPg, building.NumberWithAddressRoleBrkr);
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputCityNwBldngPg, building.City.CityNewYork);
             WaitUntil.WaitSomeInterval(100);
@@ -27,13 +27,13 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        [AllureStep("EnterInternalNotesDescription")]
-        public NewBuilding EnterInternalNotesDescription()
+        [AllureStep("EnterLongInternalNotesDescription")]
+        public NewBuilding EnterLongInternalNotesDescription()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputDescroptionNwBldngPg, building.Description + GeneralTestDataForAllUsers.TEXT_LOREM);
+            InputGeneral.InputFunctionWithClear(FieldInputDescroptionNwBldngPg, building.DescriptionLong);
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputInternalNotesNwBldngPg, building.InternalNotes + GeneralTestDataForAllUsers.TEXT_LOREM);
+            InputGeneral.InputFunctionWithClear(FieldInputInternalNotesNwBldngPg, building.InternalNotesLong);
 
             return this;
         }

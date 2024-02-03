@@ -599,22 +599,18 @@ namespace MarketplaceAdminTests
                 .ClickButtonAddBuilding();
             Pages.NewBuilding
                 .VerifyTitleNewBuildingPg()
-                .ClickDropDownMenuBrokerSelect()
+                .ClickButtonMenuOwnerSelect()
                 .EnterFullAddressNewBuildingAssgndRlBrkr()
                 .EnterBuildingName()
-                .EnterInternalNotesDescription();
-            //KeyBoardActions.ClickTab();
-            //Pages.NewBuilding
-            //    .ClickButtonSelectPetPolicies();
-            //Pages.ModalWindowPetPolicies
-            //    .VerifyTitlePetPoliciesMdlWndw()
-            //    .SelectItemPetPolocies(ItemsPetPolicies.PETS_FEE, " ")
-            //    .SelectItemPetPolocies(ItemsPetPolicies.CATS_ONLY, " ")
-            //    .SelectItemPetPolocies(ItemsPetPolicies.SMALL_PETS_ALLOWED, " ")
-            //    .SelectItemPetPolocies(ItemsPetPolicies.CASE_BY_CASE, " ")
-            //    .SelectItemPetPolocies(ItemsPetPolicies.ALL_PETS_ALLOWED, " ")
-            //    .SelectItemPetPolocies(ItemsPetPolicies.NO_PETS, " ")
-            //    .ClickButtonSave();
+                .EnterLlcName()
+                .EnterLongInternalNotesDescription();
+            KeyBoardActions.ClickTab();
+            Pages.NewBuilding
+                .ClickButtonSelectPetPolicies();
+            Pages.ModalWindowPetPolicies
+                .VerifyTitlePetPoliciesMdlWndw()
+                .SelectAllItems()
+                .ClickButtonSave();
             //Pages.NewBuilding
             //    .EnterCreditScreeningFee()
             //    .SelectPaymentsMethodsNwBldngPage()
@@ -762,7 +758,7 @@ namespace MarketplaceAdminTests
 
             Pages.AddApartments
                 .VerifyRequiredDocumentsByDefaultAddApartmentsPage(getThreeRecentPaystubs, getPhotoId, getTwoMostRecentBankStatements, getMostRecentWTwoOrOneZeroNineNine)
-                .EnterDescriptionInternalNotesAddAprtmntsUnitsPage()
+                //.EnterDescriptionInternalNotesAddAprtmntsUnitsPage()
                 .ClickButtonGeneralNextAddAprtmntsgPg()
                 .ClickFieldInputSearchForAmenitiesAddAprtmntsgPg()
                 .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
@@ -863,8 +859,8 @@ namespace MarketplaceAdminTests
             string getRentalTermsActual = Pages.ModalWndwCreateApplication.GetRentalTermsStepThirdFromUi();
 
             Pages.ModalWndwCreateApplication
-                .AddRequestedWorkForModalWndw()
-                .EnterTextInFieldRefferalDetailsModalWndw()
+                //.AddRequestedWorkForModalWndw()
+                //.EnterTextInFieldRefferalDetailsModalWndw()
                 .AddConcessionForModalWndw();
 
             decimal getNetEffectiveActualFromCrtApplctn = Pages.ModalWndwCreateApplication.GetNetEffectiveStepThirdFromUi();
@@ -990,8 +986,8 @@ namespace MarketplaceAdminTests
             string getRentalTermsActual = Pages.ModalWndwCreateApplication.GetRentalTermsStepThirdFromUi();
 
             Pages.ModalWndwCreateApplication
-                .AddRequestedWorkForModalWndw()
-                .EnterTextInFieldRefferalDetailsModalWndw()
+                //.AddRequestedWorkForModalWndw()
+                //.EnterTextInFieldRefferalDetailsModalWndw()
                 .AddConcessionForModalWndw();
 
             decimal getNetEffectiveActualFromCrtApplctn = Pages.ModalWndwCreateApplication.GetNetEffectiveStepThirdFromUi();
@@ -1280,8 +1276,8 @@ namespace MarketplaceAdminTests
                 .SelectDateAvailableForCreateApplicationModalWndwViaApartmentView();
 
             Pages.ModalWndwCreateApplication
-                .AddRequestedWorkForModalWndw()
-                .EnterTextInFieldRefferalDetailsModalWndw()
+                //.AddRequestedWorkForModalWndw()
+                //.EnterTextInFieldRefferalDetailsModalWndw()
                 .AddConcessionForModalWndw();
 
             decimal getNetEffectiveActualFromCrtApplctn = Pages.ModalWndwCreateApplication.GetNetEffectiveStepThirdFromUi();

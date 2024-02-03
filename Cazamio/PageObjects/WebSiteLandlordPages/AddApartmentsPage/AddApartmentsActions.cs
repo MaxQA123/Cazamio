@@ -104,16 +104,16 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             return this;
         }
 
-        [AllureStep("EnterDescriptionInternalNotesAddAprtmntsUnitsPage")]
-        public AddApartments EnterDescriptionInternalNotesAddAprtmntsUnitsPage()
-        {
-            WaitUntil.CustomElementIsVisible(FieldInputDescriptionAddAprtmntsUnitsPage, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputDescriptionAddAprtmntsUnitsPage, GeneralTestDataForAllUsers.TEXT_DESCRIPTION_FOR_APARTMENT + GeneralTestDataForAllUsers.TEXT_LOREM);
-            WaitUntil.CustomElementIsVisible(FieldInputInternalNotesAddAprtmntsUnitsPage, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputInternalNotesAddAprtmntsUnitsPage, GeneralTestDataForAllUsers.TEXT_INTERNAL_NOTES_FOR_APARTMENT + GeneralTestDataForAllUsers.TEXT_LOREM);
+        //[AllureStep("EnterDescriptionInternalNotesAddAprtmntsUnitsPage")]
+        //public AddApartments EnterDescriptionInternalNotesAddAprtmntsUnitsPage()
+        //{
+        //    WaitUntil.CustomElementIsVisible(FieldInputDescriptionAddAprtmntsUnitsPage, 10);
+        //    InputGeneral.InputFunctionWithClear(FieldInputDescriptionAddAprtmntsUnitsPage, GeneralTestDataForAllUsers.TEXT_DESCRIPTION_FOR_APARTMENT + GeneralTestDataForAllUsers.TEXT_LOREM);
+        //    WaitUntil.CustomElementIsVisible(FieldInputInternalNotesAddAprtmntsUnitsPage, 10);
+        //    InputGeneral.InputFunctionWithClear(FieldInputInternalNotesAddAprtmntsUnitsPage, GeneralTestDataForAllUsers.TEXT_INTERNAL_NOTES_FOR_APARTMENT + GeneralTestDataForAllUsers.TEXT_LOREM);
 
-            return this;
-        }
+        //    return this;
+        //}
 
         #endregion
 

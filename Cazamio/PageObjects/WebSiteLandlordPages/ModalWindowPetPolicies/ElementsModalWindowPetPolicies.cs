@@ -13,6 +13,9 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowPetPolicies
         [FindsBy(How = How.XPath, Using = "//h2[text() = 'Pet policies']")]
         public IWebElement TitlePetPolicies;
 
+        [FindsBy(How = How.CssSelector, Using = "div mat-checkbox")]
+        public IList<IWebElement> PetPoliciesList;
+
         [FindsBy(How = How.XPath, Using = "//button//span[(text() = 'Save')]")]
         public IWebElement ButtonSave;
     }

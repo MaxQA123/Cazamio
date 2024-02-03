@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CazamioProgect.Helpers
@@ -21,23 +22,36 @@ namespace CazamioProgect.Helpers
             new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds)).Until(ExpectedConditions.ElementToBeClickable(element));
         }
 
-        public static void ElementVisibileAndClickable(IWebElement element, int seconds = 10)
+        public static void WaitForElementClickable(IWebElement element, int seconds = 10)
         {
             WebDriverWait wait = new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds));
             wait.PollingInterval = TimeSpan.FromMilliseconds(100);
 
-            try
+            DateTime endTime = DateTime.Now.AddSeconds(seconds);
+
+            while (DateTime.Now < endTime)
             {
-                wait.Until(ExpectedConditions.ElementToBeClickable(element));
+                try
+                {
+                    if (ExpectedConditions.ElementToBeClickable(element).Invoke(Browser._Driver) != null)
+                    {
+                        return; // элемент кликабельный
+                    }
+                }
+                catch (NoSuchElementException)
+                {
+                    // Обработка исключения или прокидывание дальше
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Обработка исключения или прокидывание дальше
+                }
+
+                Thread.Sleep(100); // подождать 100 миллисекунд перед следующей проверкой
             }
-            catch (NoSuchElementException)
-            {
-                // Обработка исключения или прокидывание дальше
-            }
-            catch (StaleElementReferenceException)
-            {
-                // Обработка исключения или прокидывание дальше
-            }
+
+            // Если элемент так и не стал кликабельным в течение указанного времени
+            // Обработка или выброс исключения
         }
 
         public static void WaitSomeInterval(int milliSeconds)

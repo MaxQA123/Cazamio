@@ -20,7 +20,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         #region TabBasicDetails
 
         [FindsBy(How = How.XPath, Using = "//ng-select[@placeholder= 'Select owner']")]
-        public IWebElement DropDownMenuBrokerSelect;
+        public IWebElement ButtonMenuOwnerSelect;
 
         [FindsBy(How = How.CssSelector, Using = "input#inputAddress")]
         public IWebElement FieldInputAddressNwBldngPg;

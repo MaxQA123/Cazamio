@@ -36,7 +36,7 @@ namespace CazamioProgect.Helpers
         [AllureStep("Click")]
         public static void Click(IWebElement element)
         {
-            WaitUntil.CustomElementIsVisible(element);
+            //WaitUntil.CustomElementIsVisible(element);
             WaitUntil.WaitSomeInterval(500);
             element.Click();
         }

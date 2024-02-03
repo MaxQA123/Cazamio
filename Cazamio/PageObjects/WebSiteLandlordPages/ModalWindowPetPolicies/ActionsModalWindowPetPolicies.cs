@@ -14,21 +14,16 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowPetPolicies
         private static IWebElement _elementPetPolicies;
 
         [AllureStep("SelectorPetPolicies")]
-        public static IList<IWebElement> SelectorPetPolicies(string _itemPetPolocie)
+        public static IList<IWebElement> SelectorPetPolicies()
         {
             WaitUntil.WaitSomeInterval(1000);
-            var str = "//div[@class = 'select-values ng-star-inserted']";
-            _elementPetPolicies = Browser._Driver.FindElement(By.XPath(str));
-            return _elementPetPolicies.FindElements(By.XPath($".//li//span[contains(text(), '{_itemPetPolocie}')]"));
+            return _elementPetPolicies.FindElements(By.XPath($".//div//mat-checkbox]"));
         }
 
         [AllureStep("SelectItemPetPolocies")]
-        public ModalWindowPetPolicies SelectItemPetPolocies(int numberItem, string itemPetPolocie)
+        public ModalWindowPetPolicies SelectItemPetPolocies(int numberItem)
         {
-            WaitUntil.WaitSomeInterval(500);
-            IList<IWebElement> _numberItem = SelectorPetPolicies(itemPetPolocie);
-
-            _numberItem[numberItem].Click();
+            Button.Click(PetPoliciesList[numberItem]);
 
             return this;
         }

@@ -58,10 +58,10 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        [AllureStep("ClickDropDownMenuBrokerSelect")]
-        public NewBuilding ClickDropDownMenuBrokerSelect()
+        [AllureStep("ClickButtonMenuOwnerSelect")]
+        public NewBuilding ClickButtonMenuOwnerSelect()
         {
-            Button.Click(DropDownMenuBrokerSelect);
+            Button.Click(ButtonMenuOwnerSelect);
             KeyBoardActions.ClickEnterButton();
 
             return this;
@@ -178,7 +178,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithoutClear(FieldInputPinCodeForAccessNwBldngPg, GenerateRandomDataHelper.RandomNumberWithoutZero(1));
             KeyBoardActions.ClickSpaceButton();
-            InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccessNwBldngPg, GeneralTestDataForAllUsers.TEXT_LOREM);
+            InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccessNwBldngPg, building.TextLorem);
             WaitUntil.WaitSomeInterval(100);
             ButtonSelectImageForAccessNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_LOCK_OK));
             WaitUntil.SuccessCustomElementIsVisible(MessageSuccessUploadImageForAccessNwBldngPg);
@@ -205,7 +205,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             WaitUntil.WaitSomeInterval(100);
             KeyBoardActions.ClickEnterButton();
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccessNwBldngPg, GeneralTestDataForAllUsers.TEXT_LOREM);
+            InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccessNwBldngPg, building.TextLorem);
             WaitUntil.WaitSomeInterval(100);
             ButtonSelectImageForAccessNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_LOCK_OK));
             WaitUntil.SuccessCustomElementIsVisible(MessageSuccessUploadImageForAccessNwBldngPg);
@@ -237,7 +237,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputLockGuideForAccessNwBldngPg, GenerateRandomDataHelper.RandomNumberWithoutZero(5));
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccessNwBldngPg, GeneralTestDataForAllUsers.TEXT_LOREM);
+            InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccessNwBldngPg, building.TextLorem);
             WaitUntil.WaitSomeInterval(100);
             ButtonSelectImageForAccessNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_LOCK_OK));
             WaitUntil.SuccessCustomElementIsVisible(MessageSuccessUploadImageForAccessNwBldngPg);
