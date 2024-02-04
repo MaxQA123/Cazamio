@@ -55,7 +55,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         {
             Button.Click(ButtonMenuOwnerSelect);
             WaitUntil.WaitSomeInterval(500);
-            Button.Click(ItemForAutotestForBroker);
+            Button.Click(SetItemForAutotestForBroker());
 
             return this;
         }

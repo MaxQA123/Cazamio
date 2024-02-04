@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using CazamioProgect.Helpers;
+using CazamioProject.Objects;
+using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,20 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 {
     public partial class NewBuilding
     {
+        public IWebElement ItemForAutotestForBroker;
+
+        public IWebElement SetItemForAutotestForBroker()
+        {
+            // Создание экземпляра класса Owner
+            Owner owner = new Owner().Generate();
+
+            // Использование переменной экземпляра owner для построения XPath
+            var xpath = "//ng-dropdown-panel[@aria-label = 'Options list']//div[text() = '" + owner.AlreadyCreatedCompanyNameWithBroker + "']";
+
+            // Присвоение значения ItemForAutotestForBroker
+            return Browser._Driver.FindElement(By.XPath(xpath));
+        }
+
         #region PageNewBuilging
 
         [FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]
@@ -22,8 +38,11 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [FindsBy(How = How.XPath, Using = "//ng-select[@placeholder= 'Select owner']")]
         public IWebElement ButtonMenuOwnerSelect;
 
-        [FindsBy(How = How.XPath, Using = "//ng-dropdown-panel[@aria-label = 'Options list']//div[text() = 'For Autotest For Broker']")]
-        public IWebElement ItemForAutotestForBroker;
+        //[FindsBy(How = How.XPath, Using = "//ng-dropdown-panel[@aria-label = 'Options list']//div[text() = 'For Autotest For Broker']")]
+        //public IWebElement ItemForAutotestForBroker;
+
+        //[FindsBy(How = How.XPath, Using = "//ng-dropdown-panel[@aria-label = 'Options list']//div[text() = '" + owner.CompanyNameWithBroker + "']")]
+        //public IWebElement Demo;
 
         [FindsBy(How = How.CssSelector, Using = "input#inputAddress")]
         public IWebElement FieldInputAddressNwBldngPg;

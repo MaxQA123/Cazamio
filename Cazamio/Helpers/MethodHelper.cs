@@ -33,6 +33,7 @@ namespace CazamioProgect.Helpers
 
             // Выделить весь текст в поле ввода
             element.SendKeys(Keys.Control + "a");
+            element.SendKeys(Keys.Delete);
 
             // Очистить поле ввода, если текущее значение не пусто
             if (!string.IsNullOrEmpty(currentInputValue))

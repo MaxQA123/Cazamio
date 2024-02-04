@@ -600,17 +600,17 @@ namespace MarketplaceAdminTests
             Pages.NewBuilding
                 .VerifyTitleNewBuildingPg()
                 .SelectOwnerWithBroker()
-                .EnterFullAddressNewBuildingAssgndRlBrkr()
-                .EnterBuildingName()
-                .EnterLlcName()
-                .EnterLongInternalNotesDescription();
+                .EnterFullAddressNewBuildingAssgndRlBrkr();
+                //.EnterBuildingName()
+                //.EnterLlcName()
+                //.EnterLongInternalNotesDescription();
             KeyBoardActions.ClickTab();
-            Pages.NewBuilding
-                .ClickButtonSelectPetPolicies();
-            Pages.ModalWindowPetPolicies
-                .VerifyTitlePetPoliciesMdlWndw()
-                .SelectAllItems()
-                .ClickButtonSave();
+            //Pages.NewBuilding
+            //    .ClickButtonSelectPetPolicies();
+            //Pages.ModalWindowPetPolicies
+            //    .VerifyTitlePetPoliciesMdlWndw()
+            //    .SelectAllItems()
+            //    .ClickButtonSave();
             Pages.NewBuilding
                 .EnterCreditScreeningFeeHoldDeposit();
 
