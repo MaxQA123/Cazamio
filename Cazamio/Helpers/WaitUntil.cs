@@ -22,7 +22,7 @@ namespace CazamioProgect.Helpers
             new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds)).Until(ExpectedConditions.ElementToBeClickable(element));
         }
 
-        public static void WaitForElementClickable(IWebElement element, int seconds = 10)
+        public static void CustomElementIsClickable(IWebElement element, int seconds = 10)
         {
             WebDriverWait wait = new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds));
             wait.PollingInterval = TimeSpan.FromMilliseconds(100);

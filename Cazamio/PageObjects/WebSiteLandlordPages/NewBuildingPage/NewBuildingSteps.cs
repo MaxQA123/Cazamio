@@ -13,15 +13,15 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [AllureStep("EnterFullAddressNewBuildingAssgndRlBrkr")]
         public NewBuilding EnterFullAddressNewBuildingAssgndRlBrkr()
         {
-            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputAddressNwBldngPg, building.NumberWithAddressRoleBrkr);
-            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputCityNwBldngPg, building.City.CityNewYork);
-            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputStateNwBldngPg, building.State);
-            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputZipNwBldngPg, building.Zip.ZipBuildingAssignedRoleBrkr);
-            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputNeighborhoodNwBldngPg, building.Neighborhood.NeighborhoodBuildingAssignedRoleBrkr);
 
             return this;
@@ -34,6 +34,28 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             InputGeneral.InputFunctionWithClear(FieldInputDescroptionNwBldngPg, building.DescriptionLong);
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputInternalNotesNwBldngPg, building.InternalNotesLong);
+
+            return this;
+        }
+
+        [AllureStep("EnterCreditScreeningFeeHoldDeposit")]
+        public NewBuilding EnterCreditScreeningFeeHoldDeposit()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputCreditScreeningFee);
+            WaitUntil.CustomElementIsClickable(FieldInputCreditScreeningFee);
+            InputGeneral.InputFunctionWithClearDemo(FieldInputCreditScreeningFee, building.CreditScreeningFee);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputHoldDeposit, building.HoldDeposit);
+
+            return this;
+        }
+
+        [AllureStep("SelectOwnerWithBroker")]
+        public NewBuilding SelectOwnerWithBroker()
+        {
+            Button.Click(ButtonMenuOwnerSelect);
+            WaitUntil.WaitSomeInterval(500);
+            Button.Click(ItemForAutotestForBroker);
 
             return this;
         }

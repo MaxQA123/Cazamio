@@ -17,6 +17,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         private static IWebElement _tabsForSwitchingOnPage;
 
         Building building = new Building().Generate();
+        Owner owner = new Owner().Generate();
 
         [AllureStep("SelectorTabsOnNewBuildingsPg")]
         public static IList <IWebElement> SelectorTabsOnNewBuildingsPg(string _locationTab)
@@ -61,6 +62,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [AllureStep("ClickButtonMenuOwnerSelect")]
         public NewBuilding ClickButtonMenuOwnerSelect()
         {
+            WaitUntil.CustomElementIsVisible(ButtonMenuOwnerSelect);
+            WaitUntil.CustomElementIsClickable(ButtonMenuOwnerSelect);
             Button.Click(ButtonMenuOwnerSelect);
             KeyBoardActions.ClickEnterButton();
 
@@ -78,7 +81,19 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [AllureStep("EnterCreditScreeningFee")]
         public NewBuilding EnterCreditScreeningFee()
         {
-            InputGeneral.InputFunctionWithClear(FieldInputCreditScreeningFee, GenerateRandomDataHelper.RandomNumberWithoutZero(2));
+            WaitUntil.CustomElementIsVisible(FieldInputCreditScreeningFee);
+            WaitUntil.CustomElementIsClickable(FieldInputCreditScreeningFee);
+            InputGeneral.InputFunctionWithClear(FieldInputCreditScreeningFee, building.CreditScreeningFee);
+
+            return this;
+        }
+
+        [AllureStep("EnterHoldDeposit")]
+        public NewBuilding EnterHoldDeposit()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputHoldDeposit);
+            WaitUntil.CustomElementIsClickable(FieldInputHoldDeposit);
+            InputGeneral.InputFunctionWithClear(FieldInputHoldDeposit, building.HoldDeposit);
 
             return this;
         }

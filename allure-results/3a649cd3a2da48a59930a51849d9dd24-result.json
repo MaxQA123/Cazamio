@@ -1,0 +1,304 @@
+{
+  "uuid": "0589a196-9407-47de-bd1c-d3112a169348-tr-0-1003",
+  "historyId": "TenantCazamioTests.TestsBaseWeb.LogInTenant",
+  "fullName": "TenantCazamioTests.TestsBaseWeb.LogInTenant",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "TenantCazamioTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "LogInTenant"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "WebSiteTenant"
+    },
+    {
+      "name": "subSuite",
+      "value": "LogInTenant"
+    }
+  ],
+  "links": [],
+  "name": "LogInTenant",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@id = 'email']\"}\n  (Session info: chrome=121.0.6167.140)",
+    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.get_FieldInputEmailAddressLgInCazmTnnt() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\LogInPageCazamioTenant\\LogInCazamioTenantElements.cs:line 14\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInAsTenantApplicant_100663582_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\LogInPageCazamioTenant\\LogInCazamioTenantActions.cs:line 21\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInAsTenantApplicant_100663582_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInAsTenantApplicant_100663582_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.EnterEmailPasswordOnLgInAsTenantApplicant() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\LogInPageCazamioTenant\\LogInCazamioTenantElements.cs:line 14\r\n   at TenantCazamioTests.TestsBaseWeb.LogInTenant() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 118"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "LogInTenant",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.NoSuchElementException : no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@id = 'email']\"}\n  (Session info: chrome=121.0.6167.140)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.get_FieldInputEmailAddressLgInCazmTnnt() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\LogInPageCazamioTenant\\LogInCazamioTenantElements.cs:line 14\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInAsTenantApplicant_100663582_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\LogInPageCazamioTenant\\LogInCazamioTenantActions.cs:line 21\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInAsTenantApplicant_100663582_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInAsTenantApplicant_100663582_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.EnterEmailPasswordOnLgInAsTenantApplicant() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\LogInPageCazamioTenant\\LogInCazamioTenantElements.cs:line 14\r\n   at TenantCazamioTests.TestsBaseWeb.LogInTenant() in C:\\Automation\\Cazamio\\TenantWebSiteCazamio\\TenantWebSiteCazamioTests\\TenantCazamioTests.cs:line 118"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "ClickButtonLogInHdrCzmTnnt",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707041982451,
+          "stop": 1707041984165
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707041984166,
+          "stop": 1707041984166
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707041984166,
+          "stop": 1707041984166
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707041984166,
+          "stop": 1707041984166
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707041984167,
+          "stop": 1707041984167
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707041984167,
+          "stop": 1707041984167
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707041984167,
+          "stop": 1707041984167
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707041984167,
+          "stop": 1707041984167
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707041984167,
+          "stop": 1707041984167
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707041984167,
+          "stop": 1707041984167
+        },
+        {
+          "name": "EnterEmailPasswordOnLgInAsTenantApplicant",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@id = 'email']\"}\n  (Session info: chrome=121.0.6167.140)",
+            "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.FindElement(String mechanism, String value)\r\n   at OpenQA.Selenium.By.<.ctor>b__11_0(ISearchContext context)\r\n   at OpenQA.Selenium.By.FindElement(ISearchContext context)\r\n   at OpenQA.Selenium.WebDriver.FindElement(By by)\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.get_FieldInputEmailAddressLgInCazmTnnt() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\LogInPageCazamioTenant\\LogInCazamioTenantElements.cs:line 14\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInAsTenantApplicant_100663582_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteCazamioTenantPages\\LogInPageCazamioTenant\\LogInCazamioTenantActions.cs:line 21\r\n   at CazamioProgect.PageObjects.GeneralPages.LogInPageCazamioTenant.LogInCazamioTenant.__a$_around_EnterEmailPasswordOnLgInAsTenantApplicant_100663582_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707041984168,
+          "stop": 1707041984311
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "518d7c998a8a4c168966f3cd10503a6f-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1707041978788,
+      "stop": 1707041987626
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1707041978788,
+  "stop": 1707041987626
+}

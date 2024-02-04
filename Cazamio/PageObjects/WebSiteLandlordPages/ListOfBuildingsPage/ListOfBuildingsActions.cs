@@ -15,8 +15,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
         [AllureStep("ClickButtonAddBuilding")]
         public ListOfBuildings ClickButtonAddBuilding()
         {
+            WaitUntil.WaitSomeInterval(5000);
             WaitUntil.CustomElementIsVisible(ButtonAdd);
-            WaitUntil.WaitForElementClickable(ButtonAdd, 10);
+            WaitUntil.CustomElementIsClickable(ButtonAdd, 10);
             Button.Click(ButtonAdd);
 
             return this;

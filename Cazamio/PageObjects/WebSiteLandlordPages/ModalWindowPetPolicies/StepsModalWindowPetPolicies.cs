@@ -20,7 +20,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowPetPolicies
                 .SelectItemPetPolocies(ItemsPetPolicies.ALL_PETS_ALLOWED)
                 .SelectItemPetPolocies(ItemsPetPolicies.SMALL_PETS_ALLOWED)
                 .SelectItemPetPolocies(ItemsPetPolicies.CATS_ONLY)
-                .SelectItemPetPolocies(ItemsPetPolicies.PETS_FEE);
+                .SelectItemPetPolocies(ItemsPetPolicies.NO_PETS);
 
             return this;
         }

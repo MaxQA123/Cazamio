@@ -23,6 +23,27 @@ namespace CazamioProgect.Helpers
             element.SendKeys(text);
         }
 
+        public static void InputFunctionWithClearDemo(IWebElement element, string text)
+        {
+            WaitUntil.WaitSomeInterval(250);
+            WaitUntil.ElementIsClickable(element);
+
+            // Получить текущее значение поля ввода
+            string currentInputValue = element.GetAttribute("value");
+
+            // Выделить весь текст в поле ввода
+            element.SendKeys(Keys.Control + "a");
+
+            // Очистить поле ввода, если текущее значение не пусто
+            if (!string.IsNullOrEmpty(currentInputValue))
+            {
+                element.Clear();
+            }
+
+            // Ввести новое значение
+            element.SendKeys(text);
+        }
+
         [AllureStep("InputFunctionWithoutClear")]
         public static void InputFunctionWithoutClear(IWebElement element, string text)
         {

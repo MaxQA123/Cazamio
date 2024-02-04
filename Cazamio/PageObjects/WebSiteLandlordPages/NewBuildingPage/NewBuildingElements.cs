@@ -22,6 +22,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [FindsBy(How = How.XPath, Using = "//ng-select[@placeholder= 'Select owner']")]
         public IWebElement ButtonMenuOwnerSelect;
 
+        [FindsBy(How = How.XPath, Using = "//ng-dropdown-panel[@aria-label = 'Options list']//div[text() = 'For Autotest For Broker']")]
+        public IWebElement ItemForAutotestForBroker;
+
         [FindsBy(How = How.CssSelector, Using = "input#inputAddress")]
         public IWebElement FieldInputAddressNwBldngPg;
 
@@ -54,6 +57,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         [FindsBy(How = How.XPath, Using = "//input[@formcontrolname= 'screeningFee']")]
         public IWebElement FieldInputCreditScreeningFee;
+
+        [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'holdDeposit']")]
+        public IWebElement FieldInputHoldDeposit;
 
         [FindsBy(How = How.XPath, Using = "//button//span[text()= 'Select Payment Methods']")]
         public IWebElement ButtonSelectPaymentsMethodsNwBldngPg;

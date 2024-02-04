@@ -61,6 +61,7 @@ namespace CazamioProgect.PageObjects.WebSiteCazamioTenantPages.HeaderCazamioTena
         public HeaderCazamioTenant LogOutFromAccountViaHeader()
         {
             WaitUntil.CustomElementIsVisible(ButtonInFormAvatarHdrCzmTnnt);
+            WaitUntil.CustomElementIsClickable(ButtonInFormAvatarHdrCzmTnnt);
             Button.Click(ButtonInFormAvatarHdrCzmTnnt);
             WaitUntil.CustomElementIsVisible(ButtonSignOutHdrCzmTnnt);
             Button.Click(ButtonSignOutHdrCzmTnnt);

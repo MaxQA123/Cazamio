@@ -573,9 +573,9 @@ namespace MarketplaceAdminTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
-        [AllureSubSuite("AddBuildingAssigenBroker")]
+        [AllureSubSuite("AddBuildingAssignedBroker")]
 
-        public void AddBuildingAssigenBroker()
+        public void AddBuildingAssignedBroker()
         {
             #region Preconditions Test
 
@@ -599,7 +599,7 @@ namespace MarketplaceAdminTests
                 .ClickButtonAddBuilding();
             Pages.NewBuilding
                 .VerifyTitleNewBuildingPg()
-                .ClickButtonMenuOwnerSelect()
+                .SelectOwnerWithBroker()
                 .EnterFullAddressNewBuildingAssgndRlBrkr()
                 .EnterBuildingName()
                 .EnterLlcName()
@@ -611,8 +611,9 @@ namespace MarketplaceAdminTests
                 .VerifyTitlePetPoliciesMdlWndw()
                 .SelectAllItems()
                 .ClickButtonSave();
-            //Pages.NewBuilding
-            //    .EnterCreditScreeningFee()
+            Pages.NewBuilding
+                .EnterCreditScreeningFeeHoldDeposit();
+
             //    .SelectPaymentsMethodsNwBldngPage()
             //    .ClickButtonGeneralNextNwBldngPg()
             //    .ClickFieldInputSearchForAmenitiesNwBldngPg()
