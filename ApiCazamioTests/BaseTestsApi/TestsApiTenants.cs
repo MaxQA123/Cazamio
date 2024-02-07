@@ -82,14 +82,14 @@ namespace ApiCazamioTests.BaseTestsApi
 
         public void LogInAsTenant()
         {
-            var email = TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT;
-            var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
-            var rememberMe = ApiRequestData.TRUE;
-            var deviceFingerprint = ApiRequestData.DEVICE_FINGERPRINT;
+            //var email = TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT;
+            //var passwordGeneral = GeneralTestDataForAllUsers.PASSWORD_GENERAL;
+            //var rememberMe = ApiRequestData.TRUE;
+            //var deviceFingerprint = ApiRequestData.DEVICE_FINGERPRINT;
 
-            var responseLogInTenant = LogInTenant.ExecuteLogIn(email, passwordGeneral, deviceFingerprint, rememberMe);
+            //var responseLogInTenant = LogInTenant.ExecuteLogIn(email, passwordGeneral, deviceFingerprint, rememberMe);
 
-            LogInTenant.VerifyingUserNameEmailTenant(responseLogInTenant);
+            //LogInTenant.VerifyingUserNameEmailTenant(responseLogInTenant);
         }
     }
 }

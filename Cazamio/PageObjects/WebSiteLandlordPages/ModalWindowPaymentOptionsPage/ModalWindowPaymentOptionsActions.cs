@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using RimuTec.Faker;
 using System;
@@ -11,13 +12,15 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
 {
     public partial class ModalWindowPaymentOptions
     {
+        PaymentOptions paymentOptions = new PaymentOptions().Generate();
+
         [AllureStep("SelectPaymentsMethodsNwBldngPg")]
         public ModalWindowPaymentOptions SelectPaymentsMethodsNwBldngPg()
         {
             Button.Click(CheckBoxCreditCardMdlWndwOptns);
             Button.Click(CheckBoxAchMdlWndwOptns);
             Button.Click(CheckBoxDeliverCheckMdlWndwOptns);
-            InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNoteMdlWndwOptns, Lorem.Sentence());
+            InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNoteMdlWndwOptns, paymentOptions.DeliverCheckNote.ForBuilding);
             Button.Click(ButtonSaveMdlWndwOptns);
             VerifySuccessSelectPmntMthds();
             WaitUntil.SuccessCustomElementIsVisible(MessageSuccessPaymentMethodsSelectedMdlWndwOptns);

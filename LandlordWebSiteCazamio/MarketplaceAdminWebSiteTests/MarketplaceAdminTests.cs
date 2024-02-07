@@ -600,21 +600,24 @@ namespace MarketplaceAdminTests
             Pages.NewBuilding
                 .VerifyTitleNewBuildingPg()
                 .SelectOwnerWithBroker()
-                .EnterFullAddressNewBuildingAssgndRlBrkr();
-                //.EnterBuildingName()
-                //.EnterLlcName()
-                //.EnterLongInternalNotesDescription();
+                .EnterFullAddressNewBuildingAssgndRlBrkr()
+                .EnterBuildingName()
+                .EnterLlcName()
+                .EnterLongInternalNotesDescription();
             KeyBoardActions.ClickTab();
-            //Pages.NewBuilding
-            //    .ClickButtonSelectPetPolicies();
-            //Pages.ModalWindowPetPolicies
-            //    .VerifyTitlePetPoliciesMdlWndw()
-            //    .SelectAllItems()
-            //    .ClickButtonSave();
             Pages.NewBuilding
-                .EnterCreditScreeningFeeHoldDeposit();
+                .ClickButtonSelectPetPolicies();
+            Pages.ModalWindowPetPolicies
+                .VerifyTitlePetPoliciesMdlWndw()
+                .SelectAllItems()
+                .ClickButtonSave();
 
-            //    .SelectPaymentsMethodsNwBldngPage()
+            string getValueScreeningFee = Pages.NewBuilding.GetValueFromFieldCreditScreeningFee();
+
+            Pages.NewBuilding
+                .VerifyValueByDefaulScreeningFee(getValueScreeningFee)
+                .EnterCreditScreeningFeeHoldDeposit()
+                .SelectPaymentsMethodsNwBldngPage();
             //    .ClickButtonGeneralNextNwBldngPg()
             //    .ClickFieldInputSearchForAmenitiesNwBldngPg()
             //    .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")

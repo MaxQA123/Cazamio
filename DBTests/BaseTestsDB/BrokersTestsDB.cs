@@ -177,7 +177,7 @@ namespace DBTests.BaseTestsDB
             #region Preconditions
 
             int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string emailBroker = "obmrd318ea@putsbox.com";
+            string emailBroker = "asd45broker-QA@putsbox.com";
 
             #endregion
 

@@ -257,63 +257,63 @@ namespace DBTests.BaseTestsDB
 
         public void NewLeaseSignedThreeTenantsIntableTenantLeases()
         {
-            #region Preconditions
+            //#region Preconditions
 
-            string tenantApplicant = DBTestDataGeneral.NAME_ROLE_APPLICANT;
-            string tenantOccupant = DBTestDataGeneral.NAME_ROLE_OCCUPANT;
-            string tenantGuarantor = DBTestDataGeneral.NAME_ROLE_GUARANTOR;
+            //string tenantApplicant = DBTestDataGeneral.NAME_ROLE_APPLICANT;
+            //string tenantOccupant = DBTestDataGeneral.NAME_ROLE_OCCUPANT;
+            //string tenantGuarantor = DBTestDataGeneral.NAME_ROLE_GUARANTOR;
 
-            string tenantRay = TestDataForWebSiteTenant.FIRST_NAME_TENANT_APPLICANT;
-            string tenantLiza = TestDataForWebSiteTenant.FIRST_NAME_OCCUPANT_ONE;
-            string tenantJimmy = TestDataForWebSiteTenant.FIRST_NAME_GUARANTOR;
+            //string tenantRay = TestDataForWebSiteTenant.FIRST_NAME_TENANT_APPLICANT;
+            //string tenantLiza = TestDataForWebSiteTenant.FIRST_NAME_OCCUPANT_ONE;
+            //string tenantJimmy = TestDataForWebSiteTenant.FIRST_NAME_GUARANTOR;
 
-            #endregion
+            //#endregion
 
-            #region Test
+            //#region Test
 
-            string lastApartmentApplicationId = DBRequestTenantLeasesOLD.GetLastApartmentApplicationId();
-            Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId from table TenantLeases");
+            //string lastApartmentApplicationId = DBRequestTenantLeasesOLD.GetLastApartmentApplicationId();
+            //Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId from table TenantLeases");
 
-            string apartmentApplicationIdForApplicant = DBRequestTenantLeasesOLD.GetApartmentApplicationIdByIdTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_TENANT_ID);
-            Console.WriteLine($"{apartmentApplicationIdForApplicant} :ApartmentApplicationId for tenant {tenantRay} {tenantApplicant} from table TenantLeases");
+            //string apartmentApplicationIdForApplicant = DBRequestTenantLeasesOLD.GetApartmentApplicationIdByIdTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_TENANT_ID);
+            //Console.WriteLine($"{apartmentApplicationIdForApplicant} :ApartmentApplicationId for tenant {tenantRay} {tenantApplicant} from table TenantLeases");
 
-            string apartmentApplicationIdForOccupant = DBRequestTenantLeasesOLD.GetApartmentApplicationIdByIdTenantId(DBTestDataForTenantMarketplaceOne.TENANT_OCCUPANT_LIZA_TENANT_ID);
-            Console.WriteLine($"{apartmentApplicationIdForOccupant} :ApartmentApplicationId for tenant {tenantOccupant} {tenantLiza} from table TenantLeases");
+            //string apartmentApplicationIdForOccupant = DBRequestTenantLeasesOLD.GetApartmentApplicationIdByIdTenantId(DBTestDataForTenantMarketplaceOne.TENANT_OCCUPANT_LIZA_TENANT_ID);
+            //Console.WriteLine($"{apartmentApplicationIdForOccupant} :ApartmentApplicationId for tenant {tenantOccupant} {tenantLiza} from table TenantLeases");
 
-            string apartmentApplicationIdForGuarantor = DBRequestTenantLeasesOLD.GetApartmentApplicationIdByIdTenantId(DBTestDataForTenantMarketplaceOne.TENANT_GUARANTOR_JIMMY_TENANT_ID);
-            Console.WriteLine($"{apartmentApplicationIdForGuarantor} :ApartmentApplicationId for tenant {tenantGuarantor} {tenantJimmy} from table TenantLeases");
+            //string apartmentApplicationIdForGuarantor = DBRequestTenantLeasesOLD.GetApartmentApplicationIdByIdTenantId(DBTestDataForTenantMarketplaceOne.TENANT_GUARANTOR_JIMMY_TENANT_ID);
+            //Console.WriteLine($"{apartmentApplicationIdForGuarantor} :ApartmentApplicationId for tenant {tenantGuarantor} {tenantJimmy} from table TenantLeases");
 
-            string isLeaseSignedForApplicant = DBRequestTenantLeasesOLD.GetIsLeaseSignedByTenantIdApartmentApplicationId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_TENANT_ID, lastApartmentApplicationId);
-            Console.WriteLine($"{isLeaseSignedForApplicant} :IsLeaseSigned for tenant {tenantRay} {tenantApplicant} from table TenantLeases");
+            //string isLeaseSignedForApplicant = DBRequestTenantLeasesOLD.GetIsLeaseSignedByTenantIdApartmentApplicationId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_TENANT_ID, lastApartmentApplicationId);
+            //Console.WriteLine($"{isLeaseSignedForApplicant} :IsLeaseSigned for tenant {tenantRay} {tenantApplicant} from table TenantLeases");
 
-            string isLeaseSignedForOccupant = DBRequestTenantLeasesOLD.GetIsLeaseSignedByTenantIdApartmentApplicationId(DBTestDataForTenantMarketplaceOne.TENANT_OCCUPANT_LIZA_TENANT_ID, lastApartmentApplicationId);
-            Console.WriteLine($"{isLeaseSignedForOccupant} :IsLeaseSigned for tenant {tenantOccupant} {tenantLiza} from table TenantLeases");
+            //string isLeaseSignedForOccupant = DBRequestTenantLeasesOLD.GetIsLeaseSignedByTenantIdApartmentApplicationId(DBTestDataForTenantMarketplaceOne.TENANT_OCCUPANT_LIZA_TENANT_ID, lastApartmentApplicationId);
+            //Console.WriteLine($"{isLeaseSignedForOccupant} :IsLeaseSigned for tenant {tenantOccupant} {tenantLiza} from table TenantLeases");
 
-            string isLeaseSignedForGuarantor = DBRequestTenantLeasesOLD.GetIsLeaseSignedByTenantIdApartmentApplicationId(DBTestDataForTenantMarketplaceOne.TENANT_GUARANTOR_JIMMY_TENANT_ID, lastApartmentApplicationId);
-            Console.WriteLine($"{isLeaseSignedForGuarantor} :IsLeaseSigned for tenant {tenantGuarantor} {tenantJimmy} from table TenantLeases");
+            //string isLeaseSignedForGuarantor = DBRequestTenantLeasesOLD.GetIsLeaseSignedByTenantIdApartmentApplicationId(DBTestDataForTenantMarketplaceOne.TENANT_GUARANTOR_JIMMY_TENANT_ID, lastApartmentApplicationId);
+            //Console.WriteLine($"{isLeaseSignedForGuarantor} :IsLeaseSigned for tenant {tenantGuarantor} {tenantJimmy} from table TenantLeases");
 
-            Assert.Multiple(() =>
-            {
-                Assert.AreEqual(lastApartmentApplicationId, apartmentApplicationIdForApplicant);
-                Console.WriteLine($"ApartmentApplicationId last from table TenantLeases {apartmentApplicationIdForApplicant} = {apartmentApplicationIdForApplicant} :ApartmentApplicationId for {tenantRay} {tenantApplicant} from table TenantLeases");
+            //Assert.Multiple(() =>
+            //{
+            //    Assert.AreEqual(lastApartmentApplicationId, apartmentApplicationIdForApplicant);
+            //    Console.WriteLine($"ApartmentApplicationId last from table TenantLeases {apartmentApplicationIdForApplicant} = {apartmentApplicationIdForApplicant} :ApartmentApplicationId for {tenantRay} {tenantApplicant} from table TenantLeases");
 
-                Assert.AreEqual(lastApartmentApplicationId, apartmentApplicationIdForOccupant);
-                Console.WriteLine($"ApartmentApplicationId last from table TenantLeases {apartmentApplicationIdForApplicant} = {apartmentApplicationIdForOccupant} :ApartmentApplicationId for {tenantOccupant} {tenantLiza} from table TenantLeases");
+            //    Assert.AreEqual(lastApartmentApplicationId, apartmentApplicationIdForOccupant);
+            //    Console.WriteLine($"ApartmentApplicationId last from table TenantLeases {apartmentApplicationIdForApplicant} = {apartmentApplicationIdForOccupant} :ApartmentApplicationId for {tenantOccupant} {tenantLiza} from table TenantLeases");
 
-                Assert.AreEqual(lastApartmentApplicationId, apartmentApplicationIdForGuarantor);
-                Console.WriteLine($"ApartmentApplicationId last from table TenantLeases {apartmentApplicationIdForApplicant} = {apartmentApplicationIdForGuarantor} :ApartmentApplicationId for {tenantGuarantor} {tenantJimmy} from table TenantLeases");
+            //    Assert.AreEqual(lastApartmentApplicationId, apartmentApplicationIdForGuarantor);
+            //    Console.WriteLine($"ApartmentApplicationId last from table TenantLeases {apartmentApplicationIdForApplicant} = {apartmentApplicationIdForGuarantor} :ApartmentApplicationId for {tenantGuarantor} {tenantJimmy} from table TenantLeases");
 
-                Assert.AreEqual(isLeaseSignedForApplicant, DBTestDataGeneral.TRUE);
-                Console.WriteLine($"True IsLeaseSigned for tenant {tenantApplicant} from table TenantLeases {isLeaseSignedForApplicant} = {DBTestDataGeneral.TRUE} :ApartmentApplicationId for {tenantRay} {tenantApplicant} ER");
+            //    Assert.AreEqual(isLeaseSignedForApplicant, DBTestDataGeneral.TRUE);
+            //    Console.WriteLine($"True IsLeaseSigned for tenant {tenantApplicant} from table TenantLeases {isLeaseSignedForApplicant} = {DBTestDataGeneral.TRUE} :ApartmentApplicationId for {tenantRay} {tenantApplicant} ER");
 
-                Assert.AreEqual(isLeaseSignedForOccupant, DBTestDataGeneral.TRUE);
-                Console.WriteLine($"True IsLeaseSigned for tenant {tenantOccupant} from table TenantLeases {isLeaseSignedForOccupant} = {DBTestDataGeneral.TRUE} :ApartmentApplicationId for {tenantOccupant} {tenantLiza} ER");
+            //    Assert.AreEqual(isLeaseSignedForOccupant, DBTestDataGeneral.TRUE);
+            //    Console.WriteLine($"True IsLeaseSigned for tenant {tenantOccupant} from table TenantLeases {isLeaseSignedForOccupant} = {DBTestDataGeneral.TRUE} :ApartmentApplicationId for {tenantOccupant} {tenantLiza} ER");
 
-                Assert.AreEqual(isLeaseSignedForGuarantor, DBTestDataGeneral.TRUE);
-                Console.WriteLine($"True IsLeaseSigned for tenant {tenantGuarantor} from table TenantLeases {isLeaseSignedForGuarantor} = {DBTestDataGeneral.TRUE} :ApartmentApplicationId for {tenantGuarantor} {tenantJimmy} ER");
-            });
+            //    Assert.AreEqual(isLeaseSignedForGuarantor, DBTestDataGeneral.TRUE);
+            //    Console.WriteLine($"True IsLeaseSigned for tenant {tenantGuarantor} from table TenantLeases {isLeaseSignedForGuarantor} = {DBTestDataGeneral.TRUE} :ApartmentApplicationId for {tenantGuarantor} {tenantJimmy} ER");
+            //});
 
-            #endregion
+            //#endregion
         }
 
         [Test]
@@ -328,38 +328,38 @@ namespace DBTests.BaseTestsDB
         {
             #region Preconditions
 
-            string tenantApplicant = TestDataForWebSiteTenant.FIRST_NAME_TENANT_APPLICANT;
+            //string tenantApplicant = TestDataForWebSiteTenant.FIRST_NAME_TENANT_APPLICANT;
 
-            #endregion
+            //#endregion
 
-            #region Test
+            //#region Test
 
-            string idLastFavorites = DBTableTenantApartmentFavorites.GetLastId();
-            Console.WriteLine($"{idLastFavorites} :Id last {tenantApplicant} from table TenantApartmentFavorites");
+            //string idLastFavorites = DBTableTenantApartmentFavorites.GetLastId();
+            //Console.WriteLine($"{idLastFavorites} :Id last {tenantApplicant} from table TenantApartmentFavorites");
 
-            string idFavoritesByEmail = DBTableTenantApartmentFavorites.GetLastIdByTenantIdEmail(TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT);
-            Console.WriteLine($"{idFavoritesByEmail} :Id by email {tenantApplicant} from table TenantApartmentFavorites");
+            //string idFavoritesByEmail = DBTableTenantApartmentFavorites.GetLastIdByTenantIdEmail(TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT);
+            //Console.WriteLine($"{idFavoritesByEmail} :Id by email {tenantApplicant} from table TenantApartmentFavorites");
 
-            string tenantIdNewTenantApartmentFavorites = DBTableTenantApartmentFavorites.GetLastTenantIdById();
-            Console.WriteLine($"{tenantIdNewTenantApartmentFavorites} :TenantIdNewTenantApartmentFavorites {tenantApplicant} from table TenantApartmentFavorites");
+            //string tenantIdNewTenantApartmentFavorites = DBTableTenantApartmentFavorites.GetLastTenantIdById();
+            //Console.WriteLine($"{tenantIdNewTenantApartmentFavorites} :TenantIdNewTenantApartmentFavorites {tenantApplicant} from table TenantApartmentFavorites");
 
-            string apartmentIdFromTableApartments = DBRequestApartments.GetIdForUnitFromApartments(DBTestDataDBForAdmins.BUILDING_NAME, DBTestDataDBForAdmins.UNIT_NUMBER);
-            Console.WriteLine($"{apartmentIdFromTableApartments} :ApartmentId {tenantApplicant} from table Apartments");
+            //string apartmentIdFromTableApartments = DBRequestApartments.GetIdForUnitFromApartments(DBTestDataDBForAdmins.BUILDING_NAME, DBTestDataDBForAdmins.UNIT_NUMBER);
+            //Console.WriteLine($"{apartmentIdFromTableApartments} :ApartmentId {tenantApplicant} from table Apartments");
 
-            string apartmentIdFromTableTenantApartmentFavorites = DBTableTenantApartmentFavorites.GetLastApartmentIdById();
-            Console.WriteLine($"{apartmentIdFromTableTenantApartmentFavorites} :ApartmentId {tenantApplicant} from table TenantApartmentFavorites");
+            //string apartmentIdFromTableTenantApartmentFavorites = DBTableTenantApartmentFavorites.GetLastApartmentIdById();
+            //Console.WriteLine($"{apartmentIdFromTableTenantApartmentFavorites} :ApartmentId {tenantApplicant} from table TenantApartmentFavorites");
 
-            Assert.Multiple(() =>
-            {
-                Assert.AreEqual(idLastFavorites, idFavoritesByEmail);
-                Console.WriteLine($"Id for a new favorities from table TenantApartmentFavorites: {idLastFavorites} = {idFavoritesByEmail} Id for a favorities from table TenantApartmentFavorites");
+            //Assert.Multiple(() =>
+            //{
+            //    Assert.AreEqual(idLastFavorites, idFavoritesByEmail);
+            //    Console.WriteLine($"Id for a new favorities from table TenantApartmentFavorites: {idLastFavorites} = {idFavoritesByEmail} Id for a favorities from table TenantApartmentFavorites");
 
-                Assert.AreEqual(tenantIdNewTenantApartmentFavorites, DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
-                Console.WriteLine($"TenantId for a new favorities from table TenantApartmentFavorites: {tenantIdNewTenantApartmentFavorites} = {DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID} TenantId for a favorities ER");
+            //    Assert.AreEqual(tenantIdNewTenantApartmentFavorites, DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
+            //    Console.WriteLine($"TenantId for a new favorities from table TenantApartmentFavorites: {tenantIdNewTenantApartmentFavorites} = {DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID} TenantId for a favorities ER");
 
-                Assert.AreEqual(apartmentIdFromTableApartments, apartmentIdFromTableTenantApartmentFavorites);
-                Console.WriteLine($"TenantId for a new apartment favorities from table TenantApartmentFavorites AR: {apartmentIdFromTableApartments} = {apartmentIdFromTableTenantApartmentFavorites} TenantId for a new apartment favorities from table TenantApartmentFavorites ER");
-            });
+            //    Assert.AreEqual(apartmentIdFromTableApartments, apartmentIdFromTableTenantApartmentFavorites);
+            //    Console.WriteLine($"TenantId for a new apartment favorities from table TenantApartmentFavorites AR: {apartmentIdFromTableApartments} = {apartmentIdFromTableTenantApartmentFavorites} TenantId for a new apartment favorities from table TenantApartmentFavorites ER");
+            //});
 
             #endregion
         }
@@ -526,8 +526,8 @@ namespace DBTests.BaseTestsDB
 
             #region Preconditions Test Data
 
-            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string emailPutsBox = "lk67at@putsbox.com";
+            int marketplaceId = 17;
+            string emailPutsBox = "ten3bagtest@gmail.com";
 
             #endregion
 

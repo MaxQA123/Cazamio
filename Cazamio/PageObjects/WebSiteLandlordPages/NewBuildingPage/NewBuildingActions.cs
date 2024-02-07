@@ -59,17 +59,6 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        [AllureStep("ClickButtonMenuOwnerSelect")]
-        public NewBuilding ClickButtonMenuOwnerSelect()
-        {
-            WaitUntil.CustomElementIsVisible(ButtonMenuOwnerSelect);
-            WaitUntil.CustomElementIsClickable(ButtonMenuOwnerSelect);
-            Button.Click(ButtonMenuOwnerSelect);
-            KeyBoardActions.ClickEnterButton();
-
-            return this;
-        }
-
         [AllureStep("ClickButtonSelectPetPolicies")]
         public NewBuilding ClickButtonSelectPetPolicies()
         {
@@ -83,7 +72,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         {
             WaitUntil.CustomElementIsVisible(FieldInputCreditScreeningFee);
             WaitUntil.CustomElementIsClickable(FieldInputCreditScreeningFee);
-            InputGeneral.InputFunctionWithClear(FieldInputCreditScreeningFee, building.CreditScreeningFee);
+            InputGeneral.InputFunctionWithClear(FieldInputCreditScreeningFee, building.CreditScreeningFee.ForEntering);
 
             return this;
         }
@@ -98,17 +87,50 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        [AllureStep("SelectPaymentsMethodsNwBldngPage")]
-        public NewBuilding SelectPaymentsMethodsNwBldngPage()
+        [AllureStep("GetValueFromFieldCreditScreeningFee")]
+        public string GetValueFromFieldCreditScreeningFee()
         {
-            Button.Click(ButtonSelectPaymentsMethodsNwBldngPg);
-            Pages.ModalWindowPaymentOptions
-                .VerifyTitlePaymentOptionsMdlWndwOptns();
-            Pages.ModalWindowPaymentOptions
-                .SelectPaymentsMethodsNwBldngPg();
-            WaitUntil.WaitSomeInterval(3000);
+            WaitUntil.CustomElementIsVisible(FieldInputCreditScreeningFee);
+            string getValue = FieldInputCreditScreeningFee.GetAttribute("value");
+            string getValueActual = getValue.ToString();
 
-            return this;
+            return getValueActual;
+        }
+
+        public string GetNameCabTypeAccessFromTable()
+        {
+            WaitUntil.CustomElementIsVisible(RecordCABInTableAccessNwBldngPg, 10);
+            string getNameCab = (RecordCABInTableAccessNwBldngPg).Text;
+            string nameCabActual = getNameCab.ToString();
+
+            return nameCabActual;
+        }
+
+        public string GetNameNoteTypeAccessFromTable()
+        {
+            WaitUntil.CustomElementIsVisible(RecordNoteInTableAccessNwBldngPg, 10);
+            string getNameNote = (RecordNoteInTableAccessNwBldngPg).Text;
+            string nameNoteActual = getNameNote.ToString();
+
+            return nameNoteActual;
+        }
+
+        public string GetNamePinCodeTypeAccessFromTable()
+        {
+            WaitUntil.CustomElementIsVisible(RecordPinCodeInTableAccessNwBldngPg, 10);
+            string getNamePinCode = (RecordPinCodeInTableAccessNwBldngPg).Text;
+            string namePinCodeActual = getNamePinCode.ToString();
+
+            return namePinCodeActual;
+        }
+
+        public string GetNameConcessionFromTable()
+        {
+            WaitUntil.CustomElementIsVisible(RecordNameInTableConcessionNwBldngPg, 10);
+            string getNameConcession = (RecordNameInTableConcessionNwBldngPg).Text;
+            string nameConcessionActual = getNameConcession.ToString();
+
+            return nameConcessionActual;
         }
 
         [AllureStep("ClickButtonGeneralNextNwBldngPg")]

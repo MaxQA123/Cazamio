@@ -49,31 +49,14 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        public string GetNameCabTypeAccessFromTable()
+        [AllureStep("VerifyValueByDefaulScreeningFee")]
+        public NewBuilding VerifyValueByDefaulScreeningFee(string valueScreeningFeeByDefault)
         {
-            WaitUntil.CustomElementIsVisible(RecordCABInTableAccessNwBldngPg, 10);
-            string getNameCab = (RecordCABInTableAccessNwBldngPg).Text;
-            string nameCabActual = getNameCab.ToString();
+            Assert.AreEqual(valueScreeningFeeByDefault, building.CreditScreeningFee.ByDefault);
 
-            return nameCabActual;
-        }
+            Console.WriteLine($"Value Screening Fee by default AR: {valueScreeningFeeByDefault} ER: {building.CreditScreeningFee.ByDefault}");
 
-        public string GetNameNoteTypeAccessFromTable()
-        {
-            WaitUntil.CustomElementIsVisible(RecordNoteInTableAccessNwBldngPg, 10);
-            string getNameNote = (RecordNoteInTableAccessNwBldngPg).Text;
-            string nameNoteActual = getNameNote.ToString();
-
-            return nameNoteActual;
-        }
-
-        public string GetNamePinCodeTypeAccessFromTable()
-        {
-            WaitUntil.CustomElementIsVisible(RecordPinCodeInTableAccessNwBldngPg, 10);
-            string getNamePinCode = (RecordPinCodeInTableAccessNwBldngPg).Text;
-            string namePinCodeActual = getNamePinCode.ToString();
-
-            return namePinCodeActual;
+            return this;
         }
 
         public void VerifyTypeAccessFromTable(string nameCabActual, string nameNoteActual, string namePinCodeActual)
@@ -87,15 +70,6 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
                 Assert.AreEqual(namePinCodeActual, TestDataForWebSiteAdmin.PIN_CODE_NAME_LOCK_ACCESS);
                 Console.Write($"{nameCabActual} = {TestDataForWebSiteAdmin.CAB_NAME_LOCK_ACCESS}; {nameNoteActual} = {TestDataForWebSiteAdmin.NOTE_NAME_LOCK_ACCESS}; {namePinCodeActual} = {TestDataForWebSiteAdmin.PIN_CODE_NAME_LOCK_ACCESS}");
             });
-        }
-
-        public string GetNameConcessionFromTable()
-        {
-            WaitUntil.CustomElementIsVisible(RecordNameInTableConcessionNwBldngPg, 10);
-            string getNameConcession = (RecordNameInTableConcessionNwBldngPg).Text;
-            string nameConcessionActual = getNameConcession.ToString();
-
-            return nameConcessionActual;
         }
 
         [AllureStep("VerifyNameSpecialsConcessionInTableNewBuildingPg")]

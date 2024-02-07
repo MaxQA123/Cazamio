@@ -32,8 +32,10 @@ namespace CazamioProgect.Helpers
             string currentInputValue = element.GetAttribute("value");
 
             // Выделить весь текст в поле ввода
-            element.SendKeys(Keys.Control + "a");
-            element.SendKeys(Keys.Delete);
+            KeyBoardActions.ClickBackspace();
+            KeyBoardActions.ClickBackspace();
+            //element.SendKeys(Keys.Control + "a");
+            //element.SendKeys(Keys.Delete);
 
             // Очистить поле ввода, если текущее значение не пусто
             if (!string.IsNullOrEmpty(currentInputValue))

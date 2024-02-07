@@ -47,7 +47,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [FindsBy(How = How.CssSelector, Using = "input#state")]
         public IWebElement FieldInputStateNwBldngPg;
 
-        [FindsBy(How = How.CssSelector, Using = "input#zip")]
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'zip']")]
         public IWebElement FieldInputZipNwBldngPg;
 
         [FindsBy(How = How.XPath, Using = "//input[@id= 'neighborhood']")]

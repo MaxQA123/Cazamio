@@ -19,10 +19,10 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             InputGeneral.InputFunctionWithClear(FieldInputCityNwBldngPg, building.City.CityNewYork);
             WaitUntil.WaitSomeInterval(500);
             InputGeneral.InputFunctionWithClear(FieldInputStateNwBldngPg, building.State);
-            WaitUntil.WaitSomeInterval(500);
+            WaitUntil.WaitSomeInterval(1000);
             InputGeneral.InputFunctionWithClear(FieldInputZipNwBldngPg, building.Zip.ZipBuildingAssignedRoleBrkr);
             WaitUntil.WaitSomeInterval(500);
-            InputGeneral.InputFunctionWithClear(FieldInputNeighborhoodNwBldngPg, building.Neighborhood.NeighborhoodBuildingAssignedRoleBrkr);
+            InputGeneral.InputFunctionWithClear(FieldInputNeighborhoodNwBldngPg, building.Neighborhood.BuildingAssignedRoleBrkr);
 
             return this;
         }
@@ -43,7 +43,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         {
             WaitUntil.CustomElementIsVisible(FieldInputCreditScreeningFee);
             WaitUntil.CustomElementIsClickable(FieldInputCreditScreeningFee);
-            InputGeneral.InputFunctionWithClearDemo(FieldInputCreditScreeningFee, building.CreditScreeningFee);
+            InputGeneral.InputFunctionWithClearDemo(FieldInputCreditScreeningFee, building.CreditScreeningFee.ForEntering);
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputHoldDeposit, building.HoldDeposit);
 
@@ -56,6 +56,19 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             Button.Click(ButtonMenuOwnerSelect);
             WaitUntil.WaitSomeInterval(500);
             Button.Click(SetItemForAutotestForBroker());
+
+            return this;
+        }
+
+        [AllureStep("SelectPaymentsMethodsNwBldngPage")]
+        public NewBuilding SelectPaymentsMethodsNwBldngPage()
+        {
+            Button.Click(ButtonSelectPaymentsMethodsNwBldngPg);
+            Pages.ModalWindowPaymentOptions
+                .VerifyTitlePaymentOptionsMdlWndwOptns();
+            Pages.ModalWindowPaymentOptions
+                .SelectPaymentsMethodsNwBldngPg();
+            WaitUntil.WaitSomeInterval(3000);
 
             return this;
         }

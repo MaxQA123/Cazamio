@@ -60,8 +60,8 @@ namespace DBTests.BaseTestsDB
         {
             #region Preconditions
 
-            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string emailAgent = "hxozx378cw@putsbox.com";
+            int marketplaceId = 17;
+            string emailAgent = "agent17qa@putsbox.com";
 
             #endregion
 

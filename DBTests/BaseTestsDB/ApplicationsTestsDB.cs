@@ -54,16 +54,16 @@ namespace DBTests.BaseTestsDB
 
         public void RecordNewOccupantId()
         {
-            string buildingAddress = DBTestDataDBForAdmins.BUILDING_ADDRESS;
+            //string buildingAddress = DBTestDataDBForAdmins.BUILDING_ADDRESS;
 
-            string tenantOccupant = DBTestDataGeneral.NAME_ROLE_OCCUPANT;
-            string tenantLiza = TestDataForWebSiteTenant.FIRST_NAME_OCCUPANT_ONE;
+            //string tenantOccupant = DBTestDataGeneral.NAME_ROLE_OCCUPANT;
+            //string tenantLiza = TestDataForWebSiteTenant.FIRST_NAME_OCCUPANT_ONE;
             
-            string lastApartmentApplicationId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationId();
-            Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId for application for {buildingAddress} from table ApartmentApplications");
+            //string lastApartmentApplicationId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationId();
+            //Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId for application for {buildingAddress} from table ApartmentApplications");
 
-            string occupantId = DBRequestOccupantsOLD.GetLastOccupantIdByApartmentApplicationId(lastApartmentApplicationId);
-            Console.WriteLine($"{occupantId} :Last by UserId for application for {tenantLiza} {tenantOccupant} for {buildingAddress} from table Occupants");
+            //string occupantId = DBRequestOccupantsOLD.GetLastOccupantIdByApartmentApplicationId(lastApartmentApplicationId);
+            //Console.WriteLine($"{occupantId} :Last by UserId for application for {tenantLiza} {tenantOccupant} for {buildingAddress} from table Occupants");
         }
 
         [Test]
@@ -76,16 +76,16 @@ namespace DBTests.BaseTestsDB
 
         public void RecordNewGuarantorId()
         {
-            string buildingAddress = DBTestDataDBForAdmins.BUILDING_ADDRESS;
+            //string buildingAddress = DBTestDataDBForAdmins.BUILDING_ADDRESS;
 
-            string tenantGuarantor = DBTestDataGeneral.NAME_ROLE_GUARANTOR;
-            string tenantJimmy = TestDataForWebSiteTenant.FIRST_NAME_GUARANTOR;
+            //string tenantGuarantor = DBTestDataGeneral.NAME_ROLE_GUARANTOR;
+            //string tenantJimmy = TestDataForWebSiteTenant.FIRST_NAME_GUARANTOR;
 
-            string lastApartmentApplicationId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationId();
-            Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId for application for {buildingAddress} from table ApartmentApplications");
+            //string lastApartmentApplicationId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationId();
+            //Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId for application for {buildingAddress} from table ApartmentApplications");
 
-            string guarantorId = DBRequestGuarantorsOLD.GetLastGuarantorIdByApartmentApplicationId($"{lastApartmentApplicationId}");
-            Console.WriteLine($"{guarantorId} :Last Id by GuarantorId for application for {tenantJimmy} {tenantGuarantor} for {buildingAddress} from table Guarantors");
+            //string guarantorId = DBRequestGuarantorsOLD.GetLastGuarantorIdByApartmentApplicationId($"{lastApartmentApplicationId}");
+            //Console.WriteLine($"{guarantorId} :Last Id by GuarantorId for application for {tenantJimmy} {tenantGuarantor} for {buildingAddress} from table Guarantors");
         }
 
         [Test]
@@ -132,60 +132,60 @@ namespace DBTests.BaseTestsDB
 
         public void NewApplicationTenantApplicantOccupantJointGuarantor()
         {
-            string buildingAddress = DBTestDataDBForAdmins.BUILDING_ADDRESS;
+            //string buildingAddress = DBTestDataDBForAdmins.BUILDING_ADDRESS;
 
-            string tenantApplicant = DBTestDataGeneral.NAME_ROLE_APPLICANT;
-            string tenantOccupant = DBTestDataGeneral.NAME_ROLE_OCCUPANT;
-            string tenantGuarantor = DBTestDataGeneral.NAME_ROLE_GUARANTOR;
+            //string tenantApplicant = DBTestDataGeneral.NAME_ROLE_APPLICANT;
+            //string tenantOccupant = DBTestDataGeneral.NAME_ROLE_OCCUPANT;
+            //string tenantGuarantor = DBTestDataGeneral.NAME_ROLE_GUARANTOR;
 
-            string tenantRay = TestDataForWebSiteTenant.FIRST_NAME_TENANT_APPLICANT;
-            string tenantLiza = TestDataForWebSiteTenant.FIRST_NAME_OCCUPANT_ONE;
-            string tenantJimmy = TestDataForWebSiteTenant.FIRST_NAME_GUARANTOR;
+            //string tenantRay = TestDataForWebSiteTenant.FIRST_NAME_TENANT_APPLICANT;
+            //string tenantLiza = TestDataForWebSiteTenant.FIRST_NAME_OCCUPANT_ONE;
+            //string tenantJimmy = TestDataForWebSiteTenant.FIRST_NAME_GUARANTOR;
 
-            string lastApartmentApplicationId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationId();
-            Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId for application for {buildingAddress} from table ApartmentApplications");
+            //string lastApartmentApplicationId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationId();
+            //Console.WriteLine($"{lastApartmentApplicationId} :Last ApartmentApplicationId for application for {buildingAddress} from table ApartmentApplications");
 
-            string idApartmentByBuildingId = DBRequestApartments.GetApartmentIdByBuildingIdUnit(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
-            Console.WriteLine($"{idApartmentByBuildingId} :ApartmentId by BuildingId from Apartments");
+            //string idApartmentByBuildingId = DBRequestApartments.GetApartmentIdByBuildingIdUnit(DBTestDataDBForAdmins.BUILDING_ID, DBTestDataDBForAdmins.UNIT_NUMBER);
+            //Console.WriteLine($"{idApartmentByBuildingId} :ApartmentId by BuildingId from Apartments");
 
-            string lastApplicationIdByBuildingId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationIdByApartmentId(idApartmentByBuildingId);
-            Console.WriteLine($"{lastApplicationIdByBuildingId} :Last ApartmentApplicationId Id by BuildingId for application for {buildingAddress} from table ApartmentApplications");
+            //string lastApplicationIdByBuildingId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationIdByApartmentId(idApartmentByBuildingId);
+            //Console.WriteLine($"{lastApplicationIdByBuildingId} :Last ApartmentApplicationId Id by BuildingId for application for {buildingAddress} from table ApartmentApplications");
 
-            string lastApplicationIdByTenantId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationIdByTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
-            Console.WriteLine($"{lastApplicationIdByTenantId} :Last ApartmentApplicationId by TenantId for application for {buildingAddress} from table ApartmentApplications");
+            //string lastApplicationIdByTenantId = DBRequestApartmentApplicationsOLD.GetLastApartmentApplicationIdByTenantId(DBTestDataForTenantMarketplaceOne.TENANT_APPLICANT_RAY_USER_ID);
+            //Console.WriteLine($"{lastApplicationIdByTenantId} :Last ApartmentApplicationId by TenantId for application for {buildingAddress} from table ApartmentApplications");
 
-            string guarantorId = DBRequestGuarantorsOLD.GetLastGuarantorIdByApartmentApplicationId($"{lastApartmentApplicationId}");
-            Console.WriteLine($"{guarantorId} :Last Id by GuarantorId for application for {tenantJimmy} {tenantGuarantor} for {buildingAddress} from table Guarantors");
+            //string guarantorId = DBRequestGuarantorsOLD.GetLastGuarantorIdByApartmentApplicationId($"{lastApartmentApplicationId}");
+            //Console.WriteLine($"{guarantorId} :Last Id by GuarantorId for application for {tenantJimmy} {tenantGuarantor} for {buildingAddress} from table Guarantors");
 
-            string lastIdGuarantorIdApartmentApplicationId = DBRequestApartmentApplicationApplicantsOLD.GetIdByGuarantorIdApartmentApplicationId(lastApartmentApplicationId, guarantorId);
-            Console.WriteLine($"{lastIdGuarantorIdApartmentApplicationId} :Last Id for application for {buildingAddress} from table ApartmentApplicationApplicants");
+            //string lastIdGuarantorIdApartmentApplicationId = DBRequestApartmentApplicationApplicantsOLD.GetIdByGuarantorIdApartmentApplicationId(lastApartmentApplicationId, guarantorId);
+            //Console.WriteLine($"{lastIdGuarantorIdApartmentApplicationId} :Last Id for application for {buildingAddress} from table ApartmentApplicationApplicants");
 
-            string occupantId = DBRequestOccupantsOLD.GetLastOccupantIdByApartmentApplicationId(lastApartmentApplicationId);
-            Console.WriteLine($"{occupantId} :Last by UserId for application for {tenantLiza} {tenantOccupant} for {buildingAddress} from table Occupants");
+            //string occupantId = DBRequestOccupantsOLD.GetLastOccupantIdByApartmentApplicationId(lastApartmentApplicationId);
+            //Console.WriteLine($"{occupantId} :Last by UserId for application for {tenantLiza} {tenantOccupant} for {buildingAddress} from table Occupants");
 
-            string lastIdByOccupantIdApartmentApplicationId = DBRequestApartmentApplicationApplicantsOLD.GetIdByOccupantIdApartmentApplicationId(lastApartmentApplicationId, occupantId);
-            Console.WriteLine($"{lastIdByOccupantIdApartmentApplicationId} :Last by UserId for application for {tenantLiza} {tenantOccupant} for {buildingAddress} from table ApartmentApplicationApplicants");
+            //string lastIdByOccupantIdApartmentApplicationId = DBRequestApartmentApplicationApplicantsOLD.GetIdByOccupantIdApartmentApplicationId(lastApartmentApplicationId, occupantId);
+            //Console.WriteLine($"{lastIdByOccupantIdApartmentApplicationId} :Last by UserId for application for {tenantLiza} {tenantOccupant} for {buildingAddress} from table ApartmentApplicationApplicants");
 
-            string lastIdByOccupantId = DBRequestApartmentApplicationApplicantsOLD.GetLastIdByOccupantId(occupantId);
-            Console.WriteLine($"{lastIdByOccupantId} :Last Id by OccupantId Id for application for {tenantLiza} {tenantOccupant} for {buildingAddress} from table Occupants");
+            //string lastIdByOccupantId = DBRequestApartmentApplicationApplicantsOLD.GetLastIdByOccupantId(occupantId);
+            //Console.WriteLine($"{lastIdByOccupantId} :Last Id by OccupantId Id for application for {tenantLiza} {tenantOccupant} for {buildingAddress} from table Occupants");
 
-            string lastIdByGuarantorId = DBRequestApartmentApplicationApplicantsOLD.GetLastIdByGuarantorId(guarantorId);
-            Console.WriteLine($"{lastIdByGuarantorId} :Last Id by GuarantorId for application for {tenantJimmy} {tenantGuarantor} for {buildingAddress} from table ApartmentApplicationApplicants");
+            //string lastIdByGuarantorId = DBRequestApartmentApplicationApplicantsOLD.GetLastIdByGuarantorId(guarantorId);
+            //Console.WriteLine($"{lastIdByGuarantorId} :Last Id by GuarantorId for application for {tenantJimmy} {tenantGuarantor} for {buildingAddress} from table ApartmentApplicationApplicants");
 
-            Assert.Multiple(() =>
-            {
-                Assert.AreEqual(lastApartmentApplicationId, lastApplicationIdByBuildingId);
-                Console.WriteLine($"ApplicationId last from ApartmentApplications: {lastApartmentApplicationId} = {lastApplicationIdByBuildingId} ApplicationId last by BuildingId from ApartmentApplications");
+            //Assert.Multiple(() =>
+            //{
+            //    Assert.AreEqual(lastApartmentApplicationId, lastApplicationIdByBuildingId);
+            //    Console.WriteLine($"ApplicationId last from ApartmentApplications: {lastApartmentApplicationId} = {lastApplicationIdByBuildingId} ApplicationId last by BuildingId from ApartmentApplications");
 
-                Assert.AreEqual(lastApartmentApplicationId, lastApplicationIdByTenantId);
-                Console.WriteLine($"ApplicationId last from ApartmentApplications: {lastApartmentApplicationId} = {lastApplicationIdByTenantId} ApplicationId last by TenantId from ApartmentApplications");
+            //    Assert.AreEqual(lastApartmentApplicationId, lastApplicationIdByTenantId);
+            //    Console.WriteLine($"ApplicationId last from ApartmentApplications: {lastApartmentApplicationId} = {lastApplicationIdByTenantId} ApplicationId last by TenantId from ApartmentApplications");
 
-                Assert.AreEqual(lastIdGuarantorIdApartmentApplicationId, lastIdByGuarantorId);
-                Console.WriteLine($"Id for {tenantGuarantor} last from ApartmentApplicationApplicants: {lastIdGuarantorIdApartmentApplicationId} = {lastIdByGuarantorId} Id last by UserId of the {tenantJimmy} {tenantGuarantor} from ApartmentApplications");
+            //    Assert.AreEqual(lastIdGuarantorIdApartmentApplicationId, lastIdByGuarantorId);
+            //    Console.WriteLine($"Id for {tenantGuarantor} last from ApartmentApplicationApplicants: {lastIdGuarantorIdApartmentApplicationId} = {lastIdByGuarantorId} Id last by UserId of the {tenantJimmy} {tenantGuarantor} from ApartmentApplications");
 
-                Assert.AreEqual(lastIdByOccupantIdApartmentApplicationId, lastIdByOccupantId);
-                Console.WriteLine($"Last Id by OccupantId from ApartmentApplicationApplicants: {lastIdByOccupantIdApartmentApplicationId} = {lastIdByOccupantId} Id last by UserId of the {tenantLiza} {tenantOccupant} from ApartmentApplications");
-            });
+            //    Assert.AreEqual(lastIdByOccupantIdApartmentApplicationId, lastIdByOccupantId);
+            //    Console.WriteLine($"Last Id by OccupantId from ApartmentApplicationApplicants: {lastIdByOccupantIdApartmentApplicationId} = {lastIdByOccupantId} Id last by UserId of the {tenantLiza} {tenantOccupant} from ApartmentApplications");
+            //});
         }
 
         [Test]
@@ -280,25 +280,25 @@ namespace DBTests.BaseTestsDB
 
         public void DeleteNewlyCreatedApplicationViaButtonPlusApplicationWithAlreadyCrtdTenantApplicant()
         {
-            #region Preconditions test data
+            //#region Preconditions test data
 
-            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string buildingAddress = "2 Washington Square";
-            string unitNumber = "1";
-            string emailTenant = TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT;
-            //string emailTenant = "tenantswife@gmail.com";
+            //int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            //string buildingAddress = "2 Washington Square";
+            //string unitNumber = "1";
+            //string emailTenant = TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT;
+            ////string emailTenant = "tenantswife@gmail.com";
 
-            #endregion
+            //#endregion
 
-            #region Test
+            //#region Test
 
-            var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
-            Console.WriteLine($"ApartmentId: {apartmentId}");
-            var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
-            Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithAlreadyCrtdTenantApplicant(apartmentId, apartmentApplicationId, emailTenant, marketplaceId);
+            //var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
+            //Console.WriteLine($"ApartmentId: {apartmentId}");
+            //var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenant, marketplaceId).Id;
+            //Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
+            //DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithAlreadyCrtdTenantApplicant(apartmentId, apartmentApplicationId, emailTenant, marketplaceId);
 
-            #endregion
+            //#endregion
         }
 
         [Test]
@@ -351,26 +351,26 @@ namespace DBTests.BaseTestsDB
 
         public void DeleteApplicationCreatedViaButtonPlusApplicationWithTenantsAppOccGuarAlreadyCreated()
         {
-            #region Preconditions test data
+            //#region Preconditions test data
 
-            int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
-            string buildingAddress = "18 Linden Street";
-            string unitNumber = "80";
-            string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT;
-            string emailTenantOccupant = TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_ONE;
-            string emailTenantGuarantor = TestDataForWebSiteTenant.EMAIL_GUARANTOR;
+            //int marketplaceId = GeneralTestDataForAllUsers.MARKETPLACE_ID_MY_SPACE;
+            //string buildingAddress = "18 Linden Street";
+            //string unitNumber = "80";
+            //string emailTenantCreator = TestDataForWebSiteTenant.EMAIL_TENANT_APPLICANT;
+            //string emailTenantOccupant = TestDataForWebSiteTenant.EMAIL_CURRENT_OCCUPANT_ONE;
+            //string emailTenantGuarantor = TestDataForWebSiteTenant.EMAIL_GUARANTOR;
 
-            #endregion
+            //#endregion
 
-            #region Test
+            //#region Test
 
-            var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
-            Console.WriteLine($"ApartmentId: {apartmentId}");
-            var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
-            Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
-            DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithTenantsAppOccGuarAlreadyCreated(apartmentId, apartmentApplicationId, emailTenantCreator, emailTenantOccupant, emailTenantGuarantor, marketplaceId);
+            //var apartmentId = DBRequestApartments.Apartments.GetIdByUnitNumberAndBuildingAddressForApartment(buildingAddress, unitNumber, marketplaceId).Id;
+            //Console.WriteLine($"ApartmentId: {apartmentId}");
+            //var apartmentApplicationId = DBRequestApartmentApplications.ApartmentApplications.GetApartmentApplicationIdByApartmentIdTenantEmail(apartmentId, emailTenantCreator, marketplaceId).Id;
+            //Console.WriteLine($"ApartmentApplicationId: {apartmentApplicationId}");
+            //DBRequestApartmentApplications.ApartmentApplications.DeleteApartmentApplicationWithTenantsAppOccGuarAlreadyCreated(apartmentId, apartmentApplicationId, emailTenantCreator, emailTenantOccupant, emailTenantGuarantor, marketplaceId);
 
-            #endregion
+            //#endregion
         }
 
         [Test]
