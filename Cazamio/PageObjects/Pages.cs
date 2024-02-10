@@ -56,6 +56,7 @@ using CazamioProject.PageObjects.WebSiteCazamioTenantPages.MdlWndwAreYouSureLogO
 using CazamioProject.PageObjects.WebSiteLandlordPages.ApplicationDetailPage;
 using CazamioProject.PageObjects.WebSiteLandlordPages.ModalWindowEditApplication;
 using CazamioProject.Objects;
+using CazamioProject.PageObjects.WebSiteLandlordPages.MdlWndwPaymentKeys;
 
 namespace CazamioProgect.PageObjects
 {
@@ -139,7 +140,7 @@ namespace CazamioProgect.PageObjects
         public static MdlWndwAreYouSureLogOut MdlWndwAreYouSureLogOut => GetPage<MdlWndwAreYouSureLogOut>();
         public static ApplicationDetail ApplicationDetail => GetPage<ApplicationDetail>();
         public static ModalWindowEditApplication ModalWindowEditApplication => GetPage<ModalWindowEditApplication>();
-
+        public static MdlWndwPaymentKeysActions MdlWndwPaymentKeysActions => GetPage<MdlWndwPaymentKeysActions>();
         #endregion
     }
 }

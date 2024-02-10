@@ -74,14 +74,14 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'holdDeposit']")]
         public IWebElement FieldInputHoldDeposit;
 
-        [FindsBy(How = How.XPath, Using = "//input[@name = 'api-key']")]
-        public IWebElement FieldInputDefaultApiKeySelected;
-
         [FindsBy(How = How.XPath, Using = "//button//span[text()= 'Select Payment Methods']")]
         public IWebElement BtnSelectPaymentMethodsForCreditScreeningFee;
 
         [FindsBy(How = How.XPath, Using = "//div[@class = 'credit-screening-fee'][2]//cazamio-button[@text = 'Select Payment Methods']")]
         public IWebElement BtnSelectPaymentMethodsForHoldDeposit;
+
+        [FindsBy(How = How.XPath, Using = "//span[text() = 'Edit']")]
+        public IWebElement BtnEditForPaymentSystem;
 
         #endregion
 

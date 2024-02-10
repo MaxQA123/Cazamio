@@ -18,6 +18,8 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
         public PutsBox ClickButtonBodyHtml()
         {
             WaitUntil.WaitSomeInterval(500);
+            WaitUntil.CustomElementIsVisible(ButtonBodyHtml);
+            WaitUntil.CustomElementIsClickable(ButtonBodyHtml);
             Button.Click(ButtonBodyHtml);
 
             return this;

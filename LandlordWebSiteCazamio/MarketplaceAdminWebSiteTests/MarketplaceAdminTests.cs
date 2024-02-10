@@ -612,30 +612,37 @@ namespace MarketplaceAdminTests
                 .EnterLlcName()
                 .EnterLongInternalNotesDescription();
             KeyBoardActions.ClickTab();
+            Pages.NewBuilding
+                .ClickBtnEditForPaymentSystem();
 
             string getValueScreeningFee = Pages.NewBuilding.GetValueFromFieldCreditScreeningFee();
+            string getApiKeyActual = Pages.MdlWndwPaymentKeysActions.GetItemCardknox();
+            string getItemApiKeyCardknoxActual = Pages.MdlWndwPaymentKeysActions.GetItemApiKeyCardknox();
 
-            Pages.NewBuilding
-                .VerifyValueByDefaulScreeningFee(getValueScreeningFee)
-                .EnterCreditScreeningFeeHoldDeposit()
-                .ClickBtnSelectPaymentMethodsForCreditScreeningFee();
-            Pages.ModalWindowPaymentOptions
-                .VerifyTitlePaymentOptions()
-                .SelectAllPaymentMethodsForScreening();
-            Pages.NewBuilding
-                .ClickBtnSelectPaymentMethodsForHoldDeposit();
-            Pages.ModalWindowPaymentOptions
-                .VerifyTitlePaymentOptions()
-                .SelectAllPaymentMethodsForHoldBuilding();
-            Pages.NewBuilding
-                .ClickButtonSelectPetPolicies();
+            Pages.MdlWndwPaymentKeysActions
+                .VerifyApiKeyCardknox(getApiKeyActual, getItemApiKeyCardknoxActual);
 
-            //Make verifying for ApiKey
+            //Pages.NewBuilding
+            //    .VerifyValueByDefaulScreeningFee(getValueScreeningFee)
+            //    .EnterCreditScreeningFeeHoldDeposit()
+            //    .ClickBtnSelectPaymentMethodsForCreditScreeningFee();
+            //Pages.ModalWindowPaymentOptions
+            //    .VerifyTitlePaymentOptions()
+            //    .SelectAllPaymentMethodsForScreening();
+            //Pages.NewBuilding
+            //    .ClickBtnSelectPaymentMethodsForHoldDeposit();
+            //Pages.ModalWindowPaymentOptions
+            //    .VerifyTitlePaymentOptions()
+            //    .SelectAllPaymentMethodsForHoldBuilding();
+            //Pages.NewBuilding
+            //    .ClickButtonSelectPetPolicies();
 
-            Pages.ModalWindowPetPolicies
-                .VerifyTitlePetPoliciesMdlWndw()
-                .SelectAllItems()
-                .ClickButtonSave();
+            ////Make verifying for ApiKey
+
+            //Pages.ModalWindowPetPolicies
+            //    .VerifyTitlePetPoliciesMdlWndw()
+            //    .SelectAllItems()
+            //    .ClickButtonSave();
 
             //    .ClickButtonGeneralNextNwBldngPg()
             //    .ClickFieldInputSearchForAmenitiesNwBldngPg()

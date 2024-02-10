@@ -117,6 +117,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return getValueActual;
         }
 
+        [AllureStep("GetNameCabTypeAccessFromTable")]
         public string GetNameCabTypeAccessFromTable()
         {
             WaitUntil.CustomElementIsVisible(RecordCABInTableAccessNwBldngPg, 10);
@@ -126,6 +127,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return nameCabActual;
         }
 
+        [AllureStep("GetNameNoteTypeAccessFromTable")]
         public string GetNameNoteTypeAccessFromTable()
         {
             WaitUntil.CustomElementIsVisible(RecordNoteInTableAccessNwBldngPg, 10);
@@ -135,6 +137,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return nameNoteActual;
         }
 
+        [AllureStep("GetNamePinCodeTypeAccessFromTable")]
         public string GetNamePinCodeTypeAccessFromTable()
         {
             WaitUntil.CustomElementIsVisible(RecordPinCodeInTableAccessNwBldngPg, 10);
@@ -144,6 +147,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return namePinCodeActual;
         }
 
+        [AllureStep("GetNameConcessionFromTable")]
         public string GetNameConcessionFromTable()
         {
             WaitUntil.CustomElementIsVisible(RecordNameInTableConcessionNwBldngPg, 10);
@@ -159,6 +163,15 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             WaitUntil.WaitSomeInterval(3000);
             //WaitUntil.CustomElementIsVisible(ButtonGeneralNextNwBldngPg, 10);
             Button.Click(ButtonGeneralNextNwBldngPg);
+
+            return this;
+        }
+
+        [AllureStep("ClickBtnEditForPaymentSystem")]
+        public NewBuilding ClickBtnEditForPaymentSystem()
+        {
+            WaitUntil.CustomElementIsVisible(BtnEditForPaymentSystem);
+            Button.Click(BtnEditForPaymentSystem);
 
             return this;
         }
