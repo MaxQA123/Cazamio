@@ -577,6 +577,13 @@ namespace MarketplaceAdminTests
 
         public void AddBuildingAssignedBroker()
         {
+            #region SettingsForBuilding
+
+            //All the fields filled in
+            //All tabs filled in
+
+            #endregion
+
             #region Preconditions Test
 
             Pages.LogInLandlord
@@ -605,19 +612,31 @@ namespace MarketplaceAdminTests
                 .EnterLlcName()
                 .EnterLongInternalNotesDescription();
             KeyBoardActions.ClickTab();
-            Pages.NewBuilding
-                .ClickButtonSelectPetPolicies();
-            Pages.ModalWindowPetPolicies
-                .VerifyTitlePetPoliciesMdlWndw()
-                .SelectAllItems()
-                .ClickButtonSave();
 
             string getValueScreeningFee = Pages.NewBuilding.GetValueFromFieldCreditScreeningFee();
 
             Pages.NewBuilding
                 .VerifyValueByDefaulScreeningFee(getValueScreeningFee)
                 .EnterCreditScreeningFeeHoldDeposit()
-                .SelectPaymentsMethodsNwBldngPage();
+                .ClickBtnSelectPaymentMethodsForCreditScreeningFee();
+            Pages.ModalWindowPaymentOptions
+                .VerifyTitlePaymentOptions()
+                .SelectAllPaymentMethodsForScreening();
+            Pages.NewBuilding
+                .ClickBtnSelectPaymentMethodsForHoldDeposit();
+            Pages.ModalWindowPaymentOptions
+                .VerifyTitlePaymentOptions()
+                .SelectAllPaymentMethodsForHoldBuilding();
+            Pages.NewBuilding
+                .ClickButtonSelectPetPolicies();
+
+            //Make verifying for ApiKey
+
+            Pages.ModalWindowPetPolicies
+                .VerifyTitlePetPoliciesMdlWndw()
+                .SelectAllItems()
+                .ClickButtonSave();
+
             //    .ClickButtonGeneralNextNwBldngPg()
             //    .ClickFieldInputSearchForAmenitiesNwBldngPg()
             //    .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
@@ -747,8 +766,8 @@ namespace MarketplaceAdminTests
                 .VerifyApartmentHoldDepositAddApartmentsPage(getgetApartmentHoldDeposit)
                 .ClickButtonPaymentMethodsAddAprtmntsUnitsPage();
             Pages.ModalWindowPaymentOptions
-                .VerifyTitlePaymentOptionsMdlWndwOptns()
-                .SelectPaymentsMethodsNwBldngPg();
+                .VerifyTitlePaymentOptions();
+                //.SelectPaymentsMethodsNwBldngPg();
 
             string getRentalTerms = Pages.AddApartments.GetRentalTermsAddApartmentsPage();
 

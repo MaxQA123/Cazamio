@@ -101,7 +101,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         [AllureStep("ClickButtonBuildingsSidebar")]
         public SideBarLandlord ClickButtonBuildingsSidebar()
         {
-            WaitUntil.WaitSomeInterval(1000);
+            WaitUntil.WaitSomeInterval(5000);
             Button.Click(ButtonBuildingsSidebar);
 
             return this;

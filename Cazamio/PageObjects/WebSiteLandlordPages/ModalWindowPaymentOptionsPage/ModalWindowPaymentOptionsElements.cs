@@ -11,19 +11,31 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
     public partial class ModalWindowPaymentOptions
     {
         [FindsBy(How = How.XPath, Using = "//h2[text() = 'Payment options']")]
-        public IWebElement TitlePaymentOptionsMdlWndwOptns;
+        public IWebElement TitlePaymentOptions;
 
         [FindsBy(How = How.XPath, Using = "//label[text() = ' Credit Card ']")]
-        public IWebElement CheckBoxCreditCardMdlWndwOptns;
+        public IWebElement ItemCreditCard;
 
-        [FindsBy(How = How.XPath, Using = "//span[text() = ' ACH ']")]
-        public IWebElement CheckBoxAchMdlWndwOptns;
+        [FindsBy(How = How.XPath, Using = "//label[text() = ' ACH ']")]
+        public IWebElement ItemAch;
 
-        [FindsBy(How = How.XPath, Using = "//span[text() = ' Deliver Check ']")]
-        public IWebElement CheckBoxDeliverCheckMdlWndwOptns;
+        [FindsBy(How = How.XPath, Using = "//label[text() = ' Deliver Check ']")]
+        public IWebElement ItemDeliverCheck;
 
-        [FindsBy(How = How.XPath, Using = "//textarea[@class = 'ng-untouched ng-pristine ng-valid']")]
-        public IWebElement FieldInputDeliverCheckNoteMdlWndwOptns;
+        [FindsBy(How = How.XPath, Using = "//label[text() = ' Zelle ']")]
+        public IWebElement ItemZelle;
+
+        [FindsBy(How = How.XPath, Using = "//label[text() = ' Venmo ']")]
+        public IWebElement ItemVenmo;
+
+        [FindsBy(How = How.XPath, Using = "//mat-dialog-container//div[@class = 'payments-wrapper']//div[@class = 'note-input']//textarea")]
+        public IWebElement FieldInputDeliverCheckNote;
+
+        [FindsBy(How = How.XPath, Using = "//mat-dialog-container//div[@class = 'payments-wrapper']//div[@class = 'note-input'][2]//input")]
+        public IWebElement FieldInputZelleAddressOrPhone;
+
+        [FindsBy(How = How.XPath, Using = "//mat-dialog-container//div[@class = 'payments-wrapper']//div[@class = 'note-input'][3]//input")]
+        public IWebElement ButtonForVenmoQrCodeImage;
 
         [FindsBy(How = How.XPath, Using = "//app-select-payment-method//span[@class = 'cazamio-button-txt']")]
         public IWebElement ButtonSaveMdlWndwOptns;

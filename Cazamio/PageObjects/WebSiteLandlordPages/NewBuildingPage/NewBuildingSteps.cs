@@ -13,15 +13,17 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [AllureStep("EnterFullAddressNewBuildingAssgndRlBrkr")]
         public NewBuilding EnterFullAddressNewBuildingAssgndRlBrkr()
         {
-            WaitUntil.WaitSomeInterval(500);
+            WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputAddressNwBldngPg, building.NumberWithAddressRoleBrkr);
-            WaitUntil.WaitSomeInterval(500);
+            WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputCityNwBldngPg, building.City.CityNewYork);
-            WaitUntil.WaitSomeInterval(500);
+            WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputStateNwBldngPg, building.State);
-            WaitUntil.WaitSomeInterval(1000);
+            WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputZipNwBldngPg, building.Zip.ZipBuildingAssignedRoleBrkr);
-            WaitUntil.WaitSomeInterval(500);
+            KeyBoardActions.ClickTab();
+            KeyBoardActions.ClickEnterButton();
+            WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputNeighborhoodNwBldngPg, building.Neighborhood.BuildingAssignedRoleBrkr);
 
             return this;
@@ -56,19 +58,6 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             Button.Click(ButtonMenuOwnerSelect);
             WaitUntil.WaitSomeInterval(500);
             Button.Click(SetItemForAutotestForBroker());
-
-            return this;
-        }
-
-        [AllureStep("SelectPaymentsMethodsNwBldngPage")]
-        public NewBuilding SelectPaymentsMethodsNwBldngPage()
-        {
-            Button.Click(ButtonSelectPaymentsMethodsNwBldngPg);
-            Pages.ModalWindowPaymentOptions
-                .VerifyTitlePaymentOptionsMdlWndwOptns();
-            Pages.ModalWindowPaymentOptions
-                .SelectPaymentsMethodsNwBldngPg();
-            WaitUntil.WaitSomeInterval(3000);
 
             return this;
         }

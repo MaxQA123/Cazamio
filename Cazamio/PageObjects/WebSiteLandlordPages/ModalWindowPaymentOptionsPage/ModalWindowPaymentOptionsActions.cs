@@ -14,17 +14,57 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
     {
         PaymentOptions paymentOptions = new PaymentOptions().Generate();
 
-        [AllureStep("SelectPaymentsMethodsNwBldngPg")]
-        public ModalWindowPaymentOptions SelectPaymentsMethodsNwBldngPg()
+        [AllureStep("SelectPaymentMethodCreditCard")]
+        public ModalWindowPaymentOptions SelectPaymentMethodCreditCard()
         {
-            Button.Click(CheckBoxCreditCardMdlWndwOptns);
-            Button.Click(CheckBoxAchMdlWndwOptns);
-            Button.Click(CheckBoxDeliverCheckMdlWndwOptns);
-            InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNoteMdlWndwOptns, paymentOptions.DeliverCheckNote.ForBuilding);
+            Button.Click(ItemCreditCard);
             Button.Click(ButtonSaveMdlWndwOptns);
             VerifySuccessSelectPmntMthds();
             WaitUntil.SuccessCustomElementIsVisible(MessageSuccessPaymentMethodsSelectedMdlWndwOptns);
-            //Button.Click(ButtonInFormCrossMdlWndwOptns);
+
+            return this;
+        }
+
+        [AllureStep("SelectPaymentMethodAch")]
+        public ModalWindowPaymentOptions SelectPaymentMethodAch()
+        {
+            Button.Click(ItemAch);
+            Button.Click(ButtonSaveMdlWndwOptns);
+            VerifySuccessSelectPmntMthds();
+            WaitUntil.SuccessCustomElementIsVisible(MessageSuccessPaymentMethodsSelectedMdlWndwOptns);
+
+            return this;
+        }
+
+        [AllureStep("SelectPaymentMethoddeliverCheck")]
+        public ModalWindowPaymentOptions SelectPaymentMethoddeliverCheck()
+        {
+            Button.Click(ItemDeliverCheck);
+            Button.Click(ButtonSaveMdlWndwOptns);
+            VerifySuccessSelectPmntMthds();
+            WaitUntil.SuccessCustomElementIsVisible(MessageSuccessPaymentMethodsSelectedMdlWndwOptns);
+
+            return this;
+        }
+
+        [AllureStep("SelectPaymentMethodZelle")]
+        public ModalWindowPaymentOptions SelectPaymentMethodZelle()
+        {
+            Button.Click(ItemZelle);
+            Button.Click(ButtonSaveMdlWndwOptns);
+            VerifySuccessSelectPmntMthds();
+            WaitUntil.SuccessCustomElementIsVisible(MessageSuccessPaymentMethodsSelectedMdlWndwOptns);
+
+            return this;
+        }
+
+        [AllureStep("SelectPaymentMethodVenmo")]
+        public ModalWindowPaymentOptions SelectPaymentMethodVenmo()
+        {
+            Button.Click(ItemVenmo);
+            Button.Click(ButtonSaveMdlWndwOptns);
+            VerifySuccessSelectPmntMthds();
+            WaitUntil.SuccessCustomElementIsVisible(MessageSuccessPaymentMethodsSelectedMdlWndwOptns);
 
             return this;
         }

@@ -12,9 +12,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
     public partial class ModalWindowPaymentOptions
     {
         [AllureStep("TitlePaymentOptionsMdlWndwOptns")]
-        public ModalWindowPaymentOptions VerifyTitlePaymentOptionsMdlWndwOptns()
+        public ModalWindowPaymentOptions VerifyTitlePaymentOptions()
         {
-            Assert.IsTrue(Successfully.IsVisible(TitlePaymentOptionsMdlWndwOptns));
+            Assert.IsTrue(Successfully.IsVisible(TitlePaymentOptions));
 
             return this;
         }
@@ -22,6 +22,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
         [AllureStep("VerifySuccessSelectPmntMthds")]
         public ModalWindowPaymentOptions VerifySuccessSelectPmntMthds()
         {
+            WaitUntil.CustomElementIsVisible(MessageSuccessMdlWndwOptns);
             Assert.IsTrue(Successfully.IsVisible(MessageSuccessMdlWndwOptns));
 
             return this;

@@ -16,7 +16,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
         public ListOfBuildings ClickButtonAddBuilding()
         {
             WaitUntil.WaitSomeInterval(10000);
-            WaitUntil.CustomElementIsVisible(ButtonAdd);
+            WaitUntil.CustomElementIsVisible(ButtonAdd, 10);
             WaitUntil.CustomElementIsClickable(ButtonAdd, 10);
             Button.Click(ButtonAdd);
 
