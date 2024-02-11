@@ -32,5 +32,14 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.MdlWndwPaymentKeys
 
             return getItemApiKeyCardknoxActual;
         }
+
+        [AllureStep("ClickButtonCross")]
+        public MdlWndwPaymentKeysActions ClickButtonCross()
+        {
+            WaitUntil.CustomElementIsClickable(ButtonCross);
+            Button.Click(ButtonCross);
+
+            return this;
+        }
     }
 }

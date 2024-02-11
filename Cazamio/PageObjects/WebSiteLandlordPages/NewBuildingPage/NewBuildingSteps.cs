@@ -14,17 +14,21 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         public NewBuilding EnterFullAddressNewBuildingAssgndRlBrkr()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputAddressNwBldngPg, building.NumberWithAddressRoleBrkr);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputCityNwBldngPg, building.City.CityNewYork);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputStateNwBldngPg, building.State);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputZipNwBldngPg, building.Zip.ZipBuildingAssignedRoleBrkr);
+            InputGeneral.InputFunctionWithClear(FieldInputAddress, building.NumberWithAddressRoleBrkr);
+            WaitUntil.WaitSomeInterval(500);
             KeyBoardActions.ClickTab();
             KeyBoardActions.ClickEnterButton();
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputNeighborhoodNwBldngPg, building.Neighborhood.BuildingAssignedRoleBrkr);
+            InputGeneral.InputFunctionWithClear(FieldInputCity, building.City.CityNewYork);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputState, building.State);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputZip, building.Zip.ZipBuildingAssignedRoleBrkr);
+            WaitUntil.WaitSomeInterval(500);
+            KeyBoardActions.ClickTab();
+            KeyBoardActions.ClickEnterButton();
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputNeighborhood, building.Neighborhood.BuildingAssignedRoleBrkr);
 
             return this;
         }
@@ -33,9 +37,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         public NewBuilding EnterLongInternalNotesDescription()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputDescroptionNwBldngPg, building.DescriptionLong);
+            InputGeneral.InputFunctionWithClear(FieldInputDescroption, building.DescriptionLong);
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputInternalNotesNwBldngPg, building.InternalNotesLong);
+            InputGeneral.InputFunctionWithClear(FieldInputInternalNotes, building.InternalNotesLong);
 
             return this;
         }

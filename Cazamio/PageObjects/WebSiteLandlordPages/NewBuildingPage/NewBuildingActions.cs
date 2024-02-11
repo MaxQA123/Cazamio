@@ -45,7 +45,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         public NewBuilding EnterBuildingName()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputBuildingNameNwBldngPg, building.BuildingName);
+            InputGeneral.InputFunctionWithClear(FieldInputBuildingName, building.BuildingName);
             
             return this;
         }
@@ -54,7 +54,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         public NewBuilding EnterLlcName()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputLlcNameNwBldngPg, building.LlcName);
+            InputGeneral.InputFunctionWithClear(FieldInputLlcName, building.LlcName);
 
             return this;
         }
@@ -179,6 +179,16 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         #endregion
 
         #region Amenities
+
+        [AllureStep("ClickTabAmenities")]
+        public NewBuilding ClickTabAmenities()
+        {
+            WaitUntil.CustomElementIsVisible(TabAmenities);
+            WaitUntil.CustomElementIsClickable(TabAmenities);
+            Button.Click(TabAmenities);
+
+            return this;
+        }
 
         [AllureStep("ClickFieldInputSearchForAmenitiesNwBldngPg")]
         public NewBuilding ClickFieldInputSearchForAmenitiesNwBldngPg()

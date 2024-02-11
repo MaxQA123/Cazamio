@@ -15,5 +15,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.MdlWndwPaymentKeys
 
         [FindsBy(How = How.XPath, Using = "//span[text() = 'czmodev359376936c0543b58126c97f9ff55c68']")]
         public IWebElement ItemApiKeyCardknox;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'btn-close-popup']")]
+        public IWebElement ButtonCross;
     }
 }

@@ -33,37 +33,53 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         #endregion
 
+        #region ListOfTabs
+
+        [FindsBy(How = How.XPath, Using = "//a[text() = 'Amenities']")]
+        public IWebElement TabAmenities;
+
+        [FindsBy(How = How.XPath, Using = "//a[text() = 'Access']")]
+        public IWebElement TabAccess;
+
+        [FindsBy(How = How.XPath, Using = "//a[text() = 'Specials']")]
+        public IWebElement TabSpecials;
+
+        [FindsBy(How = How.XPath, Using = "//a[text() = 'Images']")]
+        public IWebElement TabImages;
+
+        #endregion
+
         #region TabBasicDetails
 
         [FindsBy(How = How.XPath, Using = "//ng-select[@placeholder= 'Select owner']")]
         public IWebElement ButtonMenuOwnerSelect;
 
         [FindsBy(How = How.CssSelector, Using = "input#inputAddress")]
-        public IWebElement FieldInputAddressNwBldngPg;
+        public IWebElement FieldInputAddress;
 
         [FindsBy(How = How.CssSelector, Using = "input#city")]
-        public IWebElement FieldInputCityNwBldngPg;
+        public IWebElement FieldInputCity;
 
         [FindsBy(How = How.CssSelector, Using = "input#state")]
-        public IWebElement FieldInputStateNwBldngPg;
+        public IWebElement FieldInputState;
 
         [FindsBy(How = How.XPath, Using = "//input[@id = 'zip']")]
-        public IWebElement FieldInputZipNwBldngPg;
+        public IWebElement FieldInputZip;
 
         [FindsBy(How = How.XPath, Using = "//input[@id= 'neighborhood']")]
-        public IWebElement FieldInputNeighborhoodNwBldngPg;
+        public IWebElement FieldInputNeighborhood;
 
         [FindsBy(How = How.CssSelector, Using = "input#buildingName")]
-        public IWebElement FieldInputBuildingNameNwBldngPg;
+        public IWebElement FieldInputBuildingName;
 
         [FindsBy(How = How.CssSelector, Using = "input#llcName")]
-        public IWebElement FieldInputLlcNameNwBldngPg;
+        public IWebElement FieldInputLlcName;
 
         [FindsBy(How = How.CssSelector, Using = "textarea#description")]
-        public IWebElement FieldInputDescroptionNwBldngPg;
+        public IWebElement FieldInputDescroption;
 
         [FindsBy(How = How.XPath, Using = "//textarea[@id= 'internalNotes']")]
-        public IWebElement FieldInputInternalNotesNwBldngPg;
+        public IWebElement FieldInputInternalNotes;
 
         [FindsBy(How = How.XPath, Using = "//span[text() = 'Select Pet Policies']")]
         public IWebElement ButtonSelectPetPolicies;
