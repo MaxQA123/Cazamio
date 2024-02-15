@@ -178,7 +178,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         #endregion
 
-        #region Amenities
+        #region Tabs
 
         [AllureStep("ClickTabAmenities")]
         public NewBuilding ClickTabAmenities()
@@ -190,10 +190,25 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        [AllureStep("ClickFieldInputSearchForAmenitiesNwBldngPg")]
-        public NewBuilding ClickFieldInputSearchForAmenitiesNwBldngPg()
+        [AllureStep("ClickTabAccess")]
+        public NewBuilding ClickTabAccess()
         {
-            WaitUntil.WaitSomeInterval(500);
+            WaitUntil.CustomElementIsVisible(TabAccess);
+            WaitUntil.CustomElementIsClickable(TabAccess);
+            Button.Click(TabAccess);
+
+            return this;
+        }
+
+        #endregion
+
+        #region Amenities
+
+        [AllureStep("ClickFieldInputSearchForAmenities")]
+        public NewBuilding ClickFieldInputSearchForAmenitiesg()
+        {
+            WaitUntil.CustomElementIsInVisible(FieldInputSearchForAmenitiesNwBldngPg);
+            WaitUntil.CustomElementIsClickable(FieldInputSearchForAmenitiesNwBldngPg);
             Button.Click(FieldInputSearchForAmenitiesNwBldngPg);
 
             return this;
@@ -225,47 +240,40 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         #region Access
 
-        [AllureStep("ClickButtonAddLockForAccessNwBldngPg")]
-        public NewBuilding ClickButtonAddLockForAccessNwBldngPg()
+        [AllureStep("ClickButtonAddLock")]
+        public NewBuilding ClickButtonAddLock()
         {
-            WaitUntil.CustomElementIsVisible(ButtonAddLockForAccessNwBldngPg, 10);
-            Button.Click(ButtonAddLockForAccessNwBldngPg);
+            WaitUntil.CustomElementIsVisible(ButtonAddLock);
+            Button.Click(ButtonAddLock);
 
             return this;
         }
 
-        [AllureStep("AddItemAccessTypePinCodeForAccessNwBldngPg")]
-        public NewBuilding AddItemAccessTypePinCodeForAccessNwBldngPg()
+        [AllureStep("AddItemAccessTypePinCode")]
+        public NewBuilding AddItemAccessTypePinCode()
         {
             WaitUntil.WaitSomeInterval(3000);
-            WaitUntil.CustomElementIsVisible(ButtonAccessTypeForAccessNwBldngPg, 10);
-            Button.Click(ButtonAccessTypeForAccessNwBldngPg);
-            WaitUntil.WaitSomeInterval(500);
-            KeyBoardActions.ClickArrowDown();
-            WaitUntil.WaitSomeInterval(500);
-            KeyBoardActions.ClickArrowDown();
-            WaitUntil.WaitSomeInterval(500);
-            KeyBoardActions.ClickEnterButton();
+            WaitUntil.CustomElementIsVisible(ButtonAccessType);
+            Button.Click(ButtonAccessType);
+            Button.Click(ItemPinCode);
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputPinCodeForAccessNwBldngPg, GenerateRandomDataHelper.RandomNumberWithoutZero(1));
+            InputGeneral.InputFunctionWithClear(FieldInputPinCodeForFirstEnter, GenerateRandomDataHelper.RandomNumberWithoutZero(1));
             KeyBoardActions.ClickSpaceButton();
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithoutClear(FieldInputPinCodeForAccessNwBldngPg, GenerateRandomDataHelper.RandomNumberWithoutZero(1));
+            InputGeneral.InputFunctionWithoutClear(FieldInputPinCodeForNextEnter, GenerateRandomDataHelper.RandomNumberWithoutZero(1));
             KeyBoardActions.ClickSpaceButton();
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithoutClear(FieldInputPinCodeForAccessNwBldngPg, GenerateRandomDataHelper.RandomNumberWithoutZero(1));
+            InputGeneral.InputFunctionWithoutClear(FieldInputPinCodeForNextEnter, GenerateRandomDataHelper.RandomNumberWithoutZero(1));
             KeyBoardActions.ClickSpaceButton();
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithoutClear(FieldInputPinCodeForAccessNwBldngPg, GenerateRandomDataHelper.RandomNumberWithoutZero(1));
+            InputGeneral.InputFunctionWithoutClear(FieldInputPinCodeForNextEnter, GenerateRandomDataHelper.RandomNumberWithoutZero(1));
             KeyBoardActions.ClickSpaceButton();
-            InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccessNwBldngPg, building.TextLorem);
+            InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccess, building.TextLorem.TextLoremForPinCode);
             WaitUntil.WaitSomeInterval(100);
-            ButtonSelectImageForAccessNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_LOCK_OK));
-            WaitUntil.SuccessCustomElementIsVisible(MessageSuccessUploadImageForAccessNwBldngPg);
+            ButtonSelectImageForAccess.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_LOCK_OK));
+            WaitUntil.SuccessCustomElementIsVisible(MessageSuccessUploadImageForAccess);
             WaitUntil.WaitSomeInterval(100);
-            Button.Click(CheckBoxTimeRestrictionEnabledForAccessNwBldngPg);
-            WaitUntil.WaitSomeInterval(100);
-            Button.Click(ButtonSaveForAccessNwBldngPg);
+            Button.Click(ButtonSaveForLock);
 
             return this;
         }
@@ -274,60 +282,44 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         public NewBuilding AddItemAccessTypeNoteForAccessNwBldngPg()
         {
             WaitUntil.WaitSomeInterval(3000);
-            WaitUntil.CustomElementIsVisible(ButtonAccessTypeForAccessNwBldngPg, 10);
-            Button.Click(ButtonAccessTypeForAccessNwBldngPg);
-            WaitUntil.WaitSomeInterval(100);
-            KeyBoardActions.ClickArrowDown();
-            WaitUntil.WaitSomeInterval(100);
-            KeyBoardActions.ClickArrowDown();
-            WaitUntil.WaitSomeInterval(100);
-            KeyBoardActions.ClickArrowDown();
+            WaitUntil.CustomElementIsVisible(ButtonAccessType);
+            Button.Click(ButtonAccessType);
+
             WaitUntil.WaitSomeInterval(100);
             KeyBoardActions.ClickEnterButton();
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccessNwBldngPg, building.TextLorem);
+            InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccess, building.TextLorem.TextLoremForNote);
             WaitUntil.WaitSomeInterval(100);
-            ButtonSelectImageForAccessNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_LOCK_OK));
-            WaitUntil.SuccessCustomElementIsVisible(MessageSuccessUploadImageForAccessNwBldngPg);
+            ButtonSelectImageForAccess.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_LOCK_OK));
+            WaitUntil.SuccessCustomElementIsVisible(MessageSuccessUploadImageForAccess);
             WaitUntil.WaitSomeInterval(100);
-            Button.Click(CheckBoxTimeRestrictionEnabledForAccessNwBldngPg);
-            WaitUntil.WaitSomeInterval(100);
-            Button.Click(ButtonSaveForAccessNwBldngPg);
+            Button.Click(ButtonSaveForLock);
 
             return this;
         }
 
-        [AllureStep("AddItemAccessTypeCabForAccessNwBldngPg")]
-        public NewBuilding AddItemAccessTypeCabForAccessNwBldngPg()
-        {
-            WaitUntil.WaitSomeInterval(3000);
-            WaitUntil.CustomElementIsVisible(ButtonAccessTypeForAccessNwBldngPg, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputLocationForAccessNwBldngPg, TestDataForWebSiteAdmin.THIRD_NAME_LOCATION);
-            Button.Click(ButtonAccessTypeForAccessNwBldngPg);
-            WaitUntil.WaitSomeInterval(100);
-            KeyBoardActions.ClickArrowDown();
-            WaitUntil.WaitSomeInterval(100);
-            KeyBoardActions.ClickArrowDown();
-            WaitUntil.WaitSomeInterval(100);
-            KeyBoardActions.ClickArrowDown();
-            WaitUntil.WaitSomeInterval(100);
-            KeyBoardActions.ClickArrowDown();
-            WaitUntil.WaitSomeInterval(100);
-            KeyBoardActions.ClickEnterButton();
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputLockGuideForAccessNwBldngPg, GenerateRandomDataHelper.RandomNumberWithoutZero(5));
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccessNwBldngPg, building.TextLorem);
-            WaitUntil.WaitSomeInterval(100);
-            ButtonSelectImageForAccessNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_LOCK_OK));
-            WaitUntil.SuccessCustomElementIsVisible(MessageSuccessUploadImageForAccessNwBldngPg);
-            WaitUntil.WaitSomeInterval(100);
-            Button.Click(CheckBoxTimeRestrictionEnabledForAccessNwBldngPg);
-            WaitUntil.WaitSomeInterval(100);
-            Button.Click(ButtonSaveForAccessNwBldngPg);
+        //This item had been hidden
+        //[AllureStep("AddItemAccessTypeCabForAccessNwBldngPg")]
+        //public NewBuilding AddItemAccessTypeCabForAccessNwBldngPg()
+        //{
+        //    WaitUntil.WaitSomeInterval(3000);
+        //    WaitUntil.CustomElementIsVisible(ButtonAccessType);
+        //    InputGeneral.InputFunctionWithClear(FieldInputLocationForAccess, TestDataForWebSiteAdmin.THIRD_NAME_LOCATION);
+        //    Button.Click(ButtonAccessType);
+        //    Button.Click(ItemPinCode);
+        //    KeyBoardActions.ClickEnterButton();
+        //    WaitUntil.WaitSomeInterval(100);
+        //    InputGeneral.InputFunctionWithClear(FieldInputLockGuideForAccess, GenerateRandomDataHelper.RandomNumberWithoutZero(5));
+        //    WaitUntil.WaitSomeInterval(100);
+        //    InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccess, building.TextLorem);
+        //    WaitUntil.WaitSomeInterval(100);
+        //    ButtonSelectImageForAccess.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_LOCK_OK));
+        //    WaitUntil.SuccessCustomElementIsVisible(MessageSuccessUploadImageForAccess);
+        //    WaitUntil.WaitSomeInterval(100);
+        //    Button.Click(ButtonSaveForLock);
 
-            return this;
-        }
+        //    return this;
+        //}
 
         #endregion
 

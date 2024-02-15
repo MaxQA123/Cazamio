@@ -111,37 +111,44 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         #region Access
 
         [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Add lock']")]
-        public IWebElement ButtonAddLockForAccessNwBldngPg;
+        public IWebElement ButtonAddLock;
 
         [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'location']")]
-        public IWebElement FieldInputLocationForAccessNwBldngPg;
+        public IWebElement FieldInputLocationForAccess;
 
         [FindsBy(How = How.XPath, Using = "//input[@id = 'accessType']")]
-        public IWebElement ButtonAccessTypeForAccessNwBldngPg;
+        public IWebElement ButtonAccessType;
+
+        [FindsBy(How = How.XPath, Using = "//span[text() = 'PinCode']")]
+        public IWebElement ItemPinCode;
 
         [FindsBy(How = How.XPath, Using = "//input[@autocomplete = 'ab6a07d3a4cb']")]
         public IWebElement FieldInputLockForAccessNwBldngPg;
 
         [FindsBy(How = How.XPath, Using = "//input[@placeholder = 'Pin term']")]
-        public IWebElement FieldInputPinCodeForAccessNwBldngPg;
+        public IWebElement FieldInputPinCodeForFirstEnter;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id = 'mat-mdc-chip-list-input-0']")]
+        public IWebElement FieldInputPinCodeForNextEnter;
 
         [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'lockGuid']")]
-        public IWebElement FieldInputLockGuideForAccessNwBldngPg;
+        public IWebElement FieldInputLockGuideForAccess;
 
         [FindsBy(How = How.XPath, Using = "//textarea[@formcontrolname = 'customNote']")]
-        public IWebElement FieldInputCustomNoteForAccessNwBldngPg;
+        public IWebElement FieldInputCustomNoteForAccess;
 
         [FindsBy(How = How.XPath, Using = "//input[@id = 'add-note-image']")]
-        public IWebElement ButtonSelectImageForAccessNwBldngPg;
+        public IWebElement ButtonSelectImageForAccess;
 
         [FindsBy(How = How.XPath, Using = "//span[text() = 'Image was upload successfully.']")]
-        public IWebElement MessageSuccessUploadImageForAccessNwBldngPg;
+        public IWebElement MessageSuccessUploadImageForAccess;
 
-        [FindsBy(How = How.XPath, Using = "//span[text() = ' Time Restriction Enabled ']")]
-        public IWebElement CheckBoxTimeRestrictionEnabledForAccessNwBldngPg;
+        //This element will be hidden
+        //[FindsBy(How = How.XPath, Using = "//span[text() = ' Time Restriction Enabled ']")]
+        //public IWebElement CheckBoxTimeRestrictionEnabledForAccess;
 
         [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Save']")]
-        public IWebElement ButtonSaveForAccessNwBldngPg;
+        public IWebElement ButtonSaveForLock;
 
         [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Cancel']")]
         public IWebElement ButtonCancelForAccessNwBldngPg;

@@ -1,0 +1,5157 @@
+{
+  "uuid": "bf5ad2cd-4ae3-4701-aa67-48c38ac31590-tr-0-1008",
+  "historyId": "MarketplaceAdminTests.TestsBaseWeb.AddBuildingAssignedBroker",
+  "fullName": "MarketplaceAdminTests.TestsBaseWeb.AddBuildingAssignedBroker",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "MarketplaceAdminTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "AddBuildingAssignedBroker"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "MarketplaceAdmin"
+    },
+    {
+      "name": "subSuite",
+      "value": "AddBuildingAssignedBroker"
+    }
+  ],
+  "links": [],
+  "name": "AddBuildingAssignedBroker",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.WebDriverTimeoutException : Timed out after 10 seconds\r\n  ----> OpenQA.Selenium.NoSuchElementException : Could not find element by: By.XPath: //input[@placeholder = 'Pin term']",
+    "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.ElementIsClickable(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 22\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithoutClear_100663773_o(IWebElement element, String text) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 53\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithoutClear_100663773_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithoutClear_100663773_w_0(Object[] )\r\n   at CazamioProgect.Helpers.InputGeneral.InputFunctionWithoutClear(IWebElement element, String text)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage.NewBuilding.__a$_around_AddItemAccessTypePinCode_100663504_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\NewBuildingPage\\NewBuildingActions.cs:line 269\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage.NewBuilding.__a$_around_AddItemAccessTypePinCode_100663504_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage.NewBuilding.__a$_around_AddItemAccessTypePinCode_100663504_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage.NewBuilding.AddItemAccessTypePinCode() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\NewBuildingPage\\NewBuildingAssertions.cs:line 24\r\n   at MarketplaceAdminTests.TestsBaseWeb.AddBuildingAssignedBroker() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\MarketplaceAdminWebSiteTests\\MarketplaceAdminTests.cs:line 659\r\n--NoSuchElementException\r\n   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()\r\n   at SeleniumExtras.WaitHelpers.ExpectedConditions.<>c__DisplayClass7_0.<ElementToBeClickable>b__0(IWebDriver driver)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "AddBuildingAssignedBroker",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.WebDriverTimeoutException : Timed out after 10 seconds\r\n  ----> OpenQA.Selenium.NoSuchElementException : Could not find element by: By.XPath: //input[@placeholder = 'Pin term']",
+        "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.ElementIsClickable(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 22\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithoutClear_100663773_o(IWebElement element, String text) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 53\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithoutClear_100663773_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithoutClear_100663773_w_0(Object[] )\r\n   at CazamioProgect.Helpers.InputGeneral.InputFunctionWithoutClear(IWebElement element, String text)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage.NewBuilding.__a$_around_AddItemAccessTypePinCode_100663504_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\NewBuildingPage\\NewBuildingActions.cs:line 269\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage.NewBuilding.__a$_around_AddItemAccessTypePinCode_100663504_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage.NewBuilding.__a$_around_AddItemAccessTypePinCode_100663504_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage.NewBuilding.AddItemAccessTypePinCode() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\NewBuildingPage\\NewBuildingAssertions.cs:line 24\r\n   at MarketplaceAdminTests.TestsBaseWeb.AddBuildingAssignedBroker() in C:\\Automation\\Cazamio\\LandlordWebSiteCazamio\\MarketplaceAdminWebSiteTests\\MarketplaceAdminTests.cs:line 659\r\n--NoSuchElementException\r\n   at SeleniumExtras.PageObjects.DefaultElementLocator.LocateElement(IEnumerable`1 bys)\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_WrappedElement()\r\n   at SeleniumExtras.PageObjects.WebElementProxy.get_Displayed()\r\n   at SeleniumExtras.WaitHelpers.ExpectedConditions.<>c__DisplayClass7_0.<ElementToBeClickable>b__0(IWebDriver driver)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992631186,
+          "stop": 1707992631194
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992631197,
+          "stop": 1707992631202
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992631202,
+          "stop": 1707992631202
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992631204,
+          "stop": 1707992631204
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992631205,
+          "stop": 1707992631205
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992631205,
+          "stop": 1707992631205
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992631207,
+          "stop": 1707992631207
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992631207,
+          "stop": 1707992631207
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992631207,
+          "stop": 1707992631207
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992631208,
+          "stop": 1707992631209
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992631209,
+          "stop": 1707992631209
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992631209,
+          "stop": 1707992631209
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992631209,
+          "stop": 1707992631209
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992631212,
+          "stop": 1707992631212
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992631212,
+          "stop": 1707992631212
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992631212,
+          "stop": 1707992631212
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992631212,
+          "stop": 1707992631212
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992631212,
+          "stop": 1707992631212
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992631212,
+          "stop": 1707992631212
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992631212,
+          "stop": 1707992631212
+        },
+        {
+          "name": "EnterEmailPasswordLogInPgAsMarketplaceAdmin",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "marketplaceadmin15@putsbox.com"
+                }
+              ],
+              "start": 1707992631234,
+              "stop": 1707992632353
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Qwerty123!"
+                }
+              ],
+              "start": 1707992632464,
+              "stop": 1707992633001
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992631232,
+          "stop": 1707992633001
+        },
+        {
+          "name": "ClickIconShowLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992633003,
+              "stop": 1707992633602
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992633002,
+          "stop": 1707992633602
+        },
+        {
+          "name": "ClickButtonLetsGoLogInPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992635614,
+              "stop": 1707992636513
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992633603,
+          "stop": 1707992637565
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992637566,
+          "stop": 1707992637566
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992637566,
+          "stop": 1707992637566
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637566,
+          "stop": 1707992637566
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992637566,
+          "stop": 1707992637566
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992637566,
+          "stop": 1707992637566
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637566,
+          "stop": 1707992637566
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992637567,
+          "stop": 1707992637567
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992637567,
+          "stop": 1707992637567
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637567,
+          "stop": 1707992637567
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992637567,
+          "stop": 1707992637567
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992637567,
+          "stop": 1707992637567
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637567,
+          "stop": 1707992637567
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637567,
+          "stop": 1707992637567
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992637568,
+          "stop": 1707992637568
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992637568,
+          "stop": 1707992637568
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637568,
+          "stop": 1707992637568
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992637568,
+          "stop": 1707992637568
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992637568,
+          "stop": 1707992637568
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637568,
+          "stop": 1707992637568
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637568,
+          "stop": 1707992637568
+        },
+        {
+          "name": "GetUserNameFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992637569,
+          "stop": 1707992637816
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992637816,
+          "stop": 1707992637816
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992637817,
+          "stop": 1707992637817
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637817,
+          "stop": 1707992637817
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992637817,
+          "stop": 1707992637817
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992637817,
+          "stop": 1707992637817
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637817,
+          "stop": 1707992637817
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992637817,
+          "stop": 1707992637817
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992637817,
+          "stop": 1707992637817
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637817,
+          "stop": 1707992637817
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992637817,
+          "stop": 1707992637817
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992637817,
+          "stop": 1707992637817
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637818,
+          "stop": 1707992637818
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637818,
+          "stop": 1707992637818
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992637818,
+          "stop": 1707992637818
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992637818,
+          "stop": 1707992637818
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637818,
+          "stop": 1707992637818
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992637818,
+          "stop": 1707992637818
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992637818,
+          "stop": 1707992637818
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637818,
+          "stop": 1707992637818
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637818,
+          "stop": 1707992637818
+        },
+        {
+          "name": "GetUserNameRoleFromSideBar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992637819,
+          "stop": 1707992637893
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992637894,
+          "stop": 1707992637894
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992637894,
+          "stop": 1707992637894
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637894,
+          "stop": 1707992637894
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992637894,
+          "stop": 1707992637894
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992637894,
+          "stop": 1707992637894
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637894,
+          "stop": 1707992637894
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992637894,
+          "stop": 1707992637894
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992637894,
+          "stop": 1707992637894
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637894,
+          "stop": 1707992637894
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992637894,
+          "stop": 1707992637894
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992637894,
+          "stop": 1707992637894
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637895,
+          "stop": 1707992637895
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637895,
+          "stop": 1707992637895
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992637895,
+          "stop": 1707992637895
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992637895,
+          "stop": 1707992637895
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637895,
+          "stop": 1707992637895
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992637895,
+          "stop": 1707992637895
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992637895,
+          "stop": 1707992637895
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637895,
+          "stop": 1707992637895
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992637895,
+          "stop": 1707992637895
+        },
+        {
+          "name": "VerifyMarketplaceAdminUserName",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Mark Adm"
+            },
+            {
+              "name": "String",
+              "value": "Marketplace Admin"
+            }
+          ],
+          "start": 1707992637896,
+          "stop": 1707992639423
+        },
+        {
+          "name": "ClickButtonBuildingsSidebar",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992644447,
+              "stop": 1707992645285
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992639424,
+          "stop": 1707992645285
+        },
+        {
+          "name": "ClickButtonAddBuilding",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992655367,
+              "stop": 1707992656073
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992645288,
+          "stop": 1707992656073
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992656085,
+          "stop": 1707992656086
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992656086,
+          "stop": 1707992656086
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992656086,
+          "stop": 1707992656086
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992656105,
+          "stop": 1707992656106
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992656106,
+          "stop": 1707992656106
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1707992656106,
+          "stop": 1707992656106
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1707992656106,
+          "stop": 1707992656106
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992656106,
+          "stop": 1707992656106
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992656106,
+          "stop": 1707992656106
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992656106,
+          "stop": 1707992656106
+        },
+        {
+          "name": "VerifyTitleListOfBuildingsPg",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992656113,
+          "stop": 1707992657223
+        },
+        {
+          "name": "SelectOwnerWithBroker",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992657223,
+              "stop": 1707992658030
+            },
+            {
+              "name": "RandomEmail",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "5"
+                }
+              ],
+              "start": 1707992658567,
+              "stop": 1707992658567
+            },
+            {
+              "name": "RandomNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "3"
+                }
+              ],
+              "start": 1707992658567,
+              "stop": 1707992658567
+            },
+            {
+              "name": "RandomEmail",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "2"
+                }
+              ],
+              "start": 1707992658567,
+              "stop": 1707992658567
+            },
+            {
+              "name": "RandomPhoneNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "7"
+                }
+              ],
+              "start": 1707992658568,
+              "stop": 1707992658568
+            },
+            {
+              "name": "RandomPhoneNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "7"
+                }
+              ],
+              "start": 1707992658568,
+              "stop": 1707992658568
+            },
+            {
+              "name": "RandomNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "1"
+                }
+              ],
+              "start": 1707992658568,
+              "stop": 1707992658568
+            },
+            {
+              "name": "RandomNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "1"
+                }
+              ],
+              "start": 1707992658568,
+              "stop": 1707992658568
+            },
+            {
+              "name": "RandomNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "2"
+                }
+              ],
+              "start": 1707992658568,
+              "stop": 1707992658568
+            },
+            {
+              "name": "RandomNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "2"
+                }
+              ],
+              "start": 1707992658568,
+              "stop": 1707992658568
+            },
+            {
+              "name": "RandomNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "2"
+                }
+              ],
+              "start": 1707992658568,
+              "stop": 1707992658568
+            },
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElement",
+                  "value": "Element (id = 25E669A53461058BC91330412D8A626D_element_109)"
+                }
+              ],
+              "start": 1707992658590,
+              "stop": 1707992659186
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992657223,
+          "stop": 1707992659186
+        },
+        {
+          "name": "EnterFullAddressNewBuildingAssgndRlBrkr",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "10 Washington Square"
+                }
+              ],
+              "start": 1707992659306,
+              "stop": 1707992659927
+            },
+            {
+              "name": "ClickTab",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [],
+              "start": 1707992660440,
+              "stop": 1707992660502
+            },
+            {
+              "name": "ClickEnterButton",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [],
+              "start": 1707992660503,
+              "stop": 1707992660510
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "New York"
+                }
+              ],
+              "start": 1707992660625,
+              "stop": 1707992661141
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "NY"
+                }
+              ],
+              "start": 1707992661251,
+              "stop": 1707992661762
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "10012"
+                }
+              ],
+              "start": 1707992661901,
+              "stop": 1707992662466
+            },
+            {
+              "name": "ClickTab",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [],
+              "start": 1707992662978,
+              "stop": 1707992663008
+            },
+            {
+              "name": "ClickEnterButton",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [],
+              "start": 1707992663008,
+              "stop": 1707992663014
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Manhattan"
+                }
+              ],
+              "start": 1707992663132,
+              "stop": 1707992663622
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992659187,
+          "stop": 1707992663622
+        },
+        {
+          "name": "EnterBuildingName",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "QA-Building NAME (12345) (!@#$%)"
+                }
+              ],
+              "start": 1707992663725,
+              "stop": 1707992664441
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992663622,
+          "stop": 1707992664441
+        },
+        {
+          "name": "EnterLlcName",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "LLC QA-HOME (12345) (!@#$%)"
+                }
+              ],
+              "start": 1707992664558,
+              "stop": 1707992665127
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992664442,
+          "stop": 1707992665127
+        },
+        {
+          "name": "EnterLongInternalNotesDescription",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "DESCRIPTION for BUILDING (12345) (09876) (&%$#@!) Lorem ipsum dolor sit amet, 12345 67890 !@# $%^ &*() adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,"
+                }
+              ],
+              "start": 1707992665242,
+              "stop": 1707992670764
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "INTERNAL NOTES for BUILDING (12345) (09876) (&%$#@!) Lorem ipsum dolor sit amet, 12345 67890 !@# $%^ &*() adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,"
+                }
+              ],
+              "start": 1707992670883,
+              "stop": 1707992676195
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992665127,
+          "stop": 1707992676195
+        },
+        {
+          "name": "ClickTab",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992676195,
+          "stop": 1707992676229
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992676231,
+          "stop": 1707992676231
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992676231,
+          "stop": 1707992676231
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992676231,
+          "stop": 1707992676231
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992676232,
+          "stop": 1707992676232
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992676232,
+          "stop": 1707992676232
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1707992676232,
+          "stop": 1707992676232
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1707992676232,
+          "stop": 1707992676232
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992676232,
+          "stop": 1707992676232
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992676232,
+          "stop": 1707992676232
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992676232,
+          "stop": 1707992676232
+        },
+        {
+          "name": "ClickBtnEditForPaymentSystem",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992676277,
+              "stop": 1707992676966
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992676237,
+          "stop": 1707992676966
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992676970,
+          "stop": 1707992676970
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992676970,
+          "stop": 1707992676970
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992676970,
+          "stop": 1707992676970
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992676970,
+          "stop": 1707992676970
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992676970,
+          "stop": 1707992676970
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1707992676970,
+          "stop": 1707992676971
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1707992676971,
+          "stop": 1707992676971
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992676971,
+          "stop": 1707992676971
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992676971,
+          "stop": 1707992676971
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992676971,
+          "stop": 1707992676971
+        },
+        {
+          "name": "GetValueFromFieldCreditScreeningFee",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992676974,
+          "stop": 1707992677076
+        },
+        {
+          "name": "GetItemCardknox",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992677078,
+          "stop": 1707992677169
+        },
+        {
+          "name": "GetItemApiKeyCardknox",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992677169,
+          "stop": 1707992677245
+        },
+        {
+          "name": "ClickButtonCross",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992677303,
+              "stop": 1707992677913
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992677246,
+          "stop": 1707992677913
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992677915,
+          "stop": 1707992677915
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992677915,
+          "stop": 1707992677915
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992677915,
+          "stop": 1707992677915
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992677919,
+          "stop": 1707992677919
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992677919,
+          "stop": 1707992677919
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1707992677919,
+          "stop": 1707992677919
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1707992677919,
+          "stop": 1707992677919
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992677919,
+          "stop": 1707992677919
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992677919,
+          "stop": 1707992677919
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992677919,
+          "stop": 1707992677919
+        },
+        {
+          "name": "VerifyValueByDefaulScreeningFee",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "20"
+            }
+          ],
+          "start": 1707992677922,
+          "stop": 1707992677922
+        },
+        {
+          "name": "EnterCreditScreeningFeeHoldDeposit",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "ClickBackspace",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [],
+              "start": 1707992678346,
+              "stop": 1707992678353
+            },
+            {
+              "name": "ClickBackspace",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [],
+              "start": 1707992678353,
+              "stop": 1707992678357
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "650"
+                }
+              ],
+              "start": 1707992678613,
+              "stop": 1707992679115
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992677923,
+          "stop": 1707992679115
+        },
+        {
+          "name": "ClickBtnSelectPaymentMethodsForCreditScreeningFee",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992679229,
+              "stop": 1707992679849
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992679117,
+          "stop": 1707992679849
+        },
+        {
+          "name": "TitlePaymentOptionsMdlWndwOptns",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992679851,
+          "stop": 1707992680936
+        },
+        {
+          "name": "SelectAllPaymentMethodsForScreening",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992680937,
+              "stop": 1707992681553
+            },
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992681553,
+              "stop": 1707992682162
+            },
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992682162,
+              "stop": 1707992682770
+            },
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992682770,
+              "stop": 1707992683389
+            },
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992683389,
+              "stop": 1707992684009
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Deliver check for Building screening (12345) (%$#@!) (09876)"
+                }
+              ],
+              "start": 1707992684009,
+              "stop": 1707992684938
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "screening5building@xitroo.com 2128712345"
+                }
+              ],
+              "start": 1707992684938,
+              "stop": 1707992685642
+            },
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992685706,
+              "stop": 1707992686379
+            },
+            {
+              "name": "VerifySuccessSelectPmntMthds",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [],
+              "start": 1707992686380,
+              "stop": 1707992687473
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992680937,
+          "stop": 1707992687473
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992687475,
+          "stop": 1707992687475
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992687475,
+          "stop": 1707992687475
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992687475,
+          "stop": 1707992687475
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992687476,
+          "stop": 1707992687476
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992687476,
+          "stop": 1707992687476
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1707992687476,
+          "stop": 1707992687476
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1707992687476,
+          "stop": 1707992687476
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992687476,
+          "stop": 1707992687476
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992687476,
+          "stop": 1707992687476
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992687476,
+          "stop": 1707992687476
+        },
+        {
+          "name": "ClickBtnSelectPaymentMethodsForHoldDeposit",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992687551,
+              "stop": 1707992688211
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992687478,
+          "stop": 1707992688211
+        },
+        {
+          "name": "TitlePaymentOptionsMdlWndwOptns",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992688212,
+          "stop": 1707992689283
+        },
+        {
+          "name": "SelectAllPaymentMethodsForHoldBuilding",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992689284,
+              "stop": 1707992689875
+            },
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992689875,
+              "stop": 1707992690474
+            },
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992690474,
+              "stop": 1707992691073
+            },
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992691073,
+              "stop": 1707992691658
+            },
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992691658,
+              "stop": 1707992692252
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "Deliver check for Building hold (12345) (%$#@!) (09876)"
+                }
+              ],
+              "start": 1707992692252,
+              "stop": 1707992692960
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "holdg7building@xitroo.com 5180987456"
+                }
+              ],
+              "start": 1707992692960,
+              "stop": 1707992693591
+            },
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992693626,
+              "stop": 1707992694251
+            },
+            {
+              "name": "VerifySuccessSelectPmntMthds",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [],
+              "start": 1707992694251,
+              "stop": 1707992695335
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992689284,
+          "stop": 1707992695335
+        },
+        {
+          "name": "ScrollToUp",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992695336,
+          "stop": 1707992695341
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992695342,
+          "stop": 1707992695342
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992695342,
+          "stop": 1707992695342
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992695342,
+          "stop": 1707992695342
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992695342,
+          "stop": 1707992695342
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992695342,
+          "stop": 1707992695342
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1707992695342,
+          "stop": 1707992695342
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1707992695342,
+          "stop": 1707992695342
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992695342,
+          "stop": 1707992695342
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992695342,
+          "stop": 1707992695342
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992695342,
+          "stop": 1707992695342
+        },
+        {
+          "name": "ClickTabAccess",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992695425,
+              "stop": 1707992696038
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992695344,
+          "stop": 1707992696038
+        },
+        {
+          "name": "ClickButtonAddLock",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992696067,
+              "stop": 1707992696757
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992696039,
+          "stop": 1707992696757
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992696763,
+          "stop": 1707992696763
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992696763,
+          "stop": 1707992696763
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992696763,
+          "stop": 1707992696763
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992696765,
+          "stop": 1707992696765
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992696765,
+          "stop": 1707992696765
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1707992696765,
+          "stop": 1707992696765
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1707992696765,
+          "stop": 1707992696765
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992696765,
+          "stop": 1707992696765
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992696765,
+          "stop": 1707992696765
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992696765,
+          "stop": 1707992696765
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "5"
+            }
+          ],
+          "start": 1707992696810,
+          "stop": 1707992696810
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "3"
+            }
+          ],
+          "start": 1707992696810,
+          "stop": 1707992696810
+        },
+        {
+          "name": "RandomEmail",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992696810,
+          "stop": 1707992696810
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992696811,
+          "stop": 1707992696811
+        },
+        {
+          "name": "RandomPhoneNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "7"
+            }
+          ],
+          "start": 1707992696811,
+          "stop": 1707992696811
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1707992696811,
+          "stop": 1707992696811
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "1"
+            }
+          ],
+          "start": 1707992696811,
+          "stop": 1707992696811
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992696811,
+          "stop": 1707992696811
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992696811,
+          "stop": 1707992696811
+        },
+        {
+          "name": "RandomNumber",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "Int32",
+              "value": "2"
+            }
+          ],
+          "start": 1707992696811,
+          "stop": 1707992696811
+        },
+        {
+          "name": "VerifyLocationMainAccess",
+          "status": "passed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "String",
+              "value": "Main Entrance"
+            }
+          ],
+          "start": 1707992696812,
+          "stop": 1707992696812
+        },
+        {
+          "name": "AddItemAccessTypePinCode",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "Timed out after 10 seconds",
+            "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.ElementIsClickable(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 22\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithoutClear_100663773_o(IWebElement element, String text) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 53\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithoutClear_100663773_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithoutClear_100663773_w_0(Object[] )\r\n   at CazamioProgect.Helpers.InputGeneral.InputFunctionWithoutClear(IWebElement element, String text)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage.NewBuilding.__a$_around_AddItemAccessTypePinCode_100663504_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\NewBuildingPage\\NewBuildingActions.cs:line 269\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage.NewBuilding.__a$_around_AddItemAccessTypePinCode_100663504_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992699861,
+              "stop": 1707992700519
+            },
+            {
+              "name": "Click",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                }
+              ],
+              "start": 1707992700519,
+              "stop": 1707992701191
+            },
+            {
+              "name": "RandomNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "1"
+                }
+              ],
+              "start": 1707992701305,
+              "stop": 1707992701305
+            },
+            {
+              "name": "InputFunctionWithClear",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "8"
+                }
+              ],
+              "start": 1707992701306,
+              "stop": 1707992701822
+            },
+            {
+              "name": "ClickSpaceButton",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [],
+              "start": 1707992701822,
+              "stop": 1707992701851
+            },
+            {
+              "name": "RandomNumber",
+              "status": "passed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "Int32",
+                  "value": "1"
+                }
+              ],
+              "start": 1707992701959,
+              "stop": 1707992701959
+            },
+            {
+              "name": "InputFunctionWithoutClear",
+              "status": "failed",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false,
+                "message": "Timed out after 10 seconds",
+                "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.ElementIsClickable(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 22\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithoutClear_100663773_o(IWebElement element, String text) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 53\r\n   at CazamioProgect.Helpers.InputGeneral.__a$_around_InputFunctionWithoutClear_100663773_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+              },
+              "stage": "finished",
+              "steps": [],
+              "attachments": [],
+              "parameters": [
+                {
+                  "name": "WebElementProxy",
+                  "value": "SeleniumExtras.PageObjects.WebElementProxy"
+                },
+                {
+                  "name": "String",
+                  "value": "3"
+                }
+              ],
+              "start": 1707992701960,
+              "stop": 1707992712301
+            }
+          ],
+          "attachments": [],
+          "parameters": [],
+          "start": 1707992696812,
+          "stop": 1707992712302
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "65ffccf352634617ad5e782f158cd463-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1707992623802,
+      "stop": 1707992715059
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1707992623801,
+  "stop": 1707992715071
+}

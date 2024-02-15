@@ -635,32 +635,30 @@ namespace MarketplaceAdminTests
             Pages.ModalWindowPaymentOptions
                 .VerifyTitlePaymentOptions()
                 .SelectAllPaymentMethodsForHoldBuilding();
-            Pages.NewBuilding
-                .ClickButtonSelectPetPolicies();
-            Pages.ModalWindowPetPolicies
-                .VerifyTitlePetPoliciesMdlWndw()
-                .SelectAllItems()
-                .ClickButtonSave();
+            //Pages.NewBuilding
+            //    .ClickButtonSelectPetPolicies();
+            //Pages.ModalWindowPetPolicies
+            //    .VerifyTitlePetPoliciesMdlWndw()
+            //    .SelectAllItems()
+            //    .ClickButtonSave();
             KeyBoardActions.ScrollToUp();
             Pages.NewBuilding
-                .ClickTabAmenities();
+                //.ClickTabAmenities()
+                //.ClickFieldInputSearchForAmenitiesg()
+                //.SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+                //.SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+                //.SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+                //.SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+                //.SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+                .ClickTabAccess()
 
+                .ClickButtonAddLock();
 
-            //    .ClickButtonGeneralNextNwBldngPg()
-            //    .ClickFieldInputSearchForAmenitiesNwBldngPg()
-            //    .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-            //    .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-            //    .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-            //    .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-            //    .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-            //    .ClickButtonGeneralNextNwBldngPg()
-            //    .ClickButtonAddLockForAccessNwBldngPg();
+            string copyActualNameLocation = Pages.NewBuilding.CopyNameLocation();
 
-            //string copyActualNameLocation = Pages.NewBuilding.CopyNameLocation();
-
-            //Pages.NewBuilding
-            //    .VerifyLocationMainAccessNewBuildingPg(copyActualNameLocation)
-            //    .AddItemAccessTypePinCodeForAccessNwBldngPg();
+            Pages.NewBuilding
+                .VerifyLocationMainAccess(copyActualNameLocation)
+                .AddItemAccessTypePinCode();
             //Pages.NewBuilding
             //    .ClickButtonAddLockForAccessNwBldngPg();
 

@@ -21,16 +21,16 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         public string CopyNameLocation()
         {
-            WaitUntil.CustomElementIsVisible(FieldInputLocationForAccessNwBldngPg, 10);
-            string getNameLocation = (FieldInputLocationForAccessNwBldngPg).GetAttribute("value");
+            WaitUntil.CustomElementIsVisible(FieldInputLocationForAccess);
+            string getNameLocation = (FieldInputLocationForAccess).GetAttribute("value");
             string nameLocationActual = getNameLocation.ToString();
 
             return nameLocationActual;
         }
 
 
-        [AllureStep("VerifyLocationMainAccessNewBuildingPg")]
-        public NewBuilding VerifyLocationMainAccessNewBuildingPg(string nameLocationActual)
+        [AllureStep("VerifyLocationMainAccess")]
+        public NewBuilding VerifyLocationMainAccess(string nameLocationActual)
         {
             Assert.AreEqual(nameLocationActual, TestDataForWebSiteAdmin.FIRST_NAME_LOCATION);
 
