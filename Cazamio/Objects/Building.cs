@@ -29,6 +29,7 @@ namespace CazamioProject.Objects
         public PaymentSystemInfo PaymentSystem { get; set; }
         public ApiKeyInfo ApiKey { get; set; }
         public NameLocationInfo NameLocation { get; set; }
+        public ConcessionsInfo Concessions { get; set; }
 
         public class AddressInfo
         {
@@ -97,6 +98,13 @@ namespace CazamioProject.Objects
             public string Apartment { get; set; }
         }
 
+        public class ConcessionsInfo
+        {
+            public string Name { get; set; }
+            public string MonthsFree { get; set; }
+            public string LeaseTerms { get; set; }
+        }
+
         public Building Generate()
         {
             string buildingNumberAssignedRoleAgntBrkr = "9995";
@@ -127,6 +135,9 @@ namespace CazamioProject.Objects
             string apiKeyAuthorizeNet = "";
             string firstLocationMainEntrance = "Main Entrance";
             string secondLocationApartment = "Apartment";
+            string nameConcession = "ConcessionBuilding";
+            string monthsFreeConcession = "1";
+            string leaseTermsConcession = "12";
 
 
             var building = new Building()
@@ -194,6 +205,12 @@ namespace CazamioProject.Objects
                 {
                     MainEntrance = firstLocationMainEntrance,
                     Apartment = secondLocationApartment
+                },
+                Concessions = new ConcessionsInfo
+                {
+                    Name = nameConcession,
+                    MonthsFree = monthsFreeConcession,
+                    LeaseTerms = leaseTermsConcession
                 },
             };
             return building;

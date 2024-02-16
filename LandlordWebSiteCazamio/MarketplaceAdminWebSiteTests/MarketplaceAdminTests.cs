@@ -642,6 +642,7 @@ namespace MarketplaceAdminTests
             //    .SelectAllItems()
             //    .ClickButtonSave();
             KeyBoardActions.ScrollToUp();
+
             Pages.NewBuilding
                 //.ClickTabAmenities()
                 //.ClickFieldInputSearchForAmenitiesg()
@@ -671,10 +672,11 @@ namespace MarketplaceAdminTests
 
             Pages.NewBuilding
                 .VerifyTypeAccessFromTable(copyActualNameNote, copyActualNamePinCode);
+
             Pages.NewBuilding
-                .ClickTabSpecials();
-                //.ClickButtonAddSpecialsNwBldngPg()
-                //.AddConcessionSpecialsNwBldngPg();
+                .ClickTabSpecials()
+                .ClickButtonAddSpecials();
+                //.AddConcessionIsActive();
 
             //string getNameConcession = Pages.NewBuilding.GetNameConcessionFromTable();
 

@@ -170,7 +170,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         #region Specials
 
         [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Add']")]
-        public IWebElement ButtonAddSpecialsNwBldngPg;
+        public IWebElement ButtonAddSpecials;
 
         [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'name']")]
         public IWebElement FieldInputNameSpecialsNwBldngPg;
