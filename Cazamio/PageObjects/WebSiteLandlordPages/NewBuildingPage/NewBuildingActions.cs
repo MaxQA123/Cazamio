@@ -50,11 +50,11 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        [AllureStep("EnterLlcName")]
-        public NewBuilding EnterLlcName()
+        [AllureStep("EnterLlcNameForBroker")]
+        public NewBuilding EnterLlcNameForBroker()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputLlcName, building.LlcName);
+            InputGeneral.InputFunctionWithClear(FieldInputLlcName, building.LlcName.ForBroker);
 
             return this;
         }
@@ -117,20 +117,21 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return getValueActual;
         }
 
-        [AllureStep("GetNameCabTypeAccessFromTable")]
-        public string GetNameCabTypeAccessFromTable()
-        {
-            WaitUntil.CustomElementIsVisible(RecordCABInTableAccessNwBldngPg, 10);
-            string getNameCab = (RecordCABInTableAccessNwBldngPg).Text;
-            string nameCabActual = getNameCab.ToString();
+        //This hidden
+        //[AllureStep("GetNameCabTypeAccessFromTable")]
+        //public string GetNameCabTypeAccessFromTable()
+        //{
+        //    WaitUntil.CustomElementIsVisible(RecordCABInTableAccessNwBldngPg, 10);
+        //    string getNameCab = (RecordCABInTableAccessNwBldngPg).Text;
+        //    string nameCabActual = getNameCab.ToString();
 
-            return nameCabActual;
-        }
+        //    return nameCabActual;
+        //}
 
         [AllureStep("GetNameNoteTypeAccessFromTable")]
         public string GetNameNoteTypeAccessFromTable()
         {
-            WaitUntil.CustomElementIsVisible(RecordNoteInTableAccessNwBldngPg, 10);
+            WaitUntil.CustomElementIsVisible(RecordNoteInTableAccessNwBldngPg);
             string getNameNote = (RecordNoteInTableAccessNwBldngPg).Text;
             string nameNoteActual = getNameNote.ToString();
 
@@ -196,6 +197,16 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             WaitUntil.CustomElementIsVisible(TabAccess);
             WaitUntil.CustomElementIsClickable(TabAccess);
             Button.Click(TabAccess);
+
+            return this;
+        }
+
+        [AllureStep("ClickTabSpecials")]
+        public NewBuilding ClickTabSpecials()
+        {
+            WaitUntil.CustomElementIsVisible(TabSpecials);
+            WaitUntil.CustomElementIsClickable(TabSpecials);
+            Button.Click(TabSpecials);
 
             return this;
         }
@@ -270,7 +281,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             KeyBoardActions.ClickSpaceButton();
             InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccess, building.TextLorem.TextLoremForPinCode);
             WaitUntil.WaitSomeInterval(100);
-            ButtonSelectImageForAccess.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_LOCK_OK));
+            ButtonSelectImageForAccess.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_BUILDING_LOCK_PIN_CODE));
             WaitUntil.SuccessCustomElementIsVisible(MessageSuccessUploadImageForAccess);
             WaitUntil.WaitSomeInterval(100);
             Button.Click(ButtonSaveForLock);
@@ -278,19 +289,17 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        [AllureStep("AddItemAccessTypeNoteForAccessNwBldngPg")]
-        public NewBuilding AddItemAccessTypeNoteForAccessNwBldngPg()
+        [AllureStep("AddItemAccessTypeNote")]
+        public NewBuilding AddItemAccessTypeNote()
         {
             WaitUntil.WaitSomeInterval(3000);
             WaitUntil.CustomElementIsVisible(ButtonAccessType);
             Button.Click(ButtonAccessType);
-
-            WaitUntil.WaitSomeInterval(100);
-            KeyBoardActions.ClickEnterButton();
+            Button.Click(ItemNote);
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputCustomNoteForAccess, building.TextLorem.TextLoremForNote);
             WaitUntil.WaitSomeInterval(100);
-            ButtonSelectImageForAccess.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_LOCK_OK));
+            ButtonSelectImageForAccess.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_BUILDING_LOCK_NOTE));
             WaitUntil.SuccessCustomElementIsVisible(MessageSuccessUploadImageForAccess);
             WaitUntil.WaitSomeInterval(100);
             Button.Click(ButtonSaveForLock);
@@ -330,15 +339,6 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         {
             WaitUntil.CustomElementIsVisible(ButtonAddSpecialsNwBldngPg, 10);
             Button.Click(ButtonAddSpecialsNwBldngPg);
-
-            return this;
-        }
-
-        [AllureStep("ClickTabFreeStuffSpecialsNwBldngPg")]
-        public NewBuilding ClickTabFreeStuffSpecialsNwBldngPg()
-        {
-            WaitUntil.CustomElementIsVisible(TabFreeStuffSpecialsNwBldngPg, 10);
-            Button.Click(TabFreeStuffSpecialsNwBldngPg);
 
             return this;
         }

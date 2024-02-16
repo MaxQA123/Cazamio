@@ -122,6 +122,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [FindsBy(How = How.XPath, Using = "//span[text() = 'PinCode']")]
         public IWebElement ItemPinCode;
 
+        [FindsBy(How = How.XPath, Using = "//span[text() = 'Note']")]
+        public IWebElement ItemNote;
+
         [FindsBy(How = How.XPath, Using = "//input[@autocomplete = 'ab6a07d3a4cb']")]
         public IWebElement FieldInputLockForAccessNwBldngPg;
 
@@ -165,12 +168,6 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         #endregion
 
         #region Specials
-
-        [FindsBy(How = How.XPath, Using = "//div[@class = 'building-specials-container ng-star-inserted']//a[text() = 'Concessions']")]
-        public IWebElement TabConcessionsSpecialsNwBldngPg;
-
-        [FindsBy(How = How.XPath, Using = "//div[@class = 'building-specials-container ng-star-inserted']//a[text() = 'Free Stuff']")]
-        public IWebElement TabFreeStuffSpecialsNwBldngPg;
 
         [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Add']")]
         public IWebElement ButtonAddSpecialsNwBldngPg;

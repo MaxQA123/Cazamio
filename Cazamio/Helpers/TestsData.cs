@@ -129,8 +129,6 @@ namespace CazamioProgect.Helpers
 
         public const string DESCRIPTION_NEW_BUILDING = "DESCRIPTION FOR BUILDING 1234567890 ";
         public const string INTERNAL_NOTES_NEW_BUILDING = "Internal Notes FOR BUILDING 0987654321 ";
-        public const string FIRST_NAME_LOCATION = "Main Entrance";
-        public const string SECOND_NAME_LOCATION = "Apartment";
         public const string THIRD_NAME_LOCATION = "Concierge";
         public const string CAB_NAME_LOCK_ACCESS = "CAB";
         public const string NOTE_NAME_LOCK_ACCESS = "Note";
@@ -168,7 +166,8 @@ namespace CazamioProgect.Helpers
         public const string LOGO_IMG_ADMIN_SECOND = $"\\UploadImages\\LogoLandlord2.jpg";
         public const string AVATAR_IMG_ADMIN_FIRST = $"\\UploadImages\\2AvatarLandLord.jpg";
         public const string AVATAR_IMG_ADMIN_SECOND = $"\\UploadImages\\3AvatarKoalaLandlord.jpg";
-        public const string IMAGE_FOR_LOCK_OK = $"\\UploadImages\\OK.jpg";
+        public const string IMAGE_BUILDING_LOCK_PIN_CODE = $"\\UploadImages\\PinCodeBuilding.jpg";
+        public const string IMAGE_BUILDING_LOCK_NOTE = $"\\UploadImages\\NoteBuilding.jpg";
         public const string IMAGE_HOUSE_FOR_BUILDING = $"\\UploadImages\\HouseOne.jpg";
         public const string IMAGE_POOL_FOR_BUILDING = $"\\UploadImages\\Pool.jpg";
         public const string IMAGE_PARKING_FOR_BUILDING = $"\\UploadImages\\Parking.jpg";

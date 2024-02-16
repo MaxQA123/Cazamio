@@ -609,7 +609,7 @@ namespace MarketplaceAdminTests
                 .SelectOwnerWithBroker()
                 .EnterFullAddressNewBuildingAssgndRlBrkr()
                 .EnterBuildingName()
-                .EnterLlcName()
+                .EnterLlcNameForBroker()
                 .EnterLongInternalNotesDescription();
             KeyBoardActions.ClickTab();
             Pages.NewBuilding
@@ -651,35 +651,30 @@ namespace MarketplaceAdminTests
                 //.SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
                 //.SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
                 .ClickTabAccess()
-
                 .ClickButtonAddLock();
 
             string copyActualNameLocation = Pages.NewBuilding.CopyNameLocation();
 
             Pages.NewBuilding
                 .VerifyLocationMainAccess(copyActualNameLocation)
-                .AddItemAccessTypePinCode();
-            //Pages.NewBuilding
-            //    .ClickButtonAddLockForAccessNwBldngPg();
+                .AddItemAccessTypePinCode()
+                .ClickButtonAddLock();
 
-            //string copyActualNameLocationTwo = Pages.NewBuilding.CopyNameLocation();
+            string copyActualNameLocationTwo = Pages.NewBuilding.CopyNameLocation();
 
-            //Pages.NewBuilding
-            //    .VerifyLocationApartmentAccessNewBuildingPg(copyActualNameLocationTwo)
-            //    .AddItemAccessTypeNoteForAccessNwBldngPg()
-            //    .ClickButtonAddLockForAccessNwBldngPg()
-            //    .AddItemAccessTypeCabForAccessNwBldngPg();
+            Pages.NewBuilding
+                .VerifyLocationApartment(copyActualNameLocationTwo)
+                .AddItemAccessTypeNote();
 
-            //string copyActualNameCab = Pages.NewBuilding.GetNameCabTypeAccessFromTable();
-            //string copyActualNameNote = Pages.NewBuilding.GetNameNoteTypeAccessFromTable();
-            //string copyActualNamePinCode = Pages.NewBuilding.GetNamePinCodeTypeAccessFromTable();
+            string copyActualNameNote = Pages.NewBuilding.GetNameNoteTypeAccessFromTable();
+            string copyActualNamePinCode = Pages.NewBuilding.GetNamePinCodeTypeAccessFromTable();
 
-            //Pages.NewBuilding
-            //    .VerifyTypeAccessFromTable(copyActualNameCab, copyActualNameNote, copyActualNamePinCode);
-            //Pages.NewBuilding
-            //    .ClickButtonGeneralNextNwBldngPg()
-            //    .ClickButtonAddSpecialsNwBldngPg()
-            //    .AddConcessionSpecialsNwBldngPg();
+            Pages.NewBuilding
+                .VerifyTypeAccessFromTable(copyActualNameNote, copyActualNamePinCode);
+            Pages.NewBuilding
+                .ClickTabSpecials();
+                //.ClickButtonAddSpecialsNwBldngPg()
+                //.AddConcessionSpecialsNwBldngPg();
 
             //string getNameConcession = Pages.NewBuilding.GetNameConcessionFromTable();
 

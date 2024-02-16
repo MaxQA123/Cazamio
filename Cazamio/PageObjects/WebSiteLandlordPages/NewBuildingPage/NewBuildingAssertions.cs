@@ -32,19 +32,19 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [AllureStep("VerifyLocationMainAccess")]
         public NewBuilding VerifyLocationMainAccess(string nameLocationActual)
         {
-            Assert.AreEqual(nameLocationActual, TestDataForWebSiteAdmin.FIRST_NAME_LOCATION);
+            Assert.AreEqual(nameLocationActual, building.NameLocation.MainEntrance);
 
-            Console.WriteLine($"AR: {nameLocationActual} ER: {TestDataForWebSiteAdmin.FIRST_NAME_LOCATION}");
+            Console.WriteLine($"AR: {nameLocationActual} ER: {building.NameLocation.MainEntrance}");
 
             return this;
         }
 
-        [AllureStep("VerifyLocationApartmentAccessNewBuildingPg")]
-        public NewBuilding VerifyLocationApartmentAccessNewBuildingPg(string copyActualNameLocationTwo)
+        [AllureStep("VerifyLocationApartment")]
+        public NewBuilding VerifyLocationApartment(string copyActualNameLocationTwo)
         {
-            Assert.AreEqual(copyActualNameLocationTwo, TestDataForWebSiteAdmin.SECOND_NAME_LOCATION);
+            Assert.AreEqual(copyActualNameLocationTwo, building.NameLocation.Apartment);
 
-            Console.WriteLine($"AR: {copyActualNameLocationTwo} ER: {TestDataForWebSiteAdmin.SECOND_NAME_LOCATION}");
+            Console.WriteLine($"AR: {copyActualNameLocationTwo} ER: {building.NameLocation.Apartment}");
 
             return this;
         }
@@ -59,16 +59,12 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        public void VerifyTypeAccessFromTable(string nameCabActual, string nameNoteActual, string namePinCodeActual)
+        public void VerifyTypeAccessFromTable(string nameNoteActual, string namePinCodeActual)
         {
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(nameCabActual, TestDataForWebSiteAdmin.CAB_NAME_LOCK_ACCESS);
-                //Console.Write($"{nameCabActual} = {TestDataForWebSiteAdmin.CAB_NAME_LOCK_ACCESS}");
                 Assert.AreEqual(nameNoteActual, TestDataForWebSiteAdmin.NOTE_NAME_LOCK_ACCESS);
-                //Console.Write($"{nameNoteActual} = {TestDataForWebSiteAdmin.NOTE_NAME_LOCK_ACCESS}");
                 Assert.AreEqual(namePinCodeActual, TestDataForWebSiteAdmin.PIN_CODE_NAME_LOCK_ACCESS);
-                Console.Write($"{nameCabActual} = {TestDataForWebSiteAdmin.CAB_NAME_LOCK_ACCESS}; {nameNoteActual} = {TestDataForWebSiteAdmin.NOTE_NAME_LOCK_ACCESS}; {namePinCodeActual} = {TestDataForWebSiteAdmin.PIN_CODE_NAME_LOCK_ACCESS}");
             });
         }
 
