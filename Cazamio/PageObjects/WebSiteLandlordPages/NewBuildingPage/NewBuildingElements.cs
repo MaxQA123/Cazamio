@@ -173,25 +173,25 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         public IWebElement ButtonAddSpecials;
 
         [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'name']")]
-        public IWebElement FieldInputNameSpecialsNwBldngPg;
+        public IWebElement FieldInputNameSpecials;
 
         [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'monthsFree']")]
-        public IWebElement FieldInputMonthsFreeSpecialsNwBldngPg;
+        public IWebElement FieldInputMonthsFree;
 
         [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'leaseTerms']")]
-        public IWebElement FieldInputLeaseTermsSpecialsNwBldngPg;
+        public IWebElement FieldInputLeaseTerms;
 
         [FindsBy(How = How.XPath, Using = "//mat-button-toggle-group//mat-button-toggle[2]")]
-        public IWebElement ButtonYesSpecialsNwBldngPg;
+        public IWebElement ButtonYesSpecials;
 
         [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'dateFrom']")]
-        public IWebElement FieldInputDateFromSpecialsNwBldngPg;
+        public IWebElement FieldInputDateFrom;
 
         [FindsBy(How = How.XPath, Using = "//input[@formcontrolname = 'dateTo']")]
-        public IWebElement FieldInputDateToSpecialsNwBldngPg;
+        public IWebElement FieldInputDateTo;
 
         [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Save']")]
-        public IWebElement ButtonSaveSpecialsNwBldngPg;
+        public IWebElement ButtonSaveSpecials;
 
         [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Cancel']")]
         public IWebElement ButtonCancelSpecialsNwBldngPg;

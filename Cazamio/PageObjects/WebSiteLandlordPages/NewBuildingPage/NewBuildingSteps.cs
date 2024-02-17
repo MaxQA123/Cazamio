@@ -117,41 +117,39 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [AllureStep("AddConcessionIsActive")]
         public NewBuilding AddConcessionIsActive()
         {
-            WaitUntil.CustomElementIsVisible(FieldInputNameSpecialsNwBldngPg, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputNameSpecialsNwBldngPg, TestDataForWebSiteAdmin.CONCESSION_NAME);
+            WaitUntil.CustomElementIsVisible(FieldInputNameSpecials);
+            WaitUntil.CustomElementIsClickable(FieldInputNameSpecials);
+            InputGeneral.InputFunctionWithClear(FieldInputNameSpecials, building.Concessions.Name);
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputMonthsFreeSpecialsNwBldngPg, TestDataForWebSiteAdmin.CONCESSION_MONTHS_FREE);
+            InputGeneral.InputFunctionWithClear(FieldInputMonthsFree, building.Concessions.MonthsFree);
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputLeaseTermsSpecialsNwBldngPg, TestDataForWebSiteAdmin.CONCESSION_LEASE_TERMS);
+            InputGeneral.InputFunctionWithClear(FieldInputLeaseTerms, building.Concessions.LeaseTerms);
             WaitUntil.WaitSomeInterval(100);
             KeyBoardActions.ClickArrowDown();
             KeyBoardActions.ClickEnterButton();
             WaitUntil.WaitSomeInterval(100);
-            Button.Click(ButtonYesSpecialsNwBldngPg);
+            Button.Click(ButtonYesSpecials);
             WaitUntil.WaitSomeInterval(100);
-            Button.Click(FieldInputDateFromSpecialsNwBldngPg);
-            WaitUntil.WaitSomeInterval(100);
-            Pages.DatePicker
-                .SelectorDaysPickerDaysSecondLine();
-            WaitUntil.WaitSomeInterval(100);
-            Button.Click(FieldInputDateToSpecialsNwBldngPg);
+            Button.Click(FieldInputDateFrom);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .ClickButtonArrowNextMonth();
+                .SelectCurrentDay();
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(FieldInputDateTo);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectorDaysPickerDaysSecondLine();
+                .SelectCurrentDayPlusOneDay();
             WaitUntil.WaitSomeInterval(100);
-            Button.Click(ButtonSaveSpecialsNwBldngPg);
+            Button.Click(ButtonSaveSpecials);
 
             return this;
         }
 
-        [AllureStep("AddFreeStuffSpecialsNwBldngPg")]
-        public NewBuilding AddFreeStuffSpecialsNwBldngPg()
+        [AllureStep("AddFreeStuffSpecials")]
+        public NewBuilding AddFreeStuffSpecials()
         {
-            WaitUntil.CustomElementIsVisible(FieldInputNameSpecialsNwBldngPg, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputNameSpecialsNwBldngPg, TestDataForWebSiteAdmin.FREE_STUFF_NAME);
+            WaitUntil.CustomElementIsVisible(FieldInputNameSpecials);
+            InputGeneral.InputFunctionWithClear(FieldInputNameSpecials, building.Concessions.LeaseTerms);
             WaitUntil.WaitSomeInterval(100);
             Button.Click(FieldInputSelectItemsSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
@@ -159,22 +157,22 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             WaitUntil.WaitSomeInterval(100);
             Button.Click(ItemGoogleSpeakerSpecialsNwBldngPg);
             WaitUntil.WaitSomeInterval(100);
-            Button.Click(ButtonYesSpecialsNwBldngPg);
+            Button.Click(ButtonYesSpecials);
             WaitUntil.WaitSomeInterval(100);
-            Button.Click(FieldInputDateFromSpecialsNwBldngPg);
+            Button.Click(FieldInputDateFrom);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectorDaysPickerDaysSecondLine();
+                .SelectCurrentDayPlusOneDay();
             WaitUntil.WaitSomeInterval(100);
-            Button.Click(FieldInputDateToSpecialsNwBldngPg);
+            Button.Click(FieldInputDateTo);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
                 .ClickButtonArrowNextMonth();
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectorDaysPickerDaysSecondLine();
+                .SelectCurrentDayPlusOneDay();
             WaitUntil.WaitSomeInterval(100);
-            Button.Click(ButtonSaveSpecialsNwBldngPg);
+            Button.Click(ButtonSaveSpecials);
 
             return this;
         }

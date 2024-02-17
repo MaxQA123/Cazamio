@@ -47,19 +47,23 @@ namespace CazamioProgect.PageObjects.DatePickerModalWindow
             return this;
         }
 
-        #region SelectDay
-
         private static IWebElement _element;
 
-        [AllureStep("SelectorDaysPickerDaysSecondLine")]
-        public IWebElement SelectorDaysPickerDaysSecondLine()
+        [AllureStep("SelectCurrentDayPlusOneDay")]
+        public void SelectCurrentDayPlusOneDay()
         {
             WaitUntil.WaitSomeInterval(1000);
-            var str = Browser._Driver.FindElement(By.XPath($"//table//tbody[@class = 'mat-calendar-body']//button/span[contains(text(), '{DateTime.Now.AddDays(1).Day}')]"));
-            return str;
+            var element = Browser._Driver.FindElement(By.XPath($"//table//tbody[@class = 'mat-calendar-body']//button/span[contains(text(), '{DateTime.Now.AddDays(1).Day}')]"));
+            element.Click();
         }
 
-        #endregion
+        [AllureStep("SelectCurrentDay")]
+        public void SelectCurrentDay()
+        {
+            WaitUntil.WaitSomeInterval(1000);
+            var element = Browser._Driver.FindElement(By.XPath($"//table//tbody[@class = 'mat-calendar-body']//button/span[contains(text(), '{DateTime.Now.Day}')]"));
+            element.Click();
+        }
 
         #region SelectYear
 

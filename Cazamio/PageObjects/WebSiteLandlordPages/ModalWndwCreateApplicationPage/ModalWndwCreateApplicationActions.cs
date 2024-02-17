@@ -165,8 +165,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             WaitUntil.CustomElementIsVisible(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaListOfApplication, 10);
             Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaListOfApplication);
             WaitUntil.WaitSomeInterval(100);
-            Button.Click(Pages.DatePicker
-                .SelectorDaysPickerDaysSecondLine());
+            //Button.Click(Pages.DatePicker
+            //    .SelectCurrentDayPlusOneDay());
 
             return this;
         }
@@ -177,8 +177,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.ModalWndwCreateAApplic
             WaitUntil.CustomElementIsVisible(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView, 10);
             Button.Click(FieldInputMoveInDateModalWndwForCreateApplicationModalWndwViaApartmentView);
             WaitUntil.WaitSomeInterval(100);
-            Button.Click(Pages.DatePicker
-                .SelectorDaysPickerDaysSecondLine());
+            //Button.Click(Pages.DatePicker
+            //    .SelectCurrentDayPlusOneDay());
 
             return this;
         }

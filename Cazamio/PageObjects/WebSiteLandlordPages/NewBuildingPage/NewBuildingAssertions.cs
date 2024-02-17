@@ -71,9 +71,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [AllureStep("VerifyNameSpecialsConcessionInTableNewBuildingPg")]
         public NewBuilding VerifyNameSpecialsConcessionInTableNewBuildingPg(string nameConcessionActual)
         {
-            Assert.AreEqual(nameConcessionActual, TestDataForWebSiteAdmin.CONCESSION_NAME);
+            Assert.AreEqual(nameConcessionActual, building.Concessions.Name);
 
-            Console.WriteLine($" ;AR: {nameConcessionActual} ER: {TestDataForWebSiteAdmin.CONCESSION_NAME}");
+            Console.WriteLine($"AR: {nameConcessionActual} ER: {building.Concessions.Name}");
 
             return this;
         }
