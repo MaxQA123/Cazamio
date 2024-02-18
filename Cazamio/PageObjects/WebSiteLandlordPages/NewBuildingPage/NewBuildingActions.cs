@@ -337,6 +337,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         {
             WaitUntil.WaitSomeInterval(5000);
             KeyBoardActions.ScrollToDown();
+            WaitUntil.WaitSomeInterval(5000);
             WaitUntil.CustomElementIsVisible(ButtonSaveBuilding);
             WaitUntil.CustomElementIsClickable(ButtonSaveBuilding);
             Button.Click(ButtonSaveBuilding);

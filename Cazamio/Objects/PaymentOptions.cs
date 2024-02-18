@@ -31,7 +31,7 @@ namespace CazamioProject.Objects
             string deliverCheckNoteForBuildingHold = "Deliver check for Building hold (12345) (%$#@!) (09876)";
             string deliverCheckNoteForApartment = "Deliver check for Apartment (12345) (%$#@!) (09876)";
             string forZelleBuildingScreening = "screening5building@xitroo.com 2128712345";
-            string forZelleBuildingHold = "holdg7building@xitroo.com 5180987456";
+            string forZelleBuildingHold = "hold7building@xitroo.com 5180987456";
             string zelleForApartment = "screening5apart@xitroo.com 5180987123";
 
             var paymentOptions = new PaymentOptions()

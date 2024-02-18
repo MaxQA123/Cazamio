@@ -26,7 +26,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputZip, building.Zip.ZipBuildingAssignedRoleBrkr);
             WaitUntil.WaitSomeInterval(500);
-            KeyBoardActions.ClickTab();
+            KeyBoardActions.ClickArrowDown();
             KeyBoardActions.ClickEnterButton();
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputNeighborhood, building.Neighborhood.BuildingAssignedRoleBrkr);

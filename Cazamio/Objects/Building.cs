@@ -117,7 +117,7 @@ namespace CazamioProject.Objects
             string addressAssignedRoleAgntBrkr = "East 51st Street Pedestrian Crossing";
             string zipBuildingAssignedRoleAgntBrkr = "11234";
             string neighborhoodBuildingAssignedRoleAgntBrkr = "Manhattan";
-            string buildingNumberAssignedRoleBrkr = "21";
+            string buildingNumberAssignedRoleBrkr = "22";
             string addressAssignedRoleBrkr = "Washington Square";
             string zipBuildingAssignedRoleBrkr = "10012";
             string neighborhoodBuildingAssignedRoleBrkr = "Manhattan";
