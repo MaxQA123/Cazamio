@@ -30,6 +30,7 @@ namespace CazamioProject.Objects
         public ApiKeyInfo ApiKey { get; set; }
         public NameLocationInfo NameLocation { get; set; }
         public ConcessionsInfo Concessions { get; set; }
+        public FreeStuffInfo FreeStuff { get; set; }
 
         public class AddressInfo
         {
@@ -105,13 +106,18 @@ namespace CazamioProject.Objects
             public string LeaseTerms { get; set; }
         }
 
+        public class FreeStuffInfo
+        {
+            public string Name { get; set; }
+        }
+
         public Building Generate()
         {
             string buildingNumberAssignedRoleAgntBrkr = "9995";
             string addressAssignedRoleAgntBrkr = "East 51st Street Pedestrian Crossing";
             string zipBuildingAssignedRoleAgntBrkr = "11234";
             string neighborhoodBuildingAssignedRoleAgntBrkr = "Manhattan";
-            string buildingNumberAssignedRoleBrkr = "10";
+            string buildingNumberAssignedRoleBrkr = "21";
             string addressAssignedRoleBrkr = "Washington Square";
             string zipBuildingAssignedRoleBrkr = "10012";
             string neighborhoodBuildingAssignedRoleBrkr = "Manhattan";
@@ -138,6 +144,7 @@ namespace CazamioProject.Objects
             string nameConcession = "ConcessionBuilding";
             string monthsFreeConcession = "1";
             string leaseTermsConcession = "12";
+            string nameFreeStuff = "FreeStuffBuilding";
 
 
             var building = new Building()
@@ -211,6 +218,10 @@ namespace CazamioProject.Objects
                     Name = nameConcession,
                     MonthsFree = monthsFreeConcession,
                     LeaseTerms = leaseTermsConcession
+                },
+                FreeStuff = new FreeStuffInfo
+                {
+                    Name = nameFreeStuff
                 },
             };
             return building;

@@ -59,30 +59,34 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        public void VerifyTypeAccessFromTable(string nameNoteActual, string namePinCodeActual)
+        public NewBuilding VerifyTypeAccessFromTable(string nameNoteActual, string namePinCodeActual)
         {
             Assert.Multiple(() =>
             {
                 Assert.AreEqual(nameNoteActual, TestDataForWebSiteAdmin.NOTE_NAME_LOCK_ACCESS);
                 Assert.AreEqual(namePinCodeActual, TestDataForWebSiteAdmin.PIN_CODE_NAME_LOCK_ACCESS);
             });
-        }
-
-        [AllureStep("VerifyNameSpecialsConcessionInTableNewBuildingPg")]
-        public NewBuilding VerifyNameSpecialsConcessionInTableNewBuildingPg(string nameConcessionActual)
-        {
-            Assert.AreEqual(nameConcessionActual, building.Concessions.Name);
-
-            Console.WriteLine($"AR: {nameConcessionActual} ER: {building.Concessions.Name}");
 
             return this;
         }
 
-        [AllureStep("VerifyMessageSavedSuccessfullyBuildingNwBldngPg")]
-        public NewBuilding VerifyMessageSavedSuccessfullyBuildingNwBldngPg()
+        [AllureStep("VerifyNameConcessionAndFreeStuff")]
+        public NewBuilding VerifyNameConcessionAndFreeStuff(string nameConcessionActual, string getNameFreeStuffActual)
         {
-            WaitUntil.CustomElementIsVisible(MessageSavedSuccessfullyBuildingNwBldngPg, 10);
-            Assert.IsTrue(Successfully.IsVisible(MessageSavedSuccessfullyBuildingNwBldngPg));
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(nameConcessionActual, building.Concessions.Name);
+                Assert.AreEqual(getNameFreeStuffActual, building.FreeStuff.Name);
+            });
+
+            return this;
+        }
+
+        [AllureStep("VerifyMessageSavedSuccessfullyBuilding")]
+        public NewBuilding VerifyMessageSavedSuccessfullyBuilding()
+        {
+            WaitUntil.CustomElementIsVisible(MessageSavedSuccessfullyBuilding);
+            Assert.IsTrue(Successfully.IsVisible(MessageSavedSuccessfullyBuilding));
 
             return this;
         }

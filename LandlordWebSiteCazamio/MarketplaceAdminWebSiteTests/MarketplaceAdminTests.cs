@@ -635,63 +635,63 @@ namespace MarketplaceAdminTests
             Pages.ModalWindowPaymentOptions
                 .VerifyTitlePaymentOptions()
                 .SelectAllPaymentMethodsForHoldBuilding();
-            //Pages.NewBuilding
-            //    .ClickButtonSelectPetPolicies();
-            //Pages.ModalWindowPetPolicies
-            //    .VerifyTitlePetPoliciesMdlWndw()
-            //    .SelectAllItems()
-            //    .ClickButtonSave();
+            Pages.NewBuilding
+                .ClickButtonSelectPetPolicies();
+            Pages.ModalWindowPetPolicies
+                .VerifyTitlePetPoliciesMdlWndw()
+                .SelectAllItems()
+                .ClickButtonSave();
             KeyBoardActions.ScrollToUp();
+            Pages.NewBuilding
+            .ClickTabAmenities()
+            .ClickFieldInputSearchForAmenities()
+            .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+            .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+            .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+            .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+            .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+            .ClickTabAccess()
+            .ClickButtonAddLock();
 
-            //Pages.NewBuilding
-                //.ClickTabAmenities()
-                //.ClickFieldInputSearchForAmenitiesg()
-                //.SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-                //.SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-                //.SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-                //.SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-                //.SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-
-                //.ClickTabAccess()
-                //.ClickButtonAddLock();
-
-            //string copyActualNameLocation = Pages.NewBuilding.CopyNameLocation();
-
-            //Pages.NewBuilding
-            //    .VerifyLocationMainAccess(copyActualNameLocation)
-            //    .AddItemAccessTypePinCode()
-            //    .ClickButtonAddLock();
-
-            //string copyActualNameLocationTwo = Pages.NewBuilding.CopyNameLocation();
-
-            //Pages.NewBuilding
-            //    .VerifyLocationApartment(copyActualNameLocationTwo)
-            //    .AddItemAccessTypeNote();
-
-            //string copyActualNameNote = Pages.NewBuilding.GetNameNoteTypeAccessFromTable();
-            //string copyActualNamePinCode = Pages.NewBuilding.GetNamePinCodeTypeAccessFromTable();
-
-            //Pages.NewBuilding
-            //    .VerifyTypeAccessFromTable(copyActualNameNote, copyActualNamePinCode);
+            string copyActualNameLocation = Pages.NewBuilding.CopyNameLocation();
 
             Pages.NewBuilding
+                .VerifyLocationMainAccess(copyActualNameLocation)
+                .AddItemAccessTypePinCode()
+                .ClickButtonAddLock();
+
+            string copyActualNameLocationTwo = Pages.NewBuilding.CopyNameLocation();
+
+            Pages.NewBuilding
+                .VerifyLocationApartment(copyActualNameLocationTwo)
+                .AddItemAccessTypeNote();
+
+            string copyActualNameNote = Pages.NewBuilding.GetNameNoteTypeAccessFromTable();
+            string copyActualNamePinCode = Pages.NewBuilding.GetNamePinCodeTypeAccessFromTable();
+
+            Pages.NewBuilding
+                .VerifyTypeAccessFromTable(copyActualNameNote, copyActualNamePinCode)
                 .ClickTabSpecials()
                 .ClickButtonAddSpecials()
                 .AddConcessionIsActive();
 
-            //string getNameConcession = Pages.NewBuilding.GetNameConcessionFromTable();
+            string getNameConcession = Pages.NewBuilding.GetNameConcessionFromTable();
 
-            //Pages.NewBuilding
-            //    .VerifyNameSpecialsConcessionInTableNewBuildingPg(getNameConcession)
-            //    .ClickTabFreeStuffSpecialsNwBldngPg()
-            //    .ClickButtonAddSpecialsNwBldngPg()
-            //    .AddFreeStuffSpecialsNwBldngPg()
-            //    .ClickButtonGeneralNextNwBldngPg();
-            //Pages.NewBuilding
-            //    //.SelectTabOnNewBuildingsPg(TabsOnNewBuildingPage.TAB_IMAGES, " ")
-            //    .UploadImagesForNewBuilding()
-            //    .ClickButtonSaveNwBldngPg()
-            //    .VerifyMessageSavedSuccessfullyBuildingNwBldngPg();
+            Pages.NewBuilding
+                .ClickTabFreeStuff()
+                .ClickButtonAddSpecials()
+                .AddFreeStuffIsActive();
+
+            string getNameFreeStuff = Pages.NewBuilding.GetNameFreeStuffFromTable();
+
+            Pages.NewBuilding
+                .VerifyNameConcessionAndFreeStuff(getNameConcession, getNameFreeStuff)
+                .ClickTabImages()
+                .UploadFourImages()
+                .ClickButtonSaveBuilding()
+                .VerifyMessageSavedSuccessfullyBuilding();
+
+            //Add verify address from GUI page "Building view" with the address from DB
 
             WaitUntil.WaitSomeInterval(5000);
 

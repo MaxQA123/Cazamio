@@ -145,32 +145,33 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        [AllureStep("AddFreeStuffSpecials")]
-        public NewBuilding AddFreeStuffSpecials()
+        [AllureStep("AddFreeStuffIsActive")]
+        public NewBuilding AddFreeStuffIsActive()
         {
             WaitUntil.CustomElementIsVisible(FieldInputNameSpecials);
-            InputGeneral.InputFunctionWithClear(FieldInputNameSpecials, building.Concessions.LeaseTerms);
+            WaitUntil.CustomElementIsClickable(FieldInputNameSpecials);
+            InputGeneral.InputFunctionWithClear(FieldInputNameSpecials, building.FreeStuff.Name);
             WaitUntil.WaitSomeInterval(100);
-            Button.Click(FieldInputSelectItemsSpecialsNwBldngPg);
+            Button.Click(FieldInputSelectItemsFreeStuff);
             WaitUntil.WaitSomeInterval(100);
-            Button.Click(ItemFreeNetflixSpecialsNwBldngPg);
+            Button.Click(ItemFreeNetflix);
             WaitUntil.WaitSomeInterval(100);
-            Button.Click(ItemGoogleSpeakerSpecialsNwBldngPg);
+            Button.Click(ItemGoogleSpeaker);
             WaitUntil.WaitSomeInterval(100);
             Button.Click(ButtonYesSpecials);
             WaitUntil.WaitSomeInterval(100);
             Button.Click(FieldInputDateFrom);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .SelectCurrentDayPlusOneDay();
+                .SelectCurrentDay();
             WaitUntil.WaitSomeInterval(100);
             Button.Click(FieldInputDateTo);
             WaitUntil.WaitSomeInterval(100);
             Pages.DatePicker
-                .ClickButtonArrowNextMonth();
-            WaitUntil.WaitSomeInterval(100);
-            Pages.DatePicker
                 .SelectCurrentDayPlusOneDay();
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ScrollToDown();
+            Button.Click(ButtonLeaseSignedTriggerEvent);
             WaitUntil.WaitSomeInterval(100);
             Button.Click(ButtonSaveSpecials);
 

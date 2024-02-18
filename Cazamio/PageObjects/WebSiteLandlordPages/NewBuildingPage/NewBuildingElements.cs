@@ -104,7 +104,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         #region Amenities
 
         [FindsBy(How = How.XPath, Using = "//input[@id = 'input-amenity']")]
-        public IWebElement FieldInputSearchForAmenitiesNwBldngPg;
+        public IWebElement FieldInputSearchForAmenities;
 
         #endregion
 
@@ -169,6 +169,12 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         #region Specials
 
+        [FindsBy(How = How.XPath, Using = "//a[text() = 'Free Stuff']")]
+        public IWebElement TabFreeStuff;
+
+        [FindsBy(How = How.XPath, Using = "//a[text() = 'Concessions']")]
+        public IWebElement TabConcessions;
+
         [FindsBy(How = How.XPath, Using = "//button//span[text() = 'Add']")]
         public IWebElement ButtonAddSpecials;
 
@@ -197,34 +203,49 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         public IWebElement ButtonCancelSpecialsNwBldngPg;
 
         [FindsBy(How = How.XPath, Using = "//div[@class = 'building-specials-container ng-star-inserted'] //table//tbody//td[1]")]
-        public IWebElement RecordNameInTableConcessionNwBldngPg;
+        public IWebElement RecordNameInTableConcessions;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'building-specials-container ng-star-inserted'] //table//tbody//td[1]")]
+        public IWebElement RecordNameInTableFreeStuff;
 
         [FindsBy(How = How.XPath, Using = "//input[@placeholder = 'Search for specials']")]
-        public IWebElement FieldInputSelectItemsSpecialsNwBldngPg;
+        public IWebElement FieldInputSelectItemsFreeStuff;
 
         [FindsBy(How = How.XPath, Using = "//div[text() = ' Free Netflix ']")]
-        public IWebElement ItemFreeNetflixSpecialsNwBldngPg;
+        public IWebElement ItemFreeNetflix;
 
         [FindsBy(How = How.XPath, Using = "//div[text() = ' Google Speaker ']")]
-        public IWebElement ItemGoogleSpeakerSpecialsNwBldngPg;
+        public IWebElement ItemGoogleSpeaker;
+
+        [FindsBy(How = How.XPath, Using = "//label[text() = 'Application Submitted ']")]
+        public IWebElement ButtonApplicationSubmittedTriggerEvent;
+
+        [FindsBy(How = How.XPath, Using = "//label[text() = 'Lease Signed']")]
+        public IWebElement ButtonLeaseSignedTriggerEvent;
+
+        [FindsBy(How = How.XPath, Using = "//label[text() = 'Move In']")]
+        public IWebElement ButtonMoveInTriggerEvent;
+
+        [FindsBy(How = How.XPath, Using = "//label[text() = 'Self Tour']")]
+        public IWebElement ButtonSelfTourTriggerEvent;
 
         #endregion
 
         #region Images
 
         [FindsBy(How = How.XPath, Using = "//input[@class = 'ngx-file-drop__file-input']")]
-        public IWebElement ButtonUploadImageNwBldngPg;
+        public IWebElement ButtonUploadImage;
 
         [FindsBy(How = How.XPath, Using = "//span[text() = 'Save']")]
-        public IWebElement ButtonSaveNwBldngPg;
+        public IWebElement ButtonSaveBuilding;
 
         [FindsBy(How = How.XPath, Using = "//span[text() = 'Saved successfully!']")]
-        public IWebElement MessageSavedSuccessfullyBuildingNwBldngPg;
+        public IWebElement MessageSavedSuccessfullyBuilding;
         
         #endregion
 
         [FindsBy(How = How.XPath, Using = "//cazamio-button[@text = 'Next']")]
-        public IWebElement ButtonGeneralNextNwBldngPg;
+        public IWebElement ButtonGeneralNext;
         
     }
 }

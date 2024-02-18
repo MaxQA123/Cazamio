@@ -151,19 +151,29 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [AllureStep("GetNameConcessionFromTable")]
         public string GetNameConcessionFromTable()
         {
-            WaitUntil.CustomElementIsVisible(RecordNameInTableConcessionNwBldngPg, 10);
-            string getNameConcession = (RecordNameInTableConcessionNwBldngPg).Text;
+            WaitUntil.CustomElementIsVisible(RecordNameInTableConcessions);
+            string getNameConcession = (RecordNameInTableConcessions).Text;
             string nameConcessionActual = getNameConcession.ToString();
 
             return nameConcessionActual;
         }
 
-        [AllureStep("ClickButtonGeneralNextNwBldngPg")]
-        public NewBuilding ClickButtonGeneralNextNwBldngPg()
+        [AllureStep("GetNameFreeStuffFromTable")]
+        public string GetNameFreeStuffFromTable()
         {
-            WaitUntil.WaitSomeInterval(3000);
-            //WaitUntil.CustomElementIsVisible(ButtonGeneralNextNwBldngPg, 10);
-            Button.Click(ButtonGeneralNextNwBldngPg);
+            WaitUntil.CustomElementIsVisible(RecordNameInTableFreeStuff);
+            string getNameConcession = (RecordNameInTableFreeStuff).Text;
+            string nameConcessionActual = getNameConcession.ToString();
+
+            return nameConcessionActual;
+        }
+
+        [AllureStep("ClickButtonGeneralNext")]
+        public NewBuilding ClickButtonGeneralNext()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonGeneralNext);
+            WaitUntil.CustomElementIsClickable(ButtonGeneralNext);
+            Button.Click(ButtonGeneralNext);
 
             return this;
         }
@@ -211,16 +221,26 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
+        [AllureStep("ClickTabImages")]
+        public NewBuilding ClickTabImages()
+        {
+            WaitUntil.CustomElementIsVisible(TabImages);
+            WaitUntil.CustomElementIsClickable(TabImages);
+            Button.Click(TabImages);
+
+            return this;
+        }
+
         #endregion
 
         #region Amenities
 
         [AllureStep("ClickFieldInputSearchForAmenities")]
-        public NewBuilding ClickFieldInputSearchForAmenitiesg()
+        public NewBuilding ClickFieldInputSearchForAmenities()
         {
-            WaitUntil.CustomElementIsInVisible(FieldInputSearchForAmenitiesNwBldngPg);
-            WaitUntil.CustomElementIsClickable(FieldInputSearchForAmenitiesNwBldngPg);
-            Button.Click(FieldInputSearchForAmenitiesNwBldngPg);
+            WaitUntil.CustomElementIsVisible(FieldInputSearchForAmenities);
+            WaitUntil.CustomElementIsClickable(FieldInputSearchForAmenities);
+            Button.Click(FieldInputSearchForAmenities);
 
             return this;
         }
@@ -264,6 +284,16 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         #region Specials
 
+        [AllureStep("ClickTabFreeStuff")]
+        public NewBuilding ClickTabFreeStuff()
+        {
+            WaitUntil.CustomElementIsVisible(TabFreeStuff);
+            WaitUntil.ElementIsClickable(TabFreeStuff);
+            Button.Click(TabFreeStuff);
+
+            return this;
+        }
+
         [AllureStep("ClickButtonAddSpecials")]
         public NewBuilding ClickButtonAddSpecials()
         {
@@ -274,28 +304,42 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        #endregion
-
-        #region Images
-
-        [AllureStep("UploadImagesForNewBuilding")]
-        public NewBuilding UploadImagesForNewBuilding()
+        [AllureStep("ClickButtonLeaseSignedTriggerEvent")]
+        public NewBuilding ClickButtonLeaseSignedTriggerEvent()
         {
-            WaitUntil.CustomElementIsVisible(ButtonUploadImageNwBldngPg, 10);
-            ButtonUploadImageNwBldngPg.SendKeys(Path.GetFullPath(Path.Combine(Browser.RootPath() + UploadImages.IMAGE_HOUSE_FOR_BUILDING) + "\n" +
-                                                                      Browser.RootPath() + UploadImages.IMAGE_PARKING_FOR_BUILDING + "\n" +
-                                                                      Browser.RootPath() + UploadImages.IMAGE_POOL_FOR_BUILDING + "\n" +
-                                                                      Browser.RootPath() + UploadImages.IMAGE_YARD_FOR_BUILDING));
-            WaitUntil.WaitSomeInterval(3000);
+            WaitUntil.CustomElementIsVisible(ButtonLeaseSignedTriggerEvent);
+            WaitUntil.ElementIsClickable(ButtonLeaseSignedTriggerEvent);
+            Button.Click(ButtonLeaseSignedTriggerEvent);
 
             return this;
         }
 
-        [AllureStep("ClickButtonSaveNwBldngPg")]
-        public NewBuilding ClickButtonSaveNwBldngPg()
+        #endregion
+
+        #region Images
+
+        [AllureStep("UploadFourImages")]
+        public NewBuilding UploadFourImages()
         {
-            WaitUntil.WaitSomeInterval(3000);
-            Button.Click(ButtonSaveNwBldngPg);
+            WaitUntil.CustomElementIsVisible(ButtonUploadImage);
+            WaitUntil.CustomElementIsClickable(ButtonUploadImage);
+            ButtonUploadImage.SendKeys(Path.GetFullPath(Path.Combine(Browser.RootPath() + UploadImages.IMAGE_HOUSE_FOR_BUILDING) + "\n" +
+                                                                      Browser.RootPath() + UploadImages.IMAGE_PARKING_FOR_BUILDING + "\n" +
+                                                                      Browser.RootPath() + UploadImages.IMAGE_POOL_FOR_BUILDING + "\n" +
+                                                                      Browser.RootPath() + UploadImages.IMAGE_YARD_FOR_BUILDING));
+            WaitUntil.WaitSomeInterval(5000);
+
+            return this;
+        }
+
+        [AllureStep("ClickButtonSaveBuilding")]
+        public NewBuilding ClickButtonSaveBuilding()
+        {
+            WaitUntil.WaitSomeInterval(5000);
+            KeyBoardActions.ScrollToDown();
+            WaitUntil.CustomElementIsVisible(ButtonSaveBuilding);
+            WaitUntil.CustomElementIsClickable(ButtonSaveBuilding);
+            Button.Click(ButtonSaveBuilding);
 
             return this;
         }
