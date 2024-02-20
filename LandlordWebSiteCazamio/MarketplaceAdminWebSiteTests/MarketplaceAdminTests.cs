@@ -579,7 +579,7 @@ namespace MarketplaceAdminTests
         {
             #region SettingsForBuilding
 
-            //All the fields filled in
+            //All the fields filled in, Cardknox
             //All tabs filled in
             //Washington Square
 
@@ -608,7 +608,11 @@ namespace MarketplaceAdminTests
             Pages.NewBuilding
                 .VerifyTitleNewBuildingPg()
                 .SelectOwnerWithBroker()
-                .EnterFullAddressNewBuildingAssgndRlBrkr()
+                .EnterFullAddressNewBuildingAssgndRlBrkr();
+
+            string getAddressNewBuildingActual = Pages.NewBuilding.GetValueFromFieldAddress();
+
+            Pages.NewBuilding
                 .EnterBuildingName()
                 .EnterLlcNameForBroker()
                 .EnterLongInternalNotesDescription();
@@ -646,11 +650,7 @@ namespace MarketplaceAdminTests
             Pages.NewBuilding
             .ClickTabAmenities()
             .ClickFieldInputSearchForAmenities()
-            .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-            .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-            .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-            .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
-            .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+            .SelectFiveAmenities()
             .ClickTabAccess()
             .ClickButtonAddLock();
 
@@ -691,12 +691,67 @@ namespace MarketplaceAdminTests
                 .UploadFourImages()
                 .ClickButtonSaveBuilding()
                 .VerifyMessageSavedSuccessfullyBuilding();
+            Pages.BuildingView
+                .VerifyTitleBuildingViewPage();
 
-            //Add verify address from GUI page "Building view" with the address from DB
+            string getAddressBuildingView = Pages.BuildingView.GetValueFromFieldNotInputAddress();
+
+            Pages.BuildingView
+                .VerifyBuildingAddress(getAddressNewBuildingActual, getAddressBuildingView);
+
+            #endregion
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("MarketplaceAdmin")]
+        [AllureSubSuite("AddBuildingAssignedBroker")]
+
+        public void AddBuildingAssignedAgent()
+        {
+
+            #region SettingsForBuilding
+
+            //Added\Filled only mandatory the data, AuthorizeNet
+            //Saint Johnson Place
+
+            #endregion
+
+            #region Preconditions Test
+
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsMarketplaceAdmin()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare)
+                .ClickButtonBuildingsSidebar();
+
+            #endregion
+
+            #region Test
+
+            Pages.ListOfBuildings
+                .ClickButtonAddBuilding();
+            Pages.NewBuilding
+                .VerifyTitleNewBuildingPg()
+                .SelectOwnerWithAgent()
+                .EnterFullAddressNewBuildingAssgndRlBrkr();
+
+            string getAddressNewBuildingActual = Pages.NewBuilding.GetValueFromFieldAddress();
 
             WaitUntil.WaitSomeInterval(5000);
 
             #endregion
+
         }
 
         [Test]

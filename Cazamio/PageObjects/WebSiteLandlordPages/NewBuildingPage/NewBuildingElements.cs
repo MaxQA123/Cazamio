@@ -26,6 +26,20 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return Browser._Driver.FindElement(By.XPath(xpath));
         }
 
+        public IWebElement ItemForAutotestForAgentBroker;
+
+        public IWebElement SetItemForAutotestForAgentBroker()
+        {
+            // Создание экземпляра класса Owner
+            Owner owner = new Owner().Generate();
+
+            // Использование переменной экземпляра owner для построения XPath
+            var xpath = "//ng-dropdown-panel[@aria-label = 'Options list']//div[text() = '" + owner.AlreadyCreatedCompanyNameWithAgent + "']";
+
+            // Присвоение значения ItemForAutotestForBroker
+            return Browser._Driver.FindElement(By.XPath(xpath));
+        }
+
         #region PageNewBuilging
 
         [FindsBy(How = How.XPath, Using = "//div[@class = 'navigation-title']")]

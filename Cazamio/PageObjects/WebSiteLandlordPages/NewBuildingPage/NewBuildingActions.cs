@@ -117,6 +117,16 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return getValueActual;
         }
 
+        [AllureStep("GetValueFromFieldAddress")]
+        public string GetValueFromFieldAddress()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputAddress);
+            string getValue = FieldInputAddress.GetAttribute("value");
+            string getValueActual = getValue.ToString();
+
+            return getValueActual;
+        }
+
         //This hidden
         //[AllureStep("GetNameCabTypeAccessFromTable")]
         //public string GetNameCabTypeAccessFromTable()

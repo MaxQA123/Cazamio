@@ -13,6 +13,9 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage
         [FindsBy(How = How.XPath, Using = ("//div[text() = 'Building view']"))]
         public IWebElement TitleBuildingViewPage;
 
+        [FindsBy(How = How.XPath, Using = ("//div[@class = 'form-result-wrapper']/div/div[2]"))]
+        public IWebElement FieldNotInputAddress;
+
         #region TabsLine
 
         [FindsBy(How = How.XPath, Using = ("//a[text() = 'Apartments']"))]

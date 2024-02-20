@@ -27,6 +27,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             InputGeneral.InputFunctionWithClear(FieldInputZip, building.Zip.ZipBuildingAssignedRoleBrkr);
             WaitUntil.WaitSomeInterval(500);
             KeyBoardActions.ClickArrowDown();
+            WaitUntil.WaitSomeInterval(100);
             KeyBoardActions.ClickEnterButton();
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputNeighborhood, building.Neighborhood.BuildingAssignedRoleBrkr);
@@ -63,6 +64,16 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             Button.Click(ButtonMenuOwnerSelect);
             WaitUntil.WaitSomeInterval(500);
             Button.Click(SetItemForAutotestForBroker());
+
+            return this;
+        }
+
+        [AllureStep("SelectOwnerWithAgent")]
+        public NewBuilding SelectOwnerWithAgent()
+        {
+            Button.Click(ButtonMenuOwnerSelect);
+            WaitUntil.WaitSomeInterval(500);
+            Button.Click(SetItemForAutotestForAgentBroker());
 
             return this;
         }
@@ -174,6 +185,20 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             Button.Click(ButtonLeaseSignedTriggerEvent);
             WaitUntil.WaitSomeInterval(100);
             Button.Click(ButtonSaveSpecials);
+
+            return this;
+        }
+
+        [AllureStep("SelectFiveAmenities")]
+        public NewBuilding SelectFiveAmenities()
+        {
+            WaitUntil.WaitSomeInterval(500);
+            Pages.NewBuilding
+            .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+            .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+            .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+            .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
+            .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ");
 
             return this;
         }

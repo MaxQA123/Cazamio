@@ -114,10 +114,10 @@ namespace CazamioProject.Objects
         public Building Generate()
         {
             string buildingNumberAssignedRoleAgntBrkr = "9995";
-            string addressAssignedRoleAgntBrkr = "East 51st Street Pedestrian Crossing";
+            string addressAssignedRoleAgntBrkr = "Saint Johnson Place";
             string zipBuildingAssignedRoleAgntBrkr = "11234";
             string neighborhoodBuildingAssignedRoleAgntBrkr = "Manhattan";
-            string buildingNumberAssignedRoleBrkr = "22";
+            string buildingNumberAssignedRoleBrkr = "26";
             string addressAssignedRoleBrkr = "Washington Square";
             string zipBuildingAssignedRoleBrkr = "10012";
             string neighborhoodBuildingAssignedRoleBrkr = "Manhattan";

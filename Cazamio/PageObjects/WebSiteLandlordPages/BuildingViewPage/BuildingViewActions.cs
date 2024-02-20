@@ -22,6 +22,16 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage
             return this;
         }
 
+        [AllureStep("GetValueFromFieldNotInputAddress")]
+        public string GetValueFromFieldNotInputAddress()
+        {
+            WaitUntil.CustomElementIsVisible(FieldNotInputAddress);
+            string getValue = FieldNotInputAddress.Text;
+            string getValueActual = getValue.ToString();
+
+            return getValueActual;
+        }
+
         #endregion
 
         #region InTabApartments
