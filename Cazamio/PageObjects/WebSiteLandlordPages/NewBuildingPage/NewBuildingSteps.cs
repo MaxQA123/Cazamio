@@ -11,8 +11,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 {
     public partial class NewBuilding
     {
-        [AllureStep("EnterFullAddressNewBuildingAssgndRlBrkr")]
-        public NewBuilding EnterFullAddressNewBuildingAssgndRlBrkr()
+        [AllureStep("EnterFullAddress")]
+        public NewBuilding EnterFullAddress()
         {
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputAddress, building.NumberWithAddressRoleBrkr);
@@ -20,7 +20,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             KeyBoardActions.ClickTab();
             KeyBoardActions.ClickEnterButton();
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputCity, building.City.CityNewYork);
+            InputGeneral.InputFunctionWithClear(FieldInputCity, building.City.NewYork);
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputState, building.State);
             WaitUntil.WaitSomeInterval(100);
@@ -31,6 +31,25 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             KeyBoardActions.ClickEnterButton();
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputNeighborhood, building.Neighborhood.BuildingAssignedRoleBrkr);
+
+            return this;
+        }
+
+        [AllureStep("EnterAddressCityState")]
+        public NewBuilding EnterAddressCityState()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputAddress, building.NumberWithAddressRoleAgent);
+            WaitUntil.WaitSomeInterval(500);
+            KeyBoardActions.ClickTab();
+            KeyBoardActions.ClickEnterButton();
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputCity, building.City.Brooklyn);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputState, building.State);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(FieldInputInternalNotes);
+            KeyBoardActions.ClickTab();
 
             return this;
         }

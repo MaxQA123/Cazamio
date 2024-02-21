@@ -13,6 +13,7 @@ namespace CazamioProject.Objects
         public BuildingNumberInfo BuildingNumber { get; set; }
         public AddressInfo Address { get; set; }
         public string NumberWithAddressRoleBrkr { get; set; }
+        public string NumberWithAddressRoleAgent { get; set; }
         public CityInfo City { get; set; }
         public string State { get; set; }
         public ZipInfo Zip { get; set; }
@@ -46,8 +47,8 @@ namespace CazamioProject.Objects
 
         public class CityInfo
         {
-            public string CityNewYork { get; set; }
-            public string CityBrooklyn { get; set; }
+            public string NewYork { get; set; }
+            public string Brooklyn { get; set; }
         }
 
         public class ZipInfo
@@ -113,7 +114,7 @@ namespace CazamioProject.Objects
 
         public Building Generate()
         {
-            string buildingNumberAssignedRoleAgntBrkr = "9995";
+            string buildingNumberAssignedRoleAgntBrkr = "9999";
             string addressAssignedRoleAgntBrkr = "Saint Johnson Place";
             string zipBuildingAssignedRoleAgntBrkr = "11234";
             string neighborhoodBuildingAssignedRoleAgntBrkr = "Manhattan";
@@ -161,8 +162,8 @@ namespace CazamioProject.Objects
                 },
                 City = new CityInfo
                 {
-                    CityNewYork = cityNewYork,
-                    CityBrooklyn = cityBrooklyn
+                    NewYork = cityNewYork,
+                    Brooklyn = cityBrooklyn
                 },
                 State = state,
                 Zip = new ZipInfo
@@ -176,6 +177,7 @@ namespace CazamioProject.Objects
                     BuildingAssignedRoleBrkr = neighborhoodBuildingAssignedRoleBrkr
                 },
                 NumberWithAddressRoleBrkr = buildingNumberAssignedRoleBrkr + " " + addressAssignedRoleBrkr,
+                NumberWithAddressRoleAgent = buildingNumberAssignedRoleAgntBrkr + " " + addressAssignedRoleAgntBrkr,
                 BuildingName = buildingName,
                 DescriptionShort = descriptionShort,
                 InternalNotesShort = internalNotesShort,

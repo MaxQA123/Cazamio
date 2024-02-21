@@ -608,7 +608,7 @@ namespace MarketplaceAdminTests
             Pages.NewBuilding
                 .VerifyTitleNewBuildingPg()
                 .SelectOwnerWithBroker()
-                .EnterFullAddressNewBuildingAssgndRlBrkr();
+                .EnterFullAddress();
 
             string getAddressNewBuildingActual = Pages.NewBuilding.GetValueFromFieldAddress();
 
@@ -744,7 +744,8 @@ namespace MarketplaceAdminTests
             Pages.NewBuilding
                 .VerifyTitleNewBuildingPg()
                 .SelectOwnerWithAgent()
-                .EnterFullAddressNewBuildingAssgndRlBrkr();
+                .EnterAddressCityState();
+            
 
             string getAddressNewBuildingActual = Pages.NewBuilding.GetValueFromFieldAddress();
 
