@@ -748,7 +748,6 @@ namespace MarketplaceAdminTests
                 .ClickFieldInputInternalNotes();
             KeyBoardActions.ClickTab();
 
-
             string getAddressNewBuildingActual = Pages.NewBuilding.GetValueFromFieldAddress();
 
             WaitUntil.WaitSomeInterval(5000);
