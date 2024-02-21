@@ -59,6 +59,16 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
+        [AllureStep("ClickFieldInputInternalNotes")]
+        public NewBuilding ClickFieldInputInternalNotes()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputInternalNotes);
+            WaitUntil.CustomElementIsClickable(FieldInputInternalNotes);
+            Button.Click(FieldInputInternalNotes);
+
+            return this;
+        }
+
         [AllureStep("ClickButtonSelectPetPolicies")]
         public NewBuilding ClickButtonSelectPetPolicies()
         {

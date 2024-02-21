@@ -48,8 +48,6 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputState, building.State);
             WaitUntil.WaitSomeInterval(100);
-            Button.Click(FieldInputInternalNotes);
-            KeyBoardActions.ClickTab();
 
             return this;
         }

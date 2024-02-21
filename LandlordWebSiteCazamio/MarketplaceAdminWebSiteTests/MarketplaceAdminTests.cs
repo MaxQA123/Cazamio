@@ -744,8 +744,10 @@ namespace MarketplaceAdminTests
             Pages.NewBuilding
                 .VerifyTitleNewBuildingPg()
                 .SelectOwnerWithAgent()
-                .EnterAddressCityState();
-            
+                .EnterAddressCityState()
+                .ClickFieldInputInternalNotes();
+            KeyBoardActions.ClickTab();
+
 
             string getAddressNewBuildingActual = Pages.NewBuilding.GetValueFromFieldAddress();
 
