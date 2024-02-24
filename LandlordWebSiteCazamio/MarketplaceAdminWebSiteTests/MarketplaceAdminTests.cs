@@ -608,7 +608,7 @@ namespace MarketplaceAdminTests
             Pages.NewBuilding
                 .VerifyTitleNewBuildingPg()
                 .SelectOwnerWithBroker()
-                .EnterFullAddress();
+                .EnterFullAddressMarkAdm();
 
             string getAddressNewBuildingActual = Pages.NewBuilding.GetValueFromFieldAddress();
 
@@ -621,20 +621,20 @@ namespace MarketplaceAdminTests
                 .ClickBtnEditForPaymentSystem();
 
             string getValueScreeningFee = Pages.NewBuilding.GetValueFromFieldCreditScreeningFee();
-            string getApiKeyActual = Pages.MdlWndwPaymentKeysActions.GetItemCardknox();
-            string getItemApiKeyCardknoxActual = Pages.MdlWndwPaymentKeysActions.GetItemApiKeyCardknox();
+            string getItemCardknoxActual = Pages.MdlWndwPaymentKeys.GetItemCardknox();
+            string getItemApiKeyCardknoxActual = Pages.MdlWndwPaymentKeys.GetItemApiKeyCardknox();
 
-            Pages.MdlWndwPaymentKeysActions
+            Pages.MdlWndwPaymentKeys
                 .ClickButtonCross();
-            Pages.MdlWndwPaymentKeysActions
-                .VerifyApiKeyCardknox(getApiKeyActual, getItemApiKeyCardknoxActual);
+            Pages.MdlWndwPaymentKeys
+                .VerifyApiKeyCardknox(getItemCardknoxActual, getItemApiKeyCardknoxActual);
             Pages.NewBuilding
                 .VerifyValueByDefaulScreeningFee(getValueScreeningFee)
                 .EnterCreditScreeningFeeHoldDeposit()
                 .ClickBtnSelectPaymentMethodsForCreditScreeningFee();
             Pages.ModalWindowPaymentOptions
                 .VerifyTitlePaymentOptions()
-                .SelectAllPaymentMethodsForScreening();
+                .SelectAllPaymentMethods();
             Pages.NewBuilding
                 .ClickBtnSelectPaymentMethodsForHoldDeposit();
             Pages.ModalWindowPaymentOptions
@@ -716,7 +716,7 @@ namespace MarketplaceAdminTests
 
             #region SettingsForBuilding
 
-            //Added\Filled only mandatory the data, AuthorizeNet
+            //Added Filled only mandatory the data, AuthorizeNet
             //Saint Johnson Place
 
             #endregion
@@ -744,11 +744,50 @@ namespace MarketplaceAdminTests
             Pages.NewBuilding
                 .VerifyTitleNewBuildingPg()
                 .SelectOwnerWithAgent()
-                .EnterAddressCityState()
+                .EnterAddressCityStateMarkAdm()
                 .ClickFieldInputInternalNotes();
-            KeyBoardActions.ClickTab();
 
             string getAddressNewBuildingActual = Pages.NewBuilding.GetValueFromFieldAddress();
+
+            KeyBoardActions.ClickTab();
+
+            string getValueScreeningFee = Pages.NewBuilding.GetValueFromFieldCreditScreeningFee();
+
+            Pages.NewBuilding
+                .VerifyValueByDefaulScreeningFee(getValueScreeningFee)
+                .ClickBtnSelectPaymentMethodsForCreditScreeningFee();
+            Pages.ModalWindowPaymentOptions
+                .SelectPaymentMethodsCrdtCrdAchZll();
+            Pages.NewBuilding
+                .ClickBtnEditForPaymentSystem();
+            Pages.MdlWndwPaymentKeys
+                .SelectPaymentSystemAuthorizeNet();
+
+            string getItemAuthorizeNetActual = Pages.MdlWndwPaymentKeys.GetItemAuthorizeNet();
+            string getItemApiKeyAuthorizeNetActual = Pages.MdlWndwPaymentKeys.GetItemApiKeyAuthorizeNet();
+
+            Pages.MdlWndwPaymentKeys
+                .VerifyApiKeyAuthorizeNet(getItemAuthorizeNetActual, getItemApiKeyAuthorizeNetActual);
+            Pages.MdlWndwPaymentKeys
+                .ClickButtonSave();
+            Pages.NewBuilding
+                .ClickThreeTimesButtonGeneralNext()
+                .ClickTabFreeStuff()
+                .ClickButtonAddSpecials()
+                .AddFreeStuffInActive()
+                .ClickTabConcessions()
+                .ClickButtonAddSpecials()
+                .AddConcessionInActive()
+                .ClickButtonGeneralNext()
+                .ClickButtonSaveBuilding()
+                .VerifyMessageSavedSuccessfullyBuilding();
+            Pages.BuildingView
+                .VerifyTitleBuildingViewPage();
+
+            string getAddressBuildingView = Pages.BuildingView.GetValueFromFieldNotInputAddress();
+
+            Pages.BuildingView
+                .VerifyBuildingAddress(getAddressNewBuildingActual, getAddressBuildingView);
 
             WaitUntil.WaitSomeInterval(5000);
 

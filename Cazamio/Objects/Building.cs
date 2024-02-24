@@ -12,8 +12,7 @@ namespace CazamioProject.Objects
     {
         public BuildingNumberInfo BuildingNumber { get; set; }
         public AddressInfo Address { get; set; }
-        public string NumberWithAddressRoleBrkr { get; set; }
-        public string NumberWithAddressRoleAgent { get; set; }
+        public NumberWithAddressInfo NumberWithAddress { get; set; }
         public CityInfo City { get; set; }
         public string State { get; set; }
         public ZipInfo Zip { get; set; }
@@ -112,10 +111,19 @@ namespace CazamioProject.Objects
             public string Name { get; set; }
         }
 
+        public class NumberWithAddressInfo
+        {
+            public string MarkAdmAssignedBroker { get; set; }
+            public string MarkAdmAssignedAgntBrkr { get; set; }
+            public string BrokerAssignedBroker { get; set; }
+            public string BrokerAssignedAgntBrkr { get; set; }
+            public string AgntBrkrAssignedAgntBrkr { get; set; }
+        }
+
         public Building Generate()
         {
-            string buildingNumberAssignedRoleAgntBrkr = "9999";
-            string addressAssignedRoleAgntBrkr = "Saint Johnson Place";
+            string buildingNumberMarAdmAssignedRoleAgntBrkr = "9999";
+            string addressMarkAdmAssignedRoleAgntBrkr = "Saint Johnson Place";
             string zipBuildingAssignedRoleAgntBrkr = "11234";
             string neighborhoodBuildingAssignedRoleAgntBrkr = "Manhattan";
             string buildingNumberAssignedRoleBrkr = "26";
@@ -139,7 +147,7 @@ namespace CazamioProject.Objects
             string cardknox = "Cardknox";
             string authorizeNet = "AuthorizeNet";
             string apiKeyCardknox = "czmodev359376936c0543b58126c97f9ff55c68";
-            string apiKeyAuthorizeNet = "";
+            string apiKeyAuthorizeNet = "2L7uB4UzeA9gf366";
             string firstLocationMainEntrance = "Main Entrance";
             string secondLocationApartment = "Apartment";
             string nameConcession = "ConcessionBuilding";
@@ -152,12 +160,12 @@ namespace CazamioProject.Objects
             {
                 BuildingNumber = new BuildingNumberInfo
                 {
-                    BuildingNumberAssignedRoleAgntBrkr = buildingNumberAssignedRoleAgntBrkr,
+                    BuildingNumberAssignedRoleAgntBrkr = buildingNumberMarAdmAssignedRoleAgntBrkr,
                     BuildingNumberAssignedRoleBrkr = buildingNumberAssignedRoleBrkr
                 },
                 Address = new AddressInfo
                 {
-                    AssignedRoleAgntBrkr = addressAssignedRoleAgntBrkr,
+                    AssignedRoleAgntBrkr = addressMarkAdmAssignedRoleAgntBrkr,
                     AssignedRoleBrkr = addressAssignedRoleBrkr
                 },
                 City = new CityInfo
@@ -176,8 +184,11 @@ namespace CazamioProject.Objects
                     BuildingAssignedRoleAgntBrkr = neighborhoodBuildingAssignedRoleAgntBrkr,
                     BuildingAssignedRoleBrkr = neighborhoodBuildingAssignedRoleBrkr
                 },
-                NumberWithAddressRoleBrkr = buildingNumberAssignedRoleBrkr + " " + addressAssignedRoleBrkr,
-                NumberWithAddressRoleAgent = buildingNumberAssignedRoleAgntBrkr + " " + addressAssignedRoleAgntBrkr,
+                NumberWithAddress = new NumberWithAddressInfo
+                {
+                    MarkAdmAssignedBroker = buildingNumberAssignedRoleBrkr + " " + addressAssignedRoleBrkr,
+                    MarkAdmAssignedAgntBrkr = buildingNumberMarAdmAssignedRoleAgntBrkr + " " + addressMarkAdmAssignedRoleAgntBrkr
+                },
                 BuildingName = buildingName,
                 DescriptionShort = descriptionShort,
                 InternalNotesShort = internalNotesShort,

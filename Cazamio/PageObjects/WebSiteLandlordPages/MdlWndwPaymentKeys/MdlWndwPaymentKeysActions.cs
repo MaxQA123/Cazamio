@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CazamioProject.PageObjects.WebSiteLandlordPages.MdlWndwPaymentKeys
 {
-    public partial class MdlWndwPaymentKeysActions
+    public partial class MdlWndwPaymentKeys
     {
         Building building = new Building().Generate();
 
@@ -33,8 +33,58 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.MdlWndwPaymentKeys
             return getItemApiKeyCardknoxActual;
         }
 
+        [AllureStep("GetItemAuthorizeNet")]
+        public string GetItemAuthorizeNet()
+        {
+            WaitUntil.CustomElementIsVisible(ItemAuthorizeNet);
+            string getItemCardknox = (ItemAuthorizeNet).Text;
+            string getItemCardknoxActual = getItemCardknox.ToString();
+
+            return getItemCardknoxActual;
+        }
+
+        [AllureStep("GetItemApiKeyAuthorizeNet")]
+        public string GetItemApiKeyAuthorizeNet()
+        {
+            WaitUntil.CustomElementIsVisible(ItemApiKeyAuthorizeNet);
+            string getItemApiKeyCardknox = (ItemApiKeyAuthorizeNet).Text;
+            string getItemApiKeyCardknoxActual = getItemApiKeyCardknox.ToString();
+
+            return getItemApiKeyCardknoxActual;
+        }
+
         [AllureStep("ClickButtonCross")]
-        public MdlWndwPaymentKeysActions ClickButtonCross()
+        public MdlWndwPaymentKeys ClickButtonSearchPaymentSystem()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonSearchPaymentSystem);
+            WaitUntil.CustomElementIsClickable(ButtonSearchPaymentSystem);
+            Button.Click(ButtonSearchPaymentSystem);
+
+            return this;
+        }
+
+        [AllureStep("SelectItemAuthorizeNet")]
+        public MdlWndwPaymentKeys SelectItemAuthorizeNet()
+        {
+            WaitUntil.CustomElementIsVisible(ItemAuthorizeNet);
+            WaitUntil.CustomElementIsClickable(ItemAuthorizeNet);
+            Button.Click(ItemAuthorizeNet);
+
+            return this;
+        }
+
+        [AllureStep("ClickButtonSave")]
+        public MdlWndwPaymentKeys ClickButtonSave()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonSave);
+            WaitUntil.CustomElementIsClickable(ButtonSave);
+            Button.Click(ButtonSave);
+
+            return this;
+        }
+
+        [AllureStep("ClickButtonCross")]
+        public MdlWndwPaymentKeys ClickButtonCross()
         {
             WaitUntil.CustomElementIsClickable(ButtonCross);
             Button.Click(ButtonCross);

@@ -11,11 +11,11 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 {
     public partial class NewBuilding
     {
-        [AllureStep("EnterFullAddress")]
-        public NewBuilding EnterFullAddress()
+        [AllureStep("EnterFullAddressMarkAdm")]
+        public NewBuilding EnterFullAddressMarkAdm()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputAddress, building.NumberWithAddressRoleBrkr);
+            InputGeneral.InputFunctionWithClear(FieldInputAddress, building.NumberWithAddress.MarkAdmAssignedBroker);
             WaitUntil.WaitSomeInterval(500);
             KeyBoardActions.ClickTab();
             KeyBoardActions.ClickEnterButton();
@@ -35,11 +35,11 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        [AllureStep("EnterAddressCityState")]
-        public NewBuilding EnterAddressCityState()
+        [AllureStep("EnterAddressCityStateMarkAdm")]
+        public NewBuilding EnterAddressCityStateMarkAdm()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputAddress, building.NumberWithAddressRoleAgent);
+            InputGeneral.InputFunctionWithClear(FieldInputAddress, building.NumberWithAddress.MarkAdmAssignedAgntBrkr);
             WaitUntil.WaitSomeInterval(500);
             KeyBoardActions.ClickTab();
             KeyBoardActions.ClickEnterButton();
@@ -89,7 +89,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         public NewBuilding SelectOwnerWithAgent()
         {
             Button.Click(ButtonMenuOwnerSelect);
-            WaitUntil.WaitSomeInterval(500);
+            WaitUntil.WaitSomeInterval(2000);
             Button.Click(SetItemForAutotestForAgentBroker());
 
             return this;
@@ -173,6 +173,41 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
+        [AllureStep("AddConcessionInActive")]
+        public NewBuilding AddConcessionInActive()
+        {
+            WaitUntil.CustomElementIsVisible(CheckBoxIsActive);
+            WaitUntil.ElementIsClickable(CheckBoxIsActive);
+            Button.Click(CheckBoxIsActive);
+            WaitUntil.CustomElementIsVisible(FieldInputNameSpecials);
+            InputGeneral.InputFunctionWithClear(FieldInputNameSpecials, building.Concessions.Name);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputMonthsFree, building.Concessions.MonthsFree);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputLeaseTerms, building.Concessions.LeaseTerms);
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickArrowDown();
+            KeyBoardActions.ClickEnterButton();
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonYesSpecials);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(FieldInputDateFrom);
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .SelectCurrentDay();
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(FieldInputDateTo);
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .SelectCurrentDayPlusOneDay();
+            KeyBoardActions.ScrollToDown();
+            Button.Click(ButtonSelfTourTriggerEvent);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonSaveSpecials);
+
+            return this;
+        }
+
         [AllureStep("AddFreeStuffIsActive")]
         public NewBuilding AddFreeStuffIsActive()
         {
@@ -206,6 +241,39 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
+        [AllureStep("AddFreeStuffInActive")]
+        public NewBuilding AddFreeStuffInActive()
+        {
+            WaitUntil.CustomElementIsVisible(CheckBoxIsActive);
+            WaitUntil.ElementIsClickable(CheckBoxIsActive);
+            Button.Click(CheckBoxIsActive);
+            WaitUntil.CustomElementIsVisible(FieldInputNameSpecials);
+            InputGeneral.InputFunctionWithClear(FieldInputNameSpecials, building.FreeStuff.Name);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(FieldInputSelectItemsFreeStuff);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ItemFreeNetflix);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonYesSpecials);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(FieldInputDateFrom);
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .SelectCurrentDay();
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(FieldInputDateTo);
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .SelectCurrentDayPlusOneDay();
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ScrollToDown();
+            Button.Click(ButtonMoveInTriggerEvent);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonSaveSpecials);
+
+            return this;
+        }
+
         [AllureStep("SelectFiveAmenities")]
         public NewBuilding SelectFiveAmenities()
         {
@@ -216,6 +284,35 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
             .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ")
             .SelectAmenitiesForBuilding(ListOfAmenitiesForBuildingAdminsPage.FIRST_TAG, " ");
+
+            return this;
+        }
+
+        [AllureStep("ClickTwiceButtonGeneralNext")]
+        public NewBuilding ClickTwiceButtonGeneralNext()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonGeneralNext);
+            WaitUntil.CustomElementIsClickable(ButtonGeneralNext);
+            Button.Click(ButtonGeneralNext);
+            WaitUntil.CustomElementIsVisible(ButtonGeneralNext);
+            WaitUntil.CustomElementIsClickable(ButtonGeneralNext);
+            Button.Click(ButtonGeneralNext);
+
+            return this;
+        }
+
+        [AllureStep("ClickThreeTimesButtonGeneralNext")]
+        public NewBuilding ClickThreeTimesButtonGeneralNext()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonGeneralNext);
+            WaitUntil.CustomElementIsClickable(ButtonGeneralNext);
+            Button.Click(ButtonGeneralNext);
+            WaitUntil.CustomElementIsVisible(ButtonGeneralNext);
+            WaitUntil.CustomElementIsClickable(ButtonGeneralNext);
+            Button.Click(ButtonGeneralNext);
+            WaitUntil.CustomElementIsVisible(ButtonGeneralNext);
+            WaitUntil.CustomElementIsClickable(ButtonGeneralNext);
+            Button.Click(ButtonGeneralNext);
 
             return this;
         }

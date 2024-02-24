@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CazamioProject.PageObjects.WebSiteLandlordPages.MdlWndwPaymentKeys
 {
-    public partial class MdlWndwPaymentKeysActions
+    public partial class MdlWndwPaymentKeys
     {
         public void VerifyApiKeyCardknox(string getApiKeyActual, string getItemApiKeyCardknoxActual)
         {
@@ -15,6 +15,15 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.MdlWndwPaymentKeys
             {
                 Assert.AreEqual(getApiKeyActual, building.PaymentSystem.Cardknox);
                 Assert.AreEqual(getItemApiKeyCardknoxActual, building.ApiKey.ApiKeyCardknox);
+            });
+        }
+
+        public void VerifyApiKeyAuthorizeNet(string getItemAuthorizeNetActual, string getItemApiKeyAuthorizeNetActual)
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(getItemAuthorizeNetActual, building.PaymentSystem.AuthorizeNet);
+                Assert.AreEqual(getItemApiKeyAuthorizeNetActual, building.ApiKey.ApiKeyAuthorizeNet);
             });
         }
     }

@@ -11,8 +11,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
 {
     public partial class ModalWindowPaymentOptions
     {
-        [AllureStep("SelectAllPaymentMethodsForScreening")]
-        public ModalWindowPaymentOptions SelectAllPaymentMethodsForScreening()
+        [AllureStep("SelectAllPaymentMethods")]
+        public ModalWindowPaymentOptions SelectAllPaymentMethods()
         {
             Button.Click(ItemCreditCard);
             Button.Click(ItemAch);
@@ -39,6 +39,21 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
             InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNote, paymentOptions.DeliverCheckNote.ForBuildingHold);
             InputGeneral.InputFunctionWithClear(FieldInputZelleAddressOrPhone, paymentOptions.Zelle.ForBuildingHold);
             ButtonForVenmoQrCodeImage.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_PAYMENT_VENMO_HOLD_BUILDING));
+            Button.Click(ButtonSaveMdlWndwOptns);
+            VerifySuccessSelectPmntMthds();
+
+            return this;
+        }
+
+        [AllureStep("SelectPaymentMethodsCrdtCrdAchZll")]
+        public ModalWindowPaymentOptions SelectPaymentMethodsCrdtCrdAchZll()
+        {
+            Button.Click(ItemCreditCard);
+            Button.Click(ItemAch);
+            Button.Click(ItemDeliverCheck);
+            Button.Click(ItemZelle);
+            InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNote, paymentOptions.DeliverCheckNote.ForBuildingHold);
+            InputGeneral.InputFunctionWithClear(FieldInputZelleAddressOrPhone, paymentOptions.Zelle.ForBuildingHold);
             Button.Click(ButtonSaveMdlWndwOptns);
             VerifySuccessSelectPmntMthds();
 

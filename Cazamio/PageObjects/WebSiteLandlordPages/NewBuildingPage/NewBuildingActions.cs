@@ -202,6 +202,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         public NewBuilding ClickBtnEditForPaymentSystem()
         {
             WaitUntil.CustomElementIsVisible(BtnEditForPaymentSystem);
+            WaitUntil.CustomElementIsClickable(BtnEditForPaymentSystem);
+            WaitUntil.WaitSomeInterval(5000);
             Button.Click(BtnEditForPaymentSystem);
 
             return this;
@@ -304,6 +306,16 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         #region Specials
 
+        [AllureStep("ClickTabConcessions")]
+        public NewBuilding ClickTabConcessions()
+        {
+            WaitUntil.CustomElementIsVisible(TabConcessions);
+            WaitUntil.ElementIsClickable(TabConcessions);
+            Button.Click(TabConcessions);
+
+            return this;
+        }
+
         [AllureStep("ClickTabFreeStuff")]
         public NewBuilding ClickTabFreeStuff()
         {
@@ -330,6 +342,16 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             WaitUntil.CustomElementIsVisible(ButtonLeaseSignedTriggerEvent);
             WaitUntil.ElementIsClickable(ButtonLeaseSignedTriggerEvent);
             Button.Click(ButtonLeaseSignedTriggerEvent);
+
+            return this;
+        }
+
+        [AllureStep("ClickCheckBoxIsActive")]
+        public NewBuilding ClickCheckBoxIsActive()
+        {
+            WaitUntil.CustomElementIsVisible(CheckBoxIsActive);
+            WaitUntil.ElementIsClickable(CheckBoxIsActive);
+            Button.Click(CheckBoxIsActive);
 
             return this;
         }

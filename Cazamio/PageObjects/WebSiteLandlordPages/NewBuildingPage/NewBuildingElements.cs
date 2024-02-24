@@ -113,6 +113,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         [FindsBy(How = How.XPath, Using = "//span[text() = 'Edit']")]
         public IWebElement BtnEditForPaymentSystem;
 
+        [FindsBy(How = How.XPath, Using = "//input[@name = 'api-key']")]
+        public IWebElement FieldInputApiKey;
+
         #endregion
 
         #region Amenities
@@ -242,6 +245,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         [FindsBy(How = How.XPath, Using = "//label[text() = 'Self Tour']")]
         public IWebElement ButtonSelfTourTriggerEvent;
+
+        [FindsBy(How = How.XPath, Using = "//mat-checkbox//label[text() = 'Is Active']")]
+        public IWebElement CheckBoxIsActive;
 
         #endregion
 

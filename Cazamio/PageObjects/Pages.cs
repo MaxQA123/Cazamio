@@ -140,7 +140,7 @@ namespace CazamioProgect.PageObjects
         public static MdlWndwAreYouSureLogOut MdlWndwAreYouSureLogOut => GetPage<MdlWndwAreYouSureLogOut>();
         public static ApplicationDetail ApplicationDetail => GetPage<ApplicationDetail>();
         public static ModalWindowEditApplication ModalWindowEditApplication => GetPage<ModalWindowEditApplication>();
-        public static MdlWndwPaymentKeysActions MdlWndwPaymentKeysActions => GetPage<MdlWndwPaymentKeysActions>();
+        public static MdlWndwPaymentKeys MdlWndwPaymentKeys => GetPage<MdlWndwPaymentKeys>();
         #endregion
     }
 }
