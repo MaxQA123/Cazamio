@@ -1,0 +1,109 @@
+{
+  "uuid": "520cae2b-a706-46a0-a215-6ddc345818c6-tr-0-1006",
+  "historyId": "BrokerTests.TestsBaseWeb.AddBuildingAssignedBroker",
+  "fullName": "BrokerTests.TestsBaseWeb.AddBuildingAssignedBroker",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-JHNIII0"
+    },
+    {
+      "name": "package",
+      "value": "BrokerTests"
+    },
+    {
+      "name": "testMethod",
+      "value": "AddBuildingAssignedBroker"
+    },
+    {
+      "name": "testClass",
+      "value": "TestsBaseWeb"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim <maxqatesting390@gmail.com>"
+    },
+    {
+      "name": "tag",
+      "value": "Regression"
+    },
+    {
+      "name": "owner",
+      "value": "Maksim Perevalov"
+    },
+    {
+      "name": "severity",
+      "value": "critical"
+    },
+    {
+      "name": "suite",
+      "value": "Broker"
+    },
+    {
+      "name": "subSuite",
+      "value": "AddBuildingAssignedBroker"
+    }
+  ],
+  "links": [],
+  "name": "AddBuildingAssignedBroker",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.WebDriverTimeoutException : Timed out after 10 seconds",
+    "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.CustomElementIsVisible(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 73\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.__a$_around_ClickButtonAddBuilding_100663595_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ListOfBuildingsPage\\ListOfBuildingsActions.cs:line 19\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.__a$_around_ClickButtonAddBuilding_100663595_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.__a$_around_ClickButtonAddBuilding_100663595_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.ClickButtonAddBuilding() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ListOfBuildingsPage\\ListOfBuildingsActions.cs:line 13\r\n   at BrokerTests.TestsBaseWeb.AddBuildingAssignedBroker() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 376"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "AddBuildingAssignedBroker",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.WebDriverTimeoutException : Timed out after 10 seconds",
+        "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.CustomElementIsVisible(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 73\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.__a$_around_ClickButtonAddBuilding_100663595_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ListOfBuildingsPage\\ListOfBuildingsActions.cs:line 19\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.__a$_around_ClickButtonAddBuilding_100663595_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.__a$_around_ClickButtonAddBuilding_100663595_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.ClickButtonAddBuilding() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ListOfBuildingsPage\\ListOfBuildingsActions.cs:line 13\r\n   at BrokerTests.TestsBaseWeb.AddBuildingAssignedBroker() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BrokerWebSiteTests\\BrokerTests.cs:line 376"
+      },
+      "stage": "finished",
+      "steps": [
+        {
+          "name": "ClickButtonAddBuilding",
+          "status": "failed",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false,
+            "message": "Timed out after 10 seconds",
+            "trace": "   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)\r\n   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)\r\n   at CazamioProgect.Helpers.WaitUntil.CustomElementIsVisible(IWebElement element, Int32 seconds) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\WaitUntil.cs:line 73\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.__a$_around_ClickButtonAddBuilding_100663595_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\ListOfBuildingsPage\\ListOfBuildingsActions.cs:line 19\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage.ListOfBuildings.__a$_around_ClickButtonAddBuilding_100663595_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)"
+          },
+          "stage": "finished",
+          "steps": [],
+          "attachments": [],
+          "parameters": [],
+          "start": 1708867224565,
+          "stop": 1708867244718
+        }
+      ],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "ab976f1cf4fb4524b41a025450909750-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1708867215919,
+      "stop": 1708867248523
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1708867215918,
+  "stop": 1708867248533
+}

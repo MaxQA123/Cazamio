@@ -59,6 +59,15 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
+        [AllureStep("EnterLlcNameForAgent")]
+        public NewBuilding EnterLlcNameForAgent()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputLlcName, building.LlcName.ForAgentBroker);
+
+            return this;
+        }
+
         [AllureStep("ClickFieldInputInternalNotes")]
         public NewBuilding ClickFieldInputInternalNotes()
         {

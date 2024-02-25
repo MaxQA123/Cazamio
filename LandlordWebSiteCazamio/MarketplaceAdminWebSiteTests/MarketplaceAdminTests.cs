@@ -789,8 +789,6 @@ namespace MarketplaceAdminTests
             Pages.BuildingView
                 .VerifyBuildingAddress(getAddressNewBuildingActual, getAddressBuildingView);
 
-            WaitUntil.WaitSomeInterval(5000);
-
             #endregion
 
         }

@@ -1,0 +1,78 @@
+{
+  "uuid": "65f764a4-5db0-48c3-baef-a937aef6498c-tc-0-1000",
+  "name": "BrokerTests.TestsBaseWeb.AddBuildingAssignedBroker",
+  "children": [
+    "4bab607d-694b-4976-9b7c-0ad750d0e1c2-tr-0-1006"
+  ],
+  "befores": [
+    {
+      "name": "DobeforeAllTheTests",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1708867286328,
+      "stop": 1708867286328
+    },
+    {
+      "name": "SetUp",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.WebDriverException : no such execution context\n  (Session info: chrome=122.0.6261.70)",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebDriver.InternalExecute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.CookieJar.DeleteAllCookies()\r\n   at CazamioProgect.Helpers.Browser.Initialize() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\Browser.cs:line 36\r\n   at BrokerTests.BaseBroker.SetUp() in C:\\Automation\\Cazamio\\AdminWebSiteCazamio\\BaseBrokerWebSite\\BaseBroker.cs:line 16"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1708867286329,
+      "stop": 1708867286329
+    }
+  ],
+  "afters": [
+    {
+      "name": "DoAfterEach",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1708867286330,
+      "stop": 1708867286330
+    },
+    {
+      "name": "DoAfterAllTheTests",
+      "status": "none",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "It's not possible to get status of OneTimeTearDown",
+        "trace": "See Allure.NUnit wiki"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1708867286330,
+      "stop": 1708867286330
+    }
+  ],
+  "links": [],
+  "start": 1708867280063,
+  "stop": 1708867286400
+}

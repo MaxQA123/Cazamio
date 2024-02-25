@@ -360,15 +360,106 @@ namespace BrokerTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("Broker")]
-        [AllureSubSuite("AddBuilding")]
+        [AllureSubSuite("AddBuildingAssignedBroker")]
 
         public void AddBuildingAssignedBroker()
         {
             #region SettingsForBuilding
 
+            //Added Filled only mandatory the data, AuthorizeNet
+            //Crown St
+
+            #endregion
+
+            #region Preconditions Test
+
+            Pages.LogInLandlord
+                .EnterEmailPasswordLogInPgAsBroker()
+                .ClickIconShowLogInPg()
+                .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare)
+                .ClickButtonBuildingsSidebar();
+
+            #endregion
+
+            #region Test
+
+            Pages.ListOfBuildings
+                .ClickButtonAddBuilding();
+            Pages.NewBuilding
+                .VerifyTitleNewBuildingPg()
+                .SelectOwnerWithBroker()
+                .EnterAddressCityStateBroker()
+                .ClickFieldInputInternalNotes();
+
+            string getAddressNewBuildingActual = Pages.NewBuilding.GetValueFromFieldAddress();
+
+            KeyBoardActions.ClickTab();
+
+            string getValueScreeningFee = Pages.NewBuilding.GetValueFromFieldCreditScreeningFee();
+
+            Pages.NewBuilding
+                .VerifyValueByDefaulScreeningFee(getValueScreeningFee)
+                .ClickBtnSelectPaymentMethodsForCreditScreeningFee();
+            Pages.ModalWindowPaymentOptions
+                .SelectPaymentMethodsCrdtCrdAchZll();
+            Pages.NewBuilding
+                .ClickBtnEditForPaymentSystem();
+            Pages.MdlWndwPaymentKeys
+                .SelectPaymentSystemAuthorizeNet();
+
+            string getItemAuthorizeNetActual = Pages.MdlWndwPaymentKeys.GetItemAuthorizeNet();
+            string getItemApiKeyAuthorizeNetActual = Pages.MdlWndwPaymentKeys.GetItemApiKeyAuthorizeNet();
+
+            Pages.MdlWndwPaymentKeys
+                .VerifyApiKeyAuthorizeNet(getItemAuthorizeNetActual, getItemApiKeyAuthorizeNetActual);
+            Pages.MdlWndwPaymentKeys
+                .ClickButtonSave();
+            Pages.NewBuilding
+                .ClickThreeTimesButtonGeneralNext()
+                .ClickTabFreeStuff()
+                .ClickButtonAddSpecials()
+                .AddFreeStuffInActive()
+                .ClickTabConcessions()
+                .ClickButtonAddSpecials()
+                .AddConcessionInActive()
+                .ClickButtonGeneralNext()
+                .ClickButtonSaveBuilding()
+                .VerifyMessageSavedSuccessfullyBuilding();
+            Pages.BuildingView
+                .VerifyTitleBuildingViewPage();
+
+            string getAddressBuildingView = Pages.BuildingView.GetValueFromFieldNotInputAddress();
+
+            Pages.BuildingView
+                .VerifyBuildingAddress(getAddressNewBuildingActual, getAddressBuildingView);
+
+            #endregion
+
+            WaitUntil.WaitSomeInterval(5000);
+        }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("Broker")]
+        [AllureSubSuite("AddBuildingAssignedAgent")]
+
+        public void AddBuildingAssignedAgent()
+        {
+            #region SettingsForBuilding
+
             //All the fields filled in, Cardknox
             //All tabs filled in
-            //Crown St
+            //Albermale Rd
 
             #endregion
 
@@ -384,7 +475,8 @@ namespace BrokerTests
             string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
 
             Pages.SideBarLandlord
-                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare);
+                .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare)
+                .ClickButtonBuildingsSidebar();
 
             #endregion
 
@@ -394,14 +486,14 @@ namespace BrokerTests
                 .ClickButtonAddBuilding();
             Pages.NewBuilding
                 .VerifyTitleNewBuildingPg()
-                .SelectOwnerWithBroker()
-                .EnterFullAddressMarkAdm();
+                .SelectOwnerWithAgent()
+                .EnterFullAddressAgentBroker();
 
             string getAddressNewBuildingActual = Pages.NewBuilding.GetValueFromFieldAddress();
 
             Pages.NewBuilding
                 .EnterBuildingName()
-                .EnterLlcNameForBroker()
+                .EnterLlcNameForAgent()
                 .EnterLongInternalNotesDescription();
             KeyBoardActions.ClickTab();
             Pages.NewBuilding
@@ -488,7 +580,7 @@ namespace BrokerTests
 
             #endregion
 
-            WaitUntil.WaitSomeInterval(2000);
+            WaitUntil.WaitSomeInterval(5000);
         }
 
         [Test]

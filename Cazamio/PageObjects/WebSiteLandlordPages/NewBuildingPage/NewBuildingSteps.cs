@@ -35,11 +35,11 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        [AllureStep("EnterFullAddressBroker")]
-        public NewBuilding EnterFullAddressBroker()
+        [AllureStep("EnterFullAddressAgentBroker")]
+        public NewBuilding EnterFullAddressAgentBroker()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputAddress, building.NumberWithAddress.MarkAdmAssignedBroker);
+            InputGeneral.InputFunctionWithClear(FieldInputAddress, building.NumberWithAddress.BrokerAssignedAgntBrkr);
             WaitUntil.WaitSomeInterval(500);
             KeyBoardActions.ClickTab();
             KeyBoardActions.ClickEnterButton();
@@ -48,13 +48,13 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputState, building.State);
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputZip, building.Zip.ZipBuildingMarkAdmAssignedRoleBrkr);
+            InputGeneral.InputFunctionWithClear(FieldInputZip, building.Zip.ZipBuildingBrokerAssignedRoleAgntBrkr);
             WaitUntil.WaitSomeInterval(500);
             KeyBoardActions.ClickArrowDown();
             WaitUntil.WaitSomeInterval(100);
             KeyBoardActions.ClickEnterButton();
             WaitUntil.WaitSomeInterval(100);
-            //InputGeneral.InputFunctionWithClear(FieldInputNeighborhood, building.Neighborhood.BuildingAssignedRoleBrkr);
+            InputGeneral.InputFunctionWithClear(FieldInputNeighborhood, building.Neighborhood.BuildingBrokerAssignedRoleAgntBrkr);
 
             return this;
         }
@@ -64,6 +64,23 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
         {
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputAddress, building.NumberWithAddress.MarkAdmAssignedAgntBrkr);
+            WaitUntil.WaitSomeInterval(500);
+            KeyBoardActions.ClickTab();
+            KeyBoardActions.ClickEnterButton();
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputCity, building.City.Brooklyn);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputState, building.State);
+            WaitUntil.WaitSomeInterval(100);
+
+            return this;
+        }
+
+        [AllureStep("EnterAddressCityStateBroker")]
+        public NewBuilding EnterAddressCityStateBroker()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputAddress, building.NumberWithAddress.BrokerAssignedBroker);
             WaitUntil.WaitSomeInterval(500);
             KeyBoardActions.ClickTab();
             KeyBoardActions.ClickEnterButton();
