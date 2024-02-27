@@ -440,8 +440,6 @@ namespace BrokerTests
                 .VerifyBuildingAddress(getAddressNewBuildingActual, getAddressBuildingView);
 
             #endregion
-
-            WaitUntil.WaitSomeInterval(5000);
         }
 
         [Test]
@@ -487,7 +485,7 @@ namespace BrokerTests
             Pages.NewBuilding
                 .VerifyTitleNewBuildingPg()
                 .SelectOwnerWithAgent()
-                .EnterFullAddressAgentBroker();
+                .EnterBrokerFullAddressAgentBroker();
 
             string getAddressNewBuildingActual = Pages.NewBuilding.GetValueFromFieldAddress();
 

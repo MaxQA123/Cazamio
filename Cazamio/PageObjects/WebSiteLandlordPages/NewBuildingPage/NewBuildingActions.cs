@@ -369,6 +369,17 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         #region Images
 
+        [AllureStep("UploadOneImage")]
+        public NewBuilding UploadOneImages()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonUploadImage);
+            WaitUntil.CustomElementIsClickable(ButtonUploadImage);
+            ButtonUploadImage.SendKeys(Path.GetFullPath(Path.Combine(Browser.RootPath() + UploadImages.IMAGE_HOUSE_FOR_BUILDING)));
+            WaitUntil.WaitSomeInterval(5000);
+
+            return this;
+        }
+
         [AllureStep("UploadFourImages")]
         public NewBuilding UploadFourImages()
         {

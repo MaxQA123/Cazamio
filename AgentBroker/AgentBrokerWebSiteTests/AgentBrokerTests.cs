@@ -154,5 +154,104 @@ namespace AgentBrokerTests
 
             #endregion
         }
+
+        [Test]
+        [AllureTag("Regression")]
+        [AllureOwner("Maksim Perevalov")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [Retry(2)]
+        [Author("Maksim", "maxqatesting390@gmail.com")]
+        [AllureSuite("Broker")]
+        [AllureSubSuite("AddBuildingAssignedAgentBroker")]
+
+        public void AddBuildingAssignedAgentBroker()
+        {
+            #region SettingsForBuilding
+
+            //Added Filled only mandatory the data, but full address, AuthorizeNet
+            //East 51st Street Pedestrian Crossing
+
+            #endregion
+
+            #region Preconditions Test
+
+            Pages.LogInLandlord
+                 .EnterEmailPasswordLogInPgAsAgentBroker()
+                 .ClickIconShowLogInPg()
+                 .ClickButtonLetsGoLogInPg();
+
+            string getUserNameCompare = Pages.SideBarLandlord.GetUserNameFromSideBar();
+            string getUserNameRoleCompare = Pages.SideBarLandlord.GetUserNameRoleFromSideBar();
+
+            Pages.SideBarLandlord
+                .VerifyAgentBrokerUserNameRole(getUserNameCompare, getUserNameRoleCompare)
+                .ClickButtonBuildingsSidebar();
+
+            #endregion
+
+            #region Test
+
+            Pages.ListOfBuildings
+                .ClickButtonAddBuilding();
+            Pages.NewBuilding
+                .VerifyTitleNewBuildingPg()
+                .SelectOwnerWithAgent()
+                .EnterAgntBrkrFullAddressAgentBroker()
+                .ClickFieldInputInternalNotes();
+
+            string getAddressNewBuildingActual = Pages.NewBuilding.GetValueFromFieldAddress();
+
+            KeyBoardActions.ClickTab();
+
+            string getValueScreeningFee = Pages.NewBuilding.GetValueFromFieldCreditScreeningFee();
+
+            Pages.NewBuilding
+                .VerifyValueByDefaulScreeningFee(getValueScreeningFee)
+                .ClickBtnSelectPaymentMethodsForCreditScreeningFee();
+            Pages.ModalWindowPaymentOptions
+                .SelectCrdtCrdDlvrChckZlVnmForHoldBuilding();
+            Pages.NewBuilding
+                .ClickBtnEditForPaymentSystem();
+            Pages.MdlWndwPaymentKeys
+                .SelectPaymentSystemAuthorizeNet();
+
+            string getItemAuthorizeNetActual = Pages.MdlWndwPaymentKeys.GetItemAuthorizeNet();
+            string getItemApiKeyAuthorizeNetActual = Pages.MdlWndwPaymentKeys.GetItemApiKeyAuthorizeNet();
+
+            Pages.MdlWndwPaymentKeys
+                .VerifyApiKeyAuthorizeNet(getItemAuthorizeNetActual, getItemApiKeyAuthorizeNetActual);
+            Pages.MdlWndwPaymentKeys
+                .ClickButtonSave();
+            Pages.NewBuilding
+                .ClickThreeTimesButtonGeneralNext()
+                .ClickTabFreeStuff()
+                .ClickButtonAddSpecials()
+                .AddFreeStuffInActive()
+                .ClickButtonAddSpecials()
+                .AddFreeStuffIsActiveWithoutName()
+                //Add get value
+                .ClickTabConcessions()
+                .ClickButtonAddSpecials()
+                .AddConcessionInActive()
+                .ClickButtonAddSpecials()
+                .AddConcessionIsActiveWithoutName()
+                //Add get value
+                //Add Assertions
+                .ClickButtonGeneralNext()
+                .UploadOneImages()
+                .ClickButtonSaveBuilding()
+                .VerifyMessageSavedSuccessfullyBuilding();
+            Pages.BuildingView
+                .VerifyTitleBuildingViewPage();
+
+            string getAddressBuildingView = Pages.BuildingView.GetValueFromFieldNotInputAddress();
+
+            Pages.BuildingView
+                .VerifyBuildingAddress(getAddressNewBuildingActual, getAddressBuildingView);
+
+            #endregion
+
+            WaitUntil.WaitSomeInterval(5000);
+        }
     }
 }

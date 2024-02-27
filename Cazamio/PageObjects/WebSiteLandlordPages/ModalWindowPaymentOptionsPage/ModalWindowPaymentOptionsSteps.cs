@@ -59,5 +59,21 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
 
             return this;
         }
+
+        [AllureStep("SelectCrdtCrdDlvrChckZlVnmForHoldBuilding")]
+        public ModalWindowPaymentOptions SelectCrdtCrdDlvrChckZlVnmForHoldBuilding()
+        {
+            Button.Click(ItemCreditCard);
+            Button.Click(ItemDeliverCheck);
+            Button.Click(ItemZelle);
+            Button.Click(ItemVenmo);
+            InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNote, paymentOptions.DeliverCheckNote.ForBuildingHold);
+            InputGeneral.InputFunctionWithClear(FieldInputZelleAddressOrPhone, paymentOptions.Zelle.ForBuildingHold);
+            ButtonForVenmoQrCodeImage.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_PAYMENT_VENMO_HOLD_BUILDING));
+            Button.Click(ButtonSaveMdlWndwOptns);
+            VerifySuccessSelectPmntMthds();
+
+            return this;
+        }
     }
 }

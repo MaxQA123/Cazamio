@@ -56,6 +56,7 @@ namespace CazamioProject.Objects
             public string ZipBuildingMarkAdmAssignedRoleBrkr { get; set; }
             public string ZipBuildingBrokerAssignedRoleAgntBrkr { get; set; }
             public string ZipBuildingBrokerAssignedRoleBrkr { get; set; }
+            public string ZipBuildingAgntBrkrAssignedRolegAgntBrkr { get; set; }
         }
 
         public class NeighborhoodInfo
@@ -64,6 +65,7 @@ namespace CazamioProject.Objects
             public string BuildingMarkAdmAssignedRoleBrkr { get; set; }
             public string BuildingBrokerAssignedRoleAgntBrkr { get; set; }
             public string BuildingBrokerAssignedRoleBrkr { get; set; }
+            public string BuildingAgntBrkrAssignedRoleAgntBrkr { get; set; }
         }
 
         public class CreditScreeningFeeInfo
@@ -128,7 +130,7 @@ namespace CazamioProject.Objects
         {
             #region Settings Building for role Marketplace Admin
 
-            string buildingNumberMarAdmAssignedRoleAgntBrkr = "9999";
+            string buildingNumberMarAdmAssignedRoleAgntBrkr = "9998";
             string addressMarkAdmAssignedRoleAgntBrkr = "Saint Johnson Place";
             string zipBuildingMarkAdmAssignedRoleAgntBrkr = "11213";
             string neighborhoodMarkAdmBuildingAssignedRoleAgntBrkr = "Crown Heights";
@@ -142,15 +144,24 @@ namespace CazamioProject.Objects
 
             #region Settings Building for role Broker
 
-            string buildingNumberBrokerAssignedRoleAgntBrkr = "1";
+            string buildingNumberBrokerAssignedRoleAgntBrkr = "2";
             string addressBrokerAssignedRoleAgntBrkr = "Albermale Rd";
             string zipBuildingBrokerAssignedRoleAgntBrkr = "11226";
             string neighborhoodBrokerBuildingAssignedRoleAgntBrkr = "East Flatbush";
 
-            string buildingNumberBrokerAssignedRoleBrkr = "1-9";
+            string buildingNumberBrokerAssignedRoleBrkr = "10-19";
             string addressBrokerAssignedRoleBrkr = "Crown St";
             string zipBuildingBrokerAssignedRoleBrkr = "11225";
             string neighborhoodBuildingBrokerAssignedRoleBrkr = "Crown Heights";
+
+            #endregion
+            
+            #region Settings Building for role Broker
+
+            string buildingNumberAgntBrkrAssignedRoleAgntBrkr = "100B";
+            string addressAgntBrkrAssignedRoleAgntBrkr = "East 51st Street Pedestrian Crossing";
+            string zipBuildingAgntBrkrAssignedRoleAgntBrkr = "10022";
+            string neighborhoodAgntBrkrBuildingAssignedRoleAgntBrkr = "Manhattan";
 
             #endregion
 
@@ -203,21 +214,24 @@ namespace CazamioProject.Objects
                     ZipBuildingMarkAdmAssignedRoleAgntBrkr = zipBuildingMarkAdmAssignedRoleAgntBrkr,
                     ZipBuildingMarkAdmAssignedRoleBrkr = zipBuildingMarkAdmAssignedRoleBrkr,
                     ZipBuildingBrokerAssignedRoleAgntBrkr = zipBuildingBrokerAssignedRoleAgntBrkr,
-                    ZipBuildingBrokerAssignedRoleBrkr = zipBuildingBrokerAssignedRoleBrkr
+                    ZipBuildingBrokerAssignedRoleBrkr = zipBuildingBrokerAssignedRoleBrkr,
+                    ZipBuildingAgntBrkrAssignedRolegAgntBrkr = zipBuildingAgntBrkrAssignedRoleAgntBrkr
                 },
                 Neighborhood = new NeighborhoodInfo
                 {
                     BuildingMarkAdmAssignedRoleAgntBrkr = neighborhoodMarkAdmBuildingAssignedRoleAgntBrkr,
                     BuildingMarkAdmAssignedRoleBrkr = neighborhoodBuildingMarkAdmAssignedRoleBrkr,
                     BuildingBrokerAssignedRoleAgntBrkr = neighborhoodBrokerBuildingAssignedRoleAgntBrkr,
-                    BuildingBrokerAssignedRoleBrkr = neighborhoodBuildingBrokerAssignedRoleBrkr
+                    BuildingBrokerAssignedRoleBrkr = neighborhoodBuildingBrokerAssignedRoleBrkr,
+                    BuildingAgntBrkrAssignedRoleAgntBrkr = neighborhoodAgntBrkrBuildingAssignedRoleAgntBrkr
                 },
                 NumberWithAddress = new NumberWithAddressInfo
                 {
                     MarkAdmAssignedBroker = buildingNumberMarkAdmAssignedRoleBrkr + " " + addressMarkAdmAssignedRoleBrkr,
                     MarkAdmAssignedAgntBrkr = buildingNumberMarAdmAssignedRoleAgntBrkr + " " + addressMarkAdmAssignedRoleAgntBrkr,
                     BrokerAssignedAgntBrkr = buildingNumberBrokerAssignedRoleAgntBrkr + " " + addressBrokerAssignedRoleAgntBrkr,
-                    BrokerAssignedBroker = buildingNumberBrokerAssignedRoleBrkr + " " + addressBrokerAssignedRoleBrkr
+                    BrokerAssignedBroker = buildingNumberBrokerAssignedRoleBrkr + " " + addressBrokerAssignedRoleBrkr,
+                    AgntBrkrAssignedAgntBrkr = buildingNumberAgntBrkrAssignedRoleAgntBrkr + " " + addressAgntBrkrAssignedRoleAgntBrkr
                 },
                 BuildingName = buildingName,
                 DescriptionShort = descriptionShort,

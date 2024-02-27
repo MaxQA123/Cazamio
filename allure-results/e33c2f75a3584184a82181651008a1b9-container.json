@@ -1,0 +1,78 @@
+{
+  "uuid": "61b79318-de26-4dcf-8df9-653cee902990-tc-0-1000",
+  "name": "AgentBrokerTests.TestsBaseWeb.AddBuildingAssignedAgentBroker",
+  "children": [
+    "8ec980f4-7816-4ce1-a90a-cf26dedadef7-tr-0-1004"
+  ],
+  "befores": [
+    {
+      "name": "DobeforeAllTheTests",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1709029922768,
+      "stop": 1709029922768
+    },
+    {
+      "name": "SetUp",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1709029922769,
+      "stop": 1709029922769
+    }
+  ],
+  "afters": [
+    {
+      "name": "DoAfterEach",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.ElementClickInterceptedException : element click intercepted: Element <a _ngcontent-ng-c203347370=\"\" data-toggle=\"tab\" role=\"tab\" class=\"nav-link\">...</a> is not clickable at point (1482, 157). Other element would receive the click: <div _ngcontent-ng-c203347370=\"\" class=\"slide-block-dashboard\" style=\"width: 20%; transform: translate3d(calc(400%), 0px, 0px); transition: all 0.5s cubic-bezier(0.29, 1.42, 0.79, 1) 0s;\">...</div>\n  (Session info: chrome=122.0.6261.70)\r\nTearDown : System.MissingMethodException : Method not found: 'Void OpenQA.Selenium.Screenshot.SaveAsFile(System.String, OpenQA.Selenium.ScreenshotImageFormat)'.",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\r\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.WebElement.Click()\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663799_o(IWebElement element) in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\MethodHelper.cs:line 65\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663799_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.Helpers.Button.__a$_around_Click_100663799_w_0(Object[] )\r\n   at CazamioProgect.Helpers.Button.Click(IWebElement element)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage.NewBuilding.__a$_around_ClickTabImages_100663504_o() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\NewBuildingPage\\NewBuildingActions.cs:line 260\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage.NewBuilding.__a$_around_ClickTabImages_100663504_u(Object[] )\r\n   at NUnit.Allure.Core.Steps.AllureStepAspect.WrapStep(String name, MethodBase methodBase, Object[] arguments, Func`2 method)\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage.NewBuilding.__a$_around_ClickTabImages_100663504_w_0(Object[] )\r\n   at CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage.NewBuilding.ClickTabImages() in C:\\Automation\\Cazamio\\Cazamio\\PageObjects\\WebSiteLandlordPages\\NewBuildingPage\\NewBuildingAssertions.cs:line 23\r\n   at AgentBrokerTests.TestsBaseWeb.AddBuildingAssignedAgentBroker() in C:\\Automation\\Cazamio\\AgentBroker\\AgentBrokerWebSiteTests\\AgentBrokerTests.cs:line 225\r\n--TearDown\r\n   at CazamioProject.Helpers.ScreenShotHelper.MakeScreenShot()\r\n   at CazamioProgect.Helpers.BaseWeb.DoAfterEach() in C:\\Automation\\Cazamio\\Cazamio\\Helpers\\BaseWeb.cs:line 33"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1709029922769,
+      "stop": 1709029922769
+    },
+    {
+      "name": "DoAfterAllTheTests",
+      "status": "none",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "It's not possible to get status of OneTimeTearDown",
+        "trace": "See Allure.NUnit wiki"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1709029922770,
+      "stop": 1709029922770
+    }
+  ],
+  "links": [],
+  "start": 1709029821867,
+  "stop": 1709029922817
+}

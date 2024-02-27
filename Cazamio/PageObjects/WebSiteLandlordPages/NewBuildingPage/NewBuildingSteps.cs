@@ -35,8 +35,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
-        [AllureStep("EnterFullAddressAgentBroker")]
-        public NewBuilding EnterFullAddressAgentBroker()
+        [AllureStep("EnterBrokerFullAddressAgentBroker")]
+        public NewBuilding EnterBrokerFullAddressAgentBroker()
         {
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputAddress, building.NumberWithAddress.BrokerAssignedAgntBrkr);
@@ -55,6 +55,30 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             KeyBoardActions.ClickEnterButton();
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputNeighborhood, building.Neighborhood.BuildingBrokerAssignedRoleAgntBrkr);
+
+            return this;
+        }
+
+        [AllureStep("EnterAgntBrkrFullAddressAgentBroker")]
+        public NewBuilding EnterAgntBrkrFullAddressAgentBroker()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputAddress, building.NumberWithAddress.AgntBrkrAssignedAgntBrkr);
+            WaitUntil.WaitSomeInterval(500);
+            KeyBoardActions.ClickTab();
+            KeyBoardActions.ClickEnterButton();
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputCity, building.City.NewYork);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputState, building.State);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputZip, building.Zip.ZipBuildingAgntBrkrAssignedRolegAgntBrkr);
+            WaitUntil.WaitSomeInterval(500);
+            KeyBoardActions.ClickArrowDown();
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickEnterButton();
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputNeighborhood, building.Neighborhood.BuildingAgntBrkrAssignedRoleAgntBrkr);
 
             return this;
         }
@@ -214,6 +238,35 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
+        [AllureStep("AddConcessionIsActiveWithoutName")]
+        public NewBuilding AddConcessionIsActiveWithoutName()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputNameSpecials);
+            WaitUntil.CustomElementIsClickable(FieldInputNameSpecials);
+            InputGeneral.InputFunctionWithClear(FieldInputMonthsFree, building.Concessions.MonthsFree);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputLeaseTerms, building.Concessions.LeaseTerms);
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ClickArrowDown();
+            KeyBoardActions.ClickEnterButton();
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonYesSpecials);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(FieldInputDateFrom);
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .SelectCurrentDay();
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(FieldInputDateTo);
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .SelectCurrentDayPlusOneDay();
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonSaveSpecials);
+
+            return this;
+        }
+
         [AllureStep("AddConcessionInActive")]
         public NewBuilding AddConcessionInActive()
         {
@@ -256,6 +309,37 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             WaitUntil.CustomElementIsClickable(FieldInputNameSpecials);
             InputGeneral.InputFunctionWithClear(FieldInputNameSpecials, building.FreeStuff.Name);
             WaitUntil.WaitSomeInterval(100);
+            Button.Click(FieldInputSelectItemsFreeStuff);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ItemFreeNetflix);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ItemGoogleSpeaker);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonYesSpecials);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(FieldInputDateFrom);
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .SelectCurrentDay();
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(FieldInputDateTo);
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .SelectCurrentDayPlusOneDay();
+            WaitUntil.WaitSomeInterval(100);
+            KeyBoardActions.ScrollToDown();
+            Button.Click(ButtonLeaseSignedTriggerEvent);
+            WaitUntil.WaitSomeInterval(100);
+            Button.Click(ButtonSaveSpecials);
+
+            return this;
+        }
+
+        [AllureStep("AddFreeStuffIsActiveWithoutName")]
+        public NewBuilding AddFreeStuffIsActiveWithoutName()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputNameSpecials);
+            WaitUntil.CustomElementIsClickable(FieldInputNameSpecials);
             Button.Click(FieldInputSelectItemsFreeStuff);
             WaitUntil.WaitSomeInterval(100);
             Button.Click(ItemFreeNetflix);
