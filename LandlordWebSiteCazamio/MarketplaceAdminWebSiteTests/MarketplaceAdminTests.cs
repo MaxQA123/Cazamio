@@ -800,9 +800,9 @@ namespace MarketplaceAdminTests
         [Retry(2)]
         [Author("Maksim", "maxqatesting390@gmail.com")]
         [AllureSuite("MarketplaceAdmin")]
-        [AllureSubSuite("AddApartment")]
+        [AllureSubSuite("AddApartmentAssignedBroker")]
 
-        public void AddApartment()
+        public void AddApartmentAssignedBroker()
         {
             #region Preconditions Test
 
