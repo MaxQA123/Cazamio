@@ -141,13 +141,12 @@ namespace CazamioProject.Objects
             public string MostRecentSavingsAccountStatement { get; set; }
             public string CpaLetterSelfEmployed { get; set; }
             public string PaidInvoicesSelfEmployed { get; set; }
-            public string TwelveMonths { get; set; }
-            public string EighteenMonths { get; set; }
-            public string EighteenMonths { get; set; }
-            public string TwelveMonths { get; set; }
-            public string EighteenMonths { get; set; }
-            public string TwelveMonths { get; set; }
-            public string EighteenMonths { get; set; }
+            public string ProofOfCreditOrCollectionDisputeIfApplicable { get; set; }
+            public string AnyAdditionalFinancialAssets { get; set; }
+            public string ThreeMostRecentRentPayments { get; set; }
+            public string MostRecentTaxReturn { get; set; }
+            public string ThreeRecentPaystubs { get; set; }
+            public string SixMostRecentRentPayments { get; set; }
         }
 
         public Apartment Generate()
@@ -199,7 +198,7 @@ namespace CazamioProject.Objects
             string valueHoldDeposit = "700";
             string itemTwelveMonths = "12 months";
             string itemEighteenMonths = "18 months";
-
+            #region Required Documents 
             string itemTwoRecentPaystubs = "2 Recent paystubs";
             string itemSocialSecurityCard = "Social Security Card";
             string itemEmploymentVerificationLetter = "Employment Verification Letter";
@@ -218,9 +217,13 @@ namespace CazamioProject.Objects
             string itemMostRecentSavingsAccountStatement = "Most Recent savings account statement";
             string itemCpaLetterSelfEmployed = "CPA letter (self-employed)";
             string itemPaidInvoicesSelfEmployed = "Paid invoices (self-employed)";
-            string valueHoldDeposit = "";
-            string itemTwelveMonths = "";
-            string itemEighteenMonths = "";
+            string itemProofOfCreditOrCollectionDisputeIfApplicable = "Proof of credit or collection dispute (If Applicable)";
+            string itemAnyAdditionalFinancialAssets = "Any additional financial assets";
+            string itemThreeMostRecentRentPayments = "3 most recent rent payments";
+            string itemMostRecentTaxReturn = "Most recent tax return";
+            string itemThreeRecentPaystubs = "3 recent paystubs";
+            string itemSixMostRecentRentPayments = "6 most recent rent payments";
+            #endregion
 
             string fullUserNameBroker = "Leoautotest Feabroker";
 
@@ -328,12 +331,13 @@ namespace CazamioProject.Objects
                     MostRecentCheckingAccountStatement = itemMostRecentCheckingAccountStatement,
                     MostRecentSavingsAccountStatement = itemMostRecentSavingsAccountStatement,
                     CpaLetterSelfEmployed = itemCpaLetterSelfEmployed,
-                    EighteenMonths = itemEighteenMonths,
-                    EighteenMonths = itemEighteenMonths,
-                    EighteenMonths = itemEighteenMonths,
-                    EighteenMonths = itemEighteenMonths,
-                    EighteenMonths = itemEighteenMonths,
-                    EighteenMonths = itemEighteenMonths
+                    PaidInvoicesSelfEmployed = itemPaidInvoicesSelfEmployed,
+                    ProofOfCreditOrCollectionDisputeIfApplicable = itemProofOfCreditOrCollectionDisputeIfApplicable,
+                    AnyAdditionalFinancialAssets = itemAnyAdditionalFinancialAssets,
+                    ThreeMostRecentRentPayments = itemThreeMostRecentRentPayments,
+                    MostRecentTaxReturn = itemMostRecentTaxReturn,
+                    ThreeRecentPaystubs = itemThreeRecentPaystubs,
+                    SixMostRecentRentPayments = itemSixMostRecentRentPayments
                 },
                 FullUserNameBroker = fullUserNameBroker,
 
