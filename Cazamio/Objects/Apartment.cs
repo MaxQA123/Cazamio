@@ -20,6 +20,10 @@ namespace CazamioProject.Objects
         public MonthlyRentsPrePaymentInfo MonthlyRentsPrePayment { get; set; }
         public FloorInfo Floor { get; set; }
         public ApartmentStatusInfo ApartmentStatus { get; set; }
+        public ApartmentTypeInfo ApartmentType { get; set; }
+        public string ApartmentHoldDeposit { get; set; }
+        public RentalTermsInfo RentalTerms { get; set; }
+        public RequiredDocumentsInfo RequiredDocuments { get; set; }
         public string FullUserNameBroker { get; set; }
 
         public class UnitNumberInfo
@@ -102,13 +106,60 @@ namespace CazamioProject.Objects
             public string SignedLease { get; set; }
         }
 
+        public class ApartmentTypeInfo
+        {
+            public string MultiFamily { get; set; }
+            public string SingleFamily { get; set; }
+            public string Duplex { get; set; }
+            public string Plex { get; set; }
+            public string Loft { get; set; }
+        }
+
+        public class RentalTermsInfo
+        {
+            public string TwelveMonths { get; set; }
+            public string EighteenMonths { get; set; }
+        }
+
+        public class RequiredDocumentsInfo
+        {
+            public string TwoRecentPaystubs { get; set; }
+            public string SocialSecurityCard { get; set; }
+            public string EmploymentVerificationLetter { get; set; }
+            public string WTwoFromPreviousYear { get; set; }
+            public string OtherPertinentDocuments { get; set; }
+            public string GovIssuedId { get; set; }
+            public string SecondaryPhotoId { get; set; }
+            public string StudentVerification { get; set; }
+            public string MostRecentBankStatement { get; set; }
+            public string TwoMostRecentBankStatements { get; set; }
+            public string LandlordReference { get; set; }
+            public string ProofOfLastThreeRentPayments { get; set; }
+            public string ProofOfLastTwelveRentPayments { get; set; }
+            public string MostRecentWTwoOrOneThousandNine { get; set; }
+            public string MostRecentCheckingAccountStatement { get; set; }
+            public string MostRecentSavingsAccountStatement { get; set; }
+            public string CpaLetterSelfEmployed { get; set; }
+            public string PaidInvoicesSelfEmployed { get; set; }
+            public string TwelveMonths { get; set; }
+            public string EighteenMonths { get; set; }
+            public string EighteenMonths { get; set; }
+            public string TwelveMonths { get; set; }
+            public string EighteenMonths { get; set; }
+            public string TwelveMonths { get; set; }
+            public string EighteenMonths { get; set; }
+        }
+
         public Apartment Generate()
         {
             string unitNumberMarkAdmAssignedRoleAgntBrkr = "1";
             string unitNumberMarkAdmAssignedRoleBrkr = "9999";
+
             string unitNumberBrokerAssignedRoleAgntBrkr = "AA";
             string unitNumberBrokerAssignedRoleBrkr = "1A";
+
             string unitNumberAgntBrkrAssignedRoleAgntBrkr = "1-9";
+
             string bedroomsOneNumber = GenerateRandomDataHelper.RandomNumberWithoutZero(1);
             string bedroomsTwoNumber = GenerateRandomDataHelper.RandomNumberWithoutZero(2);
             string halfBedroomsOneNumber = GenerateRandomDataHelper.RandomNumberWithoutZero(1);
@@ -134,12 +185,42 @@ namespace CazamioProject.Objects
             string floorOneNumber = GenerateRandomDataHelper.RandomNumberWithoutZero(1);
             string floorTwoNumber = GenerateRandomDataHelper.RandomNumberWithoutZero(2);
             string floorThreeNumber = GenerateRandomDataHelper.RandomNumberWithoutZero(3);
-            string itemOffMarket = "";
-            string itemOccupied = "";
-            string itemVacant = "";
-            string itemDepositReceived = "";
-            string itemApplicationSubmitted = "";
-            string itemSignedLease = "";
+            string itemOffMarket = "Off market";
+            string itemOccupied = "Occupied";
+            string itemVacant = "Vacant";
+            string itemDepositReceived = "Deposit received";
+            string itemApplicationSubmitted = "Application submitted";
+            string itemSignedLease = "Signed lease";
+            string itemMultiFamily = "MultiFamily";
+            string itemSingleFamily = "SingleFamily";
+            string itemDuplex = "Duplex";
+            string itemPlex = "Plex";
+            string itemLoft = "Loft";
+            string valueHoldDeposit = "700";
+            string itemTwelveMonths = "12 months";
+            string itemEighteenMonths = "18 months";
+
+            string itemTwoRecentPaystubs = "2 Recent paystubs";
+            string itemSocialSecurityCard = "Social Security Card";
+            string itemEmploymentVerificationLetter = "Employment Verification Letter";
+            string itemWTwoFromPreviousYear = "W-2 From previous year";
+            string itemOtherPertinentDocuments = "Other pertinent documents";
+            string itemGovIssuedId = "Gov issued ID";
+            string itemSecondaryPhotoId = "Secondary photo ID";
+            string itemStudentVerification = "Student verification";
+            string itemMostRecentBankStatement = "Most recent bank statement";
+            string itemTwoMostRecentBankStatements = "2 Most recent bank statements";
+            string itemLandlordReference = "Landlord Reference";
+            string itemProofOfLastThreeRentPayments = "Proof of last 3 rent payments";
+            string itemProofOfLastTwelveRentPayments = "Proof of last 12 rent payments";
+            string itemMostRecentWTwoOrOneThousandNine = "Most recent W-2 or 1099";
+            string itemMostRecentCheckingAccountStatement = "Most Recent checking account statement";
+            string itemMostRecentSavingsAccountStatement = "Most Recent savings account statement";
+            string itemCpaLetterSelfEmployed = "CPA letter (self-employed)";
+            string itemPaidInvoicesSelfEmployed = "Paid invoices (self-employed)";
+            string valueHoldDeposit = "";
+            string itemTwelveMonths = "";
+            string itemEighteenMonths = "";
 
             string fullUserNameBroker = "Leoautotest Feabroker";
 
@@ -213,6 +294,46 @@ namespace CazamioProject.Objects
                     DepositReceived = itemDepositReceived,
                     ApplicationSubmitted = itemApplicationSubmitted,
                     SignedLease = itemSignedLease
+                },
+                ApartmentType = new ApartmentTypeInfo
+                {
+                    MultiFamily = itemMultiFamily,
+                    SingleFamily = itemSingleFamily,
+                    Duplex = itemDuplex,
+                    Plex = itemPlex,
+                    Loft = itemLoft
+                },
+                ApartmentHoldDeposit = valueHoldDeposit,
+                RentalTerms = new RentalTermsInfo
+                {
+                    TwelveMonths = itemTwelveMonths,
+                    EighteenMonths = itemEighteenMonths
+                },
+                RequiredDocuments = new RequiredDocumentsInfo
+                {
+                    TwoRecentPaystubs = itemTwoRecentPaystubs,
+                    SocialSecurityCard = itemSocialSecurityCard,
+                    EmploymentVerificationLetter = itemEmploymentVerificationLetter,
+                    WTwoFromPreviousYear = itemWTwoFromPreviousYear,
+                    OtherPertinentDocuments = itemOtherPertinentDocuments,
+                    GovIssuedId = itemGovIssuedId,
+                    SecondaryPhotoId = itemSecondaryPhotoId,
+                    StudentVerification = itemStudentVerification,
+                    MostRecentBankStatement = itemMostRecentBankStatement,
+                    TwoMostRecentBankStatements = itemTwoMostRecentBankStatements,
+                    LandlordReference = itemLandlordReference,
+                    ProofOfLastThreeRentPayments = itemProofOfLastThreeRentPayments,
+                    ProofOfLastTwelveRentPayments = itemProofOfLastTwelveRentPayments,
+                    MostRecentWTwoOrOneThousandNine = itemMostRecentWTwoOrOneThousandNine,
+                    MostRecentCheckingAccountStatement = itemMostRecentCheckingAccountStatement,
+                    MostRecentSavingsAccountStatement = itemMostRecentSavingsAccountStatement,
+                    CpaLetterSelfEmployed = itemCpaLetterSelfEmployed,
+                    EighteenMonths = itemEighteenMonths,
+                    EighteenMonths = itemEighteenMonths,
+                    EighteenMonths = itemEighteenMonths,
+                    EighteenMonths = itemEighteenMonths,
+                    EighteenMonths = itemEighteenMonths,
+                    EighteenMonths = itemEighteenMonths
                 },
                 FullUserNameBroker = fullUserNameBroker,
 
