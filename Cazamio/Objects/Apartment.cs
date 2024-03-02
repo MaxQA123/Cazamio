@@ -24,6 +24,8 @@ namespace CazamioProject.Objects
         public string ApartmentHoldDeposit { get; set; }
         public RentalTermsInfo RentalTerms { get; set; }
         public RequiredDocumentsInfo RequiredDocuments { get; set; }
+        public string Description { get; set; }
+        public string InternalNotes { get; set; }
         public string FullUserNameBroker { get; set; }
 
         public class UnitNumberInfo
@@ -224,6 +226,8 @@ namespace CazamioProject.Objects
             string itemThreeRecentPaystubs = "3 recent paystubs";
             string itemSixMostRecentRentPayments = "6 most recent rent payments";
             #endregion
+            string description = "Descrption for APARTMENT (12345) (*&%$#@!) (098765) (*&^)";
+            string internalNotes = "Internal Notes for APARTMENT (12345) (*&%$#@!) (09876) (*&^)";
 
             string fullUserNameBroker = "Leoautotest Feabroker";
 
@@ -339,6 +343,8 @@ namespace CazamioProject.Objects
                     ThreeRecentPaystubs = itemThreeRecentPaystubs,
                     SixMostRecentRentPayments = itemSixMostRecentRentPayments
                 },
+                Description = description,
+                InternalNotes = internalNotes,
                 FullUserNameBroker = fullUserNameBroker,
 
             };
