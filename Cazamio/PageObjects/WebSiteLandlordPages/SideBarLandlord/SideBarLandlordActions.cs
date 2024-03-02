@@ -23,7 +23,9 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.SideBarLandlord
         [AllureStep("UploadImageLogoLandlordFirst")]
         public SideBarLandlord UploadImageLogoLandlordFirst()
         {
-            WaitUntil.WaitSomeInterval(3000);
+            WaitUntil.CustomElementIsVisible(ButtonUploadLogoOfLandlord);
+            WaitUntil.CustomElementIsClickable(ButtonUploadLogoOfLandlord);
+            //WaitUntil.WaitSomeInterval(3000);
             ButtonUploadLogoOfLandlord.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.LOGO_IMG_ADMIN_FIRST));
             WaitUntil.CustomElementIsVisible(MessageChangeImageLogoLandlordSuccess);
             return this;

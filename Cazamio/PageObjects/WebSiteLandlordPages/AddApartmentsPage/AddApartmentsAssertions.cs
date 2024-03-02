@@ -14,27 +14,18 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [AllureStep("VerifyTitleAddApartmentsPage")]
         public AddApartments VerifyTitleAddApartmentsPage()
         {
-            WaitUntil.CustomElementIsVisible(TitleAddApartmentsPage, 10);
+            WaitUntil.CustomElementIsVisible(TitleAddApartmentsPage);
             Assert.IsTrue(Successfully.IsVisible(TitleAddApartmentsPage));
 
             return this;
         }
 
-        [AllureStep("GetBuildingNameAddApartmentsPage")]
-        public string GetBuildingNameAddApartmentsPage()
-        {
-            WaitUntil.CustomElementIsVisible(ButtonBuildingNameAddApartmentsUnitsPage, 10);
-            string getBuildingName = ButtonBuildingNameAddApartmentsUnitsPage.Text;
-            string getBuildingNameActual = getBuildingName.ToString();
-
-            return getBuildingNameActual;
-        }
-
         [AllureStep("VerifyBuildingNameAddApartmentsPage")]
-        public AddApartments VerifyBuildingNameAddApartmentsPage(string getBuildingNameAddApartmentsPage)
+        public AddApartments VerifyBuildingNameAddApartmentsPage(string getBuildingNameFromBuildingView, string getBuildingNameFromAddApartments)
         {
-            WaitUntil.WaitSomeInterval(5000);
-            Assert.AreEqual(getBuildingNameAddApartmentsPage, building.BuildingName);
+            WaitUntil.WaitSomeInterval(100);
+            Assert.AreEqual(getBuildingNameFromBuildingView, getBuildingNameFromAddApartments);
+            Console.WriteLine($"{getBuildingNameFromBuildingView} = {getBuildingNameFromAddApartments}");
 
             return this;
         }

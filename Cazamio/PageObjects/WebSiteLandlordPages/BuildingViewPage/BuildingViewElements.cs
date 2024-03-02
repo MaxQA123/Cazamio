@@ -16,6 +16,9 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage
         [FindsBy(How = How.XPath, Using = ("//div[@class = 'form-result-wrapper']/div/div[2]"))]
         public IWebElement FieldNotInputAddress;
 
+        [FindsBy(How = How.XPath, Using = ("//building-view//form//div/div"))]
+        public IWebElement FieldNotInputBuildingName;
+
         #region TabsLine
 
         [FindsBy(How = How.XPath, Using = ("//a[text() = 'Apartments']"))]
@@ -25,8 +28,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage
 
         #region InTabApartments
 
-        [FindsBy(How = How.XPath, Using = ("//app-building-apartments//cazamio-button[@ng-reflect-text = 'Add']"))]
-        public IWebElement ButtonAddInTabApartmentsBldngVwPg;
+        [FindsBy(How = How.XPath, Using = ("//app-building-apartments//span[text() = 'Add']"))]
+        public IWebElement ButtonAddInTabApartments;
 
         [FindsBy(How = How.XPath, Using = (""))]
         public IWebElement ButtonUnitSortingInTabApartmentsBldngVwPg;

@@ -13,6 +13,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
     {
         string buildingAddress = TestDataForWebSiteAdmin.SHORT_ADDRESS_BUILDING_FIFTEEN_MP_FOR_BROKER;
         Building building = new Building().Generate();
+        Apartment apartment = new Apartment().Generate();
 
         [AllureStep("ClickButtonAddBuilding")]
         public ListOfBuildings ClickButtonAddBuilding()
@@ -30,13 +31,13 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
         {
             WaitUntil.CustomElementIsVisible(FieldInputSearch);
             WaitUntil.CustomElementIsClickable(FieldInputSearch);
-            InputGeneral.InputFunctionWithClear(FieldInputSearch, building.NumberWithAddress.MarkAdmAssignedBroker);
+            InputGeneral.InputFunctionWithClear(FieldInputSearch, apartment.BuildingShortAddress.MarkAdmAssignedBroker);
 
             return this;
         }
 
-        [AllureStep("SelectItemFirstBuildingOnPage")]
-        public ListOfBuildings SelectItemFirstBuildingOnPage()
+        [AllureStep("SelectItemFirst")]
+        public ListOfBuildings SelectItemFirst()
         {
             WaitUntil.CustomElementIsVisible(ItemFirstBuildingOnPage);
             Button.Click(ItemFirstBuildingOnPage);
@@ -58,7 +59,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
             Button.Click(ItemFirstBuildingOnPage);
             WaitUntil.WaitSomeInterval(3000);
             Pages.BuildingView
-                .ClickTabApartmentsBldngVwPg();
+                .ClickButtonAddInTabApartments();
             KeyBoardActions.ScrollToDown();
             Pages.BuildingView
                 .SelectUnitFourInTabApartmentsBldngVwPg();

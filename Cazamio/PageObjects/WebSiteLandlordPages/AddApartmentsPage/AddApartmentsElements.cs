@@ -15,11 +15,14 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
 
         #region TabUnits
 
-        [FindsBy(How = How.XPath, Using = ("//span[text() = 'Original ZIP Manhattan Creator Chui Assigned Martin']"))]
+        [FindsBy(How = How.XPath, Using = ("//ng-select[@bindlabel = 'buildingName']//div[@aria-haspopup = 'listbox']"))]
         public IWebElement ButtonBuildingNameAddApartmentsUnitsPage;
 
         [FindsBy(How = How.XPath, Using = ("//input[@id = 'unit']"))]
         public IWebElement FieldInputUnitNumberAddAprtmntsUnitsPage;
+
+        [FindsBy(How = How.XPath, Using = ("//div[@aria-selected = 'true']//span"))]
+        public IWebElement GetValueFromFieldBuildingName;
 
         [FindsBy(How = How.XPath, Using = ("//input[@id = 'bedrooms']"))]
         public IWebElement FieldInputBedroomsAddAprtmntsUnitsPage;

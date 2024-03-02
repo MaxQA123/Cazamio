@@ -26,6 +26,7 @@ namespace CazamioProject.Objects
         public RequiredDocumentsInfo RequiredDocuments { get; set; }
         public string Description { get; set; }
         public string InternalNotes { get; set; }
+        public BuildingShortAddressInfo BuildingShortAddress { get; set; }
         public string FullUserNameBroker { get; set; }
 
         public class UnitNumberInfo
@@ -151,10 +152,17 @@ namespace CazamioProject.Objects
             public string SixMostRecentRentPayments { get; set; }
         }
 
+        public class BuildingShortAddressInfo
+        {
+            public string MarkAdmAssignedBroker { get; set; }
+            public string EighteenMonths { get; set; }
+        }
+
         public Apartment Generate()
         {
             string unitNumberMarkAdmAssignedRoleAgntBrkr = "1";
             string unitNumberMarkAdmAssignedRoleBrkr = "9999";
+            string buildingShortAddressMarkAdmAssignedRoleBrkr = "29 Washington Square";
 
             string unitNumberBrokerAssignedRoleAgntBrkr = "AA";
             string unitNumberBrokerAssignedRoleBrkr = "1A";
@@ -346,7 +354,11 @@ namespace CazamioProject.Objects
                 Description = description,
                 InternalNotes = internalNotes,
                 FullUserNameBroker = fullUserNameBroker,
-
+                BuildingShortAddress = new BuildingShortAddressInfo
+                {
+                    MarkAdmAssignedBroker = buildingShortAddressMarkAdmAssignedRoleBrkr,
+                    EighteenMonths = itemEighteenMonths
+                },
             };
             return apartment;
         }

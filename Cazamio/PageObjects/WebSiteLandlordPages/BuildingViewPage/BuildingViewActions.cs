@@ -13,10 +13,11 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage
     {
         #region TabsLine
 
-        [AllureStep("ClickTabApartmentsBldngVwPg")]
-        public BuildingView ClickTabApartmentsBldngVwPg()
+        [AllureStep("ClickTabApartments")]
+        public BuildingView ClickTabApartments()
         {
             WaitUntil.CustomElementIsVisible(TabApartmentsBldngVwPg);
+            WaitUntil.CustomElementIsClickable(TabApartmentsBldngVwPg);
             Button.Click(TabApartmentsBldngVwPg);
 
             return this;
@@ -25,9 +26,18 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage
         [AllureStep("GetValueFromFieldNotInputAddress")]
         public string GetValueFromFieldNotInputAddress()
         {
-            WaitUntil.WaitSomeInterval(1000);
             WaitUntil.CustomElementIsVisible(FieldNotInputAddress);
             string getValue = FieldNotInputAddress.Text;
+            string getValueActual = getValue.ToString();
+
+            return getValueActual;
+        }
+
+        [AllureStep("GetValueFromFieldNotInputBuildingName")]
+        public string GetValueFromFieldNotInputBuildingName()
+        {
+            WaitUntil.CustomElementIsVisible(FieldNotInputBuildingName);
+            string getValue = FieldNotInputBuildingName.Text;
             string getValueActual = getValue.ToString();
 
             return getValueActual;
@@ -37,11 +47,12 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage
 
         #region InTabApartments
 
-        [AllureStep("ClickButtonAddInTabApartmentsBldngVwPg")]
-        public BuildingView ClickButtonAddInTabApartmentsBldngVwPg()
+        [AllureStep("ClickButtonAddInTabApartments")]
+        public BuildingView ClickButtonAddInTabApartments()
         {
-            WaitUntil.CustomElementIsVisible(ButtonAddInTabApartmentsBldngVwPg, 10);
-            Button.Click(ButtonAddInTabApartmentsBldngVwPg);
+            WaitUntil.CustomElementIsVisible(ButtonAddInTabApartments);
+            WaitUntil.CustomElementIsClickable(ButtonAddInTabApartments);
+            Button.Click(ButtonAddInTabApartments);
 
             return this;
         }

@@ -130,6 +130,7 @@ namespace CazamioProject.Objects
         public class BuildingNameInfo
         {
             public string MarkAdmAssignedRoleBrkr { get; set; }
+            public string BrokerAssignedRoleAgnt { get; set; }
         }
 
         public Building Generate()
@@ -288,7 +289,8 @@ namespace CazamioProject.Objects
                 },
                 BuildingName = new BuildingNameInfo
                 {
-                    MarkAdmAssignedRoleBrkr = shortBuildingName + " " + buildingNumberMarkAdmAssignedRoleBrkr + " " + addressMarkAdmAssignedRoleBrkr
+                    MarkAdmAssignedRoleBrkr = shortBuildingName + " " + buildingNumberMarkAdmAssignedRoleBrkr + " " + addressMarkAdmAssignedRoleBrkr,
+                    BrokerAssignedRoleAgnt = shortBuildingName + " " + buildingNumberBrokerAssignedRoleAgntBrkr + " " + addressBrokerAssignedRoleAgntBrkr
                 },
             };
             return building;

@@ -122,51 +122,51 @@ namespace BrokerTests
                 .VerifyChangingAvatarImageLandlord()
                 .ClicklinkRemovePhotoOfLandlord()
                 .VerifyRewmoveAvatarImageLandlord()
-                .ClickButtonDashboardSidebar();
+                .ClickButtonDashboard();
             Pages.Dashboard
                 .VerifyTitleOfDashboardPg();
             Pages.SideBarLandlord
-                .ClickButtonBuildingsSidebar();
+                .ClickButtonBuildings();
             Pages.ListOfBuildings
                 .VerifyTitleListOfBuildingsPg();
             Pages.SideBarLandlord
-                .ClickButtonApartmentsSidebar();
+                .ClickButtonApartments();
             Pages.ListOfApartments
                 .VerifyTitleListOfApartmentsPg();
             Pages.SideBarLandlord
-                .ClickButtonApplicationsSidebar();
+                .ClickButtonApplications();
             Pages.ListOfApplications
                 .VerifyTitleListOfApplicationsPg();
             Pages.SideBarLandlord
-                .ClickButtonLeaseSignDocumentsSidebar();
+                .ClickButtonLeaseSignDocuments();
             Pages.Templates
                 .VerifyTitleTemplatesPagePg();
             Pages.SideBarLandlord
-                .ClickButtonPaymentSettingsSidebar();
+                .ClickButtonPaymentSettings();
             Pages.PaymentSettings
                 .VerifyTitlePaymentSettingsPagePg();
             Pages.SideBarLandlord
-                .ClickButtonTransactionsSidebar();
+                .ClickButtonTransactions();
             Pages.ListOfTransactions
                 .VerifyTitleTransactionsPg();
             //Pages.SideBarLandlord
-            //    .ClickButtonCommissionsSidebar();
+            //    .ClickButtonCommissions();
             //Pages.ListOfCommissions
             //    .VerifyTitleListOfCommissionsPg();
             Pages.SideBarLandlord
-                .ClickButtonAgentsSidebar();
+                .ClickButtonAgents();
             Pages.Agents
                 .VerifyTitleBrokersPg();
             Pages.SideBarLandlord
-                .ClickButtonOwnersSidebar();
+                .ClickButtonOwners();
             Pages.ListOfOwners
                 .VerifyTitleListOfOwnersPg();
             Pages.SideBarLandlord
-               .ClickButtonMarketplaceSidebar();
+               .ClickButtonMarketplace();
             Pages.Marketplace
                 .VerifyTitleMarketplacePg();
             Pages.SideBarLandlord
-                .ClickButtonLogOutSidebar();
+                .ClickButtonLogOut();
             Pages.LogInLandlord
                 .VerifyTitleLogInPg();
 
@@ -202,7 +202,7 @@ namespace BrokerTests
 
             Pages.SideBarLandlord
                 .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare)
-                .ClickButtonAgentsSidebar();
+                .ClickButtonAgents();
 
             #endregion
 
@@ -222,7 +222,7 @@ namespace BrokerTests
                 .VerifyMessageNewAgentCreatedSuccessfullyCrtNwAgntOnMdlwndw();
             KeyBoardActions.ClickEscapeButton();
             Pages.SideBarLandlord
-                .ClickButtonLogOutSidebar();
+                .ClickButtonLogOut();
             Pages.JScriptExecutorHelper
                 .OpenNewTab()
                 .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAgentMySpace, partEmailPutsBox);
@@ -296,7 +296,7 @@ namespace BrokerTests
 
             Pages.SideBarLandlord
                 .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare)
-                .ClickButtonOwnersSidebar();
+                .ClickButtonOwners();
 
             #endregion
 
@@ -383,7 +383,7 @@ namespace BrokerTests
 
             Pages.SideBarLandlord
                 .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare)
-                .ClickButtonBuildingsSidebar();
+                .ClickButtonBuildings();
 
             #endregion
 
@@ -474,7 +474,7 @@ namespace BrokerTests
 
             Pages.SideBarLandlord
                 .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare)
-                .ClickButtonBuildingsSidebar();
+                .ClickButtonBuildings();
 
             #endregion
 
@@ -490,7 +490,7 @@ namespace BrokerTests
             string getAddressNewBuildingActual = Pages.NewBuilding.GetValueFromFieldAddress();
 
             Pages.NewBuilding
-                .EnterBuildingName()
+                .EnterBuildingNameBrokerAssignedAgent()
                 .EnterLlcNameForAgent()
                 .EnterLongInternalNotesDescription();
             KeyBoardActions.ClickTab();
@@ -602,7 +602,7 @@ namespace BrokerTests
 
             Pages.SideBarLandlord
                 .VerifyBrokerUserName(getUserNameCompare, getUserNameRoleCompare)
-                .ClickButtonOwnersSidebar();
+                .ClickButtonOwners();
             Pages.PaginationPicker
                 .SctollToButtonNext();
 

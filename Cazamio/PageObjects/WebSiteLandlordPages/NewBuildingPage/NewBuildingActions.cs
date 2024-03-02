@@ -50,6 +50,15 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
             return this;
         }
 
+        [AllureStep("EnterBuildingNameBrokerAssignedAgent")]
+        public NewBuilding EnterBuildingNameBrokerAssignedAgent()
+        {
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputBuildingName, building.BuildingName.BrokerAssignedRoleAgnt);
+
+            return this;
+        }
+
         [AllureStep("EnterLlcNameForBroker")]
         public NewBuilding EnterLlcNameForBroker()
         {

@@ -15,31 +15,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
     {
         Building building = new Building().Generate();
 
-        #region TabUnits
-
-        [AllureStep("EnterUnitNumberBedsBathsSqFoot")]
-        public AddApartments EnterUnitNumberBedsBathsSqFoot()
-        {
-            WaitUntil.CustomElementIsVisible(FieldInputUnitNumberAddAprtmntsUnitsPage, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputUnitNumberAddAprtmntsUnitsPage, TestDataForWebSiteAdmin.UNIT_NUMBER);
-            
-            WaitUntil.CustomElementIsVisible(FieldInputBedroomsAddAprtmntsUnitsPage, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputBedroomsAddAprtmntsUnitsPage, GenerateRandomDataHelper.RandomNumberWithoutZero(1));
-            
-            WaitUntil.CustomElementIsVisible(FieldInputHalfBedroomsAddAprtmntsUnitsPage, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputHalfBedroomsAddAprtmntsUnitsPage, TestDataForWebSiteAdmin.HALF_BEDS_BATHS_NUMBER);
-            
-            WaitUntil.CustomElementIsVisible(FieldInputBathroomsAddAprtmntsUnitsPage, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputBathroomsAddAprtmntsUnitsPage, GenerateRandomDataHelper.RandomNumberWithoutZero(1));
-            
-            WaitUntil.CustomElementIsVisible(FieldInputHalfBathroomsAddAprtmntsUnitsPage, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputHalfBathroomsAddAprtmntsUnitsPage, TestDataForWebSiteAdmin.HALF_BEDS_BATHS_NUMBER);
-            
-            WaitUntil.CustomElementIsVisible(FieldInputSqFootAddAprtmntsUnitsPage, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputSqFootAddAprtmntsUnitsPage, GenerateRandomDataHelper.RandomNumberWithoutZero(3));
-
-            return this;
-        }
+        #region TabUnits     
 
         [AllureStep("EnterUnitNumberBedsBathsSqFoot")]
         public AddApartments EnterLeasePriceSecurityDeposit()
@@ -60,41 +36,6 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             return this;
         }
 
-        [AllureStep("SelectStatusVacantAddAprtmntsUnitsPage")]
-        public AddApartments SelectStatusVacantAddAprtmntsUnitsPage()
-        {
-            WaitUntil.CustomElementIsVisible(ButtonApartmentStatusAddAprtmntsUnitsPage, 10);
-            Button.Click(ButtonApartmentStatusAddAprtmntsUnitsPage);
-            KeyBoardActions.ClickArrowDown();
-            KeyBoardActions.ClickArrowDown();
-            KeyBoardActions.ClickEnterButton();
-
-            return this;
-        }
-
-        [AllureStep("SelectAgentAddAprtmntsUnitsPage")]
-        public AddApartments SelectAgentAddAprtmntsUnitsPage()
-        {
-            WaitUntil.CustomElementIsVisible(ButtonAssignedAgentAddAprtmntsUnitsPage, 10);
-            Button.Click(ButtonAssignedAgentAddAprtmntsUnitsPage);
-            KeyBoardActions.ClickArrowDown();
-            KeyBoardActions.ClickEnterButton();
-
-            return this;
-        }
-
-        //[AllureStep("SelectDateAvailableFromAprtmntsUnitsPage")]
-        //public AddApartments SelectDateAvailableFromAprtmntsUnitsPage()
-        //{
-        //    WaitUntil.CustomElementIsVisible(FieldInputAvailableFromAddAprtmntsUnitsPage, 10);
-        //    Button.Click(FieldInputAvailableFromAddAprtmntsUnitsPage);
-        //    WaitUntil.WaitSomeInterval(100);
-        //    Pages.DatePicker
-        //        .SelectDayOnDatePickerSecondLine(DaysThirdLineForDatePiker.THIRD_LINE_FIRST_NUMBER, " ");
-
-        //    return this;
-        //}
-
         [AllureStep("ClickButtonPaymentMethodsAddAprtmntsUnitsPage")]
         public AddApartments ClickButtonPaymentMethodsAddAprtmntsUnitsPage()
         {
@@ -103,17 +44,6 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             
             return this;
         }
-
-        //[AllureStep("EnterDescriptionInternalNotesAddAprtmntsUnitsPage")]
-        //public AddApartments EnterDescriptionInternalNotesAddAprtmntsUnitsPage()
-        //{
-        //    WaitUntil.CustomElementIsVisible(FieldInputDescriptionAddAprtmntsUnitsPage, 10);
-        //    InputGeneral.InputFunctionWithClear(FieldInputDescriptionAddAprtmntsUnitsPage, GeneralTestDataForAllUsers.TEXT_DESCRIPTION_FOR_APARTMENT + GeneralTestDataForAllUsers.TEXT_LOREM);
-        //    WaitUntil.CustomElementIsVisible(FieldInputInternalNotesAddAprtmntsUnitsPage, 10);
-        //    InputGeneral.InputFunctionWithClear(FieldInputInternalNotesAddAprtmntsUnitsPage, GeneralTestDataForAllUsers.TEXT_INTERNAL_NOTES_FOR_APARTMENT + GeneralTestDataForAllUsers.TEXT_LOREM);
-
-        //    return this;
-        //}
 
         #endregion
 

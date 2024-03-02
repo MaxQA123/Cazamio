@@ -24,6 +24,7 @@ using NUnit.Framework;
 using System;
 using System.Threading;
 using CazamioProject.PageObjects.WebSiteCazamioTenantPages.ModalWindowPleaseTellUsYourName;
+using CazamioProject.Objects;
 
 namespace MarketplaceAdminTests
 {
@@ -812,6 +813,12 @@ namespace MarketplaceAdminTests
 
             #endregion
 
+            #region Test data
+
+            Building building = new Building().Generate();
+
+            #endregion
+
             #region Preconditions Test
 
             Pages.LogInLandlord
@@ -828,26 +835,33 @@ namespace MarketplaceAdminTests
                 .ClickButtonBuildings();
             Pages.ListOfBuildings
                 .SearchBuildingMarkAdmBroker();
+            Pages.ListOfBuildings
+                .SelectItemFirst();
+            Pages.BuildingView
+                .VerifyTitleBuildingViewPage();
+
+            string getAddressBuildingViewActual = Pages.BuildingView.GetValueFromFieldNotInputAddress();
+            string getBuildingNameFromBuildingView = Pages.BuildingView.GetValueFromFieldNotInputBuildingName();
+
+            Pages.BuildingView
+                .VerifyBuildingAddress(getAddressBuildingViewActual, building.NumberWithAddress.MarkAdmAssignedBroker)
+                .ClickTabApartments();
+            KeyBoardActions.ScrollToDown();
+            Pages.BuildingView
+                .ClickButtonAddInTabApartments();
 
             #endregion
 
             #region Test
 
-            //Pages.ListOfBuildings
-            //    .SelectItemFirstBuildingOnPage();
-            //Pages.BuildingView
-            //    .VerifyTitleBuildingViewPage()
-            //    .ClickTabApartmentsBldngVwPg();
-            //KeyBoardActions.ScrollToDown();
-            //Pages.BuildingView
-            //    .ClickButtonAddInTabApartmentsBldngVwPg();
-            //Pages.AddApartments
-            //    .VerifyTitleAddApartmentsPage();
+            Pages.AddApartments
+                .VerifyTitleAddApartmentsPage();
 
-            //string getBuildingNameAddApartmentsPage = Pages.AddApartments.GetBuildingNameAddApartmentsPage();
+            string getBuildingNameFromAddApartments = Pages.AddApartments.GetBuildingName();
 
-            //Pages.AddApartments
-            //    .VerifyBuildingNameAddApartmentsPage(getBuildingNameAddApartmentsPage)
+            Pages.AddApartments
+                .VerifyBuildingNameAddApartmentsPage(getBuildingNameFromBuildingView, getBuildingNameFromAddApartments);
+
             //    .EnterUnitNumberBedsBathsSqFoot()
             //    .EnterLeasePriceSecurityDeposit();
 
@@ -864,7 +878,7 @@ namespace MarketplaceAdminTests
             //    .EnterFieldInputFloorAddAprtmntsUnitsPage()
             //    .SelectStatusVacantAddAprtmntsUnitsPage()
             //    .SelectAgentAddAprtmntsUnitsPage();
-            //    //.SelectDateAvailableFromAprtmntsUnitsPage();
+            ////.SelectDateAvailableFromAprtmntsUnitsPage();
 
             //string getApartmentType = Pages.AddApartments.GetApartmentTypeAddApartmentsPage();
 
@@ -879,7 +893,7 @@ namespace MarketplaceAdminTests
             //    .ClickButtonPaymentMethodsAddAprtmntsUnitsPage();
             //Pages.ModalWindowPaymentOptions
             //    .VerifyTitlePaymentOptions();
-            //    //.SelectPaymentsMethodsNwBldngPg();
+            ////.SelectPaymentsMethodsNwBldngPg();
 
             //string getRentalTerms = Pages.AddApartments.GetRentalTermsAddApartmentsPage();
 
@@ -919,8 +933,8 @@ namespace MarketplaceAdminTests
 
         #region Preconditions
 
-        //Ќужно учесть количество слов дл€ Regex в коротком адресе дома и номер юнита, например, "1 Washington Square #4".
-        //” апартамента должно быть только одно заначение в поле "Rental terms".
+        //, "1 Washington Square #4".
+        // "Rental terms".
 
         #endregion
 
