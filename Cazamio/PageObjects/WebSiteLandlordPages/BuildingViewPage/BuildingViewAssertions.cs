@@ -23,6 +23,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage
         [AllureStep("VerifyBuildingAddress")]
         public BuildingView VerifyBuildingAddress(string getAddressNewBuildingActual, string getAddressBuildingView)
         {
+            WaitUntil.WaitSomeInterval(1000);
             Assert.AreEqual(getAddressNewBuildingActual, getAddressBuildingView);
 
             return this;

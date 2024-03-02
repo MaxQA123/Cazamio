@@ -78,7 +78,7 @@ namespace AgentBrokerTests
             #region Test
 
             Pages.SideBarLandlord
-                .ClickButtonLogOutSidebar();
+                .ClickButtonLogOut();
             Pages.LogInLandlord
                 .VerifyTitleLogInPg();
 
@@ -126,27 +126,27 @@ namespace AgentBrokerTests
             //Pages.Dashboard
             //    .VerifyTitleOfDashboardPg();
             Pages.SideBarLandlord
-                .ClickButtonBuildingsSidebar();
+                .ClickButtonBuildings();
             Pages.ListOfBuildings
                 .VerifyTitleListOfBuildingsPg();
             Pages.SideBarLandlord
-                .ClickButtonApartmentsSidebar();
+                .ClickButtonApartments();
             Pages.ListOfApartments
                 .VerifyTitleListOfApartmentsPg();
             Pages.SideBarLandlord
-                .ClickButtonApplicationsSidebar();
+                .ClickButtonApplications();
             Pages.ListOfApplications
                 .VerifyTitleListOfApplicationsPg();
             Pages.SideBarLandlord
-                .ClickButtonTransactionsSidebar();
+                .ClickButtonTransactions();
             Pages.ListOfTransactions
                 .VerifyTitleTransactionsPg();
             Pages.SideBarLandlord
-                .ClickButtonCommissionsSidebar();
+                .ClickButtonCommissions();
             Pages.ListOfCommissions
                 .VerifyTitleListOfCommissionsPg();
             Pages.SideBarLandlord
-                .ClickButtonLogOutSidebar();
+                .ClickButtonLogOut();
             Pages.LogInLandlord
                 .VerifyTitleLogInPg();
 
@@ -185,7 +185,7 @@ namespace AgentBrokerTests
 
             Pages.SideBarLandlord
                 .VerifyAgentBrokerUserNameRole(getUserNameCompare, getUserNameRoleCompare)
-                .ClickButtonBuildingsSidebar();
+                .ClickButtonBuildings();
 
             #endregion
 

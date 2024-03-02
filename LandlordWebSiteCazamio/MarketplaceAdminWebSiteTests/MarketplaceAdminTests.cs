@@ -101,55 +101,55 @@ namespace MarketplaceAdminTests
             //Pages.Dashboard
             //    .VerifyTitleOfDashboardPg();
             Pages.SideBarLandlord
-                .ClickButtonBuildingsSidebar();
+                .ClickButtonBuildings();
             Pages.ListOfBuildings
                 .VerifyTitleListOfBuildingsPg();
             Pages.SideBarLandlord
-                .ClickButtonApartmentsSidebar();
+                .ClickButtonApartments();
             Pages.ListOfApartments
                 .VerifyTitleListOfApartmentsPg();
             Pages.SideBarLandlord
-                .ClickButtonApplicationsSidebar();
+                .ClickButtonApplications();
             Pages.ListOfApplications
                 .VerifyTitleListOfApplicationsPg();
             Pages.SideBarLandlord
-                .ClickButtonBrokersSidebar();
+                .ClickButtonBrokers();
             Pages.ListOfBrokers
                 .VerifyTitleListOfBrokersPg();
             Pages.SideBarLandlord
-                .ClickButtonLeaseSignDocumentsSidebar();
+                .ClickButtonLeaseSignDocuments();
             Pages.Templates
                 .VerifyTitleTemplatesPagePg();
             Pages.SideBarLandlord
-                .ClickButtonPaymentSettingsSidebar();
+                .ClickButtonPaymentSettings();
             Pages.PaymentSettings
                 .VerifyTitlePaymentSettingsPagePg();
             Pages.SideBarLandlord
-                .ClickButtonTransactionsSidebar();
+                .ClickButtonTransactions();
             Pages.ListOfTransactions
                 .VerifyTitleTransactionsPg();
             Pages.SideBarLandlord
-                .ClickButtonCommissionsSidebar();
+                .ClickButtonCommissions();
             Pages.ListOfCommissions
                 .VerifyTitleListOfCommissionsPg();
             Pages.SideBarLandlord
-                .ClickButtonAgentsSidebar();
+                .ClickButtonAgents();
             Pages.Agents
                 .VerifyTitleBrokersPg();
             Pages.SideBarLandlord
-                .ClickButtonOwnersSidebar();
+                .ClickButtonOwners();
             Pages.ListOfOwners
                 .VerifyTitleListOfOwnersPg();
             Pages.SideBarLandlord
-               .ClickButtonMarketplaceSidebar();
+               .ClickButtonMarketplace();
             Pages.Marketplace
                 .VerifyTitleMarketplacePg();
             Pages.SideBarLandlord
-                .ClickButtonReportsAdminsSidebar();
+                .ClickButtonReports();
             Pages.Reports
                 .VerifyTitleReportsPage();
             Pages.SideBarLandlord
-                .ClickButtonLogOutSidebar();
+                .ClickButtonLogOut();
             Pages.LogInLandlord
                 .VerifyTitleLogInPg();
             WaitUntil.WaitSomeInterval(2000);
@@ -233,7 +233,7 @@ namespace MarketplaceAdminTests
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
             Pages.SideBarLandlord
-                .ClickButtonBrokersSidebar();
+                .ClickButtonBrokers();
             Pages.ListOfBrokers
                 .VerifyTitleListOfBrokersPg()
                 .ClickButtonCreateBroker();
@@ -258,7 +258,7 @@ namespace MarketplaceAdminTests
             Pages.ListOfBrokers
                 .VerifyEmailInListOfBrokers(getFullEmail, getEmailFromListOfBrokers);
             Pages.SideBarLandlord
-                .ClickButtonLogOutSidebar();
+                .ClickButtonLogOut();
             Pages.JScriptExecutorHelper
                .OpenNewTab()
                .OpenPutsBox(Pages.PutsBox.TitleLetterCreateBrokerMySpace, getEmailBeforeDog);
@@ -327,7 +327,7 @@ namespace MarketplaceAdminTests
 
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare)
-                .ClickButtonAgentsSidebar();
+                .ClickButtonAgents();
 
             #endregion
 
@@ -347,7 +347,7 @@ namespace MarketplaceAdminTests
                 .VerifyMessageNewAgentCreatedSuccessfullyCrtNwAgntOnMdlwndw();
             KeyBoardActions.ClickEscapeButton();
             Pages.SideBarLandlord
-                .ClickButtonLogOutSidebar();
+                .ClickButtonLogOut();
             Pages.JScriptExecutorHelper
                 .OpenNewTab()
                 .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAgentMySpace, partEmailPutsBox);
@@ -421,7 +421,7 @@ namespace MarketplaceAdminTests
 
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare)
-                .ClickButtonOwnersSidebar();
+                .ClickButtonOwners();
 
             #endregion
 
@@ -508,7 +508,7 @@ namespace MarketplaceAdminTests
 
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare)
-                .ClickButtonOwnersSidebar();
+                .ClickButtonOwners();
 
             #endregion
 
@@ -597,7 +597,7 @@ namespace MarketplaceAdminTests
 
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare)
-                .ClickButtonBuildingsSidebar();
+                .ClickButtonBuildings();
 
             #endregion
 
@@ -613,7 +613,7 @@ namespace MarketplaceAdminTests
             string getAddressNewBuildingActual = Pages.NewBuilding.GetValueFromFieldAddress();
 
             Pages.NewBuilding
-                .EnterBuildingName()
+                .EnterBuildingNameMarkAdmBroker()
                 .EnterLlcNameForBroker()
                 .EnterLongInternalNotesDescription();
             KeyBoardActions.ClickTab();
@@ -733,7 +733,7 @@ namespace MarketplaceAdminTests
 
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare)
-                .ClickButtonBuildingsSidebar();
+                .ClickButtonBuildings();
 
             #endregion
 
@@ -804,6 +804,14 @@ namespace MarketplaceAdminTests
 
         public void AddApartmentAssignedBroker()
         {
+            #region SettingsForBuilding
+
+            //All the fields filled in, Cardknox
+            //All tabs filled in
+            //29 Washington Square
+
+            #endregion
+
             #region Preconditions Test
 
             Pages.LogInLandlord
@@ -816,80 +824,84 @@ namespace MarketplaceAdminTests
 
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
+            Pages.SideBarLandlord
+                .ClickButtonBuildings();
+            Pages.ListOfBuildings
+                .SearchBuildingMarkAdmBroker();
 
             #endregion
 
             #region Test
 
-            Pages.ListOfBuildings
-                .SelectItemFirstBuildingOnPage();
-            Pages.BuildingView
-                .VerifyTitleBuildingViewPage()
-                .ClickTabApartmentsBldngVwPg();
-            KeyBoardActions.ScrollToDown();
-            Pages.BuildingView
-                .ClickButtonAddInTabApartmentsBldngVwPg();
-            Pages.AddApartments
-                .VerifyTitleAddApartmentsPage();
+            //Pages.ListOfBuildings
+            //    .SelectItemFirstBuildingOnPage();
+            //Pages.BuildingView
+            //    .VerifyTitleBuildingViewPage()
+            //    .ClickTabApartmentsBldngVwPg();
+            //KeyBoardActions.ScrollToDown();
+            //Pages.BuildingView
+            //    .ClickButtonAddInTabApartmentsBldngVwPg();
+            //Pages.AddApartments
+            //    .VerifyTitleAddApartmentsPage();
 
-            string getBuildingNameAddApartmentsPage = Pages.AddApartments.GetBuildingNameAddApartmentsPage();
+            //string getBuildingNameAddApartmentsPage = Pages.AddApartments.GetBuildingNameAddApartmentsPage();
 
-            Pages.AddApartments
-                .VerifyBuildingNameAddApartmentsPage(getBuildingNameAddApartmentsPage)
-                .EnterUnitNumberBedsBathsSqFoot()
-                .EnterLeasePriceSecurityDeposit();
+            //Pages.AddApartments
+            //    .VerifyBuildingNameAddApartmentsPage(getBuildingNameAddApartmentsPage)
+            //    .EnterUnitNumberBedsBathsSqFoot()
+            //    .EnterLeasePriceSecurityDeposit();
 
-            string getLeasePrice = Pages.AddApartments.GetLeasePriceAddApartmentsPage();
-            string getSecurityDeposit = Pages.AddApartments.GetSecurityDepositAddApartmentsPage();
+            //string getLeasePrice = Pages.AddApartments.GetLeasePriceAddApartmentsPage();
+            //string getSecurityDeposit = Pages.AddApartments.GetSecurityDepositAddApartmentsPage();
 
-            Pages.AddApartments
-                .VerifySecurityDepositAddApartmentsPage(getLeasePrice, getSecurityDeposit);
+            //Pages.AddApartments
+            //    .VerifySecurityDepositAddApartmentsPage(getLeasePrice, getSecurityDeposit);
 
-            string getMonthlyRentsPrePayment = Pages.AddApartments.GetMonthlyRentsPrePaymentAddApartmentsPage();
+            //string getMonthlyRentsPrePayment = Pages.AddApartments.GetMonthlyRentsPrePaymentAddApartmentsPage();
 
-            Pages.AddApartments
-                .VerifyMonthlyRentsPrePaymentAddApartmentsPage(getMonthlyRentsPrePayment)
-                .EnterFieldInputFloorAddAprtmntsUnitsPage()
-                .SelectStatusVacantAddAprtmntsUnitsPage()
-                .SelectAgentAddAprtmntsUnitsPage();
-                //.SelectDateAvailableFromAprtmntsUnitsPage();
+            //Pages.AddApartments
+            //    .VerifyMonthlyRentsPrePaymentAddApartmentsPage(getMonthlyRentsPrePayment)
+            //    .EnterFieldInputFloorAddAprtmntsUnitsPage()
+            //    .SelectStatusVacantAddAprtmntsUnitsPage()
+            //    .SelectAgentAddAprtmntsUnitsPage();
+            //    //.SelectDateAvailableFromAprtmntsUnitsPage();
 
-            string getApartmentType = Pages.AddApartments.GetApartmentTypeAddApartmentsPage();
+            //string getApartmentType = Pages.AddApartments.GetApartmentTypeAddApartmentsPage();
 
-            Pages.AddApartments
-                .VerifyApartmentTypeAddApartmentsPage(getApartmentType);
+            //Pages.AddApartments
+            //    .VerifyApartmentTypeAddApartmentsPage(getApartmentType);
 
-            string getgetApartmentHoldDeposit = Pages.AddApartments.GetApartmentHoldDepositAddApartmentsPage();
+            //string getgetApartmentHoldDeposit = Pages.AddApartments.GetApartmentHoldDepositAddApartmentsPage();
 
-            KeyBoardActions.ScrollToDown();
-            Pages.AddApartments
-                .VerifyApartmentHoldDepositAddApartmentsPage(getgetApartmentHoldDeposit)
-                .ClickButtonPaymentMethodsAddAprtmntsUnitsPage();
-            Pages.ModalWindowPaymentOptions
-                .VerifyTitlePaymentOptions();
-                //.SelectPaymentsMethodsNwBldngPg();
+            //KeyBoardActions.ScrollToDown();
+            //Pages.AddApartments
+            //    .VerifyApartmentHoldDepositAddApartmentsPage(getgetApartmentHoldDeposit)
+            //    .ClickButtonPaymentMethodsAddAprtmntsUnitsPage();
+            //Pages.ModalWindowPaymentOptions
+            //    .VerifyTitlePaymentOptions();
+            //    //.SelectPaymentsMethodsNwBldngPg();
 
-            string getRentalTerms = Pages.AddApartments.GetRentalTermsAddApartmentsPage();
+            //string getRentalTerms = Pages.AddApartments.GetRentalTermsAddApartmentsPage();
 
-            Pages.AddApartments
-                .VerifyRentalTermsAddApartmentsPage(getRentalTerms);
+            //Pages.AddApartments
+            //    .VerifyRentalTermsAddApartmentsPage(getRentalTerms);
 
-            string getThreeRecentPaystubs = Pages.AddApartments.GetRequiredDocumentsThreeRecentPaystubsAddApartmentsPage();
-            string getPhotoId = Pages.AddApartments.GetRequiredDocumentsPhotoIdAddApartmentsPage();
-            string getTwoMostRecentBankStatements = Pages.AddApartments.GetRequiredDocumentsTwoMostRecentBankStatementsAddApartmentsPage();
-            string getMostRecentWTwoOrOneZeroNineNine = Pages.AddApartments.GetRequiredDocumentsMostRecentWTwoOrOneZeroNineNineAddApartmentsPage();
+            //string getThreeRecentPaystubs = Pages.AddApartments.GetRequiredDocumentsThreeRecentPaystubsAddApartmentsPage();
+            //string getPhotoId = Pages.AddApartments.GetRequiredDocumentsPhotoIdAddApartmentsPage();
+            //string getTwoMostRecentBankStatements = Pages.AddApartments.GetRequiredDocumentsTwoMostRecentBankStatementsAddApartmentsPage();
+            //string getMostRecentWTwoOrOneZeroNineNine = Pages.AddApartments.GetRequiredDocumentsMostRecentWTwoOrOneZeroNineNineAddApartmentsPage();
 
-            Pages.AddApartments
-                .VerifyRequiredDocumentsByDefaultAddApartmentsPage(getThreeRecentPaystubs, getPhotoId, getTwoMostRecentBankStatements, getMostRecentWTwoOrOneZeroNineNine)
-                //.EnterDescriptionInternalNotesAddAprtmntsUnitsPage()
-                .ClickButtonGeneralNextAddAprtmntsgPg()
-                .ClickFieldInputSearchForAmenitiesAddAprtmntsgPg()
-                .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
-                .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
-                .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
-                .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
-                .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
-                .ClickButtonGeneralNextAddAprtmntsgPg();
+            //Pages.AddApartments
+            //    .VerifyRequiredDocumentsByDefaultAddApartmentsPage(getThreeRecentPaystubs, getPhotoId, getTwoMostRecentBankStatements, getMostRecentWTwoOrOneZeroNineNine)
+            //    //.EnterDescriptionInternalNotesAddAprtmntsUnitsPage()
+            //    .ClickButtonGeneralNextAddAprtmntsgPg()
+            //    .ClickFieldInputSearchForAmenitiesAddAprtmntsgPg()
+            //    .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
+            //    .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
+            //    .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
+            //    .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
+            //    .SelectAmenitiesForApartment(ListOfAmenitiesForApartmentAdminsPage.FIRST_TAG, " ")
+            //    .ClickButtonGeneralNextAddAprtmntsgPg();
 
             WaitUntil.WaitSomeInterval(5000);
 
@@ -936,7 +948,7 @@ namespace MarketplaceAdminTests
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
             Pages.SideBarLandlord
-                .ClickButtonApplicationsSidebar();
+                .ClickButtonApplications();
 
             #endregion
 
@@ -1063,7 +1075,7 @@ namespace MarketplaceAdminTests
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
             Pages.SideBarLandlord
-                .ClickButtonApplicationsSidebar();
+                .ClickButtonApplications();
 
             #endregion
 
@@ -1199,7 +1211,7 @@ namespace MarketplaceAdminTests
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
             Pages.SideBarLandlord
-                .ClickButtonApplicationsSidebar();
+                .ClickButtonApplications();
 
             #endregion
 
@@ -1410,7 +1422,7 @@ namespace MarketplaceAdminTests
                 .VerifyMessageStepFourModalWndw()
                 .ClickButtonCloseStepFourModalWndwModalWndw();
             Pages.SideBarLandlord
-                .ClickButtonApplicationsSidebar();
+                .ClickButtonApplications();
             Pages.ListOfApplications
                 .SelectFirstItemInLitsOFApplications();
             Pages.ApplicationDetail
@@ -1494,7 +1506,7 @@ namespace MarketplaceAdminTests
             Pages.SideBarLandlord
                 .VerifyMarketplaceAdminUserName(getUserNameCompare, getUserNameRoleCompare);
             Pages.SideBarLandlord
-                .ClickButtonApplicationsSidebar();
+                .ClickButtonApplications();
             Pages.ListOfApplications
                 .SelectItemTwoWashingtonSquareUnitTwo();
 

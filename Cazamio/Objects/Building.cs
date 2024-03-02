@@ -17,7 +17,8 @@ namespace CazamioProject.Objects
         public string State { get; set; }
         public ZipInfo Zip { get; set; }
         public NeighborhoodInfo Neighborhood { get; set; }
-        public string BuildingName { get; set; }
+        public BuildingNameInfo BuildingName { get; set; }
+        public string ShortBuildingName { get; set; }
         public LlcNameInfo LlcName { get; set; }
         public TextLoremInfo TextLorem { get; set; }
         public string DescriptionShort { get; set; }
@@ -126,6 +127,11 @@ namespace CazamioProject.Objects
             public string AgntBrkrAssignedAgntBrkr { get; set; }
         }
 
+        public class BuildingNameInfo
+        {
+            public string MarkAdmAssignedRoleBrkr { get; set; }
+        }
+
         public Building Generate()
         {
             #region Settings Building for role Marketplace Admin
@@ -135,7 +141,7 @@ namespace CazamioProject.Objects
             string zipBuildingMarkAdmAssignedRoleAgntBrkr = "11213";
             string neighborhoodMarkAdmBuildingAssignedRoleAgntBrkr = "Crown Heights";
 
-            string buildingNumberMarkAdmAssignedRoleBrkr = "27";
+            string buildingNumberMarkAdmAssignedRoleBrkr = "29";
             string addressMarkAdmAssignedRoleBrkr = "Washington Square";
             string zipBuildingMarkAdmAssignedRoleBrkr = "10012";
             string neighborhoodBuildingMarkAdmAssignedRoleBrkr = "Manhattan";
@@ -168,7 +174,7 @@ namespace CazamioProject.Objects
             string cityNewYork ="New York";
             string cityBrooklyn = "Brooklyn";
             string state = "NY";
-            string buildingName = "QA-Building NAME (12345) (!@#$%)";
+            string shortBuildingName = "QA-Building NAME (12345 !@#$%)";
             string llcNameForAgentBroker = "LLC QA Agent As Broker (12345) (!@#$%)";
             string llcNameForBroker = "LLC QA Broker (12345) (!@#$%)";
             string textLoremCommon = "Lorem BUILDING ipsum dolor sit amet, 12345 67890 !@# $%^ &*() adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,";
@@ -233,7 +239,7 @@ namespace CazamioProject.Objects
                     BrokerAssignedBroker = buildingNumberBrokerAssignedRoleBrkr + " " + addressBrokerAssignedRoleBrkr,
                     AgntBrkrAssignedAgntBrkr = buildingNumberAgntBrkrAssignedRoleAgntBrkr + " " + addressAgntBrkrAssignedRoleAgntBrkr
                 },
-                BuildingName = buildingName,
+                ShortBuildingName = shortBuildingName,
                 DescriptionShort = descriptionShort,
                 InternalNotesShort = internalNotesShort,
                 DescriptionLong = descriptionShort + " " + textLoremCommon,
@@ -279,6 +285,10 @@ namespace CazamioProject.Objects
                 FreeStuff = new FreeStuffInfo
                 {
                     Name = nameFreeStuff
+                },
+                BuildingName = new BuildingNameInfo
+                {
+                    MarkAdmAssignedRoleBrkr = shortBuildingName + " " + buildingNumberMarkAdmAssignedRoleBrkr + " " + addressMarkAdmAssignedRoleBrkr
                 },
             };
             return building;

@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProject.Objects;
 using NUnit.Allure.Attributes;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
     public partial class ListOfBuildings
     {
         string buildingAddress = TestDataForWebSiteAdmin.SHORT_ADDRESS_BUILDING_FIFTEEN_MP_FOR_BROKER;
+        Building building = new Building().Generate();
 
         [AllureStep("ClickButtonAddBuilding")]
         public ListOfBuildings ClickButtonAddBuilding()
@@ -19,6 +21,16 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
             WaitUntil.CustomElementIsVisible(ButtonAdd, 10);
             WaitUntil.CustomElementIsClickable(ButtonAdd, 10);
             Button.Click(ButtonAdd);
+
+            return this;
+        }
+
+        [AllureStep("SearchBuildingMarkAdmBroker")]
+        public ListOfBuildings SearchBuildingMarkAdmBroker()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputSearch);
+            WaitUntil.CustomElementIsClickable(FieldInputSearch);
+            InputGeneral.InputFunctionWithClear(FieldInputSearch, building.NumberWithAddress.MarkAdmAssignedBroker);
 
             return this;
         }
@@ -36,12 +48,12 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
         public ListOfBuildings OpenPageApartmentView()
         {
             Pages.SideBarLandlord
-               .ClickButtonBuildingsSidebar();
+               .ClickButtonBuildings();
             WaitUntil.CustomElementIsVisible(TitleListOfBuildingsPage);
             VerifyTitleListOfBuildingsPg();
             WaitUntil.WaitSomeInterval(3000);
-            WaitUntil.CustomElementIsVisible(FieldInputSearchOnListOfBuildingsPg);
-            InputGeneral.InputFunctionWithClear(FieldInputSearchOnListOfBuildingsPg, buildingAddress);
+            WaitUntil.CustomElementIsVisible(FieldInputSearch);
+            InputGeneral.InputFunctionWithClear(FieldInputSearch, buildingAddress);
             WaitUntil.CustomElementIsVisible(ItemFirstBuildingOnPage);
             Button.Click(ItemFirstBuildingOnPage);
             WaitUntil.WaitSomeInterval(3000);

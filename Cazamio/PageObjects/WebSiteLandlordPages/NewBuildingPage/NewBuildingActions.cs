@@ -41,11 +41,11 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.NewBuildingPage
 
         #region NewBuilding the tab Basic Details
 
-        [AllureStep("EnterBuildingName")]
-        public NewBuilding EnterBuildingName()
+        [AllureStep("EnterBuildingNameMarkAdmBroker")]
+        public NewBuilding EnterBuildingNameMarkAdmBroker()
         {
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputBuildingName, building.BuildingName);
+            InputGeneral.InputFunctionWithClear(FieldInputBuildingName, building.BuildingName.MarkAdmAssignedRoleBrkr);
             
             return this;
         }

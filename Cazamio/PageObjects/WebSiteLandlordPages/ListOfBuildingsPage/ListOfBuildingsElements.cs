@@ -20,6 +20,6 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
         public IWebElement ItemFirstBuildingOnPage;
 
         [FindsBy(How = How.XPath, Using = "//input[@id = 'field-search']")]
-        public IWebElement FieldInputSearchOnListOfBuildingsPg;
+        public IWebElement FieldInputSearch;
     }
 }
