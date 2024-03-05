@@ -860,16 +860,16 @@ namespace MarketplaceAdminTests
             string getBuildingNameFromAddApartments = Pages.AddApartments.GetBuildingName();
 
             Pages.AddApartments
-                .VerifyBuildingNameAddApartmentsPage(getBuildingNameFromBuildingView, getBuildingNameFromAddApartments);
+                .VerifyBuildingNameAddApartmentsPage(getBuildingNameFromBuildingView, getBuildingNameFromAddApartments)
 
-            //    .EnterUnitNumberBedsBathsSqFoot()
-            //    .EnterLeasePriceSecurityDeposit();
+                .FillInAllFieldsMarkAdmAssignedBrkr()
+                .EnterLeasePriceSecurityDeposit();
 
-            //string getLeasePrice = Pages.AddApartments.GetLeasePriceAddApartmentsPage();
-            //string getSecurityDeposit = Pages.AddApartments.GetSecurityDepositAddApartmentsPage();
+            string getLeasePrice = Pages.AddApartments.GetLeasePrice();
+            string getSecurityDeposit = Pages.AddApartments.GetSecurityDeposit();
 
-            //Pages.AddApartments
-            //    .VerifySecurityDepositAddApartmentsPage(getLeasePrice, getSecurityDeposit);
+            Pages.AddApartments
+                .VerifySecurityDeposit(getLeasePrice, getSecurityDeposit);
 
             //string getMonthlyRentsPrePayment = Pages.AddApartments.GetMonthlyRentsPrePaymentAddApartmentsPage();
 

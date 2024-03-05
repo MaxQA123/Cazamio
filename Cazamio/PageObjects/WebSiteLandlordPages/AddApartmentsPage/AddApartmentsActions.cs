@@ -14,15 +14,46 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
     public partial class AddApartments
     {
         Building building = new Building().Generate();
+        Apartment apartment = new Apartment().Generate();
 
-        #region TabUnits     
+        #region TabUnits
 
-        [AllureStep("EnterUnitNumberBedsBathsSqFoot")]
-        public AddApartments EnterLeasePriceSecurityDeposit()
+        [AllureStep("GetLeasePrice")]
+        public string GetLeasePrice()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputLeasePrice);
+            string getLeasePrice = FieldInputLeasePrice.GetAttribute("value");
+            string getLeasePriceActual = getLeasePrice.ToString();
+
+            return getLeasePriceActual;
+        }
+
+        [AllureStep("GetSecurityDeposit")]
+        public string GetSecurityDeposit()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputSecurityDeposit);
+            string getSecurityDeposit = FieldInputSecurityDeposit.GetAttribute("value");
+            string getSecurityDepositActual = getSecurityDeposit.ToString();
+
+            return getSecurityDepositActual;
+        }
+
+        [AllureStep("EnterLeasePrice")]
+        public AddApartments EnterLeasePrice()
         //SecurityDeposit autofill
         {
-            WaitUntil.CustomElementIsVisible(FieldInputLeasePriceAddAprtmntsUnitsPage, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputLeasePriceAddAprtmntsUnitsPage, GenerateRandomDataHelper.RandomNumberWithoutZero(4));
+            WaitUntil.CustomElementIsVisible(FieldInputLeasePrice);
+            InputGeneral.InputFunctionWithClear(FieldInputLeasePrice, GenerateRandomDataHelper.RandomNumberWithoutZero(4));
+
+            return this;
+        }
+
+        [AllureStep("EnterSecurityDeposit")]
+        public AddApartments EnterSecurityDeposit()
+        //SecurityDeposit autofill
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputLeasePrice);
+            InputGeneral.InputFunctionWithClear(FieldInputLeasePrice, GenerateRandomDataHelper.RandomNumberWithoutZero(4));
 
             return this;
         }
@@ -30,8 +61,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [AllureStep("EnterFieldInputFloorAddAprtmntsUnitsPage")]
         public AddApartments EnterFieldInputFloorAddAprtmntsUnitsPage()
         {
-            WaitUntil.CustomElementIsVisible(FieldInputFloorAddAprtmntsUnitsPage, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputFloorAddAprtmntsUnitsPage, GenerateRandomDataHelper.RandomNumberWithoutZero(2));
+            WaitUntil.CustomElementIsVisible(FieldInputFloor);
+            InputGeneral.InputFunctionWithClear(FieldInputFloor, GenerateRandomDataHelper.RandomNumberWithoutZero(2));
 
             return this;
         }
@@ -39,8 +70,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [AllureStep("ClickButtonPaymentMethodsAddAprtmntsUnitsPage")]
         public AddApartments ClickButtonPaymentMethodsAddAprtmntsUnitsPage()
         {
-            WaitUntil.CustomElementIsVisible(ButtonPaymentMethodsAddAprtmntsUnitsPage, 10);
-            Button.Click(ButtonPaymentMethodsAddAprtmntsUnitsPage);
+            WaitUntil.CustomElementIsVisible(ButtonPaymentMethods);
+            Button.Click(ButtonPaymentMethods);
             
             return this;
         }
@@ -53,7 +84,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         public AddApartments ClickFieldInputSearchForAmenitiesAddAprtmntsgPg()
         {
             WaitUntil.WaitSomeInterval(500);
-            Button.Click(FieldInputSearchForAmenitiesAddAprtmntsgPg);
+            Button.Click(FieldInputSearchForAmenities);
 
             return this;
         }
@@ -84,7 +115,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         public AddApartments ClickFieldInputSearchForDefaultIncludedInMonthlyRentAmenitiesAddAprtmntsgPg()
         {
             WaitUntil.WaitSomeInterval(500);
-            Button.Click(FieldInputSearchForDefaultIncludedInMonthlyRentAmenitiesAddAprtmntsgPg);
+            Button.Click(FieldInputSearchForDefaultIncludedInMonthlyRentAmenities);
 
             return this;
         }
@@ -117,7 +148,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         public AddApartments ClickButtonGeneralNextAddAprtmntsgPg()
         {
             WaitUntil.WaitSomeInterval(3000);
-            Button.Click(ButtonGeneralNextAddAprtmntsgPg);
+            Button.Click(ButtonGeneralNext);
 
             return this;
         }

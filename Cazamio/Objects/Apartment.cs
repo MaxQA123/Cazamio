@@ -27,7 +27,8 @@ namespace CazamioProject.Objects
         public string Description { get; set; }
         public string InternalNotes { get; set; }
         public BuildingShortAddressInfo BuildingShortAddress { get; set; }
-        public string FullUserNameBroker { get; set; }
+        public string TextLong { get; set; }
+        public TextVariableInfo TextVariable { get; set; }
 
         public class UnitNumberInfo
         {
@@ -158,6 +159,12 @@ namespace CazamioProject.Objects
             public string EighteenMonths { get; set; }
         }
 
+        public class TextVariableInfo
+        {
+            public string TextLongDescription { get; set; }
+            public string TextLongInternalNotes { get; set; }
+        }
+
         public Apartment Generate()
         {
             string unitNumberMarkAdmAssignedRoleAgntBrkr = "1";
@@ -234,10 +241,9 @@ namespace CazamioProject.Objects
             string itemThreeRecentPaystubs = "3 recent paystubs";
             string itemSixMostRecentRentPayments = "6 most recent rent payments";
             #endregion
-            string description = "Descrption for APARTMENT (12345) (*&%$#@!) (098765) (*&^)";
+            string description = "Description for APARTMENT (12345) (*&%$#@!) (098765) (*&^)";
             string internalNotes = "Internal Notes for APARTMENT (12345) (*&%$#@!) (09876) (*&^)";
-
-            string fullUserNameBroker = "Leoautotest Feabroker";
+            string textLong = "Lorem APARTMENT ipsum dolor sit amet, 12345 67890 !@# $%^ &*() adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,";
 
             var apartment = new Apartment()
             {
@@ -353,11 +359,16 @@ namespace CazamioProject.Objects
                 },
                 Description = description,
                 InternalNotes = internalNotes,
-                FullUserNameBroker = fullUserNameBroker,
+                TextLong = textLong,
                 BuildingShortAddress = new BuildingShortAddressInfo
                 {
                     MarkAdmAssignedBroker = buildingShortAddressMarkAdmAssignedRoleBrkr,
                     EighteenMonths = itemEighteenMonths
+                },
+                TextVariable = new TextVariableInfo
+                {
+                    TextLongDescription = description + " " + textLong,
+                    TextLongInternalNotes = internalNotes + " " + textLong
                 },
             };
             return apartment;

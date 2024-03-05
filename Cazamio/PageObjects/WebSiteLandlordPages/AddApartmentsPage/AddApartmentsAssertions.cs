@@ -30,28 +30,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             return this;
         }
 
-        [AllureStep("GetLeasePriceAddApartmentsPage")]
-        public string GetLeasePriceAddApartmentsPage()
-        {
-            WaitUntil.CustomElementIsVisible(FieldInputLeasePriceAddAprtmntsUnitsPage, 10);
-            string getLeasePrice = FieldInputLeasePriceAddAprtmntsUnitsPage.GetAttribute("value");
-            string getLeasePriceActual = getLeasePrice.ToString();
-
-            return getLeasePriceActual;
-        }
-
-        [AllureStep("GetSecurityDepositAddApartmentsPage")]
-        public string GetSecurityDepositAddApartmentsPage()
-        {
-            WaitUntil.CustomElementIsVisible(FieldInputSecurityDepositAddAprtmntsUnitsPage, 10);
-            string getSecurityDeposit = FieldInputSecurityDepositAddAprtmntsUnitsPage.GetAttribute("value");
-            string getSecurityDepositActual = getSecurityDeposit.ToString();
-
-            return getSecurityDepositActual;
-        }
-
-        [AllureStep("VerifySecurityDepositAddApartmentsPage")]
-        public AddApartments VerifySecurityDepositAddApartmentsPage(string getLeasePrice, string getSecurityDeposit)
+        [AllureStep("VerifySecurityDeposit")]
+        public AddApartments VerifySecurityDeposit(string getLeasePrice, string getSecurityDeposit)
         {
             Assert.AreEqual(getLeasePrice, getSecurityDeposit);
 
@@ -63,8 +43,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [AllureStep("GetMonthlyRentsPrePaymentAddApartmentsPage")]
         public string GetMonthlyRentsPrePaymentAddApartmentsPage()
         {
-            WaitUntil.CustomElementIsVisible(FieldInputMonthlyRentsPrePaymentAddAprtmntsUnitsPage, 10);
-            string getMonthlyRentsPrePayment = FieldInputMonthlyRentsPrePaymentAddAprtmntsUnitsPage.GetAttribute("value");
+            WaitUntil.CustomElementIsVisible(FieldInputMonthlyRentsPrePayment);
+            string getMonthlyRentsPrePayment = FieldInputMonthlyRentsPrePayment.GetAttribute("value");
             string getMonthlyRentsPrePaymentActual = getMonthlyRentsPrePayment.ToString();
 
             return getMonthlyRentsPrePaymentActual;
@@ -83,8 +63,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [AllureStep("GetApartmentTypeAddApartmentsPage")]
         public string GetApartmentTypeAddApartmentsPage()
         {
-            WaitUntil.CustomElementIsVisible(ItemApartmentTypeMultiFamilyAddAprtmntsUnitsPage, 10);
-            string getApartmentType = ItemApartmentTypeMultiFamilyAddAprtmntsUnitsPage.Text;
+            WaitUntil.CustomElementIsVisible(ItemApartmentTypeMultiFamily);
+            string getApartmentType = ItemApartmentTypeMultiFamily.Text;
             string getApartmentTypeActual = getApartmentType.ToString();
 
             return getApartmentTypeActual;
@@ -103,8 +83,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [AllureStep("GetApartmentHoldDepositAddApartmentsPage")]
         public string GetApartmentHoldDepositAddApartmentsPage()
         {
-            WaitUntil.CustomElementIsVisible(FieldInputApartmentHoldDepositAddAprtmntsUnitsPage, 10);
-            string getApartmentHoldDeposit = FieldInputApartmentHoldDepositAddAprtmntsUnitsPage.GetAttribute("value");
+            WaitUntil.CustomElementIsVisible(FieldInputApartmentHoldDeposit);
+            string getApartmentHoldDeposit = FieldInputApartmentHoldDeposit.GetAttribute("value");
             string getApartmentHoldDepositActual = getApartmentHoldDeposit.ToString();
 
             return getApartmentHoldDepositActual;
@@ -123,8 +103,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [AllureStep("GetRentalTermsAddApartmentsPage")]
         public string GetRentalTermsAddApartmentsPage()
         {
-            WaitUntil.CustomElementIsVisible(ItemTwelveMonthsRentalTermsAddAprtmntsUnitsPage, 10);
-            string getRentalTerms = ItemTwelveMonthsRentalTermsAddAprtmntsUnitsPage.Text;
+            WaitUntil.CustomElementIsVisible(ItemTwelveMonthsRentalTerms);
+            string getRentalTerms = ItemTwelveMonthsRentalTerms.Text;
             string getRentalTermsActual = getRentalTerms.ToString();
 
             return getRentalTermsActual;
@@ -145,8 +125,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [AllureStep("GetRequiredDocumentsThreeRecentPaystubsAddApartmentsPage")]
         public string GetRequiredDocumentsThreeRecentPaystubsAddApartmentsPage()
         {
-            WaitUntil.CustomElementIsVisible(ItemThreeRecentPaystubsAddAprtmntsUnitsPage, 10);
-            string getThreeRecentPaystubs = ItemThreeRecentPaystubsAddAprtmntsUnitsPage.Text;
+            WaitUntil.CustomElementIsVisible(ItemThreeRecentPaystubs);
+            string getThreeRecentPaystubs = ItemThreeRecentPaystubs.Text;
             string getThreeRecentPaystubsActual = getThreeRecentPaystubs.ToString();
 
             return getThreeRecentPaystubsActual;
@@ -155,8 +135,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [AllureStep("GetRequiredDocumentsPhotoIdAddApartmentsPage")]
         public string GetRequiredDocumentsPhotoIdAddApartmentsPage()
         {
-            WaitUntil.CustomElementIsVisible(ItemPhotoIdPaystubsAddAprtmntsUnitsPage, 10);
-            string getPhotoId = ItemPhotoIdPaystubsAddAprtmntsUnitsPage.Text;
+            WaitUntil.CustomElementIsVisible(ItemPhotoIdPaystubs);
+            string getPhotoId = ItemPhotoIdPaystubs.Text;
             string getPhotoIdActual = getPhotoId.ToString();
 
             return getPhotoIdActual;
@@ -165,8 +145,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [AllureStep("GetRequiredDocumentsTwoMostRecentBankStatementsAddApartmentsPage")]
         public string GetRequiredDocumentsTwoMostRecentBankStatementsAddApartmentsPage()
         {
-            WaitUntil.CustomElementIsVisible(ItemTwoMostRecentBankStatementsAddAprtmntsUnitsPage, 10);
-            string getTwoMostRecentBankStatements = ItemTwoMostRecentBankStatementsAddAprtmntsUnitsPage.Text;
+            WaitUntil.CustomElementIsVisible(ItemTwoMostRecentBankStatements);
+            string getTwoMostRecentBankStatements = ItemTwoMostRecentBankStatements.Text;
             string getTwoMostRecentBankStatementsActual = getTwoMostRecentBankStatements.ToString();
 
             return getTwoMostRecentBankStatementsActual;
@@ -175,8 +155,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [AllureStep("GetRequiredDocumentsMostRecentWTwoOrOneZeroNineNineAddApartmentsPage")]
         public string GetRequiredDocumentsMostRecentWTwoOrOneZeroNineNineAddApartmentsPage()
         {
-            WaitUntil.CustomElementIsVisible(ItemrMostRecentWTwoOrOneZeroNineNineAddAprtmntsUnitsPage, 10);
-            string getMostRecentWTwoOrOneZeroNineNine = ItemrMostRecentWTwoOrOneZeroNineNineAddAprtmntsUnitsPage.Text;
+            WaitUntil.CustomElementIsVisible(ItemrMostRecentWTwoOrOneZeroNineNine);
+            string getMostRecentWTwoOrOneZeroNineNine = ItemrMostRecentWTwoOrOneZeroNineNine.Text;
             string getMostRecentWTwoOrOneZeroNineNineActual = getMostRecentWTwoOrOneZeroNineNine.ToString();
 
             return getMostRecentWTwoOrOneZeroNineNineActual;

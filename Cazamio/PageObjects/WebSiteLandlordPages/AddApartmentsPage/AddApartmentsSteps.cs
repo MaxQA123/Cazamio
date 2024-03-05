@@ -27,26 +27,26 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
 
         }
 
-        [AllureStep("EnterUnitNumberBedsBathsSqFoot")]
-        public AddApartments EnterUnitNumberBedsBathsSqFoot()
+        [AllureStep("FillInAllFieldsMarkAdmAssignedBrkr")]
+        public AddApartments FillInAllFieldsMarkAdmAssignedBrkr()
         {
-            WaitUntil.CustomElementIsVisible(FieldInputUnitNumberAddAprtmntsUnitsPage, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputUnitNumberAddAprtmntsUnitsPage, TestDataForWebSiteAdmin.UNIT_NUMBER);
+            WaitUntil.CustomElementIsVisible(FieldInputUnitNumber);
+            InputGeneral.InputFunctionWithClear(FieldInputUnitNumber, apartment.UnitNumber.UnitNumberMarkAdmAssignedRoleBrkr);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputBedrooms, apartment.Bedrooms.OneNumber);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputHalfBedrooms, apartment.HalfBedrooms.OneNumber);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputBathrooms, apartment.Bathrooms.OneNumber);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputHalfBathrooms, apartment.HalfBathrooms.OneNumber);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputSqFoot, apartment.SqFoot.OneNumber);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputLeasePrice, apartment.LeasePrice.OneNumber);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputLeasePrice, apartment.SecurityDeposit.OneNumber);
 
-            WaitUntil.CustomElementIsVisible(FieldInputBedroomsAddAprtmntsUnitsPage, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputBedroomsAddAprtmntsUnitsPage, GenerateRandomDataHelper.RandomNumberWithoutZero(1));
-
-            WaitUntil.CustomElementIsVisible(FieldInputHalfBedroomsAddAprtmntsUnitsPage, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputHalfBedroomsAddAprtmntsUnitsPage, TestDataForWebSiteAdmin.HALF_BEDS_BATHS_NUMBER);
-
-            WaitUntil.CustomElementIsVisible(FieldInputBathroomsAddAprtmntsUnitsPage, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputBathroomsAddAprtmntsUnitsPage, GenerateRandomDataHelper.RandomNumberWithoutZero(1));
-
-            WaitUntil.CustomElementIsVisible(FieldInputHalfBathroomsAddAprtmntsUnitsPage, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputHalfBathroomsAddAprtmntsUnitsPage, TestDataForWebSiteAdmin.HALF_BEDS_BATHS_NUMBER);
-
-            WaitUntil.CustomElementIsVisible(FieldInputSqFootAddAprtmntsUnitsPage, 10);
-            InputGeneral.InputFunctionWithClear(FieldInputSqFootAddAprtmntsUnitsPage, GenerateRandomDataHelper.RandomNumberWithoutZero(3));
 
             return this;
         }
@@ -54,8 +54,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [AllureStep("SelectStatusVacantAddAprtmntsUnitsPage")]
         public AddApartments SelectStatusVacantAddAprtmntsUnitsPage()
         {
-            WaitUntil.CustomElementIsVisible(ButtonApartmentStatusAddAprtmntsUnitsPage, 10);
-            Button.Click(ButtonApartmentStatusAddAprtmntsUnitsPage);
+            WaitUntil.CustomElementIsVisible(ButtonApartmentStatus);
+            Button.Click(ButtonApartmentStatus);
             KeyBoardActions.ClickArrowDown();
             KeyBoardActions.ClickArrowDown();
             KeyBoardActions.ClickEnterButton();
@@ -66,8 +66,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [AllureStep("SelectAgentAddAprtmntsUnitsPage")]
         public AddApartments SelectAgentAddAprtmntsUnitsPage()
         {
-            WaitUntil.CustomElementIsVisible(ButtonAssignedAgentAddAprtmntsUnitsPage, 10);
-            Button.Click(ButtonAssignedAgentAddAprtmntsUnitsPage);
+            WaitUntil.CustomElementIsVisible(ButtonAssignedAgent);
+            Button.Click(ButtonAssignedAgent);
             KeyBoardActions.ClickArrowDown();
             KeyBoardActions.ClickEnterButton();
 

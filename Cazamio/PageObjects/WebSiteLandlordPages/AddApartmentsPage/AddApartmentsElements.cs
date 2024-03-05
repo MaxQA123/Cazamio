@@ -19,40 +19,40 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         public IWebElement ButtonBuildingNameAddApartmentsUnitsPage;
 
         [FindsBy(How = How.XPath, Using = ("//input[@id = 'unit']"))]
-        public IWebElement FieldInputUnitNumberAddAprtmntsUnitsPage;
+        public IWebElement FieldInputUnitNumber;
 
         [FindsBy(How = How.XPath, Using = ("//div[@aria-selected = 'true']//span"))]
         public IWebElement GetValueFromFieldBuildingName;
 
         [FindsBy(How = How.XPath, Using = ("//input[@id = 'bedrooms']"))]
-        public IWebElement FieldInputBedroomsAddAprtmntsUnitsPage;
+        public IWebElement FieldInputBedrooms;
 
         [FindsBy(How = How.XPath, Using = ("//input[@id = 'half-bedrooms']"))]
-        public IWebElement FieldInputHalfBedroomsAddAprtmntsUnitsPage;
+        public IWebElement FieldInputHalfBedrooms;
 
         [FindsBy(How = How.XPath, Using = ("//input[@id = 'bathrooms']"))]
-        public IWebElement FieldInputBathroomsAddAprtmntsUnitsPage;
+        public IWebElement FieldInputBathrooms;
 
         [FindsBy(How = How.XPath, Using = ("//input[@id = 'half-bathrooms']"))]
-        public IWebElement FieldInputHalfBathroomsAddAprtmntsUnitsPage;
+        public IWebElement FieldInputHalfBathrooms;
 
         [FindsBy(How = How.XPath, Using = ("//input[@id = 'sqFoot']"))]
-        public IWebElement FieldInputSqFootAddAprtmntsUnitsPage;
+        public IWebElement FieldInputSqFoot;
 
         [FindsBy(How = How.XPath, Using = ("//input[@id = 'leastPrice']"))]
-        public IWebElement FieldInputLeasePriceAddAprtmntsUnitsPage;
+        public IWebElement FieldInputLeasePrice;
 
         [FindsBy(How = How.XPath, Using = ("//input[@id = 'depositPrice']"))]
-        public IWebElement FieldInputSecurityDepositAddAprtmntsUnitsPage;
+        public IWebElement FieldInputSecurityDeposit;
 
         [FindsBy(How = How.XPath, Using = ("//input[@id = 'paidMonths']"))]
-        public IWebElement FieldInputMonthlyRentsPrePaymentAddAprtmntsUnitsPage;
+        public IWebElement FieldInputMonthlyRentsPrePayment;
 
         [FindsBy(How = How.XPath, Using = ("//input[@id = 'floor']"))]
-        public IWebElement FieldInputFloorAddAprtmntsUnitsPage;
+        public IWebElement FieldInputFloor;
 
         [FindsBy(How = How.XPath, Using = ("//ng-select[@formcontrolname = 'status']"))]
-        public IWebElement ButtonApartmentStatusAddAprtmntsUnitsPage;
+        public IWebElement ButtonApartmentStatus;
 
         //[FindsBy(How = How.XPath, Using = ("//div[@id = 'a306793add00']"))]
         //public IWebElement ItemOffMarketAddAprtmntsUnitsPage;
@@ -73,63 +73,63 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         //public IWebElement ItemSignedLeaseAddAprtmntsUnitsPage;
 
         [FindsBy(How = How.XPath, Using = ("//ng-select[@formcontrolname = 'broker']"))]
-        public IWebElement ButtonAssignedAgentAddAprtmntsUnitsPage;
+        public IWebElement ButtonAssignedAgent;
 
         [FindsBy(How = How.XPath, Using = ("//input[@formcontrolname = 'availableFrom']"))]
-        public IWebElement FieldInputAvailableFromAddAprtmntsUnitsPage;
+        public IWebElement FieldInputAvailableFrom;
 
         [FindsBy(How = How.XPath, Using = ("//span[text() = 'MultiFamily']"))]
-        public IWebElement ItemApartmentTypeMultiFamilyAddAprtmntsUnitsPage;
+        public IWebElement ItemApartmentTypeMultiFamily;
 
         [FindsBy(How = How.XPath, Using = ("//input[@formcontrolname = 'holdingDeposit']"))]
-        public IWebElement FieldInputApartmentHoldDepositAddAprtmntsUnitsPage;
+        public IWebElement FieldInputApartmentHoldDeposit;
 
         [FindsBy(How = How.XPath, Using = ("//span[text() = 'Set default']"))]
-        public IWebElement ButtonSetDefaultAddAprtmntsUnitsPage;
+        public IWebElement ButtonSetDefault;
 
         [FindsBy(How = How.XPath, Using = ("//span[text() = 'Payment methods']"))]
-        public IWebElement ButtonPaymentMethodsAddAprtmntsUnitsPage;
+        public IWebElement ButtonPaymentMethods;
 
         [FindsBy(How = How.XPath, Using = ("//mat-chip-list[@id = 'mat-chip-list-1']"))]
-        public IWebElement FieldInputRentalTermsAddAprtmntsUnitsPage;
+        public IWebElement FieldInputRentalTerms;
 
         [FindsBy(How = How.XPath, Using = ("//mat-chip[text() =  ' 12 months ']"))]
-        public IWebElement ItemTwelveMonthsRentalTermsAddAprtmntsUnitsPage;
+        public IWebElement ItemTwelveMonthsRentalTerms;
 
         #region RequiredDocuments
 
         [FindsBy(How = How.XPath, Using = ("//app-required-documents//span[text() = ' 3 Recent paystubs ']"))]
-        public IWebElement ItemThreeRecentPaystubsAddAprtmntsUnitsPage;
+        public IWebElement ItemThreeRecentPaystubs;
 
         [FindsBy(How = How.XPath, Using = ("//app-required-documents//span[text() = ' Photo ID ']"))]
-        public IWebElement ItemPhotoIdPaystubsAddAprtmntsUnitsPage;
+        public IWebElement ItemPhotoIdPaystubs;
 
         [FindsBy(How = How.XPath, Using = ("//app-required-documents//span[text() = ' 2 Most recent bank statements ' ]"))]
-        public IWebElement ItemTwoMostRecentBankStatementsAddAprtmntsUnitsPage;
+        public IWebElement ItemTwoMostRecentBankStatements;
 
         [FindsBy(How = How.XPath, Using = ("//app-required-documents//span[text() = ' Most recent W-2 or 1099 ' ]"))]
-        public IWebElement ItemrMostRecentWTwoOrOneZeroNineNineAddAprtmntsUnitsPage;
+        public IWebElement ItemrMostRecentWTwoOrOneZeroNineNine;
 
         #endregion
 
         [FindsBy(How = How.XPath, Using = ("//textarea[@id = 'description' ]"))]
-        public IWebElement FieldInputDescriptionAddAprtmntsUnitsPage;
+        public IWebElement FieldInputDescription;
 
         [FindsBy(How = How.XPath, Using = ("//textarea[@id = 'internalNotes' ]"))]
-        public IWebElement FieldInputInternalNotesAddAprtmntsUnitsPage;
+        public IWebElement FieldInputInternalNotes;
 
         #region Amenities
 
         [FindsBy(How = How.XPath, Using = "//input[@id = 'input-amenity']")]
-        public IWebElement FieldInputSearchForAmenitiesAddAprtmntsgPg;
+        public IWebElement FieldInputSearchForAmenities;
 
         [FindsBy(How = How.XPath, Using = "//input[@id = 'input-included-amenity']")]
-        public IWebElement FieldInputSearchForDefaultIncludedInMonthlyRentAmenitiesAddAprtmntsgPg;
+        public IWebElement FieldInputSearchForDefaultIncludedInMonthlyRentAmenities;
 
         #endregion
 
         [FindsBy(How = How.XPath, Using = "//cazamio-button[@text = 'Next']")]
-        public IWebElement ButtonGeneralNextAddAprtmntsgPg;
+        public IWebElement ButtonGeneralNext;
 
         #endregion
     }
