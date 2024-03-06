@@ -27,8 +27,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
 
         }
 
-        [AllureStep("FillInAllFieldsMarkAdmAssignedBrkr")]
-        public AddApartments FillInAllFieldsMarkAdmAssignedBrkr()
+        [AllureStep("EnterToAllFieldsMarkAdmAssignedBrkr")]
+        public AddApartments EnterToAllFieldsMarkAdmAssignedBrkr()
         {
             WaitUntil.CustomElementIsVisible(FieldInputUnitNumber);
             InputGeneral.InputFunctionWithClear(FieldInputUnitNumber, apartment.UnitNumber.UnitNumberMarkAdmAssignedRoleBrkr);
@@ -45,20 +45,28 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             WaitUntil.WaitSomeInterval(100);
             InputGeneral.InputFunctionWithClear(FieldInputLeasePrice, apartment.LeasePrice.OneNumber);
             WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputLeasePrice, apartment.SecurityDeposit.OneNumber);
+            InputGeneral.InputFunctionWithClear(FieldInputSecurityDeposit, apartment.SecurityDeposit.OneNumber);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputMonthlyRentsPrePayment, apartment.MonthlyRentsPrePayment.OneNumber);
+            WaitUntil.WaitSomeInterval(100);
+            InputGeneral.InputFunctionWithClear(FieldInputFloor, apartment.Floor.OneNumber);
 
 
             return this;
         }
 
-        [AllureStep("SelectStatusVacantAddAprtmntsUnitsPage")]
-        public AddApartments SelectStatusVacantAddAprtmntsUnitsPage()
+        [AllureStep("SelectStatusVacant")]
+        public AddApartments SelectStatusVacant()
         {
             WaitUntil.CustomElementIsVisible(ButtonApartmentStatus);
+            WaitUntil.CustomElementIsClickable(ButtonApartmentStatus);
             Button.Click(ButtonApartmentStatus);
-            KeyBoardActions.ClickArrowDown();
-            KeyBoardActions.ClickArrowDown();
-            KeyBoardActions.ClickEnterButton();
+            WaitUntil.CustomElementIsVisible(ButtonApartmentStatus);
+            WaitUntil.CustomElementIsClickable(ButtonApartmentStatus);
+            Button.Click(ItemOffMarket);
+            //KeyBoardActions.ClickArrowDown();
+            //KeyBoardActions.ClickArrowDown();
+            //KeyBoardActions.ClickEnterButton();
 
             return this;
         }

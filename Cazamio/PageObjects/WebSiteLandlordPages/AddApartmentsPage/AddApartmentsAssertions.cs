@@ -30,18 +30,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             return this;
         }
 
-        [AllureStep("VerifySecurityDeposit")]
-        public AddApartments VerifySecurityDeposit(string getLeasePrice, string getSecurityDeposit)
-        {
-            Assert.AreEqual(getLeasePrice, getSecurityDeposit);
-
-            Console.WriteLine($"Lease Price = {getLeasePrice} = {getSecurityDeposit} = Security Deposit");
-
-            return this;
-        }
-
-        [AllureStep("GetMonthlyRentsPrePaymentAddApartmentsPage")]
-        public string GetMonthlyRentsPrePaymentAddApartmentsPage()
+        [AllureStep("GetMonthlyRentsPrePayment")]
+        public string GetMonthlyRentsPrePayment()
         {
             WaitUntil.CustomElementIsVisible(FieldInputMonthlyRentsPrePayment);
             string getMonthlyRentsPrePayment = FieldInputMonthlyRentsPrePayment.GetAttribute("value");
@@ -50,8 +40,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             return getMonthlyRentsPrePaymentActual;
         }
 
-        [AllureStep("VerifyMonthlyRentsPrePaymentAddApartmentsPage")]
-        public AddApartments VerifyMonthlyRentsPrePaymentAddApartmentsPage(string getMonthlyRentsPrePayment)
+        [AllureStep("VerifyMonthlyRentsPrePayment")]
+        public AddApartments VerifyMonthlyRentsPrePayment(string getMonthlyRentsPrePayment)
         {
             Assert.AreEqual(getMonthlyRentsPrePayment, TestDataForWebSiteAdmin.DEFAULT_MONTHLY_RENTS_PREPAYMENT);
 

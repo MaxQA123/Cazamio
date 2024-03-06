@@ -26,6 +26,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.BuildingViewPage
         [AllureStep("GetValueFromFieldNotInputAddress")]
         public string GetValueFromFieldNotInputAddress()
         {
+            WaitUntil.WaitSomeInterval(2000);
             WaitUntil.CustomElementIsVisible(FieldNotInputAddress);
             string getValue = FieldNotInputAddress.Text;
             string getValueActual = getValue.ToString();
