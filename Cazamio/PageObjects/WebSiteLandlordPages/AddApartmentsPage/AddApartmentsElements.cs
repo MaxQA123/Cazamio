@@ -54,23 +54,23 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [FindsBy(How = How.XPath, Using = ("//ng-select[@formcontrolname = 'status']"))]
         public IWebElement ButtonApartmentStatus;
 
-        [FindsBy(How = How.XPath, Using = ("//div[@id = 'a8bfbfa6ef91-0']']"))]
+        [FindsBy(How = How.XPath, Using = ("//div/span[text() = 'Off market']"))]
         public IWebElement ItemOffMarket;
 
-        //[FindsBy(How = How.XPath, Using = ("//div[@id = 'a071ad8d5d53']"))]
-        //public IWebElement ItemOccupiedAddAprtmntsUnitsPage;
+        [FindsBy(How = How.XPath, Using = ("//div/span[text() = 'Occupied']"))]
+        public IWebElement ItemOccupied;
 
-        //[FindsBy(How = How.XPath, Using = ("//div[@id = 'a306793add00']"))]
-        //public IWebElement ItemVacantAddAprtmntsUnitsPage;
+        [FindsBy(How = How.XPath, Using = ("//div/span[text() = 'Vacant']"))]
+        public IWebElement ItemVacant;
 
-        //[FindsBy(How = How.XPath, Using = ("//div[@id = 'a306793add00']"))]
-        //public IWebElement ItemDepositReceivedAddAprtmntsUnitsPage;
+        [FindsBy(How = How.XPath, Using = ("//div/span[text() = 'Deposit received']"))]
+        public IWebElement ItemDepositReceived;
 
-        //[FindsBy(How = How.XPath, Using = ("//div[@id = 'a306793add00']"))]
-        //public IWebElement ItemApplicationSubmittedAddAprtmntsUnitsPage;
+        [FindsBy(How = How.XPath, Using = ("//div/span[text() = 'Application submitted']"))]
+        public IWebElement ItemApplicationSubmitted;
 
-        //[FindsBy(How = How.XPath, Using = ("//div[@id = 'a306793add00']"))]
-        //public IWebElement ItemSignedLeaseAddAprtmntsUnitsPage;
+        [FindsBy(How = How.XPath, Using = ("//div/span[text() = 'Signed lease']"))]
+        public IWebElement ItemSignedLease;
 
         [FindsBy(How = How.XPath, Using = ("//ng-select[@formcontrolname = 'broker']"))]
         public IWebElement ButtonAssignedAgent;

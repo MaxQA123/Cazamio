@@ -55,18 +55,80 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             return this;
         }
 
+        [AllureStep("SelectStatusOffMarket")]
+        public AddApartments SelectStatusOffMarket()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonApartmentStatus);
+            WaitUntil.CustomElementIsClickable(ButtonApartmentStatus);
+            Button.Click(ButtonApartmentStatus);
+            WaitUntil.CustomElementIsVisible(ItemOffMarket);
+            WaitUntil.CustomElementIsClickable(ItemOffMarket);
+            Button.Click(ItemOffMarket);
+
+            return this;
+        }
+
+        [AllureStep("SelectStatusOccupied")]
+        public AddApartments SelectStatusOccupied()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonApartmentStatus);
+            WaitUntil.CustomElementIsClickable(ButtonApartmentStatus);
+            Button.Click(ButtonApartmentStatus);
+            WaitUntil.CustomElementIsVisible(ItemOccupied);
+            WaitUntil.CustomElementIsClickable(ItemOccupied);
+            Button.Click(ItemOccupied);
+
+            return this;
+        }
+
         [AllureStep("SelectStatusVacant")]
         public AddApartments SelectStatusVacant()
         {
             WaitUntil.CustomElementIsVisible(ButtonApartmentStatus);
             WaitUntil.CustomElementIsClickable(ButtonApartmentStatus);
             Button.Click(ButtonApartmentStatus);
+            WaitUntil.CustomElementIsVisible(ItemVacant);
+            WaitUntil.CustomElementIsClickable(ItemVacant);
+            Button.Click(ItemVacant);
+
+            return this;
+        }
+
+        [AllureStep("SelectStatusDepositReceived")]
+        public AddApartments SelectStatusDepositReceived()
+        {
             WaitUntil.CustomElementIsVisible(ButtonApartmentStatus);
             WaitUntil.CustomElementIsClickable(ButtonApartmentStatus);
-            Button.Click(ItemOffMarket);
-            //KeyBoardActions.ClickArrowDown();
-            //KeyBoardActions.ClickArrowDown();
-            //KeyBoardActions.ClickEnterButton();
+            Button.Click(ButtonApartmentStatus);
+            WaitUntil.CustomElementIsVisible(ItemDepositReceived);
+            WaitUntil.CustomElementIsClickable(ItemDepositReceived);
+            Button.Click(ItemDepositReceived);
+
+            return this;
+        }
+
+        [AllureStep("SelectStatusApplicationSubmitted")]
+        public AddApartments SelectStatusApplicationSubmitted()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonApartmentStatus);
+            WaitUntil.CustomElementIsClickable(ButtonApartmentStatus);
+            Button.Click(ButtonApartmentStatus);
+            WaitUntil.CustomElementIsVisible(ItemApplicationSubmitted);
+            WaitUntil.CustomElementIsClickable(ItemApplicationSubmitted);
+            Button.Click(ItemApplicationSubmitted);
+
+            return this;
+        }
+
+        [AllureStep("SelectStatusSignedLease")]
+        public AddApartments SelectStatusSignedLease()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonApartmentStatus);
+            WaitUntil.CustomElementIsClickable(ButtonApartmentStatus);
+            Button.Click(ButtonApartmentStatus);
+            WaitUntil.CustomElementIsVisible(ItemSignedLease);
+            WaitUntil.CustomElementIsClickable(ItemSignedLease);
+            Button.Click(ItemSignedLease);
 
             return this;
         }
