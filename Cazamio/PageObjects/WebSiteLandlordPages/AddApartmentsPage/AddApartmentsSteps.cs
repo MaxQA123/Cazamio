@@ -1,4 +1,5 @@
 ﻿using CazamioProgect.Helpers;
+using CazamioProgect.PageObjects;
 using NUnit.Allure.Attributes;
 using System;
 using System.Collections.Generic;
@@ -140,6 +141,42 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             Button.Click(ButtonAssignedAgent);
             KeyBoardActions.ClickArrowDown();
             KeyBoardActions.ClickEnterButton();
+
+            return this;
+        }
+
+        [AllureStep("SelectAgent")]
+        public AddApartments SelectAgent()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonAssignedAgent);
+            WaitUntil.CustomElementIsClickable(ButtonAssignedAgent);
+            Button.Click(ButtonAssignedAgent);
+            WaitUntil.WaitSomeInterval(1000);
+            Button.Click(SetItemAgent());
+
+            return this;
+        }
+
+        [AllureStep("SelectCurrentDateAvailableFrom")]
+        public AddApartments SelectCurrentDateAvailableFrom()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputAvailableFrom);
+            Button.Click(FieldInputAvailableFrom);
+            WaitUntil.WaitSomeInterval(100);
+            Pages.DatePicker
+                .SelectCurrentDay();
+
+            return this;
+        }
+
+        [AllureStep("SelectApartmentTypeMultiFamily")]
+        public AddApartments SelectApartmentTypeMultiFamily()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonApartmentType);
+            Button.Click(ButtonApartmentType);
+            WaitUntil.CustomElementIsVisible(ItemMultiFamily);
+            WaitUntil.CustomElementIsClickable(ItemMultiFamily);
+            Button.Click(ItemMultiFamily);
 
             return this;
         }

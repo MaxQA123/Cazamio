@@ -29,6 +29,7 @@ namespace CazamioProject.Objects
         public BuildingShortAddressInfo BuildingShortAddress { get; set; }
         public string TextLong { get; set; }
         public TextVariableInfo TextVariable { get; set; }
+        public string AgentAssignedToApartmentAsAgent { get; set; }
 
         public class UnitNumberInfo
         {

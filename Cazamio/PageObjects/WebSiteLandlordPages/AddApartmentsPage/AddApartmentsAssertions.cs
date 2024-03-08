@@ -50,15 +50,15 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             return this;
         }
 
-        [AllureStep("GetApartmentTypeAddApartmentsPage")]
-        public string GetApartmentTypeAddApartmentsPage()
-        {
-            WaitUntil.CustomElementIsVisible(ItemApartmentTypeMultiFamily);
-            string getApartmentType = ItemApartmentTypeMultiFamily.Text;
-            string getApartmentTypeActual = getApartmentType.ToString();
+        //[AllureStep("GetApartmentTypeAddApartmentsPage")]
+        //public string GetApartmentTypeAddApartmentsPage()
+        //{
+        //    WaitUntil.CustomElementIsVisible(ItemApartmentTypeMultiFamily);
+        //    string getApartmentType = ItemApartmentTypeMultiFamily.Text;
+        //    string getApartmentTypeActual = getApartmentType.ToString();
 
-            return getApartmentTypeActual;
-        }
+        //    return getApartmentTypeActual;
+        //}
 
         [AllureStep("VerifyApartmentTypeAddApartmentsPage")]
         public AddApartments VerifyApartmentTypeAddApartmentsPage(string getApartmentType)

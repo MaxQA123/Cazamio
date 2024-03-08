@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using CazamioProgect.Helpers;
+using CazamioProject.Objects;
+using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,20 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         public IWebElement TitleAddApartmentsPage;
 
         #region TabUnits
+
+        public IWebElement ItemFullNameAgent;
+
+        public IWebElement SetItemAgent()
+        {
+            // Создание экземпляра класса Owner
+            Agent agent = new Agent().Generate();
+
+            // Использование переменной экземпляра owner для построения XPath
+            var xpath = "//span[text() = '" + agent.FullNameAgent + "']";
+
+            // Присвоение значения ItemForAutotestForBroker
+            return Browser._Driver.FindElement(By.XPath(xpath));
+        }
 
         [FindsBy(How = How.XPath, Using = ("//ng-select[@bindlabel = 'buildingName']//div[@aria-haspopup = 'listbox']"))]
         public IWebElement ButtonBuildingNameAddApartmentsUnitsPage;
@@ -78,8 +94,23 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [FindsBy(How = How.XPath, Using = ("//input[@formcontrolname = 'availableFrom']"))]
         public IWebElement FieldInputAvailableFrom;
 
-        [FindsBy(How = How.XPath, Using = ("//span[text() = 'MultiFamily']"))]
-        public IWebElement ItemApartmentTypeMultiFamily;
+        [FindsBy(How = How.XPath, Using = ("//ng-select[@formcontrolname = 'apartmentType']"))]
+        public IWebElement ButtonApartmentType;
+
+        [FindsBy(How = How.XPath, Using = ("//ng-dropdown-panel//div/span[text() = 'MultiFamily']"))]
+        public IWebElement ItemMultiFamily;
+
+        [FindsBy(How = How.XPath, Using = ("//ng-dropdown-panel//div/span[text() = 'SingleFamily']"))]
+        public IWebElement ItemSingleFamily;
+
+        [FindsBy(How = How.XPath, Using = ("//ng-dropdown-panel//div/span[text() = 'Duplex']"))]
+        public IWebElement ItemDuplex;
+
+        [FindsBy(How = How.XPath, Using = ("//ng-dropdown-panel//div/span[text() = 'Plex']"))]
+        public IWebElement ItemPlex;
+
+        [FindsBy(How = How.XPath, Using = ("//ng-dropdown-panel//div/span[text() = 'Loft']"))]
+        public IWebElement ItemLoft;
 
         [FindsBy(How = How.XPath, Using = ("//input[@formcontrolname = 'holdingDeposit']"))]
         public IWebElement FieldInputApartmentHoldDeposit;

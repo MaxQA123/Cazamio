@@ -866,9 +866,10 @@ namespace MarketplaceAdminTests
             string getLeasePrice = Pages.AddApartments.GetLeasePrice();
 
             Pages.AddApartments
-                .SelectStatusVacant();
-                //.SelectAgentAddAprtmntsUnitsPage();
-            //.SelectDateAvailableFromAprtmntsUnitsPage();
+                .SelectStatusVacant()
+                .SelectAgent()
+                .SelectCurrentDateAvailableFrom()
+                .SelectApartmentTypeMultiFamily();
 
             //string getApartmentType = Pages.AddApartments.GetApartmentTypeAddApartmentsPage();
 

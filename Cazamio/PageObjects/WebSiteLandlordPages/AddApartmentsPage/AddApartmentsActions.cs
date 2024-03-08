@@ -15,6 +15,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
     {
         Building building = new Building().Generate();
         Apartment apartment = new Apartment().Generate();
+        Agent agent = new Agent().Generate();
 
         #region TabUnits
 
@@ -72,7 +73,25 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         {
             WaitUntil.CustomElementIsVisible(ButtonPaymentMethods);
             Button.Click(ButtonPaymentMethods);
+
+            return this;
+        }
+
+        [AllureStep("ClickFieldInputAvailableFrom")]
+        public AddApartments ClickFieldInputAvailableFrom()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputAvailableFrom);
+            Button.Click(FieldInputAvailableFrom);
             
+            return this;
+        }
+
+        [AllureStep("ClickButtonApartmentType")]
+        public AddApartments ClickButtonApartmentType()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonApartmentType);
+            Button.Click(ButtonApartmentType);
+
             return this;
         }
 
