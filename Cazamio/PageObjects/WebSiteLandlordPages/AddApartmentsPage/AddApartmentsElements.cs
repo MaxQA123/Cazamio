@@ -70,6 +70,9 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [FindsBy(How = How.XPath, Using = ("//ng-select[@formcontrolname = 'status']"))]
         public IWebElement ButtonApartmentStatus;
 
+        [FindsBy(How = How.XPath, Using = ("//ng-select[@formcontrolname = 'status']//div[@aria-selected= 'true']//span"))]
+        public IWebElement InputStatus;
+
         [FindsBy(How = How.XPath, Using = ("//div/span[text() = 'Off market']"))]
         public IWebElement ItemOffMarket;
 

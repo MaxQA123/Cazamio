@@ -863,7 +863,8 @@ namespace MarketplaceAdminTests
                 .VerifyBuildingNameAddApartmentsPage(getBuildingNameFromBuildingView, getBuildingNameFromAddApartments)
                 .EnterToAllFieldsMarkAdmAssignedBrkr();
 
-            string getLeasePrice = Pages.AddApartments.GetLeasePrice();
+            string getLeasePriceFromAddApartments = Pages.AddApartments.GetLeasePrice();
+            string getUnitNumberFromAddApartments = Pages.AddApartments.GetUnitNumber();
 
             Pages.AddApartments
                 .SelectStatusVacant()
@@ -871,10 +872,9 @@ namespace MarketplaceAdminTests
                 .SelectCurrentDateAvailableFrom()
                 .SelectApartmentTypeMultiFamily();
 
-            //string getApartmentType = Pages.AddApartments.GetApartmentTypeAddApartmentsPage();
+            string getStatusFromAddApartments = Pages.AddApartments.GetStatus();
 
-            //Pages.AddApartments
-            //    .VerifyApartmentTypeAddApartmentsPage(getApartmentType);
+            KeyBoardActions.ScrollToDown();
 
             //string getgetApartmentHoldDeposit = Pages.AddApartments.GetApartmentHoldDepositAddApartmentsPage();
 

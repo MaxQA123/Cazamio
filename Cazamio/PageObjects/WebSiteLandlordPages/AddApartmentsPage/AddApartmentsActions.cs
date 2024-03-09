@@ -29,6 +29,30 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             return getLeasePriceActual;
         }
 
+        [AllureStep("GetUnitNumber")]
+        public string GetUnitNumber()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputUnitNumber);
+            string getUnitNumber = FieldInputUnitNumber.GetAttribute("value");
+            string getUnitNumberActual = getUnitNumber.ToString();
+
+            return getUnitNumberActual;
+        }
+
+        [AllureStep("GetStatus")]
+        public string GetStatus()
+        {
+            WaitUntil.CustomElementIsVisible(ButtonApartmentStatus);
+            WaitUntil.CustomElementIsClickable(ButtonApartmentStatus);
+            Button.Click(ButtonApartmentStatus);
+            WaitUntil.CustomElementIsVisible(InputStatus);
+            string getStatus = InputStatus.Text;
+            string getStatusActual = getStatus.ToString();
+            KeyBoardActions.ClickEnterButton();
+
+            return getStatusActual;
+        }
+
         [AllureStep("GetSecurityDeposit")]
         public string GetSecurityDeposit()
         {
