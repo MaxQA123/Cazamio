@@ -75,6 +75,7 @@ namespace CazamioProgect.PageObjects
         public static EmailXitroo EmailXitroo => GetPage< EmailXitroo >();
         public static PutsBox PutsBox => GetPage<PutsBox>();
         public static JScriptExecutorHelper JScriptExecutorHelper => GetPage<JScriptExecutorHelper>();
+        public static ScrollingJScriptExecutorHelper ScrollingJScriptExecutorHelper => GetPage<ScrollingJScriptExecutorHelper>();
 
         #region TenantWebSiteCazamio
 

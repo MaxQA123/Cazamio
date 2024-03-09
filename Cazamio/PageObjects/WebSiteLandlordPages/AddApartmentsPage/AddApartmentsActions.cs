@@ -63,8 +63,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             return getSecurityDepositActual;
         }
 
-        [AllureStep("EnterLeasePrice")]
-        public AddApartments EnterLeasePrice()
+        [AllureStep("EnterLeasePriceOneNumber")]
+        public AddApartments EnterLeasePriceOneNumber()
         //SecurityDeposit autofill
         {
             WaitUntil.CustomElementIsVisible(FieldInputLeasePrice);
@@ -73,8 +73,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             return this;
         }
 
-        [AllureStep("EnterSecurityDeposit")]
-        public AddApartments EnterSecurityDeposit()
+        [AllureStep("EnterSecurityDepositOneNumber")]
+        public AddApartments EnterSecurityDepositOneNumber()
         //SecurityDeposit autofill
         {
             WaitUntil.CustomElementIsVisible(FieldInputLeasePrice);
@@ -83,8 +83,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             return this;
         }
 
-        [AllureStep("EnterFieldInputFloorAddAprtmntsUnitsPage")]
-        public AddApartments EnterFieldInputFloorAddAprtmntsUnitsPage()
+        [AllureStep("EnterFieldInputFloor")]
+        public AddApartments EnterFieldInputFloor()
         {
             WaitUntil.CustomElementIsVisible(FieldInputFloor);
             InputGeneral.InputFunctionWithClear(FieldInputFloor, GenerateRandomDataHelper.RandomNumberWithoutZero(2));
@@ -92,8 +92,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             return this;
         }
 
-        [AllureStep("ClickButtonPaymentMethodsAddAprtmntsUnitsPage")]
-        public AddApartments ClickButtonPaymentMethodsAddAprtmntsUnitsPage()
+        [AllureStep("ClickButtonPaymentMethods")]
+        public AddApartments ClickButtonPaymentMethods()
         {
             WaitUntil.CustomElementIsVisible(ButtonPaymentMethods);
             Button.Click(ButtonPaymentMethods);
@@ -115,6 +115,15 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         {
             WaitUntil.CustomElementIsVisible(ButtonApartmentType);
             Button.Click(ButtonApartmentType);
+
+            return this;
+        }
+
+        [AllureStep("EnterHoldDepositOneNumber")]
+        public AddApartments EnterHoldDepositOneNumber()
+        {
+            WaitUntil.CustomElementIsVisible(FieldInputApartmentHoldDeposit);
+            InputGeneral.InputFunctionWithClear(FieldInputApartmentHoldDeposit, apartment.HoldDeposit.OneNumber);
 
             return this;
         }
@@ -187,8 +196,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
 
         #endregion
 
-        [AllureStep("ClickButtonGeneralNextAddAprtmntsgPg")]
-        public AddApartments ClickButtonGeneralNextAddAprtmntsgPg()
+        [AllureStep("ClickButtonGeneralNext")]
+        public AddApartments ClickButtonGeneralNext()
         {
             WaitUntil.WaitSomeInterval(3000);
             Button.Click(ButtonGeneralNext);

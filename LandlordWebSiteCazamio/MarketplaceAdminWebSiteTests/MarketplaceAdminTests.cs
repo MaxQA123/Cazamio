@@ -861,7 +861,7 @@ namespace MarketplaceAdminTests
 
             Pages.AddApartments
                 .VerifyBuildingNameAddApartmentsPage(getBuildingNameFromBuildingView, getBuildingNameFromAddApartments)
-                .EnterToAllFieldsMarkAdmAssignedBrkr();
+                .EnterToAllFieldsMarkAdmAssignedBrkrOneNumber();
 
             string getLeasePriceFromAddApartments = Pages.AddApartments.GetLeasePrice();
             string getUnitNumberFromAddApartments = Pages.AddApartments.GetUnitNumber();
@@ -874,7 +874,13 @@ namespace MarketplaceAdminTests
 
             string getStatusFromAddApartments = Pages.AddApartments.GetStatus();
 
-            KeyBoardActions.ScrollToDown();
+            ScrollingJScriptExecutorHelper.ScrollToDownWebPage();
+
+            Pages.AddApartments
+                .EnterHoldDepositOneNumber()
+                .ClickButtonPaymentMethods();
+            Pages.ModalWindowPaymentOptions
+                .SelectAllPaymentMethodsForHoldApartment();
 
             //string getgetApartmentHoldDeposit = Pages.AddApartments.GetApartmentHoldDepositAddApartmentsPage();
 

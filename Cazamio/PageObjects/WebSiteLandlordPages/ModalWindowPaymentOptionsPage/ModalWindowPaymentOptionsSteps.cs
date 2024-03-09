@@ -19,8 +19,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
             Button.Click(ItemDeliverCheck);
             Button.Click(ItemZelle);
             Button.Click(ItemVenmo);
-            InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNote, paymentOptions.DeliverCheckNote.ForBuildingScreening);
-            InputGeneral.InputFunctionWithClear(FieldInputZelleAddressOrPhone, paymentOptions.Zelle.ForBuildingScreening);
+            InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNoteBuilding, paymentOptions.DeliverCheckNote.ForBuildingScreening);
+            InputGeneral.InputFunctionWithClear(FieldInputZelleAddressOrPhoneBuilding, paymentOptions.Zelle.ForBuildingScreening);
             ButtonForVenmoQrCodeImage.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_PAYMENT_VENMO_SCREENING));
             Button.Click(ButtonSaveMdlWndwOptns);
             VerifySuccessSelectPmntMthds();
@@ -36,8 +36,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
             Button.Click(ItemDeliverCheck);
             Button.Click(ItemZelle);
             Button.Click(ItemVenmo);
-            InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNote, paymentOptions.DeliverCheckNote.ForBuildingHold);
-            InputGeneral.InputFunctionWithClear(FieldInputZelleAddressOrPhone, paymentOptions.Zelle.ForBuildingHold);
+            InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNoteBuilding, paymentOptions.DeliverCheckNote.ForBuildingHold);
+            InputGeneral.InputFunctionWithClear(FieldInputZelleAddressOrPhoneBuilding, paymentOptions.Zelle.ForBuildingHold);
             ButtonForVenmoQrCodeImage.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_PAYMENT_VENMO_HOLD_BUILDING));
             Button.Click(ButtonSaveMdlWndwOptns);
             VerifySuccessSelectPmntMthds();
@@ -52,8 +52,8 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
             Button.Click(ItemAch);
             Button.Click(ItemDeliverCheck);
             Button.Click(ItemZelle);
-            InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNote, paymentOptions.DeliverCheckNote.ForBuildingHold);
-            InputGeneral.InputFunctionWithClear(FieldInputZelleAddressOrPhone, paymentOptions.Zelle.ForBuildingHold);
+            InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNoteBuilding, paymentOptions.DeliverCheckNote.ForBuildingHold);
+            InputGeneral.InputFunctionWithClear(FieldInputZelleAddressOrPhoneBuilding, paymentOptions.Zelle.ForBuildingHold);
             Button.Click(ButtonSaveMdlWndwOptns);
             VerifySuccessSelectPmntMthds();
 
@@ -67,9 +67,26 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
             Button.Click(ItemDeliverCheck);
             Button.Click(ItemZelle);
             Button.Click(ItemVenmo);
-            InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNote, paymentOptions.DeliverCheckNote.ForBuildingHold);
-            InputGeneral.InputFunctionWithClear(FieldInputZelleAddressOrPhone, paymentOptions.Zelle.ForBuildingHold);
+            InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNoteBuilding, paymentOptions.DeliverCheckNote.ForBuildingHold);
+            InputGeneral.InputFunctionWithClear(FieldInputZelleAddressOrPhoneBuilding, paymentOptions.Zelle.ForBuildingHold);
             ButtonForVenmoQrCodeImage.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_PAYMENT_VENMO_HOLD_BUILDING));
+            Button.Click(ButtonSaveMdlWndwOptns);
+            VerifySuccessSelectPmntMthds();
+
+            return this;
+        }
+
+        [AllureStep("SelectAllPaymentMethodsForHoldApartment")]
+        public ModalWindowPaymentOptions SelectAllPaymentMethodsForHoldApartment()
+        {
+            Button.Click(ItemCreditCard);
+            Button.Click(ItemAch);
+            Button.Click(ItemDeliverCheck);
+            Button.Click(ItemZelle);
+            Button.Click(ItemVenmo);
+            InputGeneral.InputFunctionWithClear(FieldInputDeliverCheckNoteApartment, paymentOptions.DeliverCheckNote.ForApartment);
+            InputGeneral.InputFunctionWithClear(FieldInputZelleAddressOrPhoneApartment, paymentOptions.Zelle.ForApartment);
+            ButtonForVenmoQrCodeImage.SendKeys(Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..\\..\\..\\..\\") + UploadImages.IMAGE_FOR_PAYMENT_VENMO_HOLD_APARTMENT));
             Button.Click(ButtonSaveMdlWndwOptns);
             VerifySuccessSelectPmntMthds();
 

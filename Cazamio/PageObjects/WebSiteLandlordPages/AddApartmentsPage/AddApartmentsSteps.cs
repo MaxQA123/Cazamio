@@ -19,6 +19,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
             WaitUntil.CustomElementIsVisible(ButtonBuildingNameAddApartmentsUnitsPage);
             WaitUntil.CustomElementIsClickable(ButtonBuildingNameAddApartmentsUnitsPage);
             Button.Click(ButtonBuildingNameAddApartmentsUnitsPage);
+            WaitUntil.WaitSomeInterval(2000);
             WaitUntil.CustomElementIsVisible(ButtonBuildingNameAddApartmentsUnitsPage);
             string getBuildingName = GetValueFromFieldBuildingName.Text;
             string getBuildingNameActual = getBuildingName.ToString();
@@ -28,8 +29,8 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
 
         }
 
-        [AllureStep("EnterToAllFieldsMarkAdmAssignedBrkr")]
-        public AddApartments EnterToAllFieldsMarkAdmAssignedBrkr()
+        [AllureStep("EnterToAllFieldsMarkAdmAssignedBrkrOneNumber")]
+        public AddApartments EnterToAllFieldsMarkAdmAssignedBrkrOneNumber()
         {
             WaitUntil.CustomElementIsVisible(FieldInputUnitNumber);
             InputGeneral.InputFunctionWithClear(FieldInputUnitNumber, apartment.UnitNumber.UnitNumberMarkAdmAssignedRoleBrkr);

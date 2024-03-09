@@ -174,6 +174,7 @@ namespace CazamioProgect.Helpers
         public const string IMAGE_YARD_FOR_BUILDING = $"\\UploadImages\\Yard.jpg";
         public const string IMAGE_FOR_PAYMENT_VENMO_SCREENING = $"\\UploadImages\\building screening.jpg";
         public const string IMAGE_FOR_PAYMENT_VENMO_HOLD_BUILDING = $"\\UploadImages\\building hold deposit.jpg";
+        public const string IMAGE_FOR_PAYMENT_VENMO_HOLD_APARTMENT = $"\\UploadImages\\OK apartment hold deposit.jpg";
     }
 
     public class UnitsForListOfUnitsOnPageBuildingView

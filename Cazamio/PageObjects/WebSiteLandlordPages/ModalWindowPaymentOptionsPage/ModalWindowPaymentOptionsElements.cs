@@ -29,10 +29,16 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ModalWindowPaymentOpti
         public IWebElement ItemVenmo;
 
         [FindsBy(How = How.XPath, Using = "//mat-dialog-container//div[@class = 'payments-wrapper']//div[@class = 'note-input']//textarea")]
-        public IWebElement FieldInputDeliverCheckNote;
+        public IWebElement FieldInputDeliverCheckNoteBuilding;
+
+        [FindsBy(How = How.XPath, Using = "//mat-dialog-container//div[@class = 'payments-wrapper']//div[@class = 'note-input ng-star-inserted']//textarea")]
+        public IWebElement FieldInputDeliverCheckNoteApartment;
 
         [FindsBy(How = How.XPath, Using = "//mat-dialog-container//div[@class = 'payments-wrapper']//div[@class = 'note-input'][2]//input")]
-        public IWebElement FieldInputZelleAddressOrPhone;
+        public IWebElement FieldInputZelleAddressOrPhoneBuilding;
+
+        [FindsBy(How = How.XPath, Using = "//mat-dialog-container//div[@class = 'payments-wrapper']//div[@class = 'note-input ng-star-inserted'][2]//input")]
+        public IWebElement FieldInputZelleAddressOrPhoneApartment;
 
         [FindsBy(How = How.XPath, Using = "//mat-dialog-container//div[@class = 'payments-wrapper']//div[@class = 'note-input'][3]//input")]
         public IWebElement ButtonForVenmoQrCodeImage;

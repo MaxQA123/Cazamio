@@ -23,7 +23,7 @@ namespace CazamioProject.PageObjects.WebSiteLandlordPages.AddApartmentsPage
         [AllureStep("VerifyBuildingNameAddApartmentsPage")]
         public AddApartments VerifyBuildingNameAddApartmentsPage(string getBuildingNameFromBuildingView, string getBuildingNameFromAddApartments)
         {
-            WaitUntil.WaitSomeInterval(100);
+            WaitUntil.WaitSomeInterval(3000);
             Assert.AreEqual(getBuildingNameFromBuildingView, getBuildingNameFromAddApartments);
             Console.WriteLine($"{getBuildingNameFromBuildingView} = {getBuildingNameFromAddApartments}");
 
