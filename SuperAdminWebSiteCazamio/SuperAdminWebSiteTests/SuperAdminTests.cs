@@ -116,7 +116,7 @@ namespace SuperAdminTests
 
             Pages.SideBarLandlord
                 .VerifySuperAdminUserName(getUserNameCompare, getUserNameRoleCompare)
-                .ClickButtonMarketplaceAdminsSidebar();
+                .ClickButtonMarketplaceAdmins();
             Pages.ListOfMarketplaceAdmins
                 .VerifyTitleListOfMarketplaceAdmins()
                 .ClickButtonCreateMarketplaceAdmin();
@@ -137,7 +137,7 @@ namespace SuperAdminTests
             Console.WriteLine($"MarketplaceId from DB: {marketplaceIdFromDb.MarketplaceId}");
 
             Pages.SideBarLandlord
-                .ClickButtonLogOutSidebar();
+                .ClickButtonLogOut();
             Pages.JScriptExecutorHelper
                 .OpenNewTab()
                 .OpenPutsBox(Pages.PutsBox.TitleLetterCreateAdminMySpace, partEmailPutsBox);
