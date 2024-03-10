@@ -66,16 +66,6 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.LogInPage
             return this;
         }
 
-        [AllureStep("EnterChangingEmailPasswordLogInPgAsBroker")]
-        public LogInLandlord EnterChangingEmailPasswordLogInPgAsBroker()
-        {
-            InputGeneral.InputFunctionWithClear(FieldInputEmailLogInPg, TestDataForWebSiteAdmin.EMAIL_BROKER_MARTIN_MACFLY);
-            WaitUntil.WaitSomeInterval(100);
-            InputGeneral.InputFunctionWithClear(FieldInputPasswordLogInPg, GeneralTestDataForAllUsers.PASSWORD_NEW_GENEREAL);
-
-            return this;
-        }
-
         [AllureStep("ClickIconShowLogInPg")]
         public LogInLandlord ClickIconShowLogInPg()
         {
