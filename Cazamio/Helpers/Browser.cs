@@ -32,7 +32,9 @@ namespace CazamioProgect.Helpers
         {
             AllureConfigFilesHelper.CreateJsonConfigFile();
             new DriverManager().SetUpDriver(new ChromeConfig());
-            _webDriver = new ChromeDriver();
+            var options = new ChromeOptions();
+            //options.AddArgument("--headless=new");
+            _webDriver = new ChromeDriver(options);           
             _Driver.Manage().Cookies.DeleteAllCookies();
             _Driver.Manage().Window.Maximize();
 

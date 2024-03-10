@@ -158,5 +158,33 @@ namespace CazamioProgect.Helpers
             catch (NoSuchElementException) { }
             catch (StaleElementReferenceException) { }
         }
+
+        public static void WaitForElementToDisappear(IWebElement element, int seconds = 10)
+        {
+            Task.Delay(TimeSpan.FromMilliseconds(550)).Wait();
+            IWait<IWebDriver> wait = new DefaultWait<IWebDriver>(Browser._Driver)
+            {
+                Timeout = TimeSpan.FromSeconds(seconds),
+                PollingInterval = TimeSpan.FromMilliseconds(100),
+                Message = $"The search element is still visible after {seconds} sec"
+            };
+            try
+            {
+                wait.Until(driver =>
+                {
+                    try
+                    {
+                        if (element.Enabled == false || element.Displayed == false)
+                        {
+                            return true;
+                        }
+                        return false;
+                    }
+                    catch (Exception) { return true; }
+                });
+                Task.Delay(TimeSpan.FromMilliseconds(350)).Wait();
+            }
+            catch (Exception) { throw new ArgumentException(wait.Message); }
+        }
     }
 }
