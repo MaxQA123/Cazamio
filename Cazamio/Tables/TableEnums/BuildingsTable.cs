@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace CazamioProject.Tables.TableEnums
 {
-    internal class BuildingsTable
+    public enum BuildingsTable
     {
+        None,
+        Address,
+        Name,
+        Apartments,
+        AccessTypes,
+        Owner
     }
 }

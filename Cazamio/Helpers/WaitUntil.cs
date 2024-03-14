@@ -186,5 +186,111 @@ namespace CazamioProgect.Helpers
             }
             catch (Exception) { throw new ArgumentException(wait.Message); }
         }
+
+        public static void WaitSeconds(int seconds = 2) => Task.Delay(TimeSpan.FromSeconds(seconds)).Wait();
+        public static void WaitMilliseconds(int milliseconds = 500) => Task.Delay(TimeSpan.FromMilliseconds(milliseconds)).Wait();
+
+
+        public static void ToBeVisible(IWebElement element, int seconds = 10) =>
+            new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds)).
+                Until(Expected.ElementIsVisible(element));
+
+        public static void ToBeClickable(IWebElement element, int seconds = 10) =>
+            new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds)).
+                Until(ExpectedConditions.ElementToBeClickable(element));
+
+        public static void ToBeVisibleByLocator(By locator, int seconds = 10) =>
+            new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds)).
+                Until(ExpectedConditions.ElementIsVisible(locator));
+
+        public static void ToBeHidden(IWebElement element, int seconds = 10) =>
+            new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds)).
+                Until(Expected.ElementIsInvisible(element));
+
+        public static void ContainsText(IWebElement element, string value, int seconds = 10)
+        {
+            WebDriverWait wait = new(Browser._Driver, TimeSpan.FromSeconds(seconds));
+            wait.Until(Expected.ElementTextIsEqualTo(element, value));
+        }
+
+        public static void ContainsValue(IWebElement element, string value, int seconds = 10)
+        {
+            WebDriverWait wait = new(Browser._Driver, TimeSpan.FromSeconds(seconds));
+            wait.Until(Expected.ElementValueIsEqualTo(element, value));
+        }
+
+
+
+
+
+        public static WebDriverWait WaitDriver(int seconds = 10) =>
+            new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds));
+
+
+
+
+
+
+        public static IWebElement VisibleThenHidden(IWebElement element, int seconds = 10)
+        {
+            ToBeVisible(element, seconds);
+            ToBeHidden(element, seconds);
+            return element;
+        }
+
+
+
+        public static void RowsNumberIs(int count, int seconds = 10)
+        {
+            new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds)).
+                Until(x => x.FindElements(By.XPath("//table/tbody/tr")).Count == count);
+        }
+
+
+
+        public static void WaitLocator(By locator, int seconds = 10)
+        {
+            new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds)).
+               Until(ExpectedConditions.ElementToBeClickable(locator));
+        }
+
+
+        public static void WaitForAtLeastOneElementVisible(IList<IWebElement> elements, int timeoutInSeconds = 10)
+        {
+            var wait = new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(timeoutInSeconds));
+            wait.Until(driver =>
+            {
+                foreach (var element in elements)
+                {
+                    try
+                    {
+                        if (element.Displayed)
+                        {
+                            return true;
+                        }
+                    }
+                    catch (NoSuchElementException) { }
+                }
+                return false;
+            });
+        }
+
+        public static bool WaitForElementToBeAbsent(By locator, int seconds = 10)
+        {
+            WebDriverWait wait = new WebDriverWait(Browser._Driver, TimeSpan.FromSeconds(seconds));
+            try
+            {
+                wait.Until(ExpectedConditions.InvisibilityOfElementLocated(locator));
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return true;
+            }
+            catch (WebDriverTimeoutException)
+            {
+                return false;
+            }
+        }
     }
 }

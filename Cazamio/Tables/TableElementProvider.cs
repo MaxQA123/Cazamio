@@ -50,5 +50,10 @@ namespace CazamioProject.Tables
                FindXPath(Tags.Button);
             return element;
         }
+
+        internal object GetCellElement(object name, int v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

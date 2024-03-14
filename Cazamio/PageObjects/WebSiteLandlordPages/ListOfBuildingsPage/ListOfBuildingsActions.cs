@@ -1,5 +1,7 @@
 ﻿using CazamioProgect.Helpers;
 using CazamioProject.Objects;
+using CazamioProject.Tables;
+using CazamioProject.Tables.TableEnums;
 using NUnit.Allure.Attributes;
 using System;
 using System.Collections.Generic;
@@ -66,6 +68,15 @@ namespace CazamioProgect.PageObjects.WebSiteLandlordPages.ListOfBuildingsPage
             Pages.BuildingView
                 .SelectUnitFourInTabApartmentsBldngVwPg();
             
+
+            return this;
+        }
+
+        [AllureStep("DemoTables")]
+        public ListOfBuildings DemoTables()
+        {
+            var building = new TableElementProvider().GetCellElement(BuildingsTable.Name, 1);
+            Console.WriteLine(building.Text);
 
             return this;
         }
