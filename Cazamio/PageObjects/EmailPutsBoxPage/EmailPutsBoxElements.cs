@@ -50,7 +50,6 @@ namespace CazamioProgect.PageObjects.EmailPutsBox
         [FindsBy(How = How.XPath, Using = "//tbody//tr[3]//a[contains(@href, 'https://u28342774.ct.sendgrid.net/ls/click')]")]
         public IWebElement BtnCofirmEmailLandlord;
 
-
         #endregion
     }
 }

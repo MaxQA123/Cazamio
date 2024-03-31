@@ -8,6 +8,6 @@ namespace CazamioProject.DBHelpers.TableAspNetUsers
 {
     public class DBModelsAspNetUsers
     {
-        public long MarketplaceId { get; set; } // this might be another data type
+        public long Id { get; set; } // this might be another data type
     }
 }

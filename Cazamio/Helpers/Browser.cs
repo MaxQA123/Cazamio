@@ -71,6 +71,5 @@ namespace CazamioProgect.Helpers
         {
             _webDriver.Quit();
         }
-
     }
 }
